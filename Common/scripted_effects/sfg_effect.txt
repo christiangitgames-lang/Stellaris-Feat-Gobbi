@@ -1,0 +1,75 @@
+give_next_ship_size_tech_option_effect = {
+	if = {
+		limit = { NOT = { has_technology = tech_destroyers } }
+		add_research_option = tech_destroyers
+		add_tech_progress = {
+			tech = tech_destroyers
+			progress = 0.1
+		}
+	}
+	else_if = {
+		limit = { NOT = { has_technology = tech_cruisers } }
+		add_research_option = tech_cruisers
+		add_tech_progress = {
+			tech = tech_cruisers
+			progress = 0.1
+		}
+	}
+	else_if = {
+		limit = { NOT = { has_technology = tech_battleships } }
+		add_research_option = tech_battleships
+		add_tech_progress = {
+			tech = tech_battleships
+			progress = 0.1
+		}
+	}
+	else_if = {
+		limit = { NOT = { has_technology = tech_carriers } }
+		add_research_option = tech_carriers
+		add_tech_progress = {
+			tech = tech_carriers
+			progress = 0.1
+		}
+	}
+}
+give_next_regular_ship_tech_effect = {
+	inverted_switch = {
+		trigger = has_technology
+		tech_destroyers = {
+			add_tech_option_or_research_effect = {
+				TECH = tech_destroyers
+				PROGRESS = $PROGRESS$
+				CATEGORY = engineering_research
+			}
+		}
+		tech_cruisers = {
+			add_tech_option_or_research_effect = {
+				TECH = tech_cruisers
+				PROGRESS = $PROGRESS$
+				CATEGORY = engineering_research
+			}
+		}
+		tech_battleships = {
+			add_tech_option_or_research_effect = {
+				TECH = tech_battleships
+				PROGRESS = $PROGRESS$
+				CATEGORY = engineering_research
+			}
+		}
+		tech_carriers = {
+			add_tech_option_or_research_effect = {
+				TECH = tech_carriers
+				PROGRESS = $PROGRESS$
+				CATEGORY = engineering_research
+			}
+		}
+		default = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+
+eight_country = { #8
+	envoys_add = 0.5
+}
+eleven_country = { #12
+	envoys_add = 1.5
+}
+fourthen_country = { #14
+	envoys_add = 2.5
+}
+twenty_country = { #20
+	envoys_add = 3.5
+}
+twentyseven_country = { #27
+	envoys_add = 4
+}
+thirtitwo_country = { #32
+	envoys_add = 4.5
+}

@@ -1,0 +1,28 @@
+Can_Branch_office_on_gestait = {
+	always = no
+}
+Can_Branch_office_on_megacorp = {
+	always = no
+}
+valid_for_Upgrade_system = {
+	has_deposit = no
+	has_anomaly = no
+	is_preventing_anomaly = no
+	NOT = { has_planet_flag = phi_resource_discovery_flag }
+	can_have_resource_discovery = yes
+}
+homeworld_empire_size_bonus = {
+	always = no
+}
+malus_new_colony = {
+	always = no
+}
+can_Client_released = {
+	always = no
+}
+able_coop_ascension_perk = {
+	always = no
+}
+change_scripted_ideal = {
+	always = no
+}

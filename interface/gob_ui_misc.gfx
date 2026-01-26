@@ -1,0 +1,53 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_FW_wg_open_border"
+		texturefile = "gfx/interface/icons/diplomacy/FW_wg_open_border.dds"
+	}
+	spriteType = {
+    	name = "GFX_FW_wg_open_border_long"
+    	texturefile = "gfx/interface/icons/diplomacy/FW_wg_open_border.dds"
+	}
+    # EVENT PICTURE MINOR ARTIFACT AVAILABLE L-GATE INSIGHT
+    spriteType = {
+        name = "GFX_alert_minor_artifact_lgate"
+        masking_texture = "gfx/interface/situation_log/event_mask.dds"
+        texturefile = "gfx/interface/icons/message/message_minor_artifact_available_lgate.dds"
+    }
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_military_project"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_feudal_shift_pursuit.dds"
+	}
+	spriteType = {
+		name = "GFX_council_agenda_icon_feudal_shift_pursuit"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_feudal_shift_pursuit.dds"
+	}
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_artifact_pursuit"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_artifact_pursuit.dds"
+	}
+	spriteType = {
+		name = "GFX_evt_gamestart"
+		texturefile = "gfx/event_pictures/cg_gamestart.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_council_agenda_icon_the_last_resistance"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_the_last_resistance.dds"
+	}
+	spriteType = {
+		name = "GFX_council_agenda_icon_gears_of_war"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_gears_of_war.dds"
+	}
+	spriteType = {
+		name = "GFX_spaceport_module_fleet_mario_academy"
+		texturefile = "gfx/interface/icons/modules/spaceport_module_fleet_mario_academy.dds"
+	}
+	spriteType = {
+		name = "GFX_ap_commercial"
+		textureFile = "gfx/interface/icons/ascension_perks/ap_commercial.dds"
+	}
+	
+	
+	
+}

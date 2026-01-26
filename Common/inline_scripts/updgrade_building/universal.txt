@@ -1,0 +1,41 @@
+random_list = {
+	7 = { #research
+		modifier = {
+			factor = 2
+			owner = { has_country_flag = cg_bad_tech_score }
+		}
+		modifier = {
+			factor = 3
+			owner = { has_country_flag = cg_terrible_tech_score }
+		}
+	}
+	5 = { #economy factory
+		modifier = {
+			factor = 2
+			owner = { has_country_flag = cg_bad_economy_score }
+		}
+		modifier = {
+			factor = 3
+			owner = { has_country_flag = cg_terrible_economy_score }
+		}
+	}
+	3 = { #economy basic resource
+		modifier = {
+			factor = 2
+			owner = { has_country_flag = cg_bad_economy_score }
+		}
+		modifier = {
+			factor = 3
+			owner = { has_country_flag = cg_terrible_economy_score }
+		}
+	}
+	2 = { 
+		
+	}
+	1 = {
+		set_timed_planet_flag = { 
+			flag = Not_upgraded
+			days = 7
+		}
+	}
+}

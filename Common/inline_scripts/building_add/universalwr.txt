@@ -1,0 +1,8 @@
+random_list = {
+	999 = {
+		inline_script = "building_add/universal" #mi sono stancato di fare script tutti uguali
+	}
+	1 = {
+
+	}
+}

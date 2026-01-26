@@ -1,0 +1,93 @@
+
+FW_wg_open_border = {
+	casus_belli = FW_cb_border
+	hide_if_no_cb = yes
+	set_defender_wargoal = FW_wg_open_border
+	#defender_default = yes
+	release_occupied_systems_on_status_quo = yes
+	cede_claims = no
+	surrender_acceptance = 50
+	
+	potential = {
+		has_total_war_cb = no
+	}
+	on_status_quo = {
+		Lost_War_Standard_Bonus = yes
+	}
+	on_accept = {
+        custom_tooltip = z_fw_open_border_tooltip
+        hidden_effect = {
+            from = {
+				set_closed_borders = {
+				   who = root
+				   status = no
+				   forced = 20
+				}
+			}
+        }
+		Lost_War_Standard_Bonus = yes
+	}
+		
+	ai_weight = {
+		weight = 30
+		# modifier = {
+		# 	factor = 1.5
+		# 	check_variable = { which = FW_var_cntr_DICE_1 value > 4 }
+		# }
+		# modifier = {
+		# 	factor = 1.5
+		# 	check_variable = { which = FW_var_cntr_DICE_2 value > 4 }
+		# }
+		# modifier = {
+		# 	factor = 1.5
+		# 	check_variable = { which = FW_var_cntr_DICE_3 value > 5 }
+		# }
+	}
+}
+FW_wg_open_border_long = {
+	casus_belli = FW_cb_border
+	hide_if_no_cb = yes
+	set_defender_wargoal = FW_wg_open_border_long
+	#defender_default = yes
+	release_occupied_systems_on_status_quo = yes
+	cede_claims = no
+	surrender_acceptance = -30
+	
+	potential = {
+		has_total_war_cb = no
+	}
+	on_status_quo = {
+		Lost_War_Standard_Bonus = yes
+	}
+	on_accept = {
+		custom_tooltip = z_fw_open_border_long_tooltip
+		hidden_effect = {
+			end_rivalry = from
+			from = {
+				set_closed_borders = {
+				   who = root
+				   status = no
+				   forced = 60
+				}
+				end_rivalry = root
+			}
+        }
+		Lost_War_Standard_Bonus = yes
+	}
+		
+	ai_weight = {
+		weight = 30
+		# modifier = {
+		# 	factor = 1.5
+		# 	check_variable = { which = FW_var_cntr_DICE_1 value > 3 }
+		# }
+		# modifier = {
+		# 	factor = 1.5
+		# 	check_variable = { which = FW_var_cntr_DICE_2 value > 3 }
+		# }
+		# modifier = {
+		# 	factor = 1.5
+		# 	check_variable = { which = FW_var_cntr_DICE_3 value > 4 }
+		# }
+	}
+}

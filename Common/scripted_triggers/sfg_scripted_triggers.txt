@@ -1,0 +1,65 @@
+can_have_unity_deposits = {
+	OR = {
+		is_planet_class = pc_neutron_star
+		is_planet_class = pc_pulsar
+		is_planet_class = pc_black_hole
+		is_planet_class = pc_asteroid
+		is_planet_class = pc_gas_giant
+		is_planet_class = pc_nuked
+	}
+}
+
+is_valid_nebula_refinery = {
+	# (system)
+	starbase = { 
+		NOR ={
+			has_starbase_building = nebula_refinery
+			has_starbase_building = nebula_refinery_gestalt
+		}
+	}
+	is_inside_nebula = yes
+}
+
+is_pc_for_teleporter = {
+	OR = {
+		is_planet_class = pc_city
+		is_planet_class = pc_machine
+		is_planet_class = pc_hive
+		is_planet_class = pc_gaia
+		AND = {
+			OWNER = { is_anglers_empire = no }
+			is_planet_class = pc_ocean
+		}
+		planet_is_ring_world_equivalent = yes
+	}
+
+}
+wait_powerfull_unlock_tradition = {
+	NAND = {
+		years_passed > 100
+	}
+	OR = {
+		has_ascension_perk = ap_the_flesh_is_weak						# Regular
+		has_ascension_perk = ap_organo_machine_interfacing				# Hive-Mind
+		has_ascension_perk = ap_organo_machine_interfacing_assimilator	# Driven Assimilator
+		has_ascension_perk = ap_engineered_evolution
+		has_ascension_perk = ap_synthetic_evolution
+		has_ascension_perk = ap_mind_over_matter
+		has_ascension_perk = ap_synthetic_age
+	}
+	NOR = {
+		has_country_flag = cloning_tradition_unlocked
+		has_technology = tech_integrated_cybernetics
+		has_technology = tech_integrated_cybernetics
+		has_technology = tech_gene_tailoring
+		has_country_flag = mutation_tradition_unlocked
+		has_technology = tech_psionic_theory
+		has_country_flag = purity_tradition_unlocked
+		has_technology = tech_synthetic_workers
+		has_technology = tech_robomodding_m
+		has_country_flag = virtuality_traditions_unlocked
+		has_country_flag = nanotech_traditions_unlocked
+		has_country_flag = modularity_traditions_unlocked
+	}
+	
+}

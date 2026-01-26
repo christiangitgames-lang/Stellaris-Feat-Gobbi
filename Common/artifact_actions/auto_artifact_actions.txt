@@ -1,0 +1,385 @@
+@minor_artifact_decision_cost = 100
+@minor_artifact_decision_duration = 3600
+@minor_artifact_ai_threshold = 200
+@enable = no
+auto_artifact_arcane_deciphering = {
+	resources = {
+		category = artifact_actions
+		cost = {
+			minor_artifacts = 500
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_materialist
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_materialist
+		}
+	}
+
+	potential = {
+		is_ai = no
+		always = @enable
+		has_technology = tech_arcane_deciphering
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "requires_arcane_deciphering_no_cooldown"
+			NOT = { has_modifier = arcane_deciphering_cooldown }
+		}
+	}
+
+	effect = {
+		custom_tooltip = artifact_arcane_deciphering_effect
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+					NOT = { has_country_flag = arcana_achievement }
+				}
+				set_country_flag = arcana_achievement
+			}
+			add_modifier = {
+				modifier = "arcane_deciphering_cooldown"
+				days = 720
+			}
+			owner = {
+				country_event = { id = ancrel.10000 }
+			}
+		}
+	}
+}
+
+auto_artifact_lgate_clue = {
+	resources = {
+		category = artifact_actions
+		cost = {
+			minor_artifacts = 1000
+		}
+	}
+
+	potential = {
+		is_ai = no
+		always = @enable
+		has_country_flag = encountered_first_lgate
+		NOT = { has_country_flag = completed_lcluster_chain }
+		NOT = { has_global_flag = l_cluster_opened }
+		has_distar = yes
+	}
+
+	allow = {
+		NOT = { has_modifier = artifact_lgate_insight_cooldown }
+	}
+
+	effect = {
+		custom_tooltip = artifact_lgate_clue_effect
+
+		hidden_effect = {
+			generate_lcluster_clue = yes
+
+			add_modifier = {
+				modifier = "artifact_lgate_insight_cooldown"
+				days = 3600
+			}
+		}
+	}
+}
+
+auto_artifact_proclaim_religious_finding = {
+	resources = {
+		category = artifact_actions
+		cost = {
+			minor_artifacts = @minor_artifact_decision_cost
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 1.5
+			is_xenophile = yes
+		}
+		modifier = {
+			factor = 0
+			has_resource = { type = minor_artifacts amount < @minor_artifact_ai_threshold }
+		}
+	}
+
+	potential = {
+		is_ai = no
+		always = @enable
+		is_spiritualist = yes
+	}
+
+	effect = {
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier1unityreward
+			min = @tier1unitymin
+			max = @tier1unitymax
+		}
+		add_modifier = {
+			modifier = "proclaim_religious_finding"
+			days = @minor_artifact_decision_duration
+		}
+	}
+
+	allow = {
+		NOT = { has_modifier = proclaim_religious_finding }
+	}
+}
+
+auto_artifact_proclaim_superiority = {
+	resources = {
+		category = artifact_actions
+		cost = {
+			minor_artifacts = @minor_artifact_decision_cost
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 0
+			has_resource = { type = minor_artifacts amount < @minor_artifact_ai_threshold }
+		}
+		modifier = {
+			factor = 0.1
+			resource_stockpile_compare = {
+				resource = influence
+				value > 500
+			}
+		}
+		modifier = {
+			factor = 0
+			resource_stockpile_compare = {
+				resource = influence
+				value > 800
+			}
+		}
+	}
+
+	potential = { 
+		is_ai = no
+		always = @enable
+		is_xenophobe = yes }
+
+	effect = {
+		add_monthly_resource_mult = {
+			resource = influence
+			value = @tier1influencereward
+			min = @tier1influencemin
+			max = @tier1influencemax
+		}
+		add_modifier = {
+			modifier = "proclaim_superiority"
+			days = @minor_artifact_decision_duration
+		}
+	}
+
+	allow = {
+		NOT = { has_modifier = proclaim_superiority }
+	}
+}
+
+auto_artifact_celebrate_diversity = {
+	resources = {
+		category = artifact_actions
+		cost = {
+			minor_artifacts = @minor_artifact_decision_cost
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 1.5
+			is_xenophile = yes
+		}
+		modifier = {
+			factor = 0.25
+			is_spiritualist = yes
+			is_xenophile = no
+		}
+		modifier = {
+			factor = 0
+			has_resource = { type = minor_artifacts amount < @minor_artifact_ai_threshold }
+		}
+	}
+
+	potential = {
+		is_ai = no
+		always = @enable
+		is_gestalt = no
+		is_xenophobe = no
+	}
+
+	effect = {
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier1unityreward
+			min = @tier1unitymin
+			max = @tier1unitymax
+		}
+		add_modifier = {
+			modifier = "celebrate_diversity"
+			days = @minor_artifact_decision_duration
+		}
+	}
+
+	allow = {
+		NOT = { has_modifier = celebrate_diversity }
+	}
+}
+
+auto_artifact_cultural_study = {
+	resources = {
+		category = artifact_actions
+		cost = {
+			minor_artifacts = @minor_artifact_decision_cost
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	potential = {
+		is_ai = no
+		always = @enable
+		is_gestalt = no
+		OR = {
+			is_megacorp = no
+			is_worker_coop_empire = yes
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "artifact_cultural_study_effect"
+			always = no
+		}
+	}
+}
+
+auto_artifact_find_military_applications = {
+	resources = {
+		category = artifact_actions
+		cost = {
+			minor_artifacts = 150
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 1.5
+			is_militarist = yes
+		}
+		modifier = {
+			factor = 2
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				is_pacifist = yes
+				is_at_war = no
+				has_crisis = no
+			}
+		}
+		modifier = {
+			factor = 0
+			has_resource = { type = minor_artifacts amount < @minor_artifact_ai_threshold }
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "artifact_find_military_applications_no_cooldown"
+			NOT = { has_modifier = artifact_find_applications_cooldown }
+		}
+	}
+
+	potential = { 
+		is_ai = no
+		always = @enable
+		has_technology = tech_arcane_deciphering }
+
+	effect = {
+		custom_tooltip = artifact_find_military_applications_effect
+
+		hidden_effect = {
+			add_modifier = {
+				modifier = "artifact_find_applications_cooldown"
+				days = 900
+			}
+			owner = {
+				country_event = { id = ancrel.10010 }
+			}
+		}
+	}
+}
+
+auto_artifact_find_peaceful_applications = {
+	resources = {
+		category = artifact_actions
+		cost = {
+			minor_artifacts = 150
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 0.10
+			is_militarist = yes
+		}
+		modifier = {
+			factor = 1.25
+			is_pacifist = yes
+		}
+		modifier = {
+			factor = 0.10
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 0
+			has_resource = { type = minor_artifacts amount < @minor_artifact_ai_threshold }
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "artifact_find_peaceful_applications_no_cooldown"
+			NOT = { has_modifier = artifact_find_applications_cooldown }
+		}
+	}
+
+	potential = {
+		is_ai = no
+		always = @enable
+		has_technology = tech_arcane_deciphering
+		is_homicidal = no
+	}
+
+	effect = {
+		custom_tooltip = artifact_find_peaceful_applications_effect
+
+		hidden_effect = {
+			add_modifier = {
+				modifier = "artifact_find_applications_cooldown"
+				days = 900
+			}
+			owner = {
+				country_event = { id = ancrel.10020 }
+			}
+		}
+	}
+}

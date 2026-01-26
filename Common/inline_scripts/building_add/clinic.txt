@@ -1,0 +1,25 @@
+	inline_script = "building_add/free_buind_slots" #obbligatoria
+	modifier = {
+		factor = 10
+		free_amenities < -800
+	}
+	modifier = {
+		factor = 100
+		planet_stability < 60
+		free_amenities < -800
+	}
+	modifier = {
+		factor = 10
+		planet_stability < 50
+		free_amenities < -1000
+	}
+	modifier = {
+		factor = 0
+		OR = {
+			num_buildings = { type = building_medical_1 value > 0 }
+			num_buildings = { type = building_medical_2 value > 0 }
+			num_buildings = { type = building_medical_3 value > 0 }
+			owner = { NOT = { has_technology = tech_frontier_health } }
+		}
+	}
+	add_building = building_medical_1

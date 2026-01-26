@@ -1,0 +1,17 @@
+namespace = phi_empire
+country_event = {
+	id = phi_empire.10
+	title = "phi_empire.10name"
+	desc = "phi_empire.10desc"
+	hide_window = no
+	picture = GFX_evt_satellite_in_orbit
+	show_sound = event_ship_bridge
+	location = event_target:found_pc_relic
+	#prev
+	#event_target:found_pc_relic
+
+	is_triggered_only = yes
+	option = {
+		name = EXCELLENT
+	}
+}

@@ -1,0 +1,565 @@
+#research when don't worry for war
+#early
+#TODO4
+#mid
+#late
+# Base AI economic plans
+# AI economic plans
+@economic_plan_rare_resource_target = 1
+@economic_plan_rare_resource_limit = 20
+@economic_plan_energy_target = 25
+@economic_plan_minerals_target = 50
+@economic_plan_unity_target = 35
+@economic_plan_alloy_target = 5
+@economic_plan_fleet_cap_alloy_target = 50
+@economic_plan_machine_empire_alloy_target = 15
+@economic_plan_pops_target = 9000
+@economic_plan_food_target = 10
+@economic_plan_food_target_extra = 10
+@economic_plan_consumer_goods_target = 5
+@economic_plan_research_target = 70
+@economic_plan_scaling_research_target = 27
+@economic_plan_scaling_alloys_target = 9
+@economic_plan_scaling_rare_resource_target = 0.20
+
+
+@noxious_happiness_penalty = -0.01
+@noxious_happiness_bonus = 0.02
+@minimum_enegy = 20
+@minimum_minerals = 40
+#cap resource in magazzino
+@economic_plan_cg_cap = 1500
+@economic_plan_minerals_cap = 5000
+
+@cyborg_energy_upkeep = 0.3
+cg_research_economy_plan = {
+	income = {
+		energy = @economic_plan_energy_target
+		minerals = @economic_plan_minerals_target
+	}
+	inline_script = "economics_plans/universal_plans" #Per gestire in eco plans ma stessa logica
+	subplan = { # 1.0
+		set_name = "Researcher AI food"
+		potential = {
+			country_uses_food = yes
+		}
+
+		income = {
+			food = @economic_plan_food_target
+		}
+		focus = {
+			food = 1
+		}
+	}
+	subplan = {
+		set_name = "Researcher AI phy science + unity organics"
+		potential = {
+			country_uses_consumer_goods = yes
+			has_monthly_income = { resource = consumer_goods value > @economic_plan_consumer_goods_target }
+			has_monthly_income = { resource = energy value > @minimum_enegy }
+			has_monthly_income = { resource = minerals value > @minimum_minerals }
+		}
+		income = {
+			physics_research = @economic_plan_research_target
+		}
+		focus = {
+			physics_research = @economic_plan_research_target
+		}
+	}
+	subplan = {
+		set_name = "Researcher AI phy science empire"
+		potential = {
+			OR = {
+				is_machine_empire = yes
+				is_individual_machine = yes
+			}
+			has_monthly_income = { resource = energy value > @minimum_enegy }
+			has_monthly_income = { resource = minerals value > @minimum_minerals }
+		}
+		income = {
+			physics_research = @economic_plan_research_target
+		}
+		focus = {
+			physics_research = @economic_plan_research_target
+		}
+	}
+	subplan = {
+		set_name = "Researcher AI consumer goods science + unity organics"
+		potential = {
+			country_uses_consumer_goods = yes
+			has_monthly_income = { resource = consumer_goods value > @economic_plan_consumer_goods_target }
+			has_monthly_income = { resource = energy value > @minimum_enegy }
+		}
+		income = {
+			society_research = @economic_plan_research_target
+			unity = @economic_plan_unity_target
+		}
+	}
+	subplan = {
+		set_name = "Researcher AI science"
+		potential = {
+			has_monthly_income = { resource = consumer_goods value > @economic_plan_consumer_goods_target }
+			has_monthly_income = { resource = minerals value > @minimum_minerals }
+		}
+		income = {
+			physics_research = @economic_plan_research_target
+			society_research = @economic_plan_research_target
+			engineering_research = @economic_plan_research_target
+		}
+		focus = {
+			physics_research = @economic_plan_research_target
+			engineering_research = @economic_plan_research_target
+		}
+	}
+
+	subplan = {
+		set_name = "Researcher AI unity hivemind"
+		potential = {
+			is_hive_empire = yes
+			has_monthly_income = { resource = energy value > @minimum_enegy }
+		}
+		income = {
+			unity = @economic_plan_unity_target
+		}
+	}
+
+	
+	subplan = {
+		set_name = "Researcher AI s science + unity machine empire"
+		potential = {
+			OR = {
+				is_machine_empire = yes
+				is_individual_machine = yes
+			}
+			has_monthly_income = { resource = energy value > @minimum_enegy }
+		}
+		income = {
+			society_research = @economic_plan_research_target
+			unity = @economic_plan_unity_target
+		}
+	}
+	subplan = {
+		set_name = "Researcher AI base minerals"
+		potential = {
+			has_resource = { type = minerals amount < @economic_plan_minerals_cap }
+		}
+		income = {
+			minerals = @economic_plan_minerals_target
+		}
+		focus = {
+			minerals = 10
+		}
+	}
+	subplan = {
+		set_name = "Researcher AI minerals 2"
+		potential = {
+			num_owned_planets < 3
+			has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+		}
+		income = {
+			minerals = 30
+		}
+	}
+	subplan = {
+		set_name = "Researcher AI minerals 3"
+		potential = {
+			num_owned_planets > 3
+			has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+		}
+		income = {
+			minerals = 50
+		}
+	}
+	# subplan = {
+	# 	set_name = "Researcher AI minerals 4"
+	# 	potential = {
+	# 		num_owned_planets = 4
+	# 		has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+	# 	}
+	# 	income = {
+	# 		minerals = 50
+	# 	}
+	# }
+	# subplan = {
+	# 	set_name = "Researcher AI minerals 5"
+	# 	potential = {
+	# 		num_owned_planets > 4
+	# 		has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+	# 	}
+	# 	income = {
+	# 		minerals = 75
+	# 	}
+	# }
+	subplan = {
+		set_name = "Researcher AI consumer goods"
+		potential = {
+			country_uses_consumer_goods = yes
+			has_monthly_income = { resource = minerals value > @economic_plan_minerals_target }
+			has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+			if = {
+				limit = {
+					country_uses_food = yes
+				}
+				has_monthly_income = { resource = food value > @economic_plan_food_target }
+			}
+			has_resource = { type = consumer_goods amount < @economic_plan_cg_cap }
+		}
+		income = {
+			consumer_goods = @economic_plan_consumer_goods_target
+		}
+	}
+	
+
+
+	subplan = {
+		set_name = "Researcher AI pops"
+		potential = {
+			has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+			has_monthly_income = { resource = minerals value > @economic_plan_minerals_target }
+			has_monthly_income = { resource = physics_research value > @economic_plan_research_target }
+			has_monthly_income = { resource = society_research value > @economic_plan_research_target }
+			has_monthly_income = { resource = engineering_research value > @economic_plan_research_target }
+			NOT = {
+				has_origin = origin_clone_army
+				NOT = {
+					has_country_flag = clone_army_fertility_unlocked
+				}
+			}
+		}
+		pops = @economic_plan_pops_target
+	}
+
+	subplan = {
+		set_name = "Researcher AI clone origin pops"
+		potential = {
+			has_origin = origin_clone_army
+			NOT = {
+				has_country_flag = clone_army_fertility_unlocked
+			}
+			num_buildings = { type = building_clone_army_clone_vat value < 5 }
+		}
+		pops = @economic_plan_pops_target
+	}
+
+	#### SCALING SUBPLANS HERE ####
+	# Values in the scaling subplans are added to the base plan each time the AI reaches the target
+	# If base alloys = 10 and the AI reaches +12 per month, and it says alloys = 20 in the scaling subplan, the next target becomes alloys = 30
+	# All scaling subplans are cumulative
+
+	subplan = {
+		scaling = yes
+		set_name = "Researcher AI general scaling"
+		potential = {
+			has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+			has_monthly_income = { resource = minerals value > @economic_plan_minerals_target }
+		}
+
+		income = {
+			alloys = 9
+			physics_research = @economic_plan_scaling_research_target
+			society_research = @economic_plan_scaling_research_target
+			engineering_research = @economic_plan_scaling_research_target
+			unity = 20
+		}
+	}
+	subplan = {
+		scaling = yes
+		set_name = "gamma AI energy scaling I"
+		potential = {
+			has_resource = { type = energy amount < 10000 } # 10k min is ok
+			has_monthly_income = { resource = energy value < 150 }
+		}
+
+		income = {
+			energy = 9
+		}
+	}
+	subplan = {
+		scaling = yes
+		set_name = "gamma AI mineral scaling I"
+		potential = {
+			has_resource = { type = minerals amount < 10000 } # 10k min is ok
+			has_monthly_income = { resource = minerals value < 100 }
+		}
+
+		income = {
+			minerals = 9
+		}
+	}
+	subplan = {
+		scaling = no
+		set_name = "gamma AI mineral scaling arcology_project"
+		potential = {
+			has_resource = { type = minerals amount < 20000 } # 10k energy is ok
+			has_ascension_perk = ap_arcology_project
+			any_owned_planet = {
+				has_planet_flag = candidate_arcology
+			}
+		}
+		
+		income = {
+			minerals = 200
+		}
+		focus = {
+			minerals = 100
+		}
+	}
+
+	subplan = {
+		scaling = yes
+		set_name = "Researcher AI late gamenaval cap scaling"
+		potential = {
+			num_repeatable_techs > 0 #make sure it isn't messing up the earlier development (this is for the late game)
+			has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+			has_monthly_income = { resource = minerals value > @economic_plan_minerals_target }
+			has_monthly_income = { resource = alloys value > @economic_plan_fleet_cap_alloy_target }
+			used_naval_capacity_percent > 0.95
+			used_starbase_capacity_percent >= 1
+		}
+
+		naval_cap = 25
+	}
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Researcher AI naval cap scaling"
+		potential = {
+			has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+			has_monthly_income = { resource = minerals value > @economic_plan_minerals_target }
+			has_monthly_income = { resource = alloys value > @economic_plan_fleet_cap_alloy_target }
+			used_naval_capacity_percent > 0.9
+			used_starbase_capacity_percent >= 1
+		}
+
+		naval_cap = 5
+	}
+	# subplan = {
+	# 	scaling = yes
+	# 	set_name = "general CG scaling"
+	# 	potential = {
+	# 		country_uses_consumer_goods = yes
+	# 		has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+	# 		has_monthly_income = { resource = minerals value > @economic_plan_minerals_target }
+	# 	}
+	# 	income = {
+	# 		consumer_goods = @economic_plan_scaling_consumer_goods_target
+	# 	}
+	# }
+
+	#### VOID DWELLER EXTRA ALLOYS ####
+	subplan = {
+		scaling = yes
+		set_name = "Researcher AI Void Dweller alloys"
+		potential = {
+			has_origin = origin_void_dwellers
+
+			has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+			has_monthly_income = { resource = minerals value > @economic_plan_minerals_target }
+		}
+
+		income = {
+			alloys = @economic_plan_scaling_alloys_target
+		}
+	}
+
+	#### MILITARIST EXTRA ALLOYS ####
+	subplan = {
+		scaling = yes
+		set_name = "Researcher AI Militarist alloys"
+		potential = {
+			OR = {
+				is_militarist = yes
+				is_homicidal = yes
+			}
+
+			has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+			has_monthly_income = { resource = minerals value > @economic_plan_minerals_target }
+		}
+
+		income = {
+			alloys = 15
+		}
+	}
+
+	#### MATERIALIST SCIENCE ####
+	subplan = {
+		scaling = yes
+		set_name = "Researcher AI Materialist science"
+		potential = {
+			is_materialist = yes
+			has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+			has_monthly_income = { resource = minerals value > @economic_plan_minerals_target }
+		}
+
+		income = {
+			physics_research = 15
+			engineering_research = 15
+		}
+	}
+
+	#### SPIRITUALIST UNITY ####
+	subplan = {
+		scaling = yes
+		set_name = "Researcher AI Spiritualist unity"
+		potential = {
+			is_spiritualist = yes
+			has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+			has_monthly_income = { resource = minerals value > @economic_plan_minerals_target }
+		}
+
+		income = {
+			society_research = 5
+			unity = 15
+		}
+	}
+
+	# Optional subplans don't need to be fulfilled for the other scaling subplans to become active
+	subplan = {
+		scaling = yes
+		set_name = "Researcher AI Kaleidoscope"
+		potential = {
+			any_situation = {
+				is_situation_type = situation_kaleidoscope
+				NOT = { current_situation_approach = approach_no_food }
+			}
+			has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+		}
+
+		income = {
+			energy = 15
+		}
+	}
+	
+	subplan = {
+		optional = yes
+		set_name = "Researcher AI Rare resources"
+		potential = {
+			has_monthly_income = { resource = minerals value > 30 }
+		}
+
+		income = {
+			exotic_gases = @economic_plan_rare_resource_target
+			volatile_motes = @economic_plan_rare_resource_target
+			rare_crystals = @economic_plan_rare_resource_target
+		}
+		focus = {
+			exotic_gases = 1
+		}
+	}
+	subplan = {
+		set_name = "Researcher AI eg for research"
+		potential = {
+			has_monthly_income = { resource = minerals value > 10 }
+			has_technology = tech_basic_science_lab_2
+		}
+		income = {
+			exotic_gases = 1
+		}
+	}
+
+
+	inline_script = "economics_plans/rares_plans" #Per gestire in eco plans ma stessa logica
+	# subplan = {
+	# 	optional = yes
+	# 	set_name = "Empire size max"
+	# 	potential = {
+	# 		always = yes
+	# 	}
+	# 	empire_size = 4 #obsolete.
+	# }
+	subplan = {
+		#scaling = yes
+		set_name = "Researcher AI exotic gases"
+	
+		potential = {
+			has_monthly_income = { resource = minerals value > 50 }
+			has_technology = tech_basic_science_lab_2
+		}
+	
+		income = {
+			exotic_gases = 2
+		}
+	}
+	#machine
+	subplan = {
+		set_name = "Researcher AI machine empire base alloys"
+		potential = {
+			OR = {
+				is_machine_empire = yes
+				is_individual_machine = yes
+			}
+		}
+
+		income = {
+			alloys = @economic_plan_machine_empire_alloy_target
+		}
+	}
+
+	subplan = {
+		set_name = "Researcher AI base science machine empire"
+		potential = {
+			OR = {
+				is_machine_empire = yes
+				is_individual_machine = yes
+			}
+			has_monthly_income = { resource = energy value > @economic_plan_energy_target }
+			has_monthly_income = { resource = alloys value > @economic_plan_alloy_target }
+		}
+		income = {
+			physics_research = @economic_plan_research_target
+			society_research = @economic_plan_research_target
+			engineering_research = @economic_plan_research_target
+		}
+	}
+
+	subplan = {
+		set_name = "Researcher AIbase unity machine empire"
+		potential = {
+			OR = {
+				is_machine_empire = yes
+				is_individual_machine = yes
+			}
+		}
+
+		income = {
+			unity = @economic_plan_unity_target
+		}
+	}
+	subplan = {
+		set_name = "Researcher AI base minerals machine"
+		potential = {
+			OR = {
+				is_machine_empire = yes
+				is_individual_machine = yes
+			}
+		}
+		income = {
+			minerals = 50
+		}
+	}
+
+	subplan = {
+		set_name = "Researcher AI base science hivemind"
+		potential = {
+			is_hive_empire = yes
+			has_monthly_income = { resource = minerals value > @economic_plan_minerals_target }
+			has_monthly_income = { resource = alloys value > @economic_plan_alloy_target }
+		}
+		income = {
+			physics_research = @economic_plan_research_target
+			society_research = 50
+			engineering_research = @economic_plan_research_target
+		}
+	}
+
+	ai_weight = {
+		weight = 0 
+		# TO DO need check for cetus patch
+		# modifier = {
+		# 	set = 2000
+		# 	has_ai_personality = peaceful_researcher
+		# 	NOT = { has_global_flag = AI_easy }
+		# }
+		
+	}
+}

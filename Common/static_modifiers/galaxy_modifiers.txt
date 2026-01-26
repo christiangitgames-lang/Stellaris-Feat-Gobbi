@@ -1,0 +1,135 @@
+
+tyni_galaxy_modifier = { #200 stars
+	empire_size_systems_mult = 0.5
+	ship_speed_mult = -0.5
+	empire_size_systems_mult = 0.5
+	country_starbase_influence_cost_mult = 0.5
+	country_claim_influence_cost_mult = 0.5
+	station_gatherers_produces_mult = 0.25
+	station_researchers_produces_mult = 0.25
+	station_observers_produces_mult = 0.25
+	science_ship_survey_speed = -0.25
+	icon = "gfx/interface/icons/sm/Galaxy.dds"
+}
+small_galaxy_modifier = { #400stars
+	empire_size_systems_mult = 0.3
+	ship_speed_mult = -0.3
+	country_starbase_influence_cost_mult = 0.3
+	country_claim_influence_cost_mult = 0.3
+	station_gatherers_produces_mult = 0.15
+	station_researchers_produces_mult = 0.15
+	station_observers_produces_mult = 0.15
+	science_ship_survey_speed = -0.1
+	icon = "gfx/interface/icons/sm/Galaxy.dds"
+}
+big_small_galaxy_modifier = { #500 stars
+	empire_size_systems_mult = 0.15
+	ship_speed_mult = -0.10
+	country_starbase_influence_cost_mult = 0.15
+	country_claim_influence_cost_mult = 0.15
+	station_gatherers_produces_mult = 0.05
+	station_researchers_produces_mult = 0.05
+	station_observers_produces_mult = 0.05
+	science_ship_survey_speed = -0.05
+	icon = "gfx/interface/icons/sm/Galaxy.dds"
+}
+medium_galaxy_modifier = { #600 stars
+	empire_size_systems_mult = 0.03
+	ship_speed_mult = 0.03
+	empire_size_colonies_mult = -0.03
+	icon = "gfx/interface/icons/sm/Galaxy.dds"
+}
+large_galaxy_modifier = { #700 stars
+	empire_size_systems_mult = -0.1
+	ship_speed_mult = 0.10
+	country_starbase_influence_cost_mult = -0.10
+	country_claim_influence_cost_mult = -0.10
+	empire_size_colonies_mult = -0.1
+	icon = "gfx/interface/icons/sm/Galaxy.dds"
+}
+very_large_galaxy_modifier = { #800 stars
+	empire_size_systems_mult = -0.2
+	ship_speed_mult = 0.2
+	country_starbase_influence_cost_mult = -0.20
+	country_claim_influence_cost_mult = -0.20
+	empire_size_colonies_mult = -0.2
+	icon = "gfx/interface/icons/sm/Galaxy.dds"
+}
+huge_galaxy_modifier = { #1000 stars
+	empire_size_systems_mult = -0.4	
+	ship_speed_mult = 0.4
+	country_starbase_influence_cost_mult = -0.33
+	country_claim_influence_cost_mult = -0.33
+	station_gatherers_produces_mult = -0.1
+	station_researchers_produces_mult = -0.1
+	station_observers_produces_mult = -0.1
+	empire_size_colonies_mult = -0.4
+	icon = "gfx/interface/icons/sm/Galaxy.dds"
+}
+early_game_modifier = {
+	planet_physicists_physics_research_produces_add = 1
+	planet_biologists_society_research_produces_add = 1
+	planet_engineers_engineering_research_produces_add = 1
+	planet_bureaucrats_unity_produces_add = 1
+	all_technology_research_speed = 0.1
+	#country_unity_produces_mult = 0.1
+	empire_size_colonies_mult = 0.10
+	num_tech_alternatives_add = -1
+	envoys_add = -0.5
+	ship_interstellar_speed_mult = -0.245
+	#ship_interstellar_speed_mult = -0.25
+	icon = "gfx/interface/icons/sm/early.dds"
+}
+early_game_modifier_fast = {
+	planet_physicists_physics_research_produces_add = 1
+	planet_biologists_society_research_produces_add = 1
+	planet_engineers_engineering_research_produces_add = 1
+	planet_bureaucrats_unity_produces_add = 1
+	all_technology_research_speed = 0.1
+	country_unity_produces_mult = 0.1
+	empire_size_colonies_mult = 0.10
+	num_tech_alternatives_add = -1
+	envoys_add = -0.5
+	ship_interstellar_speed_mult = -0.245
+	#ship_interstellar_speed_mult = -0.25
+	icon = "gfx/interface/icons/sm/early.dds"
+}
+mid_game_modifier = {
+	ship_interstellar_speed_mult = -0.05
+	all_technology_research_speed = 0.05
+	#country_unity_produces_mult = 0.05
+	empire_size_penalty_mult = -0.15
+	station_researchers_physics_research_produces_mult = 1.5
+	station_researchers_society_research_produces_mult = 1.5
+	station_researchers_engineering_research_produces_mult = 1.5
+	station_researchers_nanites_produces_mult = 1
+	country_resource_max_influence_add = 524
+	icon = "gfx/interface/icons/sm/mid.dds"
+}
+late_game_modifier = {
+	# all_technology_research_speed = 0.05
+	# country_unity_produces_mult = 0.025
+	envoys_add = 1
+	empire_size_colonies_mult = -0.1
+	empire_size_penalty_mult = -0.20
+	ship_interstellar_speed_mult = 0.20
+	planet_army_build_speed_mult = 0.1
+	country_claim_influence_cost_mult = -0.10
+	station_researchers_physics_research_produces_mult = 3
+	station_researchers_society_research_produces_mult = 3
+	station_researchers_engineering_research_produces_mult = 3
+	station_researchers_nanites_produces_mult = 2
+	country_resource_max_influence_add = 1048
+	icon = "gfx/interface/icons/sm/late.dds"
+}
+Stellaris_feat_Gobbi = {
+	#all_technology_research_speed = 0.20
+	#country_unity_produces_mult = 0.1
+	planet_physicists_physics_research_produces_add = 0.5
+	planet_biologists_society_research_produces_add = 0.5
+	planet_engineers_engineering_research_produces_add = 0.5
+	#ship_military_cost_mult = -0.25
+	starbase_shipyard_build_speed_mult = 0.1
+	council_agenda_progress_speed = 0.2
+	icon = "gfx/interface/icons/modifiers/mod_job_assimilation_void_add.dds"
+}

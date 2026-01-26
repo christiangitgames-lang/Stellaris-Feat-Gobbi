@@ -1,0 +1,50 @@
+modifier = {
+	factor = 0
+	OR = {
+		has_forbidden_jobs = "enforcer"	
+		has_forbidden_jobs = "patrol_drone"
+	}
+	NOR = { 
+		has_forbidden_jobs = "entertainer"
+		has_forbidden_jobs = "maintenance_drone"
+	}
+	free_jobs < 3
+}
+modifier = {
+	factor = 0
+	OR = {
+		has_forbidden_jobs = "enforcer"	
+		has_forbidden_jobs = "patrol_drone"
+		
+	}
+	OR = { 
+		has_forbidden_jobs = "entertainer"
+		has_forbidden_jobs = "maintenance_drone"
+	}
+	free_jobs < 5
+}
+modifier = {
+	factor = 0
+	NOR = {
+		has_forbidden_jobs = "enforcer"	
+		has_forbidden_jobs = "patrol_drone"
+		
+	}
+	OR = { 
+		has_forbidden_jobs = "entertainer"
+		has_forbidden_jobs = "maintenance_drone"
+	}
+	free_jobs < 3
+}
+modifier = {
+	factor = 0
+	NOR = {
+		has_forbidden_jobs = "enforcer"	
+		has_forbidden_jobs = "patrol_drone"
+	}
+	NOR = { 
+		has_forbidden_jobs = "entertainer"
+		has_forbidden_jobs = "maintenance_drone"
+	}
+	free_jobs < 1
+}

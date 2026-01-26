@@ -1,0 +1,18 @@
+consumer_goods_expenditure_country = { # Covers most other things how science ship.
+	resource = consumer_goods
+	type = expenditure
+	category = country
+
+	potential = {
+		always = yes
+	}
+	desired_min = {
+		base = 100
+	}
+	desired_max = {
+		base = 1000
+	}
+	weight = {
+		weight = 0.1
+	}
+}

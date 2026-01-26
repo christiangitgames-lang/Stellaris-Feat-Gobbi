@@ -1,0 +1,163 @@
+namespace = cg_game_start
+
+# EXPLAINER:
+#	phi_game_start.0		game start gatekeeper
+#	phi_game_start.1		phi game start menu
+#	phi_game_start.2		messages from the developer for players not restarting games while mod is being upgraded
+# have recycle code of mariominaccia
+event = { #standard
+	id = cg_game_start.0
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			has_global_flag = phi_initialisation_menu
+		}
+		is_ai = no
+	}
+
+	immediate = {
+		every_country = {
+			every_owned_planet = {
+				limit = { is_capital = yes }
+				remove_phi_planet_modifiers_3 = yes
+				remove_phi_planet_modifiers_2 = yes
+				remove_phi_planet_modifiers_1 = yes
+				set_planet_flag = phi_surveyed
+				remove_deposit = d_phi_exotic_gas_1
+				remove_deposit = d_phi_volatile_motes_1
+				remove_deposit = d_phi_rare_crystals_1
+				#add_modifier = { modifier = phi_pm_atmospheric_pollution }
+				if = {
+					limit = {
+						owner = { 
+							NOR = {
+								has_origin = origin_void_dwellers #il deposito phi_pm_atmospheric non ha senso in un habitat
+								is_primitive = yes #il deposito phi_pm_atmospheric non ha senso in un primitivo
+								is_eager_explorer_empire = yes # non hanno avuto tempo di inquinare
+							} 
+						} 
+					}
+					add_modifier = { modifier = phi_pm_atmospheric_pollution }
+				}
+				
+				# if = {
+				# 	limit = { 
+				# 		planet_size < 20
+				# 		OR = {
+				# 			is_planet_class = pc_tundra
+				# 			is_planet_class = pc_arctic
+				# 			is_planet_class = pc_alpine
+				# 			is_planet_class = pc_arid
+				# 			is_planet_class = pc_desert
+				# 			is_planet_class = pc_savannah
+				# 			is_planet_class = pc_continental
+				# 			is_planet_class = pc_ocean
+				# 			is_planet_class = pc_tropical
+				# 			is_planet_class = pc_nuked
+				# 		}
+				# 	}
+				# 	change_planet_size = 1
+				# }
+			}
+		}
+		set_global_flag = phi_initialisation_menu
+		set_global_flag = phi_border_gore_disallowed
+		set_global_flag = phi_sublimation_allowed
+		set_global_flag = phi_emperor_win_allowed
+		set_global_flag = phi_realistic_upkeep_researcher
+		set_global_flag = AI_hard
+		# set_global_flag = planets_with_modifiers #mette modifictori su pianeti
+		
+		every_country = {
+		 	limit = { is_ai = no }
+		 	set_country_flag = was_human
+		}
+		country_event = { id = cg_game_start.1 }
+	}
+}
+# OR = {
+# 	has_global_flag = AI_hard
+# 	has_global_flag = AI_normal
+# 	has_global_flag = AI_easy
+# }
+country_event = {
+	 	id = cg_game_start.1
+	 	title = cg_game_start.1.name
+	 	picture = GFX_evt_gamestart
+	 	desc = cg_game_start.1.desc
+	 	hide_window = no
+	 	is_triggered_only = yes
+		
+	 	trigger = {
+	 		is_ai = no
+	 	}
+		option = {
+			name = OK
+			hidden_effect = {
+				
+				set_country_flag = phi_changelog_1_5c # TODO?
+				every_country = {
+					limit = { is_country_type = default } #primitive and special country not have modifiers
+					every_owned_planet = {
+						limit = { is_capital = yes }
+						if = { 
+							limit = {
+								homeworld_empire_size_bonus = yes
+								prev = {
+									OR = {
+										has_federation = no
+										is_federation_leader = yes
+									}
+								}
+							} 
+							add_modifier = {
+								modifier = cg_homeworld
+							}
+						}
+					}
+				}
+			}
+		}
+		# Ai difficulty
+		option = {
+			trigger = {
+				has_global_flag = AI_hard
+			}
+			name = cg_game_start.1.AI_hard
+			custom_tooltip = cg_game_start.1.AI_hard_tt
+			set_global_flag = AI_easy
+			remove_global_flag = AI_hard
+			hidden_effect = {
+				country_event = { id = cg_game_start.1}
+			}
+		}
+		option = {
+			trigger = {
+				has_global_flag = AI_easy
+			}
+			name = cg_game_start.1.AI_easy
+			custom_tooltip = cg_game_start.1.AI_easy_tt
+			set_global_flag = AI_normal
+			remove_global_flag = AI_easy 
+
+			hidden_effect = {
+				country_event = { id = cg_game_start.1}
+			}
+		}
+		option = {
+			trigger = {
+				has_global_flag = AI_normal
+			}
+			name = cg_game_start.1.AI_normal
+			custom_tooltip = cg_game_start.1.AI_normal_tt
+			set_global_flag = AI_hard
+			remove_global_flag = AI_normal
+			hidden_effect = {
+				country_event = { id = cg_game_start.1}
+			}
+		}
+		# ------------------
+		
+}

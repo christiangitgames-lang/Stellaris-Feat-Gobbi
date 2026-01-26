@@ -1,0 +1,38 @@
+ap_commercial = {
+	possible = {
+		# custom_tooltip = {
+		# 	fail_text = "requires_ascension_perks_1"
+		able_coop_ascension_perk = yes
+		has_tradition = tr_mercantile_finish
+		#}
+	}
+	
+	on_enabled = {
+		custom_tooltip = "ap_commercial_effect" #trader +2% trade value merchant +2,5% trade value double effect trade value mult by trading hub for every subject with more 50 pops have +10% trade value
+	}
+
+	modifier = {
+		planet_jobs_trade_produces_mult = 0.10
+		commercial_pact_mult = 1
+	}
+
+	potential = {
+		is_regular_empire = yes
+		#always = no #test # test da sviluppare
+		NOT = {
+			has_ascension_perk = ap_commercial
+		}
+	}
+
+	ai_weight = {
+		factor = 1
+		modifier = {
+			factor = 40
+			has_ai_personality = peaceful_traders
+		}
+		modifier = {
+			factor = 3
+			has_ascension_perk = ap_universal_transactions #combo ap_commercial
+		}
+	}
+}

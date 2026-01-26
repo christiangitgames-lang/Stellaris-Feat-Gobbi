@@ -1,0 +1,85 @@
+eac_auto_pop_migration_habitability = {
+
+	potential = {
+		#always = no #not work
+		is_country_type = default
+	}
+	option = {
+		name = "eac_apm_no"
+		valid = {
+			always = yes
+		}
+		policy_flags = {
+			eac_apm_no
+		}
+		AI_weight = {
+			weight = 10
+		}
+	}
+	option = {
+		name = "eac_apm_habitability_60"
+		valid = {
+			always = yes
+			NOT = { has_policy_flag =  resettlement_not_allowed }
+		}
+		policy_flags = {
+			eac_apm_habitability_60
+		}
+		AI_weight = {
+			factor = 1
+			modifier = {
+				factor = 0
+				num_owned_planets < 2
+			}
+			modifier = {
+				factor = 1000
+				any_owned_planet = {
+					any_owned_pop_group = { is_unemployed = yes }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "eac_apm_habitability_80"
+		valid = {
+			always = yes
+			NOT = { has_policy_flag =  resettlement_not_allowed }
+		}
+		policy_flags = {
+			eac_apm_habitability_80
+			
+		}
+		AI_weight = {
+			factor = 1
+			modifier = {
+				factor = 0
+				num_owned_planets < 2
+			}
+		}
+	}
+
+	option = {
+		name = "eac_apm_habitability_40"
+		valid = {
+			always = yes
+			NOT = { has_policy_flag =  resettlement_not_allowed }
+		}
+		policy_flags = {
+			eac_apm_habitability_40
+		}
+		AI_weight = {
+			factor = 1
+			modifier = {
+				factor = 0
+				num_owned_planets < 2
+			}
+			modifier = {
+				factor = 1000
+				any_owned_planet = {
+					any_owned_pop_group = { is_unemployed = yes }
+				}
+			}
+		}
+	}
+}

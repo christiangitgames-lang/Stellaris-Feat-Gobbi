@@ -1,0 +1,57 @@
+# modifier = {
+# 	factor = 0
+# 	num_free_districts = { type = district_industrial value = 0 }
+# }
+modifier = {
+	factor = 0
+	owner = { has_resource = { type = minerals amount < 500 } }
+}
+modifier = {
+	factor = 0.5
+	OR = {
+		AND = {
+			owner = { has_monthly_income = { resource = minerals value < 50 } }
+			owner = { is_catalytic_empire = no }
+		}
+		AND = {
+			owner = { has_monthly_income = { resource = food value < 40 } }
+			owner = { is_catalytic_empire = yes }
+		}
+	}
+}
+modifier = {
+	factor = 0.5
+	has_foundry_designation = no
+}
+modifier = {
+	factor = 0
+	OR = {
+		AND = {
+			owner = { has_monthly_income = { resource = minerals value < 20 } }
+			owner = { is_catalytic_empire = no }
+		}
+		AND = {
+			owner = { has_monthly_income = { resource = food value < 30 } }
+			owner = { is_catalytic_empire = yes }
+		}
+	}
+}
+modifier = {
+	factor = 1.2
+	owner = { 
+		is_machine_empire = yes
+	}
+}
+modifier = {
+	factor = 10
+	OR = {
+		owner = { has_monthly_income = { resource = alloys value < 15 } }
+		owner = {
+			AND = {
+				country_uses_consumer_goods = yes
+				has_monthly_income = { resource = consumer_goods value < 5 }
+			}
+		}
+	}
+}
+#add_district = district_industrial

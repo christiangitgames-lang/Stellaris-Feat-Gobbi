@@ -1,0 +1,243 @@
+﻿l_english:
+ # Traditions --> file traditions.yml
+#  tr_diplomacy_adopt_desc:4 "§HUnlocks Edict:§! $edict_diplomatic_grants$\n§Y$MOD_COUNTRY_DIPLOMACY_INFLUENCE_COST$§! reduced by §G66%§!."
+#  tr_diplomacy_finish_effect:1 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_diplomacy_adopt$ will increase our §Y$MOD_COUNTRY_ENVOYS_ADD$§! by §G1§!."
+#  tr_diplomacy_entente_coordination_desc:0 "The amount we contribute towards the §YFederation Naval Capacity§! counts for twice as much.\nNaval Capacity §G+10%§!"
+#  tr_diplomacy_diplomatic_networking_desc:0 "Embassies: §G+10§! £unity£ §YUnity§!\nAllows Advanced Diplomatic Actions without an Embassy"
+#  tr_diplomacy_eminent_diplomats_desc:0 "Diplomatic Weight: §G+25%§!\nDiplomatic Acceptance: §G+5§!\nEnvoys §YImproving Relations§! have a §G1%§! chance each month of acquiring a §YFavor§!.\nEach §YEnvoy§! assigned to the Galactic Community provides an additional §G2.5%§! £diplo_weight£ Diplomatic Weight."
+#  tr_expansion_galactic_ambition_desc:7 "§Y$mod_starbases_upkeep_mult$§! reduced by §G20%§!.\n§YPlanetary Structures maintenance§! reduced by §G20%§!."
+#  tr_discovery_databank_uplinks_desc: "§HUnlocks Edict:§! $edict_research_subsidies$\n§Y$mod_station_researchers_produces_mult$§! increased by §G50%§!."
+#  tr_discovery_polytechnic_education_desc: "§Y$MOD_LEADER_SPECIES_EXP_GAIN$§! increased by §G+25%§! and §Y$MOD_LEADER_SKILL_LEVELS$§! increased by §Y1§!.\n§YScientists§! start at level §Y3§!."
+#  #tr_synchronicity_integrated_preservation_desc:4 "§Y$job_coordinator_plural$§! produce §Y0.25§! additional £mod_country_admin_cap_add£ §Y$MOD_COUNTRY_ADMIN_CAP_ADD$§! and §Y$job_evaluator_plural$§! reduce  §Y$MOD_PLANET_CRIME_NO_HAPPINESS_ADD$§! by 2."
+#  tr_harmony_finish_effect:7 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_harmony_adopt$ will reduce §Y$MOD_EMPIRE_SIZE_POPS_MULT$§! by §G10%§! and allow the §YDisarmament§! diplomatic stance."
+#  tr_supremacy_finish_effect:1 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_supremacy_adopt$ will unlock the §YWar Doctrines§! Policies and allow the §YFull Scale Mobilization§! diplomatic stance."
+ 
+#  tr_supremacy_war_games_desc:3 "§Y$MOD_COUNTRY_COMMAND_LIMIT_ADD$§! increased by §G+20§! and §Y$MOD_LEADER_ADMIRAL_SKILL_LEVELS$§! is increased by §Y2§!.\n§YAdmirals§! and §YGenerals§! start at level §Y3§!."
+#  tr_domination_adopt_desc:0 "Authoritharian Ethics attraction increased by §Y100%§!.\nWorker and Simple Drone Jobs output §G+5%§!.\nGrants §Ydemand vassalization§! and the §Yvassalization§! casus belli."
+#  tr_domination_workplace_motivators_desc:1 "§HUnlocks Edict:§! $edict_extended_shifts$\nResource output from §Y$pop_cat_slave_plural$§! increased by §G20%§!."
+#  tr_unyielding_resistance_is_frugal_desc:0 "£building£ §Y$building_stronghold$§! buildings now produce §Y3§! £unity£ Unity. In addition, §Y$MOD_ARMY_DEFENSE_HEALTH_MULT$§! is incresed by §G+100%§!."
+#  tr_unyielding_bulwark_of_harmony_desc:2 "While in a defensive war with another empire, §Y$MOD_STARBASE_SHIPYARD_BUILD_SPEED_MULT$§! is increased by §G+100%§!. In addition, the §Y$MOD_SHIP_FIRE_RATE_MULT$§! is increased by §G+100%§! for ships within your borders."
+#  tr_versatility_adaptive_programming_desc:1 "§Y$MOD_COUNTRY_TRADE_FEE$§! reduced by §G10%§!.\nLeader experience gain §G+50%§!"
+#  tr_versatility_operational_proxies_desc:3 "§Y$MOD_POP_RESETTLEMENT_COST_MULT$§! reduced by §G33%§!\nCountry Engineering Tech production §G+5%§!"
+#  tr_versatility_finish_desc:0 "Country Engineering Tech production §G+10%§!\nUnlocks the §Y$decision_prospect$§! decision, which allows us to prospect for an additional resource deposit once on our planets.\nAscension Perks Unlocked: §G+1§!"
+#  tr_versatility_spatial_optimization_desc:0 "£pops£ §Y$MOD_POP_HOUSING_USAGE_MULT$§! reduced by §G20%§!."
+#  tr_subterfuge_double_agents_desc:0 "Whenever a hostile §YOperation§! targeting us fails, we gain §Y10§! Intel on the spying empire.\nDiplomatic Envoys: §G+1§!\nDiplomatic Weight: §G+25%§!"
+#  tr_subterfuge_finish_desc:0 "Successful §YOperations§! refund §G50%§! of their Infiltration Level Cost.\nPlanet Sensor Range: §G+3§!\nShip Sensor Range: §G+1§!\nAscension Perks Unlocked: §G+1§!"
+#  origin_tooltip_star_slingshot_effects:3 "- Start with a §H$quantum_catapult_ruined_slingshot$§! near your home system, and the technology necessary to repair and use it.\n- Your §HQuantum Catapults§! are §G50%§! more accurate\n- The §YQuantic Ambush§! bonus from catapulting fleets is increased to §G+50%§! Fire Rate."
+
+#  tr_adaptability_dietary_enrichment:0 "Dietary Enrichment"
+#  tr_adaptability_dietary_enrichment_desc:1 "£food£ §Y$mod_country_food_produces_mult$§! output increased by §G+10%§!.\nJobs upkeep §G-10%§!"
+#  tr_adaptability_dietary_enrichment_delayed:1 "The nutritional value of the nourishments we harvest for our populations can be increased through various enrichment techniques, enabling us to feed more mouths with less food."
+
+#  tr_adaptability_recycling:0 "Enhanced Recycling"
+#  tr_adaptability_recycling_desc:0 "§G15%§! refund whenever we demolish a building or a district.\nJobs upkeep §G-10%§!"
+#  tr_adaptability_recycling_delayed:0 "Reusing what has become obsolete gives us more to build with in the future."
+
+#  tr_adaptability_survival_fittest:0 "Survival of the Fittest"
+#  tr_adaptability_survival_fittest_desc:3 "§Y$MOD_PLANET_ORBITAL_BOMBARDMENT_DAMAGE$§! reduced by §G25%§! and §Y$MOD_ARMY_DEFENSE_DAMAGE_MULT$§! increased by §G+100%§!."
+#  tr_adaptability_survival_fittest_delayed:1 "By coming into contact with other species, we have learned the true importance of overcoming our weaknesses in the great struggle for survival."
+
+#  tr_adaptability_environmental_diversification:0 "Environmental Diversification"
+#  tr_adaptability_environmental_diversification_desc:1 "§Y$MOD_POP_ENVIRONMENT_TOLERANCE$§! increased by §G+10%§!."
+#  tr_adaptability_environmental_diversification_delayed:0 "By adapting to different environments we have learned to evolve and adapt faster."
+
+#  tr_adaptability_adaptive_ecology:0 "Adaptive Ecology"
+#  tr_adaptability_adaptive_ecology_desc:4 "All our planets gain §Y2 Free Building Slot§!."
+#  tr_adaptability_adaptive_ecology_delayed:1 "The highest function of ecology is the understanding of consequences."
+
+#  tr_adaptability_appropriation:0 "Appropriation"
+#  tr_adaptability_appropriation_desc:1 "§Y$MOD_POP_RESETTLEMENT_COST_MULT$§! reduced by §G50%§!.\nEnables §YLand Appropriation Allowed§! policy."
+#  tr_adaptability_appropriation_delayed:0 "Land that is not being worked contributes nothing to our empire. Workers must be relocated in an efficient manner to those planets where they are needed most."
+ 
+#  tr_mercantile_adaptive_economic_policies_desc:0 "Empire Sprawl from districts: §G-50%§!\nEmpire Sprawl from systems: §G-10%§!"
+#  tr_mercantile_trade_fleets_desc:0 "The amount we contribute towards the §YFederation Naval Capacity§! counts for §G50%§! more.\n\nEmpire Sprawl from districts: §G-50%§!\nEmpire Sprawl from systems: §G-10%§!"
+ 
+#  tr_politics_finish_desc:0 "§G+100%§! £diplo_weight£ Diplomatic Weight\nUnlocks 4 special §YResolutions§! in the Galactic Community.\n$TRADITIONS_FINISH_AP$"
+#  #Colony Type
+#  col_bureau:0 "Bureaucratic Center"
+#  col_bureau_desc:1 "When bureaucracy reaches such a vast scale that it begins to seem fun!"
+#  col_bureaucracy_custom:1 "Bureaucrats produce §G2§! Amenities.\nBureaucrat Job Upkeep reduced by §G10%§!. \n£pop£ Pop Ethics Shift Chance reduced by §G20%§!."
+
+#  #Origins
+#  origin_common_ground:0 "Common Ground"
+#  origin_common_ground_desc:0 "This civilization established early contact with their immediate alien neighbors. Finding strength in their differences, they soon decided to face the future, and whatever it might bring, together."
+#  origin_tooltip_common_ground_effects:0 "- Start as the leader of a §HXenophile Federation§!\n- The other member will occupy a Guaranteed Habitable World slot near your home system\n- Start with §HThe Federation§! tradition unlocked"
+#  START_SCREEN_COMMON_GROUND:0 "Decades ago, when our first crude sublight probes visited the star systems neighboring our own, we discovered the presence of another alien civilization. Despite the radical differences in our physiology, it quickly became apparent that we had more things in common than not. Like us, they were also on the cusp of unlocking practical interstellar travel.\n\nA bond was formed between our civilizations, which eventually led to the birth of a federation - we would combine our efforts, and when we were ready to spread out into the cosmos, whatever was out there would be faced by us standing together."
+#  origin_tooltip_common_ground_npc_effects:0 "- Start as a member of a §HXenophile Federation§! with an additional member"
+#  opinion_common_ground:0 "Common Ground"
+#  origin_common_ground_npc:0 "$origin_common_ground$"
+#  origin_common_ground_npc_desc:0 "$origin_common_ground_desc$"
+ 
+#  civic_tooltip_life_seeded_effects:3 "- Homeworld is a §H$pc_gaia$§! (Size: £planetsize£ §Y25§!) with several §HRare Planetary Features§!\n- Habitability preference is set to §H$trait_pc_gaia_preference$§!, making other types of planets undesirable."
+ 
+ civic_tooltip_post_apocalyptic_effects: "Capital starts as a §YTomb World§!\nGain §GTerrestrial Sculpting§! research option at game start.\nGain the §Y$trait_survivor$§! trait, granting:\n  Tomb World Habitability: §G+70%§!\n  Leader Lifespan: §G+10§! Years"
+#  civic_tooltip_inward_perfection_effects:9 "Cannot have §YRivals§!\nCannot form §YDefensive Pacts§!\nCannot form §YMigration Treaties§!\nCannot form §YResearch Agreements§!\nCannot form §YCommercial Pacts§!\nCannot §YGuarantee Independence§!\nCannot join §YFederations§!\nCannot §YInfiltrate§! primitives\nCannot have forced §YSubjects§!\n"
+#  origin_hegemon:0 "Hegemon"
+#  origin_hegemon_desc:0 "This civilization established early contact with their immediate alien neighbors. War erupted almost immediately, but after many years and titanic efforts it left them as the complete victors. Heavy reparations are now being paid by the losers."
+#  origin_tooltip_hegemon_effects:0 "- Start as the leader of a §HXenophobe Federation§!\n- The other member will occupy a Guaranteed Habitable World slot near your home system\n- Start with §HThe Federation§! tradition unlocked"
+#  origin_tooltip_hegemon_npc_effects:0 "- Start as a member of a §HXenophobe Federation§! with an additional member"
+#  START_SCREEN_HEGEMON:0 "Decades ago, when our first crude sublight probes visited the star systems neighboring our own, we discovered the presence of another alien civilization which, like us, were on the verge of developing practical interstellar travel. Panic erupted after they opened fire on our interstellar outposts, killing thousands of brave colonists and starting a bloody war that lasted for decades. We have won, rebuilt and, as victors, it is now our imperative to let something like this never happen again.\n\nXeno scum will know their place!"
+#  origin_hegemon_npc:0 "Hegemon Subordinate"
+#  origin_hegemon_npc_desc:0 "This civilization established early contact with their immediate alien neighbors. As communication attempts failed and the other civilization started to settle on sacred worlds inside their borders, war become inevitable and a first strike strategy was attempted. This failed utterly, sending the other civilization in a panicked frenzy that ended in this civilization unconditional surrender."
+
+#  #Political Factions --> federations_l_english.yml
+#  SUPREMACIST_ISOLATIONIST_NO_FEDERATION_DESC:1 "Allowing the [Root.Owner.GetName] to be exploited by alien interests by §Yjoining a Federation§! and not being its President will displease the [Root.GetName]."
+ 
+#  #Wargoals and CBs
+#  wg_humiliation_phi_accept:1 "§Y[From.GetName]§! is humiliated, reducing their §Yinfluence§!, §Yunity§! production by §R-33%§!. Their §Ynaval capacity§! and §Ydiplomatic weight§! are also reduced by §R-33%§! Their ship cost increase §R+33%.§! This effect lasts for §Y15§! years\n§Y[Root.GetName]§! gains §G+100§! £influence£\n"
+ 
+#  #Civics
+#  #civic_tooltip_technocracy_effects:2 "£building£ §YCapital Buildings§! replace some £job_administrator£ §Y$job_administrator$§! Jobs with £job_head_researcher£ §Y$job_head_researcher_plural$§!\n§Y$job_researcher_plural$§! also produce §Y0.5§! £unity£ Unity"
+#  civic_tooltip_exalted_priesthood_effects:1 "£building£ §YCapital Buildings§! replace some £job_politician£ §Y$job_politician$§! Jobs with £job_high_priest£ §Y$job_high_priest_plural$§!\n£job_priest£ §Y$job_priest_plural$§! produce §Y1§! additional £unity£ Unity."
+#  civic_tooltip_byzantine_bureaucracy_effects: "£job_bureaucrat£ §Y$job_bureaucrat_plural$§! also produce §Y1§! £stability£ $PLANET_STABILITY_TITLE$."
+#  civic_tooltip_franchising_effects:5 "Every colony will be released as a §YSubsidiary§!, with §Gmaxed§! Branch Office building slots.\n§RThis civic cannot be removed after the start of the game.§!\n\nYour §YSubjects§! gain an additional §G0.5§! $r_loyalty$ and do not suffer penalties from you having multiple Subjects.\n\nYour §YSubjects§! cannot have the following Agreement Terms:\n$t$$TRIGGER_FAIL$§Y$subject_cannot_expand$§!.\n$t$$TRIGGER_FAIL$§Y$subject_can_not_do_diplomacy$§!.\n$t$$TRIGGER_FAIL$§Y$subject_does_not_get_sensors$§!.\n\nGrants access to the £building£ §Y$holding_franchise_headquarters$§! Holding.\n"
+#  civic_tooltip_syncretic_evolution_effects:4 "Start the game with §Y12§! £pop£ Pops being of another, subservient, species and with §YGene Tailoring§! researched."
+#  civic_tooltip_agrarian_idyll_effects:5 "§YGenerator§!, §YMining§! and §YAgriculture Districts§! provide §G1§! more £housing£ §YHousing§!\n§YCity Districts§! provide §R1§! less £housing£ §YHousing§!\n£job_farmer£ §Y$job_farmer_plural$§! also produce §G2§! £amenities£ §YAmenities§!\nEvery §HAgricolture District§! grants §G1§! £building£ §YBuilding Slot§!, except on Habitats."
+#  civic_tooltip_barbaric_despoilers_effects:7 "Cannot form §YMigration Treaties§!\nHas the '§Y$casus_belli_cb_despoliation$§!' casus belli on all other empires that get resource and tech point for every pop of other empire and get little percentual pop by empire to your capital\n$allow_raiding$\nDecreased §YOpinion§! for most other empires"
+ #Weapons
+ MISSILE_1:0 "Nuclear Missiles"
+ MISSILE_1_DESC:0 "Space-to-space missiles equipped with high-yield nuclear warheads. Although based on old pre-space technology, these crude fire-and-forget weapons can be surprisingly effective at range.\nShip speed: §G+2.5%§!"
+ MISSILE_2:0 "Fusion Missiles"
+ MISSILE_2_DESC:0 "These updated space-to-space missiles have more powerful fusion warheads and improved flight performance.\nShip speed: §G+5%§!"
+ MISSILE_3:0 "Antimatter Missiles"
+ MISSILE_3_DESC:0 "Advanced missiles equipped with very powerful antimatter warheads. A new and improved guidance system gives them a better chance of finding their targets.\nShip speed: §G+7.5%§!"
+ MISSILE_4:0 "Quantum Missiles"
+ MISSILE_4_DESC:0 "The latest version of space-to-space missile, this upgraded variant has an immensely powerful warhead that draws its energy from a zero point vacuum.\nShip speed: §G+10%§!"
+ MISSILE_5:0 "Marauder Missiles"
+ MISSILE_5_DESC:0 "These highly advanced missiles are equipped with limited onboard AI pilots that substantially improve their performance and ability to track targets.\nShip speed: §G+10%§!"
+
+ SWARMER_MISSILE_1:0 "Swarmer Missiles"
+ SWARMER_MISSILE_1_DESC:0 "These smaller missiles are launched in volleys and have been specifically designed to overwhelm enemy point-defense systems.\nShip speed: §G+5%§!"
+ SWARMER_MISSILE_2:0 "Whirlwind Missiles"
+ SWARMER_MISSILE_2_DESC:0 "New miniaturization techniques will allow us to equip swarmer missiles with more powerful warheads and improved flight performance.\nShip speed: §G+10%§!"
+
+ TORPEDO_1:0 "Space Torpedoes"
+ TORPEDO_1_DESC:0 "These torpedoes are essentially very large, slow-moving missiles. They are equipped with more powerful warheads and shield modulators that let them slip unmolested through energy screens.\nShip speed: §G+5%§!\nDamage Bombardament Planet §G+25%§!"
+ TORPEDO_2:0 "Armored Torpedoes"
+ TORPEDO_2_DESC:0 "Upgraded space torpedoes encased in armor, to better withstand enemy point-defense fire. The armor fragments into shards that cause additional damage when the torpedo detonates.\nShip speed: §G+10%§!\nDamage Bombardament Planet §G+30%§!"
+ TORPEDO_3:0 "Devastator Torpedoes"
+ TORPEDO_3_DESC:0 "Advanced torpedoes with very powerful warheads. They have a sleeker design, faster engines and upgraded shield modulators for slipping through energy screens.\nShip speed: §G+15%§!\nDamage Bombardament Planet §G+33%§!"
+ 
+#  #Policies
+#  trade_policy_trade_league_desc:1 "By banding together in a trade league, we are able to prosper and secure profits on a whole new level.\n\n§EEach collected £trade_value£ §YTrade Value§! earns us £energy£ §Y0.3§!, £unity£ §Y0.2§!, £consumer_goods£ §Y0.2§! and £society_research£ §Y0.125§!"
+#  trade_policy_unity_desc:1 "Trade can be used not only to move goods around, but also to facilitate the spread of ideas. We should focus our trade efforts towards ensuring that the message of our government is heard on all planets where we do business.\n\n§EEach collected £trade_value£ §YTrade Value§! earns us £energy£ §Y0.25§! and £unity£ §Y0.5§!"
+#  trade_policy_consumer_goods_desc:0 "Profits and taxes must take second place to improving the lives of our citizens. We should focus our trade efforts towards the manufacture and distribution of everyday necessities.\n\n§EEach collected £trade_value£ §YTrade Value§! earns us £energy£ §Y0.25§! and £consumer_goods£ §Y0.5§!"
+# trade_policy_holy_covenant:0 "Holy Covenant"
+#  trade_conversion_holy_covenant_name:0 "$trade_policy_holy_covenant$"
+#  trade_policy_holy_covenant_desc:0 "By banding together in a holy covenant, we may bask in the collective glory of our divine purpose.\n\n§EEach collected £trade_value£ §YTrade Value§! earns us £energy£ §Y0.25§! and £unity£ §Y0.5§!§! and £society_research£ §Y0.25§!§!"
+#  no_retreat_doctrine_desc:0 "Our ships are expected to fight to the bitter end. We will tolerate no withdrawals, no retreats, no routs. For our fleet there is only victory or death. Not one step back!\n\nAttrition: §G-20%§!\n"
+ 
+#  #Technologies
+#  TECH_UNLOCK_JUGGERNAUT_CONSTRUCTION_TITLE:0 "§HUnlocks Ship Type:§! Juggernaut and Colossus"
+#  TECH_UNLOCK_JUGGERNAUT_CONSTRUCTION_DESC: "You don't need any description. Don't you?"
+
+#  #Decisions
+#  decision_prospect_effects_short:0 "Adds a random §GPlanetary Feature§! and §RModifier§! to the planet."
+ 
+#  # Main gui
+#  CREATE_SECTOR:1 "§HCreate New Sector§!\nThis will create a new sector with this planet as its sector capital. All systems within §Y1§! jumps, not previously a part of any sector, will become a part of this new sector."
+
+# tradition_domination_desc:0 "If we do not impose our will on others, they will inevitably impose theirs on us.\n\nIf §Gadopt§! we can propose that another Empire becomes our subject."
+#  tradition_domination_machine_desc:0 "We seek harmonious functionality throughout the entire galaxy. Other stellar beings resist this due to inefficient personal whims. We will remove their disorder like a malfunctioning part.\n\nIf §Gadopt§! we can propose that another Empire becomes our subject."
+#  tradition_domination_hive_desc:0 "Everything that is not Us must serve Us, either as servants, or as food.\n\nIf §Gadopt§! we can propose that another Empire becomes our subject."
+
+
+# tech_capital_productivity_1_effect:0 "Capital Buildings:\n  $mod_planet_jobs_produces_mult$: §G+10%§!\n  $mod_planet_jobs_upkeep_mult$: §R+10%§!"
+# tech_capital_productivity_2_effect:0 "Upgraded Capital Buildings:\n  $mod_planet_jobs_produces_mult$: §G+20%§!\n  $mod_planet_jobs_upkeep_mult$: §R+20%§!"
+# tech_capital_productivity_3_effect:0 "Major Capital Buildings:\n  $mod_planet_jobs_produces_mult$: §G+30%§!\n  $mod_planet_jobs_upkeep_mult$: §R+30%§!"
+ EMPIRE_SIZE_TOTAL_2:0 "$VALUE|0Y$"
+ ADMIN_CAP_TOTAL_2:0 "$VALUE|Y$"
+ ADMIN_CAP_VALUE_2:0 "$VALUE|Y$"
+#ADMIN_CAP_VALUE:0 "$MOD_COUNTRY_ADMIN_CAP_ADD$: $VALUE|Y$"($ADMIN_CAP_VALUE_2$)
+#empire_sprawl_over_cap_g:0 "From $NUM|Y$ $empire_sprawl_over_cap$: $VALUE$
+ 
+ BuildingS_total:0 "$MOD_PLANET_MAX_BUILDINGS_ADD$: $VALUE|Y$"
+
+#  #ascension perk
+#  no_rev_engineering:1 "§Y$operation_steal_technology$§! operations will automatically fail when used against us and §YDebris§! from our destroyed ships cannot be studied by other empires.\n\nFurthermore, other empires cannot have bonus §Y$relative_technology$§! by your empire."
+#  #tip balancing by gobbi
+# tr_politics_finish_desc:0 "§G+100%§! £diplo_weight£ Diplomatic Weight\nUnlocks 4 special §YResolutions§! in the Galactic Community.\n$TRADITIONS_FINISH_AP$"
+#  #tr_genetics_efficient_cloning_desc:0 "§Y$building_clone_vats$§! produce an additional §G+1.5§! §Y$MOD_PLANET_POP_ASSEMBLY_ORGANIC_ADD$§! and increment upkeep of §Y$building_clone_vats$§! §R25%§."
+
+#  origin_tooltip_payback_effects:0 "§R- WARNING: Challenging Origin§!\n- Start with 10 fewer £pop£ Pops than normal.\n- Begins with several important technologies yet to be researched and with an infrastructural disadvantage.\n- A special §HArchaeological Site§! in your system: the destroyed battleship of your former invaders.\n- This origin will guarantee a number of pre-FTL civilizations throughout the galaxy, regardless of the §H$FE_PRIMITIVE_WORLDS$§! slider setting.\n- A random pre-FTL civilization will be uplifted to have the §H$origin_broken_shackles$§! origin.\n- An §HAdvanced Empire§! with the §H$origin_slavers$§! origin is spawned somewhere in the galaxy.\n\nStart with the policy set and unlocked to Full Scale Mobilization."
+#  origin_imperial_vassal_desc:1 "Our first endeavor beyond our home planet was a painful one, suddenly and brutally subjected to the whims of a foreign galactic power. Now we look towards a future in which we no longer live in the shadow of another empire.\n\nIf you are a vassal or a tributary, you do not cost any influence to the overlord."
+
+# EDICT_DESC:8 "\n§E§HEmpire Edicts§! are divided into edicts and campaigns, and their cost is based on the empire-wide modifiers or, in the case of campaign for the military fleet, on the size of the fleet.\nCan be activated or deactivated by spending resources such as §H$unity$§! (£unity£).§!"
+
+#  civic_tooltip_machine_servitor_effects:12 "Start the game with §Y5§! organic £pop£ Pops with £job_bio_trophy£ §Y$citizenship_organic_trophy$§! citizenship and §Y$living_standard_organic_trophy$§! living standard\nCan construct £building£ §Y$building_organic_sanctuary$§! Buildings that allow Bio-Trophies to produce £unity£ §YUnity§! and £society_research£ §YSociety research§! instead of regular Machine Empire buildings such as the £building£ §Y$building_uplink_node$§!\n\nGrants access to the £building£ §Y$holding_organic_sanctuary$§! Holding"
+
+# tr_synchronicity_machine_finish_desc:3 "§HUnlocks Edict:§! $edict_industrial_maintenance$.\n$MOD_PLANETARY_ASCENSION_EFFECT_MULT$: §G+25%§!\nAscension Perks Unlocked: §G+1§!\nAutomatic Resettlement Chance: §G+30%§!"
+
+# EMPIRE_SIZE_TOTAL_2:0 "$VALUE|0Y$"
+#  empire_sprawl_over_cap:1 "$VALUE|$"
+#  #EMPIRE_SIZE_EFFECTS:5 "At our current §Y$EMPIRE_SIZE$§! of [This.empire_sprawl_over_cap] $empire_sprawl_over_cap$, we have the following modifiers:"
+#  EMPIRE_SIZE_NO_EFFECTS:4 "While §Y$EMPIRE_SIZE$§! is at or below §Y100§! + §YAdministration Capacity§!, no other costs are being modified." #actually you are in [Root.owner.empire_sprawl_over_cap] $empire_sprawl_over_cap$
+ 
+#  OUR_CLAIMS_ON_ENEMY:1 " " #fix problem that ssend you can gt claim when not true.
+#  ALLY_CLAIMS_ON_ENEMY:1 " "
+
+# war_goal_wg_conquest_desc:1 "War is waged to seize Claimed enemy systems. Using this wargoal to take claims generates §Y25%§! less §YThreat§! for each conquered system.\n$OUR_CLAIMS_ON_ENEMYS$\n$ALLY_CLAIMS_ON_ENEMYS$"
+
+# origin_tooltip_imperial_vassal_effects:1 "§G- WARNING: Easy Origin for new players.§!\n- Start as the vassal of an §HAdvanced AI Empire§!.\n- Gain the option to choose a §HSpecialist Empire§! vassal type at the start of the game."
+
+#  void_dweller_trait_tooltip:0 "Pop Happiness on Non-Artificial Worlds: §R-30%§!\n§GHas special and powerfull buildings and modules for starbase§!"
+
+#  sm_curator_think_tank:0 "Curator Think Tank"
+#  sm_curator_think_tank_desc:0 "By constructing a research facility entirely focused on learning from, and cooperating with, the Curators, we are able to make significant contributions to our scientific progress.\n"
+#  sm_art_college:0 "Art College"
+#  sm_art_college_desc:1 "This zero-g Art College, operated in conjunction with the nearby Artisan Enclave, celebrates the beauty of outer space in the works produced by its talented students.\n"
+# sm_naval_logistics_office_desc_modifier:2 "Anchorages and civil Anchorages: §G+2§! §YNaval Capacity§!"
+
+#  civic_tooltip_criminal_heritage_effects:3 "Can form criminal §YCommercial Pacts§!\nCan build §YBranch Offices§! on the planet of any regular empire they have no war or active truce with\nCrime on §YBranch Office§! Planets increases Branch Office Value\nCan build special Crime-increasing £building£ §Y$BRANCH_OFFICE_BUILDINGS$§!"
+#  tr_supremacy_finish_desc:0 "Unlocks the §YWar Doctrines§! Policies.\nAscension Perks Unlocked: §G+1§!\n§Y$mod_wars_influence_upkeep_mult$§! §G-66%§!."
+# war_goal_wg_humiliation_desc:0 "War is waged to undermine the enemy regime and the populace's faith in their institutions. \n This war Not cost influence upkeep (for both) "
+# war_goal_wg_independence_desc:0 "War is waged to secure independence.\nThis war Not cost influence upkeep ( Only for you) "
+
+#  add_research_options_voidborn:0 "Research options gained after upgrading a Habitat:\n£engineering_research£§Y$tech_habitat_3$§!"
+
+#  wg_expel_corp_status_quo_effects:1 "All Branch Offices owned by the §Y[From.GetName]§! in the §Y[Root.GetName]§! are closed.\n§Y[From.GetName]§! receives £energy£ §Y1000§! for each closed Branch Office."
+#  wg_expel_corp_effects:2 "All Branch Offices owned by the §Y[From.GetName]§! in the §Y[Root.GetName]§! are closed.\n§Y[Root.GetName]§! receives £energy£ §Y1000§! for each closed Branch Office and §Y[From.GetName]§! need pay in 20 months this."
+# resort_colony_empire_effects_phi:0 "$resort_colony_empire_effects$\nCapital building resort give §Yempire size§! §G-10§! and §Ymajor Capital§! §G-20§!"
+# #  resort_colony_empire_effects:0 "Empire size add:-10 Other Empire Colonies:\n   $MOD_PLANET_AMENITIES_MULT$: §G+15%§!\n   $MOD_planet_resettlement_unemployed_destination_mult$: §G+15%§!"
+#  origin_tooltip_clone_army_effects:1 "- Start with 2 £building£ §H$building_clone_army_clone_vat$§! Buildings on your homeworld, producing £pops£ §H$clone_soldier$§! Pops.\n- §HAncient Clone Vats§! have an §HEmpire Limit§! of 2.\n- Clone Army §HAdmirals§! will grant an additional §G25%§! §H$MOD_SHIP_FIRE_RATE_MULT$§! and §G10%§! reduced §HShip Upkeep§!."
+# tr_aptitude_champions_of_the_empire_desc:1 "Per $admiral_with_icon$ and $general_with_icon$ level\n$t$$MOD_COUNTRY_NAVAL_CAP_ADD$: §G+2§!\nPer $governor_with_icon$ level\n$t$$MOD_EMPIRE_SIZE_MULT$: §G-0.7§!\nPer $scientist_with_icon$ level\n$t$$MOD_LEADER_SPECIES_EXP_GAIN$: §G+0.5%§!"
+
+#  civic_tooltip_aristocratic_elite_effects:7 "£building£ §YCapital Buildings§! replace some £job_politician£ §Y$job_politician$§! Jobs with £job_noble£ §Y$job_noble_plural$§!\nCan construct £building£ §Y$building_noble_estates$§! buildings that add additional £job_noble£ §Y$job_noble$§! Jobs\nGrants access to the £building£ §Y$holding_noble_vacation_homes$§!\nHolding £job_noble£ §Y$job_noble$§! Jobs produces additional 1 £society_research£ and §Greduce§! upkeep of £consumer_goods£ of 1"
+
+
+# tr_genetics_finish_modifier_desc:0 "$SPECIES_TRAIT_PICKS$: §G+1§!\n$species_trait_points_add$: $POINTS|0=+$\n$TRADITIONS_FINISH_AP$"
+# tr_genetics_finish_extra_traits_modifier_desc:0 "$SPECIES_TRAIT_PICKS$: §G+1§!\n$species_trait_points_add$: $POINTS|0=+$\nAllows research of rare §YTransgenesis§! technologies.\n$TRADITIONS_FINISH_AP$"
+
+# tr_domination_federations_finish_desc:0 "$mod_campaigns_upkeep_mult$ §G-10%§!\n$MOD_EMPIRE_SIZE_POPS_MULT$ §G-10%§!\nGrants access to the §Y$hegemony_federation$§! Federation type.\nAscension Perks Unlocked: §G+1§!"
+
+#  DISRUPTOR_1_DESC:1 "Disruptors fire high-energy bolts that weaken and destroy the molecular bonds that hold the target's constituent atoms together.\nship shield regen add §G0.5§!\nOrbital bombardament damage §G10%§!"
+#  DISRUPTOR_2_DESC:0 "These upgraded disruptors fire bolts of more destructive ion particles at targets, without sacrificing the firing rate of their predecessors.\nship shield regen add §G0.85§!\nOrbital bombardament damage §G20%§!"
+#  DISRUPTOR_3_DESC:0 "Extremely high-yield disruptors that fire quantum energy charges causing incredible damage to those unfortunate enough to get in their way.\nship shield regen add §G1.25§!\n\nOrbital bombardament damage §G30%§!"
+
+# ap_voidborn_habitat_phi_effect:0 "$ap_voidborn_habitat_effect$\n\nAfter Research §Y$tech_habitat_3$§! you will can upgrade 3 times habitat instead 1\n\n§YUnlock§! new §Gpowerfull§! Starbase buildings and module with cost influence, that can add 1 work job at planet in system in base at starbase building type"
+
+#  origin_tooltip_void_dwellers_effects:9 "- $HOMEWORLD$ ['concept_pc_habitat']$NEW_LINE$- $SPECIES_TRAITS$$TABBED_NEW_LINE$- ['concept_void_dweller', $trait_void_dweller_1$]$TABBED_NEW_LINE$- ['concept_habitat_preference', $trait_pc_habitat_preference$]$NEW_LINE$- $ADDITONAL_TECHNOLOGIES_STRING$ ['concept_habitat_1', £engineering_research£ $tech_habitat_1$]$NEW_LINE$- $GUARANTEED_RESEARCH_OPTION_STRING$ ['concept_habitat_2', £engineering_research£ $tech_habitat_2$]$NEW_LINE$- ['concept_guaranteed_colonies']: Resource-rich systems instead of Colonizable Planets $NEW_LINE$- $ap_voidborn_habitat_effect$"
+
+# tr_expansion_finish_void_tooltip: "Habitat build and upgrade cost: §G-15%§!\n$MOD_PLANET_MAX_DISTRICTS_ADD$ on Habitats: §G+1§!\nAscension Perks Unlocked: §G+1§!"
+
+# triggered_opinion_diplo_stance_supremacy:0 "Have conscription or full mobilization"
+# triggered_opinion_diplo_stance_fullmobilization_near:0 "You are nearly full mobilization and we no."
+
+# minor_orbital_effect: "$orbital_effect$\n\n$tt$- §G+0.5§! £housing£ is distribuite for every habitat in the system"
+# major_orbital_effect: "£mod_planet_max_districts_add£ Max District Slots: §G+0.50§!\n -$t$- $orbital_effect$\n$tt$- §G+1§! £housing£ is distribuite for every habitat in the system"
+
+# triggered_opinion_diplo_stance_disarmament:0 "Have full disarmament"
+ap_archaeoengineers_tooltip:0 "Unlocks additional effects for §YAncient§! ship components and buildings.\ndouble chance for tech archeoengineers."
+eager_explorers_base_effect:1 "§RStart at a technological and infrastructural disadvantage, and with 8 fewer £pops£ Pops than normal!§!\nStart with 2 §H$explorer_vessel_plural$§! and an §H$engineer_vessel$§! equipped with §HSubspace Drives§!, making them incapable of Hyperlane travel but granting limited Jump Drive abilities."
+archaeo_overcharger_desc:0 "Starbase Modifier:\nShield Hit Point: +500, §G+33%§!\nShield Hardening: §G+33%§!\nDefense Platform Modifier:\nShield Hit Points: §G+25%§!\nShield Hardening: §G+25%§!"
+ improved_archaeo_overcharger_desc:0 "Starbase Modifier:\nShield Hit Point: +830, §G+66%§!\nShield Hardening: §G+66%§!\nDefense Platform Modifier:\nShield Hit Points: §G+25%§!\nShield Hardening: §G+25%§!"
+#origin_legendary_leader_imperial:0 "Imperial $origin_legendary_leader$"
+ #council_agenda_agenda_impenetrable_border_desc:0 "\n"Attrition for enemy: §G+3%§!\nWe will prepare for the worst and be ready, should our territory ever be threatened."
+ #council_agenda_agenda_impenetrable_border_effect:1 "Attrition for enemy: §G+10%§!\nIncreased chance of Starbase research options."
+leader_trait_repair_crew_effect:0 "$SYSTEM_EFFECTS_TXT$:\n$t$Friendly Ships in System:\n$tt$Monthly Hull Points Repaired: §G+1%§!"
+#  ethic_fanatic_spiritualist_desc:0 "§YMinimal Army§! and §YDisarmament§! grants §Ypriest§! instead §Yclerks§!\n\n§LOur science has proved that Consciousness begets reality. We regard with patience the childlike efforts of those who delude themselves it is the other way around, as they play with their blocks of "hard matter."§!\n"
+#  ethic_fanatic_militarist_desc:1 "Grant §G2§! usefull §YAscension§! that can unlock\n\n§LThe ability to project force is of paramount importance. The only way to preserve our way of life is to make sure everyone shares it; willingly or not...§!\n"
+#  ethic_militarist_desc:1 "Grant §G2§! usefull §YAscension§! that can unlock\n\n§LThe only true virtues are courage and discipline, and channeled properly they can overcome any obstacle. Therein lies true strength; force withheld, a promise made.§!\n"
+ap_grasp_the_void_tech_effect:0 "§Y$sm_anchorage$§!: §G+1§! §YNaval capacity§! in anchorage\n§YFTL travel technologies§! now appear at §Y1.5§! times the normal rate."
+phi_ap_shared_destiny_tooltip: "Your §YSubjects§! do not suffer $r_loyalty$ penalties from you having multiple Subjects.\nEnables an edict that shifts vassals' ethos towards us.\nAdd §G+4§! envoys."
+ civic_feudal_realm_desc:0 "This society is organized in a feudal manner, with a monarch whose rule relies on powerful vassals that govern their territories with considerable autonomy.\nYour §YSubjects§! do not suffer $r_loyalty$ penalties from you having multiple Subjects.\nEnables an councilior agenda that shifts vassals' ethos towards us.\nAdd §G+4§! envoys."

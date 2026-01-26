@@ -1,0 +1,194 @@
+namespace = naval_attrition
+#get by mp and modificate
+#On fleet passing through a wormhole
+# root = Fleet
+# From = System
+
+#On fleet entering a non-owned system
+# root = Fleet
+# From = System
+fleet_event = {
+	id = naval_attrition.1
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		from = {
+			exists = space_owner
+			space_owner = { is_at_war_with = root.owner }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { always = no } #test
+				set_variable = {
+ 					which = sfgdebugvalue
+ 					value = value:CalcMinimumHP|MULTATT|1|
+ 				}
+				set_variable = {
+ 					which = sfgdebugvalue2
+ 					value = value:CalcDAMAGAATTRITION|MAXDAMAGAATTRITION|10|MULTATT|1|
+ 				}
+				fleet_event = { id = naval_attrition.2 }
+			}
+			if = {
+				limit = {
+					owner = { has_policy_flag = military_logistics_policy_high }
+				}
+				inline_script = {
+					script = events/naval_attrition
+					MINIMUMHP =  value:CalcMinimumHP|MULTATT|1.25|
+					DAMAGAATTRITION = value:CalcDAMAGAATTRITION|MAXDAMAGAATTRITION|10|MULTATT|0.75|
+				}
+			}
+			else = {
+				inline_script = {
+					script = events/naval_attrition
+					MINIMUMHP =  value:CalcMinimumHP|MULTATT|1|
+					DAMAGAATTRITION = value:CalcDAMAGAATTRITION|MAXDAMAGAATTRITION|10|MULTATT|1|
+				}
+			}
+			
+			# if = {
+			# 	limit = {
+			# 		root.owner = { used_naval_capacity_percent >= 1 }
+			# 	}
+			# 	every_owned_ship = {
+			# 		if = {
+			# 			limit = {
+			# 				has_hp_percentage > 0.51
+			# 			}
+			# 			reduce_hp_percent = 10
+			# 		}
+			# 	}
+			# }else_if = {
+			# 	limit = {
+			# 		root.owner = { used_naval_capacity_percent >= 0.9 }
+			# 	}
+			# 	every_owned_ship = {
+			# 		if = {
+			# 			limit = {
+			# 				has_hp_percentage > 0.61
+			# 			}
+			# 			reduce_hp_percent = 10
+			# 		}
+			# 	}
+			# }else_if = {
+			# 	limit = {
+			# 		root.owner = { used_naval_capacity_percent >= 0.75 }
+			# 	}
+			# 	every_owned_ship = {
+			# 		if = {
+			# 			limit = {
+			# 				has_hp_percentage > 0.71
+			# 			}
+			# 			reduce_hp_percent = 8
+			# 		}
+			# 	}
+			# }else_if = {
+			# 	limit = {
+			# 		root.owner = { used_naval_capacity_percent >= 0.5 }
+			# 	}
+			# 	every_owned_ship = {
+			# 		if = {
+			# 			limit = {
+			# 				has_hp_percentage > 0.81
+			# 			}
+						
+			# 			reduce_hp_percent = 5
+			# 		}
+			# 	}
+			# }
+			# else_if = {
+			# 	limit = {
+			# 		root.owner = { used_naval_capacity_percent >= 0.25 }
+			# 	}
+			# 	every_owned_ship = {
+			# 		if = {
+			# 			limit = {
+			# 				has_hp_percentage > 0.88
+			# 			}
+			# 			reduce_hp_percent = 3
+			# 		}
+			# 	}
+			# }
+			# else = {
+			# 	every_owned_ship = {
+			# 		if = {
+			# 			limit = {
+			# 				has_hp_percentage > 0.95
+			# 			}
+			# 			reduce_hp_percent = 2
+			# 		}
+			# 	}
+			# }
+		}
+	}
+}
+#test
+fleet_event = {
+	id = naval_attrition.2
+	hide_window = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		from = {
+			exists = space_owner
+			space_owner = { is_at_war_with = root.owner }
+		}
+	}
+				
+	inline_script = {
+		script = events/settable_event
+		TITLE = sfgdebugtext
+		DESC = "sfgdebugtext2" 
+		PICTURE = GFX_evt_star_chart
+		LOCATION = ROOT
+	}
+}
+
+#rule that damages planets as long as they are occupied, monthly based
+#also increases owner's war exhaustion
+country_event = {
+	#TODO
+	#Change, that fire yearly(with more damage) and give bonus resource
+	id = naval_attrition.9
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_at_war = yes
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = { is_occupied_flag = yes }
+			if = {
+				limit = { planet_devastation <= 60 }
+					add_planet_devastation = 3
+			}
+			owner = {
+				if = {
+					limit = { is_war_leader = yes }
+					add_static_war_exhaustion = {
+						attacker = prev.controller
+						location = prev
+						value_for_planet_destruction = 0.02
+					}
+				}
+				else = {
+					add_static_war_exhaustion = {
+						attacker = prev.controller
+						location = prev
+						value_for_planet_destruction = 0.01
+					}
+				}
+			}
+		}
+	}
+}

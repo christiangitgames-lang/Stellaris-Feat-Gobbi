@@ -1,0 +1,6 @@
+planet_researchers_physics_research_produces_add = 1
+planet_researchers_engineering_research_produces_add = 1
+#planet_researchers_phi_physics_research_produces_add = 1
+#planet_researchers_phi_engineering_research_produces_add = 1
+planet_researchers_energy_upkeep_add = 2
+#planet_researchers_phi_energy_upkeep_add = 2

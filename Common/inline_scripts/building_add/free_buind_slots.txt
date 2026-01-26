@@ -1,0 +1,4 @@
+modifier = {
+	factor = 0
+	free_building_slots <= 0
+}

@@ -1,0 +1,98 @@
+@ship_0 = 250
+@ship_1 = 500   #200 V
+@ship_2 = 1500
+@ship_3 = 3000
+@ship_4 = 4500
+@ship_5 = 15000
+@ship_6 = 25000
+@ship_7 = 60000
+@ship_8 = 120000
+@ship_9 = 180000
+@ship_4_X2 = 9000
+
+#fast convert hitpoint hp *?
+@ship_10 = 30
+@hpship_100 = 250
+@hpship_200 = 500
+@hpship_300 = 750
+@hpship_400 = 1000
+@hpship_500 = 1250
+@hpship_600 = 1500
+@hpship_700 = 1750
+@hpship_800 = 2000
+@hpship_900 = 2250
+@hpship_1000 = 2500
+@hpship_1100 = 2750
+@hpship_1500 = 3750
+@hpship_2000 = 5000
+@hpship_2500 = 6250
+@hpship_3000 = 7500
+@hpship_3500 = 8750
+@hpship_4000 = 10000
+@hpship_4500 = 11250
+@hpship_5000 = 12500
+@hpship_5500 = 13750
+@hpship_6000 = 15000
+@hpship_6500 = 16250
+@hpship_7000 = 17500
+@hpship_7500 = 18750
+@hpship_8000 = 20000
+@hpship_8500 = 21250
+@hpship_9000 = 22500
+@hpship_9500 = 23750
+@hpship_10000 = 25000
+
+@hpship_12000 = 30000
+@hpship_12500 = 31250
+@hpship_15000 = 37500
+@hpship_25000 = 62500
+@hpship_30000 = 75000
+@hpship_40000 = 100000
+@hpship_50000 = 125000
+@hpship_125000 = 312500
+@hpship_150000 = 375000
+@hpship_1000000 = 2500000
+@hpship_2000000 = 5000000
+
+#@robotic_maintenance_alloys = 0.25
+#regen
+@regen_hull_lv1 = 1
+@regen_armor_lv1 = 2
+@regen_hull_lv2 = 3
+@regen_armor_lv2 = 6
+@regen_hull_lv3 = 6
+@regen_armor_lv3 = 12
+@regen_hull_lv4 = 12
+@regen_armor_lv4 = 24
+
+@regen_mult_lv1 = 0.01
+@regen_mult_lv2 = 0.02   #civic_tooltip_devouring_swarm_effects
+@regen_mult_lv3 = 0.04   #defense_platform_modifier #triggered_fleet_modifier
+@regen_mult_lv4 = 0.06   #behemoth
+@regen_mult_lvmax = 0.10 #SHIP_AURA_BATTLEFIELD_REPAIRS WARNING oltre le navi diventano virtualmente invincibili
+
+@regen_mult_lv_self = 0.25 #station_self_repair il self che si attiva out of combat per le stazioni in teoria è 0.1 ma io lo aumentato per il riparazioni OUT_OF_COMBAT_HULL_REGEN_MULT passato da 5 a 1.
+@orbit_mult_repair = 0.2 #shiporbitrepair
+
+#fast
+@regen_mult_0p0025 = 0.001
+@regen_mult_0p005 = 0.002
+@regen_mult_0p01 = 0.004
+@regen_mult_0p02 = 0.008
+@regen_mult_0p03 = 0.012
+@regen_mult_0p04 = 0.016
+@regen_mult_0p05 = 0.020
+@regen_mult_0p10 = 0.040
+@regen_mult_0p15 = 0.060
+@regen_mult_0p20 = 0.080
+@regen_mult_0p25 = 0.100
+
+#technology
+@TechMediumPriority = 2
+@TechHighPriority = 4
+@TechVeryhighPriority = 8
+@TechHugePriority = 1000
+
+
+@fighter_logistic_upkeep_trade = 0.05
+@fighters_logistic_upkeep_trade = 0.1

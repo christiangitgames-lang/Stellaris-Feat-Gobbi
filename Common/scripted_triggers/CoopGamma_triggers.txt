@@ -1,0 +1,69 @@
+crisis_run_optimized = {
+	has_global_flag = crisis_run_flag
+}
+can_have_remote_system = {
+	NAND = {
+		is_at_war = no
+		crisis_run_optimized = no
+		#is_wilderness_empire = no
+		NOR = { 
+			has_technology = tech_subspace_drive
+			has_technology = tech_jump_drive_1
+			has_technology = tech_psi_jump_drive_1
+			is_eager_explorer_empire = yes
+		}
+	}
+}
+
+
+is_diplo_belligerent = {
+	OR = {
+		has_policy_flag = diplo_stance_belligerent
+	}
+}
+is_diplo_supremacist = {
+	OR = {
+		has_policy_flag = diplo_stance_supremacist
+	}
+}
+is_diplo_animosity = {
+	OR = {
+		has_policy_flag = diplo_stance_animosity
+	}
+}
+is_diplo_cooperative = {
+	OR = {
+		has_policy_flag = diplo_stance_cooperative
+	}
+}
+is_diplo_isolationist = {
+	OR = {
+		has_policy_flag = diplo_stance_isolationist
+	}
+}
+is_diplo_expansionist = {
+	OR = {
+		has_policy_flag = diplo_stance_expansionist
+	}
+}
+is_diplo_mercantile = {
+	has_policy_flag = diplo_stance_mercantile
+}
+is_diplo_total_war = {
+	OR = {
+		has_policy_flag = diplo_stance_hunger
+		has_policy_flag = diplo_stance_extermination
+		has_policy_flag = diplo_stance_purification
+	}
+}
+has_soldiers_job = {
+	any_owned_pop_group = {
+		limit = {
+				has_job = soldier 
+				has_job = warrior_drone
+		}
+	}
+}
+was_human = {
+	has_country_flag = was_human
+}

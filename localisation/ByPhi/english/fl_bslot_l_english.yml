@@ -1,0 +1,37 @@
+﻿# Show Building Slot Capacity 
+l_english:
+  fl_num_building_long: "§S$planet_buildings$§!\n$MACHINE1_FLEET_Limit$: $fl_building_capacity_color$\n$VALUE_MAXIMUM$: $@MAX_PLANET_BUILDING_SLOTS|0B$\n$building_constructed$: §W[This.fl_building_built_dyn]§![This.fl_building_constructing_dyn]\n$OUTLINER_PLANET_CONSTRUCTION_AVAILABLE$: [This.fl_building_free]\n$SEPARATOR$\n§S$MOD_PLANET_MAX_BUILDINGS_ADD$§!\n$CAPITAL$: 1 $PLUS$ [This.fl_building_from_capital][This.fl_bslot_from_housing_ai_dyn][This.fl_bslot_from_tech_ai_dyn][This.fl_bslot_from_cta_ai_dyn][This.fl_bslot_from_holding_ai_dyn][This.fl_bslot_from_demesne_ai_dyn][This.fl_bslot_from_origin_ai_dyn][This.fl_bslot_from_pc_ai_dyn][This.fl_bslot_deposit_dyn][This.fl_bslot_from_edicts_ai_dyn][This.fl_mining_district_mining_uncapped_dyn]$fl_blost_from_habitat_module$"
+  
+  fl_num_building_long_static: "DEBUG\n[This.fl_scope_is_planet]\n  This: [This.GetName]\n  Owner: [Owner.GetName]\n\n§Y$planet_buildings$§!\n$MACHINE1_FLEET_Limit$: $fl_building_capacity_color$\n$VALUE_MAXIMUM$: $@MAX_PLANET_BUILDING_SLOTS|0B$\n$building_constructed$: §W[This.fl_building_built_dyn]§!$fl_building_constructing$\n$OUTLINER_PLANET_CONSTRUCTION_AVAILABLE$: [This.fl_building_free]\n$SEPARATOR$\n§Y$MOD_PLANET_MAX_BUILDINGS_ADD$§!\n$CAPITAL$: 1 $PLUS$ [This.fl_building_from_capital]$fl_bslot_from_housing$$fl_bslot_from_tech$$fl_bslot_from_cta$$fl_bslot_from_holding$$fl_bslot_from_demesne$$fl_bslot_from_origin$$fl_bslot_from_pc$$fl_bslot_deposit_good$$fl_bslot_from_edicts$$fl_bslot_modifier$$fl_bslot_mining_district_mining_uncapped$$fl_bslot_from_deposits$$fl_blost_from_habitat_module$"
+ 
+  fl_button_text: "§Y[This.fl_bslot_free_dyn]§!"
+  fl_building_capacity_color: "§Y[This.fl_building_capacity]§!"
+  fl_building_capacity: "[This.fl_building_capacity]"
+
+  #fl_mining_district_mining_uncapped: "[This.fl_mining_district_mining_uncapped]"
+  fl_building_constructing: "\n$DISTRICT_UNDER_CONSTRUCTION$[This.fl_building_constructing]"
+  fl_building_surplus_blue: "§B[This.fl_building_surplus]§!"
+  fl_building_free_good: "§G[This.fl_building_free]§!"
+  fl_building_free_zero: "§W[This.fl_building_free]§!"
+  fl_building_free_bad: "§R[This.fl_building_free]§!"
+  fl_bslot_deposit_good: "\n$DEPOSITS_TITLE$: §W[This.fl_building_from_deposits]§!"
+  fl_bslot_deposit_bad: "\n$DEPOSITS_TITLE$: §R[This.fl_building_from_deposits]§!"
+  fl_bslot_from_tech: "\n$TECHNOLOGY$: [This.fl_building_from_tech]"
+  fl_bslot_from_cta: "\n$GOVERNMENT_CIVICS$/$TRADITIONS$/$ASCENSION_PERKS$: [This.fl_building_from_civic_trad_ap]"
+  fl_bslot_from_holding: "\n$HOLDINGS$+$sm_orbital_ring_habitation$: [This.fl_building_from_orbital_module]"
+  fl_bslot_from_demesne: "\n$d_dimensional_manipulation_device$: [This.fl_building_from_demesne]"
+  #fl_bslot_from_origin: "\n$ORIGIN$: [This.fl_building_from_origin_ai]"
+  fl_bslot_from_pc: "\n$PLANETVIEW_PLANET_CLASS$: [This.fl_building_from_pc]"
+  fl_bslot_from_housing: "\n $DISTRICTS$: [This.fl_building_from_housing]"
+  #fl_bslot_from_edicts: "\n$EDICTS$: [This.fl_building_from_edicts]"
+  fl_scope_planet: "£trigger_yes£ Scope is $PLANET$"
+  fl_scope_not_planet: "£trigger_no£ Scope is NOT $PLANET$"
+#fl_building_from_civic_trad_ap
+  fl_bslot_from_deposits: "\nDeposits: [This.fl_building_from_deposits]"
+  fl_blost_from_habitat_module: "\nHabitat module: §Y[This.fl_from_habitat_module_ai"
+  fl_bslot_from_assembly: "\n$building_robotics_assembly_plant$: [this.fl_building_from_assembly_plant]"
+  fl_bslot_mining_district_mining_uncapped: "\nDistrict uncapped: [This.fl_mining_district_mining_uncapped]"
+  fl_bslot_mining_district_mining_uncapped_good: "\nDistrict uncapped: §W[This.fl_mining_district_mining_uncapped]§!"
+  fl_bslot_mining_district_mining_uncapped_bad: "\n$District uncapped$: §R[This.fl_mining_district_mining_uncapped]§!"
+  #fl_bslot_modifier:"\n paradisiacal_habitat: $Y[This.bslot_modifier]$"
+  fl_bslot_from_cta_ai: "fl_bslot_mining_district_mining_uncapped"

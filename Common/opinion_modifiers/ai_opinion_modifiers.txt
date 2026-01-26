@@ -1,0 +1,30 @@
+#from is other empire
+#this is I #test
+triggered_opinion_overheilm_tech_pathetic_fleet = {
+	trigger = {
+		is_country_type = default
+		is_ai = yes
+		was_human = no
+		FROM = {
+			is_ai = no
+			is_country_type = default
+			prev = {
+				relative_power = {
+					who = FROM
+					category = fleet
+					value = pathetic
+				}
+				relative_power = {
+					who = FROM
+					category = technology
+					value > superior
+				}
+			}
+			
+		}
+	}
+
+	opinion = {
+		base = -200
+	}
+}

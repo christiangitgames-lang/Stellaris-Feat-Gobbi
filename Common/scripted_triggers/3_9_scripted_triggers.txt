@@ -1,0 +1,7 @@
+is_void_born = {
+	OR = {
+		has_origin = origin_void_dwellers
+		has_ascension_perk = ap_voidborn
+		has_origin = origin_void_machines
+	}
+}

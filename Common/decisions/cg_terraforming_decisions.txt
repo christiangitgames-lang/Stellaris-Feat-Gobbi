@@ -1,0 +1,1521 @@
+### STARTING POLLUTION ###
+@enacttime = 900
+@longenacttime = 1800
+decision_phi_pm_atmospheric_pollution = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = 360
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 500
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_atmospheric_pollution
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_terrestrial_sculpting
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_atmospheric_pollution
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+#########################################################################
+# PHI Terraforming Decisions
+##########################################################################
+
+### TRANSFER THE MEMOREX ###
+
+decision_phi_memorex_transfer = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = 30
+
+	resources = {
+		category = decisions
+		cost = {
+			minor_artifacts = 25
+			energy = 2000
+		}
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			any_owned_planet = {
+				has_modifier = the_memorex
+			}
+		}
+	}
+
+	allow = {
+		NOT = { has_modifier = the_memorex }
+	}
+
+	effect = {
+		owner = {
+			every_owned_planet = {
+				limit = { has_modifier = the_memorex }
+				remove_modifier = the_memorex
+			}
+		}
+		add_modifier = {
+			modifier = the_memorex
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+
+### ALPINE ###
+
+decision_phi_mantle_frozen_gas_pockets_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_mantle_frozen_gas_pockets_3
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_terrestrial_sculpting
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_mantle_frozen_gas_pockets_3
+		remove_deposit = d_phi_exotic_gas_1
+		add_deposit = d_phi_exotic_gas_5
+		add_modifier = {
+			modifier = phi_pm_mantle_frozen_gas_pockets_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_mantle_frozen_gas_pockets_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 4000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_mantle_frozen_gas_pockets_2
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_ecological_adaptation
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_mantle_frozen_gas_pockets_2
+		remove_deposit = d_phi_exotic_gas_5
+		add_deposit = d_phi_exotic_gas_10
+		add_modifier = {
+			modifier = phi_pm_mantle_frozen_gas_pockets_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+### ARCTIC ###
+
+decision_phi_polar_supercells_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_polar_supercells_3
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_terrestrial_sculpting
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_polar_supercells_3
+		add_modifier = {
+			modifier = phi_pm_polar_supercells_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_polar_supercells_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 4000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_polar_supercells_2
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_ecological_adaptation
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_polar_supercells_2
+		add_modifier = {
+			modifier = phi_pm_polar_supercells_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+### TUNDRA ###
+
+decision_phi_perennial_fog_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_perennial_fog_3
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_terrestrial_sculpting
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_perennial_fog_3
+		add_modifier = {
+			modifier = phi_pm_perennial_fog_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_perennial_fog_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 4000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_perennial_fog_2
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_ecological_adaptation
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_perennial_fog_2
+		add_modifier = {
+			modifier = phi_pm_perennial_fog_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+### CONTINENTAL ###
+
+decision_phi_tectonic_fractures_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_tectonic_fractures_3
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_terrestrial_sculpting
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_tectonic_fractures_3
+		remove_deposit = d_phi_rare_crystals_1
+		add_deposit = d_phi_rare_crystals_5
+		add_modifier = {
+			modifier = phi_pm_tectonic_fractures_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_tectonic_fractures_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 4000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_tectonic_fractures_2
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_ecological_adaptation
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_tectonic_fractures_2
+		remove_deposit = d_phi_rare_crystals_5
+		add_deposit = d_phi_rare_crystals_10
+		add_modifier = {
+			modifier = phi_pm_tectonic_fractures_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+### OCEAN ###
+
+decision_phi_ocean_vortexes_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_ocean_vortexes_3
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_terrestrial_sculpting
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_ocean_vortexes_3
+		add_modifier = {
+			modifier = phi_pm_ocean_vortexes_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_ocean_vortexes_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 4000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_ocean_vortexes_2
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_ecological_adaptation
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_ocean_vortexes_2
+		add_modifier = {
+			modifier = phi_pm_ocean_vortexes_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+### TROPICAL ###
+
+decision_phi_bacterial_pathogen_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_bacterial_pathogen_3
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_terrestrial_sculpting
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_bacterial_pathogen_3
+		add_modifier = {
+			modifier = phi_pm_bacterial_pathogen_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_bacterial_pathogen_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 4000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_bacterial_pathogen_2
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_ecological_adaptation
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_bacterial_pathogen_2
+		add_modifier = {
+			modifier = phi_pm_bacterial_pathogen_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+### ARID ###
+
+decision_phi_sudden_rainfalls_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_sudden_rainfalls_3
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_terrestrial_sculpting
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_sudden_rainfalls_3
+		add_modifier = {
+			modifier = phi_pm_sudden_rainfalls_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_sudden_rainfalls_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 4000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_sudden_rainfalls_2
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_ecological_adaptation
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_sudden_rainfalls_2
+		add_modifier = {
+			modifier = phi_pm_sudden_rainfalls_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+### DESERT ###
+
+decision_phi_dust_storms_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_dust_storms_3
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_terrestrial_sculpting
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_dust_storms_3
+		remove_deposit = d_phi_volatile_motes_1
+		add_deposit = d_phi_volatile_motes_5
+		add_modifier = {
+			modifier = phi_pm_dust_storms_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_dust_storms_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 4000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_dust_storms_2
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_ecological_adaptation
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_dust_storms_2
+		remove_deposit = d_phi_volatile_motes_5
+		add_deposit = d_phi_volatile_motes_10
+		add_modifier = {
+			modifier = phi_pm_dust_storms_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+### SAVANNAH ###
+
+decision_phi_bush_wildfires_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_bush_wildfires_3
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_terrestrial_sculpting
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_bush_wildfires_3
+		add_modifier = {
+			modifier = phi_pm_bush_wildfires_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_bush_wildfires_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 4000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_bush_wildfires_2
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_ecological_adaptation
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_bush_wildfires_2
+		add_modifier = {
+			modifier = phi_pm_bush_wildfires_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+### TELEPORTERS ###
+
+decision_phi_planet_teleporters_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_gateway_activation
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			minor_artifacts = 25
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_planet_teleporters_3
+	}
+
+	allow = {
+		always = yes
+	}
+
+	effect = {
+		remove_modifier = phi_pm_planet_teleporters_3
+		add_modifier = {
+			modifier = phi_pm_planet_teleporters_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_planet_teleporters_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_gateway_activation
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			minor_artifacts = 25
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_planet_teleporters_2
+	}
+
+	allow = {
+		always = yes
+	}
+
+	effect = {
+		remove_modifier = phi_pm_planet_teleporters_2
+		add_modifier = {
+			modifier = phi_pm_planet_teleporters_1
+		}
+		owner = {
+			add_tech_option_or_research_effect = {
+				TECH = tech_gateway_construction
+				PROGRESS = 0.1
+				CATEGORY = physics_research
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_build_planet_teleporters = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_gateway_activation
+
+	enactment_time = @longenacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			trigger = {
+				OR = {
+					is_planet_class = pc_machine
+					is_planet_class = pc_hive
+				}
+			}
+			alloys = 700
+			sr_dark_matter = 25
+		}
+		cost = {
+			trigger = {
+				NOR = {
+					is_planet_class = pc_machine
+					is_planet_class = pc_hive
+				}
+			}
+			energy = 2000
+			sr_dark_matter = 25
+		}
+	}
+	prerequisites = {
+		"tech_gateway_construction"
+	}
+	#155,2: 	show_in_tech = "tech_space_mining_1"
+	potential = {
+		OR = {
+			has_modifier = phi_pm_planet_teleporters_3
+			has_modifier = phi_pm_planet_teleporters_2
+			is_pc_for_teleporter = yes
+		}
+		NOT = { has_modifier = phi_pm_planet_teleporters_1 }
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_gateway_construction
+		}
+	}
+
+	effect = {
+		if = {
+			limit = { has_modifier = phi_pm_planet_teleporters_3 }
+			remove_modifier = phi_pm_planet_teleporters_3
+		}
+		if = {
+			limit = { has_modifier = phi_pm_planet_teleporters_2 }
+			remove_modifier = phi_pm_planet_teleporters_2
+		}
+		add_modifier = {
+			modifier = phi_pm_planet_teleporters_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+### BROADCAST ###
+
+decision_phi_planet_broadcasting_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			minor_artifacts = 25
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_planet_broadcasting_3
+	}
+
+	allow = {
+		always = yes
+	}
+
+	effect = {
+		remove_modifier = phi_pm_planet_broadcasting_3
+		add_modifier = {
+			modifier = phi_pm_planet_broadcasting_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_planet_broadcasting_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			minor_artifacts = 25
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_planet_broadcasting_2
+	}
+
+	allow = {
+		always = yes
+	}
+
+	effect = {
+		remove_modifier = phi_pm_planet_broadcasting_2
+		add_modifier = {
+			modifier = phi_pm_planet_broadcasting_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_build_planet_broadcasting = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @longenacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2500
+			minor_artifacts = 25
+		}
+	}
+
+	potential = {
+		always = no
+		OR = {
+			has_modifier = phi_pm_planet_broadcasting_3
+			has_modifier = phi_pm_planet_broadcasting_2
+			#is_planet_class = pc_city
+			#is_planet_class = pc_gaia
+		}
+		NOT = { has_modifier = phi_pm_planet_broadcasting_1 }
+	}
+	prerequisites = {
+		"tech_collective_self"
+	}
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_collective_self
+		}
+	}
+	show_tech_unlock_if = {
+		always = no
+	}
+	effect = {
+		if = {
+			limit = { has_modifier = phi_pm_planet_broadcasting_3 }
+			remove_modifier = phi_pm_planet_broadcasting_3
+		}
+		if = {
+			limit = { has_modifier = phi_pm_planet_broadcasting_2 }
+			remove_modifier = phi_pm_planet_broadcasting_2
+		}
+		add_modifier = {
+			modifier = phi_pm_planet_broadcasting_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+decision_phi_build_planet_broadcasting_gestalt = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @longenacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2500
+			minor_artifacts = 25
+		}
+	}
+
+	potential = {
+		always = no
+		OR = {
+			has_modifier = phi_pm_planet_broadcasting_3
+			has_modifier = phi_pm_planet_broadcasting_2
+			#is_planet_class = pc_machine
+			#is_planet_class = pc_hive
+			#is_planet_class = pc_gaia
+		}
+		NOT = { has_modifier = phi_pm_planet_broadcasting_1 }
+	}
+	prerequisites = {
+		"tech_autonomous_agents"
+	}
+	show_tech_unlock_if = {
+		always = no
+	}
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_autonomous_agents
+		}
+	}
+
+	effect = {
+		if = {
+			limit = { has_modifier = phi_pm_planet_broadcasting_3 }
+			remove_modifier = phi_pm_planet_broadcasting_3
+		}
+		if = {
+			limit = { has_modifier = phi_pm_planet_broadcasting_2 }
+			remove_modifier = phi_pm_planet_broadcasting_2
+		}
+		add_modifier = {
+			modifier = phi_pm_planet_broadcasting_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+### ACCELERATOR ###
+
+decision_phi_planet_accelerators_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_planet_accelerators
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			minor_artifacts = 25
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_planet_accelerators_3
+	}
+
+	allow = {
+		always = yes
+	}
+
+	effect = {
+		remove_modifier = phi_pm_planet_accelerators_3
+		add_modifier = {
+			modifier = phi_pm_planet_accelerators_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_planet_accelerators_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_planet_accelerators
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			minor_artifacts = 25
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_planet_accelerators_2
+	}
+
+	allow = {
+		always = yes
+	}
+
+	effect = {
+		remove_modifier = phi_pm_planet_accelerators_2
+		add_modifier = {
+			modifier = phi_pm_planet_accelerators_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_build_planet_accelerators = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_planet_accelerators
+
+	enactment_time = @longenacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2500
+			sr_dark_matter = 25
+		}
+	}
+
+	potential = {
+		always = no
+		#owner = { is_gestalt = no } #4.0 tolto perchè pc_hive  forse forti
+		OR = {
+			has_modifier = phi_pm_planet_accelerators_3
+			has_modifier = phi_pm_planet_accelerators_2
+			#is_planet_class = pc_city
+			#is_planet_class = pc_gaia
+		}
+		NOT = { has_modifier = phi_pm_planet_accelerators_1 }
+	}
+	prerequisites = {
+		"tech_physics_3"
+	}
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_physics_3
+		}
+	}
+	show_tech_unlock_if = {
+		always = no
+		owner = { is_gestalt = no }
+	}
+	effect = {
+		if = {
+			limit = { has_modifier = phi_pm_planet_accelerators_3 }
+			remove_modifier = phi_pm_planet_accelerators_3
+		}
+		if = {
+			limit = { has_modifier = phi_pm_planet_accelerators_2 }
+			remove_modifier = phi_pm_planet_accelerators_2
+		}
+		add_modifier = {
+			modifier = phi_pm_planet_accelerators_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+decision_phi_build_planet_accelerators_3 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_planet_accelerators
+
+	enactment_time = @longenacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2000
+			sr_dark_matter = 25
+		}
+	}
+
+	potential = {
+		always = no #4.0 tolto perchè pc_hive  forse forti
+		owner = { is_gestalt = yes }
+		OR = {
+			is_planet_class = pc_hive
+			is_planet_class = pc_machine
+		}
+		NOR = { 
+			has_modifier = phi_pm_planet_accelerators_3
+			has_modifier = phi_pm_planet_accelerators_2
+			has_modifier = phi_pm_planet_accelerators_1
+		}
+	}
+	prerequisites = {
+		"tech_physics_3"
+	}
+	show_tech_unlock_if = {
+		always = no
+		owner = { is_gestalt = yes} 
+	}
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_physics_3
+		}
+	}
+
+	effect = {
+		add_modifier = {
+			modifier = phi_pm_planet_accelerators_3
+		}
+	}
+
+	ai_weight = {
+		weight = 500
+	}
+}
+### TEMPERATE ###
+
+decision_phi_tesla_biome_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_tesla_biome_3
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_terrestrial_sculpting
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_tesla_biome_3
+		add_modifier = {
+			modifier = phi_pm_tesla_biome_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_tesla_biome_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 4000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_tesla_biome_2
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_ecological_adaptation
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_tesla_biome_2
+		add_modifier = {
+			modifier = phi_pm_tesla_biome_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+### COLD ###
+
+decision_phi_electric_ice_shelf_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_electric_ice_shelf_3
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_terrestrial_sculpting
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_electric_ice_shelf_3
+		add_modifier = {
+			modifier = phi_pm_electric_ice_shelf_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_electric_ice_shelf_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 4000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_electric_ice_shelf_2
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_ecological_adaptation
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_electric_ice_shelf_2
+		add_modifier = {
+			modifier = phi_pm_electric_ice_shelf_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+### HOT ###
+
+decision_phi_magnetic_clouds_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_magnetic_clouds_3
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_terrestrial_sculpting
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_magnetic_clouds_3
+		add_modifier = {
+			modifier = phi_pm_magnetic_clouds_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_magnetic_clouds_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 4000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_magnetic_clouds_2
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_ecological_adaptation
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_magnetic_clouds_2
+		add_modifier = {
+			modifier = phi_pm_magnetic_clouds_1
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}

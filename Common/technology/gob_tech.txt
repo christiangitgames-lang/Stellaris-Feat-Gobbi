@@ -1,0 +1,525 @@
+# tech_mega_assembly_Mk2 = {
+# 	cost = @tier4cost2
+# 	area = engineering
+# 	tier = 4
+# 	category = { industry }
+# 	prerequisites = { "tech_mega_assembly" }
+# 	is_rare = yes
+# 	weight = @tier4weight3
+
+# 	potential = {
+# 		is_machine_empire = yes
+# 	}
+
+# 	weight_modifier = {
+# 		factor = 0.5
+# 		modifier = {
+# 			factor = 0.1
+# 			NOT = { years_passed > 25 }
+# 		}
+# 		modifier = {
+# 			factor = @ap_technological_ascendancy_rare_tech
+# 			has_ascension_perk = ap_technological_ascendancy
+# 		}
+# 		modifier = {
+# 			factor = @federation_perk_factor
+# 			has_federation = yes
+# 			federation = {
+# 				has_federation_perk = rare_tech_boost
+# 				any_member = { has_technology = tech_mega_assembly_Mk2 }
+# 			}
+# 		}
+# 	}
+
+# 	ai_weight = {
+# 		factor = @pop_growth_tech_ai_factor
+# 	}
+# }
+#Collective Self
+tech_collective_self_gob = {
+	cost = @tier3cost2
+	area = society
+	tier = 4
+	category = { statecraft }
+	prerequisites = { "tech_collective_self" }
+	weight = @tier3weight3
+
+	modifier = {
+		country_government_civic_points_add = 1
+	}
+
+	potential = {
+		NOT = { has_ethic = ethic_gestalt_consciousness }
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 2
+			pop_amount >= 10000
+		}
+		modifier = {
+			factor = 2
+			pop_amount >= 20000
+		}
+		modifier = {
+			factor = 2
+			pop_amount >= 30000
+		}
+		modifier = {
+			factor = 0.5
+			num_owned_planets < 7
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 8
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 9
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 10
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_ethic = ethic_authoritarian
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}
+
+	}
+
+	ai_weight = {
+		weight = 2000
+	}
+}
+tech_embodied_dynamism_gob = {
+	cost = @tier3cost2
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_embodied_dynamism" }
+	weight = @tier3weight3
+
+	modifier = {
+		country_government_civic_points_add = 1
+	}
+
+	potential = {
+		has_ethic = ethic_gestalt_consciousness
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 2
+			pop_amount >= 10000
+		}
+		modifier = {
+			factor = 2
+			pop_amount >= 20000
+		}
+		modifier = {
+			factor = 2
+			pop_amount >= 30000
+		}
+		modifier = {
+			factor = 0.5
+			num_owned_planets < 7
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 8
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 9
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 10
+		}
+
+	}
+
+	ai_weight = {
+		weight = 2000
+	}
+}
+tech_shield_point_zero = {
+	cost = @tier5cost1
+	area = physics
+	tier = 5
+	is_rare = yes
+	is_dangerous = yes
+	category = { field_manipulation }
+	prerequisites = { "tech_shields_4" }
+	weight = @tier5weight2
+
+	modifier = {
+		ship_shield_mult = 0.33
+	}
+
+	weight_modifier = {
+		factor = 0.5
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_shield_point_zero
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = tech_armor_boost
+		}
+	}
+
+	ai_weight = {
+		factor = @TechHugePriority
+	}
+}
+tech_armor_boost = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	is_rare = yes
+	is_dangerous = yes
+	category = { materials }
+	prerequisites = { "tech_ship_armor_4" }
+	weight = @tier5weight2
+
+	modifier = {
+		ship_armor_mult = 0.33
+	}
+
+	weight_modifier = {
+		factor = 0.5
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_armor_boost
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = tech_shield_point_zero
+		}
+	}
+
+	ai_weight = {
+		factor = @TechHugePriority
+	}
+}
+tech_defense_platform_hull_2 = {
+	cost = @tier3cost2
+	area = engineering
+	tier = 3
+	category = { voidcraft }
+	prerequisites = { "tech_defense_platform_hull_1" }
+	is_rare = yes
+	weight = @tier3weight2
+
+	weight_modifier = {
+		factor = 0.50
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = tech_defense_platform_hull_1 }
+			}
+		}
+
+		modifier = {
+			factor = 1.5
+			has_valid_civic = civic_eager_explorers
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = bulwark }
+		}
+	}
+
+	modifier = {
+		shipsize_military_station_small_hull_mult = 0.33
+	}
+}
+
+tech_archaeo_dimensional_space = {
+	cost = @tier3cost3
+	area = society
+	category = { archaeostudies }
+	tier = 3
+	prerequisites = { "tech_archaeostudies" }
+	is_rare = yes
+	ai_update_type = all
+	weight = @tier4weight3
+
+	potential = {
+		has_ancrel = yes
+	}
+	modifier = {
+		planet_housing_mult = 0.10
+		description = tech_archaeo_dimensional_space_effect
+	}
+	weight_modifier = {
+		factor = 0.50
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 0.1
+			num_buildings = {  
+				type = building_archaeostudies_faculty
+				value < 1 
+				disabled = no
+				in_construction = no 
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				has_ascension_perk = ap_archaeoengineers
+			}
+		}
+		modifier = {
+			factor = 0
+			has_ancrel = no
+		}
+		inline_script = "technology/archaeotech_weight"
+	}
+}
+tech_ship_build_minor_artifacts = {
+	cost = @tier4cost1
+	area = society
+	category = { archaeostudies }
+	tier = 4
+	prerequisites = { "tech_archaeostudies" }
+	is_rare = yes
+	ai_update_type = all
+	weight = @tier4weight3
+
+	modifier = {
+		starbase_shipyard_build_minor_artifacts_cost_mult = -0.1
+	}
+	weight_modifier = {
+		factor = 0.50
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 0.1
+			num_buildings = {  
+				type = building_archaeostudies_faculty
+				value < 1 
+				disabled = no
+				in_construction = no 
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				has_ascension_perk = ap_archaeoengineers
+			}
+		}
+		modifier = {
+			factor = 0
+			has_ancrel = no
+		}
+		inline_script = "technology/archaeotech_weight"
+	}
+}
+tech_repeatable_weapon_archaeotech_weapon_fire_rate = {
+	area = society
+	cost = @repeatableTechBaseCost
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier
+	category = { archaeostudies }
+	ai_update_type = military
+	levels = -1
+	prerequisites = { "tech_ship_build_minor_artifacts" }
+	weight = @repeatableTechWeight
+
+	weight_modifier = {
+		factor = @repatableTechFactor
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 0.1
+			num_buildings = {  
+				type = building_archaeostudies_faculty
+				value < 1 
+				disabled = no
+				in_construction = no 
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				has_ascension_perk = ap_archaeoengineers
+			}
+		}
+		modifier = {
+			factor = 0
+			has_ancrel = no
+		}
+		inline_script = "technology/archaeotech_weight"
+	}
+
+	ai_weight = {
+		factor = 1.0
+		modifier = {
+			factor = 0
+			NOT = {
+				has_ascension_perk = ap_archaeoengineers
+			}
+		}
+	}
+
+	weight_groups = {
+		repeatable
+	}
+	mod_weight_if_group_picked = {
+		repeatable = 0.01
+	}
+
+	modifier = {
+		weapon_archaeotech_weapon_fire_rate_mult = 0.05
+	}
+}
+
+tech_colony_build_speed = {
+	cost = @tier1cost2
+	area = engineering
+	tier = 1
+	category = { voidcraft }
+	prerequisites = { "tech_corvettes" }
+	weight = @tier1weight2
+
+	modifier = {
+		#custom_tooltip = tech_colonizer_build_speed_effect
+		ship_colonizer_cost_mult = -0.25
+		#shipsize_colony_vessel_build_speed_mult = 0.25
+		shipsize_colonizer_build_speed_mult = 0.25
+	}
+
+	weight_modifier = {
+	}
+
+	ai_weight = {
+		factor = @TechMediumPriority
+	}
+}
+tech_colony_build_speed_2 = {
+	cost = @tier2cost2
+	area = engineering
+	tier = 2
+	category = { voidcraft }
+	prerequisites = { "tech_corvettes" }
+	weight = @tier2weight2
+
+	modifier = {
+		#custom_tooltip = tech_colonizer_build_speed_effect
+		ship_colonizer_cost_mult = -0.25
+		#shipsize_colony_vessel_build_speed_mult = 0.25
+		shipsize_colonizer_build_speed_mult = 0.25
+	}
+
+	weight_modifier = {
+	}
+
+	ai_weight = {
+		factor = @TechMediumPriority
+	}
+}
+tech_observer_science_1 = {
+	cost = @tier1cost1
+	area = society
+	tier = 1
+	category = { biology }
+	prerequisites = { "tech_space_construction" }
+	weight = @tier1weight1
+
+	modifier = {
+		station_observers_produces_mult = 0.25
+	}
+
+	weight_modifier = {
+		weight = 1
+		modifier = {
+			factor = 3
+			any_planet_within_border = {
+				has_observation_outpost = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @TechHugePriority
+			any_planet_within_border = {
+				has_observation_outpost = yes
+			}
+		}
+	}
+}
+
+tech_observer_science_2 = {
+	cost = @tier1cost3
+	area = society
+	tier = 1
+	category = { biology }
+	prerequisites = { "tech_observer_science_1" }
+	weight = @tier1weight3
+
+	modifier = {
+		station_observers_produces_mult = 0.25
+	}
+
+	weight_modifier = {
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @TechHugePriority
+			any_planet_within_border = {
+				
+				has_observation_outpost = yes
+			}
+		}
+	}
+}
+
+tech_observer_science_3 = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { biology }
+	prerequisites = { "tech_observer_science_2" "tech_cloaking_1" }
+	weight = @tier2weight1
+
+	modifier = {
+		station_observers_produces_mult = 0.25
+	}
+
+	weight_modifier = {
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @TechHugePriority
+			any_planet_within_border = {
+				
+				has_observation_outpost = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,105 @@
+random_list = {
+	50 = {
+		inline_script = "building_add/foundry" #mi sono stancato di fare script tutti uguali
+		add_modifier = { modifier = phi_rep_ai0 days = 365 }
+	}
+	50 = {
+		inline_script = "building_add/clinic" #mi sono stancato di fare script tutti uguali
+		add_modifier = { modifier = cg_ai0 days = 365 } 
+	}
+	50 = {
+		modifier = {
+			factor = 0
+			owner = { has_monthly_income = { resource = energy value > 20 } }
+			NOR = {
+				has_building = building_energy_grid
+				has_building = building_energy_nexus
+			}
+		}
+		modifier = {
+			factor = 100
+			owner = { has_monthly_income = { resource = energy value < 0 } }
+		}
+		modifier = {
+			factor = 0.1
+			num_free_districts = { type = district_generator value = 0 }
+		}
+		add_building = building_energy_grid
+		add_modifier = { modifier = phi_rep_ai0 days = 365 } 
+	}
+	50 = {
+		modifier = {
+			factor = 0
+			free_building_slots <= 0
+		}
+		modifier = {
+			factor = 0.1
+			owner = {
+				AND = {
+					resource_revenue_compare = {
+						resource = engineering_research
+						value > value:production_science_years_passed
+					}
+					resource_revenue_compare = {
+						resource = physics_research
+						value > value:production_science_years_passed
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			AND = {
+				num_buildings = { type = building_research_lab_1 value > 2 }
+			}
+		}
+		add_building = building_research_lab_1
+		add_modifier = { modifier = phi_rep_ai0 days = 365 } 
+	}
+	# 50 = {
+	# 	modifier = {
+	# 		factor = 0
+	# 		free_building_slots <= 0
+	# 	}
+	# 	modifier = {
+	# 		factor = 0.1
+	# 		owner = {
+	# 			resource_revenue_compare = {
+	# 				resource = engineering_research
+	# 				value > value:production_science_years_passed
+	# 			}
+	# 		}
+	# 	}
+	# 	modifier = {
+	# 		factor = 10
+	# 		AND = {
+	# 			num_buildings = { type = building_engineering_lab_1 value > 2 }
+	# 		}
+	# 	}
+	# 	add_building = building_engineering_lab_1
+	# 	add_modifier = { modifier = phi_rep_ai0 days = 365 } 
+	# }
+	# 50 = {
+	# 	modifier = {
+	# 		factor = 0
+	# 		free_building_slots <= 0
+	# 	}
+	# 	modifier = {
+	# 		factor = 0.1
+	# 		owner = {
+	# 			resource_revenue_compare = {
+	# 				resource = physics_research
+	# 				value > value:production_science_years_passed
+	# 			}
+	# 		}
+	# 	}
+	# 	modifier = {
+	# 		factor = 10
+	# 		AND = {
+	# 			num_buildings = { type = building_research_lab_1 value > 2 }
+	# 		}
+	# 	}
+	# 	add_building = building_research_lab_1
+	# 	add_modifier = { modifier = phi_rep_ai0 days = 365 } 
+	# }
+}

@@ -1,0 +1,57 @@
+starm_science_booster_nv = {
+	icon = "GFX_starm_sm_science_booster"
+	construction_days = 360
+
+	show_in_tech = tech_physics_2
+
+	potential = {
+		exists = owner
+		owner = {
+			is_void_born = no
+			has_technology = tech_physics_2
+		}
+	}
+	
+	possible = {
+		has_starbase_module = starm_science_hub_nv
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+			influence = 100
+		}
+
+		upkeep = {
+			energy = 3
+		}
+	}
+	triggered_system_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = yes 
+			}
+		}
+		modifier = {
+			job_calculator_physicist_add = 50
+			job_calculator_engineer_add = 50
+		}
+	}
+
+	custom_tooltip = sm_starm_science_booster_effect
+
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 0
+			count_starbase_modules = {
+				type = starm_science_hub
+				count < 2
+			}
+		}
+	}
+}

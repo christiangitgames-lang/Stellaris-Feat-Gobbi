@@ -1,0 +1,8 @@
+﻿l_english:
+Nebula_4: "Nebula"
+nebula_4.name: "$NEBULA$ Sites Located"
+Nebula_4.desc: "These are the systems closest to our capital that we can build a $NEBULA$ in.\n\n\n$sba_change_goto_system$"
+Nebula_4_string: "[this.GetName] ($DISTANCE$: §Y[this.sba_distance_to_capital_var]§!)"
+sfg_system_search.11.0: "[event_target:sfg_nebula_0.Nebula_4_string]"
+sfg_system_search.11.1: "[event_target:sfg_nebula_0.Nebula_4_string]"
+sfg_system_search.11.2: "[event_target:sfg_nebula_0.Nebula_4_string]"

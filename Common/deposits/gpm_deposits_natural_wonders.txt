@@ -1,0 +1,504 @@
+@high = 16
+@med = 8
+@low = 4
+
+@high_rare = 0.5
+@mid_rare = 0.25
+@low_rare = 0.1
+@SR_SMALL = 0.2
+@SR_LARGE = 0.4
+@planet_type_bonus = 1.5
+# Gargantuan Sinkhole - Desert World
+gpm_d_gargantuan_sinkhole = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_mining_max = 10
+		planet_jobs_minerals_produces_mult = 0.50
+	}
+	potential = {
+		is_planet_class = pc_desert
+	}
+	drop_weight = {
+ 		weight = @mid_rare
+ 	}
+}
+# Discharging Fields - Arid World
+gpm_d_discharging_field = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_generator_max = 10
+		planet_jobs_energy_produces_mult = 0.50
+	}
+	potential = {
+		is_planet_class = pc_arid
+	}
+	drop_weight = {
+ 		weight = @mid_rare
+ 	}
+}
+# Giant Trees - Savannah World
+gpm_d_giant_trees = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_farming_max = 10
+		planet_jobs_food_produces_mult = 0.50
+	}
+	potential = {
+		is_planet_class = pc_savannah
+	}
+	drop_weight = {
+ 		weight = @mid_rare
+ 	}
+}
+# Crystal Jungle - Tropical World
+gpm_d_crystal_jungle = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = {
+	# 			has_technology = tech_mine_rare_crystals
+	# 		}
+	# 	}
+	# 	planet_miners_rare_crystals_produces_add = @SR_LARGE
+	# }
+	planet_modifier = {
+		planet_jobs_specialist_rare_crystals_produces_mult = 0.50
+		planet_miners_rare_crystals_produces_add = @SR_LARGE
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_crystal_miner_add = 100
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_crystal_mining_drone_add = 100
+		}
+	}
+	potential = {
+		is_planet_class = pc_tropical
+	}
+	drop_weight = {
+ 		weight = @mid_rare
+ 	}
+}
+# Floating Islands - Continental World
+gpm_d_floating_islands = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		planet_max_districts_add = 10
+		planet_buildings_upkeep_mult = 0.1
+	}
+	potential = {
+		is_planet_class = pc_continental
+	}
+	drop_weight = {
+ 		weight = @mid_rare
+ 	}
+}
+# Amoeba Sea - Ocean World
+gpm_d_amoeba_sea = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		planet_jobs_physics_research_produces_mult = 0.50
+	}
+	potential = {
+		is_planet_class = pc_ocean
+	}
+	resources = {
+		category = planet_deposits
+		produces = {
+			society_research = 25
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_biologist_add = 300
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_biologist_add = 300
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_biologist_add = 300
+		}
+	}
+
+	drop_weight = {
+ 		weight = @mid_rare
+ 	}
+}
+# Glass Towers - Arctic World
+gpm_d_glass_towers = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		planet_jobs_engineering_research_produces_mult = 0.75
+	}
+	potential = {
+		is_planet_class = pc_arctic
+	}
+	drop_weight = {
+ 		weight = @mid_rare
+ 	}
+}
+# Howling Peaks - Alpine World
+gpm_d_howling_peaks = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_mining_max = 10
+		planet_jobs_minerals_produces_mult = 0.50
+	}
+	potential = {
+		is_planet_class = pc_alpine
+	}
+	drop_weight = {
+ 		weight = @mid_rare
+ 	}
+}
+# Mega-Fungi - Tundra World
+gpm_d_mega_fungi = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		planet_jobs_food_produces_mult = 0.40
+	}
+	potential = {
+		is_planet_class = pc_tundra
+	}
+	resources = {
+		category = planet_deposits
+		produces = {
+			food = 30
+		}
+	}
+
+	drop_weight = {
+ 		weight = @mid_rare
+ 	}
+}
+# Energy Storm - Gaia World
+gpm_d_energy_storm = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			energy = 5
+		}
+	}
+	planet_modifier = {
+		planet_technician_energy_produces_add = 1
+	}
+	potential = {
+		is_planet_class = pc_gaia
+	}
+	drop_weight = {
+ 		weight = @mid_rare
+ 	}
+}
+# Titanic Cave
+gpm_d_titanic_cave = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		planet_max_districts_add = 4
+		district_mining_max = 8
+	}
+
+	drop_weight = {
+ 		weight = @low_rare
+ 	}
+}
+# Abandoned Stargate
+gpm_d_abandoned_stargate = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		planet_jobs_trade_produces_mult = 0.50
+	}	
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			physics_research = 25
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_physicist_add = 200
+			job_engineer_add = 200
+		}
+	}
+	
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = { is_hive_empire = yes }
+	# 	}
+	# 	modifier = {
+	# 		job_brain_drone_physicist_add = 200
+	# 		job_brain_drone_engineer_add = 200
+	# 	}
+	# }
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = no }
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_physicist_add = 200
+			job_calculator_engineer_add = 200
+		}
+	}
+
+	drop_weight = {
+ 		weight = @low_rare
+ 	}
+}
+# Bioluminescent Forest
+gpm_d_bioluminescent_forest = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		planet_jobs_specialist_volatile_motes_produces_mult = 0.50
+		planet_miners_volatile_motes_produces_add = @SR_LARGE
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_mote_harvester_add = 100
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_mote_harvesting_drone_add = 100
+		}
+	}
+	# resources = {
+	# 	category = planet_deposits
+	# 	produces = {
+	# 		volatile_motes = 6
+	# 	}
+	# }
+
+	drop_weight = {
+ 		weight = @low_rare
+ 	}
+}
+# Land Reefs
+gpm_d_land_reefs = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_mining_max = 10
+		planet_jobs_minerals_produces_mult = 0.33
+	}
+
+	drop_weight = {
+ 		weight = @low_rare
+ 	}
+}
+# Lava Lake
+gpm_d_lava_lake = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = {
+	# 			has_technology = tech_mine_exotic_gases
+	# 		}
+	# 	}
+	# 	planet_miners_exotic_gases_produces_add = @SR_LARGE
+	# }
+	planet_modifier = {
+		planet_jobs_specialist_exotic_gases_produces_mult = 0.50
+		planet_miners_exotic_gases_produces_add = @SR_LARGE
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_gas_extractor_add = 100
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_gas_extraction_drone_add = 100
+		}
+	}
+
+	# resources = {
+	# 	category = planet_deposits
+	# 	produces = {
+	# 		exotic_gases = 6
+	# 	}
+	# }
+
+	drop_weight = {
+ 		weight = @low_rare
+ 	}
+}
+# Collapsed Habitat
+gpm_d_Collapsed_habitat = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	# resources = {
+	# 	category = planet_deposits
+		
+	# 	produces = { # test
+	# 		trigger = {
+	# 			exists = owner
+	# 			owner = { has_technology = tech_mine_living_metal }
+	# 		}
+	# 		sr_living_metal = 1
+	# 	}
+	# 	produces = { # test
+	# 		trigger = {
+	# 			exists = owner
+	# 			owner = { NOT = { has_technology = tech_mine_living_metal } }
+	# 		}
+	# 		sr_living_metal = 0.1
+	# 	}
+		
+	# }
+	planet_modifier = {
+		planet_miners_sr_living_metal_produces_add = @low_rare
+	}
+
+	drop_weight = {
+ 		weight = @low_rare
+ 	}
+}
+# Forgotten Deposit - Tomb World
+gpm_d_forgotten_deposit = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = no
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			exotic_gases = 2
+			rare_crystals = 2
+			volatile_motes = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_crystal_miner_add = 100
+			job_gas_extractor_add = 100
+			job_mote_harvester_add = 100
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_crystal_mining_drone_add = 100
+			job_mote_harvesting_drone_add = 100
+			job_gas_extraction_drone_add = 100
+		}
+	}
+
+	drop_weight = {
+ 		weight = @low_rare
+ 	}
+}

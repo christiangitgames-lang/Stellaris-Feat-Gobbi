@@ -1,0 +1,50 @@
+objectTypes = {
+
+	#######  Carrier frame  #######
+	
+	pdxmesh = {
+		name = "lithoid_01_carrier_frame_mesh"
+		file = "gfx/models/ships/lithoid_01/lithoid_01_battleship_frame.mesh"
+				animation = { id = "idle"			type = "lithoid_01_battleship_frame_idle_animation" }
+				animation = { id = "death"			type = "lithoid_01_battleship_frame_death_animation" }
+				animation = { id = "attack"			type = "lithoid_01_battleship_frame_idle_animation" }				
+		scale = 1.0
+				meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}
+	
+	#######  Carrier bow sections  #######	
+	
+	pdxmesh = {
+		name = "lithoid_01_carrier_bow_HB_mesh"
+		file = "gfx/models/ships/lithoid_01/lithoid_01_battleship_bow_M1S2HB.mesh"
+		scale = 1.0
+				meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}
+		
+	#######  Carrier mid sections  #######			
+		
+	pdxmesh = {
+		name = "lithoid_01_carrier_mid_HB_mesh"
+		file = "gfx/models/ships/lithoid_01/lithoid_01_battleship_mid_S4LHB.mesh"
+		scale = 1.0
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}
+	
+	#######  Carrier stern sections  #######	
+		
+	pdxmesh = {
+		name = "lithoid_01_carrier_stern_HB_mesh"
+		file = "gfx/models/ships/lithoid_01/lithoid_01_battleship_stern_L1.mesh"
+		scale = 1.0
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}
+	
+}

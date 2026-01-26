@@ -1,0 +1,6 @@
+auto_planet_luxuries_boost = { 
+	icon = "gfx/interface/icons/modifiers/mod_auto_luxuries.dds"
+}
+auto_decision_automate_planet_incorporate = { 
+	icon = "gfx/interface/icons/modifiers/mod_auto_incorporate.dds"
+}

@@ -1,0 +1,30 @@
+if = {
+	limit = {
+		num_free_districts = { type = district_city value > 0 }
+	}
+	add_district = district_city
+}
+else_if = {
+	limit = {
+		num_free_districts = { type = district_hive value > 0 }
+	}
+	add_district = district_hive
+}
+else_if = {
+	limit = {
+		num_free_districts = { type = district_nexus value > 0 }
+	}
+	add_district = district_nexus
+}
+else_if = {
+	limit = {
+		num_free_districts = { type = district_arcology_housing value > 0 }
+	}
+	add_district = district_arcology_housing
+}
+else_if = {
+	limit = {
+		num_free_districts = { type = district_rw_city value > 0 }
+	}
+	add_district = district_rw_city
+}

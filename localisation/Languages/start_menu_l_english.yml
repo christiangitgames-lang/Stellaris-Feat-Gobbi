@@ -1,0 +1,12 @@
+﻿l_english:
+version: "v1.0.7"
+Compatible: "4.0.21"
+cg_game_start.1.name: "Stellaris feat Gobbi START MENU"
+cg_game_start.1.desc: "You are playing at Beta §H"Stellaris feat Gobbi $version$.\n"
+cg_game_start.1.AI_hard: "Ai is §YHARD§!"
+cg_game_start.1.AI_hard_tt: "This is best AI that for now can have in 4.0 is in improving in future"
+#cg_game_start.1.AI_hard_tt: "This is best AI that have create, Emulates the abilities of skilled players humans without hard cheat, probably you if are an good player can have big problems be 1v3\nIf want funny challenge let in Hard\n§RCurrently does not play well against a good human player in habitats and rings and in late game.§!\n§RIt could make the game slightly slower.§!"
+cg_game_start.1.AI_normal: "Ai is §YNORMAL§!"
+cg_game_start.1.AI_normal_tt: "AI play how an average player human, probably you if are an good player can't have problem with 1v5\nIf you are a §Ggood§! player, I recommend this one to start with."
+cg_game_start.1.AI_easy: "Ai is §YEasy§!"
+cg_game_start.1.AI_easy_tt: "AI play little best of vanilla, probably you if are an good player can be 1 vs 16\nIf you are a §Gnew§! or §RLow skill§! player, I recommend this."

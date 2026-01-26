@@ -1,0 +1,279 @@
+need_more_mineral = {
+	if = {
+		limit = { is_scope_type = country }
+		NOT = { 
+			has_monthly_income = {
+				resource = minerals
+				value > 150
+			}
+		}
+		OR ={
+			has_monthly_income = {
+				resource = minerals
+				value < 20
+			}
+			resource_income_to_expenditure_balance_ratio = { #fa 110 minerali ma ne spende 100 = 1.1
+				resource = minerals
+				value <= 1.1
+			}
+			has_modifier = minerals_10_market
+			has_modifier = minerals_20_market
+			has_modifier = minerals_40_market
+		}
+	}
+	else = {
+		owner = { 
+			if = {
+				limit = { is_scope_type = country }
+				need_more_mineral_owner = yes 
+			}
+		}
+	}
+}
+need_more_mineral_owner = {
+	NOT = { 
+		has_monthly_income = {
+			resource = minerals
+			value > 150
+		}
+	}
+	OR ={
+		has_monthly_income = {
+			resource = minerals
+			value < 20
+		}
+		resource_income_to_expenditure_balance_ratio = { #fa 110 minerali ma ne spende 100 = 1.1
+			resource = minerals
+			value <= 1.1
+		}
+		has_modifier = minerals_10_market
+		has_modifier = minerals_20_market
+		has_modifier = minerals_40_market
+	}
+}
+can_release_client_state = {
+	OWNER = {
+		has_tradition = tr_domination_adopt
+		NOT = { has_valid_civic = civic_fanatic_purifiers }
+		NOT = { has_valid_civic = civic_machine_terminator }
+		NOT = { has_valid_civic = civic_hive_devouring_swarm }
+	}
+	any_owned_pop_group = {
+		is_sapient = yes
+		NOR = {
+			AND = {
+				OWNER = { is_hive_empire = yes }
+				NOT = { has_trait = trait_hive_mind }
+			}
+			AND = {
+				OWNER = { is_machine_empire = yes }
+				NOT = { has_trait = trait_machine_unit }
+			}
+			has_trait = trait_mechanical
+			can_think = no
+			has_trait = trait_clone_soldier_infertile
+			has_trait = trait_clone_soldier_infertile_full_potential
+		}
+	}
+}
+
+should_ai_focus_on_research = {
+	is_ai = yes
+	OR = {
+		has_ai_personality = peaceful_researcher
+		owner_main_species = {
+			OR = {
+				has_trait = "trait_intelligent"
+				has_trait = "trait_natural_engineers"
+				has_trait = "trait_natural_physicists"
+			}
+		}
+	}
+	
+}
+is_normal_habitable_planet = {
+	OR = {
+		is_planet_class = "pc_desert"
+		is_planet_class = "pc_tropical"
+		is_planet_class = "pc_arid"
+		is_planet_class = "pc_continental"
+		is_planet_class = "pc_ocean"
+		is_planet_class = "pc_tundra"
+		is_planet_class = "pc_arctic"
+		is_planet_class = "pc_alpine"
+		is_planet_class = "pc_savannah"
+	}
+}
+Have_free_jobs = {
+	OR = {
+		AND = {
+			OR = {
+				has_forbidden_jobs = "enforcer"	
+				has_forbidden_jobs = "patrol_drone"
+			}
+			NOR = { 
+				has_forbidden_jobs = "entertainer"
+				has_forbidden_jobs = "maintenance_drone"
+			}
+			free_jobs < 3
+		}
+		AND = {
+			OR = {
+				has_forbidden_jobs = "enforcer"	
+				has_forbidden_jobs = "patrol_drone"
+				
+			}
+			OR = { 
+				has_forbidden_jobs = "entertainer"
+				has_forbidden_jobs = "maintenance_drone"
+			}
+			free_jobs < 5
+		}
+		AND = {
+			NOR = {
+				has_forbidden_jobs = "enforcer"	
+				has_forbidden_jobs = "patrol_drone"
+				
+			}
+			OR = { 
+				has_forbidden_jobs = "entertainer"
+				has_forbidden_jobs = "maintenance_drone"
+			}
+			free_jobs < 3
+		}
+		AND = {
+			NOR = {
+				has_forbidden_jobs = "enforcer"	
+				has_forbidden_jobs = "patrol_drone"
+			}
+			NOR = { 
+				has_forbidden_jobs = "entertainer"
+				has_forbidden_jobs = "maintenance_drone"
+			}
+			free_jobs < 1
+		}
+	}
+}
+has_avaible_job_worker = {
+	free_jobs_of_type = {
+		category = worker
+		value >= 1
+	}
+}
+has_avaible_job_specialist = {
+	free_jobs_of_type = {
+		category = specialist
+		value >= 1
+	}
+}
+need_remove_exotic_gases_building = {
+	owner = {
+		OR = {
+			AND = {
+				has_resource = { type = exotic_gases amount > 500 }
+				has_monthly_income = { resource = exotic_gases value > 5 }
+			}
+			has_monthly_income = { resource = minerals value < 10 }
+		}
+	}
+}
+need_remove_volatile_motes_building = {
+	owner = {
+		OR = {
+			AND = {
+				has_resource = { type = volatile_motes amount > 500 }
+				has_monthly_income = { resource = volatile_motes value > 5 }
+				
+			} 
+			has_monthly_income = { resource = minerals value < 10 }
+		}
+	}
+}
+need_remove_rare_crystals_building = {
+	owner = {
+		OR = {
+			AND = {
+				has_resource = { type = volatile_motes amount > 500 }
+				has_monthly_income = { resource = rare_crystals value > 5 }
+				
+			} 
+			has_monthly_income = { resource = minerals value < 10 }
+		}
+	}
+}
+planet_bonus_physics = {
+	OR = {
+		has_modifier = phi_pm_polar_supercells_3
+		has_modifier = phi_pm_polar_supercells_2
+		has_modifier = phi_pm_polar_supercells_1
+		has_modifier = phi_pm_ocean_vortexes_3
+		has_modifier = phi_pm_ocean_vortexes_2
+		has_modifier = phi_pm_ocean_vortexes_1
+		has_modifier = atmospheric_hallucinogen
+		has_modifier = atmospheric_hallucinogen_good
+		has_modifier = liquid_sands
+		has_modifier = weak_magnetic_field
+		has_modifier = wild_storms
+		has_deposit = d_central_spire
+		has_modifier = phi_pm_planet_accelerators_3
+		has_modifier = phi_pm_planet_accelerators_2
+		has_modifier = phi_pm_planet_accelerators_1
+		#gt
+		has_modifier = gpm_frequent_thunderstorms
+		has_modifier = gpm_global_thunderstorms
+		has_modifier = gpm_time_displaced_planet
+		has_modifier = gpm_thin_atmospheres
+		has_modifier = gpm_thin_atmospheres
+		has_modifier = gpm_weak_magnetic_field_2
+		has_modifier = gpm_unnatural_world
+		has_modifier = gpm_clear_skies
+		has_modifier = gpm_melted_ice_caps
+		has_modifier = gpm_ice_age
+		has_modifier = gpm_crystal_moon_palace
+		has_modifier = gpm_odd_cloud_shapes
+	}
+}
+planet_bonus_engineering = {
+	OR = {
+		has_modifier = unstable_tectonics
+		has_modifier = tamed_nanite_swarm_modifier
+		has_modifier = phi_pm_sudden_rainfalls_3
+		has_modifier = phi_pm_sudden_rainfalls_2
+		has_modifier = phi_pm_magnetic_clouds_3
+		has_modifier = phi_pm_magnetic_clouds_2
+		has_modifier = phi_pm_sudden_rainfalls_1
+		has_modifier = phi_pm_magnetic_clouds_1
+		has_modifier = phi_pm_planet_accelerators_3
+		has_modifier = phi_pm_planet_accelerators_2
+		has_modifier = phi_pm_planet_accelerators_1
+		has_deposit = d_central_spire
+		#gt
+		has_modifier = gpm_weak_magnetic_field_2
+		has_modifier = gpm_unnatural_world
+		has_modifier = gpm_artificial_water
+		has_modifier = gpm_strange_ice_river
+		has_modifier = gpm_black_oily_stone
+		has_modifier = gpm_crystal_moon_palace
+		has_modifier = gpm_old_world
+		has_modifier = gpm_artificial_core
+		has_modifier = gpm_fractal_formations
+	}
+}
+planet_bonus_society = {
+	OR = {
+		has_modifier = unstable_tectonics
+		has_modifier = tamed_nanite_swarm_modifier
+		has_modifier = phi_pm_sudden_rainfalls_3
+		has_modifier = phi_pm_sudden_rainfalls_2
+		has_modifier = phi_pm_magnetic_clouds_3
+		has_modifier = phi_pm_magnetic_clouds_2
+		has_modifier = phi_pm_sudden_rainfalls_1
+		has_modifier = phi_pm_magnetic_clouds_1
+		has_modifier = phi_pm_planet_accelerators_3
+		has_modifier = phi_pm_planet_accelerators_2
+		has_modifier = phi_pm_planet_accelerators_1
+		has_deposit = d_central_spire
+		has_modifier = gpm_time_displaced_planet
+		
+	}
+}

@@ -1,0 +1,19 @@
+namespace = sfg_utility
+
+
+country_event = {
+	#	cg_ai.1	yearly checked - Set Flag washuman
+	
+		id = sfg_utility.1
+		hide_window = yes
+	
+		is_triggered_only = yes
+		
+		trigger = {
+			is_ai = no
+			NOT = { has_country_flag = was_human }
+		}
+		immediate = {
+			set_country_flag = was_human
+		}
+}

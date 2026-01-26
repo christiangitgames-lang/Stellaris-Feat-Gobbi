@@ -1,0 +1,295 @@
+﻿# Show Building Slot Capacity 
+l_english:
+
+#Ascension perk
+phi_ap_shared_destiny_tooltip: "Your §YSubjects§! do not suffer $r_loyalty$ penalties from you having multiple Subjects." #\nEnables an edict that shifts vassals' ethos towards us.
+#observation
+tech_observer_science_1: "Camouflage Observer"
+tech_observer_science_1_desc: "Equipped with advanced camouflage, this device allows observers to blend seamlessly into their surroundings, enabling undetected observation of pre-FTL civilizations."
+tech_observer_science_2: "Orbital Recon Array"
+tech_observer_science_2_desc: "A network of orbital satellites equipped with powerful sensors for high-resolution planetary observation. This array provides a complete, long-range surveillance system, ensuring continuous monitoring of surface activity without the risk of detection."
+tech_observer_science_3: "Quantum Cloak Field"
+tech_observer_science_3_desc: "This advanced cloaking field bends light and other electromagnetic signals around the observer, rendering them invisible to both visual and technological detection. Ideal for close-proximity observation of settlements or significant sites."
+
+
+#automation
+decision_automate_planet_incorporate:"§GAble§! Automate $decision_artifact_relays_machine$"
+decision_automate_planet_incorporate_desc:"Every 10 years rebuy $decision_artifact_relays_machine$ if have resource sufficent"
+decision_disable_automate_planet_luxuries_boost:"§RDiable§! Automate $decision_artifact_relays_machine$"
+decision_disable_automate_planet_luxuries_boost_desc:"Not rebuy $decision_artifact_relays_machine$"
+decision_automate_planet_incorporate_free:"$decision_automate_planet_incorporate$"
+decision_automate_planet_incorporate_free_desc:"$decision_automate_planet_incorporate_desc$"
+auto_decision_automate_planet_incorporate: "Automate planet $decision_artifact_relays_machine$"
+auto_decision_automate_planet_incorporate_dec: "When hate micromanagement"
+
+Client_released_Master: "Have release an colony"
+Client_released_Master_desc: "Have release an colony how an $decision_cg_release_client_state$"
+
+
+#buildings / storage
+
+ mod_country_resource_max_trade_add:0 "Trade Storage Capacity"
+ mod_country_resource_max_volatile_motes_add:0 "Volatile Motes Storage Capacity"
+ mod_country_resource_max_exotic_gases_add:0 "Exotic Gases Storage Capacity"
+ mod_country_resource_max_rare_crystals_add:0 "Rare Crystals Storage Capacity"
+mod_country_resource_max_influence_add: "influence £influence£ Storage Capacity: "
+
+ foreign_building_research_lab_1:0 "Foreign Espionage Research Labs"
+ foreign_building_research_lab_1_desc:0 "Foreign Espionage provide research by neighborg country for general research if you have sufficient intel level."
+#civics
+
+civic_scavengers_machine:0 "Xenon protocol" #dedicato a pietor
+civic_scavengers_machine_desc:0 "In this protocol, nothing goes to waste, even in the grimmest times of war: no enemy technology will go undiscovered, as teams of scrappers accompanying the war fleets scrape wreckages of anything and everything worth salvaging."
+
+#colony
+col_researchphy:0 "Phy-World"
+ col_researchphy_desc:1 "This world is a seat of scientific research and technological advancement of physics."
+ col_researcheng:0 "Eng-World"
+ col_researcheng_desc:1 "This world is a seat of scientific research and technological advancement of enginnering."
+col_researchphy:0 "Phy-World"
+ col_researchphy_desc:1 "This world is a seat of scientific research and technological advancement of physics."
+ col_researcheng:0 "Eng-World"
+ col_researcheng_desc:1 "This world is a seat of scientific research and technological advancement of enginnering."
+col_researchphy_custom:1 "§YResearcher§! will shift jobs from £job_society_researcher£ £job_engineering_researcher£ Researcher to £job_physics_researcher£ $job_physics_researcher_plural$.\n\n"  
+col_researcheng_custom:1 "§YResearcher§! will shift one jobs from £job_society_researcher£ and £job_physics_researcher£ Researcher to £job_engineering_researcher£ $job_engineering_researcher_plural$.\n\n" 
+
+#decision
+decision_phi_build_planet_accelerators_3: "$decision_phi_build_planet_accelerators$"
+decision_phi_build_planet_accelerators_3_desc: "$decision_phi_build_planet_accelerators_desc$"
+#deposit orbital
+
+d_l_physics_research: "large research"
+d_l_society_research: "large research"
+d_l_engineering_research: "large research"
+d_unity_value_1: "unity"
+d_unity_value_2: "unity II"
+d_unity_value_3: "unity III"
+
+d_nanites_deposit_2: "$d_nanites_deposit$"
+d_nanites_deposit_3: "$d_nanites_deposit$"
+#policy
+
+policy_research_focus:0 "Empire focus research"
+policy_research_focus_desc:1 "Decide a specific area of interest that guides a researcher's work"
+
+#council
+
+council_agenda_open_markets_effect:0 "Can use the Trade Policie: §GTrade League§!"
+agenda_military_project:0 "Unlock ship size superior"
+agenda_military_project_desc:0 "$agenda_military_project$"
+
+#jobs
+job_society_brain_researcher: "Society researcher"
+job_society_brain_researcher_desc: "Study genetic and culture of new, old and alien pops"
+mod_job_society_brain_researcher_add:0 "$job_society_researcher$ Jobs"
+mod_job_society_brain_researcher_per_pop:0 "§G+1§! $job_society_researcher$ Job per $VALUE$ Pops"
+mod_job_society_brain_researcher_per_pop_short:0 "\n§G+1§! £mod_job_society_researcher_add£ per $VALUE$ £pop£"
+job_society_brain_researcher_plural:0 "society Researchers"
+job_society_brain_researcher_effect_desc:0 "£job_society_researcher£ $job_society_researcher_plural$ turn £energy£ §Y$energy$§! into £society£ §YResearch Points§! for new technologies"
+
+
+job_society_calculator_researcher: "society researcher"
+job_society_calculator_researcher_desc: "Study genetic and culture of new, old and alien pops"
+mod_job_society_calculator_researcher_add:0 "$job_society_researcher$ Jobs"
+mod_job_society_calculator_researcher_per_pop:0 "§G+1§! $job_society_researcher$ Job per $VALUE$ Pops"
+mod_job_society_calculator_researcher_per_pop_short:0 "\n§G+1§! £mod_job_society_researcher_add£ per $VALUE$ £pop£"
+job_society_calculator_researcher_plural:0 "society Researchers"
+job_society_calculator_researcher_effect_desc:0 "£job_society_researcher£ $job_society_researcher_plural$ turn £energy£ §Y$energy$§! into £society£ §YResearch Points§! for new technologies"
+
+mod_station_gatherers_nanites_produces_mult:0 "Research Station Nanites Output"
+mod_station_gatherers_nanites_upkeep_mult:0 "Research Station Nanites Upkeep"
+mod_station_researchers_physics_research_produces_mult: "Physics £physics£ Research Station Output"
+mod_station_researchers_society_research_produces_mult: "Society £society£ Research Station Output"
+mod_station_researchers_engineering_research_produces_mult: "Engineering £engineering£ Research Station Output"
+mod_station_researchers_nanites_produces_mult: "Nanites £nanites£ Station Output"
+mod_planet_jobs_energy_upkeep_add: "$energy_with_icon$ Upkeep per 100 £job£ Jobs"
+mod_planet_jobs_nanites_produces_mult:0 "£nanites£ $nanites$ from £job£ Jobs"
+mod_planet_jobs_productive_energy_upkeep_add: "£energy£ $energy$ $mod_planet_jobs_productive_upkeep_mult$"
+
+job_foreign_researcher: "Foreign researcher"
+job_calculator_foreign_researcher: "Calculator $job_foreign_researcher$"
+job_foreign_researcher_desc: "Steal tech from neighorg country if have sufficient intel level"
+job_calculator_foreign_researcher_desc: "Steal tech from neighorg country if have sufficient intel level"
+# (eff: [Owner.value:mult_research_foreign] X)
+mod_job_foreign_researcher_add: "$job_foreign_researcher$" 
+mod_job_calculator_foreign_researcher_add: "$job_calculator_foreign_researcher$ "
+
+#job_produces_mult
+mod_planet_jobs_simple_drone_society_research_produces_mult:0 "$pop_cat_simple_drone$ $society_research$ Output"
+mod_planet_jobs_ruler_society_research_produces_mult:0 "Ruler $society_research$ Output"
+mod_planet_jobs_cyborg_worker_physics_research_produces_mult:0 "£physics_research£ $physics_research$ from Cyborg $pop_cat_worker$ Jobs"
+mod_planet_jobs_cyborg_worker_society_research_produces_mult:0 "£society_research£ $society_research$ from Cyborg $pop_cat_worker$ Jobs"
+mod_planet_jobs_cyborg_worker_engineering_research_produces_mult:0 "£engineering_research£ $engineering_research$ from Cyborg $pop_cat_worker$ Jobs"
+
+#job_produces_add
+mod_planet_physicists_unity_produces_add:0 "£unity£ $unity$ from £job_physicist£ $job_physicist$"
+mod_planet_biologists_unity_produces_add:0 "£unity£ $unity$ from £job_biologist£ $job_biologist$"
+mod_planet_engineers_unity_produces_add:0 "£unity£ $unity$ from £job_engineer£ $job_engineer$"
+mod_planet_jobs_worker_energy_produces_add:0 "£energy£ $energy$ from £worker£ $worker$"
+mod_planet_miners_sr_living_metal_produces_add: "£sr_living£ $sr_living$ from £job_miner£ [GetMinerPlural]"
+
+#ship size
+carrier_name: "Carrier"
+mod_shipsize_carrier_hull_mult: "Carrier Hull Points"
+mod_shipsize_carrier_build_speed_mult: "Carrier Build Speed"
+mod_shipsize_carrier_upkeep_mult: "Carrier Upkeep"
+mod_ship_carrier_cost_mult:0 "$carrier_name$ Build Cost"
+mod_planet_pops_organics_upkeep_mult: "Organic Pops Upkeep"
+mod_country_base_minor_artifacts_produces_add: "Minor Artifacts Production"
+
+#####################################
+#Ascension perk & tradition
+#####################################
+ct_additional_trait: "An additional trait will be added to the new leader"
+tr_domination_adopt_effect:2 "§GUnlock§! war goal §Y$war_goal_wg_subjugation$§! and §Y$war_goal_wg_tribute$§!" #you to create single planet subject with decision $decision_cg_release_client_state$
+#policies
+
+policy_military_logistics: "Military logistic"
+policy_military_logistics_desc: "How use military logistic"
+military_logistics_policy_high:0 "Military logistic high"
+military_logistics_policy_high_name:0 "$military_logistics_policy_high$"
+military_logistics_policy_high_desc:0 "Improving military logistics, we can reduce passive damage in enemy territory.\n\n§G-25%§! Effect by attrition damage in enemy territory"
+military_logistics_policy_default:0 "Military logistic default"
+military_logistics_policy_default_name:0 "$military_logistics_policy_default0$"
+military_logistics_policy_default_desc:0 "Standard military logistics."
+tr_supremacy_master_shipwrights_desc:7 "§BUnlocks Agenda§!: §Y$agenda_military_project$§! \n§Y$MOD_STARBASE_SHIPYARD_BUILD_SPEED_MULT$§! increased by §G+25%§!."
+#####################################
+ # TRADE ACTIONS
+#####################################
+ trade_action_trade_relic_desc: "We have no need for this relic, maybe others will find value in it?"
+ trade_action_r_dragon_trophy: "Relic: $r_dragon_trophy$"
+ trade_action_r_dragon_trophy_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_khans_throne: "Relic: $r_khans_throne$"
+ trade_action_r_khans_throne_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_worm_scales: "Relic: $r_worm_scales$"
+ trade_action_r_worm_scales_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_rubricator: "Relic: $r_rubricator$"
+ trade_action_r_rubricator_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_galaxy: "Relic: $r_galaxy$"
+ trade_action_r_galaxy_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_omnicodex: "Relic: $r_omnicodex$"
+ trade_action_r_omnicodex_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_surveyor: "Relic: $r_surveyor$"
+ trade_action_r_surveyor_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_galatron: "Relic: $r_galatron$"
+ trade_action_r_galatron_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_ancient_sword: "Relic: $r_ancient_sword$"
+ trade_action_r_ancient_sword_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_severed_head: "Relic: $r_severed_head$"
+ trade_action_r_severed_head_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_prethoryn_queen: "Relic: $r_prethoryn_queen$"
+ trade_action_r_prethoryn_queen_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_unbidden_warlock: "Relic: $r_unbidden_warlock$"
+ trade_action_r_unbidden_warlock_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_contingency_core: "Relic: $r_contingency_core$"
+ trade_action_r_contingency_core_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_zro_crystal: "Relic: $r_zro_crystal$"
+ trade_action_r_zro_crystal_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_the_last_baol: "Relic: $r_the_last_baol$"
+ trade_action_r_the_last_baol_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_the_defragmentor: "Relic: $r_the_defragmentor$"
+ trade_action_r_the_defragmentor_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_reality_perforator: "Relic: $r_reality_perforator$"
+ trade_action_r_reality_perforator_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_pox_sample: "Relic: $r_pox_sample$"
+ trade_action_r_pox_sample_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_cryo_core: "Relic: $r_cryo_core$"
+ trade_action_r_cryo_core_desc: "$trade_action_trade_relic_desc$"
+ trade_action_r_war_forge: "Relic: $r_war_forge$"
+ trade_action_r_war_forge_desc: "$trade_action_trade_relic_desc$"
+trade_action_r_the_radiance: "Relic: $r_the_radiance$"
+trade_action_r_the_radiance_desc: "$trade_action_trade_relic_desc$"
+trade_action_r_toxic_god: "Relic: $r_toxic_god$"
+trade_action_r_toxic_god_desc: "$trade_action_trade_relic_desc$"
+trade_action_r_odryskan_crystal: "Relic: $r_odryskan_crystal$"
+trade_action_r_odryskan_crystal_desc: "$trade_action_trade_relic_desc$"
+trade_action_r_wormhole_key_fragment_1: "Relic: $r_wormhole_key_fragment_1$"
+trade_action_r_wormhole_key_fragment_1_desc: "$trade_action_trade_relic_desc$"
+trade_action_r_wormhole_key_fragment_2: "Relic: $r_wormhole_key_fragment_2$"
+trade_action_r_wormhole_key_fragment_2_desc: "$trade_action_trade_relic_desc$"
+trade_action_r_wormhole_key_fragment_3: "Relic: $r_wormhole_key_fragment_3$"
+trade_action_r_wormhole_key_fragment_3_desc: "$trade_action_trade_relic_desc$"
+trade_action_r_wormhole_key_fragment_4: "Relic: $r_wormhole_key_fragment_4$"
+trade_action_r_wormhole_key_fragment_4_desc: "$trade_action_trade_relic_desc$"
+trade_action_r_wormhole_key: "Relic: $r_wormhole_key$"
+trade_action_r_wormhole_key_desc: "$trade_action_trade_relic_desc$"
+
+
+#Technology
+
+ tech_avc_hyper_drive_4:0 "Hyperspace Currents"
+ tech_avc_hyper_drive_4_desc:0 "Innovations in hyper-field theory gives us the understanding of deep currents within subspace slipstreams. Advanced computational technologies can predict the flow of subspace currents around celestial bodies, allowing our ships to plot a vector through hyperspace with the least hyperdimensional flux, granting our hyperdrives more efficiency and velocity as they expend less energy compensating."
+ tech_avc_hyper_drive_5:0 "Hyperspace tunneling"
+ TECH_UNLOCK_AVC_HYPERDRIVE_4_TITLE:0 "§HUnlocks Component:§! $AVC_HYPER_DRIVE_4$"
+ TECH_UNLOCK_AVC_HYPERDRIVE_4_DESC:0 "§H$AVC_HYPER_DRIVE_4$§!\n$tech_avc_hyper_drive_4_desc$"
+ AVC_HYPER_DRIVE_4:0 "$tech_avc_hyper_drive_4$"
+ AVC_HYPER_DRIVE_4_DESC:0 "$tech_avc_hyper_drive_4_desc$"
+ tech_crystal_armor_3:0 "Crystal-Bonded Plating"
+ tech_crystal_armor_3_desc:0 "By using more advanced material synthesis techniques we are able to bond crystalline structures directly to the molecular structure of our ships' hulls and bulkheads, granting each material used within the hull the same durable properties that pure crystalline structures provided without flaw."
+ tech_crystal_armor_4:0 "Crystal-Polymer Plating"
+ tech_crystal_armor_4_desc:0 "Increasing the complexity of the crystalline material used in the synthesis process allows engineers to program specific attributes and properties into long chains of crystalline polymers, with chain lengths approaching that of DNA. Bonded with each material composing the hull the durability, flexibility and versatility of ship hulls is now unmatched."
+ tech_construction_templates_2:0 "$tech_construction_templates$"
+ tech_construction_templates_2_desc:1 "Revolutionary parallel $tech_construction_templates_desc$"
+
+#FTL drives
+
+ AVC_HYPER_DRIVE_4_CIVILIAN:0 "$tech_avc_hyper_drive_4$"
+ AVC_HYPER_DRIVE_4_DESC_CIVILIAN:0 "$tech_avc_hyper_drive_4_desc$"
+
+
+ #Crystal Plating
+ CRYSTAL_ARMOR_3:0 "$tech_crystal_armor_3$"
+ CRYSTAL_ARMOR_3_DESC:0 "$tech_crystal_armor_3_desc$"
+ CRYSTAL_ARMOR_4:0 "$tech_crystal_armor_4$"
+ CRYSTAL_ARMOR_4_DESC:0 "$tech_crystal_armor_4_desc$"
+
+#usefull comms
+
+NEXT: "Next Planet (If exist)"
+
+phi_pm_atmospheric_pollutionMessage.1.name: "Avaible decision §Y$phi_pm_atmospheric_pollution$§!"
+phi_pm_atmospheric_pollutionMessage.1.desc: "Your planet §Y[root.GetName]§! can deploy $phi_pm_atmospheric_pollution$"
+
+phi_pm_Message.1.name: "Avaible decision for §Gupgrade§! planet Feature"
+phi_pm_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet Feature"
+
+phi_pm_tech_Message.1.name: "Avaible decision for §Gupgrade§! planet Feature "
+phi_pm_tech_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet Feature §Y$decision_phi_build_planet_teleporters$§!,§Y$decision_phi_build_planet_broadcasting$§! or §Y$decision_phi_build_planet_accelerators$§!"
+
+phi_pm_teleporters_Message.1.name: "Avaible decision $decision_phi_build_planet_broadcasting$ "
+phi_pm_teleporters_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet with §Y$decision_phi_build_planet_broadcasting$§!"
+
+phi_pm_broadcasting_Message.1.name: "Avaible decision for $decision_phi_build_planet_broadcasting$ "
+phi_pm_broadcasting_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet with §Y$decision_phi_build_planet_broadcasting$§!"
+
+phi_pm_Accelerator_Message.1.name: "Avaible decision for $decision_phi_build_planet_accelerators$ "
+phi_pm_Accelerator_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet with §Y$decision_phi_build_planet_accelerators$§!"
+
+
+
+
+
+
+
+#-------------------
+ #Rule of game
+ mod_shipclass_military_build_cost_mult:0 "Military Ship Build Cost"
+
+
+
+ mod_planet_jobs_cyborg_worker_physics_research_produces_mult:0 "Cyborg Worker Physics Research Output"
+ mod_planet_jobs_cyborg_worker_society_research_produces_mult:0 "Cyborg Worker Society Research Output"
+ mod_planet_jobs_cyborg_worker_engineering_research_produces_mult:0 "Cyborg Worker Engineering Research Output"
+
+
+ #debug
+  sfgdebugtextv: "[root.sfgdebugvalue]"
+ sfgdebugtextv2: "[root.sfgdebugvalue2]"
+
+# sfgdebugtext: "§Y[this.sfgdebugtest]§!"
+# sfgdebugtext2: "§Y[this.sfgdebugtest2]§!"
+sfgdebugtext: "[this.sfgdebugtest] , [this.sfgdebugtest2]"
+sfgdebugtext2: "min : [root.sfgdebugvalue] dam: [root.sfgdebugvalue2]"
+
+
+

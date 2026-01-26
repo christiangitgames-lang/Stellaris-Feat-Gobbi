@@ -1,0 +1,18 @@
+cg_lost_war_ship = {
+	wars_influence_upkeep_mult = 1
+	starbase_shipyard_build_cost_mult = -0.20
+}
+cg_lost_war_building = {
+	wars_influence_upkeep_mult = 1
+	#starbase_shipyard_build_cost_mult = -0.10
+	Planet_structures_cost_mult = -0.10
+	Planet_building_build_speed_mult = +0.10
+}
+cg_lost_war_pop = {
+	logistic_growth_mult = 0.1
+	wars_influence_upkeep_mult = 1
+}
+
+cg_war_empire_size = {
+	country_admin_cap_add = 50
+}

@@ -1,0 +1,109 @@
+tech_avc_hyper_drive_4 = {
+	cost = @tier4cost3
+	area = physics
+	tier = 4
+	category = { particles }
+	ai_update_type = all
+	is_reverse_engineerable = no
+	prerequisites = { "tech_hyper_drive_3" }
+	weight = @tier4weight3
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_discovery_adopt
+		}
+		modifier = {
+			factor = @ap_grasp_the_void_travel_tech
+			has_ascension_perk = ap_grasp_the_void
+		}
+		modifier = {
+			factor = @eager_explorer_effect
+			is_eager_explorer_empire = yes
+		}
+	}
+	
+	prereqfor_desc = {
+		component = {
+			title = "TECH_UNLOCK_AVC_HYPERDRIVE_4_TITLE"
+			desc = "TECH_UNLOCK_AVC_HYPERDRIVE_4_DESC"
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+tech_construction_templates_2 = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	is_rare = yes
+	category = { industry }
+	prerequisites = { "tech_construction_templates" }
+	weight = @tier3weight2
+
+	modifier = {
+		planet_building_capacity_add = 1
+	}
+
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = 0.5
+			NOR = {
+				has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
+				has_trait_in_council = { TRAIT = leader_trait_curator }
+			}
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_construction_templates_2
+		}
+	}
+	technology_swap = {
+		name = tech_planetary_infrastructure_2_wilderness
+		inherit_icon = yes
+		inherit_effects = no
+		trigger = {
+			is_wilderness_empire = yes
+		}
+		modifier = {
+			planet_building_build_speed_mult = 0.15
+		}
+	}
+	ai_weight = {
+
+	}
+}
+
+# ##################
+# Ship Hull Improvement Components
+# ##################
+
+tech_crystal_armor_3 = {
+	area = engineering
+	cost = @tier5cost1
+	tier = 5
+	is_rare = yes
+	category = { materials }
+	ai_update_type = all	
+	prerequisites = { "tech_crystal_armor_2" }
+	weight = @tier5weight2
+	ai_weight = {
+
+	}
+}
+
+tech_crystal_armor_4 = {
+	area = engineering
+	cost = @tier6cost1
+	tier = 6
+	is_rare = yes
+	category = { materials }
+	ai_update_type = all	
+	prerequisites = { "tech_crystal_armor_3" }
+	weight = @tier6weight1
+	ai_weight = {
+
+	}
+}

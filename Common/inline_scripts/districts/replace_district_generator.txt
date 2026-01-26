@@ -1,0 +1,70 @@
+
+if = {
+	limit = {
+		owner = {
+			OR = {
+				has_monthly_income = { resource = energy value > 60 }
+				AND = {
+					has_monthly_income = { resource = energy value > 30 }
+					prev= {
+						free_building_slots <= 0
+						num_buildings = { type = any value < 12 }
+					}
+				}
+			}
+			NOT = { has_valid_civic = civic_agrarian_idyll }
+		}
+		num_districts = { type = district_generator value > 0 }
+	}
+	remove_district = district_generator
+	random_list = {
+		50 = {
+			modifier = {
+				factor = 0
+				num_free_districts = { type = district_farming value = 0 }
+			}
+			modifier = {
+				factor = 0
+				owner = { NOT = { has_valid_civic = civic_agrarian_idyll } }
+			}
+			modifier = {
+				factor = 10
+				owner = { has_monthly_income = { resource = food value < 0 } }
+			}
+			add_district = district_farming
+		}
+		50 = {
+			modifier = {
+				factor = 0
+				num_free_districts = { type = district_mining value = 0 }
+			}
+			inline_script = "district_add/mining_weight" #mi sono stancato di fare script tutti uguali
+			add_district = district_mining
+		}
+		50 = {
+			modifier = {
+				factor = 0
+				owner = { has_resource = { type = minerals amount < 200 } }
+			}
+			modifier = {
+				factor = 0.1
+				free_jobs > 1
+			}
+			modifier = {
+				factor = 100
+				free_housing < 0
+			}
+			modifier = {
+				factor = 1000
+				free_building_slots <= 0
+				num_buildings = { type = any value < 12 }
+			}
+			owner = { add_resource = { minerals = -200 } }
+			inline_script = "district_add/add_district_city" #aggiunge distretto city in base a posto libero
+		}
+		# 100 = {
+		# 	inline_script = "district_add/industrial" #mi sono stancato di fare script tutti uguali
+		# 	owner = { add_resource = { minerals = -200 } }
+		# }
+	}
+}

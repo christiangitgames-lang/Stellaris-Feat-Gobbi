@@ -1,0 +1,91 @@
+@base_agenda_cost = 7000
+@fast_agenda_cost = 3500
+@fast2_agenda_cost = 2800
+@very_fast_agenda_cost = 700
+feudal_shift_pursuit = {
+	agenda_cost = @fast2_agenda_cost
+	allow = {
+		any_subject = {
+			NOT = { has_same_ethos = overlord }
+		}
+	}
+	#custom_tooltip = found_relic
+	potential = {
+		has_valid_civic = civic_feudal_realm
+	}
+	modifier = {
+		
+	}
+	effect = {
+		custom_tooltip = agenda_feudal_shift_finish_desc
+		shift_subject = yes
+	}
+}
+the_last_resistance = {
+	agenda_cost = @very_fast_agenda_cost
+	allow = {
+		NOT = { has_modifier = country_defaulted_by_the_last_resistance }
+		used_naval_capacity_percent < 0.1
+		OR = {
+			AND = {
+				is_at_war = yes
+				def_war_exhaustion_sum > 0.25
+				off_war_exhaustion_sum > 0.25
+			}
+			OR = {
+				any_neighbor_country = {
+					is_crisis_faction = yes
+				}
+				any_owned_planet = {
+					OR = {
+						has_orbital_bombardment_stance = voidworm_invasion
+						has_orbital_bombardment_stance = voidworm_invasion_crisis
+					}
+				}
+			}
+		}
+		any_owned_planet = {
+			is_occupied_flag = no
+		}
+	}
+	#custom_tooltip = found_relic
+	potential = {
+		always = yes
+	}
+	modifier = {
+		planet_jobs_trade_produces_mult = -0.2
+		starbase_shipyard_build_speed_mult = -1.25
+	}
+	effect = {
+		custom_tooltip = the_last_resistance_finish_desc
+		create_last_resistance_fleet = yes
+	}
+}
+gears_of_war = {
+	agenda_cost = @very_fast_agenda_cost
+	allow = {
+		has_tradition = tr_domination_finish
+		num_owned_planets > 1
+	}
+	#custom_tooltip = found_relic
+	# potential = {
+	# 	has_technology = tech_planetary_unification
+	# 	has_tradition = tr_domination_adopt
+	# }
+	modifier = {
+		pop_resettlement_cost_mult = -0.35
+		planet_resettlement_unemployed_mult = 0.1
+	}
+	finish_modifier = gears_of_war_finish
+	
+	ai_weight = {
+		base = 0
+		# modifier = {
+		# 	set = 3
+		# 	is_at_war = yes
+		# }
+	}
+	# effect = {
+	# 	custom_tooltip = gears_of_war_finish_desc
+	# }
+}

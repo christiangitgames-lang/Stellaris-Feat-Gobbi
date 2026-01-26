@@ -1,0 +1,26 @@
+cg_Meteor_Storms = {
+	icon_frame = 2
+	icon = "gfx/interface/icons/planet_modifiers/Meteor_Storms.dds"
+	district_mining_max = 2
+	planet_colony_development_speed_mult = -0.50
+	pop_environment_tolerance = -0.10
+}
+cg_Fire_Tornados = {
+	icon = "gfx/interface/icons/planet_modifiers/cg_Fire_Tornados.dds"
+	icon_frame = 3
+	planet_colony_development_speed_mult = -0.50
+	pop_environment_tolerance = -0.15
+	army_defense_damage_mult = 0.20
+}
+cg_Thick_Fog = {
+	icon = "gfx/interface/icons/planet_modifiers/gpm_dense_atmosphere.dds"
+	icon_frame = 1
+	army_defense_health_mult = 0.20
+	planet_combat_width_add = -2
+	planet_orbital_bombardment_damage = -0.1
+}
+gpm_mineral_metors = { #event
+	planet_jobs_minerals_produces_mult = 0.50
+	icon = "gfx/interface/icons/planet_modifiers/gpm_mineral_pools.dds"
+	icon_frame = 1
+}

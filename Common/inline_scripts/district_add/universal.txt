@@ -1,0 +1,183 @@
+100 = {
+	modifier = {
+		factor = 0
+		owner = { has_resource = { type = minerals amount < 500 } }
+	}
+	modifier = {
+		factor = 0
+		num_free_districts = { type = district_city value = 0 }
+	}
+	modifier = {
+		factor = 0
+		free_building_slots > 0
+	}
+	modifier = {
+		factor = 10
+		free_building_slots <= 0
+		num_buildings = { type = any value < 12 }
+	}
+	modifier = {
+		factor = 0.1 #for bug ai paradox
+		num_unemployed < 1
+	}
+	modifier = {
+		factor = 100
+		free_housing < 0
+	}
+	add_district = district_city
+	owner = { add_resource = { minerals = -500 } }
+}
+100 = {
+	modifier = {
+		factor = 0
+		num_free_districts = { type = district_generator value = 0 }
+	}
+	modifier = {
+		factor = 0
+		owner = { has_resource = { type = minerals amount < 300 } }
+	}
+	modifier = {
+		factor = 100
+		owner = { has_deficit = energy }
+	}
+	modifier = {
+		factor = 0.1
+		owner = { 
+			is_machine_empire = no
+			has_monthly_income = { resource = energy value > 50 } 
+		}
+	}
+	modifier = {
+			factor = 3
+			has_building = building_energy_grid
+		}
+		modifier = {
+			factor = 5
+			has_building = building_energy_nexus
+		}
+		modifier = {
+			factor = 0.1
+			owner = { has_monthly_income = { resource = energy value > 100 } }
+		}
+		modifier = {
+			factor = 0.1
+			owner = { has_monthly_income = { resource = energy value > 150 } }
+		}
+		inline_script = "planet/free_jobs" #controlla che ci siano veri free jobs.
+		add_district = district_generator
+		owner = { add_resource = { minerals = -300 } }
+}
+100 = {
+	inline_script = "planet/free_jobs" #controlla che ci siano veri free jobs.
+	inline_script = "district_add/mining_weight" #weight add mining
+	add_district = district_mining
+	owner = { add_resource = { minerals = -300 } }
+}
+100 = {
+	modifier = {
+		factor = 0
+		num_free_districts = { type = district_farming value = 0 }
+	}
+	modifier = {
+		factor = 0
+		owner = { has_resource = { type = minerals amount < 300 } }
+	}
+	modifier = {
+		factor = 0.1
+		owner = { 
+			is_hive_empire = yes
+			has_monthly_income = { resource = food value > 10 } 
+		}
+	}
+	modifier = {
+		factor = 10
+		owner = { 
+			has_monthly_income = { resource = food value < 10 } 
+		}
+	}
+	modifier = {
+		factor = 2
+		owner = { 
+			has_monthly_income = { resource = food value < 1 } 
+		}
+	}
+	modifier = {
+		factor = 100
+		owner = { has_deficit = food }
+	}
+	inline_script = "planet/free_jobs" #controlla che ci siano veri free jobs.
+	add_district = district_farming
+	owner = { add_resource = { minerals = -300 } }
+}
+# 100 = {
+# 	modifier = {
+# 		factor = 0
+# 		num_free_districts = { type = district_industrial value = 0 }
+# 	}
+# 	modifier = {
+# 		factor = 0
+# 		owner = { has_resource = { type = minerals amount < 500 } }
+# 	}
+# 	modifier = {
+# 		factor = 0.5
+# 		has_foundry_designation = no
+# 	}
+# 	modifier = {
+# 		factor = 0.5
+# 		OR = {
+# 			AND = {
+# 				owner = { has_monthly_income = { resource = minerals value < 50 } }
+# 				owner = { is_catalytic_empire = no }
+# 			}
+# 			AND = {
+# 				owner = { has_monthly_income = { resource = food value < 40 } }
+# 				owner = { is_catalytic_empire = yes }
+# 			}
+# 		}
+# 	}
+# 	modifier = {
+# 		factor = 0
+# 		OR = {
+# 			AND = {
+# 				owner = { has_monthly_income = { resource = minerals value < 20 } }
+# 				owner = { is_catalytic_empire = no }
+# 			}
+# 			AND = {
+# 				owner = { has_monthly_income = { resource = food value < 30 } }
+# 				owner = { is_catalytic_empire = yes }
+# 			}
+# 		}
+# 	}
+# 	modifier = {
+# 		factor = 1.2
+# 		owner = { 
+# 			is_machine_empire = yes
+# 		}
+# 	}
+# 	modifier = {
+# 		factor = 100
+# 		owner = { 
+# 			OR = { 
+# 				has_deficit = consumer_goods
+# 				has_deficit = alloys
+# 			}
+# 		}
+# 	}
+# 	modifier = {
+# 		factor = 10
+# 		OR = {
+# 			owner = { has_monthly_income = { resource = alloys value < 15 } }
+# 			owner = {
+# 				AND = {
+# 					country_uses_consumer_goods = yes
+# 					has_monthly_income = { resource = consumer_goods value < 5 }
+# 				}
+# 			}
+# 		}
+# 	}
+# 	add_district = district_industrial
+# 	owner = { add_resource = { minerals = -500 } }
+# }
+1 = {
+
+}

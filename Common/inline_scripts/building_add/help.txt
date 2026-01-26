@@ -1,0 +1,2 @@
+#non contengono costi
+#devono essere messi in una random list

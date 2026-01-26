@@ -1,0 +1,47 @@
+cg_set_blockers = {
+	switch = {
+		trigger = has_deposit
+		gpm_d_ruined_battlefield = { add_deposit = d_bomb_crater add_deposit = d_bomb_crater }
+		gpm_d_ice_flora = { add_deposit = d_massive_glacier }
+		gpm_d_planetwide_forest = { add_deposit = gpm_tb_forest_resources }
+		gpm_d_dense_forests = { add_deposit = gpm_tb_forest_resources }
+		gpm_d_proto_forests = { add_deposit = gpm_tb_forest_resources }
+		gpm_d_magnetic_fields = { add_deposit = d_active_volcano }
+		gpm_d_magnetic_mountains = { add_modifier = { modifier = unstable_tectonics } }
+		gpm_d_carnivorous_jungle = { add_deposit = d_dense_jungle }
+		gpm_d_carnivorous_forest = { add_deposit = d_dangerous_wildlife_blocker }
+		gpm_d_carnivorous_kelp = { add_deposit = d_dangerous_wildlife_blocker }
+		gpm_d_toxic_vent = { add_deposit = gpm_tb_volatile_gasses add_deposit = d_toxic_kelp }
+		gpm_d_unnatural_crystals = { add_deposit = gpm_tb_volatile_crystals }
+		gpm_d_crystal_hills = { add_deposit = gpm_tb_volatile_crystals }
+		gpm_d_spice_fields = { add_deposit = gpm_tb_volatile_motes }
+		gpm_d_the_black_stone = { add_modifier = { modifier = weak_magnetic_field } }
+		gpm_d_iron_mountain = { add_deposit = d_mountain_range }
+		gpm_d_floating_mountain = { add_deposit = d_mountain_range }
+		gpm_d_super_volcano = { add_deposit = d_active_volcano add_modifier = { modifier = abundant_geothermal_activity } } 
+		gpm_d_gargantuan_sinkhole = { add_deposit = d_deep_sinkhole } 
+		gpm_d_discharging_field = { add_modifier = { modifier = weak_magnetic_field } }
+		gpm_d_giant_trees = { add_deposit = gpm_tb_forest_resources add_deposit = gpm_d_webbing }
+		gpm_d_crystal_jungle = { add_modifier = { modifier = bleak_planet } }
+		gpm_d_floating_islands = { add_modifier = { modifier = unstable_tectonics } }
+		gpm_d_amoeba_sea = { add_deposit = d_dangerous_wildlife_blocker }
+		gpm_d_glass_towers = { add_deposit = random add_deposit = random }
+		gpm_d_howling_peaks = { add_deposit = random add_deposit = random }
+		gpm_d_mega_fungi = { add_deposit = d_dangerous_wildlife_blocker add_deposit = d_dangerous_wildlife_blocker }
+		gpm_d_energy_storm = { add_modifier = { modifier = extreme_storms } }
+		gpm_d_titanic_cave = { add_modifier = { modifier = unstable_tectonics } add_deposit = d_dangerous_wildlife_blocker }
+		gpm_d_abandoned_stargate = { add_deposit = d_ruined_district add_deposit = d_forgotten_civilization }
+		gpm_d_bioluminescent_forest = { add_modifier = { modifier = irradiated_planet } add_deposit = random }
+		gpm_d_land_reefs = { add_modifier = { modifier = atmospheric_hallucinogen } add_deposit = random }
+		gpm_d_lava_lake = { add_modifier = { modifier = forest_fire } add_deposit = d_ruined_district } 
+		gpm_d_Collapsed_habitat = { add_modifier = { modifier = damaged_ecology } add_deposit = d_ruined_district } 
+		gpm_d_forgotten_deposit = { add_modifier = { modifier = abandoned_terraforming } add_deposit = d_forgotten_civilization } 
+		
+	}
+}
+cg_set_flag = {
+	if = { limit = { has_modifier = "cg_Meteor_Storms" }
+		 set_global_flag = meteor_storms_exist 
+		 solar_system = { set_star_flag = meteor_storms } # set_name = "Meteor_Storms"
+	}
+}

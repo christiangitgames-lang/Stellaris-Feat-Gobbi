@@ -1,0 +1,164 @@
+decision_automate_planet_luxuries_boost = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_auto_luxuries
+
+	resources = {
+		category = decisions
+		cost = {
+			consumer_goods = 10
+			mult = value:pop_size_10to100
+		}
+	}
+
+	potential = {
+		owner = { is_regular_empire = yes }
+		NOR = { 
+			has_modifier = "planet_luxuries_boost"
+			has_modifier = "auto_planet_luxuries_boost"
+		}
+	}
+
+	effect = {
+		add_modifier = { modifier = "planet_luxuries_boost" days = 3600 }
+		add_modifier = { modifier = "auto_planet_luxuries_boost" }
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+decision_automate_planet_luxuries_boost_free = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_auto_luxuries
+
+
+	potential = {
+		owner = { is_regular_empire = yes }
+		has_modifier = "planet_luxuries_boost"
+		NOT = { has_modifier = "auto_planet_luxuries_boost" }
+	}
+	effect = {
+		#add_modifier = { modifier = "planet_luxuries_boost" days = 3600 }
+		add_modifier = { modifier = "auto_planet_luxuries_boost" }
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+decision_disable_automate_planet_luxuries_boost = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_disable_auto_luxuries
+
+
+	potential = {
+		owner = { is_regular_empire = yes }
+		has_modifier = "auto_planet_luxuries_boost"
+	}
+
+	effect = {
+		remove_modifier = "auto_planet_luxuries_boost"
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+decision_automate_planet_incorporate = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_automate_planet_incorporate
+
+	resources = {
+		category = decisions
+		cost = {
+			minor_artifacts = 100
+		}
+	}
+
+	potential = {
+		owner = { 
+			OR = {
+				is_hive_empire = yes 
+				AND = {
+						is_machine_empire = yes
+						NOT = {
+							has_civic = civic_machine_servitor
+						}
+					prev = { NOT = { has_designation = col_nanotech_world } }
+						
+				}
+			}
+		}
+		NOR = { 
+			has_modifier = "planet_artifact_relays_machine"
+			has_modifier = "planet_artifact_relays_hivemind"
+			has_modifier = "auto_decision_automate_planet_incorporate"
+		}
+	}
+
+	effect = {
+		add_modifier = { modifier = "auto_decision_automate_planet_incorporate" }
+		hidden_effect = {
+			if = {
+				limit = { owner = { is_hive_empire = yes } }
+				add_modifier = { modifier = "planet_artifact_relays_hivemind" days = 3600 }
+			}
+			else = { add_modifier = { modifier = "planet_artifact_relays_machine"  days = 3600 } }
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+decision_automate_planet_incorporate_free = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_automate_planet_incorporate
+
+
+	potential = {
+		owner = { is_regular_empire = yes }
+		OR = {
+			has_modifier = "planet_artifact_relays_machine"
+			has_modifier = "planet_artifact_relays_hivemind"
+		}
+		NOT = { has_modifier = "planet_artifact_relays_machine" }
+	}
+	effect = {
+		#add_modifier = { modifier = "planet_luxuries_boost" days = 3600 }
+		add_modifier = { modifier = "auto_decision_automate_planet_incorporate" }
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+decision_disable_automate_planet_incorporate = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_disable_automate_planet_incorporate
+
+
+	potential = {
+		OR = {
+			has_modifier = "auto_decision_automate_planet_incorporate"
+			has_modifier = "planet_artifact_relays_hivemind"
+		}
+	}
+
+	effect = {
+		remove_modifier = "planet_artifact_relays_machine"
+		remove_modifier = "planet_artifact_relays_hivemind"
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

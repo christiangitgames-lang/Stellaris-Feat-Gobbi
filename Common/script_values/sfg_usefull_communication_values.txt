@@ -1,0 +1,537 @@
+max_Orbital_Ring_modules = {
+	base = 2
+	modifier = {
+		add = 1
+		has_starbase_size >= orbital_ring_tier_2
+	}
+	modifier = {
+		add = 1
+		has_starbase_size >= orbital_ring_tier_3
+	}
+}
+max_Orbital_ring_buildings = {
+	base = 0
+	modifier = {
+		add = 1
+		has_starbase_size >= orbital_ring_tier_2
+	}
+	modifier = {
+		add = 1
+		has_starbase_size >= orbital_ring_tier_3
+	}
+}
+Free_orbital_rings_buildings = {
+	base = 0
+	add = value:max_Orbital_ring_buildings
+	complex_trigger_modifier = {
+		trigger = count_starbase_buildings
+		parameters = {
+			
+			#type = orbital_ring_beastport
+			include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = recruitment_office
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = crew_quarters
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = hydroponics_bay
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = resource_silo
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = nebula_refinery
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = nebula_refinery_gestalt
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = listening_post
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = offworld_trading_company
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = fleet_academy
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = naval_logistics_office
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = titan_yards
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = colossus_yards
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = black_hole_observatory
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = target_uplink_computer
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = defense_grid
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = deep_space_black_site
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = curator_think_tank
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = art_college
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = salvager_workshop
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = shroud_beacon
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = cybrex_mining_hub
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = irassian_naval_yards
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = yuht_detection_array
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = zroni_storm_caster
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = archaeo_overcharger
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = feeder
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = communications_jammer
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = disruption_field
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = warp_fluctuator
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = transit_hub
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = command_center
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = trader_proxy_office
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = dragon_hatchery
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ice_mining_station
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = offspring_outlook
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = mercenary_garrison
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = cordyceptic_reanimation_facility
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = dark_matter_detector
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = dark_matter_listening_post
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = dimensional_shrine
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = reloading_bay
+	# }
+	
+	# #cg/phigo part
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = starm_science_booster_nv
+	# }
+	
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = nebula_alloy_refinery
+	# }
+	
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = starm_culture_booster
+	# }
+	
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = starm_science_booster
+	# }
+	
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = Governmental_Orbital_Exchange_Market
+	# }
+	
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = Governmental_diplomatic_asset
+	# }
+	
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = Governmental_manager_asset
+	# }
+	
+	# #3.14
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = storm_attraction_computer
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = storm_repelling_computer
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = hyperlane_detailer
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = voidlure_tiyanki
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = voidlure_space_amoeba
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = voidlure_voidworm
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = voidlure_cutholoid
+	# }
+	# #coop
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = mario_fleet_academy
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_minerals_hub
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_energy_hub
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_food_hub
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_trade_hub
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_bureaucracy_hub
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_synapse_hub
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_maintenance_hub
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_consumer_goods_hub
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_alloys_hub
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_psi_corps
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_orbital_shield_generator
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_galactic_stock_exchange
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_embassy_complex
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_noble_estates
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_slave_processing_facility
+	# }
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_feeder
+	# }
+	# #4.0
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = ring_growth_chamber
+	# }
+}
+Free_Orbital_Ring_modules = {
+	base = 0
+	add = value:max_Orbital_Ring_modules
+	#subtract = trigger:count_starbase_modules
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+			#type = orbital_ring_beastport
+			include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = defense_post
+	
+	# 			include_being_constructed = yes
+	# 	}
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = pd_battery
+	
+	# 			include_being_constructed = yes
+	# 	}
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = ion_battery
+	
+	# 			include_being_constructed = yes
+	# 	}
+	# 	mode = subtract
+	# }
+	# #phigo
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = solar_food_network
+	
+	# 			include_being_constructed = yes
+	# 	}
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = civilian_anchorage
+	
+	# 			include_being_constructed = yes
+	# 	}
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = starm_science_hub
+	
+	# 			include_being_constructed = yes
+	# 	}
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = starm_culture_hub
+	
+	# 			include_being_constructed = yes
+	# 	}
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = administrative_hub
+	
+	# 			include_being_constructed = yes
+	# 	}
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = administrative_swarm_hub
+				
+	# 			include_being_constructed = yes
+	# 	}
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = starm_science_hub_nv
+				
+	# 			include_being_constructed = yes
+	# 	}
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = orbital_ring_habitation
+				
+	# 			include_being_constructed = yes
+	# 	}
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = orbital_ring_shipyard
+				
+	# 			include_being_constructed = yes
+	# 	}
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = orbital_ring_anchorage
+	# 			include_being_constructed = yes
+	# 	}
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = orbital_ring_gun_battery
+	# 		include_being_constructed = yes
+	# }
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = orbital_ring_missile_battery
+	# 	include_being_constructed = yes
+	# }
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = orbital_ring_hangar_bay
+	# 	include_being_constructed = yes
+	# }
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = orbital_ring_hatchery
+	# 	include_being_constructed = yes
+	# }
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = orbital_ring_beastport
+	# 	include_being_constructed = yes
+	# }
+	# 	mode = subtract
+	# }
+	# complex_trigger_modifier = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+			
+	# 			type = orbital_ring_vivarium_tank
+	# 	include_being_constructed = yes
+	# }
+	# 	mode = subtract
+	# }
+}

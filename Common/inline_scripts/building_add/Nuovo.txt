@@ -1,0 +1,1 @@
+inline_script = "building_add/free_buind_slots" #obbligatoria

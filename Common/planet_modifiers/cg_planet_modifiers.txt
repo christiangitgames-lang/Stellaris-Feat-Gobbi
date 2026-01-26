@@ -1,0 +1,773 @@
+@common = 10
+@uncommon = 5
+@rare = 1
+
+clgpm_frequent_thunderstorms = {
+	spawn_chance = {
+		modifier = {
+			add = @uncommon
+			is_planet_class = "pc_desert"
+		}
+		modifier = {
+			add = @uncommon
+			is_planet_class = "pc_tropical"
+		}
+		modifier = {
+			add = @uncommon
+			is_planet_class = "pc_arid"
+		}
+		modifier = {
+			add = @uncommon
+			is_planet_class = "pc_continental"
+		}
+		modifier = {
+			add = @uncommon
+			is_planet_class = "pc_ocean"
+		}
+		modifier = {
+			add = @uncommon
+			is_planet_class = "pc_tundra"
+		}
+		modifier = {
+			add = @uncommon
+			is_planet_class = "pc_arctic"
+		}
+		modifier = {
+			add = @uncommon
+			is_planet_class = "pc_alpine"
+		}
+		modifier = {
+			add = @uncommon
+			is_planet_class = "pc_savannah"
+		}
+		modifier = {
+			add = 0		# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @uncommon
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_frequent_thunderstorms"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+
+	modifier = "gpm_frequent_thunderstorms"
+}
+clgpm_global_thunderstorms = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = 0		# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_global_thunderstorms"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+
+	modifier = "gpm_global_thunderstorms"
+}
+
+clgpm_single_biome = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_planet_class = "pc_tropical"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = "pc_arid"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = "pc_continental"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = "pc_ocean"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = "pc_tundra"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = "pc_alpine"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = "pc_savannah"
+		}
+		modifier = {
+			add = 0		# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_single_biome"
+		}
+	}
+
+	modifier = "gpm_single_biome"
+}
+clgpm_thin_atmospheres = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = 0		# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_thin_atmospheres"
+		}
+	}
+
+	modifier = "gpm_thin_atmospheres"
+}
+clgpm_strong_volcanism = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = 0		# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = 0
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_strong_volcanism"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+
+	modifier = "gpm_strong_volcanism"
+}
+clgpm_weak_magnetic_field_2 = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = 0		# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_weak_magnetic_field_2"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+
+	modifier = "gpm_weak_magnetic_field_2"
+}
+clgpm_mineral_rich_2 = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = 0		# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = 0
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_mineral_rich_2"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+
+	modifier = "gpm_mineral_rich_2"
+}
+clgpm_floating_islands = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = @rare		# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_floating_islands"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 2
+		}
+	}
+
+	modifier = "gpm_floating_islands"
+}
+clgpm_unusual_seasons = {
+	spawn_chance = {
+		modifier = {
+			add = @uncommon
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = 0	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @uncommon
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_unusual_seasons"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 2
+		}
+	}
+
+	modifier = "gpm_unusual_seasons"
+}
+clgpm_living_planet = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = @rare	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_living_planet"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_rich_mircoflora"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 0
+		}
+	}
+
+	modifier = "gpm_living_planet"
+}
+clgpm_gemstones = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = @rare	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_gemstones"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+
+	modifier = "gpm_gemstones"
+}
+clgpm_artificial_water = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			OR = {
+				is_planet_class = "pc_continental"
+				is_planet_class = "pc_ocean"
+				is_planet_class = "pc_tundra"
+				is_planet_class = "pc_arctic"
+				is_planet_class = "pc_alpine"
+			}
+		}
+		modifier = {
+			add = @rare	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_artificial_water"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+
+	modifier = "gpm_artificial_water"
+}
+clgpm_windy = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = 0	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_windy"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+
+	modifier = "gpm_windy"
+}
+clgpm_unusual_formations = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = 0	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_unusual_formations"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+
+	modifier = "gpm_unusual_formations"
+}
+clgpm_great_temperature_variation = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = @uncommon	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_great_temperature_variation"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+
+	modifier = "gpm_great_temperature_variation"
+}
+clgpm_symbiotic_life = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = @rare	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_symbiotic_life"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_bleak"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_lush"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	modifier = "gpm_symbiotic_life"
+}
+clgpm_resilent_parasites = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = 0	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_resilent_parasites"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	modifier = "gpm_resilent_parasites"
+}
+clgpm_beautiful_lakes = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = "pc_desert"
+		}
+		modifier = {
+			add = @rare	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_beautiful_lakes"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	modifier = "gpm_beautiful_lakes"
+}
+clgpm_blood_moon = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = "pc_desert"
+		}
+		modifier = {
+			add = @rare	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_blood_moon"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	modifier = "gpm_blood_moon"
+}
+clgpm_siren_song = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = @rare	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_siren_song"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	modifier = "gpm_siren_song"
+}
+clgpm_iron_oceans = {
+	spawn_chance = {
+		modifier = {
+			add = @common
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = 0	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_iron_oceans"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	modifier = "gpm_iron_oceans"
+}
+clgpm_extensive_cavern_system = {
+	spawn_chance = {
+		modifier = {
+			add = @common
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = 0	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_extensive_cavern_system"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	modifier = "gpm_extensive_cavern_system"
+}
+
+clgpm_delicious_ingredients = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = 0	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_delicious_ingredients"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	modifier = "gpm_delicious_ingredients"
+}
+
+clgpm_atmospheric_stimulant = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = 0	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "clgpm_atmospheric_stimulant"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	modifier = "gpm_atmospheric_stimulant"
+}
+pm_cg_Meteor_Storms = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = @rare	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_cg_Meteor_Storms"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	modifier = "cg_Meteor_Storms"
+}
+pm_cg_Fire_Tornados = {
+	spawn_chance = {
+		modifier = {
+			add = @rare
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = 0	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_cg_Fire_Tornados"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	modifier = "cg_Fire_Tornados"
+}
+
+pm_cg_Thick_Fog = {
+	spawn_chance = {
+		modifier = {
+			add = @uncommon
+			is_normal_habitable_planet = yes
+		}
+		modifier = {
+			add = 0	# Gaia Worlds are Paradise Planets, hence no Hazardous Weather conditions.
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			add = @rare
+			is_planet_class = pc_relic
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_cg_Thick_Fog"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	modifier = "cg_Thick_Fog"
+}
+

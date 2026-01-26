@@ -1,0 +1,108 @@
+namespace = cg_release_client_state
+
+#Planetary decision to release single-system vassals
+planet_event = {
+	id = cg_release_client_state.1
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		
+	}
+	
+	immediate = {
+		owner = {
+			save_event_target_as = releasing_empire
+			owner_species = { save_event_target_as = releasing_species }
+		}
+
+		create_country = {
+			name = random
+			species = event_target:releasing_species
+			origin = origin_default
+			flag = random
+			
+			effect = {
+				copy_ethos_and_authority = event_target:releasing_empire
+				save_event_target_as = client_state
+				establish_communications_no_message = event_target:releasing_empire
+				event_target:releasing_empire = {
+					establish_communications_no_message = prev
+				}
+				root = {
+					set_owner = event_target:client_state
+					solar_system = {
+						starbase = {
+							set_owner = event_target:client_state
+						}
+					}
+				}
+				copy_techs_from = {
+					target = event_target:releasing_empire
+					except = {
+						# Horizon Signal
+						tech_akx_worm_1
+						tech_akx_worm_2
+						tech_akx_worm_3
+					}
+				}
+				
+				add_resource = {
+					food = 100
+					energy = 100
+					minerals = 150
+					consumer_goods = 100
+					alloys = 200
+					unity = 100
+					influence = 15
+				}
+				if = { limit = { root = { num_tradition_categories > 0 } } add_resource = { unity = 1000 } }
+				else_if = { limit = { root = { num_tradition_categories > 1 } } add_resource = { unity = 5000 } }
+				else_if = { limit = { root = { num_tradition_categories > 2 } } add_resource = { unity = 15000 } }
+				else_if = { limit = { root = { num_tradition_categories > 3 } } add_resource = { unity = 20000 } }
+				else_if = { limit = { root = { num_tradition_categories > 4 } } add_resource = { unity = 30000 } }
+				else_if = { limit = { root = { num_tradition_categories > 5 } } add_resource = { unity = 40000 } }
+				else_if = { limit = { root = { num_tradition_categories > 6 } } add_resource = { unity = 50000 } }
+				create_leader = {
+					class = random_ruler
+					species = owner_main_species
+					name = random
+					skill = 2
+					traits = {}
+				}
+				set_leader = last_created_leader
+				set_subject_of = {
+					who = event_target:releasing_empire
+					preset = preset_vassal
+				}
+				random_owned_starbase = {
+					limit = { has_starbase_size = starbase_outpost }
+					set_starbase_size = starbase_starport
+					prev = {
+						add_resource = {
+							alloys = -200
+						}
+					}
+				}
+				add_modifier = { modifier = Client_released years = 1}
+				event_target:releasing_empire = { 
+					if = {
+						limit = {
+							has_tradition = tr_domination_adopt
+						}
+						add_modifier = {
+							modifier = Client_released_Master
+							years = 1
+						}
+					}else = {
+						add_modifier = {
+							modifier = Client_released_Master
+							years = 5
+						}
+					}
+				}
+			}
+		}
+	}
+}

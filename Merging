@@ -1,0 +1,27 @@
+Cetus:
+planet_jobs_slave_produces_mult diventa pop_slave_bonus_workforce_mult
+Aggiungere regen alle armi distruptor nuove: SMALL_PSIONIC_DISRUPTOR,MEDIUM_PSIONIC_DISRUPTOR,SMALL_BIO_PSIONIC_DISRUPTOR,MEDIUM_BIO_PSIONIC_DISRUPTOR
+controllare free_amenities è ancora in migliaia  00_resource_Decision
+quale è la differenza tra planet_miners_produces_mult e miner_jobs_bonus_workforce_mult ?
+nei deposit bisogna mettere station = shipclass_mining_station
+tutte le planet_buildings_upkeep_mult e planet_districts_upkeep_mult sno diventate planet_structures_upkeep_mult
+Arrivato a  static_modifiers 01 (incl)
+
+Da fare:
+ember_battleship agigunta quindi fare ember_carrier?
+TEST:
+
+advanced_authority
+riabilitare is_eager_explorer_empire le navi così per vedere se sanno usarle nell'ultima patch
+-----------------------------------------
+Arrivato a Wargoals 
+Research hanno stranni metodi di produzione?
+4.0last
+
+
+
+Da rivedere colony types, lasciar stare per ora.
+Da rivedere valore fazioni cerca esempio faction_base_output ho tolto society di base
+
+Controllare le politiche di trade esempio trade_conversion_holy_covenant se usano quelle per convertire oppure set_trade_conversions
+

@@ -1,0 +1,18 @@
+namespace = check_crisis
+
+### Optimization
+event = {
+	id = check_crisis.0
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { crisis_run = yes }
+			set_global_flag = crisis_run_flag
+		}
+		else = {
+			remove_global_flag = crisis_run_flag
+		}
+    }
+}

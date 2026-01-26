@@ -1,0 +1,15 @@
+﻿l_english: 
+
+ civic_eager_explorers_effects:0 "$eager_explorers_base_effect$\n\nNew starbases §Gcan built in remote systems§! and §Gcan claim remote systems§"
+ civic_privatized_exploration_effects:0 "$eager_explorers_base_effect$\nStart with the §H$tech_starbase_3$§! technology and a §H$tech_starbase_3$§! already built in your home system."sidelined, and a small fleet of vessels capable of limited subspace travel was constructed.\n\nNew starbases §Gcan built in remote systems§! and §Gcan claim remote systems§"
+ civic_hive_stargazers_effects:1 "$eager_explorers_base_effect$\nAdds the §H$trait_stargazer$§! trait.\nBegin with low Intel about your starting cluster.\n\nNew starbases §Gcan built in remote systems§! and §Gcan claim remote systems§"
+ civic_machine_exploration_protocol_effects:1 "$eager_explorers_base_effect$\nGain §G50%§! more Insight progress from observing pre-FTL Civilizations.\nGain £unity£§HUnity§! every time you finish establishing first contact.\n\nNew starbases §Gcan built in remote systems§! and §Gcan claim remote systems§"
+
+
+ civic_tooltip_anglers_start: "$t$- On §YOcean Worlds§!, §YAgriculture Districts§! increases §YPop Growth Speed§! are uncapped.$TABBED_NEW_LINE$- On §YWet§! worlds, §YAgriculture Districts§! have the £zone£ §Y$zone_anglers$§! Specialization."
+ resettlement_limited:0 "Limited"
+ resettlement_limited_name:0 "Resettlement is limited"
+ resettlement_limited_desc:1 "Free pops can be forcibly resettled between planets but need more cost."
+
+
+ NAVY_SIZE_DESC:4 "§H$NAVY_SIZE_TITLE$§! also includes off-territory logistics. The free percentage reduces proportionalattrition (damage to ships' hulls) in enemy territory example:\nNaval cap used | Reduce hp at system | max reduce total hp \n< 25 %   |  2%   |  5% \n>= 25%  |  3%   |  12% \n>= 50%  |  5%   |  19% \n>= 75%  |  8%   |  29% \n>= 100% |  10% |  49% \n\n\n§EExceeding your §H$NAVY_SIZE_TITLE$§! will cause your ships to have an increased upkeep cost."

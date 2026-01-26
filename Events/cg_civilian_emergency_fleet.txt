@@ -1,0 +1,9 @@
+namespace = cg_civilian_emergency_fleet
+#crea una flotta di emergenza.
+# settings = {
+# 	can_upgrade = no
+# 	can_change_composition = no
+# 	can_change_leader = no
+# 	uses_naval_capacity = yes
+# 	spawn_debris = yes
+# }

@@ -1,0 +1,187 @@
+## Possible Deposit Variables ##
+# resources, resource and amount
+# potential trigger (planet scope)
+# blocked_modifier - applied to planet only when deposit blocker has been cleared
+# constant_modifier - applied to planet always
+# blocker = <key/any/none> - default any
+# station = station class in orbit to gather
+#Mario ha preso sta roba da altre parti ma non l'ha scritta... ricordo una sua citazione "Citare sarebbe gentile"
+d_generalized_malfunction = {
+	is_for_colonizable = yes
+	icon = "d_mining_tunnels"
+	category = deposit_cat_rare_blocker
+	time = 1080
+
+	potential = { always = no }
+
+	planet_modifier = {
+		
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			alloys = 500
+		}
+	}
+
+}
+
+d_phi_exotic_gas_1 = {
+	is_for_colonizable = yes
+	icon = "d_gaseous_eruption"
+	category = deposit_cat_rare
+	
+	potential = { always = no }
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			exotic_gases = 1
+		}
+	}
+}
+
+d_phi_exotic_gas_5 = {
+	is_for_colonizable = yes
+	icon = "d_gaseous_eruption"
+	category = deposit_cat_rare
+	
+	potential = { always = no }
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			exotic_gases = 3
+		}
+	}
+}
+
+d_phi_exotic_gas_10 = {
+	is_for_colonizable = yes
+	icon = "d_gaseous_eruption"
+	category = deposit_cat_rare
+	
+	potential = { always = no }
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			exotic_gases = 5
+		}
+	}
+}
+
+d_phi_rare_crystals_1 = {
+	is_for_colonizable = yes
+	icon = "d_crystalline_caverns"
+	category = deposit_cat_rare
+	
+	potential = { always = no }
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			rare_crystals = 1
+		}
+	}
+}
+
+d_phi_rare_crystals_5 = {
+	is_for_colonizable = yes
+	icon = "d_crystalline_caverns"
+	category = deposit_cat_rare
+	
+	potential = { always = no }
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			rare_crystals = 3
+		}
+	}
+}
+
+d_phi_rare_crystals_10 = {
+	is_for_colonizable = yes
+	icon = "d_crystalline_caverns"
+	category = deposit_cat_rare
+	
+	potential = { always = no }
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			rare_crystals = 5
+		}
+	}
+}
+
+d_phi_volatile_motes_1 = {
+	is_for_colonizable = yes
+	icon = "d_geothermal_vent"
+	category = deposit_cat_rare
+	
+	potential = { always = no }
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			volatile_motes = 1
+		}
+	}
+}
+
+d_phi_volatile_motes_5 = {
+	is_for_colonizable = yes
+	icon = "d_geothermal_vent"
+	category = deposit_cat_rare
+	
+	potential = { always = no }
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			volatile_motes = 3
+		}
+	}
+}
+
+d_phi_volatile_motes_10 = {
+	is_for_colonizable = yes
+	icon = "d_geothermal_vent"
+	category = deposit_cat_rare
+	
+	potential = { always = no }
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			volatile_motes = 5
+		}
+	}
+}
+
+d_phi_archaeology_site = {
+	is_for_colonizable = yes
+	icon = "d_metal_boneyard"
+	category = deposit_cat_rare
+	
+	potential = { always = no }
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_archaeoengineers_add = 100
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_archaeo_unit_add = 100
+	}
+}

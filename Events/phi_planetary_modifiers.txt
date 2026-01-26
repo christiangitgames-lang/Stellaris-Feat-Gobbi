@@ -1,0 +1,353 @@
+namespace = phi_planetary_modifiers
+
+# EXPLAINER:
+#	phi_planetary_modifiers.0	called at game start - makes sure that the guaranteed planets are just adequate, one for each other climate-compatible class.
+#	phi_planetary_modifiers.1	after game start, it checks if any capital planet has rolled the "resources" modifiers, and then add the relative special blocker
+#	phi_planetary_modifiers.2	invoked by phi_planetary_modifiers.1 - calls the scripted effect "generate_phi_planet_modifiers_3".
+#	phi_planetary_modifiers.3	invoked by phi_planetary_modifiers.1 - calls the scripted effect "generate_phi_planet_relic_modifiers_3".
+#	phi_planetary_modifiers.10	invoked by phi_planetary_modifiers_on_actions - removes and improves basic planet modifiers when terraforming is complete.
+
+event = {
+	id = phi_planetary_modifiers.0
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		every_system = {
+			limit = {
+				OR = {
+					has_star_flag = neighbor_t1_first_colony
+					has_star_flag = neighbor_t2_second_colony
+				}
+			}
+			every_system_planet = {
+				limit = {
+					change_scripted_ideal = yes
+					is_colonizable = yes
+					has_planet_flag = prescripted_ideal
+				}
+				change_planet_climate = yes
+				reroll_planet_modifiers = yes
+			}
+		}
+		every_system = {
+			every_system_planet = {
+				limit = {
+					OR = { 
+						is_planet_class = pc_nuked 
+					}
+				}
+				if = { 
+					limit = { is_planet_class = pc_nuked } 
+					add_deposit = d_phi_archaeology_site
+					add_deposit = d_bomb_crater
+					add_deposit = d_bomb_crater
+					add_deposit = d_bomb_crater
+					add_deposit = d_bomb_crater	
+				}
+				
+				if = { 
+					limit = { has_modifier = gpm_iron_oceans } 
+					set_planet_entity = {
+						entity = molten_planet_mercury_entity
+						atmosphere_color = hsv { 0.548 0.519 0.9 }
+						atmosphere_intensity = 0.1
+						atmosphere_width = 1.0
+					}
+				}
+				
+			}
+		}
+		random_system = {
+			limit = {
+				any_system_planet = {
+					OR = {
+						has_deposit = gpm_d_floating_islands
+						has_deposit = gpm_d_floating_island
+						has_deposit = gpm_d_floating_mountain
+					}
+				}
+			}
+			weights = {
+				base = 1
+				modifier = {
+					factor = 100
+					any_system_planet = {
+						OR = {
+							has_deposit = gpm_d_floating_islands
+							is_moon = yes
+						}
+					}
+				}
+			}
+			random_system_planet = {
+				limit = {
+					OR = {
+						has_deposit = gpm_d_floating_islands
+						has_deposit = gpm_d_floating_island
+						has_deposit = gpm_d_floating_mountain
+					}
+				}
+				set_name = "Pandora"
+				change_pc = pc_continental
+				set_planet_entity = { entity = pc_gaia }
+				set_planet_size = 25
+				create_species = {
+					name = "Na'vi"
+					class = HUM
+					portrait = humanoid_04
+					traits = {
+						ideal_planet_class = "pc_continental"
+						trait = random_traits
+					}
+					
+					homeworld = this
+				}
+				create_country = {
+					name = random
+					civics = {
+						civic = civic_secret_of_fire
+						civic = civic_the_wheel
+					}
+					authority = random
+					ethos = {
+						ethic = ethic_fanatic_spiritualist
+					}
+					species = last_created_species
+					origin = origin_tree_of_life
+					flag = {
+						icon = {
+							category = "pre_ftl"
+							file = "preftl_stone_age.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "new_dawn.dds"
+						}
+						colors = {
+							"turquoise"
+							"green"
+							"null"
+							"null"
+						}
+					}
+					type = primitive
+					effect = {
+						set_country_flag = stone_age
+						set_pre_ftl_age = stone_age
+						set_graphical_culture = preindustrial_01
+					}
+				}
+				set_owner = last_created_country
+				set_capital = yes
+				every_deposit = {
+					limit = { is_deposit_type = d_dangerous_wildlife_blocker }
+					clear_blocker = yes
+				}
+				while = {
+					count = 4
+					create_pop = {
+						species = last_created_species
+					}
+				}
+				add_building = building_crude_huts
+				add_building = building_crude_huts
+				add_deposit = d_tree_of_life_home
+				add_deposit = d_crystalline_caverns
+				add_blocker = {
+					type = d_giant_tree_navi
+					#blocked_deposit = d_crystalline_caverns
+				}
+			}
+		}	
+	}
+}
+
+# event = {
+# 	id = phi_planetary_modifiers.1
+# 	hide_window = yes
+
+# 	is_triggered_only = yes
+	
+# 	immediate = {
+# 		every_country = {
+# 			every_owned_planet = {
+# 				limit = { is_capital = yes }
+# 				switch = {
+# 					trigger = has_modifier
+# 					phi_pm_mantle_frozen_gas_pockets_3 =  { add_deposit = d_phi_exotic_gas_1 }
+# 					phi_pm_tectonic_fractures_3 = { add_deposit = d_phi_rare_crystals_1 }
+# 					phi_pm_dust_storms_3 = { add_deposit = d_phi_volatile_motes_1 }
+# 				}
+# 			}
+# 		}
+# 	}
+# }
+
+planet_event = {
+	id = phi_planetary_modifiers.2
+	hide_window = yes
+	pre_triggers = {
+		is_capital = no
+	}
+	is_triggered_only = yes
+	
+	trigger = {
+		
+		NOT = { has_planet_flag = phi_surveyed }
+		OR = {
+			is_planet_class = pc_arctic
+			is_planet_class = pc_alpine
+			is_planet_class = pc_tundra
+			is_planet_class = pc_ocean
+			is_planet_class = pc_continental
+			is_planet_class = pc_tropical
+			is_planet_class = pc_arid
+			is_planet_class = pc_desert
+			is_planet_class = pc_savannah
+		}
+	}
+	# 		is_cold = yes  #freddo
+	# 		is_wet = yes #bagnato
+	# 		is_dry = yes # secco
+	immediate = {
+		set_planet_flag = phi_surveyed
+		random_list = { #suvvia mario era noioso sempre la certezza di qualche modificatore più o meno uguale...
+			10 = {
+				random_list = {
+					1 = {
+						add_blocker = {
+							type = d_massive_glacier
+							blocked_deposit = random
+						}
+						modifier = {
+							factor = 10
+							is_cold = yes
+						}
+					}
+					1 = {
+						add_blocker = {
+							type = d_active_volcano
+							blocked_deposit = random
+						}
+						modifier = {
+							factor = 10
+							is_cold = yes
+						}
+					}
+					1 = {
+						add_blocker = {
+							type = d_floodplains
+							blocked_deposit = random
+						}
+						modifier = {
+							factor = 10
+							is_wet = yes
+						}
+					}
+				}
+			}
+			3 = { generate_phi_planet_modifiers_1 = yes }
+			7 = { generate_phi_planet_modifiers_2 = yes }
+			80 = { generate_phi_planet_modifiers_3 = yes }
+		}
+	}
+}
+
+
+planet_event = {
+	id = phi_planetary_modifiers.3
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_planet_flag = phi_surveyed }
+		is_planet_class = pc_relic
+	}
+	
+	immediate = {
+		set_planet_flag = phi_surveyed
+		random_list = { #suvvia mario era noioso sempre la certezza di qualche modificatore più o meno uguale...
+			1 = { generate_phi_planet_modifiers_1 = yes }
+			9 = { generate_phi_planet_modifiers_2 = yes }
+			90 = { generate_phi_planet_modifiers_3 = yes }
+		}
+	}	
+}
+planet_event = {
+	id = phi_planetary_modifiers.4
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_planet_flag = phi_surveyed }
+		is_planet_class = pc_gaia
+	}
+	immediate = {
+		set_planet_flag = phi_surveyed
+		random_list = { #suvvia mario era noioso sempre la certezza di qualche modificatore più o meno uguale...
+			50 = { }
+			50 = { generate_phi_planet_modifiers_1 = yes }
+		}
+	}
+}
+planet_event = {
+	id = phi_planetary_modifiers.10
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOR = {
+			is_planet_class = pc_gaia
+			is_planet_class = pc_nuked
+			is_planet_class = pc_habitat
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_relic
+			is_planet_class = pc_machine
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				solar_system = {
+					exists = owner
+					owner = { has_technology = tech_ecological_adaptation }
+				}
+			}
+			upgrade_phi_planet_modifiers_ecological_adaptation = yes
+		}
+		else = {
+			upgrade_phi_planet_modifiers = yes
+		}
+		remove_modifier = gpm_single_biome
+		remove_modifier = gpm_unusual_seasons
+		remove_modifier = gpm_living_planet
+		remove_modifier = gpm_unusual_formations
+		remove_modifier = gpm_great_temperature_variation
+		remove_modifier = gpm_symbiotic_life
+		remove_modifier = gpm_resilent_parasites
+		remove_modifier = gpm_siren_song
+		remove_modifier = cg_Fire_Tornados
+	}
+}
+
+planet_event = {
+	id = phi_planetary_modifiers.999
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+
+	}
+	
+	immediate = {
+		remove_phi_planet_modifiers_3 = yes
+		generate_phi_planet_modifiers_3 = yes
+	}
+}

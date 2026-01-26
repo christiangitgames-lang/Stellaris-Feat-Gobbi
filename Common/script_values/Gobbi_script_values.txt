@@ -1,0 +1,1286 @@
+# 	# List of valid mathematical operations:
+# 	# 	Numerical (modifying by a number):
+# 	# 	- set/weight (both do the same, replaces the current result with this value)
+# 	# 	- add
+# 	# 	- subtract
+# 	# 	- factor/mult/multiply ("multiply" fits the name scheme of the rest better, but the other two were kept for historical reasons)
+# 	# 	- divide
+# 	# 	- modulo
+# 	# 	- round_to (rounds to nearest of that value, e.g. 10.7 round_to 5 gives you 10)
+# 	# 	- max (sets to specified value if currently above it)
+# 	# 	- min (sets to specified value if currently below it)
+# 	# 	- pow (value is multiplied by itself to the power of x; be careful, you can get overflows if you are not careful)
+# 	# 	Simple (do not need a number, but just "yes", e.g. "round = yes")
+# 	# 	- round (sets to nearest full number)
+# 	# 	- ceiling (rounds up)
+# 	# 	- floor (rounds down) round = yes
+# 	# 	- abs (multiply by -1 if negative)
+# 	# 	- square (multiply by itself)
+# 	# 	- square_root
+Count_planet_system = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = count_system_colony
+		trigger_scope = solar_system
+		mode = mult
+	}
+}
+count_phi_branch_owned_planet = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = count_owned_planet
+		parameters = {
+			limit = { 
+				has_branch_office = prevprev
+			}
+		}
+		mode = add
+	}
+}
+# edict_size_effect = {
+# 	base = 0.02
+# 	#mult = trigger:num_pops
+# 	mult = trigger:empire_size
+# 	add = 1
+# }
+minor_artifact_size_effect = {
+	base = 0.02
+	#mult = trigger:num_pops
+	mult = trigger:empire_size
+	add = 1
+	mult = 0.01
+}
+edict_pop_size_effect = {
+	base = 0.0002
+	mult = trigger:pop_amount
+	add = 1
+}
+mult_years_passed = {
+	base = 0.025
+	mult = trigger:years_passed
+	add = 1
+}
+edict_mult_num_empires = {
+	base = 0.9
+	mult = num_empires
+	add = 1
+}
+edict_trade_minimum_galactic_trade = {
+	base = 150
+	mult = num_empires
+	min = 500
+	max = 2500
+}
+num_leaders_quarted = {
+	base = 1
+	mult = trigger:num_owned_leaders
+	divide = 4
+	min = 1
+}
+num_leaders_quarted_gestalt = {
+	base = 1
+	mult = trigger:num_owned_leaders
+	subtract = 2.5
+	divide = 4
+	min = 1
+}
+
+
+
+edict_fleet_size_effect = {
+	base = 0.015
+	#mult = trigger:num_pops
+	#mult = owner.trigger:num_ships
+	#mult = trigger:fleet_size #non funziona
+	mult = trigger:used_naval_capacity_integer
+	add = 1
+}
+edict_fleet_starbase_size_effect = {
+	base = 0.015
+	#mult = trigger:num_pops
+	#mult = owner.trigger:num_ships
+	#mult = trigger:fleet_size #non funziona
+	mult = trigger:used_naval_capacity_integer
+	divide = 2
+	mult = trigger:num_starbases
+	add = 1
+}
+pop_size_edicts_floor = {
+	base = 0
+	add = trigger:count_owned_pop_group
+	divide = 90
+	floor = yes
+	min = 1
+}
+pop_size_ventesimal_floor = {
+	base = 0
+	add = trigger:count_owned_pop_group
+	divide = 20
+	floor = yes
+}
+pop_size_ventesimal = {
+	base = 0
+	add = trigger:count_owned_pop_group
+	divide = 20
+	round = yes
+}
+pop_size_decimal = {
+	base = 0
+	add = trigger:count_owned_pop_group
+	divide = 10
+	round = yes
+}
+pop_size_fifty = {
+	base = 0
+	add = trigger:count_owned_pop_group
+	mult = 50
+	round = yes
+}
+pop_size_twenty = {
+	base = 0
+	add = trigger:count_owned_pop_group
+	mult = 20
+	round = yes
+}
+pop_size = {
+	base = 0
+	add = trigger:count_owned_pop_group
+	round = yes
+}
+power_fleet_factor = {
+	base = 1
+	add = trigger:fleet_power
+	divide = 70000
+	mult = 10
+	subtract = 5
+	min = 0
+	max = 6
+	round = yes
+}
+worker_slave_edict_size_effect = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_pop_group
+		parameters = {
+			limit = {
+				OR = {
+					has_job_category = worker
+					has_job_category = slave
+				}
+			}
+		}
+		mode = add
+	}
+	divide = 50
+	add = 1
+}
+job_weights_research_eng_modifier = {
+	complex_trigger_modifier = {
+		trigger = check_economic_production_modifier_for_job
+		parameters = {
+			job = $JOB$
+			resource = {
+				physics_research = 0.9
+				engineering_research = 0.1
+			}
+		}
+		mode = add
+	}
+	add = value:job_weights_manual_corrections|JOB|$JOB$|
+	add = 1
+	min = 0
+	pow = 3 #we need it to have a bit more impact
+}
+job_weights_research_phy_modifier = {
+	complex_trigger_modifier = {
+		trigger = check_economic_production_modifier_for_job
+		parameters = {
+			job = $JOB$
+			resource = {
+				physics_research = 0.1
+				engineering_research = 0.9
+			}
+		}
+		mode = add
+	}
+	add = value:job_weights_manual_corrections|JOB|$JOB$|
+	add = 1
+	min = 0
+	pow = 3 #we need it to have a bit more impact
+}
+Expanse_planer_admin_modifier = {
+	base = owner.max_example_variable
+	mult = 5
+}
+Expanse_planer_malus_research_modifier = {
+	base = owner.max_example_variable
+	divide = 10
+	mult = -1
+}
+Count_pop_Shypiard_modifier = {
+	modifier = {
+		add = owner.value:Count_pop_weight
+	}
+	modifier = {
+		divide = owner.value:count_civilian_shipyard|TYPE|civilian_shipyard|
+	}
+}
+Count_pop_Shypiard_universal_modifier = {
+	modifier = {
+		add = owner.value:Count_pop_weight_universal
+	}
+	modifier = {
+		divide = owner.value:count_civilian_shipyard|TYPE|civilian_shipyard|
+	}
+}
+
+Count_civ_Shypiard_modifier = {
+	modifier = {
+		add = owner.value:count_civilian_shipyard|TYPE|civilian_shipyard|
+	}
+}
+Count_pop_SR = {
+	modifier = {
+		add = owner.value:Count_pop_weight
+	}
+	
+	
+}
+Count_pop_weight_overtunned = {
+	# if ai outlawed: SPECIALISTS * 0.5 + NONSPECIALIST * 0.5
+	#   not outlawed: SPECIALISTS * 2 + NONSPECIALIST * 0.5
+	#ruler
+	complex_trigger_modifier = {
+		trigger = count_owned_pop
+		parameters = {
+			limit = {
+				OR = {
+					has_trait = trait_spliced_adaptability
+					has_trait = trait_juiced_power
+					has_trait = trait_farm_hands
+					has_trait = trait_crack_miner
+					has_trait = trait_technical_skill
+					has_trait = trait_crafted_smiles
+					has_trait = trait_low_maintenance
+					has_trait = trait_artificial_intelligence
+					has_trait = trait_gene_mentorship
+					has_trait = trait_expressed_tradition
+					has_trait = trait_elevated_synapses
+					has_trait = trait_preplanned_growth
+					has_trait = trait_excessive_endurance
+				}
+			}
+		}
+		mode = add
+		multiplier = 1
+	}
+}
+Count_pop_weight_universal = {
+	# if ai outlawed: SPECIALISTS * 0.5 + NONSPECIALIST * 0.5
+	#   not outlawed: SPECIALISTS * 2 + NONSPECIALIST * 0.5
+	#ruler
+	complex_trigger_modifier = {
+		trigger = count_owned_pop
+		parameters = {
+			limit = {
+				has_job_category = ruler
+			}
+		}
+		mode = add
+		multiplier = 0.75
+	}
+	# Specialist 
+	complex_trigger_modifier = {
+		trigger = count_owned_pop
+		parameters = {
+			limit = {
+				has_job_category = specialist
+			}
+		}
+		mode = add
+		multiplier = 0.25
+	}
+	# Specialist 
+	complex_trigger_modifier = {
+		trigger = count_owned_pop
+		parameters = {
+			limit = {
+				has_job_category = worker
+			}
+		}
+		mode = add
+		multiplier = 0.1
+	}
+}
+Count_pop_weight = {
+	# if ai outlawed: SPECIALISTS * 0.5 + NONSPECIALIST * 0.5
+	#   not outlawed: SPECIALISTS * 2 + NONSPECIALIST * 0.5
+	#ruler
+	complex_trigger_modifier = {
+		trigger = count_owned_pop
+		parameters = {
+			limit = {
+				has_job_category = ruler
+				has_trait = trait_void_dweller_1
+			}
+		}
+		mode = add
+		multiplier = 0.75
+	}
+	# Specialist 
+	complex_trigger_modifier = {
+		trigger = count_owned_pop
+		parameters = {
+			limit = {
+				has_job_category = specialist
+				has_trait = trait_void_dweller_1
+			}
+		}
+		mode = add
+		multiplier = 0.25
+	}
+	# Specialist 
+	complex_trigger_modifier = {
+		trigger = count_owned_pop
+		parameters = {
+			limit = {
+				has_job_category = worker
+				has_trait = trait_void_dweller_1
+			}
+		}
+		mode = add
+		multiplier = 0.1
+	}
+}
+# 	modifier = {
+# 		max = owner.max_example_variable 					#Variable set by set_variable
+# 		owner = { is_variable_set = max_example_variable }	#Only applied if this trigger is true
+# 	}
+count_civilian_shipyard = {
+	complex_trigger_modifier = {
+		trigger = count_starbase_buildings
+		parameters = {
+			type = $TYPE$
+		}
+		mode = add
+		multiplier = 0.75
+	}
+	min = 1
+}
+society_scaling_factor = {
+	base = 16
+	complex_trigger_modifier = {
+		trigger = count_country
+		mode = divide
+	}
+	mult = trigger:years_passed
+	divide = 10
+	mult = 5
+	ceiling = yes
+	min = 5
+	max = 18
+}
+production_science_years_passed = {
+	base = 7
+	mult = trigger:years_passed
+	max = 500
+}
+Count_malus_over_pop_nobles = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = count_owned_pop
+		parameters = {
+			limit = {
+				has_job_category = noble
+			}
+		}
+		mode = add
+		
+	}
+	subtract = 2
+	divide = 8
+	min = 0.33
+	max = 2
+}
+rivalsNum = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_rivals
+		mode = add
+	}
+}
+rivalsDiv_ten = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_rivals
+		mode = add
+	}
+	divide = 10
+	floor = yes
+}
+navalfederation_mk1 = {
+	base = 150
+	complex_trigger_modifier = {
+		trigger = max_naval_capacity
+		parameters = {
+			limit = {
+				OR = {
+					is_in_federation_with = root
+				}
+			}
+		}
+		mode = add
+		mult = 0.5
+	}
+}
+navalfederation_mk2 = {
+	base = 150
+	complex_trigger_modifier = {
+		trigger = count_relation
+		parameters = {
+			limit = {
+				OR = {
+					is_in_federation_with = root
+				}
+			}
+		}
+		mode = mult
+	}
+}
+num_habitat = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				is_planet_class = pc_habitat
+			}
+		}
+		mode = add
+	}
+}
+num_habitat_minus = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				is_planet_class = pc_habitat
+			}
+		}
+		mode = add
+	}
+	subtract = 1
+}
+num_habitat_rel = {
+	base = 1
+	divide = value:num_habitat_minus
+}
+num_habitat_div = {
+	base = 1
+	
+	divide = solar_system.value:num_habitat
+}
+num_habitat_div_minor = {
+	base = 1
+	
+	divide = value:num_habitat_rel
+	mult = value:num_minor_orbitals
+}
+num_habitat_div_major = {
+	base = 1
+	
+	divide = value:num_habitat_minus
+	add = num_habitat_rel
+	mult = value:num_minor_orbitals
+}
+max_empire_size = {
+	base = 0
+	add = from.trigger:empire_size
+	#add = root.trigger:empire_size
+	divide = from.trigger:empire_sprawl_cap_fraction
+}
+empire_size_value = {
+	base = 0
+	add = from.trigger:empire_size
+}
+Free_starbase_buildings = {
+	base = 0
+	add = value:max_starbase_buildings
+	modifier = {
+		subtract = 1
+		has_starbase_building = recruitment_office
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = crew_quarters
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = hydroponics_bay
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = resource_silo
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = nebula_refinery
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = nebula_refinery_gestalt
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = listening_post
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = offworld_trading_company
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = fleet_academy
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = naval_logistics_office
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = titan_yards
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = colossus_yards
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = black_hole_observatory
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = target_uplink_computer
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = defense_grid
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = deep_space_black_site
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = curator_think_tank
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = art_college
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = salvager_workshop
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = shroud_beacon
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = cybrex_mining_hub
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = irassian_naval_yards
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = yuht_detection_array
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = zroni_storm_caster
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = archaeo_overcharger
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = feeder
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = communications_jammer
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = disruption_field
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = warp_fluctuator
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = transit_hub
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = command_center
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = trader_proxy_office
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = dragon_hatchery
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = ice_mining_station
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = offspring_outlook
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = mercenary_garrison
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = cordyceptic_reanimation_facility
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = dark_matter_detector
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = dark_matter_listening_post
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = dimensional_shrine
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = reloading_bay
+	}
+	
+	#cg/phigo part
+	modifier = {
+		subtract = 1
+		has_starbase_building = starm_science_booster_nv
+	}
+	
+	modifier = {
+		subtract = 1
+		has_starbase_building = nebula_alloy_refinery
+	}
+	
+	modifier = {
+		subtract = 1
+		has_starbase_building = starm_culture_booster
+	}
+	
+	modifier = {
+		subtract = 1
+		has_starbase_building = starm_science_booster
+	}
+	
+	modifier = {
+		subtract = 1
+		has_starbase_building = Governmental_Orbital_Exchange_Market
+	}
+	
+	modifier = {
+		subtract = 1
+		has_starbase_building = Governmental_diplomatic_asset
+	}
+	
+	modifier = {
+		subtract = 1
+		has_starbase_building = Governmental_manager_asset
+	}
+	
+	#3.14
+	modifier = {
+		subtract = 1
+		has_starbase_building = storm_attraction_computer
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = storm_repelling_computer
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = hyperlane_detailer
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = voidlure_tiyanki
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = voidlure_space_amoeba
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = voidlure_voidworm
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = voidlure_cutholoid
+	}
+	#coop
+	modifier = {
+		subtract = 1
+		has_starbase_building = mario_fleet_academy
+	}
+	#4.0.17
+	modifier = {
+		subtract = 1
+		has_starbase_building = growth_chamber
+	}
+	#cetus
+	modifier = {
+		subtract = 1
+		has_starbase_building = ring_aura_emitter
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = pyroclastic_resonator
+	}
+	modifier = {
+		subtract = 1
+		has_starbase_building = aura_emitter
+	}
+}
+Free_starbase_modules = {
+	base = 0
+	add = value:max_starbase_modules
+	# count_starbase_modules = {
+	# 	trigger = count_starbase_modules
+	# 	parameters = {
+	# 			include_being_constructed = yes
+	# 	}
+	# 	mode = subtract
+	# }
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = shipyard
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = anchorage
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = gun_battery
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = missile_battery
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = hangar_bay
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = solar_panel_network
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = trading_hub
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = detection_array
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = archaeo_rampart
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = astromining_bay
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = defense_post
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = pd_battery
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = ion_battery
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	#phigo
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = solar_food_network
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = civilian_anchorage
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = starm_science_hub
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = starm_culture_hub
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = administrative_hub
+	
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = administrative_swarm_hub
+				
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = starm_science_hub_nv
+				
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	#3.14
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = hatchery
+				
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = beastport
+				
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			
+				type = vivarium_tank
+				
+				include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	#4.0.17
+
+}
+index_slot_free_modules = {
+	base = 1
+	add = value:max_starbase_modules
+	subtract = value:Free_starbase_modules
+}
+max_starbase_modules = {
+	base = 0
+	modifier = {
+		add = 2
+		has_starbase_size >= starbase_starport
+	}
+	modifier = {
+		add = 2
+		has_starbase_size >= starbase_starhold
+	}
+	modifier = {
+		add = 2
+		has_starbase_size >= starbase_starfortress
+	}
+}
+max_starbase_buildings = {
+	base = 0
+	modifier = {
+		add = 1
+		has_starbase_size >= starbase_starport
+	}
+	modifier = {
+		add = 1
+		has_starbase_size >= starbase_starhold
+	}
+	modifier = {
+		add = 1
+		has_starbase_size >= starbase_starfortress
+	}
+	modifier = {
+		add = 1
+		has_starbase_size >= starbase_citadel
+	}
+}
+pop_size_10to100 = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_pop_amount
+		trigger_scope = planet
+		mode = add
+	}
+	#add = trigger:count_owned_pop_amount
+	divide = 100
+	# ceiling = yes
+	mult = 1
+	min = 10
+	max = 10000
+}
+
+buildings_build_cost_mult = {
+	base = 1
+	add = modifier:starbase_buildings_cost_mult
+}
+
+modules_build_cost_mult = {
+	base = 1
+	add = modifier:starbase_modules_cost_mult
+}
+rivalsNum_emnity = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_rivals
+		mode = add
+	}
+	mult = 2
+	divide = 100
+}
+num_planets = {
+	base = 0
+	add = trigger:num_owned_planets
+}
+num_districts = {
+	base = 0
+	add = trigger:num_owned_planets
+}
+num_systems = {
+	base = 0
+	add = trigger:controlled_systems
+}
+num_nap = { #pacifist
+	base = 0
+	add = trigger:num_non_aggression_pacts
+}
+num_federation_member = { #federation builders
+	base = 0
+	add = trigger:num_members
+	# complex_trigger_modifier = {
+	# 	trigger = num_members
+	# 	parameters = {
+	# 		limit = { 
+	# 			prev = { has_federation = yes }
+	# 		}
+	# 	}
+	# 	mode = add
+	# }
+}
+num_subjects = { #overlord subject stability
+	base = 0
+	add = trigger:subjects
+}
+# num_other_homeworlds = {
+# 	base = 0
+# 	every_country = {
+# 		limit = {
+# 			NOT = { is_same_value = prev }
+# 			check_variable = {
+# 				which = homeworld
+# 				value > 0
+# 			}
+# 			mode = add
+# 		}
+# 	}
+# }
+num_homeworlds = {
+	base = -1
+	complex_trigger_modifier = {
+		trigger = num_owned_planets 
+	
+		parameters = {
+			limit = { has_modifier = cg_homeworld }
+		}
+		mode = add
+	}
+}
+empire_size_colonies_bonus = {
+	base = 1
+	add = modifier:empire_size_colonies_mult # 1-0,5 = -0,5 mult -0,5 = 0,25
+	mult = value:empire_size_bonus
+	min = 0
+	max = 2
+}
+empire_size_pop_bonus = {
+	base = 1
+	add = modifier:empire_size_pops_mult
+	mult = value:empire_size_bonus
+	min = 0
+	max = 2
+}
+empire_size_bonus = {
+	base = 1
+	add = modifier:empire_size_mult # -0,1
+	min = 0
+	max = 2
+}
+CalcMinimumHP = {
+	base = 1
+	#add = $MAXMINHP$ #0.51
+	subtract = value:used_naval_capacity_percent_div2  #1-0.125 1-0,115
+	mult = $MULTATT$ #0,885
+	max = 0.95 # 0.95 < 0,885 ? no
+	min = 0.51 # 0,51 > 0,885?  no
+}
+CalcDAMAGAATTRITION = { 
+	base = 0
+	add = $MAXDAMAGAATTRITION$
+	mult = owner.trigger:used_naval_capacity_percent
+	mult = $MULTATT$
+	max = $MAXDAMAGAATTRITION$
+	min = 2
+}
+used_naval_capacity_percent_div2 = {
+	base = 0
+	add = owner.trigger:used_naval_capacity_percent #0.25 
+	mult = 0.5 # 0.125
+}
+mult_research_foreign = {
+	base = 0.1
+	#print_scope_trigger = yes
+	#has_intel_report
+	modifier = {
+		add = 0.5
+		any_neighbor_country = {
+
+			FROM = {
+
+				has_intel_level = {
+						who = prev
+						category = technology
+						level >= 3
+				}
+			}
+			relative_power = {
+				who = FROM
+				category = technology
+				#value <= equivalent
+				value >= equivalent #inferior
+			}
+			
+		}
+	}
+	modifier = {
+		add = 0.5
+		any_neighbor_country = {
+
+			FROM = {
+
+				has_intel_level = {
+						who = prev
+						category = technology
+						level >= 2
+				}
+			}
+			relative_power = {
+				who = FROM
+				category = technology
+				#value <= equivalent
+				value >= equivalent #inferior
+			}
+			
+		}
+	}
+	modifier = {
+		add = 1
+		any_neighbor_country = {
+			is_country_type = default
+			FROM = {
+
+				has_intel_level = {
+						who = prev
+						category = technology
+						level >= 1
+				}
+			}
+			relative_power = {
+				who = FROM
+				category = technology
+				#value <= equivalent
+				value >= equivalent #inferior
+			}
+			
+		}
+	}
+	modifier = {
+		add = 1
+		any_neighbor_country = {
+			is_country_type = default
+			FROM = {
+
+				has_intel_level = {
+						who = prev
+						category = technology
+						level >= 1
+				}
+			}
+			relative_power = {
+				who = FROM
+				category = technology
+				#value <= inferior #inferior
+				value >= superior #inferior
+			}
+		}
+	}
+	modifier = {
+		add = 1
+		any_neighbor_country = {
+			is_country_type = default
+			FROM = {
+
+				has_intel_level = {
+						who = prev
+						category = technology
+						level >= 1
+				}
+			}
+			relative_power = {
+				who = FROM
+				category = technology
+				#value = pathetic #pathetic
+				value = overwhelming #pathetic
+			}
+		}
+	}
+	
+}

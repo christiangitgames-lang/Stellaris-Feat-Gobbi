@@ -1,0 +1,17 @@
+﻿l_english:
+  cg_Meteor_Storms:0 "Meteor Storms"
+ cg_Meteor_Storms_desc:0 "Meteor impact the surface causing massive damage,have small probability §Rdestroy§! your building and district, for protect your buildings need minimum have §Y50%§! of §Yplanet orbital bombardment§! damage"
+cg_Fire_Tornados:0 "Fire Tornados"
+cg_Fire_Tornados_desc:0 "Planet is ravaged by deadly fire tornados"
+cg_Thick_Fog:0 "Dense fog reduce visibility"
+
+
+cg_planetary_modifiers.2.name: "Meteor storms hits"
+cg_planetary_modifiers.2.desc: "Meteor storms have §Rhit§! an §YBuilding§!"
+cg_planetary_modifiers.3.desc: "Meteor storms have §Rhit§! an §YDistrict§!"
+cg_planetary_modifiers.4.desc: "Meteor storms have §Rhit§! have kill an pop!"
+cg_planetary_modifiers.5.desc: "Meteor storms §Gnot§! have be damage to our property"
+
+
+gpm_mineral_metors:0 "Land meteors"
+sm_mario_fleet_academy:0 "Fleet Mario Academy"

@@ -1,0 +1,18 @@
+# Base AI economic plans
+
+basic_economy_plan = {
+	ai_weight = {
+		weight = 1000
+		# TO DO need check for cetus patch
+		# modifier = {
+		# 	set = 2
+		# 	NOT = { has_global_flag = AI_hard }
+		# }
+	}
+
+	inline_script = "ai/ai_base"
+	inline_script = "ai/ai_base_food"
+	inline_script = "ai/ai_base_cg"
+
+	
+}

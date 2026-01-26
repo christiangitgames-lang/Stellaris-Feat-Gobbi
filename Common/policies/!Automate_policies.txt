@@ -1,0 +1,316 @@
+Starbase_automation = {
+	potential = {
+		always =  yes
+	}
+
+	option = {
+		name = "Nothing"
+
+		policy_flags = { Automation_Nothing }
+		modifier = {
+		}
+		
+		AI_weight = {
+			weight = 1000
+		}
+	}
+
+	option = {
+		name = "Hidroponic"
+		valid = {
+			OR = {
+				has_technology = "tech_hydroponics" 
+				
+			}
+		}
+		
+		policy_flags = { Automation_hidrophic }
+		modifier = {
+		}
+		on_enabled = {
+			country_event = { 
+				id = phigo_automation.0
+			} 
+		}
+
+		AI_weight = {
+			weight = 0
+		}
+	}
+	option = {
+		name = "Trade_Hidroponic"
+		valid = {
+			OR = {
+				has_technology = "tech_hydroponics" 
+			}
+		}
+		
+		policy_flags = { Automation_trade_hidrophic }
+		modifier = {
+		}
+		on_enabled = {
+			country_event = { 
+				id = phigo_automation.0
+			} 
+		}
+
+		AI_weight = {
+			weight = 0
+		}
+	}
+	option = {
+		name = "Solar_Hidroponic"
+		valid = {
+			AND = {
+				has_technology = "tech_hydroponics" 
+				has_technology = "tech_solar_panel_network"
+			}
+		}
+		
+		policy_flags = { Automation_solar_hidrophic }
+		modifier = {
+		}
+		on_enabled = {
+			country_event = { 
+				id = phigo_automation.0
+			} 
+		}
+
+		AI_weight = {
+			weight = 0
+		}
+	}
+	option = {
+		name = "Anchorage"
+		
+		policy_flags = { Automation_anchorage }
+		modifier = {
+		}
+		on_enabled = {
+			country_event = { 
+				id = phigo_automation.0
+			} 
+		}
+
+		AI_weight = {
+			weight = 0
+		}
+	}
+	option = {
+		name = "full_automate_sm_buildings"
+		potential = {
+			always = no
+		}
+		policy_flags = { full_automate_sm_buildings }
+		modifier = {
+		}
+
+		AI_weight = {
+			weight = 0
+		}
+	}
+	option = {
+		name = "full_automate_sm"
+		potential = {
+			always = no
+		}
+		policy_flags = { full_automate_sm }
+		modifier = {
+		}
+
+		AI_weight = {
+			weight = 0
+		}
+	}
+}
+
+
+
+research_priority_policy = {
+	potential = {
+		always = no
+	}
+
+	option = {
+		name = "research_policy_no_focus"
+
+		modifier = {
+			#all_technology_research_speed = 0.05
+		}
+		policy_flags = { research_policy_no_focus }
+		
+		AI_weight = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "research_policy_productivity"
+		policy_flags = { research_policy_productivity }  # Aggiunto policy_flags
+	
+		AI_weight = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "research_policy_field_manipulation"
+		policy_flags = { research_policy_field_manipulation }  # Aggiunto policy_flags
+	
+		AI_weight = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = "research_policy_particles"
+		policy_flags = { research_policy_particles }  # Aggiunto policy_flags
+	
+		modifier = {
+			
+		}
+	
+		AI_weight = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = "research_policy_computing"
+		policy_flags = { research_policy_computing }  # Aggiunto policy_flags
+	
+		modifier = {
+			
+		}
+	
+		AI_weight = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = "research_policy_new_worlds"
+		policy_flags = { research_policy_new_worlds }
+	
+		modifier = {
+	
+		}
+	
+		AI_weight = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = "research_policy_statecraft"
+		policy_flags = { research_policy_statecraft }
+	
+		modifier = {
+	
+		}
+	
+		AI_weight = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = "research_policy_biology"
+		policy_flags = { research_policy_biology }
+	
+		modifier = {
+	
+		}
+	
+		AI_weight = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = "research_policy_military_theory"
+		policy_flags = { research_policy_military_theory }
+	
+		modifier = {
+	
+		}
+	
+		AI_weight = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = "research_policy_materials"
+		policy_flags = { research_policy_materials }
+	
+		modifier = {
+	
+		}
+	
+		AI_weight = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = "research_policy_propulsion"
+		policy_flags = { research_policy_propulsion }
+	
+		modifier = {
+	
+		}
+	
+		AI_weight = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = "research_policy_voidcraft"
+		policy_flags = { research_policy_voidcraft }
+	
+		modifier = {
+	
+		}
+	
+		AI_weight = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = "research_policy_industry"
+		policy_flags = { research_policy_industry }
+	
+		modifier = {
+	
+		}
+	
+		AI_weight = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "research_policy_terraforming"
+		policy_flags = { research_policy_terraforming }
+	
+		modifier = {
+	
+		}
+	
+		AI_weight = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "research_policy_ancient_technology"
+		policy_flags = { research_policy_ancient_technology }
+	
+		modifier = {
+	
+		}
+	
+		AI_weight = {
+			factor = 0
+		}
+	}
+}

@@ -1,0 +1,23 @@
+@b0_job = 1
+
+@b4_jobs = 8
+@b5_jobs = 10
+
+
+
+#hyperdrive
+@ship_interstellar_speed_1 = -0.72
+@ship_interstellar_speed_2 = -0.65
+@ship_interstellar_speed_3 = -0.60
+@ship_interstellar_speed_4 = -0.55
+@ship_interstellar_speed_5 = -0.45
+@ship_interstellar_speed_6 = -0.35
+@ship_interstellar_speed_7 = -0.25
+
+
+
+#for building
+@ResourceMaxLow = 500
+@ResourceMaxStandard = 1000
+@ResourceMaxHigh = 1500
+@ResourceMaxHuge = 3000

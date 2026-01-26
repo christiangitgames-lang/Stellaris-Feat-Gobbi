@@ -1,0 +1,70 @@
+spriteTypes = {
+	# spriteType = {
+	# 	name = "GFX_ap_great_wall"
+	# 	textureFile = "gfx/interface/icons/ascension_perks/ap_great_wall.dds"
+	# }
+	# spriteType = {
+	# 	name = "GFX_ap_operations_red_star"
+	# 	textureFile = "gfx/interface/icons/ascension_perks/ap_operations_red_star.dds"
+	# }
+	# spriteType = {
+	# 	name = "GFX_ap_operations_blue_star"
+	# 	textureFile = "gfx/interface/icons/ascension_perks/ap_operations_blue_star.dds"
+	# }
+	spriteType = {
+		name = "GFX_defense_post"
+		texturefile = "gfx/interface/icons/modules/sb_defense_post.dds"
+	}
+	spriteType = {
+		name = "GFX_ion_battery"
+		texturefile = "gfx/interface/icons/modules/sb_ion_battery.dds"
+	}	
+	spriteType = {
+		name = "GFX_resolution_phi_aristocracy"
+		texturefile = "gfx/interface/icons/resolutions/resolution_phi_aristocracy.dds"
+	}	
+	spriteType = {
+		name = "GFX_colony_type_researchphy"
+		texturefile = "gfx/interface/planetview/colony_type_phi.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_type_researcheng"
+		texturefile = "gfx/interface/planetview/colony_type_phi_eng.dds"
+	}
+	# spriteType = {
+	# 	name = "GFX_resolution_galactic_studies_malus"
+	# 	texturefile = "gfx/interface/icons/main_menu/resolution_galactic_studies_malus.dds"
+	# }
+	spriteType = {
+		name = "GFX_war_in_heaven"
+		textureFile = "gfx/interface/icons/governments/edicts/war_in_heaven.dds"
+	}
+	spriteType = {
+    	name = "GFX_sr_dark_matter"
+    	texturefile = "gfx/interface/icons/governments/edicts/sr_dark_matter.dds"
+	}
+	spriteType = {
+		name = "GFX_spaceport_nebula_alloy_refinery"
+		texturefile = "gfx/interface/icons/modules/nebula_alloy_refinery.dds"
+	}
+	spriteType = {
+		name = "GFX_civilian_starbase_anchorage"
+		texturefile = "gfx/interface/icons/modules/civilian_starbase_anchorage.dds"
+	}
+	spriteType = {
+		name = "GFX_civilian_starbase_shipyard"
+		texturefile = "gfx/interface/icons/modules/civilian_starbase_shipyard.dds"
+	}
+	spriteType = {
+		name = "GFX_starbase_Governmental_Orbital_Exchange_Market"
+		texturefile = "gfx/interface/icons/modules/starbase_Governmental_Orbital_Exchange_Market.dds"
+	}
+	spriteType = {
+		name = "GFX_solar_food_network"
+		texturefile = "gfx/interface/icons/modules/solar_food_network.dds"
+	}
+	spriteType = {
+		name = "GFX_spaceport_automated_defenses"
+		texturefile = "gfx/interface/icons/modules/spaceport_automated_defenses.dds"
+	}
+}

@@ -1,0 +1,224 @@
+is_faction_allowed_phi = {
+	OR = {
+			years_passed > 1
+		AND = {
+			days_passed > 30
+			has_valid_civic = civic_parliamentary_system
+		}
+		AND = {
+			days_passed > 180
+			has_origin = origin_broken_shackles
+		}
+	}
+	NOT = { has_ethic = ethic_gestalt_consciousness }
+	NOT = { has_country_flag = suppress_vanilla_factions }
+}
+is_inwards_perfection = {
+	OR = {
+		has_valid_civic = civic_inwards_perfection
+	}
+}
+#dedicata a mario
+is_civic_despoilers = {
+	OR = {
+		has_valid_civic = civic_barbaric_despoilers
+	}
+}
+is_in_learning_campaign = {
+	OR = {
+		has_edict = machine_learning_campaign
+		has_edict = education_campaign
+		has_edict = learning_campaign
+	}
+}
+
+have_genetics_adopt = {
+	hidden_trigger = { exists = from }
+	from = {
+		has_tradition = tr_genetics_adopt
+	}
+}
+crisis_run = {
+	OR = {
+		AND = {
+			OR = { #c'è crisi?
+				has_crisis = yes #Contingency, Extradimensionals or Prethoryn
+				has_global_flag = marauder_crisis_ongoing #Khan
+				has_global_flag = gray_goo_crisis_active #Gray Tempest
+			}
+			NOR = { #che non sia finita
+				crisis_happened_and_defeated = yes #Contingency, Extradimensionals or Prethoryn finish
+				AND = { #If the Khan is defeated, Crisis Beacon should be hidden until a new crisis happens
+					has_global_flag = great_khan_dead
+					has_crisis = no
+				}
+				AND = { #If the Gray Tempest is defeated, Crisis Beacon should be hidden until a new crisis happens
+					has_global_flag = graygoo_defeated
+					has_crisis = no
+				}
+			}
+		}
+		any_playable_country = { # controllo crisis da player
+			has_crisis_level = crisis_level_5
+		}
+	}
+}
+War_Valid_survive = { #scope war
+	NOR = {
+		using_war_goal = { type = FW_wg_open_border_long owner = root }
+		using_war_goal = { type = FW_wg_open_border owner = root }
+		using_war_goal = { type = wg_end_threat_ae owner = root }
+	}
+}
+Has_precursor_chain = {
+	OR = {
+			AND = {
+				has_event_chain = "vultaum_chain"
+				any_system_within_border = {
+					has_star_flag = precursor_1
+				}
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = vultaum_chain
+						counter = vultaum_artifacts
+					}
+				}
+			}
+			AND = {
+				has_event_chain = "yuht_chain"
+				any_system_within_border = {
+					has_star_flag = precursor_2
+				}
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = yuht_chain
+						counter = yuht_artifacts
+					}
+				}
+			}
+			AND = {
+				has_event_chain = "first_league_chain"
+				any_system_within_border = {
+					has_star_flag = precursor_3
+				}
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = first_league_chain
+						counter = first_league_artifacts
+					}
+				}
+			}
+			AND = {
+				has_event_chain = "irassian_chain"
+				any_system_within_border = {
+					has_star_flag = precursor_4
+				}
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = irassian_chain
+						counter = irassian_artifacts
+					}
+				}
+			}
+			AND = {
+				has_event_chain = "cybrex_chain"
+				any_system_within_border = {
+					has_star_flag = precursor_5
+				}
+				NOT = {
+					has_completed_event_chain_counter = {
+						event_chain = cybrex_chain
+						counter = cybrex_artifacts
+					}
+				}
+			}
+			}
+}
+
+ 
+is_a_total_war = {
+	OR = {
+		has_valid_civic = civic_fanatic_purifiers
+		has_valid_civic = civic_machine_terminator
+		has_valid_civic = civic_hive_devouring_swarm
+		has_valid_civic = civic_machine_assimilator
+	}
+}
+Can_remove_district_city = {
+	AND = {
+		is_scope_type = planet
+		is_artificial = no
+		check_variable_arithmetic = { which = value:bslot_capacity_ai value > 12 }
+		OR = {
+			free_amenities > 500 # clerk job produce essentially amenities
+		}
+		OR =  {
+			has_district = district_city
+			has_district = district_hive
+			has_district = district_nexus
+			has_district = district_crashed_slaver_ship
+		}
+		OR = {
+			free_housing > 21
+			AND = {
+				free_housing > 5 # 5+3 = 8
+				num_unemployed > 10
+			}
+			AND = {
+				free_housing > 5
+				planet_stability < 50
+			}
+		}
+	}
+	
+}
+Planet_need_work_job = {
+	OR = {
+		AND = { #normal empire
+			exists = owner
+			owner = { is_gestalt = no }
+			planet_stability < 70
+			num_unemployed > 5
+		}
+		AND = {
+			exists = owner
+			owner = { is_robot_empire = yes }
+			num_unemployed > 15
+		}
+		AND = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			planet_crime > 25
+		}
+		num_unemployed > 20
+	}
+}
+has_pop_assembly_buildings = {
+	OR = {
+		has_building = building_robot_assembly_plant
+		has_building = building_robot_assembly_complex
+		has_building = building_machine_assembly_plant
+		has_building = building_machine_assembly_complex
+		has_building = building_spawning_pool
+		has_building = building_offspring_nest
+		has_building = building_clone_vats
+	}
+}
+has_upgradable_research_labs = {
+	OR ={
+		AND = {
+		OR = {
+			#has_building = building_engineering_lab_1
+			has_building = building_research_lab_1
+		}
+		owner = { has_technology = tech_basic_science_lab_2 }
+		}
+		AND = {
+			OR = {
+				#has_building = building_engineering_lab_2
+				has_building = building_research_lab_2
+			}
+			owner = { has_technology = tech_basic_science_lab_3 }
+		}
+	}
+}

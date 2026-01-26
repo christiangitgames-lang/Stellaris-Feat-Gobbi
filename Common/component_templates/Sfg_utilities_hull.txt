@@ -1,0 +1,211 @@
+
+#############
+# Armor
+#############
+
+####################
+# Crystal Plating  #
+####################
+
+#3
+utility_component_template = {
+	key = "SMALL_CRYSTAL_ARMOR_3"
+	size = small
+	icon = "GFX_ship_part_crystal_armor_3"
+	icon_frame = 1
+	power = 0
+	#cost = 
+	
+	prerequisites = { "tech_crystal_armor_3" }
+	component_set = "CRYSTAL_ARMOR_3"
+	upgrades_to = "SMALL_CRYSTAL_ARMOR_4"	
+	
+	modifier = {
+		ship_hull_add = @hull_S5
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			rare_crystals = 0.43
+		}
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+		modifier = {
+			factor = 0.0
+			is_country_type = fallen_empire
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_CRYSTAL_ARMOR_3"
+	size = medium
+	icon = "GFX_ship_part_crystal_armor_3"
+	icon_frame = 1
+	power = 0
+	#cost = 
+	
+	prerequisites = { "tech_crystal_armor_3" }
+	component_set = "CRYSTAL_ARMOR_3"
+	upgrades_to = "MEDIUM_CRYSTAL_ARMOR_4"
+	
+	modifier = {
+		ship_hull_add = @hull_M5
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			rare_crystals = 0.85
+		}
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+		modifier = {
+			factor = 0.0
+			is_country_type = fallen_empire
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_CRYSTAL_ARMOR_3"
+	size = large
+	icon = "GFX_ship_part_crystal_armor_3"
+	icon_frame = 1
+	power = 0
+	#cost = 
+	
+	prerequisites = { "tech_crystal_armor_3" }
+	component_set = "CRYSTAL_ARMOR_3"
+	upgrades_to = "LARGE_CRYSTAL_ARMOR_4"
+	
+	modifier = {
+		ship_hull_add = @hull_L5
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			rare_crystals = 1.7
+		}
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+		modifier = {
+			factor = 0.0
+			is_country_type = fallen_empire
+		}
+	}
+}
+
+#4
+utility_component_template = {
+	key = "SMALL_CRYSTAL_ARMOR_4"
+	size = small
+	icon = "GFX_ship_part_crystal_armor_4"
+	icon_frame = 1
+	power = 0
+	#cost = 
+	
+	prerequisites = { "tech_crystal_armor_4" }
+	component_set = "CRYSTAL_ARMOR_4"
+	
+	modifier = {
+		ship_hull_add = @hull_S6
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			rare_crystals = 0.56
+		}
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+		modifier = {
+			factor = 0.0
+			is_country_type = fallen_empire
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_CRYSTAL_ARMOR_4"
+	size = medium
+	icon = "GFX_ship_part_crystal_armor_4"
+	icon_frame = 1
+	power = 0
+	#cost = 
+	
+	prerequisites = { "tech_crystal_armor_4" }
+	component_set = "CRYSTAL_ARMOR_4"
+	
+	modifier = {
+		ship_hull_add = @hull_M6
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			rare_crystals = 1.1
+		}
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+		modifier = {
+			factor = 0.0
+			is_country_type = fallen_empire
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_CRYSTAL_ARMOR_4"
+	size = large
+	icon = "GFX_ship_part_crystal_armor_4"
+	icon_frame = 1
+	power = 0
+	#cost = 
+	
+	prerequisites = { "tech_crystal_armor_4" }
+	component_set = "CRYSTAL_ARMOR_4"
+	
+	modifier = {
+		ship_hull_add = @hull_L6
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			rare_crystals = 2.2
+		}
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = rare_crystals value <= 0 }
+		}
+		modifier = {
+			factor = 0.0
+			is_country_type = fallen_empire
+		}
+	}
+}

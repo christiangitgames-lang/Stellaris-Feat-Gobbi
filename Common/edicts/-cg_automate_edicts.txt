@@ -1,0 +1,49 @@
+auto_sell_relic = {
+	length = -1
+	
+	potential = {
+		NAND = {
+			is_gestalt = yes
+			is_homicidal = yes
+		}
+	}
+	allow = {
+		NOT = { has_modifier = artifact_sell_cooldown }
+		has_resource = { type = minor_artifacts amount > 9 }
+	}
+	resources = {
+		category = sell_minor_artifacts
+		upkeep = {
+			minor_artifacts = 8.3 #50/180 * 30 , wo paradox... 365 at 100 no?
+		}
+		produces = {
+			energy = 83
+		}
+	}
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 3
+			has_monthly_income = {
+				resource = energy
+				value < 0
+			}
+		}
+	}
+}
+Alternative_job_depriority = {
+	length = -1
+	
+	potential = {
+		OR = {
+			is_ai = no
+			was_human = yes
+		}
+	}
+	allow = {
+		is_ai = no
+	}
+	ai_weight = {
+		weight = 10
+	}
+}

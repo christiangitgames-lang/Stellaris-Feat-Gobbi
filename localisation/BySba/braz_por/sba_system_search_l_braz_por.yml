@@ -1,0 +1,197 @@
+﻿l_braz_por:
+# l_braz_por
+# l_french
+# l_german
+# l_japanese
+# l_korean
+# l_polish
+# l_russian
+# l_simp_chinese
+# l_spanish
+
+#  LOCATION:0 "Location"
+#  BACK:0 "Back"
+#  SYSTEM:0 "System"
+#  SYSTEMS:0 "Systems"
+#  GOTO:0 "Go To"
+#  ideal_furnace_system: "Ideal System Located"
+
+ edict_system_search: "Localizador de sistema ideal"
+ edict_system_search_desc: "Utilitário para localizar os melhores sistemas para construir determinadas estruturas."
+ edict_locate_arc_furnace_systems: "Localizador de sistema de $orbital_arc_furnace_4$"
+ edict_locate_arc_furnace_systems_desc: "Encontra os 5 principais sistemas que você possui e que obterão mais depósitos de um $orbital_arc_furnace_4$."
+
+ sba_change_goto_system: "§TSelecione um sistema para alterar o destino do botão §S$GOTO$§! para esse sistema.§!"
+ sba_change_goto_star: "§TSelecione uma estrela para alterar o destino do botão §S$GOTO$§! para essa estrela.§!"
+ sba_base_game_deposits_warning: "§PObserve que este utilitário só é capaz de avaliar os depósitos de recursos presentes no jogo base e assume que eles não foram modificados.§!"
+
+# BLANK_STRING:0 ""
+ sba_num_zero: "0"
+ sba_num_zero_red: "§R0§!"
+ sba_arc_furnace_count: "[root.arc_furnace_counter]"
+ sba_dyson_swarm_count: "[root.dyson_swarm_counter]"
+ sba_arc_furnace_cap: "§Y[root.SBAGetArcFurnaceCount]/[root.temp_arc_furnace_max]§!"
+ sba_dyson_swarm_cap: "§Y[root.SBAGetDysonSwarmCount]/[root.temp_dyson_swarm_max]§!"
+
+ sba_energy_value: "£energy£§Y[this.sba_star_base_energy]§! "
+ sba_minerals_value: "£minerals£§Y[this.sba_star_base_minerals]§! "
+ sba_food_value: "£food£§Y[this.sba_star_base_food]§! "
+ sba_alloys_value: "£alloys£§Y[this.sba_star_base_alloys]§! "
+
+ sba_volatile_motes_value: "£volatile_motes£§Y[this.sba_star_base_volatile_motes]§! "
+ sba_exotic_gases_value: "£exotic_gases£§Y[this.sba_star_base_exotic_gases]§! "
+ sba_rare_crystals_value: "£rare_crystals£§Y[this.sba_star_base_rare_crystals]§! "
+
+ sba_physics_value: "£physics£§Y[this.sba_star_base_physics]§! "
+ sba_society_value: "£society£§Y[this.sba_star_base_society]§! "
+ sba_engineering_value: "£engineering£§Y[this.sba_star_base_engineering]§! "
+
+ sba_unity_value: "£unity£§Y[this.sba_star_base_unity]§! "
+ sba_zro_value: "£sr_zro£§Y[this.sba_star_base_zro]§! "
+ sba_dark_matter_value: "£sr_dark_matter£§Y[this.sba_star_base_dark_matter]§! "
+ sba_nanites_value: "£nanites£§Y[this.sba_star_base_nanites]§! "
+ sba_minor_artifacts_value: "£minor_artifacts£§Y[this.sba_star_base_minor_artifacts]§! "
+ sba_astral_threads_value: "£astral_threads£§Y[this.sba_star_base_astral_threads]§! "
+
+#  sba_base_resource_string: "Base[event_target:.SBAGetBaseEnergy][event_target:.SBAGetBaseMinerals][event_target:.SBAGetBaseFood][event_target:.SBAGetBaseAlloys][event_target:.SBAGetBaseMotes][event_target:.SBAGetBaseGases][event_target:.SBAGetBaseCrystals][event_target:.SBAGetBasePhysics][event_target:.SBAGetBaseSociety][event_target:.SBAGetBaseEngineering][event_target:.SBAGetBaseZro][event_target:.SBAGetBaseDarkMatter][event_target:.SBAGetBaseNanites][event_target:.SBAGetBaseMinorArtifacts]"
+ sba_base_resource_string: "[this.SBAGetBaseEnergy][this.SBAGetBaseMinerals][this.SBAGetBaseFood][this.SBAGetBaseAlloys][this.SBAGetBaseMotes][this.SBAGetBaseGases][this.SBAGetBaseCrystals][this.SBAGetBasePhysics][this.SBAGetBaseSociety][this.SBAGetBaseEngineering][this.SBAGetBaseUnity][this.SBAGetBaseZro][this.SBAGetBaseDarkMatter][this.SBAGetBaseNanites][this.SBAGetBaseMinorArtifacts][this.SBAGetBaseAstralThreads]base"
+
+ sba_system_search.10.name: "$edict_system_search$"
+ sba_system_search.10.desc: "Capacidade do $orbital_arc_furnace_4$: $sba_arc_furnace_cap$\nCapacidade do $dyson_swarm_3$: $sba_dyson_swarm_cap$\n\nPara que você deseja encontrar um bom local?"
+
+# Arc Furnace Site Locator
+ sba_system_search.21.name: "Locais de $orbital_arc_furnace_4$ localizados"
+ sba_system_search.21.desc: "Capacidade do $orbital_arc_furnace_4$: §Y[root.arc_furnace_counter]/[root.temp_arc_furnace_max]§!\n\nEstes são os sistemas que possuímos com maior valor potencial para um $orbital_arc_furnace_4$.\n\nTenha em mente que um $orbital_arc_furnace_4$ não melhora a produção de estações de mineração construídas sobre estrelas.\n\n$sba_change_goto_system$"
+ sba_system_search.21.a: "[event_target:sba_arc_furnace_system_0.GetName] (§Y[event_target:sba_arc_furnace_system_0.sba_arc_furnace_var]§! corpos mineráveis)"
+ sba_system_search.21.b: "[event_target:sba_arc_furnace_system_1.GetName] (§Y[event_target:sba_arc_furnace_system_1.sba_arc_furnace_var]§! corpos mineráveis)"
+ sba_system_search.21.c: "[event_target:sba_arc_furnace_system_2.GetName] (§Y[event_target:sba_arc_furnace_system_2.sba_arc_furnace_var]§! corpos mineráveis)"
+ sba_system_search.21.d: "[event_target:sba_arc_furnace_system_3.GetName] (§Y[event_target:sba_arc_furnace_system_3.sba_arc_furnace_var]§! corpos mineráveis)"
+ sba_system_search.21.e: "[event_target:sba_arc_furnace_system_4.GetName] (§Y[event_target:sba_arc_furnace_system_4.sba_arc_furnace_var]§! corpos mineráveis)"
+
+# Dyson Swarm Site Locator
+ sba_system_search.31.name: "$dyson_swarm_3$ Sites Located"
+ sba_system_search.31.desc: "Capacidade do $dyson_swarm_3$: $sba_dyson_swarm_cap$\n\nEstas são as estrelas que possuímos com maior valor potencial para um $dyson_swarm_3$.\n\n$sba_base_game_deposits_warning$\n\n$sba_change_goto_star$"
+
+ sba_system_search.31.energy0: "[event_target:sba_dyson_swarm_energy_star_0.GetName] ([event_target:sba_dyson_swarm_energy_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.energy1: "[event_target:sba_dyson_swarm_energy_star_1.GetName] ([event_target:sba_dyson_swarm_energy_star_1.SBAGetBaseResourceString])"
+ sba_system_search.31.energy2: "[event_target:sba_dyson_swarm_energy_star_2.GetName] ([event_target:sba_dyson_swarm_energy_star_2.SBAGetBaseResourceString])"
+
+ sba_system_search.31.minerals: "[event_target:sba_dyson_swarm_minerals_star_0.GetName] ([event_target:sba_dyson_swarm_minerals_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.alloys: "[event_target:sba_dyson_swarm_alloys_star_0.GetName] ([event_target:sba_dyson_swarm_alloys_star_0.SBAGetBaseResourceString])"
+
+ sba_system_search.31.volatile_motes: "[event_target:sba_dyson_swarm_volatile_motes_star_0.GetName] ([event_target:sba_dyson_swarm_volatile_motes_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.exotic_gases: "[event_target:sba_dyson_swarm_exotic_gases_star_0.GetName] ([event_target:sba_dyson_swarm_exotic_gases_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.rare_crystals: "[event_target:sba_dyson_swarm_rare_crystals_star_0.GetName] ([event_target:sba_dyson_swarm_rare_crystals_star_0.SBAGetBaseResourceString])"
+
+ sba_system_search.31.physics: "[event_target:sba_dyson_swarm_physics_star_0.GetName] ([event_target:sba_dyson_swarm_physics_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.society: "[event_target:sba_dyson_swarm_society_star_0.GetName] ([event_target:sba_dyson_swarm_society_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.engineering: "[event_target:sba_dyson_swarm_engineering_star_0.GetName] ([event_target:sba_dyson_swarm_engineering_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.research: "[event_target:sba_dyson_swarm_research_star_0.GetName] ([event_target:sba_dyson_swarm_research_star_0.SBAGetBaseResourceString])"
+
+ sba_system_search.31.unity: "[event_target:sba_dyson_swarm_unity_star_0.GetName] ([event_target:sba_dyson_swarm_unity_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.zro: "[event_target:sba_dyson_swarm_zro_star_0.GetName] ([event_target:sba_dyson_swarm_zro_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.dark_matter: "[event_target:sba_dyson_swarm_dark_matter_star_0.GetName] ([event_target:sba_dyson_swarm_dark_matter_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.nanites: "[event_target:sba_dyson_swarm_nanites_star_0.GetName] ([event_target:sba_dyson_swarm_nanites_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.minor_artifacts: "[event_target:sba_dyson_swarm_minor_artifacts_star_0.GetName] ([event_target:sba_dyson_swarm_minor_artifacts_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.astral_threads: "[event_target:sba_dyson_swarm_astral_threads_star_0.GetName] ([event_target:sba_dyson_swarm_astral_threads_star_0.SBAGetBaseResourceString])"
+
+# Habitat
+#  major_orbital: "Major Orbital"
+#  major_orbital_plural: "Major Orbitals"
+#  minor_orbital: "Minor Orbital"
+#  minor_orbital_plural: "Minor Orbitals"
+#  ORBITALS:0 "Orbitals"
+#  DISTRICTS:0 "Districts"
+#  MOD_PLANET_MAX_DISTRICTS_ADD:0 "Max Districts"
+#  GetHabitatMaxDistricts = value:max_habitat_districts_value
+ sba_color_code_G: "§G"
+ sba_color_code_R: "§R"
+ sba_color_code_Y: "§Y"
+ sba_max_orbital_string: "§Y[this.GetHabitatMaxAnyDistricts]§! $DISTRICTS$ (£job_technician£[this.GetHabitatMaxEnergyDistrictsColor][this.sba_system_district_hab_energy_max_var]§!, £job_miner£[this.GetHabitatMaxMiningDistrictsColor][this.sba_system_district_hab_mining_max_var]§!, £job_researcher£[this.GetHabitatMaxScienceDistrictsColor][this.sba_system_district_hab_science_max_var]§!)"
+
+ sba_system_search.41.name: "$habitat_complex$ Sites Located"
+ sba_system_search.41.desc: "These are the best systems we own for potential $habitat_complex_plural$.\n\n$sba_base_game_deposits_warning$\n\n$sba_change_goto_system$"
+# custom_tooltip = 
+# system_resources_tooltip, removing last \n\nline # TODO LOC
+ sba_system_orbital_tooltip: "O sistema §Y[solar_system.GetName]§! pode abrigar: $TABBED_NEW_LINE$$major_orbital_plural$: §Y[solar_system.GetMaxMajorOrbitals]§! $TABBED_NEW_LINE$$minor_orbital_plural$: §Y[solar_system.GetMaxMinorOrbitals]§!  $TABBED_NEW_LINE$  $major_orbital_science_plural$: §Y[solar_system.GetMaxOrbitalsScience]§! $TABBED_NEW_LINE$  $major_orbital_energy_plural$: §Y[solar_system.GetMaxOrbitalsEnergy]§! $TABBED_NEW_LINE$  $major_orbital_mining_plural$: §Y[solar_system.GetMaxOrbitalsMining]§!"
+
+
+ sba_system_search.41.any0: "[event_target:sba_any_habitat_system_0.GetName]: [event_target:sba_any_habitat_system_0.SBAGetMaxOrbitalString]"
+ sba_system_search.41.any0.tooltip: "[event_target:sba_any_habitat_system_0.SBAGetOrbitalTooltip]"
+ sba_system_search.41.minor0: "[event_target:sba_minor_habitat_system_0.GetName]: [event_target:sba_minor_habitat_system_0.SBAGetMaxOrbitalString]"
+ sba_system_search.41.minor0.tooltip: "[event_target:sba_minor_habitat_system_0.SBAGetOrbitalTooltip]"
+ sba_system_search.41.research0: "[event_target:sba_science_habitat_system_0.GetName]: [event_target:sba_science_habitat_system_0.SBAGetMaxOrbitalString]"
+ sba_system_search.41.research0.tooltip: "[event_target:sba_science_habitat_system_0.SBAGetOrbitalTooltip]"
+ sba_system_search.41.energy0: "[event_target:sba_energy_habitat_system_0.GetName]: [event_target:sba_energy_habitat_system_0.SBAGetMaxOrbitalString]"
+ sba_system_search.41.energy0.tooltip: "[event_target:sba_energy_habitat_system_0.SBAGetOrbitalTooltip]"
+ sba_system_search.41.mining0: "[event_target:sba_mining_habitat_system_0.GetName]: [event_target:sba_mining_habitat_system_0.SBAGetMaxOrbitalString]"
+ sba_system_search.41.mining0.tooltip: "[event_target:sba_mining_habitat_system_0.SBAGetOrbitalTooltip]"
+ sba_system_search.41.any1: "[event_target:sba_any_habitat_system_1.GetName]: [event_target:sba_any_habitat_system_1.SBAGetMaxOrbitalString]"
+ sba_system_search.41.any1.tooltip: "[event_target:sba_any_habitat_system_1.SBAGetOrbitalTooltip]"
+ sba_system_search.41.minor1: "[event_target:sba_minor_habitat_system_1.GetName]: [event_target:sba_minor_habitat_system_1.SBAGetMaxOrbitalString]"
+ sba_system_search.41.minor1.tooltip: "[event_target:sba_minor_habitat_system_1.SBAGetOrbitalTooltip]"
+ sba_system_search.41.research1: "[event_target:sba_science_habitat_system_1.GetName]: [event_target:sba_science_habitat_system_1.SBAGetMaxOrbitalString]"
+ sba_system_search.41.research1.tooltip: "[event_target:sba_science_habitat_system_1.SBAGetOrbitalTooltip]"
+ sba_system_search.41.energy1: "[event_target:sba_energy_habitat_system_1.GetName]: [event_target:sba_energy_habitat_system_1.SBAGetMaxOrbitalString]"
+ sba_system_search.41.energy1.tooltip: "[event_target:sba_energy_habitat_system_1.SBAGetOrbitalTooltip]"
+ sba_system_search.41.mining1: "[event_target:sba_mining_habitat_system_1.GetName]: [event_target:sba_mining_habitat_system_1.SBAGetMaxOrbitalString]"
+ sba_system_search.41.mining1.tooltip: "[event_target:sba_mining_habitat_system_1.SBAGetOrbitalTooltip]"
+
+# Nanite Harvester site locator
+ sba_system_search.51.name: "Locais de $sm_nanite_harvester$ localizados"
+ sba_system_search.51.desc: "Estes são os sistemas que possuímos e que obterão mais depósitos de um $sm_nanite_harvester$.\n\nTenha em mente que quais sistemas são os melhores dependem do tamanho de seus planetas, uma vez que o potencial máximo de um depósito de nanites dobra a cada £planetsize£ §Y+3§! tamanho do planeta até £planetsize£ §Y21§!, e mais uma vez em £planetsize£ §Y25§!. Os asteróides e a maioria das luas nunca atingirão o £planetsize£ §Y12§! tamanho do planeta necessário para gerar $nanite_swarmer_plural$.\n\n$sba_change_goto_system$"
+ sba_system_search.51.a: "[event_target:sba_nanite_harvester_system_0.GetName] (§Y[event_target:sba_nanite_harvester_system_0.sba_nanite_harvester_var]§! corpos colhíveis)"
+ sba_system_search.51.b: "[event_target:sba_nanite_harvester_system_1.GetName] (§Y[event_target:sba_nanite_harvester_system_1.sba_nanite_harvester_var]§! corpos colhíveis)"
+ sba_system_search.51.c: "[event_target:sba_nanite_harvester_system_2.GetName] (§Y[event_target:sba_nanite_harvester_system_2.sba_nanite_harvester_var]§! corpos colhíveis)"
+ sba_system_search.51.d: "[event_target:sba_nanite_harvester_system_3.GetName] (§Y[event_target:sba_nanite_harvester_system_3.sba_nanite_harvester_var]§! corpos colhíveis)"
+ sba_system_search.51.e: "[event_target:sba_nanite_harvester_system_4.GetName] (§Y[event_target:sba_nanite_harvester_system_4.sba_nanite_harvester_var]§! corpos colhíveis)"
+
+ sba_system_search.52.desc: "Estes são os melhores sistemas que possuímos para potenciais $sm_nanite_harvester_plural$.\n\n$sba_change_goto_system$"
+ sba_nanite_harvester_string: "[this.GetName] (£nanites£§Y[this.sba_harvester_max_nanites]§! £military_ship£§Y[this.sba_harvester_max_swarmers]§! £time£§R[this.sba_harvester_min_years]§!)"
+ sba_system_search.52.nanites0: "[event_target:sba_nanites_harvester_system_0.SBAGetNaniteHarvesterString]"
+ sba_system_search.52.nanites1: "[event_target:sba_nanites_harvester_system_1.SBAGetNaniteHarvesterString]"
+ sba_system_search.52.nanites2: "[event_target:sba_nanites_harvester_system_2.SBAGetNaniteHarvesterString]"
+ sba_system_search.52.swarmers0: "[event_target:sba_swarmers_harvester_system_0.SBAGetNaniteHarvesterString]"
+ sba_system_search.52.swarmers1: "[event_target:sba_swarmers_harvester_system_1.SBAGetNaniteHarvesterString]"
+ sba_system_search.52.swarmers2: "[event_target:sba_swarmers_harvester_system_2.SBAGetNaniteHarvesterString]"
+
+# Notification menu
+# MESSAGE_MEGASTRUCTURE_BUILT_TITLE
+# MESSAGE_MEGASTRUCTURE_UPGRADED_TITLE
+ sba_system_search.11.name: "Configurações de notificação de megaestrutura secundária"
+ sba_system_search.11.desc: "Você pode §Genable§! ou §Rdisable§! notificações para quando você construir ou atualizar certas megaestruturas no meio do jogo abaixo.\n\nEssas notificações não estão disponíveis no jogo base, mas podem ser úteis para acompanhar seu desenvolvimento interno. Eles não irão notificá-lo sobre megaestruturas em outros impérios."
+ enable_relay_built_alert: "Notificação construída de $hyper_relay$ - §R$planet_automation_setting_disabled$§!"
+ disable_relay_built_alert: "Notificação construída de $hyper_relay$ - §G$planet_automation_setting_enabled$§!"
+ enable_kilostructure_built_alert: "Notificação construída de $orbital_arc_furnace_4$ ou $dyson_swarm_3$ - §R$planet_automation_setting_disabled$§!"
+ disable_kilostructure_built_alert: "Notificação construída de $orbital_arc_furnace_4$ ou $dyson_swarm_3$ - §G$planet_automation_setting_enabled$§!"
+ enable_kilostructure_upgrade_alert: "Notificação de atualização de $orbital_arc_furnace_4$ ou $dyson_swarm_3$ - §R$planet_automation_setting_disabled$§!"
+ disable_kilostructure_upgrade_alert: "Notificação de atualização de $orbital_arc_furnace_4$ ou $dyson_swarm_3$ - §G$planet_automation_setting_enabled$§!"
+
+# Ice Mining Station
+# $pc_ice_asteroid$ $pc_frozen$ no plural loc
+ sba_system_search.61.name: "$sm_ice_mining_station$ Sites localizados"
+ sba_system_search.61.desc: "Estes são os sistemas que possuímos que darão mais suporte à £decision£§Y$decision_expand_planetary_sea$§! decisões com uma $sm_ice_mining_station$.\n\nTenha em mente que os depósitos de recursos nos Asteróides de Gelo serão perdidos quando consumidos desta forma. Além disso, um Enclave Mercenário impede que o planeta ou asteróide que ele orbita seja usado para mineração de gelo.\n\n$sba_change_goto_system$"
+ sba_ice_mining_string: "[this.GetName] (£decision£§Y[this.SBAGetIceMiningValue]§!)"
+ sba_ice_mining_tooltip: "O sistema §Y[solar_system.GetName]§! contém:$TABBED_NEW_LINE$$pc_frozen$: §Y[solar_system.SBAGetNumFrozenWorlds]§!$TABBED_NEW_LINE$$pc_ice_asteroid$: §Y[solar_system.SBAGetNumIceAsteroids]§!\n\n$ice_mining_details$"
+ sba_system_search.61.0: "[event_target:sba_ice_mining_system_0.SBAGetIceMiningString]"
+ sba_system_search.61.1: "[event_target:sba_ice_mining_system_1.SBAGetIceMiningString]"
+ sba_system_search.61.2: "[event_target:sba_ice_mining_system_2.SBAGetIceMiningString]"
+ sba_system_search.61.3: "[event_target:sba_ice_mining_system_3.SBAGetIceMiningString]"
+ sba_system_search.61.4: "[event_target:sba_ice_mining_system_4.SBAGetIceMiningString]"
+ sba_system_search.61.0.tooltip: "[event_target:sba_ice_mining_system_0.SBAGetIceMiningTooltip]"
+ sba_system_search.61.1.tooltip: "[event_target:sba_ice_mining_system_1.SBAGetIceMiningTooltip]"
+ sba_system_search.61.2.tooltip: "[event_target:sba_ice_mining_system_2.SBAGetIceMiningTooltip]"
+ sba_system_search.61.3.tooltip: "[event_target:sba_ice_mining_system_3.SBAGetIceMiningTooltip]"
+ sba_system_search.61.4.tooltip: "[event_target:sba_ice_mining_system_4.SBAGetIceMiningTooltip]"
+# is_starbase_type
+
+# Quantum Catapult
+ sba_system_search.71.name: "$quantum_catapult_3$ Sites localizados"
+ sba_system_search.71.desc: "Estes são os sistemas mais próximos de nossa capital nos quais podemos construir uma $quantum_catapult_3$.\n\nTenha em mente que perderemos o acesso a quaisquer depósitos de recursos que a estrela possua.\n\n$sba_change_goto_system$"
+ sba_quantum_catapult_string: "[this.GetName] ($DISTANCE$: §Y[this.sba_distance_to_capital_var]§!)"
+ sba_system_search.71.0: "[event_target:sba_quantum_catapult_system_0.SBAGetQuantumCatapultString]"
+ sba_system_search.71.1: "[event_target:sba_quantum_catapult_system_1.SBAGetQuantumCatapultString]"
+ sba_system_search.71.2: "[event_target:sba_quantum_catapult_system_2.SBAGetQuantumCatapultString]"
+ sba_system_search.71.3: "[event_target:sba_quantum_catapult_system_3.SBAGetQuantumCatapultString]"
+ sba_system_search.71.4: "[event_target:sba_quantum_catapult_system_4.SBAGetQuantumCatapultString]"
+# Include ruined quantum catapult?

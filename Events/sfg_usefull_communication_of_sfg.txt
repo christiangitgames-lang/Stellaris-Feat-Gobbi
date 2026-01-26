@@ -1,0 +1,605 @@
+namespace = sfg_usefull_communication_of_sfg
+planet_event = { #test
+	id = sfg_usefull_communication_of_sfg.0
+	is_triggered_only = yes
+	#trackable = yes
+	# immediate = {
+	# 	hidden_effect = {
+	# 		FROM = {
+	# 			set_planet_flag = test_1
+	# 		}
+	# 	}
+	# }
+	trigger = {
+		owner = {
+			is_ai = no
+		}
+	}
+	inline_script = {
+		script = events/settable_event
+		TITLE = anomaly.5000.name
+		DESC = "anomaly.5000.desc"
+		PICTURE = GFX_evt_star_chart
+		LOCATION = ROOT
+	}
+	option = {
+		name = anomaly.5000.a
+		enable_special_project = {
+			name = "GAS_GIANT_SIGNAL"
+			location = FROM
+		}
+	}
+	option = {
+		name = anomaly.5000.b
+	}
+}
+country_event = {  #Deamon that fires all usefull communication of sfg feat gobbi
+	id = sfg_usefull_communication_of_sfg.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		years_passed > 10
+		
+	}
+	immediate = {
+		country_event = {
+			id = sfg_usefull_communication_of_sfg.2 #can remote outpost
+		}
+		country_event = {
+			id = sfg_usefull_communication_of_sfg.10 #decision_phi_pm_atmospheric_pollution
+			days = 15
+		}
+		country_event = {
+			id = sfg_usefull_communication_of_sfg.20 #natural pm tech_terrestrial_sculpting
+			days = 45
+		}
+		country_event = {
+			id = sfg_usefull_communication_of_sfg.30 #Decision pm without tech
+			days = 75
+		}
+		country_event = {
+			id = sfg_usefull_communication_of_sfg.40 #Decision pm with tech
+			days = 95
+		}
+	}
+}
+country_event = { #decision_phi_pm_atmospheric_pollution
+	id = sfg_usefull_communication_of_sfg.2
+	is_triggered_only = yes
+	title = "can_have_remote_system.2.name"
+	desc = "can_have_remote_system.2.desc"
+	picture = GFX_arcology
+	show_sound = event_alien_signal #random
+	location = root
+	trigger = {
+		is_at_war = no
+		crisis_run_optimized = no
+		can_have_remote_system = yes
+		NOT = { has_country_flag = can_have_remote_system }
+	}
+	option = {
+		name = TY
+		hidden_effect = {
+			set_country_flag = can_have_remote_system
+		}
+	}
+}
+country_event = { #decision_phi_pm_atmospheric_pollution
+	id = sfg_usefull_communication_of_sfg.10
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_technology = tech_terrestrial_sculpting
+		has_resource = { type = energy amount >= 500 } 
+		
+		any_owned_planet = {
+			has_modifier = phi_pm_atmospheric_pollution
+			NOR = {
+				has_planet_flag = disable_sfg_usefull_communication_of_sfg10
+			}
+			
+		}
+	}
+	immediate = {
+		every_owned_planet = { 
+			limit = { #decision_phi_pm_atmospheric_pollution
+			has_modifier = phi_pm_atmospheric_pollution
+				NOR = {
+					has_planet_flag = disable_sfg_usefull_communication_of_sfg10
+				}
+				
+			}
+			planet_event = {
+				id = sfg_usefull_communication_of_sfg.11#Message
+			}
+		}
+	}
+}
+planet_event = { #decision_phi_pm_atmospheric_pollution
+	id = sfg_usefull_communication_of_sfg.11
+	is_triggered_only = yes
+	title = "phi_pm_atmospheric_pollutionMessage.1.name"
+	desc = "phi_pm_atmospheric_pollutionMessage.1.desc"
+	picture = GFX_arcology
+	show_sound = event_alien_signal #random
+	location = root
+
+	option = {
+		name = TY
+		hidden_effect = {
+			set_timed_planet_flag = { 
+				flag = disable_sfg_usefull_communication_of_sfg10
+				days = 931
+			}
+		}
+	}
+	option = {
+		name = StopCommunicateForThis
+		hidden_effect = {
+			ROOT = { set_planet_flag = disable_sfg_usefull_communication_of_sfg10 }
+		}
+	}
+}
+country_event = { #Decision tech_terrestrial_sculpting
+	id = sfg_usefull_communication_of_sfg.20
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_technology = tech_terrestrial_sculpting
+		has_resource = { type = energy amount >= 2000 } 
+		
+		any_owned_planet = {
+			OR = {
+				AND = {
+					OR = {
+						has_modifier = phi_pm_mantle_frozen_gas_pockets_3
+						has_modifier = phi_pm_polar_supercells_3
+						has_modifier = phi_pm_perennial_fog_3
+						has_modifier = phi_pm_tectonic_fractures_3
+						has_modifier = phi_pm_ocean_vortexes_3
+						has_modifier = phi_pm_bacterial_pathogen_3
+						has_modifier = phi_pm_sudden_rainfalls_3
+						has_modifier = phi_pm_dust_storms_3
+						has_modifier = phi_pm_tesla_biome_3
+						has_modifier = phi_pm_electric_ice_shelf_3
+						has_modifier = phi_pm_magnetic_clouds_3
+					}
+				}
+				AND = {
+					prev = { 
+						AND = {
+							has_technology = tech_ecological_adaptation 
+							has_resource = { type = energy amount >= 4000 } 
+						}
+					}
+					OR = {
+						has_modifier = phi_pm_mantle_frozen_gas_pockets_2
+						has_modifier = phi_pm_polar_supercells_2
+						has_modifier = phi_pm_perennial_fog_2
+						has_modifier = phi_pm_tectonic_fractures_2
+						has_modifier = phi_pm_ocean_vortexes_2
+						has_modifier = phi_pm_bacterial_pathogen_2
+						has_modifier = phi_pm_sudden_rainfalls_2
+						has_modifier = phi_pm_dust_storms_2
+						has_modifier = phi_pm_tesla_biome_2
+						has_modifier = phi_pm_electric_ice_shelf_2
+						has_modifier = phi_pm_magnetic_clouds_2
+					}
+				}
+			}
+			NOR = {
+				has_planet_flag = disable_sfg_usefull_communication_of_sfg20
+			}
+			
+		}
+	}
+	immediate = {
+		random_owned_planet = { 
+			limit = { #decision_phi_pm_*
+				OR = {
+					AND = {
+						OR = {
+							has_modifier = phi_pm_mantle_frozen_gas_pockets_3
+							has_modifier = phi_pm_polar_supercells_3
+							has_modifier = phi_pm_perennial_fog_3
+							has_modifier = phi_pm_tectonic_fractures_3
+							has_modifier = phi_pm_ocean_vortexes_3
+							has_modifier = phi_pm_bacterial_pathogen_3
+							has_modifier = phi_pm_sudden_rainfalls_3
+							has_modifier = phi_pm_dust_storms_3
+							has_modifier = phi_pm_tesla_biome_3
+							has_modifier = phi_pm_electric_ice_shelf_3
+							has_modifier = phi_pm_magnetic_clouds_3
+						}
+					}
+					AND = {
+						prev = { 
+							AND = {
+								has_technology = tech_ecological_adaptation 
+								has_resource = { type = energy amount >= 4000 } 
+							}
+						}
+						OR = {
+							has_modifier = phi_pm_mantle_frozen_gas_pockets_2
+							has_modifier = phi_pm_polar_supercells_2
+							has_modifier = phi_pm_perennial_fog_2
+							has_modifier = phi_pm_tectonic_fractures_2
+							has_modifier = phi_pm_ocean_vortexes_2
+							has_modifier = phi_pm_bacterial_pathogen_2
+							has_modifier = phi_pm_sudden_rainfalls_2
+							has_modifier = phi_pm_dust_storms_2
+							has_modifier = phi_pm_tesla_biome_2
+							has_modifier = phi_pm_electric_ice_shelf_2
+							has_modifier = phi_pm_magnetic_clouds_2
+						}
+					}
+				}
+				NOR = {
+					has_planet_flag = disable_sfg_usefull_communication_of_sfg20
+				}
+				
+			}
+			planet_event = {
+				id = sfg_usefull_communication_of_sfg.21#Message
+			}
+		}
+	}
+}
+planet_event = { #message tech_terrestrial_sculpting
+	id = sfg_usefull_communication_of_sfg.21
+	is_triggered_only = yes
+	title = "phi_pm_Message.1.name"
+	desc = "phi_pm_Message.1.desc"
+	picture = GFX_arcology
+	show_sound = event_alien_signal #random
+	location = root
+	option = {
+		name = NEXT
+		hidden_effect = {
+			set_timed_planet_flag = { 
+				flag = disable_sfg_usefull_communication_of_sfg20
+				days = 901
+			}
+			owner = { 
+				country_event = {
+					id = sfg_usefull_communication_of_sfg.20#Message
+				}
+			}
+		}
+	}
+	option = {
+		name = TY
+		set_timed_planet_flag = { 
+			flag = disable_sfg_usefull_communication_of_sfg20
+			days = 901
+		}
+	}
+	option = {
+		name = StopCommunicateForThis
+		hidden_effect = {
+			
+			ROOT = { set_planet_flag = disable_sfg_usefull_communication_of_sfg20 }
+		}
+	}
+}
+
+#pm tech upgrade
+country_event = { #Decision pm tech upgrade
+	id = sfg_usefull_communication_of_sfg.30
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_resource = { type = minor_artifacts amount >= 25 } 
+		
+		any_owned_planet = {
+			AND = {
+				OR = {
+					has_modifier = phi_pm_planet_teleporters_3
+					has_modifier = phi_pm_planet_broadcasting_3
+					has_modifier = phi_pm_planet_accelerators_3
+					has_modifier = phi_pm_planet_teleporters_2
+					has_modifier = phi_pm_planet_broadcasting_2
+					has_modifier = phi_pm_planet_accelerators_2
+				}	
+			}
+			NOR = {
+				has_planet_flag = disable_sfg_usefull_communication_of_sfg30
+			}
+			
+		}
+	}
+	immediate = {
+		every_owned_planet = { 
+			limit = { #decision_phi_pm_*
+			AND = {
+				OR = {
+						has_modifier = phi_pm_planet_teleporters_3
+						has_modifier = phi_pm_planet_broadcasting_3
+						has_modifier = phi_pm_planet_accelerators_3
+						has_modifier = phi_pm_planet_teleporters_2
+						has_modifier = phi_pm_planet_broadcasting_2
+						has_modifier = phi_pm_planet_accelerators_2
+					}	
+				}
+				NOR = {
+					has_planet_flag = disable_sfg_usefull_communication_of_sfg30
+				}
+				
+			}
+			planet_event = {
+				id = sfg_usefull_communication_of_sfg.31#Message
+			}
+		}
+	}
+}
+planet_event = { #message 
+	id = sfg_usefull_communication_of_sfg.31
+	is_triggered_only = yes
+	title = "phi_pm_tech_Message.1.name"
+	desc = "phi_pm_tech_Message.1.desc"
+	picture = GFX_arcology
+	show_sound = event_alien_signal #random
+	location = root
+	option = {
+		name = TY
+		set_timed_planet_flag = { 
+			flag = disable_sfg_usefull_communication_of_sfg30
+			days = 901
+		}
+	}
+	option = {
+		name = StopCommunicateForThis
+		hidden_effect = {
+			
+			ROOT = { set_planet_flag = disable_sfg_usefull_communication_of_sfg30 }
+		}
+	}
+}
+
+#pm techer
+country_event = { #Decision pm techer
+	id = sfg_usefull_communication_of_sfg.40
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		
+		OR = {
+			AND = {
+				has_technology = tech_gateway_construction
+				OR = {
+					AND = {
+						is_regular_empire = yes
+						has_resource = { type = energy amount >= 2000 }
+					}
+					AND = {
+						is_regular_empire = no
+						has_resource = { type = alloys amount >= 700 }
+					}
+				}
+			}
+			# has_technology = tech_autonomous_agents
+			# has_technology = tech_collective_self
+			# has_technology = tech_physics_3
+		}
+		any_owned_planet = {
+			AND = {
+				OR = {
+					has_modifier = phi_pm_planet_teleporters_3
+					# has_modifier = phi_pm_planet_broadcasting_3
+					# has_modifier = phi_pm_planet_accelerators_3
+					has_modifier = phi_pm_planet_teleporters_2
+					# has_modifier = phi_pm_planet_broadcasting_2
+					# has_modifier = phi_pm_planet_accelerators_2
+					is_pc_for_teleporter = yes
+				}	
+				NAND = {
+					has_modifier = phi_pm_planet_teleporters_1
+					# has_modifier = phi_pm_planet_broadcasting_1
+					# has_modifier = phi_pm_planet_accelerators_1
+				}
+			}
+			NAND = {
+				has_planet_flag = disable_sfg_usefull_communication_of_sfg41
+				has_planet_flag = disable_sfg_usefull_communication_of_sfg42
+				has_planet_flag = disable_sfg_usefull_communication_of_sfg43
+			}
+			
+		}
+	}
+	immediate = {
+		random_owned_planet = { 
+			limit = { #decision_phi_pm_*
+				AND = {
+					OR = {
+							has_modifier = phi_pm_planet_teleporters_3
+							has_modifier = phi_pm_planet_teleporters_2
+							# has_modifier = phi_pm_planet_broadcasting_3
+							# has_modifier = phi_pm_planet_accelerators_3
+							
+							# has_modifier = phi_pm_planet_broadcasting_2
+							# has_modifier = phi_pm_planet_accelerators_2
+							is_pc_for_teleporter = yes
+							#is_planet_class = pc_ocean
+					}
+					NAND = {
+						has_modifier = phi_pm_planet_teleporters_1
+						# has_modifier = phi_pm_planet_broadcasting_1
+						# has_modifier = phi_pm_planet_accelerators_1
+					}	
+				}
+				NAND = {
+					has_planet_flag = disable_sfg_usefull_communication_of_sfg41
+					# has_planet_flag = disable_sfg_usefull_communication_of_sfg42
+					# has_planet_flag = disable_sfg_usefull_communication_of_sfg43
+				}
+				
+			}
+			weights = {
+				# can use add or mult
+				base = 1
+				modifier = {
+					add = 100
+					pop_amount > 5000
+				}
+				modifier = {
+					add = 100
+					is_capital = yes
+				}
+			}
+			if = { #phi_pm_planet_teleporters_1
+				limit = { 
+					NOT = { has_planet_flag = disable_sfg_usefull_communication_of_sfg41 }
+					root = { has_resource = { type = sr_dark_matter amount >= 25 } }
+					NOT = { has_modifier = phi_pm_planet_teleporters_1 }
+					OR = {
+						has_modifier = phi_pm_planet_teleporters_3
+						has_modifier = phi_pm_planet_teleporters_2
+						AND = {
+							OR = {
+								is_planet_class = pc_city
+								is_planet_class = pc_gaia
+							}
+							root = { has_resource = { type = energy amount >= 2000 } }
+						}
+						AND = {
+							OR = {
+								is_planet_class = pc_machine
+								is_planet_class = pc_hive
+							}
+							root = { has_resource = { type = alloys amount >= 700 } }
+						}
+						
+					}
+				}
+				planet_event = {
+					id = sfg_usefull_communication_of_sfg.41#Message
+				}
+			}
+			# disable for 4.0# else_if = {
+			# 	limit = { 
+			# 		root = {
+			# 			OR = {
+			# 				has_technology = tech_autonomous_agents
+			# 				has_technology = tech_collective_self
+			# 			}
+			# 		}
+			# 		NOT = { has_planet_flag = disable_sfg_usefull_communication_of_sfg42 }
+			# 		root = { has_resource = { type = minor_artifacts amount >= 25 } }
+			# 		root = { has_resource = { type = energy amount >= 2500 } }
+			# 		NOT = { has_modifier = phi_pm_planet_broadcasting_1 }
+			# 		OR = {
+			# 			has_modifier = phi_pm_planet_broadcasting_3
+			# 			has_modifier = phi_pm_planet_broadcasting_2
+			# 		}
+			# 	}
+			# 	planet_event = {
+			# 		id = sfg_usefull_communication_of_sfg.42#Message broadcasting
+			# 	}
+			# }
+			# else_if = {
+			# 	limit = { 
+			# 		root = {
+			# 			OR = {
+			# 				has_technology = tech_physics_3
+			# 			}
+			# 		}
+			# 		NOT = { has_planet_flag = disable_sfg_usefull_communication_of_sfg43 }
+			# 		root = { 
+			# 			OR = {
+			# 				AND = { 
+			# 					owner = { is_gestalt = yes }
+			# 					has_resource = { type = energy amount >= 2000 } 
+			# 				}
+			# 				AND = {
+			# 					has_resource = { type = sr_dark_matter amount >= 25 }
+			# 					has_resource = { type = energy amount >= 2500 } 
+			# 				}
+			# 			}
+			# 		}
+			# 		NOT = { has_modifier = phi_pm_planet_accelerators_1 }
+			# 		OR = {
+			# 			has_modifier = phi_pm_planet_accelerators_3
+			# 			has_modifier = phi_pm_planet_accelerators_2
+			# 		}
+			# 	}
+			# 	planet_event = {
+			# 		id = sfg_usefull_communication_of_sfg.43#Message acelerator
+			# 	}
+			# }
+		}
+	}
+}
+planet_event = { #message techer teleporter
+	id = sfg_usefull_communication_of_sfg.41
+	is_triggered_only = yes
+	title = "phi_pm_teleporters_Message.1.name"
+	desc = "phi_pm_teleporters_Message.1.desc"
+	picture = GFX_arcology
+	show_sound = event_alien_signal #random
+	location = root
+	option = {
+		name = TY
+		set_timed_planet_flag = { 
+			flag = disable_sfg_usefull_communication_of_sfg41
+			days = 1801
+		}
+	}
+	option = {
+		name = StopCommunicateForThis
+		hidden_effect = {
+			
+			ROOT = { set_planet_flag = disable_sfg_usefull_communication_of_sfg41 }
+		}
+	}
+}
+planet_event = { #message techer broadcasting
+	id = sfg_usefull_communication_of_sfg.42
+	is_triggered_only = yes
+	title = "phi_pm_broadcasting_Message.1.name"
+	desc = "phi_pm_broadcasting_Message.1.desc"
+	picture = GFX_arcology
+	show_sound = event_alien_signal #random
+	location = root
+	option = {
+		name = TY
+		set_timed_planet_flag = { 
+			flag = disable_sfg_usefull_communication_of_sfg42
+			days = 1801
+		}
+	}
+	option = {
+		name = StopCommunicateForThis
+		hidden_effect = {
+			
+			ROOT = { set_planet_flag = disable_sfg_usefull_communication_of_sfg42 }
+		}
+	}
+}
+planet_event = { #message techer Accelerator
+	id = sfg_usefull_communication_of_sfg.43
+	is_triggered_only = yes
+	title = "phi_pm_Accelerator_Message.1.name"
+	desc = "phi_pm_Accelerator_Message.1.desc"
+	picture = GFX_arcology
+	show_sound = event_alien_signal #random
+	location = root
+	option = {
+		name = TY
+		set_timed_planet_flag = { 
+			flag = disable_sfg_usefull_communication_of_sfg43
+			days = 1801
+		}
+	}
+	option = {
+		name = StopCommunicateForThis
+		hidden_effect = {
+			
+			ROOT = { set_planet_flag = disable_sfg_usefull_communication_of_sfg43 }
+		}
+	}
+}

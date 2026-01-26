@@ -1,0 +1,43 @@
+create_last_resistance_fleet = {
+	if = { 
+		limit = { 
+			always = yes
+		}
+		random_owned_planet = {
+			limit = {
+				is_occupied_flag = no
+			}
+			weights = {
+				base = 1
+				modifier ={
+					factor = 3
+					is_capital = yes
+				}
+			}
+			root = { 
+				create_fleet_from_naval_cap = 0.5
+			}
+			last_created_fleet = {
+				set_location = prev
+				#can_change_leader = yes
+				every_controlled_ship = {
+					switch = {
+						trigger = is_ship_size
+						corvette = { set_ship_design = { random_existing_design = corvette } }
+						frigate = { set_ship_design = { random_existing_design = frigate } }
+						destroyer = { set_ship_design = { random_existing_design = destroyer } }
+						cruiser = { set_ship_design = { random_existing_design = cruiser } }
+						battleship = { set_ship_design = { random_existing_design = destroyer } }
+						titan = { set_ship_design = { random_existing_design = cruiser } }
+						carrier = { set_ship_design = { random_existing_design = cruiser } }
+						juggernaut = { set_ship_design = { random_existing_design = destroyer } }
+					}
+				}
+			}
+			
+			# create_fleet = { 
+			# } 
+		}
+		add_modifier = { modifier = country_defaulted_by_the_last_resistance years = 20}
+	}
+}

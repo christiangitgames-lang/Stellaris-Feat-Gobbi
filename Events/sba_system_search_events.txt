@@ -1,0 +1,2098 @@
+
+namespace = sba_system_search
+
+### Pictures
+	# picture = GFX_evt_black_hole
+	# picture = GFX_evt_communication_event # Row of satellite dishes
+	# picture = GFX_evt_crystal_asteroid_sky
+	# picture = GFX_evt_crystal_mining
+	# picture = GFX_evt_decryption
+	# picture = GFX_evt_dyson_swarm
+	# picture = GFX_evt_engineering_research # ship schematic
+	# picture = GFX_evt_intelligence_report # data drive on desk
+	# picture = GFX_evt_megastructure_construction
+	# picture = GFX_evt_mining_operations # planetary mining facility
+	# picture = GFX_evt_mining_station # station in asteroid field
+	# picture = GFX_evt_molten # molten planet surface
+	# picture = GFX_evt_physics_research # lab viewing black hole
+	# picture = GFX_evt_quantum_catapult
+	# picture = GFX_evt_quantum_catapult_build
+	# picture = GFX_evt_satellite_in_orbit
+	# picture = GFX_evt_shattered_planet
+	# picture = GFX_evt_society_research # people in vats
+	# picture = GFX_evt_star_chart
+	# picture = GFX_evt_star_pulsar
+###
+	# show_sound = event_administrative_work
+	# show_sound = event_laboratory_sound
+	# show_sound = event_mystic_reveal
+	# show_sound = event_sensor_ping
+	# show_sound = event_ship_bridge
+###
+
+country_event = { # System search menu
+	id = sba_system_search.10
+	title = "sba_system_search.10.name"
+	desc = "sba_system_search.10.desc"
+	picture = GFX_evt_star_chart
+	show_sound = event_administrative_work
+	location = FROM
+	
+	is_triggered_only = yes
+
+	immediate = {
+		# Variables for description
+		set_variable = {
+			which = temp_arc_furnace_max
+			value = value:arc_furnace_limit
+		}
+		set_variable = { # dyson_swarm_counter
+			which = temp_dyson_swarm_max
+			value = value:dyson_swarm_limit
+		}
+	}
+
+
+	# 
+
+	option = { # Arc Furnace
+		name = orbital_arc_furnace_4
+		allow = {
+			OR = {
+				has_overlord_dlc = yes
+				has_technology = "tech_orbital_arc_furnace"
+				has_tech_option = "tech_orbital_arc_furnace" # So you can plan while researching it
+				has_global_flag = gigastructures_enabled # Requested: For use with other Gigastructure structures with similar requirements
+			}
+		}
+		country_event = {
+			id = sba_system_search.21
+		}
+	}
+	option = { # Dyson Swarm
+		name = dyson_swarm_3
+		allow = {
+			OR = {
+				has_overlord_dlc = yes
+				has_technology = "tech_dyson_swarm"
+				has_tech_option = "tech_dyson_swarm" # So you can plan while researching it
+			}
+		}
+		country_event = {
+			id = sba_system_search.31
+		}
+	}
+	option = { # Habitat
+		name = habitat_central_complex
+		allow = {
+			# always = no # TODO: Update for 4.0 habitat rework
+			OR = {
+				has_utopia = yes
+				has_technology = "tech_habitat_1"
+				has_tech_option = "tech_habitat_1" # So you can plan while researching it
+			}
+		}
+		country_event = {
+			id = sba_system_search.41
+		}
+	}
+	option = { # Nanite Harvesters
+		name = sm_nanite_harvester
+		trigger = {
+			# Synthetic Age AP requirements
+			OR = {
+				has_synthetic_dawn = yes
+				has_machine_age_dlc = yes
+			}
+			OR = {
+				has_authority = auth_machine_intelligence
+				is_individual_machine = yes
+			}
+			is_natural_design_empire = no
+			#
+			NOR = {
+				has_tradition = tr_modularity_adopt
+				has_tradition = tr_virtuality_adopt
+			}
+		}
+		# allow = {
+		# 	has_tradition = tr_nanotech_adopt
+		# }
+		country_event = {
+			id = sba_system_search.51
+		}
+	}
+	option = { # Nanite Harvesters (cheaty version)
+		name = sm_nanite_harvester
+		trigger = {
+			has_country_flag = sba_nanite_harvester_system_search_cheat_enabled
+			# Synthetic Age AP requirements
+			OR = {
+				has_synthetic_dawn = yes
+				has_machine_age_dlc = yes
+			}
+			OR = {
+				has_authority = auth_machine_intelligence
+				is_individual_machine = yes
+			}
+			is_natural_design_empire = no
+			#
+			NOR = {
+				has_tradition = tr_modularity_adopt
+				has_tradition = tr_virtuality_adopt
+			}
+		}
+		# allow = {
+		# 	has_tradition = tr_nanotech_adopt
+		# }
+		country_event = {
+			id = sba_system_search.52
+		}
+	}
+	option = { # Ice Mining Station
+		name = sm_ice_mining_station
+		trigger = {
+			# has_aquatics = yes
+			OR = {
+				has_ascension_perk = ap_hydrocentric
+				has_trait = trait_aquatic
+				has_trait = trait_robot_aquatic
+			}
+		}
+		# allow = {
+		# 	OR = {
+		# 		has_ascension_perk = ap_hydrocentric
+		# 		AND = { # Prereqs for Hydrocentric AP
+		# 			OR = {
+		# 				has_trait = trait_aquatic
+		# 				has_trait = trait_robot_aquatic
+		# 			}
+		# 			has_technology = tech_terrestrial_sculpting
+		# 		}
+		# 	}
+		# }
+		country_event = {
+			id = sba_system_search.61
+		}
+	}
+	option = { # Quantum Catapult
+		name = quantum_catapult_3
+		allow = {
+			OR = {
+				has_overlord_dlc = yes
+				has_technology = "tech_quantum_catapult"
+				has_tech_option = "tech_quantum_catapult" # So you can plan while researching it
+				astral_rifts_completed >= 2 # Unlock threshold for action_quantum_catapult_insight, which grants tech option - so you can check if you own somewhere to build one before taking the action
+			}
+		}
+		country_event = {
+			id = sba_system_search.71
+		}
+	}
+	option = { # Nebulae free
+		name = NEBULA
+		allow = {
+			has_technology = tech_space_mining_1 
+			any_system_within_border = {
+				star = { is_inside_nebula = yes }
+			}
+		}
+		country_event = {
+			id = sfg_system_search.11
+		}
+	}
+	# colonies missing orbital rings, sorted by num pops
+	# Habitats?
+		# Most major orbitals
+		# Most minor orbitals
+		# Most total orbitals
+		# Most reactor districts
+		# Most astro-mining bays
+		# Most research districts
+		# Most SR miner jobs
+	# regular megastructures
+		# Pulsar for quantum catapult
+		# black hole for matter decompressor
+	option = {
+		name = DONE
+		default_hide_option = yes
+	}
+}
+
+## Arc Furnace ##
+
+
+country_event = { # Arc Furnace system selector dialogue
+	id = sba_system_search.21
+	title = "sba_system_search.21.name"
+	desc = "sba_system_search.21.desc"
+	picture = GFX_evt_star_chart # GFX_evt_arc_crucible
+	show_sound = event_sensor_ping
+	location = FROM
+	
+	is_triggered_only = yes
+
+	immediate = {
+		# set_variable = {
+		# 	which = sba_num_arc_furnace_systems
+		# 	value = 0
+		# }
+		set_variable = {
+			which = temp_arc_furnace_max
+			value = value:arc_furnace_limit
+		}
+		every_system_within_border = {
+			limit = {#optimize research
+				sba_is_valid_arc_furnace_system = yes
+			}
+			set_variable = {
+				which = sba_arc_furnace_var
+				value = 0
+			}
+			if = {
+				limit = {
+					any_system_planet = {
+						sba_is_valid_arc_furnace_planet = yes
+					}
+				}
+				export_trigger_value_to_variable = {
+					trigger = count_system_planet
+					parameters = {
+						limit = {
+							NOT = { has_deposit_for = shipclass_research_station }
+							is_star = no
+							is_astral_scar = no
+							colonizable_planet = no
+						}
+					}
+					variable = sba_arc_furnace_var
+				}
+				# prev = {
+				# 	change_variable = {
+				# 		which = sba_num_arc_furnace_systems
+				# 		value = 1
+				# 	}
+				# }
+			}
+		}
+		# if = {
+		# 	limit = {
+		# 		check_variable = {
+		# 			which = sba_num_arc_furnace_systems
+		# 			value > 0
+		# 		}
+		# 	}
+			ordered_system_within_border = {
+				position = 0
+				order_by = sba_arc_furnace_var
+				save_event_target_as = sba_arc_furnace_system_0
+			}
+		# }
+		# if = {
+		# 	limit = {
+		# 		check_variable = {
+		# 			which = sba_num_arc_furnace_systems
+		# 			value > 1
+		# 		}
+		# 	}
+			ordered_system_within_border = {
+				position = 1
+				order_by = sba_arc_furnace_var
+				save_event_target_as = sba_arc_furnace_system_1
+			}
+		# }
+		# if = {
+		# 	limit = {
+		# 		check_variable = {
+		# 			which = sba_num_arc_furnace_systems
+		# 			value > 2
+		# 		}
+		# 	}
+			ordered_system_within_border = {
+				position = 2
+				order_by = sba_arc_furnace_var
+				save_event_target_as = sba_arc_furnace_system_2
+			}
+		# }
+		# if = {
+		# 	limit = {
+		# 		check_variable = {
+		# 			which = sba_num_arc_furnace_systems
+		# 			value > 3
+		# 		}
+		# 	}
+			ordered_system_within_border = {
+				position = 3
+				order_by = sba_arc_furnace_var
+				save_event_target_as = sba_arc_furnace_system_3
+			}
+		# }
+		# if = {
+		# 	limit = {
+		# 		check_variable = {
+		# 			which = sba_num_arc_furnace_systems
+		# 			value > 4
+		# 		}
+		# 	}
+			ordered_system_within_border = {
+				position = 4
+				order_by = sba_arc_furnace_var
+				save_event_target_as = sba_arc_furnace_system_4
+			}
+		# }
+	}
+
+	option = {
+		name = sba_system_search.21.a
+		trigger = {
+			exists = event_target:sba_arc_furnace_system_0
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.21
+				scopes = { from = event_target:sba_arc_furnace_system_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.21.b
+		trigger = {
+			exists = event_target:sba_arc_furnace_system_1
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.21
+				scopes = { from = event_target:sba_arc_furnace_system_1 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.21.c
+		trigger = {
+			exists = event_target:sba_arc_furnace_system_2
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.21
+				scopes = { from = event_target:sba_arc_furnace_system_2 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.21.d
+		trigger = {
+			exists = event_target:sba_arc_furnace_system_3
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.21
+				scopes = { from = event_target:sba_arc_furnace_system_3 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.21.e
+		trigger = {
+			exists = event_target:sba_arc_furnace_system_4
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.21
+				scopes = { from = event_target:sba_arc_furnace_system_4 }
+			}
+		}
+	}
+	option = {
+		name = BACK
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.10
+			}
+		}
+	}
+	option = {
+		name = DONE
+		default_hide_option = yes
+	}
+}
+
+## Dyson Swarm ##
+
+country_event = { # Dyson Swarm system selector dialogue
+	id = sba_system_search.31
+	title = "sba_system_search.31.name"
+	desc = "sba_system_search.31.desc"
+	picture = GFX_evt_star_chart
+	show_sound = event_sensor_ping
+	location = FROM
+	
+	is_triggered_only = yes
+
+	immediate = {
+		# from = { save_event_target_as = sba_goto_location }
+		# set_variable = {
+		# 	which = sba_num_dyson_swarm_energy_stars
+		# 	value = 0
+		# }
+		set_variable = { # dyson_swarm_counter
+			which = temp_dyson_swarm_max
+			value = value:dyson_swarm_limit
+		}
+		sba_dyson_swarm_site_search_effect = yes
+		# Energy
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = energy }
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 1 RESOURCE = energy }
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 2 RESOURCE = energy }
+		# Other mining
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = minerals }
+		# sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = food }
+		# sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = consumer_goods }
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = alloys }
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = volatile_motes }
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = exotic_gases }
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = rare_crystals }
+		# Research dyson swarms
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = society }
+		sba_dyson_swarm_site_ordered_effect = {
+			POSITION = 0
+			RESOURCE = engineering
+			EXCLUDE0 = sba_dyson_swarm_society_star_0
+		}
+		sba_dyson_swarm_site_ordered_effect = {
+			POSITION = 0
+			RESOURCE = physics
+			EXCLUDE0 = sba_dyson_swarm_society_star_0
+			EXCLUDE1 = sba_dyson_swarm_engineering_star_0
+		}
+		sba_dyson_swarm_site_ordered_effect = {
+			POSITION = 0
+			RESOURCE = research
+			EXCLUDE0 = sba_dyson_swarm_society_star_0
+			EXCLUDE1 = sba_dyson_swarm_engineering_star_0
+			EXCLUDE2 = sba_dyson_swarm_physics_star_0
+		}
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = unity }
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = zro }
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = dark_matter }
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = nanites }
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = minor_artifacts }
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = astral_threads }
+	}
+
+	# Energy
+	option = {
+		name = sba_system_search.31.energy0
+		trigger = {
+			exists = event_target:sba_dyson_swarm_energy_star_0
+		}
+		# is_dialog_only = yes
+		# event_target:sba_dyson_swarm_energy_star_0 = { save_event_target_as = sba_goto_location }
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_energy_star_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.31.energy1
+		trigger = {
+			exists = event_target:sba_dyson_swarm_energy_star_1
+		}
+		# is_dialog_only = yes
+		# event_target:sba_dyson_swarm_energy_star_1 = { save_event_target_as = sba_goto_location }
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_energy_star_1 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.31.energy2
+		trigger = {
+			exists = event_target:sba_dyson_swarm_energy_star_2
+		}
+		# is_dialog_only = yes
+		# event_target:sba_dyson_swarm_energy_star_2 = { save_event_target_as = sba_goto_location }
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_energy_star_2 }
+			}
+		}
+	}
+	# Other mining
+	option = {
+		name = sba_system_search.31.minerals
+		trigger = {
+			exists = event_target:sba_dyson_swarm_minerals_star_0
+			# event_target:sba_dyson_swarm_minerals_star_0 = {
+			# 	has_resource = { type = minerals amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_minerals_star_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.31.alloys
+		trigger = {
+			exists = event_target:sba_dyson_swarm_alloys_star_0
+			# event_target:sba_dyson_swarm_alloys_star_0 = {
+			# 	has_resource = { type = alloys amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_alloys_star_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.31.volatile_motes
+		trigger = {
+			exists = event_target:sba_dyson_swarm_volatile_motes_star_0
+			# event_target:sba_dyson_swarm_volatile_motes_star_0 = {
+			# 	has_resource = { type = volatile_motes amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_volatile_motes_star_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.31.exotic_gases
+		trigger = {
+			exists = event_target:sba_dyson_swarm_exotic_gases_star_0
+			# event_target:sba_dyson_swarm_exotic_gases_star_0 = {
+			# 	has_resource = { type = exotic_gases amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_exotic_gases_star_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.31.rare_crystals
+		trigger = {
+			exists = event_target:sba_dyson_swarm_rare_crystals_star_0
+			# event_target:sba_dyson_swarm_rare_crystals_star_0 = {
+			# 	has_resource = { type = rare_crystals amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_rare_crystals_star_0 }
+			}
+		}
+	}
+	# Research
+	option = {
+		name = sba_system_search.31.physics
+		trigger = {
+			exists = event_target:sba_dyson_swarm_physics_star_0
+			# event_target:sba_dyson_swarm_physics_star_0 = {
+			# 	has_resource = { type = physics_research amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_physics_star_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.31.society
+		trigger = {
+			exists = event_target:sba_dyson_swarm_society_star_0
+			# event_target:sba_dyson_swarm_society_star_0 = {
+			# 	has_resource = { type = society_research amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_society_star_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.31.engineering
+		trigger = {
+			exists = event_target:sba_dyson_swarm_engineering_star_0
+			# event_target:sba_dyson_swarm_engineering_star_0 = {
+			# 	has_resource = { type = engineering_research amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_engineering_star_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.31.research
+		trigger = {
+			exists = event_target:sba_dyson_swarm_research_star_0
+			# event_target: = {
+			# 	has_resource = { type = _research amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_research_star_0 }
+			}
+		}
+	}
+	# Other research
+	option = {
+		name = sba_system_search.31.unity
+		trigger = {
+			exists = event_target:sba_dyson_swarm_unity_star_0
+			# event_target:sba_dyson_swarm_unity_star_0 = {
+			# 	has_resource = { type = unity amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_unity_star_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.31.zro
+		trigger = {
+			exists = event_target:sba_dyson_swarm_zro_star_0
+			# event_target:sba_dyson_swarm_zro_star_0 = {
+			# 	has_resource = { type = sr_zro amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_zro_star_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.31.dark_matter
+		trigger = {
+			exists = event_target:sba_dyson_swarm_dark_matter_star_0
+			# event_target:sba_dyson_swarm_dark_matter_star_0 = {
+			# 	has_resource = { type = sr_dark_matter amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_dark_matter_star_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.31.nanites
+		trigger = {
+			exists = event_target:sba_dyson_swarm_nanites_star_0
+			# event_target:sba_dyson_swarm_nanites_star_0 = {
+			# 	has_resource = { type = nanites amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_nanites_star_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.31.minor_artifacts
+		trigger = {
+			exists = event_target:sba_dyson_swarm_minor_artifacts_star_0
+			# event_target:sba_dyson_swarm_minor_artifacts_star_0 = {
+			# 	has_resource = { type = minor_artifacts amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_minor_artifacts_star_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.31.astral_threads
+		trigger = {
+			exists = event_target:sba_dyson_swarm_astral_threads_star_0
+			# event_target:sba_dyson_swarm_astral_threads_star_0 = {
+			# 	has_resource = { type = astral_threads amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_astral_threads_star_0 }
+			}
+		}
+	}
+
+	# option = {
+	# 	name = sba_system_search.31.c
+	# 	trigger = {
+	# 		exists = event_target:sba_dyson_swarm_research_star_0
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.31
+	# 			scopes = { from = event_target:sba_dyson_swarm_research_star_0 }
+	# 		}
+	# 	}
+	# }
+	# option = {
+	# 	name = sba_system_search.31.d
+	# 	trigger = {
+	# 		exists = event_target:sba_dyson_swarm_research_star_1
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.31
+	# 			scopes = { from = event_target:sba_dyson_swarm_research_star_1 }
+	# 		}
+	# 	}
+	# }
+	# option = {
+	# 	name = sba_system_search.31.b
+	# 	trigger = {
+	# 		exists = event_target:sba_dyson_swarm_system_1
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.31
+	# 			scopes = { from = event_target:sba_dyson_swarm_system_1 }
+	# 		}
+	# 	}
+	# }
+	# option = {
+	# 	name = sba_system_search.31.c
+	# 	trigger = {
+	# 		exists = event_target:sba_dyson_swarm_system_2
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.31
+	# 			scopes = { from = event_target:sba_dyson_swarm_system_2 }
+	# 		}
+	# 	}
+	# }
+	# option = {
+	# 	name = sba_system_search.31.d
+	# 	trigger = {
+	# 		exists = event_target:sba_dyson_swarm_system_3
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.31
+	# 			scopes = { from = event_target:sba_dyson_swarm_system_3 }
+	# 		}
+	# 	}
+	# }
+	# option = {
+	# 	name = sba_system_search.31.e
+	# 	trigger = {
+	# 		exists = event_target:sba_dyson_swarm_system_4
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.31
+	# 			scopes = { from = event_target:sba_dyson_swarm_system_4 }
+	# 		}
+	# 	}
+	# }
+	option = {
+		name = BACK
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.10
+			}
+		}
+	}
+	option = {
+		name = DONE
+		default_hide_option = yes
+	}
+}
+
+# create_curator_guardian_poi = {
+	# root = {
+	# 	if = {
+	# 		limit = {
+	# 			NOT = {
+	# 				has_event_chain = curator_poi_chain
+	# 			}
+	# 		}
+	# 		begin_event_chain = {
+	# 			event_chain = curator_poi_chain
+	# 			target = this
+	# 		}
+	# 	}
+	# 	create_point_of_interest = {
+	# 		id = $POI$
+	# 		name = curator_poi_title
+	# 		desc = curator_poi_desc
+	# 		event_chain = curator_poi_chain
+	# 		location = prevprevprev
+	# 	}
+	# }
+# }
+
+# end_curator_chain = {
+	# if = {
+	# 	limit = {
+	# 		has_event_chain = curator_poi_chain
+	# 		NOR = {
+	# 			has_point_of_interest = { poi = curator_poi_dragon }
+	# 			has_point_of_interest = { poi = curator_poi_technosphere }
+	# 			has_point_of_interest = { poi = curator_poi_wraith }
+	# 			has_point_of_interest = { poi = curator_poi_horror }
+	# 			has_point_of_interest = { poi = curator_poi_fortress }
+	# 			has_point_of_interest = { poi = curator_poi_hiver }
+	# 			has_point_of_interest = { poi = curator_poi_stellarite }
+	# 			has_point_of_interest = { poi = curator_poi_dreadnought }
+	# 			has_point_of_interest = { poi = curator_poi_hatchling }
+	# 			has_point_of_interest = { poi = curator_poi_tiyanki }
+	# 			has_point_of_interest = { poi = curator_poi_scavenger_bot }
+	# 		}
+	# 	}
+	# 	end_event_chain = curator_poi_chain
+	# }
+# }
+
+## Habitat Central Complex ##
+
+country_event = { # Habitat system selector dialogue
+	id = sba_system_search.41
+	title = "sba_system_search.41.name"
+	desc = "sba_system_search.41.desc"
+	picture = GFX_evt_star_chart
+	show_sound = event_sensor_ping
+	location = FROM
+	
+	is_triggered_only = yes
+
+	immediate = {
+		every_system_within_border = {
+			limit = { has_star_flag = sba_habitat_search_flag }
+			remove_star_flag = sba_habitat_search_flag
+		}
+		every_system_within_border = { # Clear leftover variables from last time this was run, so they don't show up in the ordered list if no longer valid habitat systems
+			clear_variable = sba_system_district_hab_any_max_var
+			clear_variable = sba_system_district_hab_energy_max_var
+			clear_variable = sba_system_district_hab_mining_max_var
+			clear_variable = sba_system_district_hab_science_max_var
+		}
+		sba_habitat_site_search_effect = yes
+
+		sba_habitat_site_ordered_effect = { POSITION = 0 TYPE = science }
+		sba_habitat_site_ordered_effect = { POSITION = 0 TYPE = energy }
+		sba_habitat_site_ordered_effect = { POSITION = 0 TYPE = mining }
+		sba_habitat_site_ordered_effect = { POSITION = 1 TYPE = science }
+		sba_habitat_site_ordered_effect = { POSITION = 1 TYPE = energy }
+		sba_habitat_site_ordered_effect = { POSITION = 1 TYPE = mining }
+		sba_habitat_site_ordered_effect = { POSITION = 0 TYPE = any }
+		sba_habitat_site_ordered_effect = { POSITION = 1 TYPE = any }
+	}
+
+	option = {
+		name = sba_system_search.41.any0
+		custom_tooltip = sba_system_search.41.any0.tooltip
+		trigger = {
+			exists = event_target:sba_any_habitat_system_0
+			event_target:sba_any_habitat_system_0 = {
+				is_within_borders_of = root
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.41
+				scopes = { from = event_target:sba_any_habitat_system_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.41.any1
+		custom_tooltip = sba_system_search.41.any1.tooltip
+		trigger = {
+			exists = event_target:sba_any_habitat_system_1
+			event_target:sba_any_habitat_system_1 = {
+				is_within_borders_of = root
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.41
+				scopes = { from = event_target:sba_any_habitat_system_1 }
+			}
+		}
+	}
+
+	# option = {
+	# 	name = sba_system_search.41.minor0
+	# 	custom_tooltip = sba_system_search.41.minor0.tooltip
+	# 	trigger = {
+	# 		exists = event_target:sba_minor_habitat_system_0
+	# 		event_target:sba_minor_habitat_system_0 = {
+	# 			is_within_borders_of = root
+	# 		}
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.41
+	# 			scopes = { from = event_target:sba_minor_habitat_system_0 }
+	# 		}
+	# 	}
+	# }
+	# option = {
+	# 	name = sba_system_search.41.minor1
+	# 	custom_tooltip = sba_system_search.41.minor1.tooltip
+	# 	trigger = {
+	# 		exists = event_target:sba_minor_habitat_system_1
+	# 		event_target:sba_minor_habitat_system_1 = {
+	# 			is_within_borders_of = root
+	# 		}
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.41
+	# 			scopes = { from = event_target:sba_minor_habitat_system_1 }
+	# 		}
+	# 	}
+	# }
+
+	option = {
+		name = sba_system_search.41.research0
+		custom_tooltip = sba_system_search.41.research0.tooltip
+		trigger = {
+			exists = event_target:sba_science_habitat_system_0
+			event_target:sba_science_habitat_system_0 = {
+				is_within_borders_of = root
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.41
+				scopes = { from = event_target:sba_science_habitat_system_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.41.research1
+		custom_tooltip = sba_system_search.41.research1.tooltip
+		trigger = {
+			exists = event_target:sba_science_habitat_system_1
+			event_target:sba_science_habitat_system_1 = {
+				is_within_borders_of = root
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.41
+				scopes = { from = event_target:sba_science_habitat_system_1 }
+			}
+		}
+	}
+
+	option = {
+		name = sba_system_search.41.energy0
+		custom_tooltip = sba_system_search.41.energy0.tooltip
+		trigger = {
+			exists = event_target:sba_energy_habitat_system_0
+			event_target:sba_energy_habitat_system_0 = {
+				is_within_borders_of = root
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.41
+				scopes = { from = event_target:sba_energy_habitat_system_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.41.energy1
+		custom_tooltip = sba_system_search.41.energy1.tooltip
+		trigger = {
+			exists = event_target:sba_energy_habitat_system_1
+			event_target:sba_energy_habitat_system_1 = {
+				is_within_borders_of = root
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.41
+				scopes = { from = event_target:sba_energy_habitat_system_1 }
+			}
+		}
+	}
+
+	option = {
+		name = sba_system_search.41.mining0
+		custom_tooltip = sba_system_search.41.mining0.tooltip
+		trigger = {
+			exists = event_target:sba_mining_habitat_system_0
+			event_target:sba_mining_habitat_system_0 = {
+				is_within_borders_of = root
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.41
+				scopes = { from = event_target:sba_mining_habitat_system_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.41.mining1
+		custom_tooltip = sba_system_search.41.mining1.tooltip
+		trigger = {
+			exists = event_target:sba_mining_habitat_system_1
+			event_target:sba_mining_habitat_system_1 = {
+				is_within_borders_of = root
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.41
+				scopes = { from = event_target:sba_mining_habitat_system_1 }
+			}
+		}
+	}
+	
+	option = { # BACK
+		name = BACK
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.10
+			}
+		}
+	}
+	option = { # DONE
+		name = DONE
+		default_hide_option = yes
+	}
+}
+
+## Nanite Harvester ##
+
+country_event = { # Locate top 5 nanite harvester systems
+	id = sba_system_search.50
+	hide_window = yes
+	location = FROM
+	
+	is_triggered_only = yes
+
+	immediate = {
+		set_variable = {
+			which = sba_num_nanite_harvester_systems
+			value = 0
+		}
+		every_system_within_border = {
+			set_variable = {
+				which = sba_nanite_harvester_var
+				value = 0
+			}
+			if = {
+				limit = {
+					starbase = {
+						NOR = {
+							has_starbase_building = nanite_harvester
+							is_starbase_building_building = nanite_harvester
+						}
+					}
+				}
+				export_trigger_value_to_variable = {
+					trigger = count_system_planet
+					parameters = {
+						limit = {
+							can_have_mineral_deposits = yes
+							NOR = {
+								has_deposit_for = shipclass_research_station
+								has_deposit = d_nanite_harvester_deposit
+							}
+						}
+					}
+					variable = sba_nanite_harvester_var
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = sba_num_nanite_harvester_systems
+					value > 0
+				}
+			}
+			ordered_system_within_border = {
+				position = 0
+				order_by = sba_nanite_harvester_var
+				save_event_target_as = sba_nanite_harvester_system_0
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = sba_num_nanite_harvester_systems
+					value > 1
+				}
+			}
+			ordered_system_within_border = {
+				position = 1
+				order_by = sba_nanite_harvester_var
+				save_event_target_as = sba_nanite_harvester_system_1
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = sba_num_nanite_harvester_systems
+					value > 2
+				}
+			}
+			ordered_system_within_border = {
+				position = 2
+				order_by = sba_nanite_harvester_var
+				save_event_target_as = sba_nanite_harvester_system_2
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = sba_num_nanite_harvester_systems
+					value > 3
+				}
+			}
+			ordered_system_within_border = {
+				position = 3
+				order_by = sba_nanite_harvester_var
+				save_event_target_as = sba_nanite_harvester_system_3
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = sba_num_nanite_harvester_systems
+					value > 4
+				}
+			}
+			ordered_system_within_border = {
+				position = 4
+				order_by = sba_nanite_harvester_var
+				save_event_target_as = sba_nanite_harvester_system_4
+			}
+		}
+
+		if = {
+			limit = {
+				exists = event_target:sba_nanite_harvester_system_0
+			}
+			country_event = {
+				id = sba_system_search.51
+				scopes = { from = event_target:sba_nanite_harvester_system_0 }
+			}
+		}
+		else = {
+			country_event = {
+				id = sba_system_search.51
+			}
+		}
+	}
+}
+country_event = { # Nanite Harvester system selector dialogue
+	id = sba_system_search.51
+	title = "sba_system_search.51.name"
+	desc = "sba_system_search.51.desc"
+	picture = GFX_evt_star_chart
+	show_sound = event_sensor_ping
+	location = FROM
+	
+	is_triggered_only = yes
+
+	immediate = {
+		sba_nanite_harvester_site_search_effect = yes
+	}
+
+	option = {
+		name = sba_system_search.51.a
+		trigger = {
+			exists = event_target:sba_nanite_harvester_system_0
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.51
+				scopes = { from = event_target:sba_nanite_harvester_system_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.51.b
+		trigger = {
+			exists = event_target:sba_nanite_harvester_system_1
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.51
+				scopes = { from = event_target:sba_nanite_harvester_system_1 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.51.c
+		trigger = {
+			exists = event_target:sba_nanite_harvester_system_2
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.51
+				scopes = { from = event_target:sba_nanite_harvester_system_2 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.51.d
+		trigger = {
+			exists = event_target:sba_nanite_harvester_system_3
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.51
+				scopes = { from = event_target:sba_nanite_harvester_system_3 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.51.e
+		trigger = {
+			exists = event_target:sba_nanite_harvester_system_4
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.51
+				scopes = { from = event_target:sba_nanite_harvester_system_4 }
+			}
+		}
+	}
+	option = {
+		name = BACK
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.10
+			}
+		}
+	}
+	option = {
+		name = DONE
+		default_hide_option = yes
+	}
+}
+country_event = { # Nanite Harvester system selector dialogue
+	id = sba_system_search.52
+	title = "sba_system_search.51.name"
+	desc = "sba_system_search.52.desc"
+	picture = GFX_evt_star_chart
+	show_sound = event_sensor_ping
+	location = FROM
+	
+	is_triggered_only = yes
+
+	immediate = {
+		sba_nanite_harvester_site_search_effect_2 = yes
+		sba_nanite_harvester_site_ordered_effect = { POSITION = 0 MAX = nanites }
+		sba_nanite_harvester_site_ordered_effect = { POSITION = 0 MAX = swarmers }
+		sba_nanite_harvester_site_ordered_effect = { POSITION = 1 MAX = nanites }
+		sba_nanite_harvester_site_ordered_effect = { POSITION = 1 MAX = swarmers }
+		sba_nanite_harvester_site_ordered_effect = { POSITION = 2 MAX = nanites }
+		sba_nanite_harvester_site_ordered_effect = { POSITION = 2 MAX = swarmers }
+	}
+
+	option = {
+		name = sba_system_search.52.nanites0
+		trigger = {
+			exists = event_target:sba_nanites_harvester_system_0
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.52
+				scopes = { from = event_target:sba_nanites_harvester_system_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.52.nanites1
+		trigger = {
+			exists = event_target:sba_nanites_harvester_system_1
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.52
+				scopes = { from = event_target:sba_nanites_harvester_system_1 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.52.nanites2
+		trigger = {
+			exists = event_target:sba_nanites_harvester_system_2
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.52
+				scopes = { from = event_target:sba_nanites_harvester_system_2 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.52.swarmers0
+		trigger = {
+			exists = event_target:sba_swarmers_harvester_system_0
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.52
+				scopes = { from = event_target:sba_swarmers_harvester_system_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.52.swarmers1
+		trigger = {
+			exists = event_target:sba_swarmers_harvester_system_1
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.52
+				scopes = { from = event_target:sba_swarmers_harvester_system_1 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.52.swarmers2
+		trigger = {
+			exists = event_target:sba_swarmers_harvester_system_2
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.52
+				scopes = { from = event_target:sba_swarmers_harvester_system_2 }
+			}
+		}
+	}
+	option = {
+		name = BACK
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.10
+			}
+		}
+	}
+	option = {
+		name = DONE
+		default_hide_option = yes
+	}
+}
+# country_event = { # Nanite Harvester system selector dialogue
+	# id = sba_system_search.52
+	# title = "sba_system_search.51.name"
+	# desc = "sba_system_search.52.desc"
+	# picture = GFX_evt_star_chart
+	# show_sound = event_sensor_ping
+	# location = FROM
+	
+	# is_triggered_only = yes
+
+	# immediate = {
+	# 	sba_nanite_harvester_site_search_effect_2 = yes
+	# 	sba_nanite_harvester_site_ordered_effect = { POSITION = 0 MAX = nanites }
+	# 	sba_nanite_harvester_site_ordered_effect = { POSITION = 0 MAX = swarmers }
+	# 	sba_nanite_harvester_site_ordered_effect = { POSITION = 1 MAX = nanites }
+	# 	sba_nanite_harvester_site_ordered_effect = { POSITION = 1 MAX = swarmers }
+	# 	sba_nanite_harvester_site_ordered_effect = { POSITION = 2 MAX = nanites }
+	# 	sba_nanite_harvester_site_ordered_effect = { POSITION = 2 MAX = swarmers }
+	# }
+
+	# option = {
+	# 	name = sba_system_search.52.nanites0
+	# 	trigger = {
+	# 		exists = event_target:sba_nanites_harvester_system_0
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.52
+	# 			scopes = { from = event_target:sba_nanites_harvester_system_0 }
+	# 		}
+	# 	}
+	# }
+	# option = {
+	# 	name = sba_system_search.52.nanites1
+	# 	trigger = {
+	# 		exists = event_target:sba_nanites_harvester_system_1
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.52
+	# 			scopes = { from = event_target:sba_nanites_harvester_system_1 }
+	# 		}
+	# 	}
+	# }
+	# option = {
+	# 	name = sba_system_search.52.nanites2
+	# 	trigger = {
+	# 		exists = event_target:sba_nanites_harvester_system_2
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.52
+	# 			scopes = { from = event_target:sba_nanites_harvester_system_2 }
+	# 		}
+	# 	}
+	# }
+	# option = {
+	# 	name = sba_system_search.52.swarmers0
+	# 	trigger = {
+	# 		exists = event_target:sba_swarmers_harvester_system_0
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.52
+	# 			scopes = { from = event_target:sba_swarmers_harvester_system_0 }
+	# 		}
+	# 	}
+	# }
+	# option = {
+	# 	name = sba_system_search.52.swarmers1
+	# 	trigger = {
+	# 		exists = event_target:sba_swarmers_harvester_system_1
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.52
+	# 			scopes = { from = event_target:sba_swarmers_harvester_system_1 }
+	# 		}
+	# 	}
+	# }
+	# option = {
+	# 	name = sba_system_search.52.swarmers2
+	# 	trigger = {
+	# 		exists = event_target:sba_swarmers_harvester_system_2
+	# 	}
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.52
+	# 			scopes = { from = event_target:sba_swarmers_harvester_system_2 }
+	# 		}
+	# 	}
+	# }
+	# option = {
+	# 	name = BACK
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.10
+	# 		}
+	# 	}
+	# }
+	# option = {
+	# 	name = DONE
+	# 	default_hide_option = yes
+	# }
+# }
+
+## Ice Mining ##
+country_event = { # Ice Mining Station system selector dialogue
+	id = sba_system_search.61
+	title = "sba_system_search.61.name"
+	desc = "sba_system_search.61.desc"
+	picture = GFX_evt_star_chart
+	show_sound = event_sensor_ping
+	location = FROM
+	
+	is_triggered_only = yes
+
+	immediate = {
+		sba_ice_mining_site_ordered_effect = { POSITION = 0 }
+		sba_ice_mining_site_ordered_effect = { POSITION = 1 }
+		sba_ice_mining_site_ordered_effect = { POSITION = 2 }
+		sba_ice_mining_site_ordered_effect = { POSITION = 3 }
+		sba_ice_mining_site_ordered_effect = { POSITION = 4 }
+	}
+
+	#TODO: Toggle - include/exclude frozen terraforming candidates
+	#TODO: Toggle - include/exclude systems with ice asteroids with deposits (which will be destroyed when mined)
+
+	option = {
+		name = sba_system_search.61.0
+		custom_tooltip = sba_system_search.61.0.tooltip
+		trigger = {
+			exists = event_target:sba_ice_mining_system_0
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.61
+				scopes = { from = event_target:sba_ice_mining_system_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.61.1
+		custom_tooltip = sba_system_search.61.1.tooltip
+		trigger = {
+			exists = event_target:sba_ice_mining_system_1
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.61
+				scopes = { from = event_target:sba_ice_mining_system_1 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.61.2
+		custom_tooltip = sba_system_search.61.2.tooltip
+		trigger = {
+			exists = event_target:sba_ice_mining_system_2
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.61
+				scopes = { from = event_target:sba_ice_mining_system_2 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.61.3
+		custom_tooltip = sba_system_search.61.3.tooltip
+		trigger = {
+			exists = event_target:sba_ice_mining_system_3
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.61
+				scopes = { from = event_target:sba_ice_mining_system_3 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.61.4
+		custom_tooltip = sba_system_search.61.4.tooltip
+		trigger = {
+			exists = event_target:sba_ice_mining_system_4
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.61
+				scopes = { from = event_target:sba_ice_mining_system_4 }
+			}
+		}
+	}
+	
+	option = {
+		name = BACK
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.10
+			}
+		}
+	}
+	option = {
+		name = DONE
+		default_hide_option = yes
+	}
+}
+
+## Quantum Catapult ##
+
+country_event = { # Quantum Catapult system selector dialogue
+	id = sba_system_search.71
+	title = "sba_system_search.71.name"
+	desc = "sba_system_search.71.desc"
+	picture = GFX_evt_star_chart
+	show_sound = event_sensor_ping
+	location = FROM
+	
+	is_triggered_only = yes
+
+	immediate = {
+		sba_quantum_catapult_site_ordered_effect = { POSITION = 0 }
+		sba_quantum_catapult_site_ordered_effect = { POSITION = 1 }
+		sba_quantum_catapult_site_ordered_effect = { POSITION = 2 }
+		sba_quantum_catapult_site_ordered_effect = { POSITION = 3 }
+		sba_quantum_catapult_site_ordered_effect = { POSITION = 4 }
+	}
+
+	option = {
+		name = sba_system_search.71.0
+		trigger = {
+			exists = event_target:sba_quantum_catapult_system_0
+			event_target:sba_quantum_catapult_system_0 = {
+				is_within_borders_of = root
+			}
+		}
+		# is_dialog_only = yes
+		# event_target:sba_dyson_swarm_energy_star_0 = { save_event_target_as = sba_goto_location }
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.71
+				scopes = { from = event_target:sba_quantum_catapult_system_0 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.71.1
+		trigger = {
+			exists = event_target:sba_quantum_catapult_system_1
+			event_target:sba_quantum_catapult_system_1 = {
+				is_within_borders_of = root
+			}
+		}
+		# is_dialog_only = yes
+		# event_target:sba_dyson_swarm_energy_star_1 = { save_event_target_as = sba_goto_location }
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.71
+				scopes = { from = event_target:sba_quantum_catapult_system_1 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.71.2
+		trigger = {
+			exists = event_target:sba_quantum_catapult_system_2
+			event_target:sba_quantum_catapult_system_2 = {
+				is_within_borders_of = root
+			}
+		}
+		# is_dialog_only = yes
+		# event_target:sba_dyson_swarm_energy_star_2 = { save_event_target_as = sba_goto_location }
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.71
+				scopes = { from = event_target:sba_quantum_catapult_system_2 }
+			}
+		}
+	}
+	# Other mining
+	option = {
+		name = sba_system_search.71.3
+		trigger = {
+			exists = event_target:sba_quantum_catapult_system_3
+			event_target:sba_quantum_catapult_system_3 = {
+				is_within_borders_of = root
+			}
+			# event_target:sba_dyson_swarm_minerals_star_0 = {
+			# 	has_resource = { type = minerals amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.71
+				scopes = { from = event_target:sba_quantum_catapult_system_3 }
+			}
+		}
+	}
+	option = {
+		name = sba_system_search.71.4
+		trigger = {
+			exists = event_target:sba_quantum_catapult_system_4
+			event_target:sba_quantum_catapult_system_4 = {
+				is_within_borders_of = root
+			}
+			# event_target:sba_dyson_swarm_alloys_star_0 = {
+			# 	has_resource = { type = alloys amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.71
+				scopes = { from = event_target:sba_quantum_catapult_system_4 }
+			}
+		}
+	}
+	
+	option = {
+		name = BACK
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.10
+			}
+		}
+	}
+	option = {
+		name = DONE
+		default_hide_option = yes
+	}
+}
+
+
+## Branch Office ##
+# Can't be done. Requires way to check planet's trade value.
+
+# country_event = { # Dyson Swarm system selector dialogue
+# 	id = sba_system_search.81
+# 	title = "sba_system_search.31.name"
+# 	desc = "sba_system_search.31.desc"
+# 	picture = GFX_evt_star_chart
+# 	show_sound = event_sensor_ping
+# 	location = FROM
+	
+# 	is_triggered_only = yes
+
+# 	immediate = {
+# 		# from = { save_event_target_as = sba_goto_location }
+# 		# set_variable = {
+# 		# 	which = sba_num_dyson_swarm_energy_stars
+# 		# 	value = 0
+# 		# }
+# 		set_variable = { # dyson_swarm_counter
+# 			which = temp_dyson_swarm_max
+# 			value = value:dyson_swarm_limit
+# 		}
+# 		sba_dyson_swarm_site_search_effect = yes
+# 		# Energy
+# 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = energy }
+# 		sba_dyson_swarm_site_ordered_effect = { POSITION = 1 RESOURCE = energy }
+# 		sba_dyson_swarm_site_ordered_effect = { POSITION = 2 RESOURCE = energy }
+# 		# Other mining
+# 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = minerals }
+# 		# sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = food }
+# 		# sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = consumer_goods }
+# 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = alloys }
+# 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = volatile_motes }
+# 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = exotic_gases }
+# 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = rare_crystals }
+# 		# Research dyson swarms
+# 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = society }
+# 		sba_dyson_swarm_site_ordered_effect = {
+# 			POSITION = 0
+# 			RESOURCE = engineering
+# 			EXCLUDE0 = sba_dyson_swarm_society_star_0
+# 		}
+# 		sba_dyson_swarm_site_ordered_effect = {
+# 			POSITION = 0
+# 			RESOURCE = physics
+# 			EXCLUDE0 = sba_dyson_swarm_society_star_0
+# 			EXCLUDE1 = sba_dyson_swarm_engineering_star_0
+# 		}
+# 		sba_dyson_swarm_site_ordered_effect = {
+# 			POSITION = 0
+# 			RESOURCE = research
+# 			EXCLUDE0 = sba_dyson_swarm_society_star_0
+# 			EXCLUDE1 = sba_dyson_swarm_engineering_star_0
+# 			EXCLUDE2 = sba_dyson_swarm_physics_star_0
+# 		}
+# 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = unity }
+# 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = zro }
+# 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = dark_matter }
+# 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = nanites }
+# 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = minor_artifacts }
+# 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = astral_threads }
+# 	}
+
+# 	# Energy
+# 	option = {
+# 		name = sba_system_search.31.energy0
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_energy_star_0
+# 		}
+# 		# is_dialog_only = yes
+# 		# event_target:sba_dyson_swarm_energy_star_0 = { save_event_target_as = sba_goto_location }
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_energy_star_0 }
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = sba_system_search.31.energy1
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_energy_star_1
+# 		}
+# 		# is_dialog_only = yes
+# 		# event_target:sba_dyson_swarm_energy_star_1 = { save_event_target_as = sba_goto_location }
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_energy_star_1 }
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = sba_system_search.31.energy2
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_energy_star_2
+# 		}
+# 		# is_dialog_only = yes
+# 		# event_target:sba_dyson_swarm_energy_star_2 = { save_event_target_as = sba_goto_location }
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_energy_star_2 }
+# 			}
+# 		}
+# 	}
+# 	# Other mining
+# 	option = {
+# 		name = sba_system_search.31.minerals
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_minerals_star_0
+# 			# event_target:sba_dyson_swarm_minerals_star_0 = {
+# 			# 	has_resource = { type = minerals amount > 0 }
+# 			# }
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_minerals_star_0 }
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = sba_system_search.31.alloys
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_alloys_star_0
+# 			# event_target:sba_dyson_swarm_alloys_star_0 = {
+# 			# 	has_resource = { type = alloys amount > 0 }
+# 			# }
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_alloys_star_0 }
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = sba_system_search.31.volatile_motes
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_volatile_motes_star_0
+# 			# event_target:sba_dyson_swarm_volatile_motes_star_0 = {
+# 			# 	has_resource = { type = volatile_motes amount > 0 }
+# 			# }
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_volatile_motes_star_0 }
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = sba_system_search.31.exotic_gases
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_exotic_gases_star_0
+# 			# event_target:sba_dyson_swarm_exotic_gases_star_0 = {
+# 			# 	has_resource = { type = exotic_gases amount > 0 }
+# 			# }
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_exotic_gases_star_0 }
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = sba_system_search.31.rare_crystals
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_rare_crystals_star_0
+# 			# event_target:sba_dyson_swarm_rare_crystals_star_0 = {
+# 			# 	has_resource = { type = rare_crystals amount > 0 }
+# 			# }
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_rare_crystals_star_0 }
+# 			}
+# 		}
+# 	}
+# 	# Research
+# 	option = {
+# 		name = sba_system_search.31.physics
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_physics_star_0
+# 			# event_target:sba_dyson_swarm_physics_star_0 = {
+# 			# 	has_resource = { type = physics_research amount > 0 }
+# 			# }
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_physics_star_0 }
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = sba_system_search.31.society
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_society_star_0
+# 			# event_target:sba_dyson_swarm_society_star_0 = {
+# 			# 	has_resource = { type = society_research amount > 0 }
+# 			# }
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_society_star_0 }
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = sba_system_search.31.engineering
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_engineering_star_0
+# 			# event_target:sba_dyson_swarm_engineering_star_0 = {
+# 			# 	has_resource = { type = engineering_research amount > 0 }
+# 			# }
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_engineering_star_0 }
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = sba_system_search.31.research
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_research_star_0
+# 			# event_target: = {
+# 			# 	has_resource = { type = _research amount > 0 }
+# 			# }
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_research_star_0 }
+# 			}
+# 		}
+# 	}
+# 	# Other research
+# 	option = {
+# 		name = sba_system_search.31.unity
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_unity_star_0
+# 			# event_target:sba_dyson_swarm_unity_star_0 = {
+# 			# 	has_resource = { type = unity amount > 0 }
+# 			# }
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_unity_star_0 }
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = sba_system_search.31.zro
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_zro_star_0
+# 			# event_target:sba_dyson_swarm_zro_star_0 = {
+# 			# 	has_resource = { type = sr_zro amount > 0 }
+# 			# }
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_zro_star_0 }
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = sba_system_search.31.dark_matter
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_dark_matter_star_0
+# 			# event_target:sba_dyson_swarm_dark_matter_star_0 = {
+# 			# 	has_resource = { type = sr_dark_matter amount > 0 }
+# 			# }
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_dark_matter_star_0 }
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = sba_system_search.31.nanites
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_nanites_star_0
+# 			# event_target:sba_dyson_swarm_nanites_star_0 = {
+# 			# 	has_resource = { type = nanites amount > 0 }
+# 			# }
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_nanites_star_0 }
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = sba_system_search.31.minor_artifacts
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_minor_artifacts_star_0
+# 			# event_target:sba_dyson_swarm_minor_artifacts_star_0 = {
+# 			# 	has_resource = { type = minor_artifacts amount > 0 }
+# 			# }
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_minor_artifacts_star_0 }
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = sba_system_search.31.astral_threads
+# 		trigger = {
+# 			exists = event_target:sba_dyson_swarm_astral_threads_star_0
+# 			# event_target:sba_dyson_swarm_astral_threads_star_0 = {
+# 			# 	has_resource = { type = astral_threads amount > 0 }
+# 			# }
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.31
+# 				scopes = { from = event_target:sba_dyson_swarm_astral_threads_star_0 }
+# 			}
+# 		}
+# 	}
+
+# 	option = {
+# 		name = BACK
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = sba_system_search.10
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = DONE
+# 		default_hide_option = yes
+# 	}
+# }
+
+

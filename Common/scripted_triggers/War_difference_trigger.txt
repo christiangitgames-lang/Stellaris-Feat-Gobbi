@@ -1,0 +1,35 @@
+#from is the loser this is the winner
+have_fleet_destroy = {
+	from = {
+		AND = {
+			fleet_power < 4000
+			relative_power = {
+				who = prev
+				category = fleet
+				value <= inferior
+			}
+		}
+	}
+}
+have_building_destroy = {
+	from = {
+		any_owned_planet = {
+			pop_amount > 100
+			planet_devastation >= 25
+		}
+	}
+}
+have_pop_destroy = {
+	from = {
+		any_owned_planet = {
+			pop_amount >= 100
+			planet_devastation >= 90
+		}
+	}
+}
+#this è più debole di from?
+#relative_power = {
+	#who = from
+	#category = technology
+	#value = inferior
+#}

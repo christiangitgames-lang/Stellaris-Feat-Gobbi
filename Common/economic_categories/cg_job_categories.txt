@@ -1,0 +1,9 @@
+
+planet_healthcare = {
+	icon = "job_healthcare"
+	parent = planet_jobs_productive
+	generate_add_modifiers = {
+		upkeep
+	}
+	modifier_category = pop_job
+}

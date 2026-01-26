@@ -1,0 +1,51 @@
+#location dove ti indica
+#option1
+title = $TITLE$ #"anomaly.5000.name"
+desc = $DESC$ #"anomaly.5000.desc"
+picture = $PICTURE$ #GFX_evt_atmospheric_flight
+show_sound = event_alien_signal
+location = $LOCATION$
+#event_chain = $EVENT_CHAIN$ no
+
+is_triggered_only = yes
+
+
+
+option = {
+	name = INTERESTING
+
+	# This might be the first time the player encounters another species, so queue the discovery event.
+	# hidden_effect = { owner = { country_event = { id = story.5 days = 30 } } }
+	
+	# owner = {
+	# 	tooltip = {
+	# 		begin_event_chain = {
+	# 			event_chain = $EVENT_CHAIN$
+	# 			target = THIS
+	# 		}
+	# 	}
+	# 	if = {
+	# 		limit = { has_ancrel = yes }
+	# 		small_artifact_reward = yes
+	# 	}
+	# }
+}
+# option = {
+# 	name = INTERESTING
+
+# 	# This might be the first time the player encounters another species, so queue the discovery event.
+# 	hidden_effect = { owner = { country_event = { id = story.5 days = 30 } } }
+	
+# 	owner = {
+# 		tooltip = {
+# 			begin_event_chain = {
+# 				event_chain = $EVENT_CHAIN$
+# 				target = THIS
+# 			}
+# 		}
+# 		if = {
+# 			limit = { has_ancrel = yes }
+# 			small_artifact_reward = yes
+# 		}
+# 	}
+# }

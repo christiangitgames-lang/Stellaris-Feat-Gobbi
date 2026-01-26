@@ -1,0 +1,3 @@
+random_list = {
+	inline_script = "district_add/universal" #mi sono stancato di fare script tutti uguali
+} #district_add/universalwr

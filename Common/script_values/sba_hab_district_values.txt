@@ -1,0 +1,350 @@
+
+sba_district_hab_any_max_value = {
+	# Copied from max_habitat_districts_value in script_values\00_script_values.txt
+	base = 6
+	add = value:habitat_districts_from_major
+	modifier = {
+		solar_system.owner = {
+			has_technology = tech_habitat_2
+		}
+		add = value:habitat_districts_from_major
+	}
+	modifier = {
+		solar_system.owner = {
+			has_technology = tech_habitat_3
+		}
+		add = value:habitat_districts_from_major
+	}
+	modifier = {
+		solar_system.owner = {
+			is_void_dweller_empire = yes
+		}
+		add = value:habitat_districts_from_minor
+	}
+	add = solar_system.owner.modifier:habitat_max_districts_add # value:habitat_districts_from_other
+	floor = yes
+}
+
+sba_district_hab_energy_max_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_energy_1
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_energy_2
+					is_deposit_type = d_energy_3
+				}
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_energy_4
+					is_deposit_type = d_energy_5
+				}
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_energy_6
+					is_deposit_type = d_energy_7
+				}
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_energy_8
+					is_deposit_type = d_energy_9
+				}
+			}
+		}
+		mult = 5
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_energy_10
+			}
+		}
+		mult = 6
+		mode = add
+	}
+	
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_guardian_dragon_hoard
+			}
+		}
+		mult = 16
+		mode = add
+	}
+}
+
+sba_district_hab_mining_max_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_minerals_1
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_minerals_2
+					is_deposit_type = d_minerals_3
+				}
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_minerals_4
+					is_deposit_type = d_minerals_5
+				}
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_minerals_6
+					is_deposit_type = d_minerals_7
+				}
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_minerals_8
+					is_deposit_type = d_minerals_9
+				}
+			}
+		}
+		mult = 5
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_minerals_10
+			}
+		}
+		mult = 6
+		mode = add
+	}
+
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_guardian_dragon_hoard
+			}
+		}
+		mult = 16
+		mode = add
+	}
+}
+
+sba_district_hab_science_max_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_society_1
+					is_deposit_type = d_physics_1
+					is_deposit_type = d_engineering_1
+					is_deposit_type = d_zro_deposit_1
+					is_deposit_type = d_dark_matter_deposit_1
+					is_deposit_type = d_living_metal_deposit
+					is_deposit_type = d_artifacts_research_1
+					is_deposit_type = d_artifacts_mining_1
+					is_deposit_type = d_artifacts_mining_2 # BUG?
+					is_deposit_type = d_artifacts_mining_3 # BUG?
+					is_deposit_type = d_astral_threads_deposit_1
+				}
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_society_2
+					is_deposit_type = d_society_3
+					is_deposit_type = d_physics_2
+					is_deposit_type = d_physics_3
+					is_deposit_type = d_engineering_2
+					is_deposit_type = d_engineering_3
+					is_deposit_type = d_zro_deposit_2
+					is_deposit_type = d_zro_deposit_3
+					is_deposit_type = d_dark_matter_deposit_2
+					is_deposit_type = d_dark_matter_deposit_3
+					is_deposit_type = d_vast_unity_deposit
+					is_deposit_type = d_nanites_deposit
+					is_deposit_type = d_artifacts_research_2
+					is_deposit_type = d_artifacts_research_3
+					is_deposit_type = d_astral_threads_deposit_2
+					is_deposit_type = d_astral_threads_deposit_3
+				}
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_society_4
+					is_deposit_type = d_society_5
+					is_deposit_type = d_physics_4
+					is_deposit_type = d_physics_5
+					is_deposit_type = d_engineering_4
+					is_deposit_type = d_engineering_5
+					is_deposit_type = d_zro_deposit_4
+					is_deposit_type = d_zro_deposit_5
+				}
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_society_6
+					is_deposit_type = d_society_7
+					is_deposit_type = d_physics_6
+					is_deposit_type = d_physics_7
+					is_deposit_type = d_engineering_6
+					is_deposit_type = d_engineering_7
+				}
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_society_8
+					is_deposit_type = d_society_9
+					is_deposit_type = d_physics_8
+					is_deposit_type = d_physics_9
+					is_deposit_type = d_engineering_8
+					is_deposit_type = d_engineering_9
+				}
+			}
+		}
+		mult = 5
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_society_10
+					is_deposit_type = d_physics_10
+					is_deposit_type = d_engineering_10
+					is_deposit_type = d_dark_matter_deposit_10
+					# deposits\11_astral_planes_deposits.txt
+					is_deposit_type = d_crystal_rift
+				}
+			}
+		}
+		mult = 6
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_society_15
+					# is_deposit_type = d_physics_15
+					# is_deposit_type = d_engineering_15
+				}
+			}
+		}
+		mult = 8
+		mode = add
+	}
+	
+	# deposits\11_astral_planes_deposits.txt
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				OR = {
+					is_deposit_type = d_society_25
+					is_deposit_type = d_physics_25
+					is_deposit_type = d_engineering_25
+				}
+			}
+		}
+		mult = 13
+		mode = add
+	}
+}

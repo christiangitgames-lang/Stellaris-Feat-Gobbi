@@ -1,0 +1,74 @@
+namespace = sfg_system_search
+
+country_event = { # Quantum Catapult system selector dialogue
+	id = sfg_system_search.11
+	title = "Nebula_4.name"
+	desc = "Nebula_4.desc"
+	picture = GFX_evt_star_chart
+	show_sound = event_sensor_ping
+	location = FROM
+	
+	is_triggered_only = yes
+
+	immediate = {
+		sfg_nebula_system_search_ordered_effect = { POSITION = 0 }
+		sfg_nebula_system_search_ordered_effect = { POSITION = 1 }
+		sfg_nebula_system_search_ordered_effect = { POSITION = 2 }
+	}
+
+	option = {
+		name = sfg_system_search.11.0
+		trigger = {
+			exists = event_target:sfg_nebula_0
+		}
+		# is_dialog_only = yes
+		# event_target:sba_dyson_swarm_energy_star_0 = { save_event_target_as = sba_goto_location }
+		hidden_effect = {
+			country_event = {
+				id = sfg_system_search.11
+				scopes = { from = event_target:sfg_nebula_0 }
+			}
+		}
+	}
+	option = {
+		name = sfg_system_search.11.0
+		trigger = {
+			exists = event_target:sfg_nebula_1
+		}
+		# is_dialog_only = yes
+		# event_target:sba_dyson_swarm_energy_star_1 = { save_event_target_as = sba_goto_location }
+		hidden_effect = {
+			country_event = {
+				id = sfg_system_search.11
+				scopes = { from = event_target:sfg_nebula_1 }
+			}
+		}
+	}
+	option = {
+		name = sfg_system_search.11.0
+		trigger = {
+			exists = event_target:sfg_nebula_2
+		}
+		# is_dialog_only = yes
+		# event_target:sba_dyson_swarm_energy_star_2 = { save_event_target_as = sba_goto_location }
+		hidden_effect = {
+			country_event = {
+				id = sfg_system_search.11
+				scopes = { from = event_target:sfg_nebula_2 }
+			}
+		}
+	}
+	
+	option = {
+		name = BACK
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.10
+			}
+		}
+	}
+	option = {
+		name = DONE
+		default_hide_option = yes
+	}
+}

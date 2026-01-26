@@ -1,0 +1,313 @@
+[h1]1.0.5 Stellaris Feat Gobbi[/h1]
+Migliorato ai_budget ora il pc ha un budget molto migliore della versione vanilla
+Ai is more smart in deficit situations
+Artifact action, now can sell 100 minor artifacts instead 50
+[h2]Ascension perk[/h2]
+Ascension perk shared destiny remove penalty loyalty
+ap_archaeoengineers more best for archaeo buildings example more shild from archaeo overcharger
+Transcendent learning give actionn additional trait will be added to the new leader
+
+[h2]Building / districts[/h2]
+Building slave processing give +20% to slave production instead 10%
+Embassy can build where want and give +10% diplo weight
+Every building that can production an resource increment max resource
+building_military_academy increment build army speed
+New building "foreign research lab" this building give job of "spies research" that be research if have sufficient intel to foreign empire with >= equivalent tech
+
+[h2]Casus bellis[/h2]
+Can't humiliation if your or target is homicidal country
+
+[h2]Components[/h2]
+Crisys hive is little more strong
+Regeneration is weaker (because healt of all ship is x5 for more lenght battle andgive  possibly of retrat)
+Ship aura bombardament by +30% set +75%
+fire control give accuracy 10 instead 5
+Hyper drive now have speed interstellar reduce if is low level component
+Now weapon special how AMOEBA STRIKE CRAFT or SPACE CLOUD LIGHTNING or mining laser not cost alloys but, food,energy or minerals.
+Strike craft now have little logistic trade upkeep
+Distruptor give an regen static to shield and increment damage orbital bombardament
+Missile give more ship weapon damage and torpedo give more orbital bombardament damage
+Lasers and mass driver now of level scale damage bonus to armor or shield (bio weapon scale more speed)
+Point defence now have more range
+Missile have more good penetration
+Energy lance II is little best now
+Hyper drive now is more slow in ftl
+Add Hyper drive IV
+Add crystal armor components III and IV
+
+[h2]Council Agenda[/h2]
+Few Agenda now is more fast.
+Agenda open markets permit temporarily use of Trade Policie: §GTrade League§!
+[b]New agendas[/b]
+[list]
+[*][i]Feudal shift pursuit [/i] an your subject become same of your ethos.
+[*][i]The last resistance [/i] at cost of destroy your economy build an little fleet for last resistance.
+[*][i]Gears of war[/i] reduce cost resettle pop (domination tradition three)
+[*][i]Ship size unlock[/i] unlock new ship size (supremacy trdaition three)
+[/list]
+[h2]Country[/h2]
+Start with physics_research,society_research and engineering_research at 40 instead of 10 
+Start with unity at 20 instead 10
+Machine: More patrol drone by building machine system capital
+[h2]Decision[/h2]
+Now planet luxuries boost cost in base population
+Decision enact robot assembly control not needed population controls allowed
+Decision discourage growth not needed population controls disallowed if is an machine
+[b]New decisions[/b]
+[list]
+[*]Automate planet luxuries boost if have resource launch luxuries boost automatically
+[*]Planet incorporate if have resource launch luxuries boost automatically
+#[*]release client state if have domination can release only single planet how subject.
+[*]resettle mass population 10 Automatically resettle 10 pop to best planet candidate
+[*]resettle mass population 20  Automatically resettle 10 pop to best planet candidate
+[*]10 decision for upgrade featured planet if have special features
+[/list]
+
+[h2]Rule game (defines) [/h2]
+[list]
+[*]Amount of resource by debris at 25% instead 10%
+[*]50% more time jump drive
+[*]Status quo months at 12 instead 24
+[*]PLANET HEALTH REGEN DELAY at 30 instead 60
+[*]Can change Policy at 5 years instead 10.
+[*]Truce lenght is 5 years instead 10.
+[*]Penalty in federation is -1 instad -0.25
+[*]Less cohesion loss when ad new member, leave or switch fed type
+[*]Starbase auto repair after 180 days instead 30
+[*]Reduce death chance of general
+[*]Cooldown changing government at 10 years instead 20
+[*]Empire penalty tech and tradition is +25%.
+[*]Empire size penalty for Agenda cost 4 instead of 1
+[*]Naval capacity base is 5 times increment
+[*]Resolution is 50% fast
+[*]Spy network is 100% more fast.
+[*]Agreement subject  can be changed in 30 months instead of 60
+[*]Shields recharge this much faster outside combat is 300% instead 500%
+[*]Armor recharge this much faster outside combat is 200% instead 500%
+[*]Hull recharge this much faster outside combat is 100% instead 500%
+[*]Influence surcharge for manually resettling the last pop from a colony is 50 instead 200
+[*]The recently conquered modifier stays on pops is 3300 days instead 3600
+[*]Increment thust subject at 0.33 instead 0.25
+[*]Reduce at 50% long the recently conquered modifier stays on pops
+[/list]
+
+[h2]Deposits[/h2]
+Deposit empty is more rare
+Dark mater deposit is mining deposits and not research
+More resource by orbital deposits
+Living metal can spawn to asteroid
+More allos and research spawn
+[h2]Diplomacy econoomy[/h2]
+Now galactic community have little upkeep (influence 0.25 and energy 2)
+War have upkeep inflence of 1
+[h2]Action[/h2]
+Now ai not create big federation
+Now for declare war need opnion neutral or more lower
+[h2]District[/h2]
+Farming district for Angler empire increment growth speed of 1%
+Alloy foundry habitat not have alloys upkeep (For fix an AI big problem for algorithm of choice)
+Blocker tomb world ruins not reduce max districts
+
+[h2]Ai economy plan[/h2]
+Ai now have best economy plan search "play" how an player that know play
+
+[h2]Edict and campaign[/h2]
+Mining subsidies increment station gatherers minerals
+research_subsidies upkeep add is 1.5 instead 1
+Obsidian veil increment station observers produces +100%
+Terraforming gas now disable in [b]automatically[/b] when no have planet in terraforming
+Add edicts only for ai for improve decision of ai when is very weak
+Auto sell relic, sell relics in [b]automatically[/b] so not need remember sell every tot years
+Edict that boost military capacity (example volatiles explosive) cost in base at number of naval capacity use
+Research subsidies now give job 0.5 research insted + 10% job tech
+Architectural renaissance Increases the production capacity of structures in parallel instead of increasing construction speed.
+Sensor edict now increment Shp survey speed 
+
+[h2]Espionage operations[/h2]
+Espionage is more easy now of base
+Steal technology is more easy.
+
+[h2]Federation[/h2]
+Is more simply level fedarion (50% more fast)
+
+[h2]Fallen Empire[/h2]
+When fallen is only 2 is ever no machine empire for trigger War heaven
+
+[h2]Rules of game[/h2]
+Can claim only if is adiacent to border your,ally,subject or another claim
+Can release subjects if are an indidual machine
+Can ever resettle (resettle disallowed is removed and add resettle limited)
+When you are in war and join in enemy territory get an damage to hull of "attrition" based on the naval capacity used (+ free - damage).
+Planet occupied have devastation and grant more exhaustion war
+All territory need linked to an your planet or ally if not is will destroy in 1 years until not have jump drive ( is It's to prevent players from setting up systems on choke points at the start of the game. )
+
+
+[h2]Civics[/h2]
+Machine terminator have upkee ship -1%
+Machine spybot and criminal_heritage +100% observation station 
+Feudal realm
+Technocracy , add unity 1 at Researcher
+Best plunders, now give tech (if have inferior tech) and unity
+
+[h2]Councilors[/h2]
+All councilior that give unity mult now give unity +3% instead +2%
+councilor researcher give tech research speed +3% instead +2%
+[h2]Megastructure[/h2]
+Gateway is more fast build but last phase need dark matter
+[h2]Observation station mission[/h2]
+Observation give more research
+[h2]Personalities[/h2]
+Ai Personalities upgrade, now warriors are more agressiveness
+New Personalitie "peaceful researcher" is focus on research and hate war
+[h2]Planet modifiers[/h2]
+More beatifull planet modifiers and is rare found planet without modifier
+[h2]Policies[/h2]
+Resettle Disallowed is now resettle limited, can resettle but cost 200%
+Economic policy military -25% upkeep war influence
+Economicpolicy civilian+25% upkeep war influence
+[list] [b]New and usefull automation policy:[/b]
+[*]Starbase automation, buil automatically anchorage,hidroponic or solar panell
+[*]Auto pop resettle, resettle your pop uneployement in other planet if have resource for resettle
+[/list]
+New policies for manager attrition pay more trade logistic 
+
+[h2]Faction types[/h2]
+Imperialist (military) malus for small usage naval capacity is reworker, now get bonus over 75%, but get malus <= 30%
+
+[h2]Origin[/h2]
+[b]Void dweller[/b]: Arcane replicator is little more strong and more alloys for empires that not use consumer goods.
+
+[h2]Pop jobs[/h2]
+New pop job archeologist.
+Bureaucrat jobs produce +1 extra Unity
+entertainer now produces of base double, with double upkeep.
+Resolve probably bug balance of paradox: Reduced the production of rare resources by metallurgists and artisans; consequently, also reduced upkeep.
+Change upkeep phys and engineering researcher phys in realistic mode
+Balance society upkeep res of machine now 4 energy instead 3
+
+[h2]Section Template[/h2]
+Battleship hangar have only 2 Large utility slots in Bow
+Cruiser hangar have only 2 Medium utility slots
+Corvete have 1 new template but not have template point defense
+Science ship have an point defence turret
+Starbase have hangar instead of medium turret
+
+[h2]Ships[/h2]
+New ship "carrier" is strong ship the can carry much hangar
+
+[h2]Starbase buildings[/h2]
+Now the building of orbital cost influence
+Building is more strong but more cost (curator buildings example produces 10x of output).
+New starbase buildings usefull and strong how an another academy that give more exp over normal academy
+Modules is more strong, example every shhipyard  give more repair and give +2 naval capacity
+3 new modules "defense post pd battery and ion battery
+New good modules for void dweller
+Start with listening post buildings how initial buildings in starbase.
+Strongest orbital ring shipyard and orbital ring anchorage
+Orbital ring nobles add job nobles
+
+
+[h2]Technology[h2]
+Now automation technology is best
+All Technology weapon and armor/shield give bonus to army
+Tech housing 2 now is rare
+tech_paradise_dome give bonus 1% ameninties
+Some tech are best now tech power plant and eco simulation
+Change dotrine navy
+2 new tech for have more envoy
+2 new tech for building planet in parallel
+10+ new techs
+
+[h2]Tradition[/h2]
+Discovery now have same tradition but tree is different (221) so now now faith in science is last and need unlock all before
+Synthetics now synthetics maintenance protocols add trade value +10%.
+Traditio supremacy fleet logistical corps now reduce logistic  upkeep
+Ascension perk world shaper increment terraforming speed
+Tradition domination can unlock gears of war for resettle with low cost.
+[b] Nanites [/b]
+Reduce upkeep building nanites
+Nanotech world add nanites from jobs of 0.35
+Nanotech finish give more 1 build planet parallel
+Change production nanites, now technician produces nanites and all produces 0.25 instead 0.2
+nanites can trade
+Now can spawn little deposits nanites in galaxy out by "cluster"
+new edict nanites_subsidies that increment production of nanites
+
+
+[h2]Traits[/h2]
+Now trait manufacturer increment trade value and amenities instead only amenities
+Now General commander give +10% damage against starbases instead 5%
+Increment bonus species Trait ingenuos, industrios and farmers
+
+[h2]War goal[/h2]
+When lost an war have little bonus in base what have lost (if pop pop growth if ship, ship cost etc...)
+2 new war goal: open border and open borders long
+
+[h2]Other[/h2]
+[h3]Specimens/relics[/h3]
+Specimens now are for resource unity and research X4 and for edict fund little best.
+[h3]Leaders[/h3]
+Slighty more strong and Governors are now slightly stronger and increase the speed of planetary decisions
+[h3]Scripted variables ships[/h3]
+Increment hp X2.5 now battle is long and can emergency ftl when combat (in vanilla when combat is hard emergency ftl if damage is huge)
+Upkeep Cruiser,battleship and titan doubled
+[h3]Static modifiers[/h3]
+Now pop control gesstalt and assembly reduce pop assembly
+Bonus envoys if have 8-12-14-20-27-32 country
+Super Bonus  for more fast the game:
+
+
+Bonus early, mid and game:
+early game modifier = {
+    Physicist jobs produce +1 Physics Research
+    Biologist jobs produce +1 Society Research
+    Engineer jobs produce +1 Engineering Research
+    all technology research speed + 10%
+    country unity produces mult + 10%
+    empire size colonies mult + 10%
+    num tech alternatives add -1
+    envoys add -0.5
+    ship interstellar speed mult - 15%
+}
+mid_game_modifier :
+	ship_interstellar_speed_mult = -5%
+	country_unity_produces_mult = 5%
+	empire_size_penalty_mult = -15%
+	station_researchers_physics_research_produces_mult = 150%
+	station_researchers_society_research_produces_mult = 150%
+	station_researchers_engineering_research_produces_mult = 150%
+	station_researchers_nanites_produces_mult = 100%
+	Max influence set 1524
+
+late_game_modifier :
+	envoys_add = 1
+	empire_size_colonies_mult = -10%
+	empire_size_penalty_mult = -20%
+	ship_interstellar_speed_mult = 20%
+	planet_army_build_speed_mult = 10%
+	country_claim_influence_cost_mult = -10%
+	station_researchers_physics_research_produces_mult = 300%
+	station_researchers_society_research_produces_mult = 300%
+	station_researchers_engineering_research_produces_mult = 300%
+	station_researchers_nanites_produces_mult = 200%
+	Max influence set 2048
+Bonus/malus if galaxy is tyni small, medium large, very large, example in very large ship is more fast
+[h3]starting experience add[/h3]
+When Have an bonus to starting experience for military ship for slow build ship
+
+[h2]Fix[h2]
+[h3]Bug of vanilla[/h3]
+Fix bug the game ai that build armies in planet occupied
+[h3]scripted trigger[h3]
+Fix regular_empire and is_default_or_fallen now is gate_builder
+can_think is "trait_syncretic_proles"
+Optimize flag crisis run
+[h3]Events[/h3]
+Fix bug fallen empire repeat humiliate every 10 years now every 20 years and Fallen cann't humiliate crisis until level 4
+New events meteor storms
+Easter Egg:
+Pandora world with na'vi population (with modifier volatile isle)
+Utility:
+Send an message when can be decision arcology project
+Send an message when can be terraforming with hive or pc planet
+Integrate edict for found nice location furnace, dyson sphere, Nanite Harvester, ice mining and Quantum Catapult get code for search by sba.

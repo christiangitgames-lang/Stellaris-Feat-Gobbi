@@ -1,0 +1,10 @@
+#events/naval_attrition
+every_owned_ship = {
+	if = {
+		limit = {
+			has_hp_percentage > $MINIMUMHP$
+		}
+		reduce_hp_percent = $DAMAGAATTRITION$
+	}
+}
+

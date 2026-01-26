@@ -1,0 +1,126 @@
+on_game_start = {
+	events = {
+		phi_planetary_modifiers.0 #reroll guarantee planets
+		cg_planetary_modifiers.0 # set modifiers and blockers for new deposit
+	}
+}
+on_game_start_country = {
+	events = {
+		cg_game_start.0 #start menu launcher and set options
+		cg_rules.1
+		cg_rules.33
+		cg_rules.31 #set bonus malus galaxy size
+
+		gobbi_ai.100 #select best option for AI
+		sfg_usefull_communication_of_sfg.2 #message if can expand without limit connecting
+	}
+}
+
+
+on_monthly_pulse_country = {
+	events = {
+		cg_ai_deficit_work_out.0 #monthly search work out by deficit
+		naval_attrition.9 #attrition planet
+		cg_automation.1 #resettle
+	}
+}
+on_monthly_pulse = {
+	events = {
+		cg_planetary_modifiers.1 #meteor storm??!
+	}
+}
+on_yearly_pulse_country = {
+	events = {
+		sfg_utility.1 #sfg_utility.1 Set Flag washuman
+		gobbi_ai.30 #gobbi_ai.30 fires Emergency measure
+		cg_ai_deficit_work_out.100 #Soft cheat for void dweller origin problem with alloys.
+		sfg_ai.0 #	sfg_ai.0 yearly checker auto remove district building and build districts
+		#gobbi_ai.39 #locate for first time best location for dyson and arc furnace
+		#flags
+		check_crisis.0 # set crisis if is in running.
+		#automation
+		phigo_automation.0 #automation buildings 0-99
+		phigo_automation.100 #automation luxury decision
+		phigo_automation.101 # automation artifact decision
+		
+		#last
+		ConnectSystem.1 # .2
+		cg_rules.30 #set bonus malus galaxy size #recursive
+		cg_rules.32
+		cg_rules.1
+		cg_rules.33
+		cg_rules.2 #bonus mid game recursive
+		cg_rules.3 #bonus late game recursive
+		
+		sfg_usefull_communication.1#Deamon that fires all usefull communication
+		
+	}
+}
+on_bi_yearly_pulse_country = {
+	events = {
+		gobbi_ai.0 # fires event remove replace Buildings and districts
+		gobbi_ai.10 #	fires events better choice
+		gobbi_ai.20 # fires Mid game building district
+		sfg_usefull_communication_of_sfg.1#Deamon that fires all usefull communication of sfg feat gobbi
+	}
+}
+on_five_year_pulse_country = {
+	events = {
+		cg_flag_score.1 #set flag of weak o very weak eco-tec-mil
+		#gobbi_ai.40 #set candidate furnace for ai
+	}
+}
+
+
+# A fleet has entered a system
+# Scope = Fleet
+# From = System
+on_entering_system_fleet = {
+	events = {
+		naval_attrition.1
+	}
+}
+on_planet_surveyed = {
+	events = {
+		phi_planetary_modifiers.2
+		phi_planetary_modifiers.3
+		phi_planetary_modifiers.4
+	}
+}
+on_colonized = {
+	events = {
+		gobbi_ai.102 # add district or building if pop > 2
+		gobbi_ai.101 # add district or building if pop > 2
+	}
+}
+on_terraforming_complete = {
+	events = {
+		phi_planetary_modifiers.10
+	}
+}
+on_mid_game_pulse_country = {
+	events = {
+		cg_rules.2
+	}
+}
+
+# No scope, like on_game_start
+on_late_game_pulse_country = {
+	events = {
+		cg_rules.3
+	}
+}
+
+
+
+
+# Fired whenever a new owner is set for a planet, and the planet was aggressively conquered
+# NOTE: fired in ADDITION to on_planet_transfer
+# This = Planet scope
+# From = Country scope (new owner)
+# FromFrom = Former Owner
+# on_planet_conquer = {
+# 	events = {
+# 		cg_rules.4 #increment administration
+# 	}
+# }

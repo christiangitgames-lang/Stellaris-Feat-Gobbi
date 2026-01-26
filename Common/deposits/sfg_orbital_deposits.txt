@@ -1,0 +1,249 @@
+d_l_physics_research = {
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			physics_research = 9
+		}
+	}
+	station = shipclass_research_station 
+	is_for_colonizable = no
+	habitat_modifier = {
+		district_hab_science_max = 21
+	}
+	potential = {
+		OR = {
+			is_planet_class = pc_molten
+			is_planet_class = pc_barren
+			is_planet_class = pc_barren_cold
+			is_planet_class = pc_toxic
+			is_planet_class = pc_frozen
+		}
+	}
+	
+	drop_weight = {
+		weight = 2
+	}
+}
+d_l_society_research = {
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			society_research = 9
+		}
+	}
+	station = shipclass_research_station 
+	is_for_colonizable = no
+	habitat_modifier = {
+		district_hab_science_max = 2
+	}
+	potential = {
+		OR = {
+			is_planet_class = pc_gas_giant
+			is_planet_class = pc_ice_asteroid
+			is_planet_class = pc_barren_cold
+			is_planet_class = pc_frozen
+			is_planet_class = pc_toxic
+		}
+	}
+	
+	drop_weight = {
+		weight = 1
+	}
+}
+d_l_engineering_research = {
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			engineering_research = 9
+		}
+	}
+	station = shipclass_research_station 
+	is_for_colonizable = no
+	habitat_modifier = {
+		district_hab_science_max = 21
+	}
+	potential = {
+		OR = {
+			is_planet_class = pc_gas_giant
+			is_planet_class = pc_asteroid
+			is_planet_class = pc_ice_asteroid
+			is_planet_class = pc_molten
+			is_planet_class = pc_barren
+			is_planet_class = pc_toxic
+		}
+	}
+	
+	drop_weight = {
+		weight = 2
+	}
+}
+
+
+#===========================
+#UNITY
+#===============================
+d_unity_value_1 = {
+	is_for_colonizable = no
+	station = shipclass_research_station 
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			unity = 1
+		}
+	}
+
+	potential = {
+		can_have_unity_deposits = yes
+	}
+
+	drop_weight = {
+		weight = 4
+		modifier = {
+			factor = 0.5
+			is_planet_class = pc_black_hole
+		}
+		modifier = {
+			factor = 2.0
+			OR = {
+				is_asteroid = yes
+				is_planet_class = pc_gas_giant
+			}
+		}
+	}
+}
+
+d_unity_value_2 = {
+	is_for_colonizable = no
+	station = shipclass_research_station 
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			unity = 2
+		}
+	}
+
+	potential = {
+		can_have_unity_deposits = yes
+	}
+
+	drop_weight = {
+		weight = 2
+		modifier = {
+			factor = 0.5
+			is_planet_class = pc_black_hole
+		}
+		modifier = {
+			factor = 2.0
+			OR = {
+				is_asteroid = yes
+				is_planet_class = pc_gas_giant
+			}
+		}
+	}
+}
+
+d_unity_value_3 = {
+	is_for_colonizable = no
+	station = shipclass_research_station 
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			unity = 3
+		}
+	}
+
+	potential = {
+		can_have_unity_deposits = yes
+	}
+
+	drop_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.5
+			is_planet_class = pc_black_hole
+		}
+		modifier = {
+			factor = 2.0
+			OR = {
+				is_asteroid = yes
+				is_planet_class = pc_gas_giant
+			}
+		}
+	}
+}
+### sfg nanites
+d_nanites_deposit_2 = {
+	icon = d_nanite_corpses
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			nanites = 1
+		}
+	}
+
+	habitat_modifier = {
+		district_hab_science_max = 1
+	}
+
+	station = shipclass_research_station
+	is_for_colonizable = no
+
+	potential = {
+		is_star = no
+		is_colonizable = no
+		NOT = { has_modifier = terraforming_candidate }
+	}
+
+	drop_weight = {
+		weight = 1 #test 
+		modifier = {
+			factor = 0.5
+			OR = {
+				is_asteroid = yes
+				is_planet_class = pc_gas_giant
+			}
+		}
+		modifier = {
+			factor = 5
+			is_planet_class = pc_gray_goo
+		}
+	}
+}
+
+d_nanites_deposit_3 = {
+	icon = d_nanite_corpses
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			nanites = 2
+		}
+	}
+
+	habitat_modifier = {
+		district_hab_science_max = 1
+	}
+
+	station = shipclass_research_station
+	is_for_colonizable = no
+
+	potential = {
+		is_star = no
+		is_colonizable = no
+		NOT = { has_modifier = terraforming_candidate }
+	}
+
+	drop_weight = {
+		weight = 0.5
+		modifier = {
+			factor = 0.5
+			OR = {
+				is_asteroid = yes
+				is_planet_class = pc_gas_giant
+			}
+		}
+		modifier = {
+			factor = 5
+			is_planet_class = pc_gray_goo
+		}
+	}
+}

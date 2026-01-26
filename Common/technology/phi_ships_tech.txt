@@ -1,0 +1,159 @@
+
+
+tech_carriers = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_battleships" }
+	weight = @tier4weight2
+
+	## unlock battleships
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_CARRIER_CONSTRUCTION_TITLE"
+			desc = "TECH_UNLOCK_CARRIER_CONSTRUCTION_DESC"
+		}
+	}
+
+	modifier = {
+		command_limit_add = 10
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0.1
+			NOT = { years_passed > 50 }
+		}
+		modifier = {
+			factor = 10
+			any_neighbor_country = {
+				has_technology = tech_carriers
+			}
+		}
+		modifier = {
+			factor = 2
+			years_passed > 60
+		}
+		modifier = {
+			factor = 3
+			years_passed > 65
+		}
+		modifier = {
+			factor = 4
+			years_passed > 70
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+	}
+
+	ai_weight = {
+		factor = @TechVeryhighPriority
+		modifier = {
+			factor = 2
+			has_technology = tech_strike_craft_2
+		}
+		modifier = {
+			factor = 3
+			has_technology = tech_strike_craft_3
+		}
+		modifier = {
+			factor = 5
+			has_technology = tech_strike_craft_skrand
+		}
+	}
+}
+
+
+
+# ##################
+# Carrier upgrades
+# ##################
+
+tech_carrier_build_speed = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_carriers" }
+	weight = @tier4weight2
+
+	modifier = {
+		shipsize_carrier_build_speed_mult = 0.25
+	}
+
+	weight_modifier = {
+	}
+
+	ai_weight = {
+	}
+}
+
+tech_carrier_hull_1 = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_carriers" }
+	weight = @tier4weight3
+
+	modifier = {
+		shipsize_carrier_hull_mult = 0.33
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+	}
+
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+	}
+}
+
+tech_carrier_hull_2 = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_carrier_hull_1" }
+	weight = @tier5weight1
+
+	modifier = {
+		shipsize_carrier_hull_mult = 0.33
+	}
+
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = tech_battleship_hull_2 }
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.5
+			is_specialist_subject_type = { TYPE = bulwark }
+		}
+	}
+
+	ai_weight = {
+		factor = @TechHighPriority
+	}
+}
+

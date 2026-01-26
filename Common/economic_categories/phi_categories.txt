@@ -1,0 +1,17 @@
+
+wars = {
+	parent = country
+	generate_mult_modifiers = {
+		upkeep
+	}
+}
+relative_technology = {
+	parent = diplomacy
+}
+
+galactic_community = {
+	parent = diplomacy
+}
+orbital_artifacts_deposits = {
+	parent = orbital_mining_deposits
+}

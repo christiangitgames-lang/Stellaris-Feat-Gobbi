@@ -1,0 +1,14 @@
+#Crystal Plating
+component_set = {
+	key = "CRYSTAL_ARMOR_3"
+	
+	icon = "GFX_ship_part_crystal_armor_3"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "CRYSTAL_ARMOR_4"
+	
+	icon = "GFX_ship_part_crystal_armor_4"
+	icon_frame = 1	
+}

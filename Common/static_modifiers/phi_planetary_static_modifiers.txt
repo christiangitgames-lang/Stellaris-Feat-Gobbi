@@ -1,0 +1,365 @@
+#phi_planet_modifiers
+
+### ALPINE ###
+
+phi_pm_mantle_frozen_gas_pockets_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_seismological_disturbances.dds"
+	icon_frame = 3
+	planet_jobs_minerals_produces_mult = -0.25
+	planet_structures_cost_mult = 0.5
+}
+
+phi_pm_mantle_frozen_gas_pockets_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_seismological_disturbances.dds"
+	icon_frame = 2
+	planet_structures_cost_mult = 0.25
+}
+
+phi_pm_mantle_frozen_gas_pockets_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_seismological_disturbances.dds"
+	icon_frame = 1
+	planet_jobs_minerals_produces_mult = 0.10
+}
+
+### ARCTIC ###
+
+phi_pm_polar_supercells_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_cold_barren_planet.dds"
+	icon_frame = 3
+	planet_jobs_physics_research_produces_mult = 0.10
+	planet_jobs_energy_produces_mult = -0.25
+	planet_structures_upkeep_mult = 1
+}
+
+phi_pm_polar_supercells_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_cold_barren_planet.dds"
+	icon_frame = 2
+	planet_jobs_physics_research_produces_mult = 0.15
+	planet_structures_upkeep_mult = 0.5
+}
+
+phi_pm_polar_supercells_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_cold_barren_planet.dds"
+	icon_frame = 1
+	planet_jobs_physics_research_produces_mult = 0.25
+	planet_jobs_energy_produces_mult = 0.1
+}
+
+### TUNDRA ###
+
+phi_pm_perennial_fog_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
+	icon_frame = 3
+	planet_jobs_society_research_produces_mult = 0.1
+	planet_jobs_food_produces_mult = -0.25
+	planet_amenities_mult = -0.25
+}
+
+phi_pm_perennial_fog_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
+	icon_frame = 2
+	planet_jobs_society_research_produces_mult = 0.15
+	planet_amenities_mult = -0.10
+}
+
+phi_pm_perennial_fog_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
+	icon_frame = 1
+	planet_jobs_society_research_produces_mult = 0.25
+	planet_jobs_food_produces_mult = 0.1
+}
+
+### CONTINENTAL ###
+
+phi_pm_tectonic_fractures_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_molten_planet.dds"
+	icon_frame = 3
+	planet_jobs_minerals_produces_mult = -0.25
+	planet_structures_cost_mult = 0.5
+}
+
+phi_pm_tectonic_fractures_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_molten_planet.dds"
+	icon_frame = 2
+	planet_structures_cost_mult = 0.25
+}
+
+phi_pm_tectonic_fractures_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_molten_planet.dds"
+	icon_frame = 1
+	planet_jobs_minerals_produces_mult = 0.10
+}
+
+### OCEAN ###
+
+phi_pm_ocean_vortexes_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wild_storms.dds"
+	icon_frame = 3
+	planet_jobs_physics_research_produces_mult = 0.10
+	planet_jobs_energy_produces_mult = -0.25
+	planet_structures_upkeep_mult = 1
+}
+
+phi_pm_ocean_vortexes_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wild_storms.dds"
+	icon_frame = 2
+	planet_jobs_physics_research_produces_mult = 0.15
+	planet_structures_upkeep_mult = 0.5
+}
+
+phi_pm_ocean_vortexes_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wild_storms.dds"
+	icon_frame = 1
+	planet_jobs_physics_research_produces_mult = 0.25
+	planet_jobs_energy_produces_mult = 0.1
+}
+
+### TROPICAL ###
+
+phi_pm_bacterial_pathogen_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_microscopic_life.dds"
+	icon_frame = 3
+	planet_jobs_society_research_produces_mult = 0.1
+	planet_jobs_food_produces_mult = -0.25
+	planet_amenities_mult = -0.25
+}
+
+phi_pm_bacterial_pathogen_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_microscopic_life.dds"
+	icon_frame = 2
+	planet_jobs_society_research_produces_mult = 0.25
+	planet_amenities_mult = -0.10
+}
+
+phi_pm_bacterial_pathogen_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_microscopic_life.dds"
+	icon_frame = 1
+	planet_jobs_society_research_produces_mult = 0.5
+	planet_jobs_food_produces_mult = 0.1
+}
+
+### ARID ###
+
+phi_pm_sudden_rainfalls_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wild_storms.dds"
+	icon_frame = 3
+	planet_jobs_engineering_research_produces_mult = 0.1
+	planet_jobs_minerals_produces_mult = -0.25
+	planet_structures_cost_mult = 0.5
+}
+
+phi_pm_sudden_rainfalls_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wild_storms.dds"
+	icon_frame = 2
+	planet_jobs_engineering_research_produces_mult = 0.15
+	planet_structures_cost_mult = 0.25
+}
+
+phi_pm_sudden_rainfalls_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_wild_storms.dds"
+	icon_frame = 1
+	planet_jobs_engineering_research_produces_mult = 0.25
+	planet_jobs_minerals_produces_mult = 0.10
+}
+
+### DESERT ###
+
+phi_pm_dust_storms_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_hazardous_weather.dds"
+	icon_frame = 3
+	planet_jobs_energy_produces_mult = -0.25
+	planet_structures_upkeep_mult = 1
+}
+
+phi_pm_dust_storms_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_hazardous_weather.dds"
+	icon_frame = 2
+	planet_structures_upkeep_mult = 0.5
+}
+
+phi_pm_dust_storms_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_hazardous_weather.dds"
+	icon_frame = 1
+	planet_jobs_energy_produces_mult = 0.1
+}
+
+### SAVANNAH ###
+
+phi_pm_bush_wildfires_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_burning_settlement.dds"
+	icon_frame = 3
+	planet_jobs_society_research_produces_mult = 0.1
+	planet_jobs_food_produces_mult = -0.25
+	planet_amenities_mult = -0.25
+}
+
+phi_pm_bush_wildfires_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_burning_settlement.dds"
+	icon_frame = 2
+	planet_jobs_society_research_produces_mult = 0.20
+	planet_amenities_mult = -0.10
+}
+
+phi_pm_bush_wildfires_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_burning_settlement.dds"
+	icon_frame = 1
+	planet_jobs_society_research_produces_mult = 0.30
+	planet_jobs_food_produces_mult = 0.1
+}
+
+### RELIC ###
+
+phi_pm_planet_teleporters_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_city_ruins.dds"
+	icon_frame = 3
+	planet_jobs_productive_produces_mult = 0.03
+	#planet_jobs_produces_mult = 0.03
+	planet_jobs_productive_energy_upkeep_add = 0.2
+	#planet_jobs_energy_upkeep_add = 0.2
+}
+
+phi_pm_planet_teleporters_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_city_ruins.dds"
+	icon_frame = 2
+	planet_jobs_productive_produces_mult = 0.06
+	planet_jobs_productive_energy_upkeep_add = 0.4
+	#planet_jobs_produces_mult = 0.06
+	#planet_jobs_energy_upkeep_add = 0.4
+}
+
+phi_pm_planet_teleporters_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_city_ruins.dds"
+	icon_frame = 1
+	planet_jobs_productive_produces_mult = 0.09
+	planet_jobs_productive_energy_upkeep_add = 0.5
+	#planet_jobs_produces_mult = 0.09
+	#planet_jobs_energy_upkeep_add = 0.5
+}
+
+phi_pm_planet_broadcasting_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_arcology_project.dds"
+	icon_frame = 3
+	planet_jobs_unity_produces_mult = 0.10
+}
+
+phi_pm_planet_broadcasting_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_arcology_project.dds"
+	icon_frame = 2
+	planet_jobs_unity_produces_mult = 0.15
+}
+
+phi_pm_planet_broadcasting_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_arcology_project.dds"
+	icon_frame = 1
+	planet_jobs_unity_produces_mult = 0.25
+}
+
+phi_pm_planet_accelerators_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_engineering_research.dds"
+	icon_frame = 3
+	planet_jobs_physics_research_produces_mult = 0.10
+	planet_jobs_engineering_research_produces_mult = 0.05
+}
+
+phi_pm_planet_accelerators_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_engineering_research.dds"
+	icon_frame = 2
+	planet_jobs_physics_research_produces_mult = 0.15
+	planet_jobs_engineering_research_produces_mult = 0.10
+}
+
+phi_pm_planet_accelerators_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_engineering_research.dds"
+	icon_frame = 1
+	planet_jobs_physics_research_produces_mult = 0.25
+	planet_jobs_engineering_research_produces_mult = 0.15
+}
+
+### TEMPERATE ###
+
+phi_pm_tesla_biome_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_phi_tesla_biome.dds"
+	icon_frame = 3
+	planet_jobs_energy_produces_mult = 0.1
+	planet_jobs_society_research_produces_mult = 0.05
+	planet_pop_assembly_reduction = 0.1
+	pop_environment_tolerance = -0.10
+}
+
+phi_pm_tesla_biome_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_phi_tesla_biome.dds"
+	icon_frame = 2
+	planet_jobs_energy_produces_mult = 0.15
+	planet_jobs_society_research_produces_mult = 0.1
+	planet_pop_assembly_reduction = 0.05
+	pop_environment_tolerance = -0.05
+}
+
+phi_pm_tesla_biome_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_phi_tesla_biome.dds"
+	icon_frame = 1
+	planet_jobs_energy_produces_mult = 0.25
+	planet_jobs_society_research_produces_mult = 0.15
+}
+
+### COLD ###
+
+phi_pm_electric_ice_shelf_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_phi_ice_shelf.dds"
+	icon_frame = 3
+	planet_jobs_energy_produces_mult = 0.1
+	planet_jobs_physics_research_produces_mult = 0.05
+	planet_pop_assembly_reduction = 0.1
+	pop_environment_tolerance = -0.10
+}
+
+phi_pm_electric_ice_shelf_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_phi_ice_shelf.dds"
+	icon_frame = 2
+	planet_jobs_energy_produces_mult = 0.15
+	planet_jobs_physics_research_produces_mult = 0.1
+	planet_pop_assembly_reduction = 0.05
+	pop_environment_tolerance = -0.05
+}
+
+phi_pm_electric_ice_shelf_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_phi_ice_shelf.dds"
+	icon_frame = 1
+	planet_jobs_energy_produces_mult = 0.25
+	planet_jobs_physics_research_produces_mult = 0.15
+}
+
+### HOT ###
+
+phi_pm_magnetic_clouds_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_beam.dds"
+	icon_frame = 3
+	planet_jobs_energy_produces_mult = 0.1
+	planet_jobs_engineering_research_produces_mult = 0.05
+	planet_pop_assembly_reduction = 0.1
+	pop_environment_tolerance = -0.10
+}
+
+phi_pm_magnetic_clouds_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_beam.dds"
+	icon_frame = 2
+	planet_jobs_energy_produces_mult = 0.15
+	planet_jobs_engineering_research_produces_mult = 0.1
+	planet_pop_assembly_reduction = 0.05
+	pop_environment_tolerance = -0.05
+}
+
+phi_pm_magnetic_clouds_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_beam.dds"
+	icon_frame = 1
+	planet_jobs_energy_produces_mult = 0.25
+	planet_jobs_engineering_research_produces_mult = 0.15
+}
+
+### POLLUTION ###
+
+phi_pm_atmospheric_pollution = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_atmospheric_hallucinogen.dds"
+	icon_frame = 3
+	planet_jobs_energy_produces_mult = -0.05
+}

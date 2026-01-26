@@ -1,0 +1,307 @@
+namespace = cg_planetary_modifiers
+@planet_orbital_bombardment_damage = 0.5
+event = {
+	id = cg_planetary_modifiers.0
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		every_system ={
+			limit ={
+				any_system_planet = {
+					#is_colonizable = yes
+					OR = {
+						is_planet_class = pc_arctic
+						is_planet_class = pc_alpine
+						is_planet_class = pc_tundra
+						is_planet_class = pc_ocean
+						is_planet_class = pc_continental
+						is_planet_class = pc_tropical
+						is_planet_class = pc_arid
+						is_planet_class = pc_desert
+						is_planet_class = pc_savannah
+						is_planet_class = pc_gaia
+						is_planet_class = pc_relic
+					}
+				}
+			}
+			every_system_planet = {
+				limit = {
+					#is_colonizable = yes
+					OR = {
+						is_planet_class = pc_arctic
+						is_planet_class = pc_alpine
+						is_planet_class = pc_tundra
+						is_planet_class = pc_ocean
+						is_planet_class = pc_continental
+						is_planet_class = pc_tropical
+						is_planet_class = pc_arid
+						is_planet_class = pc_desert
+						is_planet_class = pc_savannah
+						is_planet_class = pc_gaia
+						is_planet_class = pc_relic
+					}
+				}
+				cg_set_blockers = yes
+				cg_set_flag = yes
+			}
+		}
+		
+	}
+}
+event = { #meteor storm
+	id = cg_planetary_modifiers.1
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		has_global_flag = meteor_storms_exist
+	}
+	immediate = {
+		random_list = {
+			1 = {
+				random_system = {
+					limit ={
+						has_star_flag = meteor_storms
+					}
+					every_system_planet = {
+						limit = {
+							is_colony = yes
+							has_modifier = "cg_Meteor_Storms"
+							check_variable_arithmetic = {
+								which = @planet_orbital_bombardment_damage
+								value < modifier:planet_orbital_bombardment_damage
+							}
+						}
+						save_event_target_as = planet_meteor_storms 
+						random_list = {
+							75 = { 
+								if = { 
+									limit = { exists = owner num_buildings = { type = any value > 1 } }
+									ruin_building = random_no_capital
+									planet_event = { id = cg_planetary_modifiers.2 } 
+								}
+								
+							}
+							25 = {
+								
+								if = { limit = { exists = owner num_districts = { type = any value > 1 } }
+									random_list = {
+										2 = { remove_district = district_generator modifier = { factor = 0 num_districts = { type = district_generator value = 0 } } }
+										2 = { remove_district = district_mining modifier = { factor = 0 num_districts = { type = district_mining value = 0 } } }
+										2 = { remove_district = district_farming modifier = { factor = 0 num_districts = { type = district_farming value = 0 } } }
+										1 = { 
+											modifier = { factor = 0 num_districts = { type = district_city value = 0 } }
+											modifier = {
+												factor = 2
+												 num_districts = { type = district_city value > 3 }
+											}
+											remove_district = district_city 
+											random_owned_pop_group = {
+												kill_pop_group = {
+													pop_group = this
+													amount = 1
+												}
+											
+											}
+										
+										}
+									}
+									planet_event = { id = cg_planetary_modifiers.3 }
+								}
+							}
+							1 = {
+								random_owned_pop_group = {
+									kill_pop_group = {
+										pop_group = this
+										amount = 1
+									}
+								}
+								if = { limit = { exists = owner }
+									planet_event = { id = cg_planetary_modifiers.4 }
+								}
+								modifier = {
+									factor = 0
+									pop_amount < 300
+								}
+								modifier = {
+									factor = 2
+									pop_amount > 3000
+								}
+								modifier = {
+									factor = 2
+									pop_amount > 6000
+								}
+								modifier = {
+									factor = 2
+									pop_amount > 9000
+								}
+							}
+							1 = {
+								if = { limit = { exists = owner }
+									planet_event = { id = cg_planetary_modifiers.5 }
+								}
+								modifier = {
+									add = 100
+									num_districts = { type = any value < 3 }
+								}
+								modifier = {
+									add = 100
+									num_buildings = { type = any value < 3 }
+								}
+								modifier = {
+									add = 50
+									num_districts = { type = any value = 4 }
+								}
+								modifier = {
+									add = 50
+									num_buildings = { type = any value = 4 }
+								}
+								modifier = {
+									add = 10
+									num_districts = { type = any value = 5 }
+								}
+								modifier = {
+									add = 10
+									num_buildings = { type = any value = 5 }
+								}
+								
+							}
+						}
+					}
+				}
+			}
+			50 = {
+
+			}
+		}
+	}
+}
+fleet_event = {
+	id = cg_planetary_modifiers.55
+	title = "ancrel.3.name"
+	desc = ancrel.16.desc
+	picture = GFX_evt_zro_3
+	show_sound = event_bad_omen
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ancrel.16.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+		small_artifact_reward = yes
+	}
+}
+planet_event = {
+	id = cg_planetary_modifiers.2
+	title = "cg_planetary_modifiers.2.name"
+	picture = GFX_evt_archaeologists_escaping
+	desc = cg_planetary_modifiers.2.desc
+	hide_window = no
+	is_triggered_only = yes
+	#location = event_target:planet_meteor_storms
+
+	option = {
+		name = OK
+		add_modifier = {
+			modifier = gpm_mineral_metors 
+			days = 365 
+		} 
+		# event_target:planet_meteor_storms = { 
+		# 	planet = { 
+		# 		add_modifier = {
+		# 			modifier = gpm_mineral_metors 
+		# 			days = 365 
+		# 		} 
+		# 	}
+		# }
+	}
+}
+planet_event = {
+	id = cg_planetary_modifiers.3
+	title = "cg_planetary_modifiers.2.name"
+	picture = GFX_evt_archaeologists_escaping
+	desc = cg_planetary_modifiers.3.desc
+	hide_window = no
+	is_triggered_only = yes
+	#location = event_target:planet_meteor_storms
+
+	option = {
+		name = OK
+		add_modifier = {
+			modifier = gpm_mineral_metors 
+			days = 365 
+		} 
+		# event_target:planet_meteor_storms = { 
+		# 	planet = { 
+		# 		add_modifier = {
+		# 			modifier = gpm_mineral_metors 
+		# 			days = 365 
+		# 		} 
+		# 	}
+		# }
+	}
+}
+planet_event = {
+	id = cg_planetary_modifiers.4
+	title = "cg_planetary_modifiers.2.name"
+	picture = GFX_evt_archaeologists_escaping
+	desc = cg_planetary_modifiers.4.desc
+	hide_window = no
+	is_triggered_only = yes
+	#location = event_target:planet_meteor_storms
+
+	option = {
+		name = OK
+		add_modifier = {
+			modifier = gpm_mineral_metors 
+			days = 365 
+		} 
+		# event_target:planet_meteor_storms = { 
+		# 	planet = { 
+		# 		add_modifier = {
+		# 			modifier = gpm_mineral_metors 
+		# 			days = 365 
+		# 		} 
+		# 	}
+		# }
+	}
+}
+
+
+planet_event = {
+	id = cg_planetary_modifiers.5
+	title = "cg_planetary_modifiers.2.name"
+	picture = GFX_evt_archaeologists_escaping
+	desc = cg_planetary_modifiers.5.desc
+	hide_window = no
+	is_triggered_only = yes
+	#location = event_target:planet_meteor_storms
+
+	option = {
+		name = OK
+		add_modifier = {
+			modifier = gpm_mineral_metors 
+			days = 365 
+		} 
+		# event_target:planet_meteor_storms = { 
+		# 	planet = { 
+		# 		add_modifier = {
+		# 			modifier = gpm_mineral_metors 
+		# 			days = 365 
+		# 		} 
+		# 	}
+		# }
+	}
+}

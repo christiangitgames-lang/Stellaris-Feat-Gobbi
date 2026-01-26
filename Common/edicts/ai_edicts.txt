@@ -1,0 +1,248 @@
+cg_bad_fleet = {
+	length = -1
+	icon = "GFX_war_in_heaven"
+	
+	potential = {
+		is_ai = yes
+		has_global_flag = AI_hard
+	}
+
+	allow = {
+		has_country_flag = cg_bad_fleet_score
+		is_at_war = no
+	}
+
+	resources = {
+		category = edicts
+		cost = {
+			energy = 100
+		}
+	}
+
+	modifier = {
+		starbase_shipyard_build_cost_mult = -0.10
+		starbase_shipyard_build_speed_mult = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+cg_terrible_fleet = {
+	length = -1
+	icon = "GFX_war_in_heaven"
+	
+	potential = {
+		is_ai = yes
+		has_global_flag = AI_hard
+	}
+
+	allow = {
+		has_country_flag = cg_terrible_fleet_score
+		is_at_war = no
+	}
+
+	resources = {
+		category = edicts
+		cost = {
+			energy = 100
+		}
+	}
+
+	modifier = {
+		starbase_shipyard_build_cost_mult = -0.25
+		starbase_shipyard_build_speed_mult = 0.30
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+cg_bad_tech = {
+	length = -1
+	icon = "GFX_war_in_heaven"
+	
+	potential = {
+		is_ai = yes
+		has_global_flag = AI_hard
+	}
+
+	allow = {
+		has_country_flag = cg_bad_tech_score
+		is_at_war = no
+	}
+
+	resources = {
+		category = edicts
+		cost = {
+			
+			energy = 100
+		}
+	}
+
+	modifier = {
+		planet_physicists_physics_research_produces_add = 0.25
+		planet_biologists_society_research_produces_add = 0.25
+		planet_engineers_engineering_research_produces_add = 0.25
+		all_technology_research_speed = 0.05
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+cg_terrible_tech = {
+	length = -1
+	icon = "GFX_war_in_heaven"
+	
+	potential = {
+		is_ai = yes
+		has_global_flag = AI_hard
+	}
+
+	allow = {
+		has_country_flag = cg_terrible_tech
+		is_at_war = no
+	}
+
+	resources = {
+		category = edicts
+		cost = {
+			
+			energy = 100
+		}
+	}
+
+	modifier = {
+		planet_physicists_physics_research_produces_add = 0.5
+		planet_biologists_society_research_produces_add = 0.5
+		planet_engineers_engineering_research_produces_add = 0.5
+		all_technology_research_speed = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+cg_bad_economy = {
+	length = -1
+	icon = "GFX_war_in_heaven"
+	
+	potential = {
+		is_ai = yes
+		has_global_flag = AI_hard
+	}
+
+	allow = {
+		has_country_flag = cg_bad_economy_score
+		is_at_war = no
+	}
+
+	resources = {
+		category = edicts
+		cost = {
+			
+			unity = 100
+		}
+	}
+
+	modifier = {
+		
+		planet_jobs_productive_produces_mult = 0.07
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+cg_terrible_economy = {
+	length = -1
+	icon = "GFX_war_in_heaven"
+	
+	potential = {
+		is_ai = yes
+		has_global_flag = AI_hard
+	}
+
+	allow = {
+		has_country_flag = cg_terrible_economy_score
+		is_at_war = no
+	}
+
+	resources = {
+		category = edicts
+		cost = {
+			
+			unity = 100
+		}
+	}
+
+	modifier = {
+		
+		planet_jobs_productive_produces_mult = 0.21
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+cg_bad_tradition = {
+	length = -1
+	icon = "GFX_war_in_heaven"
+	
+	potential = {
+		is_ai = yes
+		has_global_flag = AI_hard
+	}
+
+	allow = {
+		has_country_flag = cg_bad_tradition_score
+		is_at_war = no
+	}
+
+	resources = {
+		category = edicts
+		cost = {
+			energy = 100
+		}
+	}
+
+	modifier = {
+		planet_bureaucrats_unity_produces_add = 0.25
+		country_unity_produces_mult = 0.07
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+cg_terrible_Tradition = {
+	length = -1
+	icon = "GFX_war_in_heaven"
+	
+	potential = {
+		is_ai = yes
+		has_global_flag = AI_hard
+	}
+
+	allow = {
+		has_country_flag = cg_terrible_tradition_score
+		is_at_war = no
+	}
+
+	resources = {
+		category = edicts
+		cost = {
+			energy = 100
+		}
+	}
+
+	modifier = {
+		planet_bureaucrats_unity_produces_add = 0.5
+		country_unity_produces_mult = 0.21
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}

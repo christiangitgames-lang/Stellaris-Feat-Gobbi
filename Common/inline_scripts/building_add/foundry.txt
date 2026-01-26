@@ -1,0 +1,58 @@
+inline_script = "building_add/free_buind_slots" #obbligatoria
+modifier = {
+	factor = 0
+	OR = {
+		has_building = building_foundry_1
+		has_building = building_foundry_2
+		has_building = building_foundry_3
+	}
+}
+# modifier = {
+# 	factor = 0
+# 	num_free_districts = { type = district_industrial value < 1 }
+# }
+# modifier = {
+# 	factor = 2
+# 	num_free_districts = { type = district_industrial value > 3 }
+# }
+# modifier = {
+# 	factor = 10
+# 	num_free_districts = { type = district_industrial value > 6 }
+# }
+modifier = {
+	factor = 0
+	OR = {
+		
+		AND = {
+			owner = { has_monthly_income = { resource = minerals value < 20 } }
+			owner = { is_catalytic_empire = no }
+		}
+		AND = {
+			owner = { has_monthly_income = { resource = food value < 30 } }
+			owner = { is_catalytic_empire = yes }
+		}
+		
+	}
+
+}
+modifier = {
+	factor = 10
+	owner = {
+		resource_revenue_compare = {
+			resource = alloys
+			value < trigger:years_passed
+		}
+	}
+}
+modifier = {
+	factor = 0
+	owner = { has_monthly_income = { resource = minerals value < 50 } }
+}
+modifier = {
+	factor = 1.1
+	owner = { 
+		is_machine_empire = yes 
+	}
+}
+add_building = building_foundry_1
+

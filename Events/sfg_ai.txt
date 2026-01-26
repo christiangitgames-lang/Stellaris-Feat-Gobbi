@@ -1,0 +1,203 @@
+namespace = sfg_ai
+#@b1_1_minerals = 400;
+@b1_2_minerals = 200; #200-400
+@b1_3_minerals = 400; #300-400
+# EXPLAINER:
+#	sfg_ai.0 yearly checker auto remove district building and build districts
+# have recycle code of mariominaccia
+event = { #standard
+	id = sfg_ai.0
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = yes
+		is_country_type = default
+		NOT = { has_ethic = ethic_gestalt_consciousness }
+		has_resource = { type = minerals amount > 500 }
+		OR = {
+			has_resource = { type = energy amount > 1000 }
+			has_monthly_income = { resource = energy value > 20 }
+		}
+		NOT = { has_global_flag = AI_easy }
+	}
+	
+	immediate = {
+		random_owned_planet = {
+			planet_event = { #	cg_ai.42	Universally  remove buildings
+				id = sfg_ai.1
+				#days = 4 #Alleggerisce il carico nelle multiplayer
+			}
+			planet_event = { #	cg_ai.42	Universally  remove districts
+				id = sfg_ai.2
+				days = 180 #Alleggerisce il carico nelle multiplayer
+			}
+		}
+	}
+}
+planet_event = { #	cg_ai.1	Universally  remove buildings
+	id = sfg_ai.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		owner = {
+			is_ai = yes
+			is_country_type = default
+		}
+		OR = {
+			has_resource = { type = energy amount > 1000 }
+		}
+		NOT = { has_global_flag = AI_easy }
+	}
+	
+	immediate = {
+		if = { 
+			limit = { 
+				has_building = building_hydroponics_farm 
+				owner = {
+					OR = {
+						OR = {
+							has_monthly_income = { resource = food value > 50 } 
+							AND = {
+								country_uses_bio_ships = yes
+								has_monthly_income = { resource = food value > 100 } 
+							}
+						}
+						AND = { 
+							country_uses_bio_ships = no
+							has_resource = {
+								type = food
+								amount > 2500
+							} 
+							has_monthly_income = { resource = food value > 0 } 
+						}
+					}
+				} 
+			}
+			remove_building = building_hydroponics_farm 
+			owner = { add_resource = { minerals = @b1_minerals mult = prev.value:planet_building_refund_mult } } #da testare
+		}
+		#military
+		else_if = { limit = { owner = { used_naval_capacity_percent <= 0.5 is_at_war = no } has_building = building_stronghold } remove_building = building_stronghold }
+		else_if = { limit = { owner = { used_naval_capacity_percent <= 0.5 is_at_war = no } has_building = building_fortress } remove_building = building_fortress }
+		else_if = { limit = { owner = { used_naval_capacity_percent <= 0.5 is_at_war = no } has_building = building_dread_encampment } remove_building = building_dread_encampment }
+		else_if = { limit = { owner = { used_naval_capacity_percent <= 0.5 is_at_war = no } has_building = building_planetary_shield_generator } remove_building = building_planetary_shield_generator }
+		#luxury
+		else_if = { limit = { free_amenities > 3000 has_building = building_luxury_residence } remove_building = building_luxury_residence }
+		else_if = { limit = { free_amenities > 7000 has_building = building_paradise_dome } remove_building = building_paradise_dome owner = { add_resource = { minerals = @b1_2_minerals rare_crystals = @b2_rare_cost mult = prev.value:planet_building_refund_mult } } }
+		#resource
+		#else_if = { limit = { has_building = building_commercial_zone owner = { has_monthly_income = { resource = energy value > 70 } } } remove_building = building_commercial_zone }
+		
+		else_if = { limit = { has_building = building_holo_theatres free_amenities > 3000 } remove_building = building_holo_theatres }#test
+		#factory
+		else_if = { limit = { has_building = building_factory_1 owner = { has_monthly_income = { resource = consumer_goods value > 25 } } } remove_building = building_factory_1 }
+		else_if = { limit = { has_building = building_factory_2 owner = { has_monthly_income = { resource = consumer_goods value > 100 } } } remove_building = building_factory_2 owner = { add_resource = { minerals = @b1_2_minerals rare_crystals = @b2_rare_cost mult = prev.value:planet_building_refund_mult } } }
+		else_if = { limit = { has_building = building_factory_3 owner = { has_monthly_income = { resource = consumer_goods value > 150 } } } remove_building = building_factory_3 owner = { add_resource = { minerals = @b1_3_minerals rare_crystals = @b2_rare_cost mult = prev.value:planet_building_refund_mult } } }
+		else_if = { limit = { owner = { is_at_war = no } has_building = building_foundry_1 owner = { has_monthly_income = { resource = alloys value > 100 } } } remove_building = building_foundry_1 }
+		#rare resource
+		else_if = { limit = { has_building = building_crystal_plant owner = { has_monthly_income = { resource = rare_crystals value > 3 } } } remove_building = building_crystal_plant }
+		else_if = { limit = { has_building = building_chemical_plant owner = { has_monthly_income = { resource = volatile_motes value > 3 } } } remove_building = building_chemical_plant }
+		else_if = { limit = { has_building = building_refinery owner = { has_monthly_income = { resource = exotic_gases value > 3 } } } remove_building = building_refinery }
+		#clinics
+		#else_if = { limit = { has_building = building_medical_1 free_amenities > 0 } remove_building = building_medical_1 }
+		else_if = { limit = { has_building = building_medical_2 free_amenities > 3000 } remove_building = building_medical_2 }
+		else_if = { limit = { has_building = building_medical_3 free_amenities > 4000 } remove_building = building_medical_3 }
+		#research
+		#else_if = { limit = { has_building = building_research_lab_1 } remove_building = building_research_lab_1 }
+		#else_if = { limit = { has_building = building_research_lab_2 } remove_building = building_research_lab_2 owner = { add_resource = { minerals = @b1_2_minerals exotic_gases = @b2_rare_cost mult = prev.value:planet_building_refund_mult } } }
+		
+		owner = { add_resource = { minerals = @b1_minerals mult = prev.value:planet_building_refund_mult } } #da testare
+		#if = { limit = { free_building_slots > 0 }
+			#owner = { add_resource = { minerals = @b1_minerals mult = prev.value:planet_building_refund_mult } } #da testare
+			#inline_script = "building_add/universalwr"
+			#add_modifier = { modifier = cg_ai_deficit_work_out_1 years = 1 }
+		#}
+	}
+}
+planet_event = { #	cg_ai.2	Universally  remove Districts
+	id = sfg_ai.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		owner = {
+			is_ai = yes
+			is_country_type = default
+		}
+		NOT = { has_global_flag = AI_easy }
+	}
+	
+	immediate = {
+			random_list = {
+				100 = {
+					remove_district = district_mining
+					inline_script = "district_add/universalwr" #universal add district 
+					add_modifier = { modifier = sfg_ai_2 days = 180 }
+					modifier = {
+						factor = 3
+						has_building = building_energy_grid
+					}
+					modifier = {
+						factor = 5
+						has_building = building_energy_nexus
+					}
+					modifier = {
+						factor = 0
+						OR = {
+							NOT = { has_district = district_mining }
+							owner = { has_monthly_income = { resource = minerals value < 100 } }
+						}
+					}
+				
+				}
+				100 = {
+					remove_district = district_generator
+					inline_script = "district_add/universalwr" #universal add district 
+					add_modifier = { modifier = sfg_ai_2 days = 180 }
+					modifier = {
+						factor = 3
+						has_building = building_energy_grid
+					}
+					modifier = {
+						factor = 5
+						has_building = building_energy_nexus
+					}
+					modifier = {
+						factor = 0
+						OR = {
+							NOT = { has_district = district_generator }
+							owner = { has_monthly_income = { resource = energy value < 75 }  }
+						}
+					}
+					
+				}
+				100 = {
+					remove_district = district_farming
+					inline_script = "district_add/universalwr" #universal add district 
+					add_modifier = { modifier = sfg_ai_2 days = 180 }
+					modifier = {
+						factor = 3
+						has_building = building_energy_grid
+					}
+					modifier = {
+						factor = 5
+						has_building = building_energy_nexus
+					}
+					modifier = {
+						factor = 0
+						OR = {
+							NOT = { has_district = district_farming }
+							owner = { has_monthly_income = { resource = food value < 50 }  }
+						}
+					}
+					
+				}
+				1 = {
+
+				}
+			}
+			# if = { limit = { has_district = district_mining owner = { has_monthly_income = { resource = minerals value > 100 } } } remove_district = district_mining }
+			# else_if = { limit = { has_district = district_generator owner = { has_monthly_income = { resource = energy value > 75 } } } remove_district = district_generator }
+			# else_if = { limit = { has_district = district_farming owner = { has_monthly_income = { resource = food value > 50 } } } remove_district = district_farming }
+			#else_if = { limit = { has_district = district_industrial owner = { has_monthly_income = { resource = consumer_goods value > 25 } } } remove_district = district_industrial }
+			
+	}
+}

@@ -1,0 +1,78 @@
+
+urgente
+
+migliorare testo feature pm phi
+---------------
+Da controlare missile missile_health
+Test:
+Mettere nei modificatori che si possono migliorare che te lo dica
+testare origin_synthetic_fertility ??
+---------------
+Feature
+Aggiungere jobs of Foreign Researcher  che permette di fare ricerca in base a quanto sei indietro.
+dare engineering research a fazione militare
+--------------------
+Abolito
+#Dare society ai lavori da ruler
+-----------------
+
+
+metere che ti suggerisce di attivare policy terraform
+Entairment inutili per ammenties
+
+
+
+
+@regen_hull_lv1 = 1
+@regen_armor_lv1 = 2
+@regen_hull_lv2 = 3
+@regen_armor_lv2 = 6
+@regen_hull_lv3 = 6
+@regen_armor_lv3 = 12
+@regen_hull_lv4 = 12
+@regen_armor_lv4 = 24
+
+testare commando 
+trigger = { has_avaible_job_worker = yes }
+trigger = { has_avaible_job_specialist = yes }
+trigger = { pop_group_size > 8 } usato per resettle automatico
+trigger = { num_pops > 8 } // usato in trigger
+trigger = { free_amenities > 8 } // usato in trigger
+trigger = { count_owned_pop_amount > 8 }
+sfg_usefull_communication.30 #orbital ring buildable
+ sfg_usefull_communication.40 #modules or buildings free in orbital rings
+
+        building_ministry_production loss 
+        planet_metallurgists_produces_mult = 0.15
+		planet_artisans_produces_mult = 0.15
+
+
+		ameninties * 100?
+		planet_jobs -> planet_jobs_productive?
+
+		num_pops >= x -> pop_amount >= x00
+
+		cg_automation.10 verificare funzionamento
+every_owned_pop_group = {
+				resettle_pop_group = {
+					POP_GROUP = this
+					PLANET = owner.capital_scope
+					AMOUNT = 100%
+				}
+			}
+			random_owned_pop_group = {
+	limit = { <triggers> }
+	weights = { (optional - adds weights to affect the chance a specific object is selected)
+		base = float
+		modifier = { <add/factor = float> <triggers> }
+	}
+	<effects>
+}
+
+
+		planet_psionic_jobs_produces_mult --> psionic_pop_bonus_workforce_mult
+		planet_jobs_organics_produces_mult -> planet_jobs_produces_mult
+		planet_pop_assembly_organic_mult -> bonus_pop_growth_mult
+
+		tech_dyson_swarm risolere costruzioni delle ai o medere tech factor = 1
+		colony_start_num_pops_add 1 -> X00 controllare che funzioni ancora

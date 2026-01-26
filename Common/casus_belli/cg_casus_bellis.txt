@@ -1,0 +1,23 @@
+FW_cb_border = {
+	show_in_diplomacy = yes
+	show_notification = no
+	potential = {
+		is_ai = no
+		OR = {
+			is_country_type = default
+		}
+		NOT = { is_in_federation_with = from }
+	}
+	is_valid = {
+		is_ai = no
+        from = {
+			is_country_type = default	
+			has_closed_borders = root		
+		}
+		#NOT = { is_overlord_to = FROM }
+		# OR = {
+        #     is_subject = no
+        #     overlord = { NOT = { is_same_value = from } }
+        # }
+	}
+}

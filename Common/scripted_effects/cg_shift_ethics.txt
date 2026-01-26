@@ -1,0 +1,91 @@
+shift_subject = {
+	every_subject = { 
+		limit = { NOT = { has_same_ethos = overlord } }
+		#save_event_target_as = cg_shift_subject
+		root = {
+			switch = {
+				trigger = has_ethic
+				ethic_fanatic_materialist = {
+					prev = {
+						shift_ethic = ethic_fanatic_materialist
+					}
+				}
+				ethic_fanatic_spiritualist = {
+					prev = {
+						shift_ethic = ethic_fanatic_spiritualist
+					}
+				}
+				ethic_fanatic_militarist = {
+					prev = {
+						shift_ethic = ethic_fanatic_militarist
+					}
+				}
+				ethic_fanatic_pacifist = {
+					prev = {
+						shift_ethic = ethic_fanatic_pacifist
+					}
+				}
+				ethic_fanatic_xenophile = {
+					prev = {
+						shift_ethic = ethic_fanatic_xenophile
+					}
+				}
+				ethic_fanatic_xenophobe = {
+					prev = {
+						shift_ethic = ethic_fanatic_xenophobe
+					}
+				}
+				ethic_fanatic_authoritarian = {
+					prev = {
+						shift_ethic = ethic_fanatic_authoritarian
+					}
+				}
+				ethic_fanatic_egalitarian = {
+					prev = {
+						shift_ethic = ethic_fanatic_egalitarian
+					}
+				}
+				ethic_materialist = {
+					prev = {
+						shift_ethic = ethic_materialist
+					}
+				}
+				ethic_spiritualist = {
+					prev = {
+						shift_ethic = ethic_spiritualist
+					}
+				}
+				ethic_militarist = {
+					prev = {
+						shift_ethic = ethic_militarist
+					}
+				}
+				ethic_pacifist = {
+					prev = {
+						shift_ethic = ethic_pacifist
+					}
+				}
+				ethic_xenophile = {
+					prev = {
+						shift_ethic = ethic_xenophile
+					}
+				}
+				ethic_xenophobe = {
+					prev = {
+						shift_ethic = ethic_xenophobe
+					}
+				}
+				ethic_authoritarian = {
+					prev = {
+						shift_ethic = ethic_authoritarian
+					}
+				}
+				ethic_egalitarian = {
+					prev = {
+						shift_ethic = ethic_egalitarian
+					}
+				}
+			}
+		}
+	}
+}

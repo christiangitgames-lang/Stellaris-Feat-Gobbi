@@ -1,0 +1,18 @@
+sfg_nebula_system_search_ordered_effect = {
+	optimize_memory
+	ordered_system_within_border = {
+		position = $POSITION|0$
+		order_by = trigger:distance_to_capital # Euclidean distance
+		inverse = no 
+		# set_star_flag = sba_quantum_catapult_search_flag
+		save_event_target_as = sfg_nebula$POSITION|0$
+		export_trigger_value_to_variable = {
+			trigger = distance_to_capital
+			variable = sba_distance_to_capital_var
+		}
+		limit = {
+			is_valid_nebula_refinery = yes
+			sba_is_valid_quantum_catapult_system = yes
+		}
+	}
+}

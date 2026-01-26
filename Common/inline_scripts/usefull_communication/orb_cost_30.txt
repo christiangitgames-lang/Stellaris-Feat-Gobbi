@@ -1,0 +1,11 @@
+OR = {
+	AND = {
+		country_uses_bio_ships = yes
+		has_resource = { type = alloys amount >= $AMOUNT_BIO$ } 
+		has_resource = { type = food amount >= $AMOUNT_BIO$ } 
+	}
+	AND = {
+		country_uses_bio_ships = no
+		has_resource = { type = alloys amount >= $AMOUNT$ } 
+	}
+}

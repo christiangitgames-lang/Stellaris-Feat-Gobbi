@@ -1,0 +1,23 @@
+pop_resettlement_cost = {
+	# Cost = (1 + election_cost_mult) * empire_size * 10
+	base = 1
+	add = modifier:pop_resettlement_cost_mult
+	min = 0.01
+	# Rounded to closest 10, by applying x10 last.
+}
+country_resettlement_cost = {
+	base = 1
+	add = modifier:country_resettlement_cost_mult
+}
+value_country_resettlement_cost = {
+	base = 1
+	add = modifier:country_resettlement_cost_mult
+	mult = 500
+}
+planet_building_refund_mult = {
+	base = 0
+	add = modifier:planet_building_refund_mult
+	min = 0
+	max = 1
+}
+

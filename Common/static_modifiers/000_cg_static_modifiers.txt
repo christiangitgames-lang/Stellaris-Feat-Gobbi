@@ -1,0 +1,31 @@
+#Static modifiers are FOMO
+# empire_size_over_cap = {
+# 	pop_government_ethic_attraction = -0.001
+# 	#leader_upkeep_empire_size_mult = 0.01
+# 	planet_stability_add = -0.1
+# 	planet_crime_add = 0.01
+# 	edicts_cost_mult = 0.01
+# 	#edicts_upkeep_mult = 0.01
+# 	campaigns_cost_mult = 0.01
+# 	#campaigns_upkeep_mult = 0.01
+# }
+has_criminal_branch_office = {
+	planet_crime_add = 25
+	planet_jobs_trade_produces_mult = 0.1
+}
+influence_deficit = {
+	country_war_exhaustion_mult = 1
+	pop_happiness = -0.10
+	council_agenda_progress_speed = -0.5
+	country_election_cost_mult = 0.5
+}
+new_colony_modifier = {
+	logistic_growth_mult = -0.25
+}
+gears_of_war_finish = {
+	pop_resettlement_cost_mult = -0.75
+	planet_resettlement_unemployed_mult = 0.3
+}
+cg_homeworld = {
+	icon = "gfx/interface/icons/planet_modifiers/capital.dds"
+}

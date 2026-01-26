@@ -1,0 +1,85 @@
+@Edict1Cost = 10
+@Edict2Cost = 20
+@Edict3Cost = 30
+@EdictSpecialCost = 1
+
+@EdictPerpetual = -1
+system_search = {
+	length = 1
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {}
+	}
+
+	potential = {
+		is_ai = no
+		# OR = {
+		# 	has_technology = "tech_orbital_arc_furnace"
+		# 	has_technology = "tech_dyson_swarm"
+		# 	has_technology = "tech_habitat_1"
+		# 	has_technology = "tech_quantum_catapult"
+		# 	has_technology = "tech_hyper_relays" # For enabling notifications
+		# 	has_tradition = tr_nanotech_adopt # Nanite Harvesters
+		# 	has_ascension_perk = ap_hydrocentric # Ice Mining
+		# }
+	}
+
+	allow = {}
+
+	effect = {
+		owner = {
+			country_event = { id = sba_system_search.10 }
+		}
+	}
+
+	on_disabled = {
+	}
+
+}
+nanites_subsidies = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_jobs_nanites_produces_mult = 1
+		planet_technician_energy_upkeep_add = 0.5
+		station_gatherers_nanites_produces_mult = 0.5
+		station_gatherers_nanites_upkeep_mult = 0.75
+	}
+
+	potential = {
+		has_tradition = tr_nanotech_adopt
+	}
+	show_tech_unlock_if = {
+		has_tradition = tr_nanotech_adopt
+	}
+
+	prerequisites = {
+		"tech_nanite_transmutation"
+	}
+
+	ai_weight = {
+		weight = @EdictHighPrio
+		modifier = {
+			has_monthly_income = {
+				resource = energy
+				value > 50
+			}
+			factor = 2
+		}
+	}
+}

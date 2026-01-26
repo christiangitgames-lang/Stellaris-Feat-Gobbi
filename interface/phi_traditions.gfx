@@ -1,0 +1,20 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_artifact"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_subterfuge.dds"
+	}
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_artifact"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_relic.dds"
+	}
+		corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_artifact"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_subterfuge.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+		spriteType = {
+		name = "GFX_tradition_category_icon_tradition_artifact"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_artifact.dds"
+	}
+}

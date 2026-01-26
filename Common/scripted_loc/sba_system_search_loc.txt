@@ -1,0 +1,356 @@
+defined_text = { # Country/leader/pop/species scope
+	name = SBAGetArcFurnaceCount
+	text = {
+		trigger = {
+			is_variable_set = arc_furnace_counter
+		}
+		localization_key = sba_arc_furnace_count
+	}
+	default = sba_num_zero
+}
+defined_text = { # Country/leader/pop/species scope
+	name = SBAGetDysonSwarmCount
+	text = {
+		trigger = {
+			is_variable_set = dyson_swarm_counter
+		}
+		localization_key = sba_dyson_swarm_count
+	}
+	default = sba_num_zero
+}
+
+defined_text = { 
+	name = SBAGetMaxOrbitalString
+	default = sba_max_orbital_string
+}
+
+defined_text = { 
+	name = GetHabitatMaxAnyDistricts
+	value = value:sba_district_hab_any_max_value
+}
+defined_text = { 
+	name = GetHabitatMaxEnergyDistricts
+	value = value:sba_district_hab_energy_max_value
+	# text = {
+	# 	trigger = {
+	# 		check_variable = {
+	# 			which = value:sba_district_hab_energy_max_value
+	# 			value >= 1
+	# 		}
+	# 	}
+	# 	localization_key = GetHabitatMaxEnergyDistrictsValue
+	# }
+	# default = sba_num_zero_red
+}
+defined_text = { 
+	name = GetHabitatMaxMiningDistricts
+	value = value:sba_district_hab_mining_max_value
+	# text = {
+	# 	trigger = {
+	# 		check_variable = {
+	# 			which = value:sba_district_hab_mining_max_value
+	# 			value = 0
+	# 		}
+	# 	}
+	# 	localization_key = sba_num_zero_red
+	# }
+	# default = value:sba_district_hab_mining_max_value
+}
+defined_text = { 
+	name = GetHabitatMaxScienceDistricts
+	value = value:sba_district_hab_science_max_value
+	# text = {
+	# 	trigger = {
+	# 		check_variable = {
+	# 			which = value:sba_district_hab_science_max_value
+	# 			value > 0
+	# 		}
+	# 	}
+	# 	localization_key = value:sba_district_hab_science_max_value
+	# }
+	# default = sba_num_zero_red
+}
+
+defined_text = { 
+	name = GetHabitatMaxEnergyDistrictsColor
+	# value = value:sba_district_hab_energy_max_value
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = sba_system_district_hab_energy_max_var
+				value > 5
+			}
+		}
+		localization_key = sba_color_code_G
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = sba_system_district_hab_energy_max_var
+				value < 1
+			}
+		}
+		localization_key = sba_color_code_R
+	}
+	default = sba_color_code_Y
+}
+defined_text = { 
+	name = GetHabitatMaxMiningDistrictsColor
+	# value = value:sba_district_hab_mining_max_value
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = sba_system_district_hab_mining_max_var
+				value > 5
+			}
+		}
+		localization_key = sba_color_code_G
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = sba_system_district_hab_mining_max_var
+				value < 1
+			}
+		}
+		localization_key = sba_color_code_R
+	}
+	default = sba_color_code_Y
+}
+defined_text = { 
+	name = GetHabitatMaxScienceDistrictsColor
+	# value = value:sba_district_hab_science_max_value
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = sba_system_district_hab_science_max_var
+				value > 5
+			}
+		}
+		localization_key = sba_color_code_G
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = sba_system_district_hab_science_max_var
+				value < 1
+			}
+		}
+		localization_key = sba_color_code_R
+	}
+	default = sba_color_code_Y
+}
+
+# Scope change strings
+
+defined_text = { 
+	name = SBAGetBaseResourceString
+	default = sba_base_resource_string
+}
+defined_text = { 
+	name = SBAGetNaniteHarvesterString
+	default = sba_nanite_harvester_string
+}
+defined_text = { 
+	name = SBAGetOrbitalTooltip
+	default = sba_system_orbital_tooltip
+}
+
+defined_text = { 
+	name = SBAGetIceMiningString
+	default = sba_ice_mining_string
+}
+defined_text = { 
+	name = SBAGetIceMiningValue
+	value = value:sba_ice_mining_value
+}
+defined_text = { 
+	name = SBAGetNumFrozenWorlds
+	value = value:sba_num_ice_mining_frozen_worlds
+}
+defined_text = { 
+	name = SBAGetNumIceAsteroids
+	value = value:sba_num_ice_mining_ice_asteroids
+}
+defined_text = { 
+	name = SBAGetIceMiningTooltip
+	default = sba_ice_mining_tooltip
+}
+
+defined_text = { 
+	name = SBAGetQuantumCatapultString
+	default = sba_quantum_catapult_string
+}
+
+# Resource strings
+
+defined_text = { 
+	name = SBAGetBaseEnergy
+	text = {
+		trigger = {
+			has_resource = { type = energy amount > 0 }
+		}
+		localization_key = sba_energy_value
+	}
+	default = BLANK_STRING
+}
+defined_text = { 
+	name = SBAGetBaseMinerals
+	text = {
+		trigger = {
+			has_resource = { type = minerals amount > 0 }
+		}
+		localization_key = sba_minerals_value
+	}
+	default = BLANK_STRING
+}
+defined_text = { 
+	name = SBAGetBaseFood
+	text = {
+		trigger = {
+			has_resource = { type = food amount > 0 }
+		}
+		localization_key = sba_food_value
+	}
+	default = BLANK_STRING
+}
+defined_text = { 
+	name = SBAGetBaseAlloys
+	text = {
+		trigger = {
+			has_resource = { type = alloys amount > 0 }
+		}
+		localization_key = sba_alloys_value
+	}
+	default = BLANK_STRING
+}
+defined_text = { 
+	name = SBAGetBaseMotes
+	text = {
+		trigger = {
+			has_resource = { type = volatile_motes amount > 0 }
+		}
+		localization_key = sba_volatile_motes_value
+	}
+	default = BLANK_STRING
+}
+defined_text = { 
+	name = SBAGetBaseGases
+	text = {
+		trigger = {
+			has_resource = { type = exotic_gases amount > 0 }
+		}
+		localization_key = sba_exotic_gases_value
+	}
+	default = BLANK_STRING
+}
+defined_text = { 
+	name = SBAGetBaseCrystals
+	text = {
+		trigger = {
+			has_resource = { type = rare_crystals amount > 0 }
+		}
+		localization_key = sba_rare_crystals_value
+	}
+	default = BLANK_STRING
+}
+defined_text = { 
+	name = SBAGetBasePhysics
+	text = {
+		trigger = {
+			has_resource = { type = physics_research amount > 0 }
+		}
+		localization_key = sba_physics_value
+	}
+	default = BLANK_STRING
+}
+defined_text = { 
+	name = SBAGetBaseSociety
+	text = {
+		trigger = {
+			has_resource = { type = society_research amount > 0 }
+		}
+		localization_key = sba_society_value
+	}
+	default = BLANK_STRING
+}
+defined_text = { 
+	name = SBAGetBaseEngineering
+	text = {
+		trigger = {
+			has_resource = { type = engineering_research amount > 0 }
+		}
+		localization_key = sba_engineering_value
+	}
+	default = BLANK_STRING
+}
+defined_text = { 
+	name = SBAGetBaseUnity
+	text = {
+		trigger = {
+			has_resource = { type = unity amount > 0 }
+		}
+		localization_key = sba_unity_value
+	}
+	default = BLANK_STRING
+}
+defined_text = { 
+	name = SBAGetBaseZro
+	text = {
+		trigger = {
+			has_resource = { type = sr_zro amount > 0 }
+		}
+		localization_key = sba_zro_value
+	}
+	default = BLANK_STRING
+}
+defined_text = { 
+	name = SBAGetBaseDarkMatter
+	text = {
+		trigger = {
+			has_resource = { type = sr_dark_matter amount > 0 }
+		}
+		localization_key = sba_dark_matter_value
+	}
+	default = BLANK_STRING
+}
+defined_text = { 
+	name = SBAGetBaseNanites
+	text = {
+		trigger = {
+			has_resource = { type = nanites amount > 0 }
+		}
+		localization_key = sba_nanites_value
+	}
+	default = BLANK_STRING
+}
+defined_text = { 
+	name = SBAGetBaseMinorArtifacts
+	text = {
+		trigger = {
+			has_resource = { type = minor_artifacts amount > 0 }
+		}
+		localization_key = sba_minor_artifacts_value
+	}
+	default = BLANK_STRING
+}
+defined_text = { 
+	name = SBAGetBaseAstralThreads
+	text = {
+		trigger = {
+			has_resource = { type = astral_threads amount > 0 }
+		}
+		localization_key = sba_astral_threads_value
+	}
+	default = BLANK_STRING
+}
+# defined_text = { 
+# 	name = SBAGetBase
+# 	text = {
+# 		trigger = {
+# 			has_resource = { type =  amount > 0 }
+# 		}
+# 		localization_key = sba__value
+# 	}
+# 	default = BLANK_STRING
+# }

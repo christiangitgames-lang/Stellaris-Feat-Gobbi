@@ -1,0 +1,18 @@
+spriteTypes = {
+	spriteType = {
+	name = "GFX_starm_sm_science_hub"
+	texturefile = "gfx/interface/icons/modules/sm_science_hub.dds"
+	}
+	spriteType = {
+		name = "GFX_starm_sm_culture_hub"
+		texturefile = "gfx/interface/icons/modules/sm_culture_hub.dds"
+	} 
+	spriteType = {
+		name = "GFX_starm_sm_culture_booster"
+		texturefile = "gfx/interface/icons/modules/sm_culture_booster.dds"
+	}
+	spriteType = {
+		name = "GFX_starm_sm_science_booster"
+		texturefile = "gfx/interface/icons/modules/sm_science_booster.dds"
+	}
+}

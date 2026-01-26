@@ -1,0 +1,1835 @@
+
+sba_arc_furnace_value = {
+	base = 0
+	# ice_mining_depletion_effect
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				NOT = { has_deposit_for = shipclass_research_station }
+				is_star = no
+				is_astral_scar = no
+				colonizable_planet = no
+			}
+		}
+		mode = add
+	}
+}
+
+sba_ice_mining_value = {
+	base = 0
+	# ice_mining_depletion_effect
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				is_planet_class = pc_frozen
+				NOT = { has_planet_flag = mercenary_enclave_planet }
+				# is_terraforming = no # SBA added
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				is_planet_class = pc_ice_asteroid
+				NOT = { has_planet_flag = mercenary_enclave_planet }
+			}
+		}
+		mode = add
+	}
+}
+sba_num_ice_mining_frozen_worlds = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				is_planet_class = pc_frozen
+				NOT = { has_planet_flag = mercenary_enclave_planet }
+			}
+		}
+		mode = add
+	}
+}
+sba_num_ice_mining_ice_asteroids = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				is_planet_class = pc_ice_asteroid
+				NOT = { has_planet_flag = mercenary_enclave_planet }
+			}
+		}
+		mode = add
+	}
+}
+
+# value:sba_planet_resource_value|TYPE|energy|
+# effect set_variable = { which = test_var value = value:sba_planet_resource_value|TYPE|physics| }
+# DOESN'T WORK: complex_trigger_modifier uses unsupported trigger has_resource, must be a trigger returning a numerical value, Trying to get trigger value on a trigger that does not support it
+sba_planet_resource_value = {
+	complex_trigger_modifier = {
+		trigger = has_resource
+		parameters = {
+			type = $TYPE$
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = check_modifier_value
+		parameters = {
+			modifier = station_gatherers_produces_mult
+		}
+		potential = {
+			has_deposit_for = shipclass_mining_station
+		}
+		mode = divide
+	}
+	complex_trigger_modifier = {
+		trigger = check_modifier_value
+		parameters = {
+			modifier = station_researchers_produces_mult
+		}
+		potential = {
+			has_deposit_for = shipclass_research_station
+		}
+		mode = divide
+	}
+	# check_modifier_value = { modifier = station_gatherers_produces_mult value > 1.05/variable }
+}
+# effect export_trigger_value_to_variable = { trigger = has_resource parameters = { type = physics_research } variable = temp_var }
+
+sba_planet_base_energy_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_energy_1
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_energy_2
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_energy_3
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_energy_4
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_energy_5
+			}
+		}
+		mult = 5
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_energy_6
+			}
+		}
+		mult = 6
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_energy_7
+			}
+		}
+		mult = 7
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_energy_8
+			}
+		}
+		mult = 8
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_energy_9
+			}
+		}
+		mult = 9
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_energy_10
+			}
+		}
+		mult = 10
+		mode = add
+	}
+	
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_guardian_dragon_hoard
+			}
+		}
+		mult = 30
+		mode = add
+	}
+}
+sba_planet_base_minerals_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_minerals_1
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_minerals_2
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_minerals_3
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_minerals_4
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_minerals_5
+			}
+		}
+		mult = 5
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_minerals_6
+			}
+		}
+		mult = 6
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_minerals_7
+			}
+		}
+		mult = 7
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_minerals_8
+			}
+		}
+		mult = 8
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_minerals_9
+			}
+		}
+		mult = 9
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_minerals_10
+			}
+		}
+		mult = 10
+		mode = add
+	}
+
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_guardian_dragon_hoard
+			}
+		}
+		mult = 30
+		mode = add
+	}
+}
+
+sba_planet_base_society_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_society_1
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_society_2
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_society_3
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_society_4
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_society_5
+			}
+		}
+		mult = 5
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_society_6
+			}
+		}
+		mult = 6
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_society_7
+			}
+		}
+		mult = 7
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_society_8
+			}
+		}
+		mult = 8
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_society_9
+			}
+		}
+		mult = 9
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_society_10
+			}
+		}
+		mult = 10
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_society_15
+			}
+		}
+		mult = 15
+		mode = add
+	}
+	
+	# deposits\11_astral_planes_deposits.txt
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_society_25
+			}
+		}
+		mult = 25
+		mode = add
+	}
+}
+sba_planet_base_physics_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_physics_1
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_physics_2
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_physics_3
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_physics_4
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_physics_5
+			}
+		}
+		mult = 5
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_physics_6
+			}
+		}
+		mult = 6
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_physics_7
+			}
+		}
+		mult = 7
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_physics_8
+			}
+		}
+		mult = 8
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_physics_9
+			}
+		}
+		mult = 9
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_physics_10
+			}
+		}
+		mult = 10
+		mode = add
+	}
+
+	# deposits\11_astral_planes_deposits.txt
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_crystal_rift
+			}
+		}
+		mult = 10
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_physics_25
+			}
+		}
+		mult = 25
+		mode = add
+	}
+}
+sba_planet_base_engineering_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_engineering_1
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_engineering_2
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_engineering_3
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_engineering_4
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_engineering_5
+			}
+		}
+		mult = 5
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_engineering_6
+			}
+		}
+		mult = 6
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_engineering_7
+			}
+		}
+		mult = 7
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_engineering_8
+			}
+		}
+		mult = 8
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_engineering_9
+			}
+		}
+		mult = 9
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_engineering_10
+			}
+		}
+		mult = 10
+		mode = add
+	}
+	
+	# deposits\11_astral_planes_deposits.txt
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_engineering_25
+			}
+		}
+		mult = 25
+		mode = add
+	}
+}
+sba_planet_base_research_value = { # society + physics + engineering
+	base = 0
+	add = value:sba_planet_base_society_value
+	add = value:sba_planet_base_physics_value
+	add = value:sba_planet_base_engineering_value
+}
+
+sba_planet_base_alloys_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_alloys_1
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_alloys_2
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_alloys_3
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_alloys_4
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_alloys_5
+			}
+		}
+		mult = 5
+		mode = add
+	}
+
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_alloys_10
+			}
+		}
+		mult = 10
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_alloys_25
+			}
+		}
+		mult = 25
+		mode = add
+	}
+}
+sba_planet_base_food_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_food_3
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_food_4
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_food_5
+			}
+		}
+		mult = 5
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_food_10
+			}
+		}
+		mult = 10
+		mode = add
+	}
+}
+sba_planet_base_consumer_goods_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_consumer_goods_obsessional_directive
+			}
+		}
+		mult = 2
+		mode = add
+	}
+}
+
+# deposits\02_sr_deposits.txt
+
+sba_planet_base_exotic_gases_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_exotic_gases_1
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_exotic_gases_2
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_exotic_gases_3
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_exotic_gases_4
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_exotic_gases_5
+			}
+		}
+		mult = 5
+		mode = add
+	}
+}
+sba_planet_base_rare_crystals_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_rare_crystals_1
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_rare_crystals_2
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_rare_crystals_3
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_rare_crystals_4
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_rare_crystals_5
+			}
+		}
+		mult = 5
+		mode = add
+	}
+}
+sba_planet_base_volatile_motes_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_volatile_motes_1
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_volatile_motes_2
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_volatile_motes_3
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_volatile_motes_4
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_volatile_motes_5
+			}
+		}
+		mult = 5
+		mode = add
+	}
+}
+
+sba_planet_base_zro_value = { # Zro = research
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_zro_deposit_1
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_zro_deposit_2
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_zro_deposit_3
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_zro_deposit_4
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_zro_deposit_5
+			}
+		}
+		mult = 5
+		mode = add
+	}
+}
+sba_planet_base_dark_matter_value = { # dark_matter_deposit = research
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_dark_matter_deposit_1
+			}
+		}
+		mult = 1
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_dark_matter_deposit_2
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_dark_matter_deposit_3
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_dark_matter_deposit_10
+			}
+		}
+		mult = 10
+		mode = add
+	}
+}
+sba_planet_base_d_living_metal_value = { # d_living_metal_deposit = mining
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_living_metal_deposit
+			}
+		}
+		mode = add
+	}
+}
+
+# deposits\04_distant_planets_deposits.txt
+
+sba_planet_base_unity_value = { # unity = research
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_vast_unity_deposit
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	# deposits\11_astral_planes_deposits.txt
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_crystal_rift
+			}
+		}
+		mult = 10
+		mode = add
+	}
+}
+sba_planet_base_nanites_value = { # nanites = mix
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_nanites_deposit
+			}
+		}
+		mult = 3
+		mode = add
+	}
+
+
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_nanite_harvester_deposit
+			}
+		}
+		mult = 0.1
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_nanite_harvester_deposit_regular
+			}
+		}
+		mult = 1.6
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_nanite_harvester_deposit_large
+			}
+		}
+		mult = 25.2
+		mode = add
+	}
+}
+
+# deposits\06_ancient_relics_deposits.txt
+
+sba_planet_base_minor_artifacts_value = { # artifacts = mix
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_artifacts_research_1
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_artifacts_research_2
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_artifacts_research_3
+			}
+		}
+		mult = 3
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_artifacts_mining_1
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_artifacts_mining_2
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_artifacts_mining_3
+			}
+		}
+		mult = 3
+		mode = add
+	}
+}
+
+# deposits\11_astral_planes_deposits.txt
+
+sba_planet_base_astral_threads_value = { # astral_threads_deposit = research
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_astral_threads_deposit_1
+			}
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_astral_threads_deposit_2
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_deposit
+		parameters = {
+			limit = {
+				is_deposit_type = d_astral_threads_deposit_3
+			}
+		}
+		mult = 3
+		mode = add
+	}
+}
+
+
+# sba_planet_base__value = {
+# 	base = 0
+# 	complex_trigger_modifier = {
+# 		trigger = count_deposit
+# 		parameters = {
+# 			limit = {
+# 				is_deposit_type = d__1
+# 			}
+# 		}
+# 		mult = 1
+# 		mode = add
+# 	}
+# 	complex_trigger_modifier = {
+# 		trigger = count_deposit
+# 		parameters = {
+# 			limit = {
+# 				is_deposit_type = d__2
+# 			}
+# 		}
+# 		mult = 2
+# 		mode = add
+# 	}
+# 	complex_trigger_modifier = {
+# 		trigger = count_deposit
+# 		parameters = {
+# 			limit = {
+# 				is_deposit_type = d__3
+# 			}
+# 		}
+# 		mult = 3
+# 		mode = add
+# 	}
+# 	complex_trigger_modifier = {
+# 		trigger = count_deposit
+# 		parameters = {
+# 			limit = {
+# 				is_deposit_type = d__4
+# 			}
+# 		}
+# 		mult = 4
+# 		mode = add
+# 	}
+# 	complex_trigger_modifier = {
+# 		trigger = count_deposit
+# 		parameters = {
+# 			limit = {
+# 				is_deposit_type = d__5
+# 			}
+# 		}
+# 		mult = 5
+# 		mode = add
+# 	}
+# 	complex_trigger_modifier = {
+# 		trigger = count_deposit
+# 		parameters = {
+# 			limit = {
+# 				is_deposit_type = d__6
+# 			}
+# 		}
+# 		mult = 6
+# 		mode = add
+# 	}
+# 	complex_trigger_modifier = {
+# 		trigger = count_deposit
+# 		parameters = {
+# 			limit = {
+# 				is_deposit_type = d__7
+# 			}
+# 		}
+# 		mult = 7
+# 		mode = add
+# 	}
+# 	complex_trigger_modifier = {
+# 		trigger = count_deposit
+# 		parameters = {
+# 			limit = {
+# 				is_deposit_type = d__8
+# 			}
+# 		}
+# 		mult = 8
+# 		mode = add
+# 	}
+# 	complex_trigger_modifier = {
+# 		trigger = count_deposit
+# 		parameters = {
+# 			limit = {
+# 				is_deposit_type = d__9
+# 			}
+# 		}
+# 		mult = 9
+# 		mode = add
+# 	}
+# 	complex_trigger_modifier = {
+# 		trigger = count_deposit
+# 		parameters = {
+# 			limit = {
+# 				is_deposit_type = d__10
+# 			}
+# 		}
+# 		mult = 10
+# 		mode = add
+# 	}
+# }
+
+sba_system_harvested_nanites_max = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				planet_size >= 25
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 50.4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				planet_size >= 21
+				planet_size < 25
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 25.2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				planet_size >= 18
+				planet_size < 21
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 12.8
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				planet_size >= 15
+				planet_size < 18
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 6.4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				planet_size >= 12
+				planet_size < 15
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 3.2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				planet_size >= 9
+				planet_size < 12
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 1.6
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				planet_size >= 6
+				planet_size < 9
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 0.8
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				planet_size >= 3
+				planet_size < 6
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 0.4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				planet_size < 3
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 0.2
+		mode = add
+	}
+}
+sba_system_harvested_swarmers_max = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				planet_size >= 25
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 64
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				planet_size >= 21
+				planet_size < 25
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 32
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				planet_size >= 18
+				planet_size < 21
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 16
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				planet_size >= 15
+				planet_size < 18
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 8
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				planet_size >= 12
+				planet_size < 15
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 4
+		mode = add
+	}
+}
+
+
+# pc_gas_giant - fails can_have_mineral_deposits
+# 	planet_size = { min = 20 max = 30 }
+# 	moon_size 	= { min =  8 max = 15 }
+
+# pc_asteroid, pc_ice_asteroid, pc_rare_crystal_asteroid
+# 	planet_size = 5
+
+# pc_molten
+# 	planet_size = { min = 14 max = 30 }
+# 	moon_size 	= { min =  6 max = 12 }
+
+# pc_barren, pc_barren_cold, pc_broken, pc_shattered
+# 	planet_size	= { min = 12 max = 30 }
+# 	moon_size 	= { min =  6 max = 10 }
+# pc_toxic
+# 	planet_size = { min = 12 max = 25 }
+# 	moon_size 	= { min =  6 max = 10 }
+
+# pc_frozen
+# 	planet_size = { min = 10 max = 25 }
+# 	moon_size 	= { min =  6 max = 10 }
+
+
+sba_system_harvested_nanites_rough_max = {
+	base = 0
+	complex_trigger_modifier = { # All planets max size 25+
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				# planet_size >= 25
+				can_have_mineral_deposits = yes
+				is_moon = no
+				is_asteroid = no
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 50.4
+		mode = add
+	}
+	complex_trigger_modifier = { # Molten moon max size 12
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				# planet_size >= 12
+				# planet_size < 15
+				is_planet_class = pc_molten
+				is_moon = yes
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 3.2
+		mode = add
+	}
+	complex_trigger_modifier = { # Other moons max size 10
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				# planet_size >= 9
+				# planet_size < 12
+				NOT = { is_planet_class = pc_molten }
+				is_moon = yes
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 1.6
+		mode = add
+	}
+	complex_trigger_modifier = { # Asteroids always size 5
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				is_asteroid = yes
+				# planet_size >= 3
+				# planet_size < 6
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 0.4
+		mode = add
+	}
+}
+sba_system_harvested_swarmers_rough_max = {
+	base = 0
+	complex_trigger_modifier = { # All planets max size 25+
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				# planet_size >= 25
+				can_have_mineral_deposits = yes
+				is_moon = no
+				is_asteroid = no
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 64
+		mode = add
+	}
+	complex_trigger_modifier = { # Molten moon max size 12
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				# planet_size >= 12
+				# planet_size < 15
+				is_planet_class = pc_molten
+				is_moon = yes
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 4
+		mode = add
+	}
+}
+
+sba_system_harvested_nanites_rough_min = {
+	base = 0
+	complex_trigger_modifier = { # Non-Frozen planets min size 12-14
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				# planet_size >= 12
+				# planet_size < 15
+				is_asteroid = no
+				is_moon = no
+				NOT = { is_planet_class = pc_frozen }
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 3.2
+		mode = add
+	}
+	complex_trigger_modifier = { # Frozen planets min size 10
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				# planet_size >= 9
+				# planet_size < 12
+				is_planet_class = pc_frozen
+				is_moon = no
+				# can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 1.6
+		mode = add
+	}
+	complex_trigger_modifier = { # Moons min size 6
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				# planet_size >= 6
+				# planet_size < 9
+				is_moon = yes
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 0.8
+		mode = add
+	}
+	complex_trigger_modifier = { # Asteroids always size 5
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				is_asteroid = yes
+				# planet_size >= 3
+				# planet_size < 6
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 0.4
+		mode = add
+	}
+}
+sba_system_harvested_swarmers_rough_min = {
+	base = 0
+	complex_trigger_modifier = { # Non-Frozen planets min size 12-14
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				# planet_size >= 12
+				# planet_size < 15
+				is_asteroid = no
+				is_moon = no
+				NOT = { is_planet_class = pc_frozen }
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+		}
+		mult = 4
+		mode = add
+	}
+}

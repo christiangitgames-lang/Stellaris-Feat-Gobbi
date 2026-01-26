@@ -1,0 +1,232 @@
+﻿l_english:
+
+### PLANET MODIFIERS ###
+
+phi_pm_mantle_frozen_gas_pockets_3: "Sub-mantle frozen gas pockets"
+phi_pm_mantle_frozen_gas_pockets_3_desc: "Large quantities of exotic gases lie inside the mantle of the planet. Frequent eruptions make any mining effort very difficult."
+phi_pm_mantle_frozen_gas_pockets_2: "Mapped sub-mantle frozen gas pockets"
+phi_pm_mantle_frozen_gas_pockets_2_desc: "Large quantities of exotic gases lie inside the mantle of the planet. Knowing their exact positions makes us profit from this situation and limits disruptions."
+phi_pm_mantle_frozen_gas_pockets_1: "Exploited sub-mantle frozen gas pockets"
+phi_pm_mantle_frozen_gas_pockets_1_desc: "Large quantities of exotic gases lying inside the mantle of the planet have been moved to easily accessible locations and are being exploited extensively."
+
+phi_pm_polar_supercells_3: "Polar supercells"
+phi_pm_polar_supercells_3_desc: "Atmospheric supercells are forming at the poles and cause extreme low temperature spikes all around the planet."
+phi_pm_polar_supercells_2: "Predictable polar supercells"
+phi_pm_polar_supercells_2_desc: "Polar supercells forms and moves in predictable patterns, limiting damages to the electric grid."
+phi_pm_polar_supercells_1: "Controlled polar supercells"
+phi_pm_polar_supercells_1_desc: "With total control of the polar supercells we reap the benefits using them as a planetary coolant flow."
+
+phi_pm_perennial_fog_3: "Perennial fog"
+phi_pm_perennial_fog_3_desc: "Large parts of the planet are almost constantly covered by a thick fog."
+phi_pm_perennial_fog_2: "Circadian mist"
+phi_pm_perennial_fog_2_desc: "A constant on this planet: mist in the mornings and in the evenings - but it kinda gives this place some real charm, if you're a goth person..."
+phi_pm_perennial_fog_1: "Fertile Vapors"
+phi_pm_perennial_fog_1_desc: "The perennial mists of the planet are enriched with bio-nutrients, and are a boon for the agri-business!"
+
+phi_pm_tectonic_fractures_3: "Tectonic fractures"
+phi_pm_tectonic_fractures_3_desc: "A lot of underground magmatic activities are causing the continents to fracture and recompose unpredictably and dangerously, but it creates an abundance of very rare minerals."
+phi_pm_tectonic_fractures_2: "Predictive seismic systems"
+phi_pm_tectonic_fractures_2_desc: "A vast network of sensors let us know if and when the next fracture will happen, reducing damages and increasing our chances to collect useful stuff."
+phi_pm_tectonic_fractures_1: "Magma tunnels"
+phi_pm_tectonic_fractures_1_desc: "Artificial magma chambers have been built all across the planet, and have reduced any annoyance to a minimum level, while increasing tha minerals output!"
+
+phi_pm_ocean_vortexes_3: "Ocean vortexes"
+phi_pm_ocean_vortexes_3_desc: "This planet's oceans are in a perennial state of spinning and dangerous vortexes can appear suddenly."
+phi_pm_ocean_vortexes_2: "Vortex Equations"
+phi_pm_ocean_vortexes_2_desc: "By solving the complex equations linked to the ocean vortexes, and adapting our colonial effort to it, we learnt how to prevent the worst issues."
+phi_pm_ocean_vortexes_1: "Controlled Vortexes"
+phi_pm_ocean_vortexes_1_desc: "The ocean vortexes are totally controlled by us, making it possible to extract large amounts of energy from the process."
+
+phi_pm_bacterial_pathogen_3: "Bacterial pathogen"
+phi_pm_bacterial_pathogen_3_desc: "The lush evironment and the hot and wet climate are an ideal colture ground for some very aggressive bacterial parasites. Non endemic flora suffer as a consequence."
+phi_pm_bacterial_pathogen_2: "Exogen adaptation"
+phi_pm_bacterial_pathogen_2_desc: "The flora we introduced is adapting to the bacterial life-forms of this planet."
+phi_pm_bacterial_pathogen_1: "Full flora-bacteria adaptation"
+phi_pm_bacterial_pathogen_1_desc: "Exogen flora and endogen agents are fully adapted to each other."
+
+phi_pm_sudden_rainfalls_3: "Sudden rainfalls"
+phi_pm_sudden_rainfalls_3_desc: "Prolonged droughts are usually interrupted by massive and unpredictable rainfalls."
+phi_pm_sudden_rainfalls_2: "Rainfalls prediction algorithms"
+phi_pm_sudden_rainfalls_2_desc: "Patterns of rainfalls have been discovered, and taken advantage of."
+phi_pm_sudden_rainfalls_1: "Controlled environment"
+phi_pm_sudden_rainfalls_1_desc: "The rain/drought cycle of this planet is under our full control."
+
+phi_pm_dust_storms_3: "Dust storms"
+phi_pm_dust_storms_3_desc: "The composition of this planet's sands make it very easy to see the formation of very large desert devils."
+phi_pm_dust_storms_2: "Dust-rich streams"
+phi_pm_dust_storms_2_desc: "This planet's dust storm are rich in volatile motes."
+phi_pm_dust_storms_1: "Pure dust flows"
+phi_pm_dust_storms_1_desc: "The wind-streams separate volatile motes from dirt. Very useful."
+
+phi_pm_bush_wildfires_3: "Bush wildfires"
+phi_pm_bush_wildfires_3_desc: "Dangerous wildfires run rampant on the vast savannah, putting a strain on the local flora and fauna."
+phi_pm_bush_wildfires_2: "Limited fires"
+phi_pm_bush_wildfires_2_desc: "This planet's vast savannahs are broken up at regular intervals, making bushfires more manageable."
+phi_pm_bush_wildfires_1: "Controlled bushfires"
+phi_pm_bush_wildfires_1_desc: "A controlled fire-reborn cycle makes flora and fauna thrive."
+
+phi_pm_planet_teleporters_3: "Decaying planet teleporters"
+phi_pm_planet_teleporters_3_desc: "A planet-wise network of ancient and decaying teleporters is still somewhat useful for our economy."
+phi_pm_planet_teleporters_2: "Planet teleporters"
+phi_pm_planet_teleporters_2_desc: "A vast teleporters network is active on the planet."
+phi_pm_planet_teleporters_1: "Expanded planet teleporters"
+phi_pm_planet_teleporters_1_desc: "The teleporters network has been greatly expanded."
+
+phi_pm_planet_broadcasting_3: "Decaying planetary broadcasting system"
+phi_pm_planet_broadcasting_3_desc: "It's just the bare skeleton of what was once a planet-wise integrated communications system."
+phi_pm_planet_broadcasting_2: "Restored planetary broadcasting system"
+phi_pm_planet_broadcasting_2_desc: "A fully functioning planetary communications systems."
+phi_pm_planet_broadcasting_1: "Expanded planetary broadcasting system"
+phi_pm_planet_broadcasting_1_desc: "The broadcasting systems is now fully upgraded. Never feel alone!"
+
+phi_pm_planet_accelerators_3: "Decaying planetary particle accelerator"
+phi_pm_planet_accelerators_3_desc: "It appears to be a vast array of acceleration chambers and relevation systems. Most of it is unoperable, but some parts are still in working conditions."
+phi_pm_planet_accelerators_2: "Planetary particle accelerator"
+phi_pm_planet_accelerators_2_desc: "An immense particle accelerator, spanning world-wide."
+phi_pm_planet_accelerators_1: "Upgraded planetary particle accelerator"
+phi_pm_planet_accelerators_1_desc: "We upgraded the planetary accelerator with our top tier technology."
+
+phi_pm_tesla_biome_3: "Tesla biome"
+phi_pm_tesla_biome_3_desc: "The planetary biome emits strong electrical discharges that interferes with many electronic devices."
+phi_pm_tesla_biome_2: "Tesla biome damage control"
+phi_pm_tesla_biome_2_desc: "By reinforcing our isolation capabilities and introducing discharge points on suitable spots, we reduced the impact of the tesla biome on everyday's operations."
+phi_pm_tesla_biome_1: "Tesla biome adaptation"
+phi_pm_tesla_biome_1_desc: "Reverse bio-engineering and improvements on isolation technologies give us full control of the planetary tesla biome."
+
+phi_pm_electric_ice_shelf_3: "Electro-charged ice shelf"
+phi_pm_electric_ice_shelf_3_desc: "Planet's permafrost has a strong electrical charge, disrupting our daily operations."
+phi_pm_electric_ice_shelf_2: "Isolated electro-charged ice shelf"
+phi_pm_electric_ice_shelf_2_desc: "The electrically charged ice shelf has been isolated, limiting damages to our colonists."
+phi_pm_electric_ice_shelf_1: "Ice shelf planetary-battery"
+phi_pm_electric_ice_shelf_1_desc: "We can use the electro-charged ice shelf as a giant planetary battery."
+
+phi_pm_magnetic_clouds_3: "Magnetic storms"
+phi_pm_magnetic_clouds_3_desc: "The planet is battered by severe magnetic storms."
+phi_pm_magnetic_clouds_2: "Magnetic clouds"
+phi_pm_magnetic_clouds_2_desc: "This planet's clouds are magnetically very active."
+phi_pm_magnetic_clouds_1: "Controlled magnetic streams"
+phi_pm_magnetic_clouds_1_desc: "Magnetic streams of wind are usefull for our colonists."
+
+phi_pm_atmospheric_pollution: "Atmospheric pollution"
+phi_pm_atmospheric_pollution_desc: "Years of industrialization efforts left a mark on the planet's atmosphere.\nFor remove: need research §B$tech_terrestrial_sculpting$§! and use decision §Y$decision_phi_pm_atmospheric_pollution$§!"
+
+
+
+### DEPOSITS ###
+
+d_generalized_malfunction: "Generalized malfunction"
+d_generalized_malfunction_desc: "This ring section has seen better times, and every district is suffering reduced efficiency."
+
+d_phi_archaeology_site: "Archaeology site"
+d_phi_archaeology_site_desc: "The paradise of archaeologists! Lots of old stuff to play around with..."
+
+d_phi_exotic_gas_1: "Limited gas exploitation"
+d_phi_exotic_gas_1_desc: "It is very difficult, but we are able to extract some useful gases from the underground frozen pockets."
+d_phi_exotic_gas_5: "Fair gas exploitation"
+d_phi_exotic_gas_5_desc: "Large quantities of useful gases are fairly easy to reach and exploit."
+d_phi_exotic_gas_10: "Large scale gas exploitation"
+d_phi_exotic_gas_10_desc: "This planet's submantle gas pockets are best suited to be mined at maximum efficiency."
+
+d_phi_rare_crystals_1: "Limited crystal deposits"
+d_phi_rare_crystals_1_desc: "We can access only a fraction of the crystal underground vein."
+d_phi_rare_crystals_5: "Crystal mining ramp-up"
+d_phi_rare_crystals_5_desc: "Our mining operation is adequately efficient at producing fair amount of crystals."
+d_phi_rare_crystals_10: "Full scale crystal mining"
+d_phi_rare_crystals_10_desc: "By accessing the whole crystal vein, we are maxing rare mineral outputs."
+
+d_phi_volatile_motes_1: "Limited motes filtering"
+d_phi_volatile_motes_1_desc: "The dust composition makes it really hard to filter motes particles from dirt."
+d_phi_volatile_motes_5: "Motes-rich dust"
+d_phi_volatile_motes_5_desc: "This planet's dust quality and composition are a boon to volatile motes refiners."
+d_phi_volatile_motes_10: "Motes sands"
+d_phi_volatile_motes_10_desc: "This planet's sands and dusts are almost exclusively composed of motes particle, making them perfect for filtering."
+
+
+### (TERRAFORMING) DECISIONS ###
+
+decision_phi_memorex_transfer: "Trasfer here the Memorex"
+decision_phi_memorex_transfer_desc: "Commence the operations to safely trasfer and install the Memorex device on this planet."
+
+decision_phi_mantle_frozen_gas_pockets_3_2: "Exhaustive mapping of the gas pockets"
+decision_phi_mantle_frozen_gas_pockets_3_2_desc: "We can launch a planet-wise campaing to map every gas pockets, making them easier to exploit and giving our city planners some relief."
+decision_phi_mantle_frozen_gas_pockets_2_1: "Undergound stabilization"
+decision_phi_mantle_frozen_gas_pockets_2_1_desc: "By injecting huge quantities of energy into the crust, we can vaporize many frozen-gas pockets and then move them to suitable underground extraction facilities."
+
+decision_phi_polar_supercells_3_2: "Supercell seeding"
+decision_phi_polar_supercells_3_2_desc: "By energy seeding the polar supercells while they are forming, we can guide them through predictable trajectories."
+decision_phi_polar_supercells_2_1: "World wide tesla coils"
+decision_phi_polar_supercells_2_1_desc: "With tesla coils placed all around the world, we can control with ample precision the polar supercells, and we can use them as a planetary air conditiong system."
+
+decision_phi_perennial_fog_3_2: "Wind channelling"
+decision_phi_perennial_fog_3_2_desc: "By strategically buldozing some mountains here and there, we may significantly reduce the fog persistence."
+decision_phi_perennial_fog_2_1: "Mist enriching"
+decision_phi_perennial_fog_2_1_desc: "We can bio-engineer some bacteria that'll thrive in the mist and, once dispersed by it, will bring fertility to all lands!"
+
+decision_phi_tectonic_fractures_3_2: "Controlled detonations"
+decision_phi_tectonic_fractures_3_2_desc: "We can use a vast network of sensor arrays to determine when to put some charges in the ground to help ease the tectonic stress on the fault lines."
+decision_phi_tectonic_fractures_2_1: "Artificial magma chambers"
+decision_phi_tectonic_fractures_2_1_desc: "We can build a new underground system of chambers to let the magma flows where we want it, when we want it."
+
+decision_phi_ocean_vortexes_3_2: "Flow-chaos equations research"
+decision_phi_ocean_vortexes_3_2_desc: "We need to step up our maths department's efforts in order to solve the chaotic equations governing this planet's oceans."
+decision_phi_ocean_vortexes_2_1: "Undersea volcanoes activation"
+decision_phi_ocean_vortexes_2_1_desc: "By activating and deactivating underseas volcanoes, we can control the oceans' temperature and take control of the vortex formation processes."
+
+decision_phi_bacterial_pathogen_3_2: "Exogen adaptation"
+decision_phi_bacterial_pathogen_3_2_desc: "Our researcher propose to add genetic variants to our floreal species in order to make them more resistant to endogen bacteria."
+decision_phi_bacterial_pathogen_2_1: "Endogen adaptation"
+decision_phi_bacterial_pathogen_2_1_desc: "By carefully controlling the environment, we can set evolution in motion and force exo-endogen symbiosis."
+
+decision_phi_sudden_rainfalls_3_2: "Weather prediction program"
+decision_phi_sudden_rainfalls_3_2_desc: "An array of dedicated satellites plus a planetary computation center will make it easier to predict patterns in the rainfall cycles."
+decision_phi_sudden_rainfalls_2_1: "Cloud seeding"
+decision_phi_sudden_rainfalls_2_1_desc: "We can put in place a cloud-seeding program to gain complete control of the rain cycle on the planet."
+
+decision_phi_dust_storms_3_2: "Magnetic filters"
+decision_phi_dust_storms_3_2_desc: "By installing a large network of weak magnetic field generators, we may increase the motes purity of the natural dust storms."
+decision_phi_dust_storms_2_1: "Aeromagnetic control"
+decision_phi_dust_storms_2_1_desc: "Alterations in the planetary magnetic field plus inductions of air streams in the upper atmosphere will purify and weaken the dust storms."
+
+decision_phi_bush_wildfires_3_2: "Savannah compartmentation"
+decision_phi_bush_wildfires_3_2_desc: "By excavating a vast net of trenches and ditches we can limit the spread of wildfires."
+decision_phi_bush_wildfires_2_1: "Firestarters plants"
+decision_phi_bush_wildfires_2_1_desc: "We can bio-engineer plants that will start controlled fires when it is most appropriate, also signalling to the fauna when it is time to migrate."
+
+decision_phi_planet_teleporters_3_2: "Repair the planetary teleporters network"
+decision_phi_planet_teleporters_3_2_desc: "We can use some ancient artifacts for spare parts, in order to fully repair the planetary teleportation system."
+decision_phi_planet_teleporters_2_1: "Extend the planetary teleporters network"
+decision_phi_planet_teleporters_2_1_desc: "Using some ancient artifacts as resources and spare parts, we should be able to extend the planetary teleportation system."
+decision_phi_build_planet_teleporters: "Planetary tele-transport system"
+decision_phi_build_planet_teleporters_desc: "We can install teleporters everywhere on the planet, creating a unified and hyper-efficient global economy."
+
+decision_phi_planet_broadcasting_3_2: "Repair the planetary broadcasting network"
+decision_phi_planet_broadcasting_3_2_desc: "We can use some ancient artifacts for spare parts, in order to fully repair the planetary broadcasting system."
+decision_phi_planet_broadcasting_2_1: "Extend the planetary broadcasting network"
+decision_phi_planet_broadcasting_2_1_desc: "Using some ancient artifacts as resources and spare parts, we should be able to extend the planetary broadcasting system."
+decision_phi_build_planet_broadcasting: "Planetary broadcasting system"
+decision_phi_build_planet_broadcasting_desc: "With a combination of TLC hotspots and smart personal devices we can create a permeating, planet-wise broadcasting system."
+
+decision_phi_planet_accelerators_3_2: "Repair the planetary particle accelerators"
+decision_phi_planet_accelerators_3_2_desc: "We can use some ancient artifacts for spare parts, in order to fully repair the planetary particle accelerators."
+decision_phi_planet_accelerators_2_1: "Upgrade the planetary particle accelerators"
+decision_phi_planet_accelerators_2_1_desc: "Using some ancient artifacts as resources and spare parts, we should be able to upgrade the planetary particle accelerators."
+decision_phi_build_planet_accelerators: "Planetary particle accelerators"
+decision_phi_build_planet_accelerators_desc: "A state of the art physics and engineering research facility."
+
+decision_phi_tesla_biome_3_2: "Tesla biome: damage control"
+decision_phi_tesla_biome_3_2_desc: "We shall understand the tesla biome life-cycle and put in place adequate solutions to limit damages."
+decision_phi_tesla_biome_2_1: "Tesla biome: reverse bio-engineering"
+decision_phi_tesla_biome_2_1_desc: "A project to fully understand how this biome function and how we can put it to our use."
+
+decision_phi_electric_ice_shelf_3_2: "Ice shelf isolation"
+decision_phi_electric_ice_shelf_3_2_desc: "We can channel some magma flows to the surface in order to create an inert stratum once they cool off."
+decision_phi_electric_ice_shelf_2_1: "Planetary battery"
+decision_phi_electric_ice_shelf_2_1_desc: "By creating controlled surfacing points for the ice shelf, we can possibly create an enormous planetary battery."
+
+decision_phi_magnetic_clouds_3_2: "Faraday cages"
+decision_phi_magnetic_clouds_3_2_desc: "We can limit the impact of the stormy magnetic clouds by building a net of faraday cages in strategic spots on the planet surface."
+decision_phi_magnetic_clouds_2_1: "Magnetic fans"
+decision_phi_magnetic_clouds_2_1_desc: "We can install magnetic generators in order to gain control of the magnetized atmosphere."
+
+decision_phi_pm_atmospheric_pollution: "Remove the atmospheric pollution"
+decision_phi_pm_atmospheric_pollution_desc: "We finally have the expertise and the resources to clean up the mess..."

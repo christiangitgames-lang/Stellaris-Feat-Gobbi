@@ -1,0 +1,44 @@
+
+weights = {
+	base = 1
+	modifier = {
+		factor = 3
+		free_housing > 1
+	}
+	modifier = {
+		factor = 10
+		planet_stability > 60
+	}
+	modifier = {
+		factor = 10
+		free_amenities > 1000
+	}
+	modifier = {
+		factor = 2
+		free_jobs > 3 
+	}
+	modifier = {
+		factor = 5
+		free_jobs > 10 
+	}
+	modifier = {
+		factor = 3
+		free_housing > 10
+	}
+	modifier = {
+		factor = 0.5
+		free_housing < 1
+	}
+	modifier = {
+		factor = 2
+		habitability = { who = PREVPREV value >= 0.7 }
+	}
+	modifier = {
+		factor = 0.5
+		habitability = { who = PREVPREV value < 0.5 }
+	}
+	modifier = {
+		factor = 0.2
+		habitability = { who = PREVPREV value < 0.3 }
+	}
+}

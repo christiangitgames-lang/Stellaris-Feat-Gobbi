@@ -1,0 +1,96 @@
+## Possible Deposit Variables ##
+# resources, resource and amount
+# potential trigger (planet scope)
+# blocked_modifier - applied to planet
+# constant_modifier - applied to planet always
+# station = station class in orbit to gather
+
+d_alloys_1 = {
+	station = shipclass_mining_station
+	is_for_colonizable = no
+
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+			alloys = 1
+		}
+	}
+	potential = {
+		OR = {
+			is_planet_class = pc_asteroid
+			is_planet_class = pc_molten
+		}
+	}
+
+	drop_weight = {
+		weight = 3
+		modifier = {
+			factor = 1.5
+			is_inside_nebula = yes
+		}
+	}
+}
+
+d_small_research = {
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			physics_research = 1
+			society_research = 1
+			engineering_research = 1
+		}
+	}
+	station = shipclass_research_station 
+	is_for_colonizable = no
+	habitat_modifier = {
+		district_hab_science_max = 1
+	}
+	potential = {
+		OR = {
+			is_planet_class = pc_gas_giant
+			is_planet_class = pc_asteroid
+			is_planet_class = pc_ice_asteroid
+			is_planet_class = pc_molten
+			is_planet_class = pc_barren
+			is_planet_class = pc_barren_cold
+			is_planet_class = pc_toxic
+			is_planet_class = pc_frozen
+		}
+	}
+	
+	drop_weight = {
+		weight = 5
+	}
+}
+
+d_medium_research = {
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			physics_research = 3
+			society_research = 3
+			engineering_research = 3
+		}
+	}
+	station = shipclass_research_station 
+	is_for_colonizable = no
+	habitat_modifier = {
+		district_hab_science_max = 2
+	}
+	potential = {
+		OR = {
+			is_planet_class = pc_gas_giant
+			is_planet_class = pc_asteroid
+			is_planet_class = pc_ice_asteroid
+			is_planet_class = pc_molten
+			is_planet_class = pc_barren
+			is_planet_class = pc_barren_cold
+			is_planet_class = pc_toxic
+			is_planet_class = pc_frozen
+		}
+	}
+	
+	drop_weight = {
+		weight = 1
+	}
+}

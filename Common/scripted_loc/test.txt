@@ -1,0 +1,28 @@
+defined_text = { # Country/leader/pop/species scope
+	name = sfgdebugtest
+	text = {
+		trigger = {
+			is_variable_set = sfgdebugvalue
+		}
+		localization_key = sfgdebugtextv
+	}
+	default = sba_num_zero
+}
+# change_variable = {
+# 					which = sfgdebugvalue
+# 					value = -1
+# 				}
+defined_text = { # Country/leader/pop/species scope
+	name = sfgdebugtest2
+	text = {
+		trigger = {
+			is_variable_set = sfgdebugvalue2
+		}
+		localization_key = sfgdebugtextv2
+	}
+	default = sba_num_zero
+}
+# change_variable = {
+# 					which = sfgdebugvalue2
+# 					value = -1
+# 				}

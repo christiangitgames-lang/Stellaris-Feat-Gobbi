@@ -1,0 +1,68 @@
+#from is the loser this is the winner
+Lost_War_Standard_Bonus = {
+	if = {
+		limit = { 
+			have_fleet_destroy = yes 
+			from = { NOT = { has_modifier = cg_lost_war_ship } }
+		}
+		from = { add_modifier = { modifier = cg_lost_war_ship days = 3600 } }
+	}
+	if = {
+		limit = { 
+			have_building_destroy = yes 
+			from = { NOT = { has_modifier = cg_lost_war_building } }
+		}
+		from = { add_modifier = { modifier = cg_lost_war_building days = 3600 } }
+	}
+	if = {
+		limit = {
+			have_pop_destroy = yes 
+			from = { NOT = { has_modifier = cg_lost_war_pop } }
+		}
+		from = { add_modifier = { modifier = cg_lost_war_pop days = 3600 }  }
+	}
+}
+Bonus_war_empire_size = {
+	add_modifier = { modifier = cg_war_empire_size days = 360 }
+}
+sfg_Plunder_effect = {
+	if = {
+		limit = {
+			is_rival = FROM
+		}
+		add_resource = {
+			unity = 1000
+			mult = owner.trigger:num_ascension_perks
+		}
+	}
+	if = {
+		limit = {
+			relative_power = { 
+				who = from
+				category = technology
+				value = superior 
+			}
+		}
+		add_resource = {
+			society_research = 100
+			engineering_research = 100
+			physics_research = 100
+			mult = trigger:years_passed
+		}
+	}
+	if = {
+		limit = {
+			relative_power = { 
+				who = from
+				category = technology
+				value > superior 
+			}
+		}
+		add_resource = {
+			society_research = 200
+			engineering_research = 200
+			physics_research = 200
+			mult = trigger:years_passed
+		}
+	}
+}

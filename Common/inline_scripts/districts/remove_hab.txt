@@ -1,0 +1,53 @@
+if = {
+	limit = {
+		owner = { has_monthly_income = { resource = minerals value > 90 } }
+		num_districts = { type = district_mining value > 0 }
+	}
+	remove_district = district_hab_mining
+	owner = { add_resource = { minerals = 500 } }
+}
+else_if = {
+	limit = {
+		owner = { has_monthly_income = { resource = energy value > 60 } }
+		num_districts = { type = district_hab_energy value > 0 }
+	}
+	remove_district = district_hab_energy
+	owner = { add_resource = { minerals = 500 } }
+}
+else_if = {
+	limit = {
+		owner = { has_monthly_income = { resource = energy value > 60 } }
+		num_districts = { type = district_hab_energy value > 0 }
+	}
+	remove_district = district_hab_energy
+	owner = { add_resource = { minerals = 500 } }
+}
+else_if = {
+	limit = {
+		free_housing > 10
+		num_districts = { type = district_hab_housing value > 0 }
+	}
+	remove_district = district_hab_housing
+	owner = { add_resource = { minerals = 500 } }
+}
+else_if = {
+	limit = {
+		num_districts = { type = district_hab_industrial value > 0 }
+		owner = { 
+			OR = {
+				AND = {
+					has_monthly_income = { resource = alloys value > 60 } 
+					has_monthly_income = { resource = consumer_goods value > 20 } 
+				}
+				has_monthly_income = { resource = minerals value < 10 }
+				AND = {
+					has_resource = { type = alloys amount > 1000 }
+					has_monthly_income = { resource = alloys value > 15 } 
+					has_monthly_income = { resource = consumer_goods value > 15 } 
+				}
+			}
+		}
+	}
+	remove_district = district_hab_industrial
+	owner = { add_resource = { minerals = 500 } }
+}

@@ -1,0 +1,21 @@
+﻿l_english:
+ap_commercial: "Superior Trade (Beta)"
+ap_commercial_desc: "In the grand expanse of space, successful empires know that control over commerce can determine the course of entire civilizations. The "Superior Trade" ascension perk enables an empire to dominate interstellar markets, making it a beacon for wealth, diplomacy, and influence across the galaxy"
+ ap_commercial_effect: "§G+2%§! £trade_value£ §Y$TRADE_VALUE$§! from £job_trader£ §Y$job_trader$§!, §G+2,5%§! £trade_value£ §Y$TRADE_VALUE$§! from £job_merchant£ §Y$job_merchant$§! \n§G+1%§! §Y$TRADE_VALUE$§! £trade_value£ mult by §Ytrading hub§!"
+#\n for every §YSubject§! with more of 50 £pops£ have §G+10%§! £trade_value£ §Y$TRADE_VALUE$§!"
+
+
+coop_healthcare_campaign_tooltip:0 "£job_healthcare£ §Y$job_healthcare$§! £mod_pop_growth_speed£ §G+2.5%§!."
+edict_coop_healthcare_campaign: "Healtcare campaign"
+edict_coop_healthcare_campaign_desc: "This kind of healthcare campaign is designed to foster a culture of regular preventive care, empowering individuals to take charge of their health while simultaneously reducing the overall burden on the healthcare system by catching potential health problems early."
+ mod_planet_healthcare_energy_upkeep_add:0 "£energy£ $energy$ Upkeep of £job_healthcare£ $job_healthcare_plural$"
+ mod_planet_healthcare_consumer_goods_upkeep_add: "£consumer_goods£ $consumer_goods$ Upkeep of £job_healthcare£ $job_healthcare_plural$"
+ planet_healthcare:0 "$job_healthcare$ Jobs"
+edict_cg_bad_fleet: "cg_bad_fleet"
+edict_cg_terrible_fleet: "cg_terrible_fleet"
+edict_cg_bad_tech: "cg_bad_tech"
+edict_cg_terrible_tech: "cg_terrible_tech"
+edict_cg_bad_economy: "cg_bad_economy"
+edict_cg_terrible_economy: "cg_terrible_economy"
+edict_cg_bad_tradition: "edict_cg_bad_tradition"
+edict_cg_terrible_tradition: "edict_cg_terrible_tradition"

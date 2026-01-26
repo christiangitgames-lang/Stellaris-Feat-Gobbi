@@ -1,0 +1,1137 @@
+
+
+########################################
+################ TIER 1 ################
+########################################
+# country_base_society_research_produces_add
+GT_country_base_society_research_produces_add = {
+	cost = @tier1cost2
+	area = society
+	tier = 1
+	is_rare = yes
+	category = { biology }
+	prerequisites = { "tech_planetary_unification" }
+	weight = @tier3weight3
+	
+	modifier = {
+		country_base_society_research_produces_add = 25
+	}
+	
+	weight_modifier = {
+		factor = 0.50
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_country_base_society_research_produces_add
+		}
+	}
+	
+	ai_weight = {
+		weight = @TechHighPriority
+	}
+}
+# country_admin_cap_add
+GT_country_admin_cap_add = {
+	cost = @tier1cost3
+	area = society
+	tier = 1
+	category = { statecraft }	
+	prerequisites = { "tech_adaptive_bureaucracy" }
+	weight = @tier1weight3
+	
+	modifier = {
+		country_edict_fund_add = 20
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 1 value > 5 }
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+########################################
+################ TIER 2 ################
+########################################
+# planet_researchers_society_research_produces_mult
+GT_planet_researchers_society_research_produces_hive_mult = {
+	cost = @tier2cost2
+	area = society
+	tier = 2
+	category = { biology }	
+	prerequisites = { "tech_planetary_unification" }
+	weight = @tier2weight2
+	potential = {
+		is_hive_empire = yes
+	}
+	modifier = {
+		planet_jobs_simple_drone_society_research_produces_mult = 0.25
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 2 value > 10 }
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+	}
+}
+GT_planet_researchers_society_research_produces_machine_mult = {
+	cost = @tier2cost2
+	area = society
+	tier = 2
+	category = { biology }	
+	prerequisites = { "tech_planetary_unification" }
+	weight = @tier2weight2
+	potential = {
+		is_machine_empire = yes
+	}
+	modifier = {
+		planet_jobs_simple_drone_society_research_produces_mult = 0.3
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 2 value > 10 }
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+	}
+}
+GT_planet_researchers_society_research_produces_mult = {
+	cost = @tier2cost2
+	area = society
+	tier = 2
+	category = { biology }	
+	prerequisites = { "tech_planetary_unification" }
+	weight = @tier2weight2
+	potential = {
+		is_gestalt = no
+	}
+	modifier = {
+		planet_jobs_ruler_society_research_produces_mult = 0.15
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 2 value > 10 }
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+	}
+}
+# damage_vs_country_type_pirate_mult
+GT_damage_vs_country_type_pirate_mult = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { military_theory }	
+	prerequisites = { "tech_colonial_centralization" }
+	weight = @tier2weight3
+	
+	modifier = {
+		damage_vs_country_type_pirate_mult = 0.40
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 2 value > 10 }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = pirate_encountered }
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# planet_clear_blocker_time_mult
+GT_planet_clear_blocker_time_mult = {
+	cost = @tier2cost1
+	area = society
+	tier = 2
+	category = { new_worlds }	
+	prerequisites = { "tech_colonization_2" }
+	weight = @tier2weight1
+	
+	modifier = {
+		planet_clear_blocker_time_mult = -0.20
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 2 value > 10 }
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# pc_desert_habitability
+GT_pc_desert_habitability = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { new_worlds }
+	is_rare = yes
+	prerequisites = { "tech_frontier_health" }
+	weight = @tier2weight3
+	
+	modifier = {
+		pc_desert_habitability = 0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 2 value > 3 }
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				any_planet_within_border = { 
+					is_planet_class = pc_desert
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			species = { has_trait = trait_pc_desert_preference }
+		}
+		factor = 0.50
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_pc_desert_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_desert_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arid_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_savannah_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tropical_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_continental_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_ocean_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tundra_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arctic_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_alpine_habitability
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# pc_arid_habitability
+GT_pc_arid_habitability = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { new_worlds }
+	is_rare = yes
+	prerequisites = { "tech_frontier_health" }
+	weight = @tier2weight3
+	
+	modifier = {
+		pc_arid_habitability = 0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 2 value > 3 }
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				any_planet_within_border = { 
+					is_planet_class = pc_arid
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			species = { has_trait = trait_pc_arid_preference }
+		}
+		factor = 0.5
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_pc_arid_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_desert_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arid_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_savannah_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tropical_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_continental_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_ocean_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tundra_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arctic_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_alpine_habitability
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# pc_savannah_habitability
+GT_pc_savannah_habitability = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { new_worlds }
+	is_rare = yes
+	prerequisites = { "tech_frontier_health" }
+	weight = @tier2weight3
+	
+	modifier = {
+		pc_savannah_habitability = 0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 2 value > 3 }
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				any_planet_within_border = { 
+					is_planet_class = pc_savannah
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			species = { has_trait = trait_pc_savannah_preference }
+		}
+		factor = 0.50
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_pc_savannah_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_desert_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arid_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_savannah_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tropical_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_continental_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_ocean_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tundra_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arctic_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_alpine_habitability
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# pc_tropical_habitability
+GT_pc_tropical_habitability = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { new_worlds }
+	is_rare = yes
+	prerequisites = { "tech_frontier_health" }
+	weight = @tier2weight3
+	
+	modifier = {
+		pc_tropical_habitability = 0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 2 value > 3 }
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				any_planet_within_border = { 
+					is_planet_class = pc_tropical
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			species = { has_trait = trait_pc_tropical_preference }
+		}
+		factor = 0.5
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_pc_tropical_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_desert_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arid_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_savannah_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tropical_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_continental_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_ocean_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tundra_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arctic_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_alpine_habitability
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# pc_continental_habitability
+GT_pc_continental_habitability = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { new_worlds }
+	is_rare = yes
+	prerequisites = { "tech_frontier_health" }
+	weight = @tier2weight3
+	
+	modifier = {
+		pc_continental_habitability = 0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 2 value > 3 }
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				any_planet_within_border = { 
+					is_planet_class = pc_continental
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			species = { has_trait = trait_pc_continental_preference }
+		}
+		factor = 0.5
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_pc_continental_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_desert_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arid_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_savannah_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tropical_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_continental_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_ocean_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tundra_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arctic_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_alpine_habitability
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# pc_ocean_habitability
+GT_pc_ocean_habitability = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { new_worlds }
+	is_rare = yes
+	prerequisites = { "tech_frontier_health" }
+	weight = @tier2weight3
+	
+	modifier = {
+		pc_ocean_habitability = 0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 2 value > 3 }
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				any_planet_within_border = { 
+					is_planet_class = pc_ocean
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			species = { has_trait = trait_pc_ocean_preference }
+		}
+		factor = 0.5
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_pc_ocean_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_desert_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arid_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_savannah_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tropical_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_continental_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_ocean_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tundra_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arctic_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_alpine_habitability
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# pc_tundra_habitability
+GT_pc_tundra_habitability = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { new_worlds }
+	is_rare = yes
+	prerequisites = { "tech_frontier_health" }
+	weight = @tier2weight3
+	
+	modifier = {
+		pc_tundra_habitability = 0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 2 value > 3 }
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				any_planet_within_border = { 
+					is_planet_class = pc_tundra
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			species = { has_trait = trait_pc_tundra_preference }
+		}
+		factor = 0.5
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_pc_tundra_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_desert_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arid_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_savannah_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tropical_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_continental_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_ocean_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tundra_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arctic_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_alpine_habitability
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# pc_arctic_habitability
+GT_pc_arctic_habitability = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { new_worlds }
+	is_rare = yes
+	prerequisites = { "tech_frontier_health" }
+	weight = @tier2weight3
+	
+	modifier = {
+		pc_arctic_habitability = 0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 2 value > 3 }
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				any_planet_within_border = { 
+					is_planet_class = pc_arctic
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			species = { has_trait = trait_pc_arctic_preference }
+		}
+		factor = 0.5
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_pc_arctic_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_desert_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arid_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_savannah_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tropical_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_continental_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_ocean_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tundra_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arctic_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_alpine_habitability
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# pc_alpine_habitability
+GT_pc_alpine_habitability = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { new_worlds }
+	is_rare = yes
+	prerequisites = { "tech_frontier_health" }
+	weight = @tier2weight3
+	
+	modifier = {
+		pc_alpine_habitability = 0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 2 value > 3 }
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				any_planet_within_border = { 
+					is_planet_class = pc_alpine
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			species = { has_trait = trait_pc_alpine_preference }
+		}
+		factor = 0.5
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_pc_alpine_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_desert_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arid_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_savannah_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tropical_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_continental_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_ocean_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_tundra_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_arctic_habitability
+		}
+		modifier = {
+			factor = 0.5
+			has_technology = GT_pc_alpine_habitability
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+
+
+# country_insult_efficiency
+GT_country_insult_efficiency = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	is_rare = yes
+	category = { statecraft }	
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier3weight3
+	
+	potential = {
+		is_gestalt = no
+	}
+	
+	modifier = {
+		country_insult_efficiency = 1.00
+	}
+	
+	weight_modifier = {	
+		factor = 0.50
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 3 value > 10 }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_country_insult_efficiency
+		}
+		modifier = {
+			factor = 0
+			has_ethic = ethic_pacifist
+		}
+		modifier = {
+			factor = 0
+			has_ethic = ethic_fanatic_pacifist
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# planet_buildings_influence_cost_mult
+GT_planet_buildings_influence_cost_mult = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	is_rare = yes
+	category = { statecraft }	
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier3weight3
+	
+	potential = {
+		is_hive_empire = no
+	}
+	
+	modifier = {
+		planet_buildings_cost_mult = -0.10
+	}
+	
+	weight_modifier = {
+		factor = 0.50
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 3 value > 5 }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_planet_buildings_influence_cost_mult
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# country_subject_acceptance_add
+GT_country_subject_acceptance_add = {
+	cost = @tier3cost1
+	area = society
+	tier = 3
+	category = { statecraft }	
+	prerequisites = { "tech_interstellar_campaigns" }
+	weight = @tier3weight1
+	
+	potential = {
+		is_gestalt = no
+	}
+	
+	modifier = {
+		country_subject_acceptance_add = 50
+		diplo_action_acceptance_add = 50
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 3 value > 8 }
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# country_integration_cooldown_mult
+GT_country_integration_cooldown_mult = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	category = { statecraft }	
+	prerequisites = { "tech_interstellar_campaigns" }
+	weight = @tier3weight3
+	
+	potential = {
+		is_gestalt = no
+	}
+	
+	modifier = {
+		country_integration_cooldown_mult = -0.20
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 3 value > 8 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+# country_claim_influence_cost_mult
+GT_country_claim_influence_cost_mult = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	is_rare = yes
+	category = { statecraft }	
+	prerequisites = { "tech_interstellar_campaigns" }
+	weight = @tier3weight3
+	
+	modifier = {
+		country_claim_influence_cost_mult = -0.10
+	}
+	
+	weight_modifier = {
+		factor = 0.50
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 3 value > 15 }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_country_claim_influence_cost_mult
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+
+
+
+########################################
+################ TIER 4 ################
+########################################
+# country_resettlement_cost_mult
+GT_country_resettlement_cost_mult = {
+	cost = @tier4cost3
+	area = society
+	tier = 4
+	category = { new_worlds }	
+	prerequisites = { "tech_colonization_4" }
+	weight = @tier4weight3
+	
+	modifier = {
+		country_resettlement_cost_mult = -0.10
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 4 value > 5 }
+		}
+		modifier = {
+			factor = 0.1
+			is_egalitarian = yes
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+
+
+
+
+########################################
+################ TIER 5 ################
+########################################
+# pop_environment_tolerance
+GT_pop_environment_tolerance = {
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	is_rare = yes
+	category = { biology }	
+	prerequisites = { "tech_morphogenetic_field_mastery" }
+	weight = @tier5weight3
+	
+	potential = {
+		is_gestalt = no
+	}
+	
+	modifier = {
+		pop_environment_tolerance = 0.05
+	}
+	
+	weight_modifier = {
+		factor = 0.50
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 5 value > 3 }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_pop_environment_tolerance
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

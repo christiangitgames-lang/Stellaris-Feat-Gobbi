@@ -1,0 +1,680 @@
+namespace = phigo_automation
+@daysStarbasebuild = 1
+#	phigo_automation.0	Monthly checked - fire events for automations
+# phigo_automation.1 hidrophonic
+country_event = { #fire events for automations
+	id = phigo_automation.0
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ai = no
+		owner = { NOT = { has_policy_flag = Automation_Nothing } }
+		has_resource = { type = alloys amount >= 50 }
+	}
+	immediate = { 
+		
+			random_list = {
+				1 = { # hidro & energy
+					modifier = {
+						factor = 1000
+						OR = {
+							has_policy_flag = Automation_hidrophic
+							has_policy_flag = Automation_trade_hidrophic
+							has_policy_flag = Automation_solar_hidrophic
+						}
+					}
+					country_event = { id = phigo_automation.1 days = @daysStarbasebuild } #hidrophonic 180 days
+				}
+				1 = { # anchorage
+					modifier = {
+						factor = 1000
+						has_policy_flag = Automation_anchorage
+					}
+					country_event = { id = phigo_automation.20 days = @daysStarbasebuild } #anchorage & naval
+				}
+			
+			
+		} 
+	}
+}
+country_event = {#automate buildings hydro
+	id = phigo_automation.1
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_policy_flag = Automation_Nothing }
+		has_resource = { type = alloys amount >= 50 }
+	}
+	immediate = { 
+		if = {
+			limit = { has_technology = "tech_hydroponics" }
+			every_owned_starbase = { #hydro
+				limit = { 
+					is_normal_starbase = yes 
+					is_space_citadel = no
+					check_variable_arithmetic = { which = value:Free_starbase_buildings value > 0 }
+				}
+				if = { #hydrophonic
+					limit = { 
+						owner = { 
+							has_resource = { type = alloys amount >= 50 } 
+						} 
+						NOT = { has_starbase_building = hydroponics_bay }
+					}
+					if = {
+						limit = {
+							check_variable_arithmetic = { which = value:max_starbase_buildings value = 1 }
+							#count_starbase_buildings = { include_being_constructed = yes count < 1 }
+						}
+						set_starbase_building = {
+							slot = 1
+							building = hydroponics_bay
+						}
+					}
+					else_if = {
+						limit = {
+							check_variable_arithmetic = { which = value:max_starbase_buildings value = 2 }
+						}
+						set_starbase_building = {
+							slot = 2
+							building = hydroponics_bay
+						}
+					}
+					else_if = {
+						limit = {
+							check_variable_arithmetic = { which = value:max_starbase_buildings value = 3 }
+						}
+						set_starbase_building = {
+							slot = 3
+							building = hydroponics_bay
+						}
+					}
+					else_if = {
+						limit = {
+							check_variable_arithmetic = { which = value:max_starbase_buildings value = 4 }
+						}
+						set_starbase_building = {
+							slot = 4
+							building = hydroponics_bay
+						}
+					}
+					if = { 
+						limit = { has_starbase_building = hydroponics_bay }
+						owner = { add_resource = { alloys = -50 mult = value:buildings_build_cost_mult } }
+						set_timed_starbase_flag = {
+							flag = auto_building_starbase_buildings
+							days = @daysStarbasebuild
+						}
+					}
+				}
+				if = { #offworld_trading_company
+					limit = { 
+						owner = { 
+							has_policy_flag = Automation_trade_hidrophic 
+							has_resource = { type = alloys amount >= 100 } 
+							has_technology = tech_space_trading
+						} 
+						count_starbase_modules = {
+							type = trading_hub
+							count > 1
+						}
+						NOT = { has_starbase_flag = auto_building_starbase_buildings }
+					}
+					if = {
+						limit = {
+							check_variable_arithmetic = { which = value:max_starbase_buildings value = 1 }
+							#count_starbase_buildings = { include_being_constructed = yes count < 1 }
+						}
+						set_starbase_building = {
+							slot = 1
+							building = offworld_trading_company
+						}
+					}
+					else_if = {
+						limit = {
+							check_variable_arithmetic = { which = value:max_starbase_buildings value = 2 }
+						}
+						set_starbase_building = {
+							slot = 2
+							building = offworld_trading_company
+						}
+					}
+					else_if = {
+						limit = {
+							check_variable_arithmetic = { which = value:max_starbase_buildings value = 3 }
+						}
+						set_starbase_building = {
+							slot = 3
+							building = offworld_trading_company
+						}
+					}
+					else_if = {
+						limit = {
+							check_variable_arithmetic = { which = value:max_starbase_buildings value = 4 }
+						}
+						set_starbase_building = {
+							slot = 4
+							building = offworld_trading_company
+						}
+					}
+					if = { 
+						limit = { has_starbase_building = offworld_trading_company }
+						owner = { add_resource = { alloys = -100 mult = value:buildings_build_cost_mult } }
+						set_timed_starbase_flag = {
+							flag = auto_building_starbase_buildings
+							days = @daysStarbasebuild
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					has_technology = "tech_solar_panel_network" 
+					has_policy_flag = Automation_solar_hidrophic 
+				} 
+				country_event = { id = phigo_automation.2 } #solar 180 days
+			}
+			if = {
+				limit = { 
+					has_technology = "tech_solar_panel_network" 
+					has_policy_flag = Automation_trade_hidrophic 
+				} 
+				country_event = { id = phigo_automation.3 } #solar 180 days
+			}
+		}
+	}
+}
+country_event = {#automate modules solar
+	id = phigo_automation.2
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_technology = "tech_solar_panel_network"
+		has_resource = { type = alloys amount >= 50 }
+		
+	}
+	immediate = { 
+		every_owned_starbase = { #solar
+			limit = { 
+				is_normal_starbase = yes 
+				check_variable_arithmetic = { which = value:Free_starbase_modules value > 0 }
+				NOT = { has_starbase_flag = auto_building_starbase_buildings }
+			}
+			if = {
+				limit = { 
+					owner = { 
+						
+						has_resource = { type = alloys amount >= 50 } 
+					} 
+					#NOT = { has_starbase_building = hydroponics_bay }
+				}
+				if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 1 }
+						#count_starbase_buildings = { include_being_constructed = yes count < 1 }
+					}
+					set_starbase_module = {
+						slot = 1
+						module = solar_panel_network
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult } }
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 2 }
+					}
+					set_starbase_module = {
+						slot = 2
+						module = solar_panel_network
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 3 }
+						check_variable_arithmetic = { which = value:max_starbase_modules value >= 3 }
+					}
+					set_starbase_module = {
+						slot = 3
+						module = solar_panel_network
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 4 }
+						check_variable_arithmetic = { which = value:max_starbase_modules value >= 4 }
+					}
+					set_starbase_module = {
+						slot = 4
+						module = solar_panel_network
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 5 }
+						check_variable_arithmetic = { which = value:max_starbase_modules value >= 5 }
+					}
+					set_starbase_module = {
+						slot = 5
+						module = solar_panel_network
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 6 }
+						check_variable_arithmetic = { which = value:max_starbase_modules value >= 6 }
+					}
+					set_starbase_module = {
+						slot = 6
+						module = solar_panel_network
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+			}
+		}
+		if = {
+			limit = { 
+				any_owned_starbase = { has_starbase_flag = auto_building_starbase_buildings } 
+			}
+			country_event = { id = phigo_automation.2 days = 181 } #solar 180 days
+		}
+		
+	}
+}
+country_event = {#automate modules solar
+	id = phigo_automation.3
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		#has_technology = "tech_solar_panel_network"
+		has_resource = { type = alloys amount >= 50 }
+		
+	}
+	immediate = { 
+		every_owned_starbase = { #trade
+			limit = { 
+				is_normal_starbase = yes 
+				check_variable_arithmetic = { which = value:Free_starbase_modules value > 0 }
+				NOT = { has_starbase_flag = auto_building_starbase_buildings }
+			}
+			if = {
+				limit = { 
+					owner = { 
+						
+						has_resource = { type = alloys amount >= 50 } 
+					} 
+					#NOT = { has_starbase_building = hydroponics_bay }
+				}
+				if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 1 }
+						#count_starbase_buildings = { include_being_constructed = yes count < 1 }
+					}
+					set_starbase_module = {
+						slot = 1
+						module = trading_hub
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult } }
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 2 }
+					}
+					set_starbase_module = {
+						slot = 2
+						module = trading_hub
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 3 }
+						check_variable_arithmetic = { which = value:max_starbase_modules value >= 3 }
+					}
+					set_starbase_module = {
+						slot = 3
+						module = trading_hub
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 4 }
+						check_variable_arithmetic = { which = value:max_starbase_modules value >= 4 }
+					}
+					set_starbase_module = {
+						slot = 4
+						module = trading_hub
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 5 }
+						check_variable_arithmetic = { which = value:max_starbase_modules value >= 5 }
+					}
+					set_starbase_module = {
+						slot = 5
+						module = trading_hub
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 6 }
+						check_variable_arithmetic = { which = value:max_starbase_modules value >= 6 }
+					}
+					set_starbase_module = {
+						slot = 6
+						module = trading_hub
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+			}
+		}
+		if = {
+			limit = { 
+				any_owned_starbase = { has_starbase_flag = auto_building_starbase_buildings } 
+			}
+			country_event = { id = phigo_automation.3 days = 181 } #solar 180 days
+		}
+		
+	}
+}
+#has_technology =  #fornaval
+country_event = {#automate modules anchorage
+	id = phigo_automation.20
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		used_naval_capacity_percent > 0.25
+		has_resource = { type = alloys amount >= 50 }
+	}
+	immediate = { 
+		every_owned_starbase = { 
+			limit = { 
+				is_normal_starbase = yes 
+				
+				#NOT = { has_starbase_building = hydroponics_bay }
+				check_variable_arithmetic = { which = value:Free_starbase_modules value > 0 }
+			}
+			if = {
+				limit = { 
+					owner = { 
+						has_policy_flag = Automation_anchorage 
+						has_resource = { type = alloys amount >= 50 } 
+					} 
+					#NOT = { has_starbase_building = hydroponics_bay }
+				}
+				if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 1 }
+						#count_starbase_buildings = { include_being_constructed = yes count < 1 }
+					}
+					set_starbase_module = {
+						slot = 1
+						module = anchorage
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 2 }
+					}
+					set_starbase_module = {
+						slot = 2
+						module = anchorage
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 3 }
+						check_variable_arithmetic = { which = value:max_starbase_modules value >= 3 }
+					}
+					set_starbase_module = {
+						slot = 3
+						module = anchorage
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 4 }
+						check_variable_arithmetic = { which = value:max_starbase_modules value >= 4 }
+					}
+					set_starbase_module = {
+						slot = 4
+						module = anchorage
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 5 }
+						check_variable_arithmetic = { which = value:max_starbase_modules value >= 5 }
+					}
+					set_starbase_module = {
+						slot = 5
+						module = anchorage
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:index_slot_free_modules value = 6 }
+						check_variable_arithmetic = { which = value:max_starbase_modules value >= 6 }
+					}
+					set_starbase_module = {
+						slot = 6
+						module = anchorage
+					}
+					owner = { add_resource = { alloys = -50 mult = value:modules_build_cost_mult  } }
+				}
+			}
+		}
+		if = {
+			limit = { has_technology = "tech_interstellar_fleet_traditions" } 
+			country_event = { id = phigo_automation.21 days = @daysStarbasebuild } #navallog 180 days
+		}
+	}
+}
+country_event = {#automate buildings naval logistic
+	id = phigo_automation.21
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		#owner = { NOT = { has_policy_flag = Automation_Nothing } } 
+		has_resource = { type = alloys amount >= 50 }
+	}
+	immediate = { 
+		if = {
+			limit = { 
+				has_technology = "tech_interstellar_fleet_traditions" 
+			}
+			every_owned_starbase = { #hydro
+			limit = { 
+				is_normal_starbase = yes 
+				count_starbase_modules = {
+					type = anchorage
+					count > 2
+				}
+				NOT = { has_starbase_building = naval_logistics_office }
+				check_variable_arithmetic = { which = value:Free_starbase_buildings value > 0 }
+			}
+			if = { 
+				limit = { 
+					owner = { 
+						has_policy_flag = Automation_anchorage 
+						has_resource = { type = alloys amount >= 50 } 
+					} 
+					NOT = { has_starbase_building = naval_logistics_office }
+				}
+				if = {
+					limit = {
+						check_variable_arithmetic = { which = value:max_starbase_buildings value = 1 }
+						#count_starbase_buildings = { include_being_constructed = yes count < 1 }
+					}
+					set_starbase_building = {
+						slot = 1
+						building = naval_logistics_office
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:max_starbase_buildings value = 2 }
+					}
+					set_starbase_building = {
+						slot = 2
+						building = naval_logistics_office
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:max_starbase_buildings value = 3 }
+					}
+					set_starbase_building = {
+						slot = 3
+						building = naval_logistics_office
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable_arithmetic = { which = value:max_starbase_buildings value = 4 }
+					}
+					set_starbase_building = {
+						slot = 4
+						building = naval_logistics_office
+					}
+				}
+				if = { 
+					limit = { has_starbase_building = naval_logistics_office }
+					owner = { add_resource = { alloys = -50 mult = value:buildings_build_cost_mult } }
+				}
+			}
+			}
+		}
+	}
+}
+country_event = {#automate distribuite luxuries
+	id = phigo_automation.100
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ai = no
+		OR = {
+			has_monthly_income = { type = consumer_goods amount >= 1 }
+			resource_stockpile_compare = {
+				resource = consumer_goods
+					value > 10000
+			}
+		}
+		any_owned_planet = {
+			has_modifier = auto_planet_luxuries_boost
+		}
+	}
+	immediate = {
+		every_owned_planet = {
+			limit = { 
+				has_modifier = auto_planet_luxuries_boost
+				NOT = { has_modifier = planet_luxuries_boost }
+			}
+			if = {
+				limit = {
+					owner = {
+						resource_stockpile_compare = {
+						resource = consumer_goods
+							value > 1
+							mult = prev.value:pop_size_10to100
+						}
+					}
+				}
+		
+				owner = {
+					add_resource = { 
+						consumer_goods = -1
+						mult = prev.value:pop_size_10to100
+					}
+				}
+				add_modifier = { modifier = "planet_luxuries_boost" days = 3600 }
+			}
+		}
+	}
+}
+country_event = {#automate distribuite luxuries
+	id = phigo_automation.101
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ai = no
+		is_regular_empire = no
+		has_monthly_income = { type = minor_artifacts amount >= 0 }
+		resource_stockpile_compare = {
+			resource = minor_artifacts
+				value > 200
+		}
+		any_owned_planet = {
+			has_modifier = auto_decision_automate_planet_incorporate
+		}
+	}
+	immediate = {
+		every_owned_planet = {
+			limit = { 
+				has_modifier = auto_decision_automate_planet_incorporate
+				NAND = { 
+					has_modifier = planet_artifact_relays_hivemind 
+					AND = {
+						has_modifier = planet_artifact_relays_machine 
+						NOT = { has_designation = col_nanotech_world }
+						owner  = {
+							NOT = {
+							has_civic = civic_machine_servitor
+							}
+						}
+						
+					}
+				}
+			}
+			if = {
+				limit = {
+					owner = {
+						resource_stockpile_compare = {
+						resource = minor_artifacts
+							value > 100
+						}
+					}
+				}
+		
+				owner = {
+					add_resource = { 
+						minor_artifacts = -100
+					}
+				}
+				if = {
+					limit = { owner = { is_hive_empire = yes } }
+					add_modifier = { modifier = "planet_artifact_relays_hivemind" days = 3600 }
+				}
+				else = { add_modifier = { modifier = "planet_artifact_relays_machine"  days = 3600 } }
+			}
+		}
+	}
+}

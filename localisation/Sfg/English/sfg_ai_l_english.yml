@@ -1,0 +1,35 @@
+﻿
+l_english:
+
+Alloy_hab_market_50: "Trade for alloys"
+Alloy_hab_market_25: "$Alloy_hab_market_50$"
+
+special: "Special"
+cg_auto_ai_malus: "Balance build AI N.42"
+cg_ai5: "Balance build AI N. 5" 
+cg_ai0: "Balance build AI N. 0"
+cg_ai1: "Balance build AI N. 1"
+phi_rep_ai0: "Phigo balance cheat AI N. 0R"
+cg_ai42: "Balance Replace Holo build AI N. 43" #number is wrong 42
+cg_ai50: "Balance build AI N. 50"
+cg_ai44: "Balance Upgrade AI N. 44"
+cg_ai45: "Balance Upgrade AI N. 45"
+cg_ai46: "Balance Upgrade AI N. 46"
+cg_ai60: "Balance build AI N.60"
+cg_ai61: "Balance build AI For Arcology"
+cg_ai20: "Balance build AI N.20"
+cg_ai102: "Balance build AI N.102"
+consumer_goods_market: "Trade CC in market"
+consumer_goods_5_market: "Trade little CC in market"
+food_market: "Trade food in market"
+minerals_40_market: "$minerals_10_market$ X4"
+minerals_20_market: "$minerals_10_market$ X2"
+minerals_10_market: "Trade minerals in market"
+
+
+triggered_opinion_overheilm_tech_pathetic_fleet: "Fearful of your advanced technology"
+triggered_opinion_fractured_ambassadors_desc: "They fear your tech, yet your fleet power is insufficient"
+
+ai_early_game_modifier: "$early_game_modifier$"
+ai_mid_game_modifier: "$mid_game_modifier$"
+ai_late_game_modifier: "$late_game_modifier$"

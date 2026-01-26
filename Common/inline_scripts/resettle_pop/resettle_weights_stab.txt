@@ -1,0 +1,16 @@
+
+weights = {
+	base = 1
+	modifier = {
+		factor = 2
+		free_housing > 1
+	}
+	modifier = {
+		factor = 10
+		planet_stability < 40
+	}
+	modifier = {
+		factor = 2
+		happiness_planet < 0.5
+	}
+}

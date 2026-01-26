@@ -1,0 +1,127 @@
+﻿l_english:
+ GT_ship_emergency_ftl_min_days_add:0 "Evasion Drives"
+ GT_ship_emergency_ftl_min_days_add_desc:0 "Special hyper-warp drives designed to activate according to programmed scenarios. When a situation becomes untenable, these drives begin automatic calculations of available hyperlanes, then engage immediately, improving chances for successful escape."
+
+ GT_starbase_defense_platform_capacity_add2:0 "Titanium Platform Links"
+ GT_starbase_defense_platform_capacity_add2_desc:0 "Orbital Defense Platforms can be large and burdensome, often limiting how many can be deployed at once. By linking them with titanium bridges and support structures, all available space can be taken advantage of."
+
+ GT_ship_orbital_bombardment_mult:0 "Electromagnetic Field Targeting Systems"
+ GT_ship_orbital_bombardment_mult_desc:0 "By utilizing an EMF targeting computer, our space to ground weaponry can single out population centers with remarkable accuracy."
+
+ GT_ship_corvette_alloys_cost_add:0 "Synchronous Designs"
+ GT_ship_corvette_alloys_cost_add_desc:0 "By simplifying and making our corvette designs use all similar parts, costs have been reduced for producing them."
+
+ GT_country_ship_upgrade_cost_mult:0 "Retrofit Station"
+ GT_country_ship_upgrade_cost_mult_desc:0 "This orbital complex dedicates itself to upgrading any fleet in-system, reducing the need for expensive and wasteful manual upgrades."
+
+ GT_weapon_role_point_defense_weapon_fire_rate_mult:0  "Automated Recycle Rates"
+ GT_weapon_role_point_defense_weapon_fire_rate_mult_desc:0 "Improved programs allow for the automation of our weapons-fire recycle systems. This increases the efficiency of our point defence weapons, enabling them to fire more rapidly."
+
+ GT_damage_vs_country_type_amoeba_mult:0  "Bio-Electric Rounds"
+ GT_damage_vs_country_type_amoeba_mult_desc:0 "Small feedback chips implanted in special ordnance release a shock of over five hundred thousand volts through the systems of any amoeba it impacts, spreading through their cellular systems like wildfire."
+
+ GT_damage_vs_country_type_crystal_mult:0  "Acidic Bio-Material"
+ GT_damage_vs_country_type_crystal_mult_desc:0 "Incorporating this material into our secondary armaments allows for them to burn through crystalline hulls with ease."
+
+ GT_damage_vs_country_type_drone_mult:0  "Anti-Mining"
+ GT_damage_vs_country_type_drone_mult_desc:0 "Deconstructing a mining drone has led to the development of advanced lasers designed to cut through the hulls commonly used by those ships."
+
+ GT_damage_vs_country_type_cloud_mult:0  "Destabilization Fields"
+ GT_damage_vs_country_type_cloud_mult_desc:0 "Microparticles are released in an area that, when passed through by a energy-cloud, destabilizes their cores."
+
+ #24 - army energy upkeep reduction
+ GT_armies_energy_upkeep_mult:0 "Micro Fusion Batteries"
+ GT_armies_energy_upkeep_mult_desc:0 "Miniaturization of fusion reactor technology into belt-mounted generators allows for more efficient energy consumption among fielded troops."
+
+ # Hive Mind
+ GT_armies_energy_upkeep_mult_hive:0 "Evolved Carapace Retention"
+ GT_armies_energy_upkeep_mult_desc_hive:0 "The evolution of Soldier Drone carapace provide more productive solar absorption while reducing energy expenditure."
+
+ # Machine Empire
+ GT_armies_energy_upkeep_mult_mach:0 "Micro Fusion Reactor"
+ GT_armies_energy_upkeep_mult_desc_mach:0 "Combat Units upgraded with miniaturized fusion reactors allow for more efficient energy consumption among deployed units."
+
+ GT_planet_researchers_physics_research_produces_mult3:0 "Standardized Supercomputers"
+ GT_planet_researchers_physics_research_produces_mult3_desc:0 "Laboratories with built-in supercomputers have proven to increase the efficiency of staff across our research division. With information readily available at any given moment and the analyzation capabilities of an Enhanced Physics Intelligence, no laboratory is complete without one."
+
+ GT_country_base_society_research_produces_add:0 "Quid Pro Quo"
+ GT_country_base_society_research_produces_add_desc:0 "Core world scientists have been sufficiently motivated with new research grants, improving efficiency."
+
+ #92 - empire is better at managing itself on galactic scale 1/3
+ GT_country_admin_cap_add:0 "Defined Hierarchy"
+ GT_country_admin_cap_add_desc:0 "The bigger an empire gets, the more difficult it can be to keep track of rank. With a regimented and defined hierarchy, everyone knows who to answer to."
+
+ GT_planet_researchers_society_research_produces_mult:0 "Cultural Studies"
+ GT_planet_researchers_society_research_produces_mult_desc:0 "All research curriculum has been expanded with additional cultural anecdotes from all known sources in the galaxy, improving general knowledge of galactic culture."
+
+GT_planet_researchers_society_research_produces_machine_mult:0 "$GT_planet_researchers_society_research_produces_mult$"
+GT_planet_researchers_society_research_produces_machine_mult_desc:0 "$GT_planet_researchers_society_research_produces_mult_desc$"
+
+GT_planet_researchers_society_research_produces_hive_mult:0 "$GT_planet_researchers_society_research_produces_mult$"
+GT_planet_researchers_society_research_produces_hive_mult_desc:0 "$GT_planet_researchers_society_research_produces_mult_desc$"
+
+ GT_damage_vs_country_type_pirate_mult:0 "Cultural Tactics"
+ GT_damage_vs_country_type_pirate_mult_desc:0 "Studying enemy psychology and cultural bias has been a point of contention amongst strategists for some time. An admiral in our navy has convinced the rest of the Admiralty the value of understanding your opponents every reason to make a choice, improving our success rate at identifying patterns and shutting down pirates' often erratic behaviours."
+
+ GT_planet_clear_blocker_time_mult:0 "Planetoid Sweepers"
+ GT_planet_clear_blocker_time_mult_desc:0 "Employing colossal automated rovers that clear away obstructions on a massive scale has improved our ability to perfect a planet's suitability for development."
+GT_pc_desert_habitability:0 "Personal Thermoregulation Units"
+ GT_pc_desert_habitability_desc:0 "A small device that projects a field of cold air around the user. Useful in areas with extreme heat."
+ 
+ GT_pc_arid_habitability:0 "Moisture Farms"
+ GT_pc_arid_habitability_desc:0 "Tall tree-like structures that slowly spin their metallic leaves around capturing moisture from the air."
+
+ #101 - ability to survive on savannah worlds is improved
+ GT_pc_savannah_habitability:0 "Hydrogeneration"
+ GT_pc_savannah_habitability_desc:0 "Simply creating water out of nothing is an impossibility. Creating water out of rock and sand however, is a draining process, but a possible one."
+ #102 - ability to survive on tropical worlds is improved
+ GT_pc_tropical_habitability:0 "Anti-Disease Symbiotes"
+ GT_pc_tropical_habitability_desc:0 "The most dangerous aspect of tropical habitation is often the diseases introduced by such systems. With these engineered symbiotes, preventing and fighting said concerns is much easier."
+
+ # Machine Empire
+ GT_pc_tropical_habitability_mach:0 "Derusting Microbots"
+ GT_pc_tropical_habitability_desc_mach:0 "The humidity of a tropical world can play havoc with most machinery. Equipping all units with micro derustors decreases need for frequent maintenance."
+ #103 - ability to survive on continental worlds is improved
+ GT_pc_continental_habitability:0 "By Land Or Sea"
+ GT_pc_continental_habitability_desc:0 "In order to effectively colonize continents, we must be equally suited to both land and sea. Converting land-based technology to work in a hydrosphere is a solid first step."
+ #104 - ability to survive on ocean worlds is improved
+ GT_pc_ocean_habitability:0 "Aquatic Habitats"
+ GT_pc_ocean_habitability_desc:0 "Constructing underwater municipalities utilizing water resistant alloys improves ocean world habitability."
+ #105 - ability to survive on tundra worlds is improved
+ GT_pc_tundra_habitability:0 "Precipitation Generators"
+ GT_pc_tundra_habitability_desc:0 "Significant dry seasons and arid land pose significant issues. High-maintenance moisture generators convert the near frozen air into usable water."
+ #106 - ability to survive on arctic worlds is improved
+ GT_pc_arctic_habitability:0 "Fusion Heat Reactors"
+ GT_pc_arctic_habitability_desc:0 "The benefit of fusion technology applies to more than just power. By utilizing the heat generated by such devices, entire settlements can be kept warm, despite inhospitable temperatures."
+ #107 - ability to survive on alpine worlds is improved
+ GT_pc_alpine_habitability:0 "Bedrock Settlements"
+ GT_pc_alpine_habitability_desc:0 "Engineers have perfected the art of constructing settlements both without and within mountain ranges."
+
+ GT_country_insult_efficiency:0 "Eloquent Calumniating"
+ GT_country_insult_efficiency_desc:0 "Diplomacy is often the art of being able to bring people together, but sometimes it is more beneficial to be feared. Diplomats trained in psychology can put it to use when undermining the enemy."
+
+ GT_planet_buildings_influence_cost_mult:0 "Settlement AI"
+ GT_planet_buildings_influence_cost_mult_desc:0 "An intricate cognitive AI that is designed to simplify construction of settlements. By analyzing the needs of the populace, the AI determines a priority list for construction in rapid succession."
+
+ GT_country_subject_acceptance_add:0 "Irrefutable Ultimatums"
+ GT_country_subject_acceptance_add_desc:0 "Once dominance has been displayed, issuing an ultimatum becomes less a matter of potential refusal and more akin to inevitable acquiescence."
+
+ GT_country_integration_cooldown_mult:0 "Cutthroat Confederation"
+ GT_country_integration_cooldown_mult_desc:0 "Normally integrating one empire into another is a diplomatically delicate process. By ignoring traditional protocols and employing annexation directives, an empire can be integrated in a significantly shorter period of time."
+
+ GT_country_claim_influence_cost_mult:0 "Convincing Possessive Persuasion"
+ GT_country_claim_influence_cost_mult_desc:0 "Some diplomats are exceedingly good at convincing the galaxy that possession is 9/10ths of the law."
+
+ GT_country_resettlement_cost_mult:0 "Emigration Accounts"
+ GT_country_resettlement_cost_mult_desc:0 "Seperate imigration funds and budgets provides a faster way of financing resettlement endeavors."
+
+ #117 - easier to live on inhospitable worlds
+ GT_pop_environment_tolerance:0 "Adaptable Engineering"
+ GT_pop_environment_tolerance_desc:0 "Designing shelters and outposts that are capable of functioning on a variety of worlds assists greatly when dealing with the inhospitable."
+
+
+ mod_weapon_role_point_defense_weapon_fire_rate_mult:0 "Point Defense Weapons Fire Rate"
+ mod_country_base_society_research_produces_add:0 "Monthly £society_research£ Society Research"
+ mod_armies_energy_upkeep_mult:0 "Army £energy£ Energy Credits Upkeep"
+
+ mod_ship_corvette_alloys_cost_add:0 "Corvette £alloys£ Alloy Cost"

@@ -1,0 +1,3 @@
+﻿l_english:
+#from pop_factions_l_english.yml
+PROGRESSIVE_FREE_MOVEMENT_DESC:1 "Ensuring the free movement of Pops by prohibiting/limited forced Resettlement and disabling Migration Controls will please the [Root.GetName].""

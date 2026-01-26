@@ -1,0 +1,55 @@
+cg_ai5 = {
+	planet_building_build_speed_mult = -0.49
+}
+cg_ai0 = {
+	planet_building_build_speed_mult = -0.49
+}
+phi_rep_ai0 = {
+	planet_building_build_speed_mult = -0.49
+}
+cg_ai1 = {
+	planet_building_build_speed_mult = -0.49
+}
+cg_ai42 = {
+	planet_building_build_speed_mult = -0.49
+}
+cg_ai50 = {
+	planet_building_build_speed_mult = -0.49
+}
+cg_ai44 = {
+	planet_building_build_speed_mult = -0.49
+}
+cg_ai45 = {
+	planet_building_build_speed_mult = -0.49
+}
+cg_ai46 = {
+	planet_building_build_speed_mult = -0.49
+}
+cg_auto_ai_malus = {
+	planet_building_build_speed_mult = -0.49
+}
+cg_auto_remove_rare_resource = {
+	planet_building_build_speed_mult = -0.49
+}
+cg_ai60 = {
+	planet_building_build_speed_mult = -0.49
+}
+
+cg_ai61 = {
+	planet_building_build_speed_mult = -0.99
+}
+cg_ai20 = {
+	planet_building_build_speed_mult = -0.49
+}
+cg_ai_deficit_work_out_1 = {
+	planet_building_build_speed_mult = -0.99 #dura un anno
+}
+sfg_ai_1= {
+	planet_building_build_speed_mult = -0.49 #dura un anno
+}
+sfg_ai_2= {
+	planet_building_build_speed_mult = -0.49 #dura un anno
+}
+cg_ai102 = {
+	planet_building_build_speed_mult = -0.49
+}

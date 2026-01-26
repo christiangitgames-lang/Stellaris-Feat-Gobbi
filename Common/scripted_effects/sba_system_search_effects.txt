@@ -1,0 +1,746 @@
+enable_nanite_harvester_system_search_cheat = {
+	set_country_flag = sba_nanite_harvester_system_search_cheat_enabled
+}
+disable_nanite_harvester_system_search_cheat = {
+	remove_country_flag = sba_nanite_harvester_system_search_cheat_enabled
+}
+enable_kilostructure_alerts = {
+	set_country_flag = sba_kilostructure_alerts_enabled
+}
+disable_kilostructure_alerts = {
+	remove_country_flag = sba_kilostructure_alerts_enabled
+}
+
+sba_dyson_swarm_site_search_effect = {
+	optimize_memory
+	every_system_within_border = {
+		if = {
+			limit = { #TODO spostarlo sopra.
+				sba_is_valid_dyson_swarm_system = yes
+				any_system_planet = {
+					sba_is_valid_dyson_swarm_planet = yes
+					OR = {
+						has_deposit_for = shipclass_mining_station
+						has_deposit_for = shipclass_research_station
+					}
+				}
+			}
+			every_system_planet = {
+				limit = {
+					sba_is_valid_dyson_swarm_planet = yes
+					OR = {
+						has_deposit_for = shipclass_mining_station
+						has_deposit_for = shipclass_research_station
+					}
+				}
+				set_variable = {
+					which = sba_star_base_energy
+					value = value:sba_planet_base_energy_value
+				}
+				# if = {
+				# 	limit = {
+				# 		check_variable = { which = sba_star_base_energy value > 0 }
+				# 	}
+				# 	solar_system.owner = {
+				# 		change_variable = {
+				# 			which = sba_num_dyson_swarm_energy_stars
+				# 			value = 1
+				# 		}
+				# 	}
+				# }
+				set_variable = {
+					which = sba_star_base_minerals
+					value = value:sba_planet_base_minerals_value
+				}
+				set_variable = {
+					which = sba_star_base_food
+					value = value:sba_planet_base_food_value
+				}
+
+				# set_variable = {
+				# 	which = sba_star_base_consumer_goods
+				# 	value = value:sba_planet_base_consumer_goods_value
+				# }
+				set_variable = {
+					which = sba_star_base_alloys
+					value = value:sba_planet_base_alloys_value
+				}
+
+				set_variable = {
+					which = sba_star_base_physics
+					value = value:sba_planet_base_physics_value
+				}
+				set_variable = {
+					which = sba_star_base_society
+					value = value:sba_planet_base_society_value
+				}
+				set_variable = {
+					which = sba_star_base_engineering
+					value = value:sba_planet_base_engineering_value
+				}
+				set_variable = {
+					which = sba_star_base_research
+					value = value:sba_planet_base_research_value
+				}
+				# set_variable = {
+				# 	which = sba_star_base_influence
+				# 	value = value:
+				# }
+				set_variable = {
+					which = sba_star_base_unity
+					value = value:sba_planet_base_unity_value
+				}
+
+				set_variable = {
+					which = sba_star_base_volatile_motes
+					value = value:sba_planet_base_volatile_motes_value
+				}
+				set_variable = {
+					which = sba_star_base_exotic_gases
+					value = value:sba_planet_base_exotic_gases_value
+				}
+				set_variable = {
+					which = sba_star_base_rare_crystals
+					value = value:sba_planet_base_rare_crystals_value
+				}
+
+				# set_variable = {
+				# 	which = sba_star_base_sr_living_metal
+				# 	value = value:sba_planet_base_d_living_metal_value
+				# }
+				set_variable = {
+					which = sba_star_base_zro
+					value = value:sba_planet_base_zro_value
+				}
+				set_variable = {
+					which = sba_star_base_dark_matter
+					value = value:sba_planet_base_dark_matter_value
+				}
+				set_variable = {
+					which = sba_star_base_nanites
+					value = value:sba_planet_base_nanites_value
+				}
+				set_variable = {
+					which = sba_star_base_minor_artifacts
+					value = value:sba_planet_base_minor_artifacts_value
+				}
+				set_variable = {
+					which = sba_star_base_astral_threads
+					value = value:sba_planet_base_astral_threads_value
+				}
+				# if = { # Star has 1 deposit
+				# 	limit = {
+				# 		num_deposits = 1
+				# 	}
+				# 	switch = {
+				# 		trigger = has_deposit_for
+				# 		shipclass_mining_station = {
+				# 			switch = {
+				# 				trigger = has_deposit
+				# 				d_minerals_ = {
+
+				# 				}
+				# 				default = {}
+				# 			}
+				# 		}
+				# 		shipclass_research_station = {
+				# 			switch = {
+				# 				trigger = has_deposit
+				# 				default = {}
+				# 			}
+				# 		}
+				# 		default = {}
+				# 	}
+				# }
+			}
+			# export_trigger_value_to_variable = {
+			# 	trigger = count_system_planet
+			# 	parameters = {
+			# 		limit = {
+			# 			NOT = { has_deposit_for = shipclass_research_station }
+			# 			is_star = no
+			# 			is_astral_scar = no
+			# 			colonizable_planet = no
+			# 		}
+			# 	}
+			# 	variable = sba_arc_furnace_var
+			# }
+			# prev = {
+			# 	change_variable = {
+			# 		which = sba_num_arc_furnace_systems
+			# 		value = 1
+			# 	}
+			# }
+		}
+	}
+}
+# sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = energy }
+sba_dyson_swarm_site_ordered_effect = {
+	optimize_memory
+	ordered_planet_within_border = {
+		position = $POSITION|0$
+		order_by = sba_star_base_$RESOURCE|energy$
+		save_event_target_as = sba_dyson_swarm_$RESOURCE|energy$_star_$POSITION|0$
+		limit = {
+			sba_is_valid_dyson_swarm_planet = yes
+			is_variable_set = sba_star_base_$RESOURCE|energy$
+			check_variable = { which = sba_star_base_$RESOURCE|energy$ value > 0 }
+			solar_system = {
+				sba_is_valid_dyson_swarm_system = yes
+			}
+			OR = {
+				has_deposit_for = shipclass_mining_station
+				has_deposit_for = shipclass_research_station
+			}
+			[[EXCLUDE0]
+			NAND = {
+				exists = event_target:$EXCLUDE0$
+				is_same_value = event_target:$EXCLUDE0$
+			}
+			]
+			[[EXCLUDE1]
+			NAND = {
+				exists = event_target:$EXCLUDE1$
+				is_same_value = event_target:$EXCLUDE1$
+			}
+			]
+			[[EXCLUDE2]
+			NAND = {
+				exists = event_target:$EXCLUDE2$
+				is_same_value = event_target:$EXCLUDE2$
+			}
+			]
+			[[EXCLUDE3]
+			NAND = {
+				exists = event_target:$EXCLUDE3$
+				is_same_value = event_target:$EXCLUDE3$
+			}
+			]
+			[[EXCLUDE4]
+			NAND = {
+				exists = event_target:$EXCLUDE4$
+				is_same_value = event_target:$EXCLUDE4$
+			}
+			]
+		}
+	}
+}
+
+# $POSITION$ $RESOURCE$
+sba_dyson_swarm_site_search_effect_2 = {
+	optimize_memory
+	ordered_planet_within_border = {
+		position = $POSITION$
+		order_by = sba_star_base_$RESOURCE$
+		save_event_target_as = sba_dyson_swarm_energy_star_$POSITION$
+		limit = {
+			sba_is_valid_dyson_swarm_planet = yes
+			is_variable_set = sba_star_base_$RESOURCE$
+			check_variable = { which = sba_star_base_$RESOURCE$ value > 0 }
+			solar_system = {
+				sba_is_valid_dyson_swarm_system = yes
+			}
+			OR = {
+				has_deposit_for = shipclass_mining_station
+				has_deposit_for = shipclass_research_station
+			}
+		}
+	}
+
+}
+sba_dyson_swarm_site_search_effect_3 = {
+	optimize_memory
+	ordered_planet_within_border = {
+		position = $POSITION|0$
+		order_by = value:sba_planet_resource_value|TYPE|$RESOURCE|energy$|
+		save_event_target_as = sba_dyson_swarm_energy_star_$POSITION|0$
+		limit = {
+			sba_is_valid_dyson_swarm_planet = yes
+			has_resource = { type = $RESOURCE|energy$ amount > 0 }
+			solar_system = {
+				sba_is_valid_dyson_swarm_system = yes
+			}
+			OR = {
+				has_deposit_for = shipclass_mining_station
+				has_deposit_for = shipclass_research_station
+			}
+		}
+	}
+}
+
+sba_nanite_harvester_site_search_effect = {
+	optimize_memory
+	set_variable = {
+		which = sba_num_nanite_harvester_systems
+		value = 0
+	}
+	every_system_within_border = {
+		set_variable = {
+			which = sba_nanite_harvester_var
+			value = 0
+		}
+		export_trigger_value_to_variable = {
+			trigger = count_system_planet
+			parameters = {
+				limit = {
+					can_have_mineral_deposits = yes
+					NOR = {
+						has_deposit_for = shipclass_research_station
+						has_deposit = d_nanite_harvester_deposit
+					}
+				}
+			}
+			variable = sba_nanite_harvester_var
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = sba_nanite_harvester_var
+					value > 0
+				}
+			}
+			prev = {
+				change_variable = {
+					which = sba_num_nanite_harvester_systems
+					value = 1
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = sba_num_nanite_harvester_systems
+				value > 0
+			}
+		}
+		ordered_system_within_border = {
+			position = 0
+			order_by = sba_nanite_harvester_var
+			save_event_target_as = sba_nanite_harvester_system_0
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = sba_num_nanite_harvester_systems
+				value > 1
+			}
+		}
+		ordered_system_within_border = {
+			position = 1
+			order_by = sba_nanite_harvester_var
+			save_event_target_as = sba_nanite_harvester_system_1
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = sba_num_nanite_harvester_systems
+				value > 2
+			}
+		}
+		ordered_system_within_border = {
+			position = 2
+			order_by = sba_nanite_harvester_var
+			save_event_target_as = sba_nanite_harvester_system_2
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = sba_num_nanite_harvester_systems
+				value > 3
+			}
+		}
+		ordered_system_within_border = {
+			position = 3
+			order_by = sba_nanite_harvester_var
+			save_event_target_as = sba_nanite_harvester_system_3
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = sba_num_nanite_harvester_systems
+				value > 4
+			}
+		}
+		ordered_system_within_border = {
+			position = 4
+			order_by = sba_nanite_harvester_var
+			save_event_target_as = sba_nanite_harvester_system_4
+		}
+	}
+}
+# effect every_system = { set_variable = { which = sba_harvester_max_nanites value = value:sba_system_harvested_nanites_max } set_variable = { which = sba_harvester_max_swarmers value = value:sba_system_harvested_swarmers_max } }
+sba_nanite_harvester_site_search_effect_2 = {
+	optimize_memory
+	every_system_within_border = {
+		remove_star_flag = sba_nanite_harvester_search_flag
+		if = {
+			limit = {
+				starbase = {
+					OR = {
+						has_starbase_building = nanite_harvester
+						is_starbase_building_building = nanite_harvester
+					}
+				}
+			}
+			set_variable = {
+				which = sba_harvester_max_nanites
+				value = 0
+			}
+			set_variable = {
+				which = sba_harvester_max_swarmers
+				value = 0
+			}
+		}
+		else = {
+			set_variable = {
+				which = sba_harvester_max_nanites
+				value = value:sba_system_harvested_nanites_max
+			}
+			set_variable = {
+				which = sba_harvester_max_swarmers
+				value = value:sba_system_harvested_swarmers_max
+			}
+		}
+		set_variable = {
+			which = sba_harvester_min_years
+			value = 0
+		}
+		ordered_system_planet = {
+			order_by = trigger:planet_size
+			position = 0
+			limit = {
+				can_have_mineral_deposits = yes
+				NOR = {
+					has_deposit_for = shipclass_research_station
+					has_deposit = d_nanite_harvester_deposit
+				}
+			}
+			if = {
+				limit = { planet_size >= 25 }
+				prev = {
+					set_variable = {
+						which = sba_harvester_min_years
+						value = 45
+					}
+				}
+			}
+			else_if = {
+				limit = { planet_size >= 21 }
+				prev = {
+					set_variable = {
+						which = sba_harvester_min_years
+						value = 40
+					}
+				}
+			}
+			else_if = {
+				limit = { planet_size >= 18 }
+				prev = {
+					set_variable = {
+						which = sba_harvester_min_years
+						value = 25
+					}
+				}
+			}
+			else_if = {
+				limit = { planet_size >= 15 }
+				prev = {
+					set_variable = {
+						which = sba_harvester_min_years
+						value = 30
+					}
+				}
+			}
+			else_if = {
+				limit = { planet_size >= 12 }
+				prev = {
+					set_variable = {
+						which = sba_harvester_min_years
+						value = 25
+					}
+				}
+			}
+			else_if = {
+				limit = { planet_size >= 9 }
+				prev = {
+					set_variable = {
+						which = sba_harvester_min_years
+						value = 20
+					}
+				}
+			}
+			else_if = {
+				limit = { planet_size >= 6 }
+				prev = {
+					set_variable = {
+						which = sba_harvester_min_years
+						value = 15
+					}
+				}
+			}
+			else_if = {
+				limit = { planet_size >= 3 }
+				prev = {
+					set_variable = {
+						which = sba_harvester_min_years
+						value = 10
+					}
+				}
+			}
+			else = {
+				prev = {
+					set_variable = {
+						which = sba_harvester_min_years
+						value = 5
+					}
+				}
+			}
+		}
+		# every_system_planet = {
+		# 	limit = {
+		# 		can_have_mineral_deposits = yes
+		# 		NOR = {
+		# 			has_deposit_for = shipclass_research_station
+		# 			# has_deposit = d_nanite_harvester_deposit
+		# 		}
+		# 	}
+			
+		# }
+	}
+}
+sba_nanite_harvester_site_ordered_effect = {
+	optimize_memory
+	ordered_system_within_border = {
+		position = 0 # $POSITION|0$ # Handled by star flag set/limit
+		order_by = sba_harvester_max_$MAX$ # nanites / swarmers
+		set_star_flag = sba_nanite_harvester_search_flag
+		save_event_target_as = sba_$MAX$_harvester_system_$POSITION|0$
+		limit = {
+			NOT = {
+				has_star_flag = sba_nanite_harvester_search_flag
+			}
+		}
+	}
+}
+# sba_nanite_harvester_site_ordered_range_effect = {
+# 	optimize_memory
+# 	ordered_system_within_border = {
+# 		position = $POSITION|0$
+# 		order_by = sba_system_harvested_$MAX$_rough_max # nanites / swarmers
+# 		set_star_flag = sba_nanite_harvester_search_flag
+# 		save_event_target_as = sba_$MAX$_harvester_system_$POSITION|0$
+# 		limit = {
+# 			NOT = {
+# 				has_star_flag = sba_nanite_harvester_search_flag
+# 			}
+# 		}
+# 	}
+# }
+
+# Habitats
+# value:max_habitat_districts_value
+# district_hab_energy_max, district_hab_mining_max_add, and district_hab_science_max can't be checked directly
+
+sba_habitat_site_search_effect = {
+	optimize_memory
+	every_system_within_border = {
+		if = {
+			limit = {
+				sba_is_valid_habitat_system = yes
+				any_system_planet = {
+					sba_is_valid_habitat_planet = yes
+				}
+			}
+			set_variable = {
+				which = sba_system_district_hab_any_max_var
+				value = value:sba_district_hab_any_max_value # |FROM|from|
+			}
+			set_variable = {
+				which = sba_system_district_hab_energy_max_var
+				value = 0
+			}
+			set_variable = {
+				which = sba_system_district_hab_mining_max_var
+				value = 0
+			}
+			set_variable = {
+				which = sba_system_district_hab_science_max_var
+				value = 0
+			}
+			every_system_planet = {
+				limit = {
+					OR = {
+						has_deposit_for = shipclass_mining_station
+						has_deposit_for = shipclass_research_station
+					}
+				}
+				prev = {
+					change_variable = {
+						which = sba_system_district_hab_energy_max_var
+						value = prev.value:sba_district_hab_energy_max_value
+					}
+					change_variable = {
+						which = sba_system_district_hab_mining_max_var
+						value = prev.value:sba_district_hab_mining_max_value
+					}
+					change_variable = {
+						which = sba_system_district_hab_science_max_var
+						value = prev.value:sba_district_hab_science_max_value
+					}
+				}
+			}
+			# export_trigger_value_to_variable = {
+			# 	trigger = count_system_planet
+			# 	parameters = {
+			# 		limit = {
+			# 			NOT = { has_deposit_for = shipclass_research_station }
+			# 			is_star = no
+			# 			is_astral_scar = no
+			# 			colonizable_planet = no
+			# 		}
+			# 	}
+			# 	variable = sba_arc_furnace_var
+			# }
+			# prev = {
+			# 	change_variable = {
+			# 		which = sba_num_arc_furnace_systems
+			# 		value = 1
+			# 	}
+			# }
+		}
+	}
+}
+sba_habitat_site_ordered_effect = {
+	optimize_memory
+	ordered_system_within_border = {
+		position = 0 # $POSITION|0$ # Handled by star flag set/limit
+		order_by = sba_system_district_hab_$TYPE$_max_var
+		set_star_flag = sba_habitat_search_flag
+		save_event_target_as = sba_$TYPE$_habitat_system_$POSITION|0$
+		limit = {
+			NOT = {
+				has_star_flag = sba_habitat_search_flag
+			}
+			sba_is_valid_habitat_system = yes
+			any_system_planet = {
+				sba_is_valid_habitat_planet = yes
+			}
+			check_variable = {
+				which = sba_system_district_hab_$TYPE$_max_var
+				value > 0
+			}
+			[[EXCLUDE0]
+			NAND = {
+				exists = event_target:$EXCLUDE0$
+				is_same_value = event_target:$EXCLUDE0$
+			}
+			]
+			[[EXCLUDE1]
+			NAND = {
+				exists = event_target:$EXCLUDE1$
+				is_same_value = event_target:$EXCLUDE1$
+			}
+			]
+			[[EXCLUDE2]
+			NAND = {
+				exists = event_target:$EXCLUDE2$
+				is_same_value = event_target:$EXCLUDE2$
+			}
+			]
+			[[EXCLUDE3]
+			NAND = {
+				exists = event_target:$EXCLUDE3$
+				is_same_value = event_target:$EXCLUDE3$
+			}
+			]
+			[[EXCLUDE4]
+			NAND = {
+				exists = event_target:$EXCLUDE4$
+				is_same_value = event_target:$EXCLUDE4$
+			}
+			]
+		}
+	}
+}
+# value:max_major_orbitals
+# value:max_minor_orbitals
+# value:max_research_orbitals
+# value:max_energy_orbitals
+# value:max_mining_orbitals
+
+sba_ice_mining_site_ordered_effect = {
+	optimize_memory
+	ordered_system_within_border = {
+		position = $POSITION|0$
+		order_by = value:sba_ice_mining_value
+		# set_star_flag = sba_ice_mining_search_flag
+		save_event_target_as = sba_ice_mining_system_$POSITION|0$
+		# set_variable = {
+		# 	which = sba_ice_mining_var
+		# 	value = value:sba_ice_mining_value
+		# }
+		limit = {
+			starbase = {
+				NOR = {
+					has_starbase_building = ice_mining_station
+					is_starbase_building_building = ice_mining_station
+				}
+			}
+			any_system_planet = {
+				sba_is_valid_ice_mining_planet = yes
+				# is_terraforming = no # SBA added
+			}
+		}
+	}
+}
+
+sba_quantum_catapult_site_ordered_effect = {
+	optimize_memory
+	ordered_system_within_border = {
+		position = $POSITION|0$
+		order_by = trigger:distance_to_capital # Euclidean distance
+		inverse = yes # Want shortest distance
+		# set_star_flag = sba_quantum_catapult_search_flag
+		save_event_target_as = sba_quantum_catapult_system_$POSITION|0$
+		export_trigger_value_to_variable = {
+			trigger = distance_to_capital
+			variable = sba_distance_to_capital_var
+		}
+		limit = {
+			sba_is_valid_quantum_catapult_system = yes
+			# placement_rules (planet)
+			any_system_planet = {
+				sba_is_valid_quantum_catapult_planet = yes
+			}
+		}
+	}
+}
+
+# branch_office_value = { who = <target> value > 10/variable } # Checks the planet's branch office value
+# sba_branch_office_site_ordered_effect = {
+# 	optimize_memory
+# 	ordered_galaxy_planet = {
+# 		position = $POSITION|0$
+# 		order_by = trigger: # trade value (trigger DNE) / branch office value
+# 		# set_star_flag = sba_quantum_catapult_search_flag
+# 		save_event_target_as = sba_ranch_office_colony_$POSITION|0$
+# 		limit = {
+# 			is_colony = yes
+# 			exists = owner
+# 			owner = {
+# 				is_megacorp = no
+# 				is_gestalt = no
+# 				NOR = {
+# 					has_civic = civic_galactic_sovereign_megacorp
+# 					is_country_type = fallen_empire
+# 					is_country_type = awakened_fallen_empire
+# 				}
+# 			}
+# 		}
+# 	}
+# }

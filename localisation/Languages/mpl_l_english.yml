@@ -1,0 +1,193 @@
+﻿l_english:
+
+#Rules
+CANNOT_ADD_CLAIM_NOT_IN_LINE: "The system is not linked to your other claims or owned systems."
+relative_technology: "Neighbors Superior Tech"
+
+ MINI_JUMP_DRIVE_1:0 "Mini Jump Drive"
+MINI_JUMP_DRIVE_1_DESC:1 "The Mini Jump Drive is the miniaturization of jump drive, this is §Rvulnerable§! to attack"
+ RANGELESS_JUMP_DRIVE:0 ""
+ MINI_PSI_JUMP_DRIVE_1:0 "Mini Psi Jump Drive"
+ MINI_PSI_JUMP_DRIVE_1:1 "The Mini Psi Jump Drive is the miniaturization of Psi Jump Drive, this is §Rvulnerable§! to attack"
+
+
+decision_automate_planet_luxuries_boost:"§GAble§! Automate $decision_planet_luxuries_boost$"
+decision_automate_planet_luxuries_boost_desc:"Every 10 years rebuy $decision_planet_luxuries_boost$ if have resource sufficent"
+decision_disable_automate_planet_luxuries_boost:"§RDiable§! Automate $decision_planet_luxuries_boost$"
+decision_disable_automate_planet_luxuries_boost_desc:"Not rebuy $decision_planet_luxuries_boost$"
+decision_automate_planet_luxuries_boost_free:"$decision_automate_planet_luxuries_boost$"
+decision_automate_planet_luxuries_boost_free_desc:"$decision_automate_planet_luxuries_boost_desc$"
+sell_minor_artifacts: "Auto-Sell minor artifacts"
+edict_auto_sell_relic: "Auto sell minor artifacts"
+edict_auto_sell_relic_desc: "Get 83 £energy£ §YEnergy§! at month with auto-sell minor artifacts."
+
+ trade_policy_society:0 "Exchange society knowledge"
+ trade_policy_society_name:0 "$trade_policy_consumer_goods$"
+ trade_policy_society_desc:0 "Profits and taxes must take second place to improving the knowledge of society.\n\n§EEach collected £trade_value£ §YTrade Value§! earns us £energy£ §Y0.1§! and £society_research£ §Y0.5§!§!"
+
+
+
+ ###################
+ # Policies
+ ###################
+ policy_eac_auto_pop_migration_habitability:0 "Auto Pop Resettle"
+ policy_eac_auto_pop_migration_habitability_desc:0 "Sets the policy for habitability checks for automatic pop migration (resettle 1 pop not §YRuler§! for planet eligible (need have unemployed people))"
+ eac_apm_habitability_80_name:0 "Habitability 80% minimum"
+ eac_apm_habitability_80:0 "$eac_apm_habitability_80_name$"
+ eac_apm_habitability_80_desc:0 "Only allows automatic pop resettlement if the target planet has at least §G80%§! habitability."
+ eac_apm_habitability_60_name:0 "Habitability 60% minimum"
+ eac_apm_habitability_60:0 "$eac_apm_habitability_60_name$"
+ eac_apm_habitability_60_desc:0 "Only allows automatic pop resettlement if the target planet has at least §Y60%§! habitability."
+ eac_apm_habitability_40_name:0 "Habitability 40% minimumy"
+ eac_apm_habitability_40:0 "$eac_apm_habitability_40_name$"
+ eac_apm_habitability_40_desc:0 "Only allows automatic pop resettlement if the target planet has at least §R40%§! habitability."
+
+eac_apm_no_name:0 "Auto Pop Resettle - OFF"
+eac_apm_no:0 "$eac_apm_no_name$"
+eac_apm_no_desc:0 "Auto Pop Resettle - OFF."
+
+tech_engineering_1: "Quantum computing"
+tech_engineering_1_desc: "Quantum computers are much faster than traditional computers and can solve problems that are currently intractable."
+tech_engineering_2: "Advanced quantumscopy"
+tech_engineering_2_desc: "Quantumscopy help research for see quantistic level with high precision and without interfering with quantum levels"
+tech_engineering_3: "Quantum Robot"
+tech_engineering_3_desc: "Programmable quantum robots for testing theories and doing practical stuff in research"
+
+
+tech_nm_utilization_1:0 "Prototype Anti matter Utilities"
+    tech_nm_utilization_1_desc:0 "§BRequired for Jump drive.§!\n\nThe first generation of devices, processes and methods, utilizing the unique and exotic Anti matter. They are still experimental prototypes and don't utilize the full potential of Anti matter, but are powerful nonetheless. From the tremendous improvement ftl thrusters for intrastellar travel, to the extreme manipulation of stellar bodies. Anti matter is an incredibly powerful asset."
+
+  building_negative_mass_factory_2:0 "Anti matter Transmuter"
+  building_negative_mass_factory_2_desc:0 "Being the next step in Anti matter production, the Anti matter Transmuter is an advanced form of the Energy Anti-Transmuter with increased efficiency and yield. However, energy-to-negative-energy conversion is still far from efficient and will remain so, until we figure out how to perfectly convert energy between the two states."
+
+
+
+
+resettlement_costly_name: "Resettlement cost"
+trade_conversion_society_name: "$trade_policy_consumer_goods$"
+
+ number_federation: "Number of members federation"
+insufficient_cohesion: "Cohesion is §Rinsufficient§!"
+Negative_cohesion: "Cohesion is §Rnegative§!"
+ehof_qnm_deficit: "Antimatter deficit"
+
+alloys_3_market: "Trade alloys in market"
+alloys_9_market: "Trade alloys in market x3"
+
+
+mod_station_gatherers_minerals_upkeep_mult: "Mining Station Minerals Upkeep"
+mod_planet_energy_converters_energy_upkeep_add: "Mining Station Energy Upkeep"
+
+tech_autonomous_agents_2: "$tech_autonomous_agents$"
+tech_autonomous_agents_2_desc: "$tech_autonomous_agents_desc$"
+tech_embodied_dynamism_2: "$tech_embodied_dynamism$"
+tech_embodied_dynamism_2_desc: "$tech_embodied_dynamism_desc$"
+
+eight_country: "Envoys for number countries"
+eleven_country: "$eight_country$"
+fourthen_country: "$eight_country$"
+twenty_country: "$eight_country$"
+twentyseven_country: "$eight_country$"
+thirtitwo_country: "$eight_country$"
+
+sm_starm_science_booster_nv: "$sm_starm_science_booster$"
+sm_starm_science_booster_nv_desc: "$sm_starm_science_booster_desc$"
+sm_starm_science_hub_nv: "$sm_starm_science_hub$"
+sm_starm_science_hub_nv_desc: "$sm_starm_science_hub_desc$"
+
+ tech_physics_1:0 "Quantum Theory"
+ tech_physics_1_desc:0 "Exploring the mediation of fundamental forces through subatomic particles."
+ tech_physics_2:0 "Applied Quantum Physics"
+ tech_physics_2_desc:0 "The seemingly erratic behavior of tiny things can dramatically alter the way we think about bigger things."
+ tech_physics_3:0 "Teleporter Quantum Study"
+ tech_physics_3_desc:0 "Can try teleporter swap quantum energy unti 1 AU distance."
+
+
+new_colony_modifier: "New colony"
+early_game_modifier: "Early game"
+mid_game_modifier: "Mid game"
+late_game_modifier: "Late game"
+Stellaris_feat_Gobbi: "Gobbi modifiers"
+early_game_modifier_fast: "Early game fast"
+
+agenda_feudal_shift_finish_desc: "Shift subjects into your ethics"
+
+agenda_feudal_shift_finish: "Shift subjects into your ethics"
+agenda_feudal_shift_finish_desc: "\nShift all subjects that not have same ethos into your ethics"
+
+cg_ai_deficit_work_out_1: "Balance build deficit work out"
+sfg_ai_1: "Balance ai remove districts"
+sfg_ai_2: "Balance ai remove districts"
+Client_released: "Client Release"
+decision_cg_release_client_state: "Release Client State"
+decision_cg_release_client_state_desc: "This planet shall be granted Home Rule."
+
+energy_for_40_food_market: "Trade food in simulation market"
+energy_for_12_consumer_goods_market: "Trade consumer goods in simulation market"
+energy_for_9_alloys_market: "Trade alloys in simulation market"
+energy_for_all_market: "Trade all in simulation market"
+
+gears_of_war: "Gears of war"
+tech_planetary_unification_effect:2 "Grants use edict $gears_of_war$ that reduce $mod_pop_resettlement_cost_mult$ of 75%"
+decision_resettle_mass_population_10: "Resettle 10 pop group to other Planets"
+decision_resettle_mass_population_10_desc: "Resettle pop until 10 if you can pay cost of resettle"
+decision_resettle_mass_population_20: "Resettle 20 pop group to other Planets"
+decision_resettle_mass_population_20_desc: "Resettle pop until 20 if you can pay cost of resettle"
+
+the_last_resistance_finish: "Create the last resistance fleet"
+the_last_resistance_finish_desc: "Create fleet by civilian ship convert military fleet 50% naval capacity in 1 random owned planet"
+council_agenda_feudal_shift_pursuit_name: "Ethic Shifter"
+council_agenda_feudal_shift_pursuit_desc: "Engage with your vassal, highlighting the personal and communal advantages of following your ethical principles."
+council_agenda_the_last_resistance_name: "The last resistance"
+council_agenda_the_last_resistance_desc: "Use and recycle all civilian ship and all resource of country for create an fleet"
+council_agenda_gears_of_war_name: "Gears of war"
+council_agenda_gears_of_war_desc: "Create an fleet for transport people,slaves,robot for reduce cost of resettle."
+gears_of_war_finish: "Reduce cost resettlement"
+gears_of_war_finish_desc: "Reduce cost resettlement of 75%"
+country_defaulted_by_the_last_resistance: "Default by last resistance"
+
+
+d_anti_mater_deposit: "Antimatter deposit"
+
+cg_homeworld: "Is a homeworld"
+cg_homeworld_desc: "Capital building in this planet give bonus §WEmpire Size:§! §G-25§! proportional at weight of this planet\n" 
+#For the civic §Yconquer homeworld§!, every planet homeworld conque increment £stability£ stability of country.
+mod_country_minor_artifacts_produces_mult: "Monthly £minor_artifacts£"
+
+mod_planet_jobs_worker_minerals_produces_mult: "Minerals Worker Produces "
+mod_planet_pops_food_upkeep_mult: "Pops £food£ upkeep "
+
+d_giant_tree_navi: "Vitraya Ramunong"
+d_giant_tree_navi_desc: "a giant tree that sits on a vast store of a mineral called unobtainium, which humans want as an energy supply."
+
+mod_planet_miners_rare_crystals_produces_add: "£rare_crystals£ $rare_crystals$ from £job_miner£ [GetMinerPlural]"
+
+
+cg_auto_remove_rare_resource:0 "AI auto remove rare res build"
+cg_war_empire_size:0 "Military administration"
+belligerent:0 "Belligerent jobs"
+belligerent_hive:0 "Belligerent jobs"
+diplo_stance_supremacist_hive:0  "Supremacist jobs"
+diplo_stance_animosity_hive:0 "Animosity jobs"
+cooperative:0  "Cooperative jobs"
+cooperative_hive:0 "Cooperative jobs"
+isolationist:0 "isolationist jobs"
+isolationist_hive:0 "isolationist jobs"
+isolationist_machine:0 "isolationist jobs"
+diplo_stance_expansionist_gestalt:0 "Expansionist jobs"
+cg_expansionist_gestalt:0 "Expansionist jobs"
+cg_expansionist:0 "Expansionist jobs"
+
+mod_planet_administrators_society_research_produces_mult:0 "Administrators pop jobs £society_research£ produces mult:"
+
+cg_ap_shared_destiny_tooltip: "Your §YSubjects§! do not suffer $r_loyalty$ penalties from you having multiple Subjects. \nEnables an council agenda that shifts vassals' ethos towards us." #TO DO \nEnables an council agenda that shifts vassals' ethos towards us.
+
+sm_mining_bay:0 "Mining bay"
+
+personality_peaceful_researcher: "Peaceful researcher"
+personality_peaceful_researcher_desc: "Peaceful Researchers focus on discovery and knowledge, preferring collaboration and diplomacy over conflict, advancing society through intellectual pursuits."
+
+tech_colony_build_speed: "Standardized Colonizer Patterns"
+tech_colony_build_speed_desc: "Establishing new standards for the modeling and construction of Colonizer greatly improves the efficiency of the production pipeline."
+tech_colony_build_speed_2: "Optimize Colonizer Patterns"
+tech_colony_build_speed_2_desc: "Optimize new standards for the modeling and construction of Colonizer greatly improves the efficiency of the production pipeline."

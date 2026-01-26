@@ -1,0 +1,197 @@
+﻿l_korean:
+# l_braz_por
+# l_french
+# l_german
+# l_japanese
+# l_korean
+# l_polish
+# l_russian
+# l_simp_chinese
+# l_spanish
+
+#  LOCATION:0 "Location"
+#  BACK:0 "Back"
+#  SYSTEM:0 "System"
+#  SYSTEMS:0 "Systems"
+#  GOTO:0 "Go To"
+#  ideal_furnace_system: "Ideal System Located"
+
+ edict_system_search: "이상적인 시스템 로케이터"
+ edict_system_search_desc: "특정 구조를 구축하기 위한 최상의 시스템을 찾는 유틸리티입니다."
+ edict_locate_arc_furnace_systems: "$orbital_arc_furnace_4$ 시스템 로케이터"
+ edict_locate_arc_furnace_systems_desc: "$orbital_arc_furnace_4$에서 가장 많은 예금을 얻을 수 있는 상위 5개 시스템을 찾습니다."
+
+ sba_change_goto_system: "§T§S$GOTO$§! 버튼의 대상을 해당 시스템으로 변경하려면 시스템을 선택하세요.§!"
+ sba_change_goto_star: "§T별을 선택하면 §S$GOTO$§! 버튼의 목적지가 해당 성계로 변경됩니다.§!"
+ sba_base_game_deposits_warning: "§P이 유틸리티는 기본 게임에 존재하는 자원 예치금만 평가할 수 있으며 해당 자원이 수정되지 않은 것으로 가정합니다.§!"
+
+# BLANK_STRING:0 ""
+ sba_num_zero: "0"
+ sba_num_zero_red: "§R0§!"
+ sba_arc_furnace_count: "[root.arc_furnace_counter]"
+ sba_dyson_swarm_count: "[root.dyson_swarm_counter]"
+ sba_arc_furnace_cap: "§Y[root.SBAGetArcFurnaceCount]/[root.temp_arc_furnace_max]§!"
+ sba_dyson_swarm_cap: "§Y[root.SBAGetDysonSwarmCount]/[root.temp_dyson_swarm_max]§!"
+
+ sba_energy_value: "£energy£§Y[this.sba_star_base_energy]§! "
+ sba_minerals_value: "£minerals£§Y[this.sba_star_base_minerals]§! "
+ sba_food_value: "£food£§Y[this.sba_star_base_food]§! "
+ sba_alloys_value: "£alloys£§Y[this.sba_star_base_alloys]§! "
+
+ sba_volatile_motes_value: "£volatile_motes£§Y[this.sba_star_base_volatile_motes]§! "
+ sba_exotic_gases_value: "£exotic_gases£§Y[this.sba_star_base_exotic_gases]§! "
+ sba_rare_crystals_value: "£rare_crystals£§Y[this.sba_star_base_rare_crystals]§! "
+
+ sba_physics_value: "£physics£§Y[this.sba_star_base_physics]§! "
+ sba_society_value: "£society£§Y[this.sba_star_base_society]§! "
+ sba_engineering_value: "£engineering£§Y[this.sba_star_base_engineering]§! "
+
+ sba_unity_value: "£unity£§Y[this.sba_star_base_unity]§! "
+ sba_zro_value: "£sr_zro£§Y[this.sba_star_base_zro]§! "
+ sba_dark_matter_value: "£sr_dark_matter£§Y[this.sba_star_base_dark_matter]§! "
+ sba_nanites_value: "£nanites£§Y[this.sba_star_base_nanites]§! "
+ sba_minor_artifacts_value: "£minor_artifacts£§Y[this.sba_star_base_minor_artifacts]§! "
+ sba_astral_threads_value: "£astral_threads£§Y[this.sba_star_base_astral_threads]§! "
+
+#  sba_base_resource_string: "Base[event_target:.SBAGetBaseEnergy][event_target:.SBAGetBaseMinerals][event_target:.SBAGetBaseFood][event_target:.SBAGetBaseAlloys][event_target:.SBAGetBaseMotes][event_target:.SBAGetBaseGases][event_target:.SBAGetBaseCrystals][event_target:.SBAGetBasePhysics][event_target:.SBAGetBaseSociety][event_target:.SBAGetBaseEngineering][event_target:.SBAGetBaseZro][event_target:.SBAGetBaseDarkMatter][event_target:.SBAGetBaseNanites][event_target:.SBAGetBaseMinorArtifacts]"
+ sba_base_resource_string: "[this.SBAGetBaseEnergy][this.SBAGetBaseMinerals][this.SBAGetBaseFood][this.SBAGetBaseAlloys][this.SBAGetBaseMotes][this.SBAGetBaseGases][this.SBAGetBaseCrystals][this.SBAGetBasePhysics][this.SBAGetBaseSociety][this.SBAGetBaseEngineering][this.SBAGetBaseUnity][this.SBAGetBaseZro][this.SBAGetBaseDarkMatter][this.SBAGetBaseNanites][this.SBAGetBaseMinorArtifacts][this.SBAGetBaseAstralThreads]베이스"
+
+ sba_system_search.10.name: "$edict_system_search$"
+ sba_system_search.10.desc: "$orbital_arc_furnace_4$ 용량: $sba_arc_furnace_cap$\n$dyson_swarm_3$ 용량: $sba_dyson_swarm_cap$\n\n무엇을 위해 좋은 위치를 찾고 싶나요?"
+
+# Arc Furnace Site Locator
+ sba_system_search.21.name: "$orbital_arc_furnace_4$ 부지 위치"
+ sba_system_search.21.desc: "$orbital_arc_furnace_4$ 용량: §Y[root.arc_furnace_counter]/[root.temp_arc_furnace_max]§!\n\n이는 $orbital_arc_furnace_4$ 에 대한 가장 잠재적인 가치를 지닌 우리가 소유한 시스템입니다.\n\n$orbital_arc_furnace_4$는 별 위에 건설된 광산 스테이션의 생산량을 향상시키지 않는다는 점을 명심하세요.\n\n$sba_change_goto_system$"
+ sba_system_search.21.a: "[event_target:sba_arc_furnace_system_0.GetName] (§Y[event_target:sba_arc_furnace_system_0.sba_arc_furnace_var]§! minable bodies)"
+ sba_system_search.21.b: "[event_target:sba_arc_furnace_system_1.GetName] (§Y[event_target:sba_arc_furnace_system_1.sba_arc_furnace_var]§! minable bodies)"
+ sba_system_search.21.c: "[event_target:sba_arc_furnace_system_2.GetName] (§Y[event_target:sba_arc_furnace_system_2.sba_arc_furnace_var]§! minable bodies)"
+ sba_system_search.21.d: "[event_target:sba_arc_furnace_system_3.GetName] (§Y[event_target:sba_arc_furnace_system_3.sba_arc_furnace_var]§! minable bodies)"
+ sba_system_search.21.e: "[event_target:sba_arc_furnace_system_4.GetName] (§Y[event_target:sba_arc_furnace_system_4.sba_arc_furnace_var]§! minable bodies)"
+
+# Dyson Swarm Site Locator
+ sba_system_search.31.name: "$dyson_swarm_3$ 사이트 위치"
+ sba_system_search.31.desc: "$dyson_swarm_3$ 용량: $sba_dyson_swarm_cap$\n\n이들은 $dyson_swarm_3$ 의 잠재적 가치가 가장 높은 우리가 소유한 별입니다.\n\n$sba_base_game_deposits_warning$\n\n$sba_change_goto_star$"
+
+ sba_system_search.31.energy0: "[event_target:sba_dyson_swarm_energy_star_0.GetName] ([event_target:sba_dyson_swarm_energy_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.energy1: "[event_target:sba_dyson_swarm_energy_star_1.GetName] ([event_target:sba_dyson_swarm_energy_star_1.SBAGetBaseResourceString])"
+ sba_system_search.31.energy2: "[event_target:sba_dyson_swarm_energy_star_2.GetName] ([event_target:sba_dyson_swarm_energy_star_2.SBAGetBaseResourceString])"
+
+ sba_system_search.31.minerals: "[event_target:sba_dyson_swarm_minerals_star_0.GetName] ([event_target:sba_dyson_swarm_minerals_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.alloys: "[event_target:sba_dyson_swarm_alloys_star_0.GetName] ([event_target:sba_dyson_swarm_alloys_star_0.SBAGetBaseResourceString])"
+
+ sba_system_search.31.volatile_motes: "[event_target:sba_dyson_swarm_volatile_motes_star_0.GetName] ([event_target:sba_dyson_swarm_volatile_motes_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.exotic_gases: "[event_target:sba_dyson_swarm_exotic_gases_star_0.GetName] ([event_target:sba_dyson_swarm_exotic_gases_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.rare_crystals: "[event_target:sba_dyson_swarm_rare_crystals_star_0.GetName] ([event_target:sba_dyson_swarm_rare_crystals_star_0.SBAGetBaseResourceString])"
+
+ sba_system_search.31.physics: "[event_target:sba_dyson_swarm_physics_star_0.GetName] ([event_target:sba_dyson_swarm_physics_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.society: "[event_target:sba_dyson_swarm_society_star_0.GetName] ([event_target:sba_dyson_swarm_society_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.engineering: "[event_target:sba_dyson_swarm_engineering_star_0.GetName] ([event_target:sba_dyson_swarm_engineering_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.research: "[event_target:sba_dyson_swarm_research_star_0.GetName] ([event_target:sba_dyson_swarm_research_star_0.SBAGetBaseResourceString])"
+
+ sba_system_search.31.unity: "[event_target:sba_dyson_swarm_unity_star_0.GetName] ([event_target:sba_dyson_swarm_unity_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.zro: "[event_target:sba_dyson_swarm_zro_star_0.GetName] ([event_target:sba_dyson_swarm_zro_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.dark_matter: "[event_target:sba_dyson_swarm_dark_matter_star_0.GetName] ([event_target:sba_dyson_swarm_dark_matter_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.nanites: "[event_target:sba_dyson_swarm_nanites_star_0.GetName] ([event_target:sba_dyson_swarm_nanites_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.minor_artifacts: "[event_target:sba_dyson_swarm_minor_artifacts_star_0.GetName] ([event_target:sba_dyson_swarm_minor_artifacts_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.astral_threads: "[event_target:sba_dyson_swarm_astral_threads_star_0.GetName] ([event_target:sba_dyson_swarm_astral_threads_star_0.SBAGetBaseResourceString])"
+
+# Habitat
+#  major_orbital: "Major Orbital"
+#  major_orbital_plural: "Major Orbitals"
+#  minor_orbital: "Minor Orbital"
+#  minor_orbital_plural: "Minor Orbitals"
+#  ORBITALS:0 "Orbitals"
+#  DISTRICTS:0 "Districts"
+#  MOD_PLANET_MAX_DISTRICTS_ADD:0 "Max Districts"
+#  GetHabitatMaxDistricts = value:max_habitat_districts_value
+ sba_color_code_G: "§G"
+ sba_color_code_R: "§R"
+ sba_color_code_Y: "§Y"
+ sba_max_orbital_string: "§Y[this.GetHabitatMaxAnyDistricts]§! $DISTRICTS$ (£job_technician£[this.GetHabitatMaxEnergyDistrictsColor][this.sba_system_district_hab_energy_max_var]§!, £job_miner£[this.GetHabitatMaxMiningDistrictsColor][this.sba_system_district_hab_mining_max_var]§!, £job_researcher£[this.GetHabitatMaxScienceDistrictsColor][this.sba_system_district_hab_science_max_var]§!)"
+
+ sba_system_search.41.name: "$habitat_complex$ Sites Located"
+ sba_system_search.41.desc: "These are the best systems we own for potential $habitat_complex_plural$.\n\n$sba_base_game_deposits_warning$\n\n$sba_change_goto_system$"
+# custom_tooltip = 
+# system_resources_tooltip, removing last \n\nline # TODO LOC
+ sba_system_orbital_tooltip: "§Y[solar_system.GetName]§! 성계는 다음 수용 가능: $TABBED_NEW_LINE$$DISTRICTS$: §Y[solar_system.GetHabitatMaxAnyDistricts]§! $TABBED_NEW_LINE$  $district_hab_energy_plural$: §Y[solar_system.sba_system_district_hab_energy_max_var]§! $TABBED_NEW_LINE$  $district_hab_mining_plural$: §Y[solar_system.sba_system_district_hab_mining_max_var]§!  $TABBED_NEW_LINE$  $district_hab_science_plural$: §Y[solar_system.sba_system_district_hab_science_max_var]§!"
+
+ sba_system_search.41.any0: "[event_target:sba_any_habitat_system_0.GetName]: [event_target:sba_any_habitat_system_0.SBAGetMaxOrbitalString]"
+ sba_system_search.41.any0.tooltip: "[event_target:sba_any_habitat_system_0.SBAGetOrbitalTooltip]"
+ sba_system_search.41.minor0: "[event_target:sba_minor_habitat_system_0.GetName]: [event_target:sba_minor_habitat_system_0.SBAGetMaxOrbitalString]"
+ sba_system_search.41.minor0.tooltip: "[event_target:sba_minor_habitat_system_0.SBAGetOrbitalTooltip]"
+ sba_system_search.41.research0: "[event_target:sba_science_habitat_system_0.GetName]: [event_target:sba_science_habitat_system_0.SBAGetMaxOrbitalString]"
+ sba_system_search.41.research0.tooltip: "[event_target:sba_science_habitat_system_0.SBAGetOrbitalTooltip]"
+ sba_system_search.41.energy0: "[event_target:sba_energy_habitat_system_0.GetName]: [event_target:sba_energy_habitat_system_0.SBAGetMaxOrbitalString]"
+ sba_system_search.41.energy0.tooltip: "[event_target:sba_energy_habitat_system_0.SBAGetOrbitalTooltip]"
+ sba_system_search.41.mining0: "[event_target:sba_mining_habitat_system_0.GetName]: [event_target:sba_mining_habitat_system_0.SBAGetMaxOrbitalString]"
+ sba_system_search.41.mining0.tooltip: "[event_target:sba_mining_habitat_system_0.SBAGetOrbitalTooltip]"
+ sba_system_search.41.any1: "[event_target:sba_any_habitat_system_1.GetName]: [event_target:sba_any_habitat_system_1.SBAGetMaxOrbitalString]"
+ sba_system_search.41.any1.tooltip: "[event_target:sba_any_habitat_system_1.SBAGetOrbitalTooltip]"
+ sba_system_search.41.minor1: "[event_target:sba_minor_habitat_system_1.GetName]: [event_target:sba_minor_habitat_system_1.SBAGetMaxOrbitalString]"
+ sba_system_search.41.minor1.tooltip: "[event_target:sba_minor_habitat_system_1.SBAGetOrbitalTooltip]"
+ sba_system_search.41.research1: "[event_target:sba_science_habitat_system_1.GetName]: [event_target:sba_science_habitat_system_1.SBAGetMaxOrbitalString]"
+ sba_system_search.41.research1.tooltip: "[event_target:sba_science_habitat_system_1.SBAGetOrbitalTooltip]"
+ sba_system_search.41.energy1: "[event_target:sba_energy_habitat_system_1.GetName]: [event_target:sba_energy_habitat_system_1.SBAGetMaxOrbitalString]"
+ sba_system_search.41.energy1.tooltip: "[event_target:sba_energy_habitat_system_1.SBAGetOrbitalTooltip]"
+ sba_system_search.41.mining1: "[event_target:sba_mining_habitat_system_1.GetName]: [event_target:sba_mining_habitat_system_1.SBAGetMaxOrbitalString]"
+ sba_system_search.41.mining1.tooltip: "[event_target:sba_mining_habitat_system_1.SBAGetOrbitalTooltip]"
+
+# Nanite Harvester site locator
+ sba_system_search.51.name: "$sm_nanite_harvester$ Sites Located"
+ sba_system_search.51.desc: "T이것은 $sm_nanite_harvester$ 에서 가장 많은 예금을 얻을 수 있는 우리가 소유한 시스템입니다.\n\n나노나이트 매장지의 최대 잠재력은 £planetsize£ §Y+3§! 행성 크기마다 두 배로 증가하여 최대 £planetsize£ §Y21§!까지, 다시 한번 £planetsize£ §Y25§!로 증가하므로 어떤 시스템이 가장 좋은지는 행성의 크기에 따라 다릅니다. 소행성과 대부분의 달은 $nanite_swarmer_plural$를 생성하는 데 필요한 최소 £planetsize£ §Y12§! 행성 크기에 도달하지 않습니다.\n\n$sba_change_goto_system$"
+ sba_system_search.51.a: "[event_target:sba_nanite_harvester_system_0.GetName] (§Y[event_target:sba_nanite_harvester_system_0.sba_nanite_harvester_var]§! harvestable bodies)"
+ sba_system_search.51.b: "[event_target:sba_nanite_harvester_system_1.GetName] (§Y[event_target:sba_nanite_harvester_system_1.sba_nanite_harvester_var]§! harvestable bodies)"
+ sba_system_search.51.c: "[event_target:sba_nanite_harvester_system_2.GetName] (§Y[event_target:sba_nanite_harvester_system_2.sba_nanite_harvester_var]§! harvestable bodies)"
+ sba_system_search.51.d: "[event_target:sba_nanite_harvester_system_3.GetName] (§Y[event_target:sba_nanite_harvester_system_3.sba_nanite_harvester_var]§! harvestable bodies)"
+ sba_system_search.51.e: "[event_target:sba_nanite_harvester_system_4.GetName] (§Y[event_target:sba_nanite_harvester_system_4.sba_nanite_harvester_var]§! harvestable bodies)"
+
+# TODO LOC (also sba_system_search.51.desc)
+ sba_system_search.52.desc: "이것은 잠재적인 $sm_nanite_harvester_plural$를 위해 우리가 소유한 최고의 시스템입니다.\n\n$sba_change_goto_system$"
+ sba_nanite_harvester_string: "[this.GetName] (£nanites£§Y[this.sba_harvester_max_nanites]§! £military_ship£§Y[this.sba_harvester_max_swarmers]§! £time£§R[this.sba_harvester_min_years]§!)"
+ sba_system_search.52.nanites0: "[event_target:sba_nanites_harvester_system_0.SBAGetNaniteHarvesterString]"
+ sba_system_search.52.nanites1: "[event_target:sba_nanites_harvester_system_1.SBAGetNaniteHarvesterString]"
+ sba_system_search.52.nanites2: "[event_target:sba_nanites_harvester_system_2.SBAGetNaniteHarvesterString]"
+ sba_system_search.52.swarmers0: "[event_target:sba_swarmers_harvester_system_0.SBAGetNaniteHarvesterString]"
+ sba_system_search.52.swarmers1: "[event_target:sba_swarmers_harvester_system_1.SBAGetNaniteHarvesterString]"
+ sba_system_search.52.swarmers2: "[event_target:sba_swarmers_harvester_system_2.SBAGetNaniteHarvesterString]"
+
+# Notification menu
+# MESSAGE_MEGASTRUCTURE_BUILT_TITLE
+# MESSAGE_MEGASTRUCTURE_UPGRADED_TITLE
+ sba_system_search.11.name: "사소한 거대구조 알림 설정"
+ sba_system_search.11.desc: "아래의 특정 게임 중반 거대 구조물을 건설하거나 업그레이드할 때 §Genable§! 또는 §Rdisable§! 알림을 보낼 수 있습니다.\n\n이러한 알림은 기본 게임에서는 사용할 수 없지만 내부 개발을 추적하는 데 유용할 수 있습니다. 다른 제국의 거대 구조물에 대해서는 알리지 않습니다."
+ enable_relay_built_alert: "$hyper_relay$ 알림 생성 - §R$planet_automation_setting_disabled$§!"
+ disable_relay_built_alert: "$hyper_relay$ 알림 생성 - §G$planet_automation_setting_enabled$§!"
+ enable_kilostructure_built_alert: "$orbital_arc_furnace_4$ 또는 $dyson_swarm_3$ 빌드 알림 - §R$planet_automation_setting_disabled$§!"
+ disable_kilostructure_built_alert: "$orbital_arc_furnace_4$ 또는 $dyson_swarm_3$ 빌드 알림 - §G$planet_automation_setting_enabled$§!"
+ enable_kilostructure_upgrade_alert: "$orbital_arc_furnace_4$ 또는 $dyson_swarm_3$ 업그레이드 알림 - §R$planet_automation_setting_disabled$§!"
+ disable_kilostructure_upgrade_alert: "$orbital_arc_furnace_4$ 또는 $dyson_swarm_3$ 업그레이드 알림 - §G$planet_automation_setting_enabled$§!"
+
+# Ice Mining Station
+# $pc_ice_asteroid$ $pc_frozen$ no plural loc
+ sba_system_search.61.name: "$sm_ice_mining_station$ 사이트 위치"
+ sba_system_search.61.desc: "이것은 $sm_ice_mining_station$로 가장 많은 £decision£§Y$decision_expand_planetary_sea$§! 결정을 지원하는 우리가 소유한 시스템입니다.\n\n얼음 소행성에 있는 자원 매장량을 이런 식으로 소비하면 손실된다는 점을 명심하세요. 또한, 용병 거주지는 그 궤도를 도는 행성이나 소행성이 얼음 채굴에 사용되는 것을 차단합니다.\n\n$sba_change_goto_system$"
+ sba_ice_mining_string: "[this.GetName] (£decision£§Y[this.SBAGetIceMiningValue]§!)"
+ sba_ice_mining_tooltip: "§Y[solar_system.GetName]§!시스템에는 다음이 포함됩니다:$TABBED_NEW_LINE$$pc_frozen$: §Y[solar_system.SBAGetNumFrozenWorlds]§!$TABBED_NEW_LINE$$pc_ice_asteroid$: §Y[solar_system.SBAGetNumIceAsteroids]§!\n\n$ice_mining_details$"
+ sba_system_search.61.0: "[event_target:sba_ice_mining_system_0.SBAGetIceMiningString]"
+ sba_system_search.61.1: "[event_target:sba_ice_mining_system_1.SBAGetIceMiningString]"
+ sba_system_search.61.2: "[event_target:sba_ice_mining_system_2.SBAGetIceMiningString]"
+ sba_system_search.61.3: "[event_target:sba_ice_mining_system_3.SBAGetIceMiningString]"
+ sba_system_search.61.4: "[event_target:sba_ice_mining_system_4.SBAGetIceMiningString]"
+ sba_system_search.61.0.tooltip: "[event_target:sba_ice_mining_system_0.SBAGetIceMiningTooltip]"
+ sba_system_search.61.1.tooltip: "[event_target:sba_ice_mining_system_1.SBAGetIceMiningTooltip]"
+ sba_system_search.61.2.tooltip: "[event_target:sba_ice_mining_system_2.SBAGetIceMiningTooltip]"
+ sba_system_search.61.3.tooltip: "[event_target:sba_ice_mining_system_3.SBAGetIceMiningTooltip]"
+ sba_system_search.61.4.tooltip: "[event_target:sba_ice_mining_system_4.SBAGetIceMiningTooltip]"
+# is_starbase_type
+
+# Quantum Catapult
+ sba_system_search.71.name: "$quantum_catapult_3$ 사이트 위치"
+ sba_system_search.71.desc: "이는 $quantum_catapult_3$를 구축할 수 있는 자본에 가장 가까운 시스템입니다.\n\n별이 보유하고 있는 자원 매장량에 대한 접근 권한을 잃게 된다는 점을 명심하세요.\n\n$sba_change_goto_system$"
+ sba_quantum_catapult_string: "[this.GetName] ($DISTANCE$: §Y[this.sba_distance_to_capital_var]§!)"
+ sba_system_search.71.0: "[event_target:sba_quantum_catapult_system_0.SBAGetQuantumCatapultString]"
+ sba_system_search.71.1: "[event_target:sba_quantum_catapult_system_1.SBAGetQuantumCatapultString]"
+ sba_system_search.71.2: "[event_target:sba_quantum_catapult_system_2.SBAGetQuantumCatapultString]"
+ sba_system_search.71.3: "[event_target:sba_quantum_catapult_system_3.SBAGetQuantumCatapultString]"
+ sba_system_search.71.4: "[event_target:sba_quantum_catapult_system_4.SBAGetQuantumCatapultString]"
+# Include ruined quantum catapult?

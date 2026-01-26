@@ -1,0 +1,370 @@
+namespace = cg_rules
+
+
+country_event = { #set bonus malus early game
+	id = cg_rules.1
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		mid_game_years_passed <= 0
+		NOT = { has_modifier = early_game_modifier }
+	}
+	immediate = { 
+		add_modifier = {
+			modifier = early_game_modifier
+		}
+		country_event = {
+			id = cg_rules.11 days = 15
+		}
+	}
+}
+country_event = { #set bonus malus early game ai
+	id = cg_rules.11
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		has_global_flag = AI_hard
+		mid_game_years_passed <= 0
+		is_ai = yes
+		was_human = no
+		NOT = { is_country_type = fallen_empire }
+		NOT = { has_modifier = ai_early_game_modifier }
+	}
+	immediate = { 
+		add_modifier = {
+			modifier = ai_early_game_modifier
+		}
+	}
+}
+country_event = { #set bonus malus early game ai
+	id = cg_rules.12
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		has_global_flag = AI_hard
+		is_ai = yes
+		was_human = no
+		mid_game_years_passed >= 0
+		end_game_years_passed <= 0
+		NOT = { is_country_type = fallen_empire }
+		NOT = { has_modifier = ai_mid_game_modifier }
+	}
+	immediate = { 
+		add_modifier = {
+			modifier = ai_mid_game_modifier
+		}
+		remove_modifier = ai_early_game_modifier
+	}
+}
+country_event = { #set bonus malus early game ai
+	id = cg_rules.13
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		has_global_flag = AI_hard
+		is_ai = yes
+		was_human = no
+		end_game_years_passed >= 0
+		NOT = { is_country_type = fallen_empire }
+		NOT = { has_modifier = ai_late_game_modifier }
+	}
+	immediate = { 
+		add_modifier = {
+			modifier = ai_late_game_modifier
+		}
+		remove_modifier = ai_mid_game_modifier
+	}
+}
+
+country_event = { #set bonus malus mid game
+	id = cg_rules.2
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		mid_game_years_passed >= 0
+		end_game_years_passed <= 0
+		NOT = { has_modifier = mid_game_modifier }
+	}
+	immediate = { 
+		add_modifier = {
+			modifier = mid_game_modifier
+		}
+		remove_modifier = early_game_modifier
+		country_event = {
+			id = cg_rules.12 days = 15
+		}
+	}
+}
+country_event = { #set bonus malus mid game
+	id = cg_rules.3
+	hide_window = yes
+	trigger = {
+		end_game_years_passed >= 0
+		NOT = { has_modifier = late_game_modifier }
+	}
+	is_triggered_only = yes
+	immediate = { 
+		add_modifier = {
+			modifier = late_game_modifier
+		}
+		remove_modifier = mid_game_modifier
+		country_event = {
+			id = cg_rules.13  days = 15
+		}
+	}
+}
+country_event = { #set bonus conquered planet
+	id = cg_rules.4
+	hide_window = yes
+	#TODO
+	#sarebbe carino un messaggio?? bisogna mandare un altro evento con from = { e che si possa mandare solo un evento con una flag a tempo.}
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = default
+	}
+	immediate = { 
+		from = { 
+			Bonus_war_empire_size = yes
+		} 
+	}
+}
+country_event = { #set bonus malus galaxy size
+	id = cg_rules.30
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_modifier = tyni_galaxy_modifier
+			has_modifier = small_galaxy_modifier
+			has_modifier = big_small_galaxy_modifier
+			has_modifier = medium_galaxy_modifier
+			has_modifier = large_galaxy_modifier
+			has_modifier = very_large_galaxy_modifier
+			has_modifier = huge_galaxy_modifier
+		}
+	}
+	immediate = { 
+		owner = { 
+			country_event = { 
+				id = cg_rules.31
+				days = 15 #low prioriry
+			}
+		} 
+	}
+}
+country_event = { #set bonus malus galaxy size
+	id = cg_rules.31
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	# trigger = {
+	# 	NOR = {
+	# 		has_modifier = tyni_galaxy_modifier
+	# 		has_modifier = small_galaxy_modifier
+	# 		has_modifier = small_galaxy_modifier
+	# 		has_modifier = medium_galaxy_modifier
+	# 		has_modifier = large_galaxy_modifier
+	# 		has_modifier = very_large_galaxy_modifier
+	# 		has_modifier = huge_galaxy_modifier
+	# 	}
+	# }
+	
+	immediate = {
+		if = {
+			limit = {
+				galaxy_size = tiny
+			}
+			add_modifier = {
+				modifier = tyni_galaxy_modifier
+			}
+		}
+		if = {
+			limit = {
+				galaxy_size = small
+			}
+			add_modifier = {
+				modifier = small_galaxy_modifier
+			}
+		}
+		if = {
+			limit = {
+				galaxy_size = small10players
+			}
+			add_modifier = {
+				modifier = big_small_galaxy_modifier
+			}
+		}
+		else_if = {
+			limit = {
+					galaxy_size = medium
+			}
+			add_modifier = {
+				modifier = medium_galaxy_modifier
+			}
+		}
+		else_if = {
+			limit = {
+				galaxy_size = mediumover16
+			}
+			add_modifier = {
+				modifier = large_galaxy_modifier
+			}
+		}
+		else_if = {
+			limit = {
+				galaxy_size = large
+			}
+			add_modifier = {
+				modifier = very_large_galaxy_modifier
+			}
+		}
+		else_if = {
+			limit = {
+				galaxy_size = huge
+			}
+			add_modifier = {
+				modifier = huge_galaxy_modifier
+			}
+		}
+	}
+}
+country_event = { #set bonus envoys for the totals countryes.
+	id = cg_rules.32
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_modifier = eight_country
+			has_modifier = eleven_country
+			has_modifier = fourthen_country
+			has_modifier = twenty_country
+			has_modifier = twentyseven_country
+			has_modifier = thirtitwo_country
+		}
+	}
+	immediate = {
+		if = { limit = {
+				count_country = {
+				count >= 32
+					limit = {
+						is_country_type = default
+						is_subject = no
+					}
+				}
+			}
+			add_modifier = {
+				modifier = thirtitwo_country
+			}
+			set_global_flag = Country32
+		}else_if = { limit = {
+				count_country = {
+				count >= 28
+					limit = {
+						is_country_type = default
+						is_subject = no
+					}
+				}
+			}
+			add_modifier = {
+				modifier = twentyseven_country
+			}
+			set_global_flag = Country27
+		}else_if = { limit = {
+				count_country = {
+				count >= 22
+					limit = {
+						is_country_type = default
+						is_subject = no
+					}
+				}
+			}
+			add_modifier = {
+				modifier = twenty_country
+			}
+			set_global_flag = Country20
+		}else_if = { limit = {
+				count_country = {
+				count >= 16
+					limit = {
+						is_country_type = default
+						is_subject = no
+					}
+				}
+			}
+			add_modifier = {
+				modifier = fourthen_country
+			}
+			set_global_flag = Country14
+		}else_if = { limit = {
+				count_country = {
+				count >= 14
+					limit = {
+						is_country_type = default
+						is_subject = no
+					}
+				}
+			}
+			add_modifier = {
+				modifier = eleven_country
+			}
+			set_global_flag = Country12
+		}else_if = { limit = {
+				count_country = {
+				count >= 10
+					limit = {
+						is_country_type = default
+						is_subject = no
+					}
+				}
+			}
+			add_modifier = {
+				modifier = eight_country
+			}
+			set_global_flag = Country8
+		}
+		
+	}
+}
+country_event = { #set bonus malus early game
+	id = cg_rules.33
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_modifier = Stellaris_feat_Gobbi }
+	}
+	immediate = { 
+		add_modifier = {
+			modifier = Stellaris_feat_Gobbi
+		}
+	}
+}
+event = {
+	id = cg_rules.999
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		mid_game_years_passed >= 0
+		NOT = { has_modifier = mid_game_modifier }
+	}
+	immediate = { 
+		every_country = {
+			add_modifier = {
+				modifier = mid_game_modifier
+			}
+			remove_modifier = early_game_modifier
+		}
+	}
+}

@@ -1,0 +1,267 @@
+
+
+########################################
+################ TIER 1 ################
+########################################
+# weapon_role_point_defense_weapon_fire_rate_mult
+GT_weapon_role_point_defense_weapon_fire_rate_mult = {
+	cost = @tier1cost2
+	area = physics
+	tier = 1
+	category = { computing }	
+	prerequisites = { "tech_pd_tracking_1" }
+	weight = @tier1weight2
+	
+	modifier = {
+		weapon_role_point_defense_weapon_fire_rate_mult = 0.20
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 1 value > 8 }
+		}
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}
+# damage_vs_country_type_amoeba_mult
+GT_damage_vs_country_type_amoeba_mult = {
+	cost = @tier1cost3
+	area = physics
+	tier = 1
+	is_rare = yes
+	category = { field_manipulation }	
+	prerequisites = { "tech_alien_life_studies" }
+	weight = @tier1weight3
+	
+	modifier = {
+		damage_vs_country_type_amoeba_mult = 0.30
+	}
+	
+	weight_modifier = {
+		factor = 0.50
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 1 value > 5 }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_damage_vs_country_type_amoeba_mult
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = established_comms_with_amoebas }
+		}
+		modifier = {
+			factor = 0
+			has_modifier = pacified_amoebas
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# damage_vs_country_type_crystal_mult
+GT_damage_vs_country_type_crystal_mult = {
+	cost = @tier1cost3
+	area = physics
+	tier = 1
+	is_rare = yes
+	category = { field_manipulation }	
+	prerequisites = { "tech_alien_life_studies" }
+	weight = @tier1weight3
+	
+	modifier = {
+		damage_vs_country_type_crystal_mult = 0.30
+	}
+	
+	weight_modifier = {
+		factor = 0.50
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 1 value > 5 }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_damage_vs_country_type_crystal_mult
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = established_comms_with_crystals }
+		}
+		modifier = {
+			factor = 0
+			has_country_flag = crystal_nonhostile_approach
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# damage_vs_country_type_drone_mult
+GT_damage_vs_country_type_drone_mult = {
+	cost = @tier1cost3
+	area = physics
+	tier = 1
+	is_rare = yes
+	category = { particles }	
+	prerequisites = { "tech_alien_life_studies" }
+	weight = @tier1weight3
+	
+	modifier = {
+		damage_vs_country_type_drone_mult = 0.30
+	}
+	
+	weight_modifier = {
+		factor = 0.50
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 1 value > 5 }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_damage_vs_country_type_drone_mult
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = established_comms_with_drones }
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+# damage_vs_country_type_cloud_mult
+GT_damage_vs_country_type_cloud_mult = {
+	cost = @tier1cost3
+	area = physics
+	tier = 1
+	is_rare = yes
+	category = { field_manipulation }	
+	prerequisites = { "tech_alien_life_studies" }
+	weight = @tier1weight3
+	
+	modifier = {
+		damage_vs_country_type_cloud_mult = 0.30
+	}
+	
+	weight_modifier = {
+		factor = 0.50
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 1 value > 5 }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_damage_vs_country_type_cloud_mult
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = established_comms_with_clouds }
+		}
+	}
+	
+	ai_weight = {
+	}
+}
+
+# armies_energy_upkeep_mult
+GT_armies_energy_upkeep_mult = {
+	cost = @tier3cost2
+	area = physics
+	tier = 3
+	category = { computing }	
+	prerequisites = { "tech_combat_training" }
+	weight = @tier3weight3
+	
+	modifier = {
+		armies_energy_upkeep_mult = -0.15
+	}
+	
+	weight_modifier = {
+	}
+	
+	ai_weight = {
+		weight = @TechMediumPriority
+	}
+}
+
+########################################
+################ TIER 4 ################
+########################################
+# planet_researchers_physics_research_produces_mult
+GT_planet_researchers_physics_research_produces_mult3 = {
+	cost = @tier4cost3
+	area = physics
+	tier = 4
+	is_rare = yes
+	category = { computing }	
+	prerequisites = { "tech_physics_3" }
+	weight = @tier4weight1
+	
+	modifier = {
+		planet_physicists_produces_mult = 0.05
+		station_researchers_produces_mult = 0.10
+	}
+	
+	weight_modifier = {
+		factor = 0.50
+		modifier = {
+			factor = 0
+			num_researched_techs_of_tier = { tier = 4 value > 10 }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = GT_planet_researchers_physics_research_produces_mult3
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

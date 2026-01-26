@@ -1,0 +1,36 @@
+random_owned_planet = {
+	limit = {
+		is_artificial = no
+		NOR = {
+			exists = starbase
+			starbase = { has_starbase_size >= orbital_ring_tier_1 }
+			has_planet_flag = disable_sfg_usefull_communication30
+		}
+	}
+	weights = {
+		weight = 1
+		modifier = {
+			factor = 2
+			is_capital = yes
+		}
+		# spend more on ship upgrades if at capacity
+		modifier = {
+			factor = 3
+			free_housing < 1000
+		}
+		modifier = {
+			factor = 3
+			free_housing < 100
+		}
+	}
+	planet = {
+		set_timed_planet_flag = { 
+			flag = disable_sfg_usefull_communication30
+			days = 720
+		}
+	}
+	planet_event = {
+		
+		id = sfg_usefull_communication.31#Message
+	}
+}

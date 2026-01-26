@@ -1,0 +1,229 @@
+Full change is in mod in logCrean.log 
+Principally change: 
+[h1]1.0 Stellaris Feat Gobbi[/h1]
+[*] Improved AI budget – smarter in deficit situations
+[*] Can sell up to 100 minor artifacts (was 50)
+[*] Various AI and economy optimizations
+
+[h2]Ascension Perks[/h2]
+[*] Shared Destiny: Removes loyalty penalty
+[*] Archaeoengineers: Better bonuses to archaeo-buildings (e.g., more shields)
+[*] Transcendent Learning: Adds extra trait to new leaders
+
+[h2]Buildings & Districts[/h2]
+[*] Slave Processing: +20% slave output (was 10%)
+[*] Embassy: Build anywhere, +10% diplomatic weight
+[*] Production buildings increase resource cap
+[*] Military Academy increases army build speed
+[*] Foreign research lab this building give job of "spies research" that be research if have sufficient intel to foreign empire with >= equivalent tec and productio
+
+[h2]Casus Belli[/h2]
+[*] No humiliation CB if attacker/target is homicidal
+
+[h2]Components[/h2]
+[*] Crisis Hive stronger
+[*] Regeneration weaker (due to x5 ship health)
+[*] Ship aura bombardment: +75% (was 30%)
+[*] Fire Control: +10 accuracy (was 5)
+[*] Hyper Drives: Speed scales with component level
+[*] Special weapons (Amoeba, Mining Laser) cost food/energy/minerals, not alloys
+[*] Strike craft have upkeep
+[*] Disruptors regenerate shields & improve bombardment
+[*] Missiles and torpedoes boost damage and bombardment
+[*] Energy Lance II improved
+[*] New components: Hyperdrive IV, Crystal Armor III & IV
+
+[h2]Council Agendas[/h2]
+[*] Some agendas activate faster
+[*] “Open Markets” enables temporary use of Trade League policy
+New Agendas:
+[list]
+[*] Feudal Shift Pursuit: Subjects adopt your ethics
+[*] The Last Resistance: Build emergency fleet at economic cost
+[*] Gears of War: Lower pop resettlement cost
+[*] Unlock tech next ship size 
+[/list]
+
+[h2]Country Start[/h2]
+[*] Start with 30 in Physics, Society, Engineering (was 10)
+[*] Start with 10 Unity (was 5)
+
+[h2]Planet Decisions[/h2]
+[*] Luxury boost cost now scales with population
+[*] Robots can build without population controls
+[*] Machines cannot discourage growth
+New Decisions:
+[list]
+[*] Automate luxury boost if resources available
+[*] Incorporate planets for automatic luxury boost
+[*] Release single-planet vassals
+[*] Mass resettle 10 or 20 pops
+[*] 10 special decisions to upgrade feature-rich planets
+[/list]
+
+[h2]Game Rules & Defines[/h2]
+[*] Debris resource yield: 25% (was 10%)
+[*] Jump drive cooldown +50%
+[*] Status quo: 12 months (was 24)
+[*] Federation penalties and cohesion improved
+[*] Reduced death chance for generals
+[*] Faster policy/truce/govt changes
+[*] Stronger penalties for tech/tradition via empire size
+[*] Naval capacity base 100 (was 20)
+[*] Faster spy network & resolution speed
+[*] Recharge rates lowered (shield/armor/hull)
+[*] Manual last-pop resettle cost 50 (was 200)
+[*] Conquest modifier duration reduced
+[*] Command limit max 300 (was 500)
+
+[h2]Deposits[/h2]
+[*] Fewer empty tiles
+[*] Dark Matter = mining deposit
+[*] More alloys, research spawns
+[*] Living metal can spawn in asteroids
+
+[h2]Diplomacy & Economy[/h2]
+[*] Galactic Community costs 0.25 Influence + 2 Energy
+[*] War costs 1 Influence
+[*] AI can't form large federations
+[*] Must be neutral or worse to declare war
+
+[h2]AI Economic Plan[/h2]
+[*] AI behaves like a competent player
+
+[h2]Edicts & Campaigns[/h2]
+[*] Better mining/research edicts
+[*] Auto-sell relics
+[*] Military edicts scale with used naval capacity
+[*] AI-only edicts to improve performance
+
+[h2]Espionage[/h2]
+[*] Easier operations and tech stealing
+
+[h2]Federations[/h2]
+[*] Federation leveling is 50% faster
+
+[h2]Fallen Empires[/h2]
+[*] Only 2 Fallen Empires? No machine empires to trigger War in Heaven
+
+[h2]General Game Rules[/h2]
+[*] Can claim systems only adjacent to own/ally/claimed
+[*] Subjects can be released (if machine individual)
+[*] Always allowed to resettle (limited cost)
+[*] Occupied planets increase exhaustion
+[*] Unconnected systems self-destruct after 1 year unless jump drive is available
+
+[h2]Civics[/h2]
+[*] Machine Terminator: Ship upkeep -1%
+[*] Machine Spybot: +100% observation
+[*] Feudal Realm, Technocracy: +1 Unity per Researcher
+
+[h2]Councilors[/h2]
+[*] Unity bonus: +3% (was 2%)
+[*] Research councilor: +3% research speed
+
+[h2]Megastructures[/h2]
+[*] Gateways build faster (last phase uses dark matter)
+
+[h2]Observation Missions[/h2]
+[*] Higher research output
+
+[h2]AI Personalities[/h2]
+[*] Warriors more aggressive
+[*] New “Peaceful Researcher” personality
+
+[h2]Planet Modifiers[/h2]
+[*] More variety, fewer planets without any
+
+[h2]Policies[/h2]
+[*] Resettlement policy: Now “limited” with 200% cost
+[*] Economic:
+Military: -25% upkeep, +war influence
+Civilian: +25% upkeep, +war influence
+
+New Automations:
+[list]
+[*] Starbase auto-builds (anchorage, hydroponics, solar)
+[*] Auto-resettle unemployed pops
+[*] Integrate edict for found nice location furnace, dyson sphere, Nanite Harvester, ice mining and Quantum Catapult get code for search by sba.
+[/list]
+
+[h2]Faction Types[/h2]
+[*] Imperialists now get bonuses when using >75% naval capacity
+
+[h2]Origin Adjustments[/h2]
+[*] Void Dwellers: Arcane replicator stronger; bonus alloys if not using consumer goods
+
+[h2]Jobs[/h2]
+[*] New job: Archaeologist
+
+[h2]Ship Templates[/h2]
+[*] Battleship: 2 Large utility slots when have hangar bow
+[*] Cruiser: 2 Medium utility slots when have hangar 
+[*] Corvette: New template, no point defense
+[*] Science ship: Has point defense
+[*] Starbase: Hangar replaces medium turret
+
+[h2]New Ships[/h2]
+[*] New ship type: Carrier – high hangar capacity
+
+[h2]Starbase Buildings & Modules[/h2]
+[*] Orbital buildings cost Influence
+[*] Curator buildings: 10× output
+[*] New strong buildings (e.g., elite academy)
+[*] Shipyards boost repair, +2 naval cap
+[*] New modules: PD battery, ion battery, defense post
+[*] Better orbital rings, starting starbases include listening post
+[*] Orbital ring nobles give noble jobs
+
+[h2]Technology[/h2]
+[*] Better automation tech
+[*] Weapons/armor tech boost army
+[*] Housing 2 is now rare
+[*] Paradise dome: +1% amenities
+[*] New techs for envoys and power
+[*] Updated navy doctrines
+[*] 10+ new technologies
+
+[h2]Traditions[/h2]
+[*] Discovery: Tree reshuffled, "Faith in Science" now requires full unlock
+[*] Synthetics: Maintenance protocols give +10% trade value
+[*] Nanites: Now more production nanites
+
+[h2]Traits[/h2]
+[*] Manufacturer trait gives trade value & amenities
+[*] General Commander: +10% starbase damage (was 5%)
+
+[h2]War Goals[/h2]
+[*] On war loss, gain bonuses (e.g., pop growth or cheaper ships)
+[*] New war goals: Open Borders, Open Borders Long
+
+[h2]Other Adjustments[/h2]
+[*]Slighty more strong and Governors are now slightly stronger and increase the speed of planetary decisions
+
+[h3]Ship Stats[/h3]
+[*] +500% ship HP for longer battles
+[*] Cruiser, Battleship, Titan upkeep doubled
+
+[h3]Modifiers[/h3]
+[*] Population control limits assembly rate
+[*] Bonus envoys for having 8+ empires
+[*] Game speed bonuses (early/mid/late)
+[*] Galaxy size affects ship speed
+
+[h3]Starting Bonuses[/h3]
+[*] Ships start with XP (to avoid build delay)
+
+[h2]Fixes[/h2]
+
+[h3]Scripted Triggers[/h3]
+[*] Fixed various logic triggers (gate builders, thinkers)
+[*] Optimized crisis flag
+
+[h3]Events[/h3]
+[*] Fallen Empire humiliate cooldown: 20 years (was 10)
+[*] Crisis immunity to humiliation from Fallen until level 4
+[*] New meteor storm events
+[*] Easter Egg: Pandora World with Na'vi
+[*] Utility messages: Terraforming and Arcology Project alerts
+[*] Utility messages: With edict can open windows that help you found arca furnace , dyson, habitat best place in your territory

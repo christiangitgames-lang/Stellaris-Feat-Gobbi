@@ -1,0 +1,243 @@
+
+
+decision_cg_release_client_state = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_isvassal
+	potential = {
+		can_Client_released =  yes
+		owner = { 
+			is_default_or_fallen = yes 
+			NOT = { has_modifier = "Client_released_Master" }
+		}
+		is_capital = no
+	}
+	allow = {
+		owner = { is_at_war = no }
+		can_release_client_state = yes
+	}
+	resources = {
+		category = decisions
+		cost = {
+			
+			energy = 100
+			minerals = 150
+			alloys = 200
+			influence = 15
+		}
+		cost = {
+			trigger = {
+				owner = { country_uses_consumer_goods = yes }
+			}
+			consumer_goods = 100
+		}
+		cost = {
+			trigger = {
+				
+				owner = { country_uses_food = yes }
+			}
+			food = 100
+		}
+		cost = {
+			trigger = {
+				owner = { 
+					has_tradition = tr_domination_adopt
+					num_tradition_categories <= 6
+				}
+			}
+			unity = 500
+			mult = owner.trigger:num_tradition_categories
+		}
+		cost = {
+			trigger = {
+				owner = { is_ai = no was_human = no has_tradition = tr_domination_adopt num_tradition_categories > 6 }
+			}
+			unity = 1000
+			mult = owner.trigger:num_tradition_categories
+		}
+		cost = {
+			trigger = {
+				owner = { 
+					is_ai = no was_human = no
+					NOT = { has_tradition = tr_domination_adopt }
+					num_tradition_categories > 0 
+				}
+			}
+			unity = 500
+		}
+		cost = {
+			trigger = {
+				owner = { 
+					is_ai = no was_human = no
+					NOT = { has_tradition = tr_domination_adopt }
+					num_tradition_categories > 1 
+				}
+			}
+			unity = 2500
+		}
+		cost = {
+			trigger = {
+				owner = { 
+					is_ai = no was_human = no
+					NOT = { has_tradition = tr_domination_adopt }
+					num_tradition_categories > 2 
+				}
+			}
+			unity = 7500
+		}
+		cost = {
+			trigger = {
+				owner = { 
+					is_ai = no was_human = no
+					NOT = { has_tradition = tr_domination_adopt }
+					num_tradition_categories > 3 
+				}
+			}
+			unity = 10000
+		}
+		cost = {
+			trigger = {
+				owner = { 
+					is_ai = no was_human = no
+					NOT = { has_tradition = tr_domination_adopt }
+					num_tradition_categories > 4 
+				}
+			}
+			unity = 15000
+		}
+		cost = {
+			trigger = {
+				owner = { 
+					is_ai = no 
+					was_human = no
+					NOT = { has_tradition = tr_domination_adopt } 
+					num_tradition_categories > 5
+				}
+			}
+			unity = 20000
+		}
+		cost = {
+			trigger = {
+				owner = { NOT = { has_tradition = tr_domination_adopt } num_tradition_categories > 6 }
+			}
+			unity = 30000
+		}
+		# if = { limit = { root = { num_tradition_categories > 0 } } add_resource = { unity = 1000 } }
+		# 		else_if = { limit = { root = { num_tradition_categories > 1 } } add_resource = { unity = 5000 } }
+		# 		else_if = { limit = { root = { num_tradition_categories > 2 } } add_resource = { unity = 15000 } }
+		# 		else_if = { limit = { root = { num_tradition_categories > 3 } } add_resource = { unity = 20000 } }
+		# 		else_if = { limit = { root = { num_tradition_categories > 4 } } add_resource = { unity = 30000 } }
+		# 		else_if = { limit = { root = { num_tradition_categories > 5 } } add_resource = { unity = 40000 } }
+		# 		else_if = { limit = { root = { num_tradition_categories > 6 } } add_resource = { unity = 50000 } }
+	}
+	
+	
+
+	effect = {
+		planet_event = { id = cg_release_client_state.1 }
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			owner = {
+				num_tradition_categories > 6
+			}
+		}
+		# modifier = {
+		# 	weight = 1000
+		# 	owner = { 
+		# 		empire_sprawl_over_cap > 250
+		# 	}
+		# 	count_owned_pop_group = { count < 30 }
+		# }
+		modifier = {
+			factor = 0.01
+			solar_system = { is_bottleneck_system = yes }
+		}
+		modifier = {
+			factor = 0
+			planet_stability > 50
+		}
+	}
+}
+decision_resettle_mass_population_10 = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_expel_population
+
+	resources = {
+		category = decisions
+		cost = {
+			unity = 1
+		}
+	}
+
+	potential = {
+		always = yes
+		is_capital = no
+	}
+
+
+	allow = {
+		has_orbital_bombardment = no
+		is_occupied_flag = no
+		pop_amount > 1000
+	}
+
+	effect = {
+		planet_event = { id = cg_automation.10 }
+		
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+decision_resettle_mass_population_20 = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_expel_population
+
+	resources = {
+		category = decisions
+		cost = {
+			unity = 1
+		}
+	}
+
+	potential = {
+		always = yes
+		is_capital = no
+	}
+
+
+	allow = {
+		has_orbital_bombardment = no
+		is_occupied_flag = no
+		pop_amount > 2000
+		owner = {
+			resource_stockpile_compare = {
+				resource = energy
+				value > 500
+				#mult = event_target:random_pop_automation.value:pop_resettlement_cost
+			}
+			OR = {
+				has_valid_civic = civic_corvee_system
+				resource_stockpile_compare = {
+					resource = unity
+					value > 50
+					#mult = event_target:random_pop_automation.value:pop_resettlement_cost
+				}
+			}
+		}
+	}
+
+	effect = {
+		planet_event = { id = cg_automation.20 }
+		
+	}
+	ai_weight = {
+		weight = 0
+	}
+}

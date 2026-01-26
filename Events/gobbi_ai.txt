@@ -1,0 +1,1221 @@
+namespace = gobbi_ai
+
+#
+#gobbi_ai.0 -> 9 Remove /replace
+#	cg_ai.0	yearly checked - builds up the capital planet of non-gestalt non-voids empire
+country_event = {#	gobbi_ai.0 yearly checked - fires event remove replace Buildings and districts
+	
+	
+	id = gobbi_ai.0
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = yes
+		is_country_type = default
+		has_resource = { type = minerals amount > 500 }
+		OR = {
+			has_resource = { type = energy amount > 1000 }
+			has_monthly_income = { resource = energy value > 20 }
+		}
+		NOT = { has_global_flag = AI_easy }
+	}
+	immediate = {
+		#TODO
+		# country_event = {
+		# 	id = cg_ai.11
+		# 	days = 1
+		# }
+	}
+}
+
+
+##################
+#-----------------#gobbi_ai 10 -> 19 better choice
+##################
+
+country_event = {#	gobbi_ai.10	fires events better choice
+	
+		id = gobbi_ai.10
+		hide_window = yes
+	
+		is_triggered_only = yes
+		
+		trigger = {
+			is_ai = yes
+			is_country_type = default
+		}
+		
+		immediate = {
+			country_event = {
+				id = gobbi_ai.11
+				days = 2
+			}
+			country_event = {
+				id = gobbi_ai.12
+				days = 4
+			}
+			country_event = {
+				id = gobbi_ai.13
+				days = 6
+			}
+			country_event = {
+				id = gobbi_ai.14
+				days = 8
+			}
+			country_event = {
+				id = gobbi_ai.15
+				days = 10
+			}
+		}
+}
+
+	country_event = {#	gobbi_ai.11	#Building assault armies
+
+
+		id = gobbi_ai.11
+		hide_window = yes
+
+		is_triggered_only = yes
+		
+		trigger = {
+			is_country_type = default
+			years_passed > 25
+			fleet_power > 5000
+			OR = {
+				num_armies < 10
+				AND = { 
+					has_ai_expansion_plan = yes
+					num_armies < 20
+				}
+			}
+			has_resource = { type = minerals amount > 2000 }
+			has_monthly_income = { resource = energy value > 40 }
+			NOR = { 
+				has_ai_personality = erudite_explorers
+				has_ai_personality = peaceful_traders
+				has_ai_personality = peaceful_researcher
+				has_global_flag = AI_easy 
+			}
+		}
+		immediate = {
+			capital_scope = {
+				if = { limit = { has_orbital_bombardment = no is_occupied_flag = no }
+					while = {
+						count = 5
+						create_army = {
+							name = random
+							owner = root
+							species = root
+							type = "assault_army"
+						}
+						owner = { add_resource = { minerals = -200 } }
+					}
+				}
+			}
+		}
+	}
+		
+	country_event = { #	gobbi_ai.12	#monthly checked - destroy "lost cause" starbases
+
+
+		id = gobbi_ai.12
+		hide_window = yes
+
+		is_triggered_only = yes
+		
+		trigger = {
+			is_at_war = yes
+		}
+		immediate = {
+			random_list = {
+				50 = {
+					modifier = {
+						factor = 0.5
+						has_global_flag = AI_normal
+					}
+					modifier = {
+						factor = 0.25
+						has_global_flag = AI_easy
+					}
+					every_owned_starbase = {
+						limit = {
+							exists = controller 
+							controller = {
+								is_same_value = root
+							}
+							OR = {
+								AND = {
+									has_starbase_size = starbase_starport
+									solar_system = {
+										is_capital_system = no
+										NOT = {
+											any_fleet_in_system = {
+											exists = owner
+											owner = { is_at_war_with = root }
+											}
+										}
+										# NOT = {
+										# 	any_fleet_in_system = {
+										# 		exists = owner
+										# 		owner = { is_same_value = root }
+										# 		NOT = { is_same_value = prev }
+										# 		fleet_power > 6000
+										# 	}
+										# }
+										any_neighbor_system = {
+											any_fleet_in_system = {
+												exists = owner
+												owner = { is_at_war_with = root }
+												fleet_power > 4000
+											}
+										}
+									}
+								}
+								AND = {
+									has_starbase_size = starbase_starhold
+									solar_system = {
+										is_capital_system = no
+										NOT = {
+											any_fleet_in_system = {
+											exists = owner
+											owner = { is_at_war_with = root }
+											}
+										}
+										# NOT = {
+										# 	any_fleet_in_system = {
+										# 		exists = owner
+										# 		owner = { is_same_value = root }
+										# 		NOT = { is_same_value = prev }
+										# 		fleet_power > 6000
+										# 	}
+										# }
+										any_neighbor_system = {
+											any_fleet_in_system = {
+												exists = owner
+												owner = { is_at_war_with = root }
+												fleet_power > 10000
+											}
+										}
+									}
+								}
+								AND = {
+									has_starbase_size = starbase_starfortress
+									solar_system = {
+										is_capital_system = no
+										NOT = {
+											any_fleet_in_system = {
+											exists = owner
+											owner = { is_at_war_with = root }
+											}
+										}
+										# NOT = {
+										# 	any_fleet_in_system = {
+										# 		exists = owner
+										# 		owner = { is_same_value = root }
+										# 		NOT = { is_same_value = prev }
+										# 		fleet_power > 8000
+										# 	}
+										# }
+										any_neighbor_system = {
+											any_fleet_in_system = {
+												exists = owner
+												owner = { is_at_war_with = root }
+												fleet_power > 15000
+											}
+										}
+									}
+								}
+								AND = {
+									has_starbase_size = starbase_citadel
+									solar_system = {
+										is_capital_system = no
+										NOT = {
+											any_fleet_in_system = {
+											exists = owner
+											owner = { is_at_war_with = root }
+											}
+										}
+										# NOT = {
+										# 	any_fleet_in_system = {
+										# 		exists = owner
+										# 		owner = { is_same_value = root }
+										# 		NOT = { is_same_value = prev }
+										# 		fleet_power > 10000
+										# 	}
+										# }
+										any_neighbor_system = {
+											any_fleet_in_system = {
+												exists = owner
+												owner = { is_at_war_with = root }
+												fleet_power > 20000
+											}
+										}
+									}
+								}
+							}
+						}
+						remove_starbase_module = { }
+						remove_starbase_building = { slot = all }
+						set_starbase_size = starbase_outpost
+					}
+					}
+				50 = { }
+			}
+			
+		}
+	}
+	country_event = {	#	gobbi_ai.13	Better starbase
+			id = gobbi_ai.13
+			hide_window = yes
+		
+			is_triggered_only = yes
+			
+			
+			immediate = {
+				if = {
+					limit = { has_technology = "tech_hydroponics" }
+					every_owned_starbase = {
+						limit = { 
+							has_starbase_building = listening_post 
+							NOT = { has_starbase_building = hydroponics_bay } #eliminate redudancy
+						}
+						remove_starbase_building = { building = listening_post }
+					}
+				}
+				if = { 
+					limit = { 
+						NOT = {
+							any_owned_starbase = { 
+								OR = {
+									has_starbase_module = shipyard  
+								}
+							}
+						}
+					}
+					random_owned_starbase = {
+						limit = {
+							has_starbase_module = anchorage 
+							count_starbase_modules = { include_being_constructed = yes count > 0 }
+						}
+						set_starbase_module = { slot = 1 module = shipyard }
+					}
+				}
+			}
+	}
+	country_event = {#	gobbi_ai.14	#yearly checked - send alloys to federation
+		
+
+		id = gobbi_ai.14
+		hide_window = yes
+
+		is_triggered_only = yes
+		
+		trigger = {
+			is_country_type = default
+			is_homicidal = no
+			is_subject = no
+			has_federation = yes
+			is_federation_leader = no
+			has_resource = { type = alloys amount > 500 }
+			has_monthly_income = { resource = alloys value > 10 }
+			NOT = { has_global_flag = AI_easy }
+		}
+		
+		immediate = {
+			random_federation_ally = {
+				limit = {
+					is_federation_leader = yes
+					is_ai = yes
+					has_resource = { type = alloys amount < 10000 }
+					has_monthly_income = { resource = alloys value < 200 }
+				} 
+				weights = {
+					base = 1
+					modifier = {
+						factor = 2
+						used_naval_capacity_percent < 0.5
+					}
+					modifier = {
+						factor = 2
+						used_naval_capacity_percent < 0.25
+					}
+					modifier = {
+						factor = 10
+						used_naval_capacity_percent < 0.1
+					}
+				}
+				add_resource = { alloys = 250 }
+				root = { add_resource = { alloys = -250 } }
+				if = {
+					limit = { 
+						root = { has_resource = { type = alloys amount > 1500 } }
+					}
+					add_resource = { alloys = 750 }
+					root = { add_resource = { alloys = -750 } }
+				}
+				if = {
+					limit = { 
+						is_at_war = yes
+						root = { 
+							has_resource = { type = alloys amount >= 1000 } 
+							used_naval_capacity_percent > 0.75
+						}
+					}
+					add_resource = { alloys = 750 }
+					root = { add_resource = { alloys = -750 } }
+					}
+				
+			}
+		}
+	}
+	country_event = {#	gobbi_ai.15	monthly checked - scorched earth tactics
+		
+		
+			id = gobbi_ai.15
+			hide_window = yes
+		
+			is_triggered_only = yes
+			
+			trigger = {
+				is_country_type = default
+				is_at_war = yes
+				NOT = { has_global_flag = AI_easy }
+			}
+			
+			immediate = {
+				random_list = {
+					10 = {
+						modifier = {
+							factor = 9
+							has_global_flag = AI_hard
+						}
+						every_owned_fleet = {
+							limit = {
+								OR = {
+									is_ship_size = mining_station
+									is_ship_size = research_station
+									is_ship_size = observation_station
+								}
+								solar_system = {
+									NOT = { owner = { is_same_value = root } }
+									ROOT = { NOT = { has_claim = PREV } } #not destroy solar system with claim
+								}
+							}
+							destroy_fleet = this
+						}
+					}
+					90 = {}
+				}
+				
+			}
+	}
+##################
+#-----------------
+##################
+#gobbi_ai.20 -> 29 Mid game building district
+country_event = {
+	#	gobbi_ai.20 yearly checked - fires event remove replace Buildings and districts for mid game
+	
+	id = gobbi_ai.20
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		years_passed > 20
+		is_ai = yes
+		is_country_type = default
+		has_resource = { type = minerals amount >= 500 }
+		has_monthly_income = { resource = minerals value > 10 } 
+		NOT = { has_global_flag = AI_easy }
+	}
+	immediate = {
+		#TODO
+		# country_event = {
+		# 	id = cg_ai.11
+		# 	days = 1
+		# }
+	}
+}
+
+##################
+#-----------------#gobbi_ai.30 -> 39 Emergency measure
+##################
+
+
+country_event = {#	gobbi_ai.30 fires Emergency measure
+	
+	
+	id = gobbi_ai.30
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = yes
+		is_country_type = default
+		NOT = { has_global_flag = AI_easy }
+	}
+	immediate = {
+		#TODO
+		country_event = {
+			id = gobbi_ai.31
+			days = 60
+		}
+		country_event = {
+			id = gobbi_ai.32
+			days = 62
+		}
+	}
+}
+country_event = {#gobbi_ai.31 resettle for stab
+	
+    id = gobbi_ai.31
+    hide_window = yes
+    is_triggered_only = yes
+	trigger = {
+		is_ai = yes
+		
+		NOT = { has_global_flag = AI_easy }
+		any_owned_planet = {
+			any_owned_pop_group = { happiness >= 0.7 }
+		}
+		any_owned_planet = {
+			planet_stability < 40
+			num_unemployed = 0
+		}
+		OR = {
+			AND = {
+				has_policy_flag =  resettlement_not_allowed 
+				has_country_resource = { type = energy amount > 1500}
+			}
+			AND = {
+				OR = {
+					has_policy_flag =  resettlement_allowed 
+					has_ethic = "ethic_gestalt_consciousness"
+				}
+				has_country_resource = { type = energy amount > 500}
+			}
+		}
+		resource_income_compare = {
+			resource = energy
+			value > 1
+		}
+		has_country_resource = { type = unity amount > 100 }
+	}
+    immediate = {
+        random_owned_planet = { # search planet by start resettle
+            limit = {
+				is_occupied_flag = no
+                any_owned_pop_group = { happiness >= 0.5 }
+                has_orbital_bombardment = no
+				pop_amount > 1000
+				owner = { 
+					OR = {
+						AND = {
+							has_policy_flag =  resettlement_not_allowed 
+							has_country_resource = { type = energy amount > 1500 }
+						}
+						AND = {
+							OR = {
+								has_policy_flag =  resettlement_allowed 
+								has_ethic = "ethic_gestalt_consciousness"
+							}
+							has_country_resource = { type = energy amount > 500 }
+						}
+					}
+					has_country_resource = { type = unity amount > 100 }
+				}
+				check_variable = {
+					which = recently_resettle_in # if recently resettle by automation will no send resettle for months.
+					value = 0
+				}
+            }
+			weights = {
+				base = 1
+				modifier = {
+					factor = 10
+					num_unemployed > 1
+				}
+				modifier = {
+					factor = 2
+					pop_amount > 3000
+				}
+				modifier = {
+					factor = 2
+					pop_amount > 6000
+				}
+			}
+            #log = "-- Planet: [This.GetName]"
+            random_owned_pop_group = {
+				limit = {
+					NOT = { is_pop_category = ruler } # ruler never move.
+					happiness >= 0.51
+					NOR = { 
+						has_citizenship_type = { type = citizenship_assimilation }  # Ignore assimilating pops
+						has_citizenship_type = { type = citizenship_slavery } # Ignore slave pops
+						has_citizenship_type = { type = citizenship_purge_machine }
+						has_citizenship_type = { type = citizenship_purge }
+					}
+					# owner = { 
+					# 	has_country_resource = { type = energy amount > 500 mult = value:pop_resettlement_cost } 
+					# }
+                     # minimum of 1K energy to move pops
+                    OR = {
+                        has_migration_control = {
+                            type = no
+                        }
+                        pop_group_has_trait = trait_machine_unit 
+                        pop_group_has_trait = trait_mechanical 
+                        # species = { has_trait = trait_machine_unit }
+                        # species = { has_trait = trait_mechanical }
+                    }
+				}
+				weights = {
+					base = 1
+					modifier = {
+						factor = 2
+						happiness >= 0.6
+					}
+					modifier = {
+						factor = 2
+						happiness >= 0.7
+					}
+				}
+				cg_resettle_pop_for_stab = yes # resettle pop in other planet
+				
+			}
+		}
+		
+    } 
+}
+country_event = {#	gobbi_ai.100 simulation market internal
+	
+	id = gobbi_ai.32
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ai = yes
+		is_country_type = default
+		OR = {
+			NAND = { 
+				has_global_flag = galactic_market_founded
+				is_galactic_community_member = yes
+			}
+			has_global_flag = AI_hard #little cheat but is minor cheat.
+			OR = {
+				has_civic = civic_fanatic_purifiers
+				has_civic = civic_hive_devouring_swarm
+				has_civic = civic_machine_terminator
+			}
+		}
+		OR = {
+			has_resource = { type = energy amount >= 500 }
+			AND = {
+				years_passed < 10
+				has_resource = { type = energy amount >= 100 }
+			}
+		}
+		
+	}
+	immediate = { 
+		#cg #TODO4 : sostituire energy con trade e anche modificatori
+		if = {
+			limit = {
+				country_uses_consumer_goods = yes
+				has_resource = { type = consumer_goods amount < 90 }
+				has_monthly_income = { resource = consumer_goods value < 0 }
+				has_monthly_income = { resource = energy value >= 65 } 
+			}
+			add_modifier = { modifier = consumer_goods_market days = 300 } 
+		}
+		else_if = {
+			limit = {
+				country_uses_consumer_goods = yes
+				has_resource = { type = consumer_goods amount < 90 }
+				has_monthly_income = { resource = consumer_goods value < 0 }
+				has_monthly_income = { resource = energy value >= 27 } 
+			}
+			add_modifier = { modifier = consumer_goods_5_market days = 300 } 
+		}
+		else_if = { #food
+				limit = {
+					country_uses_food = yes
+					has_resource = { type = food amount < 100 }
+					has_monthly_income = { resource = food value < 1 }
+					has_monthly_income = { resource = energy value >= 50 } 
+				}
+			add_modifier = { modifier = food_market days = 300 } 
+		}
+		else_if = { #minerals
+			limit = {
+
+				has_resource = { type = minerals amount < 2000 }
+				has_monthly_income = { resource = minerals value < 30 }
+				has_monthly_income = { resource = energy value >= 75 } 
+			}
+			add_modifier = { modifier = minerals_40_market days = 300 } 
+		}
+		else_if = { 
+			limit = {
+
+				has_resource = { type = minerals amount < 5000 }
+				has_monthly_income = { resource = minerals value < 40 }
+				has_monthly_income = { resource = energy value >= 50 } 
+			}
+			add_modifier = { modifier = minerals_20_market days = 300 } 
+		}
+		else_if = {
+			limit = {
+				has_monthly_income = { resource = minerals value < 50 }
+				has_monthly_income = { resource = energy value >= 40 } 
+			}
+			add_modifier = { modifier = minerals_10_market days = 300 } 
+		}
+		if = {
+			limit = {
+				has_resource = { type = minerals amount < 2500 }
+				has_monthly_income = { resource = energy value > 100 } 
+			}
+			if = {
+				limit = { years_passed > 25 }
+				add_modifier = { modifier = minerals_10_market days = 300 } 
+			}
+			else = { 
+				add_modifier = { modifier = minerals_40_market days = 300 } 
+			}
+		}
+		if = {
+			limit = {
+				has_resource = { type = alloys amount < 100 }
+				has_monthly_income = { resource = energy value > 70 } 
+				OR = {
+					has_monthly_income = { resource = alloys value < 30 }
+					is_at_war = yes
+				}
+				used_naval_capacity_percent < 0.5
+			}
+			if = {
+				limit = { years_passed < 25 }
+				add_modifier = { modifier = alloys_3_market days = 300 } 
+			}
+			else = { 
+				add_modifier = { modifier = alloys_9_market days = 300 } 
+			}
+		}
+	}
+}
+country_event = {# first time unlock tech
+	
+	id = gobbi_ai.39
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ai = yes
+		is_country_type = default
+		OR ={
+			has_technology = tech_orbital_arc_furnace
+			has_technology = tech_dyson_swarm
+		}
+		NOR = {
+			has_country_flag = located_firs_orbital_arc_furnace
+			has_country_flag = located_firs_orbital_arc_furnace
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_technology = tech_orbital_arc_furnace
+				NOT = { has_country_flag = located_firs_orbital_arc_furnace }
+			}
+			country_event = {
+				id = gobbi_ai.41 # Locate top arc furnace systems
+				
+			}
+			set_country_flag = located_firs_orbital_arc_furnace
+		}
+		if = {
+			limit = {
+				has_technology = tech_dyson_swarm
+				NOT = { has_country_flag = located_firs_orbital_arc_furnace }
+			}
+			country_event = {
+				id = gobbi_ai.42 # Locate top dyson
+				days = 15
+			}
+			set_country_flag = located_first_dyson_swarm
+		}
+		
+		
+	}
+}
+country_event = {#	gobbi_ai.40 check best system
+	#da testare
+	id = gobbi_ai.40
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ai = yes
+		is_country_type = default
+	}
+	
+	immediate = {
+		country_event = {
+			id = gobbi_ai.41 # Locate top arc furnace systems
+			days = 15
+		}
+		country_event = {
+			id = gobbi_ai.42
+			days = 170
+		}
+	}
+}
+country_event = { # Locate top arc furnace systems
+	id = gobbi_ai.41
+	hide_window = yes
+	#title = "sba_system_search.21.name"
+	# desc = "sba_system_search.21.desc"
+	# picture = GFX_evt_arc_crucible
+	# show_sound = event_mystic_reveal
+	#location = FROM
+	
+	is_triggered_only = yes
+	trigger = {
+		has_technology = tech_orbital_arc_furnace
+		check_variable = {
+			which = arc_furnace_counter
+			value <= value:arc_furnace_limit
+		}
+	}
+	immediate = {
+		set_variable = {
+			which = sba_num_arc_furnace_systems
+			value = 0
+		}
+		random_system_within_border = {
+			limit = {
+				has_star_flag = "Candidate_arc_furnace_system"
+			}
+			remove_star_flag = "Candidate_arc_furnace_system"
+		}
+		every_system_within_border = {
+			limit = {
+				sba_is_valid_arc_furnace_system = yes
+				any_system_planet = {
+					sba_is_valid_arc_furnace_planet = yes
+				}
+			}
+			set_variable = {
+				which = sba_arc_furnace_var
+				value = 0
+			}
+			export_trigger_value_to_variable = {
+				trigger = count_system_planet
+				parameters = {
+					limit = {
+						NOT = { has_deposit_for = shipclass_research_station }
+						is_star = no
+						is_astral_scar = no
+						colonizable_planet = no
+					}
+				}
+				variable = sba_arc_furnace_var
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = sba_num_arc_furnace_systems
+					value > 0
+				}
+			}
+			ordered_system_within_border = {
+				position = 0
+				order_by = sba_arc_furnace_var
+				if = {
+					limit = { NOT = { has_star_flag = "Candidate_arc_furnace_system" } }
+					set_star_flag = "Candidate_arc_furnace_system"
+				}
+				
+			}
+			ordered_system_within_border = {
+				position = 1
+				order_by = sba_arc_furnace_var
+				if = {
+					limit = { NOT = { has_star_flag = "Candidate_arc_furnace_system" } }
+					set_star_flag = "Candidate_arc_furnace_system"
+				}
+			}
+			ordered_system_within_border = {
+				position = 2
+				order_by = sba_arc_furnace_var
+				if = {
+					limit = { NOT = { has_star_flag = "Candidate_arc_furnace_system" } }
+					set_star_flag = "Candidate_arc_furnace_system"
+				}
+			}
+		}
+	}
+}
+country_event = { # Locate top dyson
+	id = gobbi_ai.42
+	hide_window = yes
+	#title = "sba_system_search.21.name"
+	# desc = "sba_system_search.21.desc"
+	# picture = GFX_evt_arc_crucible
+	# show_sound = event_mystic_reveal
+	#location = FROM
+	
+	is_triggered_only = yes
+	trigger = {
+		has_technology = tech_dyson_swarm
+		check_variable = {
+			which = dyson_swarm_counter
+			value <= value:dyson_swarm_limit
+		}
+	}
+	immediate = {
+		random_system_within_border = {
+			limit = {
+				has_star_flag = "canditate_dyson_star_0"
+			}
+			remove_star_flag = "canditate_dyson_star_0"
+		}
+		random_system_within_border = {
+			limit = {
+				has_star_flag = "canditate_dyson_star_0"
+			}
+			remove_star_flag = "canditate_dyson_star_0"
+		}
+		random_system_within_border = {
+			limit = {
+				has_star_flag = "canditate_dyson_star_0"
+			}
+			remove_star_flag = "canditate_dyson_star_0"
+		}
+		set_variable = { # dyson_swarm_counter
+			which = temp_dyson_swarm_max
+			value = value:dyson_swarm_limit
+		}
+		sba_dyson_swarm_site_search_effect = yes
+		# Energy
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = energy }
+		if = {
+			limit = { exists = event_target:sba_dyson_swarm_energy_star_0 }
+			event_target:sba_dyson_swarm_energy_star_0 = {
+				from = {
+					if = { 
+						limit = { NOT = { solar_system = { has_star_flag = "canditate_dyson_star_0" }  } } 
+						solar_system = { set_star_flag = "canditate_dyson_star_0" }
+					}
+				}
+			}
+		}
+		
+		# Other mining
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = minerals }
+		event_target:sba_dyson_swarm_minerals_star_0 = {
+			from = {
+				if = { 
+					limit = { NOT = { solar_system = { has_star_flag = "canditate_dyson_star_0" } } }
+					solar_system = { set_star_flag = "canditate_dyson_star_0" }
+				}
+			}
+		}
+		# sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = food }
+		# sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = consumer_goods }
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = alloys }
+		event_target:sba_dyson_swarm_alloys_star_0 = {
+			from = {
+				if = { 
+					limit = { NOT = { solar_system = { has_star_flag = "canditate_dyson_star_0" } }  }
+					solar_system = {  set_star_flag = "canditate_dyson_star_0" }
+				}
+			}
+		}
+		# Research dyson swarms
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = society }
+		event_target:sba_dyson_swarm_society_star_0 = {
+			from = {
+				if = { 
+					limit = { NOT = { solar_system = { has_star_flag = "canditate_dyson_star_0" } } }
+					solar_system = { set_star_flag = "canditate_dyson_star_0" }
+				}
+			}
+		}
+		sba_dyson_swarm_site_ordered_effect = {
+			POSITION = 0
+			RESOURCE = engineering
+			EXCLUDE0 = sba_dyson_swarm_society_star_0
+		}
+		event_target:sba_dyson_swarm_engineering_star_0 = {
+			from = {
+				if = { 
+					limit = { NOT = { solar_system = {  has_star_flag = "canditate_dyson_star_0" } } }
+					solar_system = { set_star_flag = "canditate_dyson_star_0" }
+				}
+			}
+		}
+		sba_dyson_swarm_site_ordered_effect = {
+			POSITION = 0
+			RESOURCE = physics
+			EXCLUDE0 = sba_dyson_swarm_society_star_0
+			EXCLUDE1 = sba_dyson_swarm_engineering_star_0
+		}
+		event_target:sba_dyson_swarm_physics_star_0 = {
+			from = {
+				if = { 
+					limit = { NOT = { solar_system = { has_star_flag = "canditate_dyson_star_0" } }  }
+					solar_system = { set_star_flag = "canditate_dyson_star_0" }
+				}
+			}
+		}
+		sba_dyson_swarm_site_ordered_effect = {
+			POSITION = 0
+			RESOURCE = research
+			EXCLUDE0 = sba_dyson_swarm_society_star_0
+			EXCLUDE1 = sba_dyson_swarm_engineering_star_0
+			EXCLUDE2 = sba_dyson_swarm_physics_star_0
+		}
+		event_target:sba_dyson_swarm_research_star_0 = {
+			from = {
+				if = { 
+					limit = { NOT = { solar_system = { has_star_flag = "canditate_dyson_star_0" } } }
+					solar_system = { set_star_flag = "canditate_dyson_star_0" }
+				}
+			}
+		}
+	}
+}
+##################
+#-----------------#Other
+##################
+country_event = {#	gobbi_ai.100 best choice start game trade alloys with energy
+	
+	id = gobbi_ai.100
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ai = yes
+		is_country_type = default
+	}
+	immediate = { 
+		#
+		if = {
+			limit = {
+				has_resource = { type = alloys amount >= 100 }
+			}
+			add_resource = { alloys = -100 }
+			add_resource = { energy = 276 } #for blocker
+		}
+	}
+}
+
+planet_event = { # gobbi_ai.101 add building or district universal minimum
+	id = gobbi_ai.101
+	hide_window = yes
+#TEST
+	is_triggered_only = yes
+	trigger = {
+		pop_amount > 99
+		owner = { 
+			is_ai = yes 
+			has_resource = { type = minerals amount >= 300 } 
+		}
+	}
+	immediate = {
+		random_list = {
+			100 = {
+				modifier = {
+					factor = 0
+					OR = {
+						free_building_slots <= 0
+						has_resource = { type = minerals amount < 500 } 
+					}
+				}
+				modifier = {
+					factor = 0
+					AND = {
+						num_buildings = { type = building_autochthon_monument value < 1 }
+						owner = {
+							NOR = {
+								is_spiritualist = yes
+								is_megacorp = yes
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					AND = {
+						num_buildings = { type = building_temple value < 2 }
+						owner = {
+							is_spiritualist = yes
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					AND = {
+						num_buildings = { type = building_corporate_monument value < 1 }
+						owner = {
+							is_megacorp = yes
+						}
+					}
+				}
+				modifier = {
+					factor = 10
+					AND = {
+						num_buildings = { type = building_research_lab_1 value > 2 }
+					}
+				}
+				add_building = building_research_lab_1
+				owner = { add_resource = { minerals = -500 } }
+			}
+			100 = {
+				modifier = {
+					factor = 0
+					OR = {
+						free_building_slots <= 0
+						has_resource = { type = minerals amount < 500 } 
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = {
+						OR = {
+							is_spiritualist = yes
+							is_megacorp = yes
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						num_buildings = { type = building_autochthon_monument value > 0 }
+						num_buildings = { type = building_galactic_memorial_1 value > 0 }
+						num_buildings = { type = building_galactic_memorial_2 value > 0 }
+						num_buildings = { type = building_galactic_memorial_3 value > 0 }
+					}
+				}
+				add_building = building_autochthon_monument
+				owner = { add_resource = { minerals = -500 } }
+			}
+			100 = {
+				modifier = {
+					factor = 0
+					OR = {
+						free_building_slots <= 0
+						has_resource = { type = minerals amount < 400 } 
+						free_amenities >= 0
+					}
+					
+				}
+				inline_script = "building_add/holo"
+				owner = { add_resource = { minerals = -400 } }
+			}
+			100 = {
+				modifier = {
+					factor = 0
+					OR = {
+						free_building_slots <= 0
+						has_resource = { type = minerals amount < 400 } 
+					}
+				}
+				inline_script = "building_add/clinic" #mi sono stancato di fare script tutti uguali
+				owner = { add_resource = { minerals = -400 } }
+			}
+			100 = {
+				modifier = {
+					factor = 0
+					OR = {
+						free_building_slots <= 0
+						has_resource = { type = minerals amount < 500 } 
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { is_spiritualist = no }
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						num_buildings = { type = building_temple value > 1 }
+					}
+				}
+				add_building = building_temple
+				owner = { add_resource = { minerals = -500 } }
+			}
+			100 = {
+				modifier = {
+					factor = 0
+					OR = {
+						free_building_slots <= 0
+						has_resource = { type = minerals amount < 500 } 
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = {
+						OR = {
+							is_spiritualist = yes
+							is_megacorp = no
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					num_buildings = { type = building_corporate_monument value > 1 }
+				}
+				add_building = building_corporate_monument
+				owner = { add_resource = { minerals = -500 } }
+			}
+			inline_script = "district_add/universal" #universal add district 
+		}
+		add_modifier = { modifier = cg_ai60 days = 734 } 
+	}
+}
+planet_event = { # gobbi_ai.101 add building or district universal minimum
+	id = gobbi_ai.102
+	hide_window = yes
+#TEST
+	is_triggered_only = yes
+	trigger = {
+		owner = { 
+			is_ai = yes 
+			has_resource = { type = minerals amount >= 400 } 
+		}
+		OR = {
+			NOT = { is_planet_class = pc_habitat }
+			AND = {
+				exists = owner
+				owner = {
+					is_void_dweller_empire = yes
+				}
+			}
+		}
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			NOT = { has_valid_civic = civic_shared_burden }
+		}
+		NOT = { has_building = building_low_tech_capital }
+	}
+	immediate = {
+		add_building = building_luxury_residence
+		owner = { add_resource = { minerals = -400 } }
+		add_modifier = { modifier = cg_ai102 days = 734 } 
+	}
+}

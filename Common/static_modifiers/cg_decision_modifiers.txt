@@ -1,0 +1,10 @@
+
+Client_released = {
+	pop_happiness = 0.10
+	country_produces_mult = -0.05
+	planet_jobs_trade_produces_mult = -0.05
+	country_unity_produces_mult = 1
+}
+Client_released_Master = {
+	envoys_add = -1
+}

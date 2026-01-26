@@ -1,0 +1,4 @@
+@faction_base_society = 0.1
+
+@minimum_stability_for_newcolony = 55
+@minimum_stability_for_newcolony_before50y = 65

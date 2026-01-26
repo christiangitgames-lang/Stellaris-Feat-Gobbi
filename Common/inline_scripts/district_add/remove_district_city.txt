@@ -1,0 +1,16 @@
+if = {
+	limit = { has_district = district_city}
+	remove_district = district_city
+}
+else_if = {
+	limit = { has_district = district_hive}
+	remove_district = district_hive
+}
+else_if = {
+	limit = { has_district = district_nexus}
+	remove_district = district_nexus
+}
+else_if = {
+	limit = { has_district = district_crashed_slaver_ship}
+	remove_district = district_crashed_slaver_ship
+}

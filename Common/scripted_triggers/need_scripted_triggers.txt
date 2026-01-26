@@ -1,0 +1,31 @@
+#technician_ai_factor
+need_energy = {
+	has_monthly_income = {
+		resource = energy
+		value < 10
+	}
+}
+need_minerals = {
+	has_monthly_income = {
+		resource = minerals
+		value < 40
+	}
+}
+need_foods = {
+	has_monthly_income = {
+		resource = food
+		value < 10
+	}
+}
+need_cg = {
+	has_monthly_income = {
+		resource = consumer_goods
+		value < 10
+	}
+}
+need_alloys = {
+	has_monthly_income = {
+		resource = alloys
+		value < 20
+	}
+}

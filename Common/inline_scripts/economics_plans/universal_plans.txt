@@ -1,0 +1,43 @@
+subplan = { # start game
+		set_name = "gamma AI start game focus"
+		potential = {
+			years_passed <= 10
+		}
+		focus = {
+			minerals = 50
+		}
+	}
+subplan = {
+	set_name = "gamma AI phy for tech_space_science_5 country_uses_consumer_goods"
+	potential = {
+		country_uses_consumer_goods = yes
+		has_monthly_income = { resource = consumer_goods value > 10 }
+		has_monthly_income = { resource = energy value > 20 }
+		has_monthly_income = { resource = minerals value > 40 }
+	}
+	income = {
+		physics_research = 250
+		engineering_research = 250
+	}
+	focus = {
+		physics_research = 200
+		engineering_research = 200
+	}
+}
+subplan = {
+	set_name = "gamma AI phy for tech_space_science_5 "
+	potential = {
+		country_uses_consumer_goods = no
+		has_monthly_income = { resource = alloys value > 10 }
+		has_monthly_income = { resource = energy value > 20 }
+		has_monthly_income = { resource = minerals value > 40 }
+	}
+	income = {
+		physics_research = 250
+		engineering_research = 250
+	}
+	focus = {
+		physics_research = 200
+		engineering_research = 200
+	}
+}

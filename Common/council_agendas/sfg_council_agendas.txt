@@ -1,0 +1,23 @@
+@base_tradition_agenda_cost = 7000
+@basefast_agenda_cost = 5660
+@short_agenda_cost = 3500
+agenda_military_project = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_supremacy_master_shipwrights
+	}
+	potential = {
+		NOT = { has_technology = tech_carriers } 
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		#pop_environment_tolerance = 0.05
+		#terraform_speed_mult = 0.1
+	}
+	#finish_modifier = agenda_conquer_nature_finish
+	effect = {
+		give_next_regular_ship_tech_effect = {
+				PROGRESS = 0.1
+		}
+	}
+}

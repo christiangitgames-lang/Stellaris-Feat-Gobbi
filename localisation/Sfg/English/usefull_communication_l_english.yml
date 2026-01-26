@@ -1,0 +1,19 @@
+﻿# Show Building Slot Capacity 
+l_english:
+
+#Communication
+
+TY:0 "Thank you"
+StopCommunicateForThis:0 "Not are interested, stop notify me again for §W[root.GetName]§!"
+arcologyMessage.1.name: "Can be decision §Yarcology project§!"
+arcologyMessage.1.desc: "Your planet §Y[root.GetName]§! can deploy decision arcology"
+THMMessage.1.name: "Can be Terraform in §YMachine World§! or §YHive World§!"
+THMMessage.1.desc: "Your planet §Y[root.GetName]§! can be terraform"
+ORMessage.1.name: "Can be $orbital_ring_tier_1$ in §Y[root.GetName]§!"
+ORMessage.1.desc: "Your planet §Y[root.GetName]§! is suitable for §Y$orbital_ring_tier_1$§!"
+ORBMessage.1.name: "Can builds in $orbital_ring_tier_1$ §Y[root.GetName]§!"
+ORBMessage.1.desc: "Your $orbital_ring_tier_1$ §Y[root.GetName]§! is suitable for modules or buildings"
+
+
+can_have_remote_system.2.name: "Topological Expansion Limit Removed"
+can_have_remote_system.2.desc: "You §Gcan§! now build in remote systems not connected to your §Yempire§!.\n\nRecent technological breakthroughs have significantly enhanced our ability to maintain and administrate star territories across vast distances. Our colonists and administrators can now manage systems even if they are not contiguous with the imperial core.\nThe barrier of spatial isolation has been broken."

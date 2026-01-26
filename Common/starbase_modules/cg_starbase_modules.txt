@@ -1,0 +1,77 @@
+starm_science_hub_nv = {
+	icon = "GFX_starm_sm_science_hub"
+	section = "HANGAR_STARBASE_SECTION"
+	construction_days = 180
+
+	show_in_tech = tech_physics_1
+	potential = {
+		exists = owner
+		owner = { 
+			is_void_born = no
+			has_technology = "tech_physics_1"
+		}
+	}
+
+	resources = {
+		category = starbase_modules
+		cost = {
+			alloys = 50
+			influence = 25
+		}
+
+		produces = {
+			physics_research = 4
+			engineering_research = 4
+		}
+
+		produces = {
+			trigger = { has_starbase_building = starm_science_booster_nv }
+			physics_research = 2
+			engineering_research = 2
+		}
+
+		produces = {
+			trigger = { has_starbase_building = curator_think_tank }
+			society_research = 2
+			engineering_research = 2
+			physics_research = 2
+		}
+		produces = {
+			trigger = { years_passed > 60 }
+			society_research = 1
+			engineering_research = 1
+			physics_research = 1
+		}
+		produces = {
+			trigger = { years_passed > 85 }
+			society_research = 1
+			engineering_research = 1
+			physics_research = 1
+		}
+		produces = {
+			trigger = { years_passed > 110 }
+			society_research = 1
+			engineering_research = 1
+			physics_research = 1
+		}
+		produces = {
+			trigger = { years_passed > 135 }
+			society_research = 1
+			engineering_research = 1
+			physics_research = 1
+		}
+		upkeep = {
+			energy = 6
+		}
+		upkeep = {
+			trigger = { years_passed > 85 }
+			energy = 6
+		}
+	}
+
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 50
+	}
+}

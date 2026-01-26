@@ -1,0 +1,6 @@
+sell_minor_artifacts = {
+	use_for_ai_budget = no
+	# generate_add_modifiers = {
+	# 	produces
+	# }
+}

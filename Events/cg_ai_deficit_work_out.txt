@@ -1,0 +1,400 @@
+namespace = cg_ai_deficit_work_out
+#ai search repair problem with economy going to default
+# OR = { #for new versione peace force by deficit
+	#has_deficit_situation_stage_3 = yes
+	#has_deficit_situation_stage_4 = yes peace force
+#}
+# has_deficit_situation = yes
+@b1_1_minerals = 100;
+@b1_2_minerals = 100; #200-100
+@b1_3_minerals = 300; #300-100
+country_event = { #can fire monthly
+	id = cg_ai_deficit_work_out.0
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ai = yes
+		OR ={
+			AND = { has_deficit = minerals has_monthly_income = { resource = minerals value < 0 } }
+			AND = { has_deficit = energy has_monthly_income = { resource = energy value < 0 } }
+			AND = { has_deficit = food has_monthly_income = { resource = food value < 0 } }
+			AND = { has_deficit = consumer_goods has_monthly_income = { resource = consumer_goods value < 0 } }
+		}
+	}
+	
+	immediate = {
+		country_event = { id = cg_ai_deficit_work_out.1 } # replace district - remove buildings
+		country_event = { id = cg_ai_deficit_work_out.3 days = 3 } #delete asset that cost upkeep
+		country_event = { id = cg_ai_deficit_work_out.10 } #Exchange resource monthly for leave deficit
+	}
+}
+country_event = { # replace district - remove buildings
+	id = cg_ai_deficit_work_out.1
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		#is_country_type = default
+		OR = {
+			has_resource = {
+				type = energy
+				amount > 625
+			}
+			has_resource = {
+				type = minerals
+				amount > 500
+			}
+			has_resource = {
+				type = alloys
+				amount > 250
+			}
+		}
+		any_owned_planet = {
+			NOT = { has_modifier = cg_ai_deficit_work_out_1 }
+		}
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			planet_event = { 
+				id = cg_ai_deficit_work_out.2 
+			}
+			limit = {
+				is_colony = yes
+				has_orbital_bombardment = no
+				NOT = { has_modifier = cg_ai_deficit_work_out_1 }
+				is_occupied_flag = no
+			}
+			# weights = {
+			# 	base = 1
+			# 	modifier = {
+			# 		factor = 10
+			# 		pop_amount > 3000
+			# 	}
+			# 	modifier = {
+			# 		factor = 10
+			# 		has_building_construction = no
+			# 	}
+			# 	modifier = {
+			# 		factor = 10
+			# 		num_unemployed > 0
+			# 		OR = {
+			# 			free_building_slots > 0
+			# 			free_district_slots > 0
+			# 		}
+			# 	}
+			# }
+			
+		}
+	}
+}
+planet_event = {
+	id = cg_ai_deficit_work_out.2
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			OR = {
+				has_resource = {
+					type = energy
+					amount > 625
+				}
+				has_resource = {
+					type = minerals
+					amount > 500
+				}
+				has_resource = {
+					type = alloys
+					amount > 250
+				}
+			}
+		}
+	}
+	immediate = {
+		if = { 
+			limit = {
+				owner = {
+					OR = {
+						has_resource = {
+							type = minerals
+							amount < 500
+						}
+						has_resource = {
+							type = energy
+							amount > 625
+						}
+					}
+				}
+			}
+			owner = {
+				add_resource = {
+					minerals = 500
+					energy = -625
+				}
+			}
+		}else_if = { 
+			limit = { 
+				owner = { 
+					has_resource = {
+						type = minerals
+						amount < 500
+					} 
+				}
+			}
+			owner = {
+				add_resource = {
+					minerals = 500
+					alloys = -250
+				}
+			}
+		}
+		if = { 
+			limit = {
+				check_variable_arithmetic = {
+					which = value:num_pops_in_strata|STRATA|civilian| 
+					value >= 100
+				}
+				num_unemployed >= 100 #FALLI LAVORARE
+				OR = {
+					free_building_slots > 0
+					free_district_slots > 0
+				}
+			}
+			if = {
+				limit = { free_district_slots > 0 }
+				inline_script = "district_add/universalwr" #universal add district 
+				add_modifier = { modifier = cg_ai_deficit_work_out_1 years = 1 }
+			}
+			# else = { #TODO4
+			# 	inline_script = "building_add/universalwr"
+			# 	add_modifier = { modifier = cg_ai_deficit_work_out_1 years = 1 }
+			# }
+		}
+		else = {
+			#stare attento fare replace.
+			if = { 
+				limit = {
+					OR = {
+						AND = {
+							has_district = district_mining 
+							owner = { has_monthly_income = { resource = minerals value > 100 } }
+						}
+						AND = {
+							has_district = district_generator 
+							owner = { has_monthly_income = { resource = energy value > 75 } }
+						}
+						AND = {
+							has_district = district_farming
+							owner = { has_monthly_income = { resource = food value > 50 } }
+						}
+						# AND = {
+						# 	has_district = district_industrial 
+						# 	owner = { has_monthly_income = { resource = consumer_goods value > 25 } }
+						# }
+					}
+				}
+				if = { limit = { has_district = district_mining owner = { has_monthly_income = { resource = minerals value > 100 } } } remove_district = district_mining }
+				else_if = { limit = { has_district = district_generator owner = { has_monthly_income = { resource = energy value > 75 } } } remove_district = district_generator }
+				else_if = { limit = { has_district = district_farming owner = { has_monthly_income = { resource = food value > 50 } } } remove_district = district_farming }
+				#else_if = { limit = { has_district = district_industrial owner = { has_monthly_income = { resource = consumer_goods value > 25 } } } remove_district = district_industrial }
+				inline_script = "district_add/universalwr" #universal add district 
+				add_modifier = { modifier = cg_ai_deficit_work_out_1 years = 1 }
+			}
+			else = { #Scrivo a una linea se ha solo 2 limit perchè così riesco a vedere tutto subito. Non me ne frega un cazzo se ti da problemi questa cosa.
+				if = { 
+					limit = { 
+						has_building = building_hydroponics_farm 
+						owner = {
+							OR = {
+								OR = {
+									has_monthly_income = { resource = food value > 50 } 
+									AND = {
+										country_uses_bio_ships = yes
+										has_monthly_income = { resource = food value > 100 } 
+									}
+								}
+								AND = { 
+									country_uses_bio_ships = no
+									has_resource = {
+										type = food
+										amount > 2500
+									} 
+									has_monthly_income = { resource = food value > 0 } 
+								}
+							}
+						} 
+					}
+					remove_building = building_hydroponics_farm 
+					owner = { add_resource = { minerals = @b1_minerals mult = prev.value:planet_building_refund_mult } } #da testare
+				}
+				#military
+				else_if = { limit = { owner = { is_at_war = no } has_building = building_stronghold } remove_building = building_stronghold }
+				else_if = { limit = { owner = { is_at_war = no } has_building = building_fortress } remove_building = building_fortress }
+				else_if = { limit = { owner = { is_at_war = no } has_building = building_dread_encampment } remove_building = building_dread_encampment }
+				else_if = { limit = { owner = { is_at_war = no } has_building = building_planetary_shield_generator } remove_building = building_planetary_shield_generator }
+				#luxury
+				else_if = { limit = { has_building = building_luxury_residence } remove_building = building_luxury_residence }
+				else_if = { limit = { has_building = building_paradise_dome } remove_building = building_paradise_dome }
+				#resource
+				#else_if = { limit = { has_building = building_commercial_zone owner = { has_monthly_income = { resource = energy value > 70 } } } remove_building = building_commercial_zone }
+				
+				else_if = { limit = { has_building = building_holo_theatres free_amenities > 500 } remove_building = building_holo_theatres }
+				#factory
+				else_if = { limit = { has_building = building_factory_1 owner = { has_monthly_income = { resource = consumer_goods value > 25 } } } remove_building = building_factory_1 }
+				else_if = { limit = { has_building = building_factory_2 owner = { has_monthly_income = { resource = consumer_goods value > 100 } } } remove_building = building_factory_2 owner = { add_resource = { minerals = @b1_2_minerals rare_crystals = @b2_rare_cost mult = prev.value:planet_building_refund_mult } } }
+				else_if = { limit = { has_building = building_factory_3 owner = { has_monthly_income = { resource = consumer_goods value > 150 } } } remove_building = building_factory_3 owner = { add_resource = { minerals = @b1_3_minerals rare_crystals = @b2_rare_cost mult = prev.value:planet_building_refund_mult } } }
+				else_if = { limit = { owner = { is_at_war = no } has_building = building_foundry_1 owner = { has_monthly_income = { resource = alloys value > 100 } } } remove_building = building_foundry_1 }
+				#rare resource
+				else_if = { limit = { has_building = building_crystal_plant owner = { has_monthly_income = { resource = rare_crystals value > 3 } } } remove_building = building_crystal_plant }
+				else_if = { limit = { has_building = building_chemical_plant owner = { has_monthly_income = { resource = volatile_motes value > 3 } } } remove_building = building_chemical_plant }
+				else_if = { limit = { has_building = building_refinery owner = { has_monthly_income = { resource = exotic_gases value > 3 } } } remove_building = building_refinery }
+				#clinics
+				else_if = { limit = { has_building = building_medical_1 free_amenities > 0 } remove_building = building_medical_1 }
+				else_if = { limit = { has_building = building_medical_2 free_amenities > 1000 } remove_building = building_medical_2 }
+				else_if = { limit = { has_building = building_medical_3 free_amenities > 3000 } remove_building = building_medical_3 }
+				#research
+				else_if = { limit = { has_building = building_research_lab_1 } remove_building = building_research_lab_1 }
+				else_if = { limit = { has_building = building_research_lab_2 } 
+					remove_building = building_research_lab_2 
+					owner = { 
+						add_resource = { minerals = @b1_2_minerals exotic_gases = @b2_rare_cost mult = prev.value:planet_building_refund_mult } 
+					} 
+				}
+				
+				owner = { add_resource = { minerals = @b1_minerals mult = prev.value:planet_building_refund_mult } } #da testare
+				#if = { limit = { free_building_slots > 0 }
+					#owner = { add_resource = { minerals = @b1_minerals mult = prev.value:planet_building_refund_mult } } #da testare
+					#inline_script = "building_add/universalwr"
+					#add_modifier = { modifier = cg_ai_deficit_work_out_1 years = 1 }
+				#}
+			}
+		}
+	}
+}
+
+
+country_event = { #delete asset for exit to debt.
+	id = cg_ai_deficit_work_out.3 
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_monthly_income = { resource = energy value < 1 }
+	}
+	immediate = {
+		while = {
+			count = 2
+			random_owned_army = { 
+				remove_army = yes 
+				if = {
+					limit = { has_global_flag = AI_hard }
+					prev = { add_resource = { minerals = 100 } } 
+				}
+			} #try remove army.
+		}
+	}
+}
+country_event = { #can fire monthly # emergency measure for exit to debt.
+	id = cg_ai_deficit_work_out.10
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = yes
+		#is_country_type = default
+	}
+
+	immediate = {
+		#fare che applica un modificatore di scambio
+		if = {
+			limit = {
+				has_monthly_income = { resource = consumer_goods value < 0 }
+				NOT = { has_modifier = consumer_goods_market }
+			}
+			add_modifier = { modifier = consumer_goods_market days = 180 } 
+		}
+		else_if = {
+			limit = {
+				has_monthly_income = { resource = consumer_goods value < 0 }
+				NOT = { has_modifier = consumer_goods_5_market }
+			}
+			add_modifier = { modifier = consumer_goods_5_market days = 180 } 
+			add_modifier = { modifier = consumer_goods_market days = 300 } 
+		}
+		else_if = { #food
+				limit = {
+					has_monthly_income = { resource = food value < 0 }
+					NOT = { has_modifier = food_market }
+				}
+			add_modifier = { modifier = food_market days = 180 } 
+		}
+		else_if = { #minerals
+			limit = {
+				has_monthly_income = { resource = minerals value < 0 }
+				NOT = { has_modifier = minerals_40_market }
+			}
+			add_modifier = { modifier = minerals_40_market days = 180 }
+			add_modifier = { modifier = minerals_20_market days = 300 } 
+		}
+		else_if = { 
+			limit = {
+				NOT = { has_modifier = minerals_40_market }
+				has_monthly_income = { resource = minerals value < 0 }
+			}
+			add_modifier = { modifier = minerals_20_market days = 180 }
+			add_modifier = { modifier = minerals_10_market days = 300 } 
+		}
+		else_if = {
+			limit = {
+				has_monthly_income = { resource = minerals value < 0 }
+				NOT = { has_modifier = minerals_10_market }
+			}
+			add_modifier = { modifier = minerals_10_market days = 180 } 
+		}
+		if = {
+			limit = {
+				has_monthly_income = { resource = energy value < 0 }
+			}
+			if = { limit = { NOT = { has_modifier = energy_for_40_food_market } has_resource = { type = food amount > 250 } has_monthly_income = { resource = food value > 20 } } add_modifier = { modifier = energy_for_40_food_market days = 180 } }
+			else_if = { limit = { NOT = { has_modifier = energy_for_12_consumer_goods_market } has_resource = { type = consumer_goods amount > 250 } has_monthly_income = { resource = consumer_goods value > 14 }  } add_modifier = { modifier = energy_for_12_consumer_goods_market days = 180 } }
+			else_if = { limit = { NOT = { has_modifier = energy_for_9_alloys_market } has_resource = { type = alloys amount > 250  } has_monthly_income = { resource = alloys value > 18 }  } add_modifier = { modifier = energy_for_9_alloys_market days = 180 } }
+			else_if = { limit = { has_monthly_income = { resource = alloys value > 1 } has_monthly_income = { resource = consumer_goods value > 1 } has_monthly_income = { resource = food value > 1 } has_monthly_income = { resource = minerals value > 1 } } add_modifier = { modifier = energy_for_all_market days = 180 } }
+		}
+	}
+}
+country_event = { #can fire yearly # emergency measure for exit to debt.
+	id = cg_ai_deficit_work_out.100 # event try
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = yes
+		has_origin = origin_void_dwellers
+		has_monthly_income = { resource = alloys value < 0 }
+	}
+	
+	immediate = {
+		#for habitat
+		if = {
+			limit = {
+				
+				has_monthly_income = { resource = alloys value < 0 }
+				has_monthly_income = { resource = minerals value > 100 }
+			}
+			add_modifier = { modifier = Alloy_hab_market_50 days = 180 } 
+			add_modifier = { modifier = Alloy_hab_market_25 days = 330 }
+		}
+		else_if = {
+			limit = {
+				has_monthly_income = { resource = alloys value < 0 }
+				has_monthly_income = { resource = minerals value > 50 }
+			}
+			add_modifier = { modifier = Alloy_hab_market_25 days = 330 } 
+		}
+	}
+}

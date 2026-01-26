@@ -1,0 +1,432 @@
+namespace = ConnectSystem
+#Copy by rules of Phi but little change whormhole are consider connect.
+country_event = {
+	id = ConnectSystem.1
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		can_have_remote_system = no
+	}
+	immediate = { 
+		owner = { 
+			country_event = { 
+				id = ConnectSystem.2 
+				days = 7 #fix anex vassal
+			} 
+		} 
+	}
+}
+country_event = {
+	id = ConnectSystem.2
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		every_owned_planet = {
+			limit = { 
+				is_colony = yes
+			}
+			solar_system = {
+				set_star_flag = connected
+			}
+		}
+		every_system_within_border = {
+			limit = {
+				NOT = { has_star_flag = connected }
+			}
+			if = {
+				limit = {
+					any_neighbor_system = {
+						exists = owner
+						owner = {
+							OR = {
+								AND = {
+									is_subject = yes
+									has_overlord = root
+								}
+								is_in_federation_with = root
+								root = {
+									is_subject = yes
+									has_overlord = prev
+								}
+							}
+						}
+					}
+				}
+				set_star_flag = connected
+			}
+		}
+		every_system_within_border = {
+			limit = {
+				NOT = { has_star_flag = connected }
+				has_natural_wormhole = yes
+			}
+			if = {
+				limit = {
+					closest_system = {
+						limit = {
+							exists = owner
+							owner = {
+								OR = {
+									AND = {
+										is_subject = yes
+										has_overlord = root
+									}
+									is_in_federation_with = root
+									root = {
+										is_subject = yes
+										has_overlord = prev
+									}
+								}
+							}
+						}
+						use_bypasses = yes
+						min_steps = 1
+						max_steps = 1
+					}
+				}
+				
+				set_star_flag = connected
+			}
+		}
+		
+		while = {
+			limit = {
+				any_system_within_border = {
+					NOT = { has_star_flag = connected }
+					root = {
+						any_system_within_border = {
+							has_hyperlane_to = prevprev
+							has_star_flag = connected
+						}
+					}
+				}
+			}
+			every_system_within_border = {
+				if = {
+					limit = {
+						any_neighbor_system = {
+							has_star_flag = connected
+						}
+					}
+					set_star_flag = connected
+				}
+			}
+		}
+		#overlord systems
+		# while = {
+		# 	limit = {
+		# 		any_system_within_border = {
+		# 			NOT = { has_star_flag = connected }
+		# 			any_neighbor_system = {
+		# 				has_hyperlane_to = prev
+		# 				has_star_flag = connected
+		# 			}
+		# 		}
+		# 	}
+		# 	every_system_within_border = {
+		# 		if = {
+		# 			limit = {
+		# 				any_neighbor_system = {
+		# 					has_star_flag = connected
+		# 				}
+		# 			}
+		# 			set_star_flag = connected
+		# 		}
+		# 	}
+		# }
+		every_system_within_border = {
+			limit = {
+				NOT = { has_star_flag = connected }
+			}
+			if = {
+				limit = {
+					closest_system = {
+						limit = {
+							has_star_flag = connected
+						}
+						use_bypasses = yes
+						min_steps = 1
+						max_steps = 1
+					}
+					
+				}
+				set_star_flag = connected
+			}
+		}
+		#Repeat for gateways' and whormhole connected systems
+		while = {
+			limit = {
+				any_system_within_border = {
+					NOT = { has_star_flag = connected }
+					root = {
+						any_system_within_border = {
+							has_hyperlane_to = prevprev
+							has_star_flag = connected
+						}
+					}
+				}
+			}
+			every_system_within_border = {
+				if = {
+					limit = {
+						any_neighbor_system = {
+							has_star_flag = connected
+						}
+					}
+					set_star_flag = connected
+				}
+			}
+		}
+		
+		#######################################
+		#presa da phi non capisco cosa serve
+		#taking care of the sealed entry system
+		if = {
+			limit = {
+				any_system_within_border = {
+					has_star_flag = sealed_entry_system
+					has_star_flag = connected
+				}
+			}
+			every_system_within_border = {
+				if = {
+					limit = {
+						has_star_flag = sealed_system
+					}
+					set_star_flag = connected
+				}
+			}
+		}
+		
+		#removes non-connected systems from the empire territory
+		every_owned_fleet = {
+			limit = {
+				is_ship_class = shipclass_starbase
+				solar_system = {
+					NOT = { has_star_flag = connected }
+				}
+			}
+			destroy_fleet = this
+		}
+		
+		every_system_within_border = {
+			remove_star_flag = connected
+		}
+	}
+}
+country_event = {
+	id = ConnectSystem.3
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		every_owned_planet = {
+			limit = { pop_amount >= 100 }
+			solar_system = {
+				set_star_flag = connected
+			}
+		}
+		every_system_within_border = {
+			limit = {
+				NOT = { has_star_flag = connected }
+			}
+			if = {
+				limit = {
+					any_neighbor_system = {
+						exists = owner
+						owner = {
+							OR = {
+								AND = {
+									is_subject = yes
+									has_overlord = root
+								}
+								is_in_federation_with = root
+								root = {
+									is_subject = yes
+									has_overlord = prev
+								}
+							}
+						}
+					}
+				}
+				set_star_flag = connected
+			}
+		}
+		# every_system_within_border = {
+		# 	limit = {
+		# 		has_star_flag = connected
+		# 	}
+		# 	every_neighbor_system = {
+		# 		limit = {
+		# 			exists = owner
+		# 			owner = {
+		# 				root = { has_overlord = prev }
+		# 			}
+		# 		}
+		# 		set_star_flag = connected
+		# 	}
+		# }
+		every_system_within_border = {
+			limit = {
+				NOT = { has_star_flag = connected }
+				has_natural_wormhole = yes
+			}
+			if = {
+				limit = {
+					closest_system = {
+						limit = {
+							exists = owner
+							owner = {
+								OR = {
+									AND = {
+										is_subject = yes
+										has_overlord = root
+									}
+									is_in_federation_with = root
+									root = {
+										is_subject = yes
+										has_overlord = prev
+									}
+								}
+							}
+						}
+						use_bypasses = yes
+						min_steps = 1
+						max_steps = 1
+					}
+				}
+				
+				set_star_flag = connected
+			}
+		}
+		
+		while = {
+			limit = {
+				any_system_within_border = {
+					NOT = { has_star_flag = connected }
+					root = {
+						any_system_within_border = {
+							has_hyperlane_to = prevprev
+							has_star_flag = connected
+						}
+					}
+				}
+			}
+			every_system_within_border = {
+				if = {
+					limit = {
+						any_neighbor_system = {
+							has_star_flag = connected
+						}
+					}
+					set_star_flag = connected
+				}
+			}
+		}
+		#overlord systems
+		# while = {
+		# 	limit = {
+		# 		any_system_within_border = {
+		# 			NOT = { has_star_flag = connected }
+		# 			any_neighbor_system = {
+		# 				has_hyperlane_to = prev
+		# 				has_star_flag = connected
+		# 			}
+		# 		}
+		# 	}
+		# 	every_system_within_border = {
+		# 		if = {
+		# 			limit = {
+		# 				any_neighbor_system = {
+		# 					has_star_flag = connected
+		# 				}
+		# 			}
+		# 			set_star_flag = connected
+		# 		}
+		# 	}
+		# }
+		every_system_within_border = {
+			limit = {
+				NOT = { has_star_flag = connected }
+			}
+			if = {
+				limit = {
+					closest_system = {
+						limit = {
+							has_star_flag = connected
+						}
+						use_bypasses = yes
+						min_steps = 1
+						max_steps = 1
+					}
+					
+				}
+				set_star_flag = connected
+			}
+		}
+		#Repeat for gateways' and whormhole connected systems
+		while = {
+			limit = {
+				any_system_within_border = {
+					NOT = { has_star_flag = connected }
+					root = {
+						any_system_within_border = {
+							has_hyperlane_to = prevprev
+							has_star_flag = connected
+						}
+					}
+				}
+			}
+			every_system_within_border = {
+				if = {
+					limit = {
+						any_neighbor_system = {
+							has_star_flag = connected
+						}
+					}
+					set_star_flag = connected
+				}
+			}
+		}
+		
+		#######################################
+		#presa da phi non capisco cosa serve
+		#taking care of the sealed entry system
+		if = {
+			limit = {
+				any_system_within_border = {
+					has_star_flag = sealed_entry_system
+					has_star_flag = connected
+				}
+			}
+			every_system_within_border = {
+				if = {
+					limit = {
+						has_star_flag = sealed_system
+					}
+					set_star_flag = connected
+				}
+			}
+		}
+		
+		#removes non-connected systems from the empire territory
+		# every_owned_fleet = {
+		# 	limit = {
+		# 		is_ship_class = shipclass_starbase
+		# 		solar_system = {
+		# 			NOT = { has_star_flag = connected }
+		# 		}
+		# 	}
+		# 	destroy_fleet = this
+		# }
+		
+		# every_system_within_border = {
+		# 	remove_star_flag = connected
+		# }
+	}
+}

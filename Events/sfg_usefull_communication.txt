@@ -1,0 +1,430 @@
+namespace = sfg_usefull_communication
+planet_event = { #test
+	id = sfg_usefull_communication.0
+	#trackable = yes
+	# immediate = {
+	# 	hidden_effect = {
+	# 		FROM = {
+	# 			set_planet_flag = test_1
+	# 		}
+	# 	}
+	# }
+	trigger = {
+		owner = {
+			is_ai = no
+		}
+	}
+	inline_script = {
+		script = events/settable_event
+		TITLE = anomaly.5000.name
+		DESC = "anomaly.5000.desc"
+		PICTURE = GFX_evt_star_chart
+		LOCATION = ROOT
+	}
+	option = {
+		name = anomaly.5000.a
+		enable_special_project = {
+			name = "GAS_GIANT_SIGNAL"
+			location = FROM
+		}
+	}
+	option = {
+		name = anomaly.5000.b
+	}
+}
+country_event = {  #Deamon that fires all usefull communication
+	id = sfg_usefull_communication.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		years_passed > 10
+	}
+	immediate = {
+		country_event = {
+			id = sfg_usefull_communication.10 #arcology message
+		}
+		country_event = {
+			id = sfg_usefull_communication.20 #Hive world machine
+		}
+		country_event = {
+			id = sfg_usefull_communication.30 #orbital ring buildable
+		}
+		country_event = {
+			id = sfg_usefull_communication.40 #modules or buildings free in orbital rings
+			days = 15
+		}
+	}
+}
+country_event = { #arcology message
+	id = sfg_usefull_communication.10
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_ascension_perk = ap_arcology_project
+
+		has_resource = { type = minerals amount >= 20000 } 
+		has_resource = { type = influence amount >= 200 } 
+		
+		any_owned_planet = {
+			is_artificial = no
+			NOR = {
+				has_planet_flag = disable_sfg_usefull_communication10
+
+				is_planet_class = pc_city
+				is_planet_class = pc_relic
+				has_modifier = resort_colony
+				has_modifier = penal_colony
+				has_modifier = slave_colony
+				has_modifier = pm_wenkwort_custodian
+				
+				num_districts = { type = district_farming value > 0 }
+				num_districts = { type = district_mining value > 0 }
+				num_districts = { type = district_generator value > 0 }
+			}
+			num_uncleared_blockers < 1
+			free_district_slots < 1
+		}
+	}
+	immediate = {
+		every_owned_planet = { 
+			limit = { #candidate for acology project
+				is_artificial = no
+				NOR = {
+					has_planet_flag = disable_sfg_usefull_communication10
+
+					is_planet_class = pc_city
+					is_planet_class = pc_relic
+					has_modifier = resort_colony
+					has_modifier = penal_colony
+					has_modifier = slave_colony
+					has_modifier = pm_wenkwort_custodian
+					
+					num_districts = { type = district_farming value > 0 }
+					num_districts = { type = district_mining value > 0 }
+					num_districts = { type = district_generator value > 0 }
+				}
+				num_uncleared_blockers < 1
+				free_district_slots < 1
+			}
+			planet_event = {
+				id = sfg_usefull_communication.11#Message
+			}
+		}
+	}
+}
+planet_event = { #send arcology message
+	id = sfg_usefull_communication.11
+	is_triggered_only = yes
+	title = "arcologyMessage.1.name"
+	desc = "arcologyMessage.1.desc"
+	picture = GFX_arcology
+	show_sound = event_alien_signal #random
+	location = root
+
+	option = {
+		name = TY
+		hidden_effect = {
+			set_timed_planet_flag = { 
+				flag = disable_sfg_usefull_communication10
+				days = 3600
+			}
+		}
+	}
+	option = {
+		name = StopCommunicateForThis
+		hidden_effect = {
+			ROOT = { set_planet_flag = disable_sfg_usefull_communication10 }
+		}
+	}
+}
+country_event = { #hive/machine message
+	id = sfg_usefull_communication.20
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		OR = {
+			has_ascension_perk = ap_machine_worlds
+			has_ascension_perk = ap_hive_worlds
+		}
+		has_resource = { type = energy amount >= 10000 } 
+		any_owned_planet = {
+			is_artificial = no
+			NOR = {
+				is_planet_class = pc_city
+				is_planet_class = pc_relic
+				AND = { 
+					is_planet_class = pc_hive
+					owner = { has_ascension_perk = ap_hive_worlds }
+				}
+				AND = { 
+					is_planet_class = pc_machine
+					owner = { has_ascension_perk = ap_machine_worlds}
+				}
+				has_planet_flag = disable_sfg_usefull_communication20
+			}
+		}
+	}
+	immediate = {
+		every_owned_planet = { 
+			limit = { #candidate for hive world project
+				is_artificial = no
+				NOR = {
+					is_planet_class = pc_city
+					is_planet_class = pc_relic
+					NOR = {
+						AND = { 
+							is_planet_class = pc_hive
+							owner = { has_ascension_perk = ap_hive_worlds }
+						}
+						AND = { 
+							is_planet_class = pc_machine
+							owner = { has_ascension_perk = ap_machine_worlds}
+						}
+					}
+					has_planet_flag = disable_sfg_usefull_communication20
+					AND = {
+						is_planet_class = pc_nanotech
+						owner = { has_tradition = tr_nanotech_adopt }
+					}
+				}
+			}
+			planet_event = {
+				id = sfg_usefull_communication.21#Message
+			}
+		}
+	}
+}
+planet_event = { #send hive message
+	id = sfg_usefull_communication.21
+	is_triggered_only = yes
+	title = "THMMessage.1.name"
+	desc = "THMMessage.1.desc"
+	picture = GFX_arcology
+	show_sound = event_alien_signal #random
+	location = root
+
+	option = {
+		name = TY
+		hidden_effect = {
+			set_timed_planet_flag = { 
+					flag = disable_sfg_usefull_communication20
+					days = 1800
+			}
+		}
+	}
+	option = {
+		name = StopCommunicateForThis
+		hidden_effect = {
+			ROOT = { set_planet_flag = disable_sfg_usefull_communication20 }
+		}
+	}
+}
+country_event = { #orbital ring
+	id = sfg_usefull_communication.30
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_technology = tech_orbital_ring_tier_1
+		OR = {
+			AND = {
+				country_uses_bio_ships = yes
+				has_resource = { type = alloys amount >= 500 } 
+				has_resource = { type = food amount >= 500 } 
+			}
+			AND = {
+				country_uses_bio_ships = no
+				has_resource = { type = alloys amount >= 1000 } 
+			}
+		}
+		has_resource = { type = influence amount >= 50 } 
+		any_owned_planet = {
+			AND = {
+				NOT = { has_planet_flag = disable_sfg_usefull_communication30 }
+				NAND = {
+					exists = starbase
+					starbase = { has_starbase_size >= orbital_ring_tier_1 }
+				}
+				
+			}
+		}
+	}
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				is_artificial = no
+				AND = {
+					NOT = { has_planet_flag = disable_sfg_usefull_communication30 }
+					NAND = {
+						exists = starbase
+						starbase = { has_starbase_size >= orbital_ring_tier_1 }
+					}
+				
+				}
+			}
+			weights = {
+				weight = 1
+				modifier = {
+					factor = 2
+					is_capital = yes
+				}
+				# spend more on ship upgrades if at capacity
+				modifier = {
+					factor = 3
+					free_housing < 1000
+				}
+				modifier = {
+					factor = 3
+					free_housing < 100
+				}
+			}
+			planet = {
+				set_timed_planet_flag = { 
+					flag = disable_sfg_usefull_communication30
+					days = 720
+				}
+			}
+			planet_event = {
+				
+				id = sfg_usefull_communication.31#Message
+			}
+		}
+		if = {
+			limit = { 
+				has_resource = { type = influence amount >= 100 }  
+				#2000-100
+				inline_script = { 
+					script = usefull_communication/orb_cost_30 
+					AMOUNT_BIO = 500
+					AMOUNT = 1000
+				}
+			}
+			
+			inline_script = { script = usefull_communication/Avaible_build_orb_ring_30 }
+		}
+		if = {
+			limit = { 
+				inline_script = { 
+					script = usefull_communication/orb_cost_30 
+					AMOUNT_BIO = 1000
+					AMOUNT = 2000
+				}
+				has_resource = { type = influence amount >= 150 }  
+			}
+			inline_script = { script = usefull_communication/Avaible_build_orb_ring_30 }
+		}
+		if = {
+			limit = { 
+				inline_script = { 
+					script = usefull_communication/orb_cost_30 
+					AMOUNT_BIO = 1500
+					AMOUNT = 3000
+				}
+				has_resource = { type = influence amount >= 200 }  
+			}
+			inline_script = { script = usefull_communication/Avaible_build_orb_ring_30 }
+		}
+		if = {
+			limit = { 
+				inline_script = { 
+					script = usefull_communication/orb_cost_30 
+					AMOUNT_BIO = 2000
+					AMOUNT = 4000
+				}
+				has_resource = { type = influence amount >= 250 }  
+			}
+			inline_script = { script = usefull_communication/Avaible_build_orb_ring_30 }
+		}
+	}
+		
+		
+}
+planet_event = { #send hive message
+	id = sfg_usefull_communication.31
+	is_triggered_only = yes
+	title = "ORMessage.1.name"
+	desc = "ORMessage.1.desc"
+	picture = GFX_arcology
+	show_sound = event_alien_signal #random
+	location = root
+
+	option = {
+		name = TY
+	}
+	option = {
+		name = StopCommunicateForThis
+		
+		hidden_effect = {
+			ROOT = { 
+				remove_planet_flag = disable_sfg_usefull_communication30 #remove temporary flag
+				set_planet_flag = disable_sfg_usefull_communication30 
+			}
+		}
+	}
+}
+country_event = { #modules or buildings free in orbital rings
+	id = sfg_usefull_communication.40
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_technology = tech_orbital_ring_tier_1
+		has_resource = { type = alloys amount >= 250 } 
+		has_resource = { type = influence amount >= 25 } 
+		any_owned_nonprimary_starbase = {
+			exists = planet
+			has_starbase_size >= orbital_ring_tier_1
+			NOT = { has_starbase_flag = disable_sfg_usefull_communication40 }
+			OR = {
+				check_variable_arithmetic = { which = value:Free_orbital_rings_buildings value > 0 }
+				check_variable_arithmetic = { which = value:Free_Orbital_Ring_modules value > 0 }
+			}
+			
+		}
+	}
+	immediate = {
+		every_owned_nonprimary_starbase = { 
+			limit = { #candidate for hive world project
+				has_starbase_size >= orbital_ring_tier_1
+				NOT = { has_starbase_flag = disable_sfg_usefull_communication40 }
+				OR = {
+					check_variable_arithmetic = { which = value:Free_orbital_rings_buildings value > 0 }
+					check_variable_arithmetic = { which = value:Free_Orbital_Ring_modules value > 0 }
+				}
+			}
+			set_timed_starbase_flag = { 
+					flag = disable_sfg_usefull_communication40
+					days = 720
+			}
+			starbase_event = {
+				id = sfg_usefull_communication.41#Message
+			}
+		}
+	}
+}
+starbase_event = { #send hive message
+	id = sfg_usefull_communication.41
+	is_triggered_only = yes
+	title = "ORBMessage.1.name"
+	desc = "ORBMessage.1.desc"
+	picture = GFX_arcology
+	show_sound = event_alien_signal #random
+	location = root
+
+	option = {
+		name = TY
+	}
+	option = {
+		name = StopCommunicateForThis
+		
+		hidden_effect = {
+			ROOT = { 
+				remove_starbase_flag = disable_sfg_usefull_communication40 #remove temporary flag
+				set_starbase_flag = disable_sfg_usefull_communication40 
+			}
+		}
+	}
+}

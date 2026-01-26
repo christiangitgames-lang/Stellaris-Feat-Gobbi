@@ -1,0 +1,1 @@
+planet_automation_job = { available = { exists = owner owner = { is_ai = yes } } }

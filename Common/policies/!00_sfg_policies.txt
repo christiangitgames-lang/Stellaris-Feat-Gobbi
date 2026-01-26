@@ -1,0 +1,52 @@
+military_logistics = {
+	potential = {
+		always = yes
+	}
+
+	option = {
+		name = "military_logistics_policy_default"
+
+		potential = {
+			always = yes
+		}
+		policy_flags = {
+			military_logistics_policy_default
+		}
+		on_enabled = {
+			
+		}
+
+		on_disabled = {
+		}
+
+		AI_weight = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "military_logistics_policy_high"
+
+		valid = {
+			NOT = { has_deficit = trade }
+		}
+		potential = {
+			always = yes
+		}
+		policy_flags = {
+			military_logistics_policy_high
+		}
+		on_enabled = {
+			
+		}
+		modifier = {
+			ships_logistics_mult = +0.50
+		}
+
+		on_disabled = {
+		}
+
+		AI_weight = {
+			factor = 0
+		}
+	}
+}

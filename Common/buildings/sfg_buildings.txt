@@ -1,0 +1,85 @@
+foreign_building_research_lab_1 = {
+	can_build = yes
+	base_buildtime = @b1_time
+	exempt_from_ai_planet_specialization = no
+
+	category = research
+
+	building_sets = {
+		research
+	}
+
+	potential = {
+		always = yes #test
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
+		exists = owner
+		owner = {
+			is_wilderness_empire = no
+		}
+		is_special_colony_type = no
+	}
+
+	allow = {
+		exists = owner
+		has_upgraded_capital = yes
+	}
+
+	ai_weight_coefficient = 0
+
+	destroy_trigger = {
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
+	}
+	# planet_modifier = {
+	# 	job_foreign_researcher_add = 180
+	# }
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+			}
+		}
+		
+		modifier = {
+			job_foreign_researcher_add = 180
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		
+		modifier = {
+			job_calculator_foreign_researcher_add = 180
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+	}
+
+	prerequisites = {
+		"tech_basic_science_lab_1"
+	}
+
+	# upgrades = {
+	# 	"building_research_lab_2"
+	# }
+}

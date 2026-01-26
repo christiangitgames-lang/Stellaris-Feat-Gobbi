@@ -1,0 +1,96 @@
+tech_autonomous_agents_2 = {
+	cost = @tier2cost2
+	area = society
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_autonomous_agents" }
+	weight = @tier2weight3
+
+	potential = {
+		has_ethic = ethic_gestalt_consciousness
+		OR = {
+			has_global_flag = Country32
+			has_global_flag = Country27
+			has_global_flag = Country20
+			has_global_flag = Country14
+		}
+	}
+
+	modifier = {
+		envoys_add = 1
+	}
+}
+tech_embodied_dynamism_2 = {
+	cost = @tier3cost2
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_embodied_dynamism" }
+	weight = @tier3weight3
+
+	modifier = {
+		envoys_add = 1
+	}
+
+	potential = {
+		has_ethic = ethic_gestalt_consciousness
+		OR = {
+			has_global_flag = Country32
+			has_global_flag = Country27
+			has_global_flag = Country20
+			has_global_flag = Country14
+		}
+	}
+}
+# gears_of_war = {
+# 	cost = @tier1cost1
+# 	area = society
+# 	tier = 1
+# 	category = { statecraft }
+# 	prerequisites = { "tech_planetary_government" }
+# 	weight = @tier1weight3
+
+# 	gateway = capital
+
+# 	feature_flags = {
+# 		campaign_edicts
+# 	}
+# 	modifier = {
+# 		custom_tooltip = gears_of_war_effect
+# 	}
+
+# 	weight_modifier = {
+# 		factor = 1
+# 		modifier = {
+# 			factor = 0.75
+# 			NOT = {
+# 				OR = {
+# 					has_ethic = ethic_militarist
+# 					has_ethic = ethic_fanatic_militarist
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	ai_weight = {
+# 		factor = 10
+# 		modifier = {
+# 			factor = 0.75
+# 			NOT = {
+# 				OR = {
+# 					has_ethic = ethic_militarist
+# 					has_ethic = ethic_fanatic_militarist
+# 				}
+# 			}
+# 		}
+# 		modifier = {
+# 			factor = 1.25
+# 			has_ethic = ethic_authoritarian
+# 		}
+# 		modifier = {
+# 			factor = 1.5
+# 			has_ethic = ethic_fanatic_authoritarian
+# 		}
+
+# 	}
+# }
