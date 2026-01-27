@@ -1,0 +1,6 @@
+ l_english:
+ #Non traddure
+EMPIRE_SIZE_TOTAL_2:0 "$VALUE|0Y$"
+ ADMIN_CAP_TOTAL_2:0 "$VALUE|Y$"
+ ADMIN_CAP_VALUE_2:0 "$VALUE|Y$"
+BuildingS_total:0 "$MOD_PLANET_MAX_BUILDINGS_ADD$: $VALUE|Y$"

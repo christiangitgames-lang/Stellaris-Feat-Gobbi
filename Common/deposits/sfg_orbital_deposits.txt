@@ -8,7 +8,7 @@ d_l_physics_research = {
 	station = shipclass_research_station 
 	is_for_colonizable = no
 	habitat_modifier = {
-		district_hab_science_max = 21
+		district_hab_science_max_add = 21
 	}
 	potential = {
 		OR = {
@@ -34,7 +34,7 @@ d_l_society_research = {
 	station = shipclass_research_station 
 	is_for_colonizable = no
 	habitat_modifier = {
-		district_hab_science_max = 2
+		district_hab_science_max_add = 2
 	}
 	potential = {
 		OR = {
@@ -60,7 +60,7 @@ d_l_engineering_research = {
 	station = shipclass_research_station 
 	is_for_colonizable = no
 	habitat_modifier = {
-		district_hab_science_max = 21
+		district_hab_science_max_add = 21
 	}
 	potential = {
 		OR = {
@@ -182,7 +182,7 @@ d_nanites_deposit_2 = {
 	}
 
 	habitat_modifier = {
-		district_hab_science_max = 1
+		district_hab_science_max_add = 1
 	}
 
 	station = shipclass_research_station
@@ -220,7 +220,7 @@ d_nanites_deposit_3 = {
 	}
 
 	habitat_modifier = {
-		district_hab_science_max = 1
+		district_hab_science_max_add = 1
 	}
 
 	station = shipclass_research_station

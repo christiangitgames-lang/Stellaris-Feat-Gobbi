@@ -72,11 +72,6 @@ tr_subterfuge_finish = {
 			factor = 1
 		}
 	}
-
-		weight = {
-			factor = 1
-		}
-	}
 }
 
 tr_subterfuge_information_security = {

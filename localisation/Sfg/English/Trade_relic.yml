@@ -1,8 +1,8 @@
-﻿l_english:
-#obsoleta?
- #####################################
+ l_english:
+ #Da verificare
+#####################################
  # TRADE ACTIONS
- #####################################
+#####################################
  trade_action_trade_relic_desc: "We have no need for this relic, maybe others will find value in it?"
  trade_action_r_dragon_trophy: "Relic: $r_dragon_trophy$"
  trade_action_r_dragon_trophy_desc: "$trade_action_trade_relic_desc$"

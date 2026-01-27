@@ -61,12 +61,13 @@ assault_army = {
 	potential = {
 		from = {
 			OR = {
-				has_trait = trait_shroud_forged
-			NOR = {
-				has_trait = "trait_mechanical"
-				has_trait = "trait_machine_unit"
-				has_trait = "trait_limited_cybernetic"
-				is_sapient = no
+					has_trait = trait_shroud_forged
+				NOR = {
+					has_trait = "trait_mechanical"
+					has_trait = "trait_machine_unit"
+					has_trait = "trait_limited_cybernetic"
+					is_sapient = no
+				}
 			}
 		}
 		owner = { is_ai = no }

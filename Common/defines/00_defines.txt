@@ -1741,7 +1741,7 @@
 		HYPERDRIVE_INTERSTELLAR_TRAVEL_SPEED = 1.0 # In micro updates ( 10/day )
 		RULER_SHIP_SCALE_MULT				= 0.5	# Scale up of unique ruler ship.
 		JUMP_DRIVE_WINDUP					= 14	# Jump drive windup in days
-		JUMP_DRIVE_RANGE					= 100
+		JUMP_DRIVE_RANGE					= 90
 		QC_WINDUP_SHIP_SIZE_DIV				= 50	# Bigger the value faster the windup time will be.
 		QC_WINDUP_SHIP_SIZE					= 150	# Ship size after which the windup mult will be applied.
 

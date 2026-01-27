@@ -544,7 +544,7 @@ sba_nanite_harvester_site_ordered_effect = {
 
 # Habitats
 # value:max_habitat_districts_value
-# district_hab_energy_max, district_hab_mining_max_add, and district_hab_science_max can't be checked directly
+# district_hab_energy_max, district_hab_mining_max_add, and district_hab_science_max_add can't be checked directly
 
 sba_habitat_site_search_effect = {
 	optimize_memory

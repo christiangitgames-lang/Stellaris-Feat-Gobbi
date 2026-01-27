@@ -842,7 +842,7 @@ building_medical_2 = {
 					}
 				}
 				planet_stability > 70
-				free_amenities > 20
+				free_amenities > 200
 			}
 		}
 	}

@@ -1,6 +1,6 @@
 ﻿l_english:
-version: "v1.0.7"
-Compatible: "4.0.21"
+version: "v1.1.0"
+Compatible: "4.3.0"
 cg_game_start.1.name: "Stellaris feat Gobbi START MENU"
 cg_game_start.1.desc: "You are playing at Beta §H"Stellaris feat Gobbi $version$.\n"
 cg_game_start.1.AI_hard: "Ai is §YHARD§!"

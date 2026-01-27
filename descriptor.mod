@@ -1,4 +1,4 @@
-version="1.3"
+version="1.4"
 tags={
 	"Balance"
 	"Diplomacy"
@@ -8,5 +8,5 @@ tags={
 	"Technologies"
 }
 name="Stellaris feat. Gobbi"
-supported_version="v4.0.21"
+supported_version="v4.3.0"
 remote_file_id="3436293504"remote_file_id="3192141367" 

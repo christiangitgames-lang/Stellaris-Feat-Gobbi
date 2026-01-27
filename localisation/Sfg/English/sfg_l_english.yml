@@ -42,16 +42,6 @@ civic_scavengers_machine:0 "Xenon protocol" #dedicato a pietor
 civic_scavengers_machine_desc:0 "In this protocol, nothing goes to waste, even in the grimmest times of war: no enemy technology will go undiscovered, as teams of scrappers accompanying the war fleets scrape wreckages of anything and everything worth salvaging."
 
 #colony
-col_researchphy:0 "Phy-World"
- col_researchphy_desc:1 "This world is a seat of scientific research and technological advancement of physics."
- col_researcheng:0 "Eng-World"
- col_researcheng_desc:1 "This world is a seat of scientific research and technological advancement of enginnering."
-col_researchphy:0 "Phy-World"
- col_researchphy_desc:1 "This world is a seat of scientific research and technological advancement of physics."
- col_researcheng:0 "Eng-World"
- col_researcheng_desc:1 "This world is a seat of scientific research and technological advancement of enginnering."
-col_researchphy_custom:1 "§YResearcher§! will shift jobs from £job_society_researcher£ £job_engineering_researcher£ Researcher to £job_physics_researcher£ $job_physics_researcher_plural$.\n\n"  
-col_researcheng_custom:1 "§YResearcher§! will shift one jobs from £job_society_researcher£ and £job_physics_researcher£ Researcher to £job_engineering_researcher£ $job_engineering_researcher_plural$.\n\n" 
 
 #decision
 decision_phi_build_planet_accelerators_3: "$decision_phi_build_planet_accelerators$"
@@ -75,26 +65,12 @@ policy_research_focus_desc:1 "Decide a specific area of interest that guides a r
 #council
 
 council_agenda_open_markets_effect:0 "Can use the Trade Policie: §GTrade League§!"
-agenda_military_project:0 "Unlock ship size superior"
-agenda_military_project_desc:0 "$agenda_military_project$"
+agenda_military_project:0 "Military Prototype Acceleration"
+#council_agenda_agenda_military_project:0 "Military Prototype Acceleration"
+council_agenda_agenda_military_project_name:0 "$agenda_military_project$"
+council_agenda_agenda_military_project_desc:0 "Unlock ship size superior"
 
 #jobs
-job_society_brain_researcher: "Society researcher"
-job_society_brain_researcher_desc: "Study genetic and culture of new, old and alien pops"
-mod_job_society_brain_researcher_add:0 "$job_society_researcher$ Jobs"
-mod_job_society_brain_researcher_per_pop:0 "§G+1§! $job_society_researcher$ Job per $VALUE$ Pops"
-mod_job_society_brain_researcher_per_pop_short:0 "\n§G+1§! £mod_job_society_researcher_add£ per $VALUE$ £pop£"
-job_society_brain_researcher_plural:0 "society Researchers"
-job_society_brain_researcher_effect_desc:0 "£job_society_researcher£ $job_society_researcher_plural$ turn £energy£ §Y$energy$§! into £society£ §YResearch Points§! for new technologies"
-
-
-job_society_calculator_researcher: "society researcher"
-job_society_calculator_researcher_desc: "Study genetic and culture of new, old and alien pops"
-mod_job_society_calculator_researcher_add:0 "$job_society_researcher$ Jobs"
-mod_job_society_calculator_researcher_per_pop:0 "§G+1§! $job_society_researcher$ Job per $VALUE$ Pops"
-mod_job_society_calculator_researcher_per_pop_short:0 "\n§G+1§! £mod_job_society_researcher_add£ per $VALUE$ £pop£"
-job_society_calculator_researcher_plural:0 "society Researchers"
-job_society_calculator_researcher_effect_desc:0 "£job_society_researcher£ $job_society_researcher_plural$ turn £energy£ §Y$energy$§! into £society£ §YResearch Points§! for new technologies"
 
 mod_station_gatherers_nanites_produces_mult:0 "Research Station Nanites Output"
 mod_station_gatherers_nanites_upkeep_mult:0 "Research Station Nanites Upkeep"
@@ -153,66 +129,7 @@ military_logistics_policy_default:0 "Military logistic default"
 military_logistics_policy_default_name:0 "$military_logistics_policy_default0$"
 military_logistics_policy_default_desc:0 "Standard military logistics."
 tr_supremacy_master_shipwrights_desc:7 "§BUnlocks Agenda§!: §Y$agenda_military_project$§! \n§Y$MOD_STARBASE_SHIPYARD_BUILD_SPEED_MULT$§! increased by §G+25%§!."
-#####################################
- # TRADE ACTIONS
-#####################################
- trade_action_trade_relic_desc: "We have no need for this relic, maybe others will find value in it?"
- trade_action_r_dragon_trophy: "Relic: $r_dragon_trophy$"
- trade_action_r_dragon_trophy_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_khans_throne: "Relic: $r_khans_throne$"
- trade_action_r_khans_throne_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_worm_scales: "Relic: $r_worm_scales$"
- trade_action_r_worm_scales_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_rubricator: "Relic: $r_rubricator$"
- trade_action_r_rubricator_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_galaxy: "Relic: $r_galaxy$"
- trade_action_r_galaxy_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_omnicodex: "Relic: $r_omnicodex$"
- trade_action_r_omnicodex_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_surveyor: "Relic: $r_surveyor$"
- trade_action_r_surveyor_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_galatron: "Relic: $r_galatron$"
- trade_action_r_galatron_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_ancient_sword: "Relic: $r_ancient_sword$"
- trade_action_r_ancient_sword_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_severed_head: "Relic: $r_severed_head$"
- trade_action_r_severed_head_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_prethoryn_queen: "Relic: $r_prethoryn_queen$"
- trade_action_r_prethoryn_queen_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_unbidden_warlock: "Relic: $r_unbidden_warlock$"
- trade_action_r_unbidden_warlock_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_contingency_core: "Relic: $r_contingency_core$"
- trade_action_r_contingency_core_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_zro_crystal: "Relic: $r_zro_crystal$"
- trade_action_r_zro_crystal_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_the_last_baol: "Relic: $r_the_last_baol$"
- trade_action_r_the_last_baol_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_the_defragmentor: "Relic: $r_the_defragmentor$"
- trade_action_r_the_defragmentor_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_reality_perforator: "Relic: $r_reality_perforator$"
- trade_action_r_reality_perforator_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_pox_sample: "Relic: $r_pox_sample$"
- trade_action_r_pox_sample_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_cryo_core: "Relic: $r_cryo_core$"
- trade_action_r_cryo_core_desc: "$trade_action_trade_relic_desc$"
- trade_action_r_war_forge: "Relic: $r_war_forge$"
- trade_action_r_war_forge_desc: "$trade_action_trade_relic_desc$"
-trade_action_r_the_radiance: "Relic: $r_the_radiance$"
-trade_action_r_the_radiance_desc: "$trade_action_trade_relic_desc$"
-trade_action_r_toxic_god: "Relic: $r_toxic_god$"
-trade_action_r_toxic_god_desc: "$trade_action_trade_relic_desc$"
-trade_action_r_odryskan_crystal: "Relic: $r_odryskan_crystal$"
-trade_action_r_odryskan_crystal_desc: "$trade_action_trade_relic_desc$"
-trade_action_r_wormhole_key_fragment_1: "Relic: $r_wormhole_key_fragment_1$"
-trade_action_r_wormhole_key_fragment_1_desc: "$trade_action_trade_relic_desc$"
-trade_action_r_wormhole_key_fragment_2: "Relic: $r_wormhole_key_fragment_2$"
-trade_action_r_wormhole_key_fragment_2_desc: "$trade_action_trade_relic_desc$"
-trade_action_r_wormhole_key_fragment_3: "Relic: $r_wormhole_key_fragment_3$"
-trade_action_r_wormhole_key_fragment_3_desc: "$trade_action_trade_relic_desc$"
-trade_action_r_wormhole_key_fragment_4: "Relic: $r_wormhole_key_fragment_4$"
-trade_action_r_wormhole_key_fragment_4_desc: "$trade_action_trade_relic_desc$"
-trade_action_r_wormhole_key: "Relic: $r_wormhole_key$"
-trade_action_r_wormhole_key_desc: "$trade_action_trade_relic_desc$"
+
 
 
 #Technology
@@ -243,53 +160,14 @@ trade_action_r_wormhole_key_desc: "$trade_action_trade_relic_desc$"
  CRYSTAL_ARMOR_4:0 "$tech_crystal_armor_4$"
  CRYSTAL_ARMOR_4_DESC:0 "$tech_crystal_armor_4_desc$"
 
-#usefull comms
-
-NEXT: "Next Planet (If exist)"
-
-phi_pm_atmospheric_pollutionMessage.1.name: "Avaible decision §Y$phi_pm_atmospheric_pollution$§!"
-phi_pm_atmospheric_pollutionMessage.1.desc: "Your planet §Y[root.GetName]§! can deploy $phi_pm_atmospheric_pollution$"
-
-phi_pm_Message.1.name: "Avaible decision for §Gupgrade§! planet Feature"
-phi_pm_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet Feature"
-
-phi_pm_tech_Message.1.name: "Avaible decision for §Gupgrade§! planet Feature "
-phi_pm_tech_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet Feature §Y$decision_phi_build_planet_teleporters$§!,§Y$decision_phi_build_planet_broadcasting$§! or §Y$decision_phi_build_planet_accelerators$§!"
-
-phi_pm_teleporters_Message.1.name: "Avaible decision $decision_phi_build_planet_broadcasting$ "
-phi_pm_teleporters_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet with §Y$decision_phi_build_planet_broadcasting$§!"
-
-phi_pm_broadcasting_Message.1.name: "Avaible decision for $decision_phi_build_planet_broadcasting$ "
-phi_pm_broadcasting_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet with §Y$decision_phi_build_planet_broadcasting$§!"
-
-phi_pm_Accelerator_Message.1.name: "Avaible decision for $decision_phi_build_planet_accelerators$ "
-phi_pm_Accelerator_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet with §Y$decision_phi_build_planet_accelerators$§!"
-
-
-
-
-
-
-
 #-------------------
  #Rule of game
  mod_shipclass_military_build_cost_mult:0 "Military Ship Build Cost"
-
-
 
  mod_planet_jobs_cyborg_worker_physics_research_produces_mult:0 "Cyborg Worker Physics Research Output"
  mod_planet_jobs_cyborg_worker_society_research_produces_mult:0 "Cyborg Worker Society Research Output"
  mod_planet_jobs_cyborg_worker_engineering_research_produces_mult:0 "Cyborg Worker Engineering Research Output"
 
-
- #debug
-  sfgdebugtextv: "[root.sfgdebugvalue]"
- sfgdebugtextv2: "[root.sfgdebugvalue2]"
-
-# sfgdebugtext: "§Y[this.sfgdebugtest]§!"
-# sfgdebugtext2: "§Y[this.sfgdebugtest2]§!"
-sfgdebugtext: "[this.sfgdebugtest] , [this.sfgdebugtest2]"
-sfgdebugtext2: "min : [root.sfgdebugvalue] dam: [root.sfgdebugvalue2]"
 
 
 

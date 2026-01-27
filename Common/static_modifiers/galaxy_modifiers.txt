@@ -77,6 +77,7 @@ early_game_modifier = {
 	num_tech_alternatives_add = -1
 	envoys_add = -0.5
 	ship_interstellar_speed_mult = -0.245
+	shipclass_starbase_hull_mult = -0.33
 	#ship_interstellar_speed_mult = -0.25
 	icon = "gfx/interface/icons/sm/early.dds"
 }
@@ -85,12 +86,13 @@ early_game_modifier_fast = {
 	planet_biologists_society_research_produces_add = 1
 	planet_engineers_engineering_research_produces_add = 1
 	planet_bureaucrats_unity_produces_add = 1
-	all_technology_research_speed = 0.1
+	all_technology_research_speed = 0.1 #cetus esagerata?
 	country_unity_produces_mult = 0.1
 	empire_size_colonies_mult = 0.10
 	num_tech_alternatives_add = -1
 	envoys_add = -0.5
 	ship_interstellar_speed_mult = -0.245
+	shipclass_starbase_hull_mult = -0.33
 	#ship_interstellar_speed_mult = -0.25
 	icon = "gfx/interface/icons/sm/early.dds"
 }

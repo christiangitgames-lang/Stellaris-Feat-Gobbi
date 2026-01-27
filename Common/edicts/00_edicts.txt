@@ -890,7 +890,7 @@ mining_subsidies = {
 	modifier = {
 		miner_jobs_bonus_workforce_mult = 0.20
 		planet_miners_trade_upkeep_add = 0.50
-		planet_sr_miners_energy_upkeep_add = 0.5 #Note: _add modifiers don't apply to children, but _mult ones do, so this is necessary here
+		planet_miners_energy_upkeep_add = 0.5 #Note: _add modifiers don't apply to children, but _mult ones do, so this is necessary here
 		station_gatherers_minerals_produces_mult = 0.5
 		station_gatherers_minerals_upkeep_mult = 0.75
 	}
@@ -1302,9 +1302,9 @@ coop_healthcare_campaign = {
 		planet_healthcare_energy_upkeep_add = 2
 		#logistic_growth_mult = 0.10
 	}
-	prerequisites = {
-		"tech_frontier_health"
-	}
+	# prerequisites = { #remove 4.0 sfg
+	# 	"tech_frontier_health"
+	# }
 	
 	potential = {
 		NOT = { has_ethic = ethic_gestalt_consciousness }

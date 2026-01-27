@@ -25,7 +25,8 @@ food_market: "Trade food in market"
 minerals_40_market: "$minerals_10_market$ X4"
 minerals_20_market: "$minerals_10_market$ X2"
 minerals_10_market: "Trade minerals in market"
-
+alloys_3_market: "Trade alloys in market"
+alloys_9_market: "Trade alloys in market x3"
 
 triggered_opinion_overheilm_tech_pathetic_fleet: "Fearful of your advanced technology"
 triggered_opinion_fractured_ambassadors_desc: "They fear your tech, yet your fleet power is insufficient"

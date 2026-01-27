@@ -17,3 +17,26 @@ ORBMessage.1.desc: "Your $orbital_ring_tier_1$ §Y[root.GetName]§! is suitable 
 
 can_have_remote_system.2.name: "Topological Expansion Limit Removed"
 can_have_remote_system.2.desc: "You §Gcan§! now build in remote systems not connected to your §Yempire§!.\n\nRecent technological breakthroughs have significantly enhanced our ability to maintain and administrate star territories across vast distances. Our colonists and administrators can now manage systems even if they are not contiguous with the imperial core.\nThe barrier of spatial isolation has been broken."
+
+
+#usefull comms
+
+NEXT: "Next Planet (If exist)"
+
+phi_pm_atmospheric_pollutionMessage.1.name: "Avaible decision §Y$phi_pm_atmospheric_pollution$§!"
+phi_pm_atmospheric_pollutionMessage.1.desc: "Your planet §Y[root.GetName]§! can deploy $phi_pm_atmospheric_pollution$"
+
+phi_pm_Message.1.name: "Avaible decision for §Gupgrade§! planet Feature"
+phi_pm_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet Feature"
+
+phi_pm_tech_Message.1.name: "Avaible decision for §Gupgrade§! planet Feature "
+phi_pm_tech_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet Feature §Y$decision_phi_build_planet_teleporters$§!,§Y$decision_phi_build_planet_broadcasting$§! or §Y$decision_phi_build_planet_accelerators$§!"
+
+phi_pm_teleporters_Message.1.name: "Avaible decision $decision_phi_build_planet_broadcasting$ "
+phi_pm_teleporters_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet with §Y$decision_phi_build_planet_broadcasting$§!"
+
+phi_pm_broadcasting_Message.1.name: "Avaible decision for $decision_phi_build_planet_broadcasting$ "
+phi_pm_broadcasting_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet with §Y$decision_phi_build_planet_broadcasting$§!"
+
+phi_pm_Accelerator_Message.1.name: "Avaible decision for $decision_phi_build_planet_accelerators$ "
+phi_pm_Accelerator_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet with §Y$decision_phi_build_planet_accelerators$§!"

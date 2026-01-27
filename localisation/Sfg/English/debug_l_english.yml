@@ -1,0 +1,10 @@
+
+  l_english:
+ #debug
+  sfgdebugtextv: "[root.sfgdebugvalue]"
+ sfgdebugtextv2: "[root.sfgdebugvalue2]"
+
+# sfgdebugtext: "§Y[this.sfgdebugtest]§!"
+# sfgdebugtext2: "§Y[this.sfgdebugtest2]§!"
+sfgdebugtext: "[this.sfgdebugtest] , [this.sfgdebugtest2]"
+sfgdebugtext2: "min : [root.sfgdebugvalue] dam: [root.sfgdebugvalue2]"

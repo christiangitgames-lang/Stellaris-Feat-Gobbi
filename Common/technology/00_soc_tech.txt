@@ -3586,7 +3586,7 @@ tech_command_matrix = {
 	weight = @tier3weight3
 
 	modifier = {
-		command_limit_mult = 0.05
+		ship_fire_rate_mult = 0.05
 	}
 
 	prereqfor_desc = {
@@ -3621,8 +3621,8 @@ tech_doctrine_navy_size_1 = {
 
 	modifier = {
 		#country_naval_cap_add = 30
-		ship_starting_experience_add = 10
-		country_naval_cap_mult = 0.05
+		ship_starting_experience_add = 20
+		country_naval_cap_mult = 0.025
 		ships_upkeep_mult = -0.01
 	}
 
@@ -3656,7 +3656,7 @@ tech_doctrine_navy_size_2 = {
 	modifier = {
 		#country_naval_cap_add = 30
 		country_leader_cap_add = 1
-		country_naval_cap_mult = 0.05
+		country_naval_cap_mult = 0.025
 		ships_upkeep_mult = -0.01
 	}
 
@@ -3688,9 +3688,7 @@ tech_doctrine_navy_size_3 = {
 	weight = @tier4weight1
 
 	modifier = {
-		#country_naval_cap_add = 30
-		command_limit_add = 20
-		country_naval_cap_mult = 0.05
+		country_naval_cap_add = 30
 		ships_upkeep_mult = -0.01
 	}
 
@@ -3725,7 +3723,7 @@ tech_doctrine_navy_size_4 = {
 		#country_naval_cap_add = 30
 		#admiral_skill_levels = 1
 		species_leader_exp_gain = 0.05
-		country_naval_cap_mult = 0.05
+		country_naval_cap_mult = 0.025
 		ships_upkeep_mult = -0.01
 	}
 
@@ -4067,9 +4065,10 @@ tech_telepathy = {
 	potential = {
 		OR = {
 			has_shroud_dlc = yes
-		NOT = { has_ethic = ethic_gestalt_consciousness }
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+		}
 	}
-		technology_swap = {
+	technology_swap = {
 		name = tech_telepathy_machine_gestalt
 		inherit_icon = yes
 		inherit_effects = yes

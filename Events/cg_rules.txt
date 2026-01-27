@@ -7,7 +7,10 @@ country_event = { #set bonus malus early game
 
 	is_triggered_only = yes
 	trigger = {
-		mid_game_years_passed <= 0
+		AND = {
+			years_passed < 30
+			mid_game_years_passed <= 0
+		}
 		NOT = { has_modifier = early_game_modifier }
 	}
 	immediate = { 
@@ -19,6 +22,32 @@ country_event = { #set bonus malus early game
 		}
 	}
 }
+
+
+
+country_event = { #set bonus malus mid game
+	id = cg_rules.2
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			years_passed >= 30
+			mid_game_years_passed >= 0
+		}
+		end_game_years_passed <= 0
+		NOT = { has_modifier = mid_game_modifier }
+	}
+	immediate = { 
+		add_modifier = {
+			modifier = mid_game_modifier
+		}
+		remove_modifier = early_game_modifier
+		country_event = {
+			id = cg_rules.12 days = 15
+		}
+	}
+}
 country_event = { #set bonus malus early game ai
 	id = cg_rules.11
 	hide_window = yes
@@ -26,7 +55,10 @@ country_event = { #set bonus malus early game ai
 	is_triggered_only = yes
 	trigger = {
 		has_global_flag = AI_hard
-		mid_game_years_passed <= 0
+		AND = {
+			years_passed <= 30
+			mid_game_years_passed <= 0
+		}
 		is_ai = yes
 		was_human = no
 		NOT = { is_country_type = fallen_empire }
@@ -47,7 +79,10 @@ country_event = { #set bonus malus early game ai
 		has_global_flag = AI_hard
 		is_ai = yes
 		was_human = no
-		mid_game_years_passed >= 0
+		OR = {
+			years_passed >= 30
+			mid_game_years_passed >= 0
+		}
 		end_game_years_passed <= 0
 		NOT = { is_country_type = fallen_empire }
 		NOT = { has_modifier = ai_mid_game_modifier }
@@ -59,7 +94,7 @@ country_event = { #set bonus malus early game ai
 		remove_modifier = ai_early_game_modifier
 	}
 }
-country_event = { #set bonus malus early game ai
+country_event = { #set bonus malus late game ai
 	id = cg_rules.13
 	hide_window = yes
 
@@ -79,28 +114,7 @@ country_event = { #set bonus malus early game ai
 		remove_modifier = ai_mid_game_modifier
 	}
 }
-
-country_event = { #set bonus malus mid game
-	id = cg_rules.2
-	hide_window = yes
-
-	is_triggered_only = yes
-	trigger = {
-		mid_game_years_passed >= 0
-		end_game_years_passed <= 0
-		NOT = { has_modifier = mid_game_modifier }
-	}
-	immediate = { 
-		add_modifier = {
-			modifier = mid_game_modifier
-		}
-		remove_modifier = early_game_modifier
-		country_event = {
-			id = cg_rules.12 days = 15
-		}
-	}
-}
-country_event = { #set bonus malus mid game
+country_event = { #set bonus malus late game
 	id = cg_rules.3
 	hide_window = yes
 	trigger = {

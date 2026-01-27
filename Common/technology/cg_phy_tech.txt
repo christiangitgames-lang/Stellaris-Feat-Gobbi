@@ -8,7 +8,10 @@ tech_nm_utilization_1 = {
     prerequisites = {
 		"tech_zero_point_power"
 	}
-
+	modifier = {
+		ship_ftl_jumpdrive_range_mult = 0.1
+		ship_jumpdrive_cooldown_mult = 0.1
+	}
 	weight_modifier = {
 		modifier = {
 			factor = @eager_explorer_effect

@@ -1047,7 +1047,7 @@ weapon_component_template = {
 			energy = @s_t3_upkeep_energy
 		}
 	}
-	modifier = {
+	ship_modifier = {
 		ship_shield_regen_add_static = @regen_S1 #Regeneration per day
 		ship_orbital_bombardment_mult = 0.1
 	}
@@ -1088,8 +1088,8 @@ weapon_component_template = {
 			energy = @m_t3_upkeep_energy
 		}
 	}
-	modifier = {
-		ship_shield_regen_add_static = @regen_S1 #Regeneration per day
+	ship_modifier = {
+		ship_shield_regen_add_static = @regen_S2 #Regeneration per day
 		ship_orbital_bombardment_mult = 0.1
 	}
 }
@@ -1130,8 +1130,8 @@ weapon_component_template = {
 			energy = @s_t4_upkeep_energy
 		}
 	}
-	modifier = {
-		ship_shield_regen_add_static = @regen_S3 #Regeneration per day
+	ship_modifier = {
+		ship_shield_regen_add_static = @regen_S2 #Regeneration per day
 		ship_orbital_bombardment_mult = 0.1
 	}
 
@@ -1179,7 +1179,7 @@ weapon_component_template = {
 			energy = @m_t4_upkeep_energy
 		}
 	}
-	modifier = {
+	ship_modifier = {
 		ship_shield_regen_add_static = @regen_S3 #Regeneration per day
 		ship_orbital_bombardment_mult = 0.2
 	}
@@ -1227,9 +1227,9 @@ weapon_component_template = {
 			energy = @s_t5_upkeep_energy
 		}
 	}
-	modifier = {
-		ship_shield_regen_add_static = @regen_M1 #Regeneration per day
-		ship_orbital_bombardment_mult = 0.3
+	ship_modifier = {
+		ship_shield_regen_add_static = @regen_S3 #Regeneration per day
+		ship_orbital_bombardment_mult = 0.2
 	}
 	ai_weight = {
 		weight = 1
@@ -1274,9 +1274,9 @@ weapon_component_template = {
 			energy = @m_t5_upkeep_energy
 		}
 	}
-	modifier = {
+	ship_modifier = {
 		ship_shield_regen_add_static = @regen_M1 #Regeneration per day
-		ship_orbital_bombardment_mult = 0.3
+		ship_orbital_bombardment_mult = 0.25
 	}
 	ai_weight = {
 		weight = 1

@@ -1,0 +1,102 @@
+[h1]1.1.0 Stellaris Feat Gobbi[/h1] 
+Compatible WITH CETUS Version (4.3.*)
+
+Major overhaul with smarter AI, improved economy and many Quality of Life features (found Full changelog in logCrean.log).
+
+[h2]Gameplay[/h2]
+[list]
+[*]Can't have system disconected at your planets, if is this will autodestroy without space tech jump,crisis or in war.
+[/list]
+[h2]AI & Economy[/h2]
+[list]
+[*] Improved AI budget and deficit handling
+[*] Better AI economic plans
+[*] AI-only edicts
+[*] Limited federations
+[*] Faster espionage and resolutions
+[/list]
+
+[h2]Balance Changes[/h2]
+[list]
+[*] Ships HP x2.5 for longer battles
+[*] Rebalanced components and weapons
+[*] New Hyperdrive IV
+[*] New Crystal Armor III–IV
+[*] Cruiser/Battleship/Titan upkeep doubled
+[*] Increased base naval capacity
+[*] Missiles, disruptors, PD, lances and ship auras reworked
+[/list]
+
+[h2]Ascension, Traditions & Civics[/h2]
+[list]
+[*] Rebalanced Ascension Perks (Shared Destiny, Archaeoengineers, Transcendent Learning)
+[*] Updated traditions (Discovery, Supremacy, Nanites, Synthetics)
+[*] Improved civics (Feudal, Technocracy, Machine)
+[*] Few New traits and species bonuses
+[/list]
+
+[h2]Buildings, Districts & Starbases[/h2]
+[list]
+[*] Production buildings increase resource cap
+[*] Embassy can be built anywhere
+[*] Improved Military Academy
+[*] New strong buildings and starbase modules
+[*] Better orbital rings and gateways
+[*] Starbase auto-build
+[/list]
+
+[h2]Agenda[/h2]
+[list]
+[*][i]Military Prototype Acceleration[/i] if have Supremacy tradition "Master shipwright" see and search 10% next tier shipclass.
+[*][i]Feudal shift pursuit [/i] an your subject become same of your ethos.
+[*][i]The last resistance [/i] at cost of destroy your economy build an little fleet for last resistance.
+[*][i]Gears of war[/i] reduce cost resettle pop (domination tradition three)
+[/list]
+
+[h2]Ships & Templates[/h2]
+[list]
+[*] New ship type: Carrier
+[*] Reworked ship templates
+[*] Science ships with point defense
+[*] Starbases with hangars
+[/list]
+
+[h2]Technology[/h2]
+[list]
+[*] 10+ new technologies
+[*] Better automation tech
+[*] Updated naval doctrines
+[*] Weapons and armor tech boost armies
+[/list]
+
+[h2]Decisions & Automation[/h2]
+[list]
+[*] Auto-resettle unemployed pops
+[*] Auto-luxury boost
+[*] Mass resettlement
+[*] Special planet upgrades
+[/list]
+
+[h2]Diplomacy & Warfare[/h2]
+[list]
+[*] Reworked war costs
+[*] New war goals open border
+[*] Only near system claims
+[*] Post-defeat bonuses
+[*] Attrition in enemy territory
+[/list]
+
+[h2]Other Features[/h2]
+[list]
+[*] More useful deposits
+[*] Warning events when need terraform
+[*] Vanilla bug fixes
+[*] Various Quality of Life improvements
+[/list]
+
+[h2]New Automations:[/h2]
+[list]
+[*] Starbase auto-builds (anchorage, hydroponics, solar)
+[*] Auto-resettle unemployed pops
+[*] Integrate edict for found nice location furnace, dyson sphere, Nanite Harvester, ice mining and Quantum Catapult get code for search by sba.
+[/list]

@@ -43,7 +43,7 @@ d_small_research = {
 	station = shipclass_research_station 
 	is_for_colonizable = no
 	habitat_modifier = {
-		district_hab_science_max = 1
+		district_hab_science_max_add = 1
 	}
 	potential = {
 		OR = {
@@ -75,7 +75,7 @@ d_medium_research = {
 	station = shipclass_research_station 
 	is_for_colonizable = no
 	habitat_modifier = {
-		district_hab_science_max = 2
+		district_hab_science_max_add = 2
 	}
 	potential = {
 		OR = {

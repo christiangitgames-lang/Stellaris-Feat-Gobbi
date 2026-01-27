@@ -403,10 +403,6 @@ raidedAS: "$raided$"
 
 new_colony_of_franchising:1 "Nuova colonia franchising"
 
-col_researchphy:0 "Fis-Mondo"
-col_researchphy_desc:1 "Questo mondo è un centro di ricerca scientifica e progresso tecnologico della fisica."
-col_researcheng:0 "Ing-Mondo"
-col_researcheng_desc:1 "Questo mondo è un centro di ricerca scientifica e progresso tecnologico dell'ingegneria."
 
 mod_planet_building_physics_lab_1_build_speed_mult:0 "Velocità di costruzione del laboratorio di fisica"
 mod_planet_building_engineering_lab_1_build_speed_mult:0 "Velocità di costruzione del laboratorio di ingegneria"

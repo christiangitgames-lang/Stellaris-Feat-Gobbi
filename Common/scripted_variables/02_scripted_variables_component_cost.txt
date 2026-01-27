@@ -539,6 +539,18 @@
 @regen_M10 = 15
 @regen_L10 = 25
 
+################################################
+# Hardening - Shared between Armor and Shields #
+################################################
+
+@hardening_T1 = 0.00
+@hardening_T2 = 0.01
+@hardening_T3 = 0.02
+@hardening_T4 = 0.03
+@hardening_T5 = 0.04
+@hardening_T6 = 0.05
+@hardening_T7 = 0.05
+
 ############
 # Cloaking #
 ############

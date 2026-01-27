@@ -1,11 +1,9 @@
 Cetus:
 planet_jobs_slave_produces_mult diventa pop_slave_bonus_workforce_mult
-Aggiungere regen alle armi distruptor nuove: SMALL_PSIONIC_DISRUPTOR,MEDIUM_PSIONIC_DISRUPTOR,SMALL_BIO_PSIONIC_DISRUPTOR,MEDIUM_BIO_PSIONIC_DISRUPTOR
 controllare free_amenities è ancora in migliaia  00_resource_Decision
 quale è la differenza tra planet_miners_produces_mult e miner_jobs_bonus_workforce_mult ?
 nei deposit bisogna mettere station = shipclass_mining_station
-tutte le planet_buildings_upkeep_mult e planet_districts_upkeep_mult sno diventate planet_structures_upkeep_mult
-Arrivato a  static_modifiers 01 (incl)
+controllare tutte le planet_buildings_upkeep_mult e planet_districts_upkeep_mult sono diventate planet_structures_upkeep_mult cambiate tutte tranne authorities
 
 Da fare:
 ember_battleship agigunta quindi fare ember_carrier?

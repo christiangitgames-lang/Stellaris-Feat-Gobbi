@@ -430,7 +430,7 @@ district_farming = {
 				planet = { is_planet_class = pc_ocean }
 			}
 		}
-		logistic_growth_mult = 0.1
+		logistic_growth_mult = 0.01
 	}
 	
 	triggered_planet_modifier = {

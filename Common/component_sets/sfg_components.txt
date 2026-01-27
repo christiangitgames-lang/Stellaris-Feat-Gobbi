@@ -12,3 +12,21 @@ component_set = {
 	icon = "GFX_ship_part_crystal_armor_4"
 	icon_frame = 1	
 }
+#bio
+component_set = {
+	key = "CRYSTAL_ARMOR_3_BIO"
+	
+	icon = "GFX_ship_part_crystal_armor_3"
+	icon_frame = 1	
+	is_space_fauna_component_set = yes
+	is_default_space_fauna_component_set = yes
+}
+
+component_set = {
+	key = "CRYSTAL_ARMOR_4_BIO"
+	
+	icon = "GFX_ship_part_crystal_armor_4"
+	icon_frame = 1	
+	is_space_fauna_component_set = yes
+	is_default_space_fauna_component_set = yes
+}

@@ -1,7 +1,7 @@
 cg_Meteor_Storms = {
 	icon_frame = 2
 	icon = "gfx/interface/icons/planet_modifiers/Meteor_Storms.dds"
-	district_mining_max = 2
+	district_mining_max_add = 2
 	planet_colony_development_speed_mult = -0.50
 	pop_environment_tolerance = -0.10
 }

@@ -7,6 +7,18 @@
 [b]Sperimental building[/b]
 New building "foreign research lab" this building give job of "spies research" that be research if have sufficient intel to foreign empire with >= equivalent tech
 
-[b]1.0.6[/b]
+[b]1.1.0[/b]
 
 §Cetus allineament
+
+
+[b]Minor fix[/b]
+
+Tech Fleet now gives exactly 1 ship size within the command fleet limit.
+Balanced the Military Doctrine technology.
+Bio Disruptor now provides armor regeneration.
+Restored the vanilla tech tree progression for Jump Drive.
+Fix? Angler rural districts now correctly give +1% growth instead of the incorrect +10% of the wrong type.
+Early Game phase now lasts a maximum of 30 years, and an additional modifier is added: –33% station hull.
+Best AI
+Fix tooltip disruptor weapon, will fix tooltip in all weapon but for now only this.

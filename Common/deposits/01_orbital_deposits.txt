@@ -257,7 +257,7 @@ d_minerals_8 = {
 
 	potential = { can_have_mineral_deposits = yes }
 	habitat_modifier = {
-		district_hab_mining_max = 5
+		district_hab_mining_max_add = 5
 	}
 	drop_weight = {
 		weight = 0.05

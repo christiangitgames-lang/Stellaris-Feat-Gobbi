@@ -688,7 +688,7 @@ tech_self_aware_logic = {
 	weight = @tier2weight2
 
 	modifier = {
-		num_tech_alternatives_add = 1
+		rare_tech_draw_chance_mult = 0.5
 	}
 
 	weight_modifier = {
@@ -2728,7 +2728,7 @@ tech_jump_drive_1 = {
 	is_rare = yes
 	is_dangerous = yes
 	weight = @tier5weight1
-	prerequisites = { "tech_nm_utilization_1" }
+	prerequisites = { "tech_zero_point_power" }
 
 	feature_flags = {
 		jump_method

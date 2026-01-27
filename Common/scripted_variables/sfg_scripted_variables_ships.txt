@@ -43,16 +43,26 @@
 @hpship_10000 = 25000
 
 @hpship_12000 = 30000
-@hpship_12500 = 31250
-@hpship_15000 = 37500
-@hpship_25000 = 62500
-@hpship_30000 = 75000
-@hpship_40000 = 100000
-@hpship_50000 = 125000
-@hpship_125000 = 312500
-@hpship_150000 = 375000
+
+@hpship_12500   = 31250
+@hpship_15000   = 37500
+@hpship_20000   = 50000
+@hpship_25000   = 62500
+@hpship_30000   = 75000
+@hpship_40000   = 100000
+@hpship_50000   = 125000
+@hpship_100000  = 250000
+@hpship_125000  = 312500
+@hpship_140000  = 350000
+@hpship_150000  = 375000
+@hpship_175000  = 437500
+@hpship_437500  = 1000000
 @hpship_1000000 = 2500000
+@hpship_1500000 = 3750000
 @hpship_2000000 = 5000000
+
+
+
 
 #@robotic_maintenance_alloys = 0.25
 #regen

@@ -11,5 +11,5 @@
  resettlement_limited_name:0 "Resettlement is limited"
  resettlement_limited_desc:1 "Free pops can be forcibly resettled between planets but need more cost."
 
-
+#test
  NAVY_SIZE_DESC:4 "§H$NAVY_SIZE_TITLE$§! also includes off-territory logistics. The free percentage reduces proportionalattrition (damage to ships' hulls) in enemy territory example:\nNaval cap used | Reduce hp at system | max reduce total hp \n< 25 %   |  2%   |  5% \n>= 25%  |  3%   |  12% \n>= 50%  |  5%   |  19% \n>= 75%  |  8%   |  29% \n>= 100% |  10% |  49% \n\n\n§EExceeding your §H$NAVY_SIZE_TITLE$§! will cause your ships to have an increased upkeep cost."

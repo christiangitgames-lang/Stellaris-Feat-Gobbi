@@ -4,11 +4,6 @@
 CANNOT_ADD_CLAIM_NOT_IN_LINE: "The system is not linked to your other claims or owned systems."
 relative_technology: "Neighbors Superior Tech"
 
- MINI_JUMP_DRIVE_1:0 "Mini Jump Drive"
-MINI_JUMP_DRIVE_1_DESC:1 "The Mini Jump Drive is the miniaturization of jump drive, this is §Rvulnerable§! to attack"
- RANGELESS_JUMP_DRIVE:0 ""
- MINI_PSI_JUMP_DRIVE_1:0 "Mini Psi Jump Drive"
- MINI_PSI_JUMP_DRIVE_1:1 "The Mini Psi Jump Drive is the miniaturization of Psi Jump Drive, this is §Rvulnerable§! to attack"
 
 
 decision_automate_planet_luxuries_boost:"§GAble§! Automate $decision_planet_luxuries_boost$"
@@ -21,9 +16,9 @@ sell_minor_artifacts: "Auto-Sell minor artifacts"
 edict_auto_sell_relic: "Auto sell minor artifacts"
 edict_auto_sell_relic_desc: "Get 83 £energy£ §YEnergy§! at month with auto-sell minor artifacts."
 
- trade_policy_society:0 "Exchange society knowledge"
- trade_policy_society_name:0 "$trade_policy_consumer_goods$"
- trade_policy_society_desc:0 "Profits and taxes must take second place to improving the knowledge of society.\n\n§EEach collected £trade_value£ §YTrade Value§! earns us £energy£ §Y0.1§! and £society_research£ §Y0.5§!§!"
+#  trade_policy_society:0 "Exchange society knowledge"
+#  trade_policy_society_name:0 "$trade_policy_consumer_goods$"
+#  trade_policy_society_desc:0 "Profits and taxes must take second place to improving the knowledge of society.\n\n§EEach collected £trade_value£ §YTrade Value§! earns us £energy£ §Y0.1§! and £society_research£ §Y0.5§!§!"
 
 
 
@@ -71,8 +66,7 @@ insufficient_cohesion: "Cohesion is §Rinsufficient§!"
 Negative_cohesion: "Cohesion is §Rnegative§!"
 ehof_qnm_deficit: "Antimatter deficit"
 
-alloys_3_market: "Trade alloys in market"
-alloys_9_market: "Trade alloys in market x3"
+
 
 
 mod_station_gatherers_minerals_upkeep_mult: "Mining Station Minerals Upkeep"
@@ -191,3 +185,12 @@ tech_colony_build_speed: "Standardized Colonizer Patterns"
 tech_colony_build_speed_desc: "Establishing new standards for the modeling and construction of Colonizer greatly improves the efficiency of the production pipeline."
 tech_colony_build_speed_2: "Optimize Colonizer Patterns"
 tech_colony_build_speed_2_desc: "Optimize new standards for the modeling and construction of Colonizer greatly improves the efficiency of the production pipeline."
+
+
+
+#non traddure non usati
+ MINI_JUMP_DRIVE_1:0 "Mini Jump Drive"
+MINI_JUMP_DRIVE_1_DESC:1 "The Mini Jump Drive is the miniaturization of jump drive, this is §Rvulnerable§! to attack"
+ RANGELESS_JUMP_DRIVE:0 ""
+ MINI_PSI_JUMP_DRIVE_1:0 "Mini Psi Jump Drive"
+ MINI_PSI_JUMP_DRIVE_1:1 "The Mini Psi Jump Drive is the miniaturization of Psi Jump Drive, this is §Rvulnerable§! to attack"

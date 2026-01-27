@@ -190,6 +190,9 @@ planet_managers = {
 	parent = planet_bureaucrats
 	modifier_category = pop_job
 #	 Inherited Modifiers
+	generate_mult_modifiers = {
+		produces
+	}
 	triggered_produces_modifier = {
 		key = planet_bureaucrats
 		modifier_types = {

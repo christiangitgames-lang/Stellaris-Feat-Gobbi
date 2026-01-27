@@ -28,6 +28,7 @@ Strike craft now have little logistic trade upkeep
 Distruptor give an regen static to shield and increment damage orbital bombardament
 Missile give more ship weapon damage and torpedo give more orbital bombardament damage
 Lasers and mass driver now of level scale damage bonus to armor or shield (bio weapon scale more speed)
+Disruptor add ship shield regen, Bio Disrupto armor regen
 Point defence now have more range
 Missile have more good penetration
 Energy lance II is little best now
@@ -40,10 +41,10 @@ Few Agenda now is more fast.
 Agenda open markets permit temporarily use of Trade Policie: §GTrade League§!
 [b]New agendas[/b]
 [list]
+[*][i]Military Prototype Acceleration[/i] if have Supremacy  tradition "Master shipwright".
 [*][i]Feudal shift pursuit [/i] an your subject become same of your ethos.
 [*][i]The last resistance [/i] at cost of destroy your economy build an little fleet for last resistance.
 [*][i]Gears of war[/i] reduce cost resettle pop (domination tradition three)
-[*][i]Ship size unlock[/i] unlock new ship size (supremacy trdaition three)
 [/list]
 [h2]Country[/h2]
 Start with physics_research,society_research and engineering_research at 40 instead of 10 
@@ -86,7 +87,7 @@ Decision discourage growth not needed population controls disallowed if is an ma
 [*]Armor recharge this much faster outside combat is 200% instead 500%
 [*]Hull recharge this much faster outside combat is 100% instead 500%
 [*]Influence surcharge for manually resettling the last pop from a colony is 50 instead 200
-[*]The recently conquered modifier stays on pops is 3300 days instead 3600
+[*]The recently conquered modifier stays on pops is 1650 days instead 3600
 [*]Increment thust subject at 0.33 instead 0.25
 [*]Reduce at 50% long the recently conquered modifier stays on pops
 [/list]
@@ -102,7 +103,7 @@ Now galactic community have little upkeep (influence 0.25 and energy 2)
 War have upkeep inflence of 1
 [h2]Action[/h2]
 Now ai not create big federation
-Now for declare war need opnion neutral or more lower
+Now for declare war need opnion neutral or more lower and war "end thread" must be consistent with you (except true crisis)
 [h2]District[/h2]
 Farming district for Angler empire increment growth speed of 1%
 Alloy foundry habitat not have alloys upkeep (For fix an AI big problem for algorithm of choice)
@@ -145,7 +146,7 @@ All territory need linked to an your planet or ally if not is will destroy in 1 
 [h2]Civics[/h2]
 Machine terminator have upkee ship -1%
 Machine spybot and criminal_heritage +100% observation station 
-Feudal realm
+Feudal realm upgrade: Your Subjects do not suffer loyalty penalties from you having multiple Subjects and Enables an councilior agenda that shifts vassals' ethos towards us.
 Technocracy , add unity 1 at Researcher
 Best plunders, now give tech (if have inferior tech) and unity
 
@@ -178,7 +179,9 @@ Imperialist (military) malus for small usage naval capacity is reworker, now get
 [b]Void dweller[/b]: Arcane replicator is little more strong and more alloys for empires that not use consumer goods.
 
 [h2]Pop jobs[/h2]
-New pop job archeologist.
+Physicist jobs produce +0.5 Physics Research
+Biologist jobs produce +0.5 Society Research
+Engineer jobs produce +0.5 Engineering Research
 Bureaucrat jobs produce +1 extra Unity
 entertainer now produces of base double, with double upkeep.
 Resolve probably bug balance of paradox: Reduced the production of rare resources by metallurgists and artisans; consequently, also reduced upkeep.
@@ -216,6 +219,7 @@ Some tech are best now tech power plant and eco simulation
 Change dotrine navy
 2 new tech for have more envoy
 2 new tech for building planet in parallel
+tech_self_aware_logic now give rare tech draw chance +50%
 10+ new techs
 
 [h2]Tradition[/h2]
@@ -224,6 +228,7 @@ Synthetics now synthetics maintenance protocols add trade value +10%.
 Traditio supremacy fleet logistical corps now reduce logistic  upkeep
 Ascension perk world shaper increment terraforming speed
 Tradition domination can unlock gears of war for resettle with low cost.
+Tratidio Subterfuge finish ave bonus 100% observation outpost
 [b] Nanites [/b]
 Reduce upkeep building nanites
 Nanotech world add nanites from jobs of 0.35
@@ -240,7 +245,7 @@ Now General commander give +10% damage against starbases instead 5%
 Increment bonus species Trait ingenuos, industrios and farmers
 
 [h2]War goal[/h2]
-When lost an war have little bonus in base what have lost (if pop pop growth if ship, ship cost etc...)
+When lost an war have little bonus in base what have lost (if pop pop growth if ship, ship cost etc...) (Not when is total war vs normal ai)
 2 new war goal: open border and open borders long
 
 [h2]Other[/h2]
@@ -258,16 +263,18 @@ Super Bonus  for more fast the game:
 
 
 Bonus early, mid and game:
+early game durable maximum 30 years, after join mid game, mid game durable untile late game year set by game setup.
 early game modifier = {
     Physicist jobs produce +1 Physics Research
     Biologist jobs produce +1 Society Research
     Engineer jobs produce +1 Engineering Research
+    burocreat produce +1 Unity
     all technology research speed + 10%
-    country unity produces mult + 10%
     empire size colonies mult + 10%
     num tech alternatives add -1
     envoys add -0.5
-    ship interstellar speed mult - 15%
+    ship interstellar speed mult - 24%
+ 	starbase_hull_mult = -0.33 #in early game troppo forti
 }
 mid_game_modifier :
 	ship_interstellar_speed_mult = -5%
