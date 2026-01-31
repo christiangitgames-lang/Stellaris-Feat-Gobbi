@@ -18,7 +18,9 @@ automate_mining_planet = {
 		1 = {
 			building = building_crystal_mines
 		}
-		
+		2_sfg = {
+			building = building_medical_1
+		}
 		2 = {
 			building = building_mineral_purification_plant
 		}

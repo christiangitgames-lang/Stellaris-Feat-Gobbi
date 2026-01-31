@@ -20,7 +20,7 @@ utility_component_template = {
 	component_set = "CRYSTAL_ARMOR_3"
 	upgrades_to = "SMALL_CRYSTAL_ARMOR_4"	
 	
-	modifier = {
+	ship_modifier = {
 		ship_hull_add = @hull_S5
 	}
 	resources = {

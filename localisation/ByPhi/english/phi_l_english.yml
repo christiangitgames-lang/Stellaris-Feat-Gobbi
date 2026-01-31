@@ -147,6 +147,7 @@ sm_allied_black_hole_signal_transmitter: "Proxy Black Hole Signal Transmitter"
 
 #Ships and components
 carrier: "Carrier"
+carrier_cap: "$carrier$"
 carrier_plural: "Carriers"
 CARRIER_BOW_HB: "Carrier Bow Hangar"
 CARRIER_MID_HB: "Carrier Mid Hangar"
@@ -534,6 +535,7 @@ sm_civilian_shipyard_desc:0 "Produces energy by sell ship at pop (more pop in em
  sm_curator_think_tank_effect:0 "£society£5 £engineering£5 £physics£5. Society, engineering & physics research from Science Hubs: §G+2§!.\n"
  sm_Governmental_Orbital_Exchange_Market: "Orbital Exchange Market"
  sm_administrative_hub:0 "Orbital $building_low_tech_admin_hub$"
+ sm_administrative_swarm_hub:0 "Orbital $building_low_tech_admin_hub$"
  sm_Governmental_diplomatic_asset:0 "Diplomatic Embassy"
 
  decision_upgrade_habitat_3:0 "$decision_upgrade_habitat$ : System Fuel stations"

@@ -1122,6 +1122,19 @@ can_species_procreate = {
 		}
 	}
 	NOT = { has_species_flag = nivlac_no_procreation }
+	if = {
+		limit = {
+			has_trait = trait_necrophage
+		}
+		NOT = {
+			root = {
+				OR = {
+					has_active_building = building_necrophage_elevation_chamber
+					has_active_building = building_necrophage_house_of_apotheosis
+				}
+			}
+		}
+	}
 }
 
 # Checks if a pop can be assembled

@@ -25,7 +25,9 @@ automate_generator_planet = {
 		1 = {
 			building = building_energy_grid
 		}
-
+		2_sfg = {
+			building = building_medical_1
+		}
 		2 = {
 			building = building_mote_harvesters
 		}

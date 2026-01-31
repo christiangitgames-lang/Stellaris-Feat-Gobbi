@@ -922,7 +922,7 @@ utility_component_template = {
 		ship_hull_add = @hull_L2
 	}
 	ship_modifier = {
-		ship_damage_reduction_add = 4
+		ship_damage_reduction_add = 3
 	}
 
 	ai_weight = {
@@ -986,7 +986,7 @@ utility_component_template = {
 		ship_hull_add = @hull_M4
 	}
 	ship_modifier = {
-		ship_damage_reduction_add = 4
+		ship_damage_reduction_add = 3
 	}
 
 	ai_weight = {
@@ -1018,7 +1018,7 @@ utility_component_template = {
 		ship_hull_add = @hull_L4
 	}
 	ship_modifier = {
-		ship_damage_reduction_add = 8
+		ship_damage_reduction_add = 4
 	}
 
 	ai_weight = {
@@ -1129,7 +1129,7 @@ utility_component_template = {
 		ship_hull_add = @hull_L2
 	}
 	ship_modifier = {
-		ship_damage_reduction_add = 4
+		ship_damage_reduction_add = 3
 	}
 
 	ai_weight = {
@@ -1201,7 +1201,7 @@ utility_component_template = {
 		ship_hull_add = @hull_M4
 	}
 	ship_modifier = {
-		ship_damage_reduction_add = 4
+		ship_damage_reduction_add = 3
 	}
 
 	ai_weight = {
@@ -1237,7 +1237,7 @@ utility_component_template = {
 		ship_hull_add = @hull_L4
 	}
 	ship_modifier = {
-		ship_damage_reduction_add = 8
+		ship_damage_reduction_add = 4
 	}
 
 	ai_weight = {

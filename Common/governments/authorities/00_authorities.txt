@@ -1019,7 +1019,7 @@ auth_imperial = {
 		modifier = {
 			planet_jobs_worker_produces_mult = 0.10
 			ship_hull_regen_add_perc = @regen_mult_0p05
-		  	ship_armor_regen_add_perc = @regen_mult_lvmax
+		  	ship_armor_regen_add_perc = 0.05
 			custom_tooltip = auth_synth_imperial_virtual_tt
 			show_only_custom_tooltip = no
 		}
@@ -1563,7 +1563,7 @@ auth_machine_intelligence = {
 			AUTH_GESTALT_IMMORTAL_LEADERS
 		}
 	}
-
+	#Transcendent Machines
 	advanced_authority_swap	= {
 		name = "auth_shroud_machine_transcendent"
 		description = "auth_shroud_machine_transcendent_desc"
@@ -1589,7 +1589,7 @@ auth_machine_intelligence = {
 			station_researchers_produces_mult = -0.2
 		}
 	}
-
+	#Corporeal Machines
 	advanced_authority_swap	= {
 		name = "auth_shroud_machine_corporeal"
 		description = "auth_shroud_machine_corporeal_desc"

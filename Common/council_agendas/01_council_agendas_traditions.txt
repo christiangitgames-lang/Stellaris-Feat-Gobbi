@@ -1,8 +1,8 @@
-@base_tradition_agenda_cost = 7000
-@basefast_agenda_cost = 7000
-@fast_agenda_cost = 5660 #in mod was 3500
+@base_tradition_agenda_cost = 6300
+@basefast_agenda_cost = 6300
+@fast_agenda_cost = 5000 #in mod was 3500
 @very_fast_agenda_cost = 3500 #in mod wsas 700
-@short_agenda_cost = 3500
+@short_agenda_cost = 5000
 agenda_conquer_nature = {
 	agenda_cost = @base_tradition_agenda_cost
 	allow = {

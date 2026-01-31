@@ -18,7 +18,9 @@ automate_farming_habitat_planet = {
 		1 = {
 			building = building_food_processing_facility
         }
-
+		2_sfg = {
+			building = building_medical_1
+		}
 		2 = {
 			building = building_hydroponics_farm
 		}

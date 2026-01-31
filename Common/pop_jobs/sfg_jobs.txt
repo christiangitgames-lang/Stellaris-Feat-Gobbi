@@ -1,6 +1,9 @@
 @specialist_job_weight = 10
 @society_specialist_job_weight = 8
-
+@baseresearch = 1.5
+@bonusresearch = 0.25
+@upkeepenergy = 12
+@upkeepTrade = 6
 foreign_researcher= {
 	category = specialist
 	# swappable_data = {
@@ -90,13 +93,14 @@ foreign_researcher= {
 	resources = {
 		category = planet_researchers
 		produces = {
-			physics_research = 3
-			society_research = 3
-			engineering_research = 3
+			physics_research = @baseresearch
+			society_research = @baseresearch
+			engineering_research = @baseresearch
 			multiplier = Owner.value:mult_research_foreign
 		}
 		upkeep = {
-			energy = 6
+			energy = @upkeepenergy
+			trade = @upkeepTrade
 		}
 		#inline_script = "output/researcher_output"
 	}
@@ -109,9 +113,9 @@ foreign_researcher= {
 					has_planet_flag = has_science_ministry
 				}
 			}
-			physics_research = 0.5
-			society_research = 0.5
-			engineering_research = 0.5
+			physics_research = @bonusresearch
+			society_research = @bonusresearch
+			engineering_research = @bonusresearch
 		}
 		produces = {
 			trigger = {
@@ -126,9 +130,9 @@ foreign_researcher= {
 					}
 				}
 			}
-			physics_research = 0.5
-			society_research = 0.5
-			engineering_research = 0.5
+			physics_research = @bonusresearch
+			society_research = @bonusresearch
+			engineering_research = @bonusresearch
 		}
 	}
 
@@ -198,13 +202,14 @@ calculator_foreign_researcher = {
 		category = planet_physicists
 		
 		produces = {
-			physics_research = 3
-			society_research = 3
-			engineering_research = 3
+			physics_research = @baseresearch
+			society_research = @baseresearch
+			engineering_research = @baseresearch
 			mult = Owner.value:mult_research_foreign
 		}
 		upkeep = {
-			energy = 6
+			energy = @upkeepenergy
+			trade = @upkeepTrade
 		}
 		#inline_script = "output/researcher_output"
 	}
@@ -217,9 +222,9 @@ calculator_foreign_researcher = {
 					has_planet_flag = has_science_ministry
 				}
 			}
-			physics_research = 0.5
-			society_research = 0.5
-			engineering_research = 0.5
+			physics_research = @bonusresearch
+			society_research = @bonusresearch
+			engineering_research = @bonusresearch
 		}
 		produces = {
 			trigger = {
@@ -234,9 +239,9 @@ calculator_foreign_researcher = {
 					}
 				}
 			}
-			physics_research = 0.5
-			society_research = 0.5
-			engineering_research = 0.5
+			physics_research = @bonusresearch
+			society_research = @bonusresearch
+			engineering_research = @bonusresearch
 		}
 	}
 

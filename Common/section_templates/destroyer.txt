@@ -1,4 +1,4 @@
-@section_cost = 60
+@section_cost = 120
 
 #BOW
 
@@ -150,7 +150,7 @@ ship_section_template = {
 
 	ai_weight = {
 		modifier = {
-			factor = 20
+			factor = 300
 			OR = {
 				has_ai_personality = exterminators
 				has_ai_personality = devouring_swarm

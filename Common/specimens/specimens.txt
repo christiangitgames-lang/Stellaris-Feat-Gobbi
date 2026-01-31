@@ -154,7 +154,7 @@ aluminium_plaque = {
 	resources = {
 		category = specimens
 		produces = {
-			unity = 20
+			unity = 15 #SFG1.1
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -229,7 +229,7 @@ ancient_kinetic_launcher = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 80 #SFG
+			society_research = 15 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
@@ -344,7 +344,7 @@ ancient_sensor = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 80 #SFG
+			engineering_research = 60 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
@@ -460,7 +460,7 @@ burnt_migratory_trees = {
 	resources = {
 		category = specimens
 		produces = {
-			physics_research = 80 #SFG
+			physics_research = 60 #SFG1.1 #SFG
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 		}
@@ -494,7 +494,7 @@ captain_ness_logbook = {
 	resources = {
 		category = specimens
 		produces = {
-			unity = 20
+			unity = 15 #SFG1.1
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -563,7 +563,7 @@ centrifugal_container = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 80
+			engineering_research = 60 #SFG1.1
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -581,7 +581,7 @@ cetana_love = {
 	resources = {
 		category = specimens
 		produces = {
-			physics_research = 160
+			physics_research = 120 #SFG1.1
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 		}
 	}
@@ -599,7 +599,7 @@ chambered_clay_pot = {
 	resources = {
 		category = specimens
 		produces = {
-			unity = 20 #SFG
+			unity = 15 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -752,7 +752,7 @@ crystallized_cutholoid_eye = {
 	resources = {
 		category = specimens
 		produces = {
-			physics_research = 40 #SFG
+			physics_research = 30 #SFG1.1 #SFG
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 		}
 	}
@@ -785,7 +785,7 @@ cunning_flora_specimen = {
 	resources = {
 		category = specimens
 		produces = {
-			physics_research = 20 #SFG
+			physics_research = 15 #SFG1.1 #SFG
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 		}
 	}
@@ -803,7 +803,7 @@ curator_survey = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 20 #SFG
+			engineering_research = 15 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -866,7 +866,7 @@ datacore_of_sinople = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 20 #SFG
+			society_research = 15 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -899,7 +899,7 @@ dead_god_mantle = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 20 #SFG
+			society_research = 15 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -932,7 +932,7 @@ decayed_satellite = {
 	resources = {
 		category = specimens
 		produces = {
-			unity = 20 #SFG
+			unity = 15 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -965,7 +965,7 @@ declaration_of_friendship = {
 	resources = {
 		category = specimens
 		produces = {
-			unity = 40 #SFG
+			unity = 30 #SFG1.1#SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -998,7 +998,7 @@ desiccated_brain_slug = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 40 #SFG
+			engineering_research = 30 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -1031,7 +1031,7 @@ devolved_baol_drones = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 80 #SFG
+			engineering_research = 60 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -1094,7 +1094,7 @@ drone_ship_core = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 80 #SFG
+			society_research = 60 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -1171,7 +1171,7 @@ ethereal_dust = {
 	resources = {
 		category = specimens
 		produces = {
-			physics_research = 80 #SFG
+			physics_research = 60 #SFG1.1 #SFG
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 		}
 	}
@@ -1204,7 +1204,7 @@ extradimensional_ceramic_pot = {
 	resources = {
 		category = specimens
 		produces = {
-			physics_research = 80 #SFG
+			physics_research = 60 #SFG1.1 #SFG
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 		}
 	}
@@ -1357,7 +1357,7 @@ fossilized_megastomach = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 40 #SFG
+			engineering_research = 30 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -1442,7 +1442,8 @@ fragment_of_reckoning = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 20
+			society_research = 15 #SFG1.1
+			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
 }
@@ -1459,7 +1460,7 @@ fragmented_zroni_archive = {
 	resources = {
 		category = specimens
 		produces = {
-			unity = 20 #SFG
+			unity = 15 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -1477,7 +1478,7 @@ galactic_megadrive = {
 	resources = {
 		category = specimens
 		produces = {
-			physics_research = 80 #SFG
+			physics_research = 60 #SFG1.1 #SFG
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 		}
 	}
@@ -1585,7 +1586,7 @@ golden_phonograph_record = {
 	resources = {
 		category = specimens
 		produces = {
-			unity = 40 #SFG
+			unity = 120 #SFG1.1#SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -1669,7 +1670,7 @@ hemterine_magnetic_figurehead = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 80 #SFG
+			engineering_research = 60 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -1775,7 +1776,7 @@ illanii_archives = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 80 #SFG
+			society_research = 60 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -1793,7 +1794,7 @@ impossible_object = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 40 #SFG
+			engineering_research = 30 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -1811,7 +1812,7 @@ index_of_knowledge = {
 	resources = {
 		category = specimens
 		produces = {
-			physics_research = 40 #SFG
+			physics_research = 30 #SFG1.1 #SFG
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 		}
 	}
@@ -1880,7 +1881,7 @@ interdimensional_treaty = {
 	resources = {
 		category = specimens
 		produces = {
-			unity = 40 #SFG
+			unity = 30 #SFG1.1#SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -1913,7 +1914,7 @@ invasive_exofungus = {
 	resources = {
 		category = specimens
 		produces = {
-			physics_research = 80 #SFG
+			physics_research = 60 #SFG1.1 #SFG
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 		}
 	}
@@ -1931,7 +1932,7 @@ irassian_bacterium_javoria = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 80 #SFG
+			engineering_research = 60 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -2039,7 +2040,7 @@ landeer_arm = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 40 #SFG
+			society_research = 30 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -2147,7 +2148,7 @@ living_snow_sculpture = {
 	resources = {
 		category = specimens
 		produces = {
-			physics_research = 80 #SFG
+			physics_research = 60 #SFG1.1 #SFG
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 		}
 	}
@@ -2180,7 +2181,7 @@ loopmail = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 160 
+			society_research = 120 #SFG1.1 
 		}
 	}
 }
@@ -2212,7 +2213,7 @@ manifesti_piece = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 40 #SFG
+			society_research = 30 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -2259,7 +2260,7 @@ massive_metatarsal = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 40 #SFG
+			engineering_research = 30 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -2308,7 +2309,7 @@ memorial_for_bubbles = {
 	resources = {
 		category = specimens
 		produces = {
-			unity = 80 #SFG
+			unity = 60 #SFG1.1#SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -2326,7 +2327,7 @@ memorial_stone = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 40 #SFG
+			engineering_research = 30 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -2389,7 +2390,7 @@ mercenary_story = {
 	resources = {
 		category = specimens
 		produces = {
-			unity = 20 #SFG
+			unity = 15 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -2437,7 +2438,7 @@ mineralized_brain = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 80 #SFG
+			engineering_research = 60 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -2521,7 +2522,7 @@ molten_slag = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 20 #SFG
+			engineering_research = 15 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -2710,7 +2711,7 @@ orinthi_teeth = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 20 #SFG
+			engineering_research = 15 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -2728,7 +2729,7 @@ osseus_construction_material = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 40 #SFG
+			engineering_research = 30 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -2767,7 +2768,7 @@ peerless_atomic_clock = {
 	resources = {
 		category = specimens
 		produces = {
-			physics_research = 20 #SFG
+			physics_research = 15 #SFG1.1 #SFG
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 		}
 	}
@@ -2800,7 +2801,7 @@ perfectly_faceted_carbon = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 20 #SFG
+			engineering_research = 15 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -2848,7 +2849,7 @@ piece_of_invocator = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 80 #SFG
+			society_research = 60 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -2909,7 +2910,7 @@ planet_pushing_thruster = {
 
 	triggered_country_modifier = {
 		mult = value:historical_item_specimens_modifiers_mult
-		command_limit_add = 10
+		command_limit_add = 20
 	}
 }
 
@@ -2999,7 +3000,7 @@ programmable_puzzle_cube = {
 	resources = {
 		category = specimens
 		produces = {
-			physics_research = 40 #SFG
+			physics_research = 30 #SFG1.1 #SFG
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 		}
 	}
@@ -3233,7 +3234,7 @@ secrets_black_crown = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 40 #SFG
+			society_research = 30 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -3272,7 +3273,7 @@ shallarian_data_core = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 80 #SFG
+			society_research = 60 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -3335,7 +3336,7 @@ sniran_spikes = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 20 #SFG
+			engineering_research = 15 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -3449,7 +3450,7 @@ starmetal = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 80 #SFG
+			engineering_research = 60 #SFG1.1 #SFG
 			multiplier = value:xeno_geology_specimens_modifiers_mult
 		}
 	}
@@ -3482,7 +3483,7 @@ sullebaster_control_column = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 80 #SFG
+			society_research = 60 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -3593,7 +3594,7 @@ terraforming_machinery = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 40 #SFG
+			society_research = 30 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -3667,7 +3668,7 @@ the_planet_orchestra = {
 	resources = {
 		category = specimens
 		produces = {
-			physics_research = 20 #SFG
+			physics_research = 15 #SFG1.1 #SFG
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 		}
 	}
@@ -3700,7 +3701,7 @@ tiny_ancient_sarcophagus = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 40 #SFG
+			society_research = 30 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -3733,7 +3734,7 @@ torn_solar_sail = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 20 #SFG
+			society_research = 15 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -3766,7 +3767,7 @@ tree_of_life_sample = {
 	resources = {
 		category = specimens
 		produces = {
-			physics_research = 20 #SFG
+			physics_research = 15 #SFG1.1 #SFG
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 		}
 	}
@@ -3841,7 +3842,7 @@ underworld_cantina_sign = {
 	resources = {
 		category = specimens
 		produces = {
-			unity = 80 #SFG
+			unity = 60 #SFG1.1#SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -4036,7 +4037,7 @@ wormhole_anchor = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 40 #SFG
+			society_research = 30 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}
@@ -4069,7 +4070,7 @@ ytterite_preserved_corpse = {
 	resources = {
 		category = specimens
 		produces = {
-			engineering_research = 40
+			engineering_research = 30 #SFG1.1
 		}
 	}
 }
@@ -4116,7 +4117,7 @@ yuht_audio_console = {
 	resources = {
 		category = specimens
 		produces = {
-			physics_research = 80 #SFG
+			physics_research = 60 #SFG1.1 #SFG
 			multiplier = value:aesthetic_wonder_specimens_modifiers_mult
 		}
 	}
@@ -4170,7 +4171,7 @@ zombie_probe = {
 	resources = {
 		category = specimens
 		produces = {
-			society_research = 20 #SFG
+			society_research = 15 #SFG1.1 #SFG
 			multiplier = value:historical_item_specimens_modifiers_mult
 		}
 	}

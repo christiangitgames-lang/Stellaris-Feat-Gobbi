@@ -3390,7 +3390,7 @@ tech_doctrine_fleet_size_2 = {
 	weight = @tier2weight3
 
 	modifier = {
-		command_limit_add = 30
+		command_limit_add = 40
 	}
 
 	weight_modifier = {
@@ -3421,7 +3421,7 @@ tech_doctrine_fleet_size_3 = {
 	weight = @tier3weight2
 
 	modifier = {
-		command_limit_add = 40
+		command_limit_add = 60
 	}
 
 	weight_modifier = {
@@ -3452,7 +3452,7 @@ tech_doctrine_fleet_size_4 = {
 	weight = @tier4weight1
 
 	modifier = {
-		command_limit_add = 50
+		command_limit_add = 80
 	}
 
 	weight_modifier = {
@@ -3483,7 +3483,7 @@ tech_doctrine_fleet_size_5 = {
 	weight = @tier4weight3
 
 	modifier = {
-		command_limit_add = 60
+		command_limit_add = 100
 	}
 
 	weight_modifier = {
@@ -3620,7 +3620,7 @@ tech_doctrine_navy_size_1 = {
 	weight = @tier2weight2
 
 	modifier = {
-		#country_naval_cap_add = 30
+		#country_naval_cap_add = 25
 		ship_starting_experience_add = 20
 		country_naval_cap_mult = 0.025
 		ships_upkeep_mult = -0.01
@@ -3654,7 +3654,7 @@ tech_doctrine_navy_size_2 = {
 	weight = @tier3weight2
 
 	modifier = {
-		#country_naval_cap_add = 30
+		#country_naval_cap_add = 50
 		country_leader_cap_add = 1
 		country_naval_cap_mult = 0.025
 		ships_upkeep_mult = -0.01
@@ -3688,7 +3688,8 @@ tech_doctrine_navy_size_3 = {
 	weight = @tier4weight1
 
 	modifier = {
-		country_naval_cap_add = 30
+		#country_naval_cap_add = 75
+		country_naval_cap_mult = 0.2
 		ships_upkeep_mult = -0.01
 	}
 
@@ -3720,10 +3721,9 @@ tech_doctrine_navy_size_4 = {
 	weight = @tier4weight3
 
 	modifier = {
-		#country_naval_cap_add = 30
+		#country_naval_cap_add = 100
 		#admiral_skill_levels = 1
-		species_leader_exp_gain = 0.05
-		country_naval_cap_mult = 0.025
+		country_naval_cap_mult = 0.25
 		ships_upkeep_mult = -0.01
 	}
 

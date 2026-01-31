@@ -28,13 +28,14 @@ automate_unity_planet = {
 		1 = {
 			building = building_autochthon_monument
 		}
-
+		
 		1_corp = {
 			building = building_corporate_monument
 		}
 
 		1_mach = {
 			building = building_simulation_1
+			available = { free_amenities < 500 }
 		}
 
 		1_hive = {
@@ -44,7 +45,9 @@ automate_unity_planet = {
 		1_memo = {
 			building = building_galactic_memorial_1
 		}
-
+		2_sfg = {
+			building = building_medical_1
+		}
 		2 = {
 			building = building_autocurating_vault
 		}

@@ -2028,7 +2028,7 @@ wg_expel_corp = {
 			hidden_effect = {
 				every_owned_planet = {
 					limit = { has_branch_office = event_target:defender }
-					branch_office_owner = { add_resource = { energy = 1000 } }
+					branch_office_owner = { add_resource = { trade = 1000 } }
 					close_branch_office = yes
 				}
 			}
@@ -2038,13 +2038,13 @@ wg_expel_corp = {
 			hidden_effect = {
 				every_owned_planet = {
 					limit = { has_branch_office = event_target:defender }
-					branch_office_owner = { add_resource = { energy = 1000 } }
+					branch_office_owner = { add_resource = { trade = 1000 } }
 					close_branch_office = yes
 				}
 				every_subject = {
 					every_owned_planet = {
 						limit = { has_branch_office = event_target:defender }
-						branch_office_owner = { add_resource = { energy = 1000 } }
+						branch_office_owner = { add_resource = { trade = 1000 } }
 						close_branch_office = yes
 					}
 				}
@@ -2063,7 +2063,7 @@ wg_expel_corp = {
 					}
 					every_owned_planet = {
 						limit = { has_branch_office = event_target:defender }
-						branch_office_owner = { add_resource = { energy = 1000 } }
+						branch_office_owner = { add_resource = { trade = 1000 } }
 						close_branch_office = yes
 					}
 					if = {
@@ -2071,7 +2071,7 @@ wg_expel_corp = {
 						every_subject = {
 							every_owned_planet = {
 								limit = { has_branch_office = event_target:defender }
-								branch_office_owner = { add_resource = { energy = 1000 } }
+								branch_office_owner = { add_resource = { trade = 1000 } }
 								close_branch_office = yes
 							}
 						}
@@ -2095,7 +2095,7 @@ wg_expel_corp = {
 				every_owned_planet = {
 					limit = { has_branch_office = event_target:defender }
 					close_branch_office = yes
-					owner = { add_resource = { energy = 1000 } }
+					owner = { add_resource = { trade = 1000 } }
 				}
 			}
 		}
@@ -2105,13 +2105,13 @@ wg_expel_corp = {
 				every_owned_planet = {
 					limit = { has_branch_office = event_target:defender }
 					close_branch_office = yes
-					owner = { add_resource = { energy = 1000 } }
+					owner = { add_resource = { trade = 1000 } }
 				}
 				every_subject = {
 					every_owned_planet = {
 						limit = { has_branch_office = event_target:defender }
 						close_branch_office = yes
-						owner = { add_resource = { energy = 1000 } }
+						owner = { add_resource = { trade = 1000 } }
 					}
 				}
 			}
@@ -2131,7 +2131,7 @@ wg_expel_corp = {
 					every_owned_planet = {
 						limit = { has_branch_office = event_target:defender }
 						close_branch_office = yes
-						owner = { add_resource = { energy = 1000 } }
+						owner = { add_resource = { trade = 1000 } }
 					}
 					if = {
 						limit = { is_overlord = yes }
@@ -2139,7 +2139,7 @@ wg_expel_corp = {
 							every_owned_planet = {
 								limit = { has_branch_office = event_target:defender }
 								close_branch_office = yes
-								owner = { add_resource = { energy = 1000 } }
+								owner = { add_resource = { trade = 1000 } }
 							}
 						}
 					}

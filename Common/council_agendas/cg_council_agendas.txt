@@ -1,6 +1,6 @@
 @base_agenda_cost = 7000
-@basefast_agenda_cost = 7000
-@fast_agenda_cost = 5660 #in mod was 3500
+@basefast_agenda_cost = 6300
+@fast_agenda_cost = 5000 #in mod was 3500
 @very_fast_agenda_cost = 700 #in mod wsas 700
 @fast2_agenda_cost = 2800
 feudal_shift_pursuit = {

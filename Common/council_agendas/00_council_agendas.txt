@@ -1,7 +1,7 @@
 @base_agenda_cost = 7000
-@basefast_agenda_cost = 7000
-@fast_agenda_cost = 5660 #in mod was 3500
-@very_fast_agenda_cost = 3500 #in mod wsas 700
+@basefast_agenda_cost = 6300
+@fast_agenda_cost = 5000 #in mod was 3500
+@very_fast_agenda_cost = 1800 #in mod wsas 700
 # Remember to update initial progress for "agenda_infinite_opportunities" in game_start.60 if above is changed.
 agenda_infinite_opportunities = {
 	agenda_cost = @basefast_agenda_cost

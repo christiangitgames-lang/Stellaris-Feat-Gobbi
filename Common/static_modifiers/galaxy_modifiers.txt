@@ -67,11 +67,11 @@ huge_galaxy_modifier = { #1000 stars
 	icon = "gfx/interface/icons/sm/Galaxy.dds"
 }
 early_game_modifier = {
-	planet_physicists_physics_research_produces_add = 1
-	planet_biologists_society_research_produces_add = 1
-	planet_engineers_engineering_research_produces_add = 1
+	planet_physicists_physics_research_produces_add = 0.5
+	planet_biologists_society_research_produces_add = 0.5
+	planet_engineers_engineering_research_produces_add = 0.5
 	planet_bureaucrats_unity_produces_add = 1
-	all_technology_research_speed = 0.1
+	#all_technology_research_speed = 0.1
 	#country_unity_produces_mult = 0.1
 	empire_size_colonies_mult = 0.10
 	num_tech_alternatives_add = -1
@@ -81,24 +81,10 @@ early_game_modifier = {
 	#ship_interstellar_speed_mult = -0.25
 	icon = "gfx/interface/icons/sm/early.dds"
 }
-early_game_modifier_fast = {
-	planet_physicists_physics_research_produces_add = 1
-	planet_biologists_society_research_produces_add = 1
-	planet_engineers_engineering_research_produces_add = 1
-	planet_bureaucrats_unity_produces_add = 1
-	all_technology_research_speed = 0.1 #cetus esagerata?
-	country_unity_produces_mult = 0.1
-	empire_size_colonies_mult = 0.10
-	num_tech_alternatives_add = -1
-	envoys_add = -0.5
-	ship_interstellar_speed_mult = -0.245
-	shipclass_starbase_hull_mult = -0.33
-	#ship_interstellar_speed_mult = -0.25
-	icon = "gfx/interface/icons/sm/early.dds"
-}
+
 mid_game_modifier = {
-	ship_interstellar_speed_mult = -0.05
-	all_technology_research_speed = 0.05
+	#ship_interstellar_speed_mult = -0.05
+	#all_technology_research_speed = 0.05
 	#country_unity_produces_mult = 0.05
 	empire_size_penalty_mult = -0.15
 	station_researchers_physics_research_produces_mult = 1.5
@@ -134,4 +120,19 @@ Stellaris_feat_Gobbi = {
 	starbase_shipyard_build_speed_mult = 0.1
 	council_agenda_progress_speed = 0.2
 	icon = "gfx/interface/icons/modifiers/mod_job_assimilation_void_add.dds"
+}
+early_game_modifier_fast = {
+	planet_physicists_physics_research_produces_add = 1
+	planet_biologists_society_research_produces_add = 1
+	planet_engineers_engineering_research_produces_add = 1
+	planet_bureaucrats_unity_produces_add = 1
+	#all_technology_research_speed = 0.1 #cetus esagerata?
+	country_unity_produces_mult = 0.1
+	empire_size_colonies_mult = 0.10
+	num_tech_alternatives_add = -1
+	envoys_add = -0.5
+	ship_interstellar_speed_mult = -0.245
+	shipclass_starbase_hull_mult = -0.2
+	#ship_interstellar_speed_mult = -0.25
+	icon = "gfx/interface/icons/sm/early.dds"
 }

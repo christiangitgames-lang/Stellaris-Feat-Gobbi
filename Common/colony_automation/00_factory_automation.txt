@@ -22,7 +22,9 @@ automate_factory_planet = {
 		1 = {
 			building = building_ministry_production
 		}
-
+		2_sfg = {
+			building = building_medical_1
+		}
 		2 = {
 			building = building_production_center
 		}
@@ -34,7 +36,7 @@ automate_factory_planet = {
 		4 = {
 			building = building_factory_upkeep_1
 		}
-
+		
 		5 = {
 			building = building_factory_1 
 		}

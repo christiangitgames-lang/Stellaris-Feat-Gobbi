@@ -1,4 +1,4 @@
-@base_tradition_agenda_cost = 7000
+@base_tradition_agenda_cost = 6300
 @ascension_agenda_cost = 3500		# Same as short_agenda_cost from traditions
 @ascension_agenda_cooldown = 1080	# 3 Years
 

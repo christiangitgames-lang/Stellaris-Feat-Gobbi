@@ -23,7 +23,9 @@ automate_fortress_planet = {
 			building = building_dread_encampment
 			available = { owner = { has_valid_civic = civic_reanimated_armies } }
 		}
-
+		2_sfg = {
+			building = building_medical_1
+		}
 		2 = {
 			building = building_military_academy
 			available = { owner = { NOT = { has_valid_civic = civic_reanimated_armies } } }

@@ -4,12 +4,12 @@
 @s_t2_cost = 15
 @s_t3_cost = 23
 @s_t4_cost = 23 #not 23, uses rare goods instead
-@s_t5_cost = 34 #51
-@s_t6_cost = 51 #76
-@s_t7_cost = 76 #114
-@s_t8_cost = 114
-@s_t9_cost = 170
-@s_t10_cost = 254
+@s_t5_cost = 35 #51
+@s_t6_cost = 53 #76
+@s_t7_cost = 80 #114
+@s_t8_cost = 120
+@s_t9_cost = 180
+@s_t10_cost = 260
 
 @s_t1_upkeep_energy = 0.10
 @s_t1_upkeep_alloys = 0.020
@@ -38,17 +38,17 @@
 
 # Medium
 
-@m_t1_cost = 20
-@m_t2_cost = 30
-@m_t3_cost = 45
-@m_t4_cost = 45    # not 68, uses rare goods instead
-@m_t5_cost = 68    # 102
-@m_t6_cost = 102   # 152
+@m_t1_cost = 25
+@m_t2_cost = 38
+@m_t3_cost = 58
+@m_t4_cost = 58    # not 68, uses rare goods instead
+@m_t5_cost = 133    # 102
+@m_t6_cost = 200   # 152
 
-@m_t7_cost = 152
-@m_t8_cost = 226
-@m_t9_cost = 337
-@m_t10_cost = 502
+@m_t7_cost = 300
+@m_t8_cost = 400
+@m_t9_cost = 500
+@m_t10_cost = 600
 
 
 @m_t1_upkeep_energy = 0.20
@@ -78,15 +78,15 @@
 
 @l_t1_cost = 40
 @l_t2_cost = 60
-@l_t3_cost = 90
-@l_t4_cost = 90 #not 135, uses rare goods instead
-@l_t5_cost = 135 #203
-@l_t6_cost = 203 #304
-@l_t7_cost = 304 #456
+@l_t3_cost = 145
+@l_t4_cost = 145 #not 135, uses rare goods instead
+@l_t5_cost = 220 #203
+@l_t6_cost = 333 #304
+@l_t7_cost = 500 #456
 
-@l_t8_cost = 453
-@l_t9_cost = 675
-@l_t10_cost = 1006
+@l_t8_cost = 750
+@l_t9_cost = 1000
+@l_t10_cost = 1250
 
 
 @l_t1_upkeep_energy = 0.40
@@ -114,11 +114,11 @@
 
 # Extra Large
 
-@xl_t5_cost = 176 #not 232, uses rare goods instead
-@xl_t6_cost = 229 #298
-@xl_t7_cost = 298 #387
-@xl_t8_cost = 906
-@xl_t9_cost = 1350
+@xl_t5_cost = 550 #not 232, uses rare goods instead
+@xl_t6_cost = 833 #298
+@xl_t7_cost = 1250 #387
+@xl_t8_cost = 1500
+@xl_t9_cost = 1750
 @xl_t10_cost = 2012
 
 
@@ -131,8 +131,8 @@
 
 # Titanic
 
-@titanic_t6_cost = 810 #1215
-@titanic_t7_cost = 1215 #1823
+@titanic_t6_cost = 2083 #3125
+@titanic_t7_cost = 3125 #4688
 
 @titanic_t6_upkeep_energy = 12.15
 @titanic_t6_upkeep_alloys = 1.823
@@ -143,58 +143,58 @@
 # RARE RESOURCES
 #################
 
-@s_t4_rare = 0.25
+@s_t4_rare = 0.250
 @s_t5_rare = 0.375
-@s_t6_rare = 0.5625
-@s_t7_rare = 0.84375
+@s_t6_rare = 0.563
+@s_t7_rare = 0.845
 
 @s_t8_rare = 1.2571875
 @s_t9_rare = 1.873213
 @s_t10_rare = 2.790089
 
 
-@m_t4_rare = 0.50
-@m_t5_rare = 0.75
-@m_t6_rare = 1.125
-@m_t7_rare = 1.6875
+@m_t4_rare = 0.625
+@m_t5_rare = 0.938
+@m_t6_rare = 1.408
+@m_t7_rare = 2.113
 
-@m_t8_rare = 2.515875
-@m_t9_rare = 3.752646
-@m_t10_rare = 5.588445
-
-
-@l_t4_rare = 1.0
-@l_t5_rare = 1.5
-@l_t6_rare = 2.25
-@l_t7_rare = 3.375
-
-@l_t8_rare = 5.02875
-@l_t9_rare = 7.4928375
-@l_t10_rare = 11.159329
+@m_t8_rare = 3.016
+@m_t9_rare = 4.353
+@m_t10_rare = 6.588
 
 
-@xl_t5_rare = 3.0
-@xl_t6_rare = 4.5
-@xl_t7_rare = 6.75
+@l_t4_rare = 1.563
+@l_t5_rare = 2.345
+@l_t6_rare = 3.520
+@l_t7_rare = 5.283
 
-@xl_t8_rare = 10.05
-@xl_t9_rare = 14.95
-@xl_t10_rare = 22.26
+@l_t8_rare = 7.02875
+@l_t9_rare = 10.4928375
+@l_t10_rare = 16.159329
 
 
-@titanic_t5_rare = 6.0
-@titanic_t6_rare = 9.0
-@titanic_t7_rare = 13.5
+@xl_t5_rare = 5.863
+@xl_t6_rare = 8.800
+@xl_t7_rare = 13.208
+
+@xl_t8_rare = 15.05
+@xl_t9_rare = 20.95
+@xl_t10_rare = 33.26
+
+
+@titanic_t5_rare = 14.658
+@titanic_t6_rare = 22.000
+@titanic_t7_rare = 33.020
 
 #################
 # MINOR ARTIFACTS
 #################
 
 @minor_artifacts_cost_s = 8
-@minor_artifacts_cost_m = 12
-@minor_artifacts_cost_l = 18
+@minor_artifacts_cost_m = 20
+@minor_artifacts_cost_l = 50
 
-@minor_artifacts_cost_xl = 50
+@minor_artifacts_cost_xl = 125
 
 #################
 # SHIELDS
@@ -206,13 +206,13 @@
 @shield_s_t2_cost = 8
 @shield_s_t3_cost = 12
 @shield_s_t4_cost = 12 #not 17, uses rare goods instead
-@shield_s_t5_cost = 17 #26
-@shield_s_t6_cost = 26 #38
-@shield_s_t7_cost = 38 #57
+@shield_s_t5_cost = 18 #27
+@shield_s_t6_cost = 27 #41
+@shield_s_t7_cost = 41 #62
 
-@shield_s_t8_cost = 57
-@shield_s_t9_cost = 85
-@shield_s_t10_cost = 127
+@shield_s_t8_cost = 62
+@shield_s_t9_cost = 92
+@shield_s_t10_cost = 140
 
 
 @shield_s_t1_upkeep_energy = 0.05
@@ -240,16 +240,16 @@
 
 # Medium
 
-@shield_m_t1_cost = 10
-@shield_m_t2_cost = 15
-@shield_m_t3_cost = 23
-@shield_m_t4_cost = 23 #not 34, uses rare goods instead
-@shield_m_t5_cost = 34
-@shield_m_t6_cost = 51
-@shield_m_t7_cost = 76
-@shield_m_t8_cost = 113
-@shield_m_t9_cost = 168
-@shield_m_t10_cost = 250
+@shield_m_t1_cost = 13
+@shield_m_t2_cost = 20
+@shield_m_t3_cost = 30
+@shield_m_t4_cost = 30 #not 45, uses rare goods instead
+@shield_m_t5_cost = 45
+@shield_m_t6_cost = 68
+@shield_m_t7_cost = 103
+@shield_m_t8_cost = 135
+@shield_m_t9_cost = 200
+@shield_m_t10_cost = 300
 
 
 @shield_m_t1_upkeep_energy = 0.10
@@ -278,16 +278,16 @@
 
 # Large
 
-@shield_l_t1_cost = 20
-@shield_l_t2_cost = 30
-@shield_l_t3_cost = 45
-@shield_l_t4_cost = 45 #not 68, uses rare goods instead
-@shield_l_t5_cost = 68
-@shield_l_t6_cost = 102
-@shield_l_t7_cost = 152
-@shield_l_t8_cost = 226
-@shield_l_t9_cost = 337
-@shield_l_t10_cost = 502
+@shield_l_t1_cost = 33
+@shield_l_t2_cost = 50
+@shield_l_t3_cost = 75
+@shield_l_t4_cost = 75 #not 113, uses rare goods instead
+@shield_l_t5_cost = 113
+@shield_l_t6_cost = 170
+@shield_l_t7_cost = 258
+@shield_l_t8_cost = 346
+@shield_l_t9_cost = 457
+@shield_l_t10_cost = 620
 
 
 
@@ -321,23 +321,23 @@
 @armor_s_t1_cost = 5
 @armor_s_t2_cost = 8
 @armor_s_t3_cost = 12
-@armor_s_t4_cost = 17
-@armor_s_t5_cost = 26
-@armor_s_t6_cost = 38
+@armor_s_t4_cost = 18
+@armor_s_t5_cost = 27
+@armor_s_t6_cost = 41
 
-@armor_m_t1_cost = 10
-@armor_m_t2_cost = 15
-@armor_m_t3_cost = 23
-@armor_m_t4_cost = 34
-@armor_m_t5_cost = 51
-@armor_m_t6_cost = 76
+@armor_m_t1_cost = 13
+@armor_m_t2_cost = 20
+@armor_m_t3_cost = 30
+@armor_m_t4_cost = 45
+@armor_m_t5_cost = 68
+@armor_m_t6_cost = 103
 
-@armor_l_t1_cost = 20
-@armor_l_t2_cost = 30
-@armor_l_t3_cost = 45
-@armor_l_t4_cost = 68
-@armor_l_t5_cost = 102
-@armor_l_t6_cost = 152
+@armor_l_t1_cost = 33
+@armor_l_t2_cost = 50
+@armor_l_t3_cost = 75
+@armor_l_t4_cost = 113
+@armor_l_t5_cost = 170
+@armor_l_t6_cost = 258
 
 @armor_S1 = 100
 @armor_M1 = 300
@@ -507,7 +507,7 @@
 
 @regen_S6 = 1.625
 @regen_M6 = 4.06
-@regen_L6 = 12
+@regen_L6 = 10
 
 @shield_S7 = 400
 @shield_M7 = 1200
@@ -583,11 +583,11 @@
 @cloak_s_t5_upkeep_alloys = 0.102
 
 # Cruisers
-@cloak_m_t1_cost_alloys = 40
-@cloak_m_t2_cost_alloys = 60
-@cloak_m_t3_cost_alloys = 90
-@cloak_m_t4_cost_alloys = 135
-@cloak_m_t5_cost_alloys = 203
+@cloak_m_t1_cost_alloys = 50
+@cloak_m_t2_cost_alloys = 75
+@cloak_m_t3_cost_alloys = 113
+@cloak_m_t4_cost_alloys = 170
+@cloak_m_t5_cost_alloys = 255
 
 @cloak_m_t1_cost_strategic_resources = 10
 @cloak_m_t2_cost_strategic_resources = 15
@@ -610,11 +610,11 @@
 @cloak_m_t5_upkeep_alloys = 0.203
 
 # Battleships/Titans
-@cloak_l_t1_cost_alloys = 80
-@cloak_l_t2_cost_alloys = 120
-@cloak_l_t3_cost_alloys = 180
-@cloak_l_t4_cost_alloys = 270
-@cloak_l_t5_cost_alloys = 405
+@cloak_l_t1_cost_alloys = 125
+@cloak_l_t2_cost_alloys = 188
+@cloak_l_t3_cost_alloys = 283
+@cloak_l_t4_cost_alloys = 425
+@cloak_l_t5_cost_alloys = 638
 
 @cloak_l_t1_cost_strategic_resources = 20
 @cloak_l_t2_cost_strategic_resources = 30
@@ -836,16 +836,16 @@
 # Unique Genetic Components #
 #############################
 
-@genetic_component_1_food_cost = 17				# Same as @shield_m_t3_cost
-@genetic_component_1_food_upkeep = 0.034		# Sane as @shield_m_t3_upkeep_alloys
+@genetic_component_1_food_cost = 30				# Same as @shield_m_t3_cost
+@genetic_component_1_food_upkeep = 0.045		# Sane as @shield_m_t3_upkeep_alloys
 @genetic_component_1_rare_cost = 0
 
-@genetic_component_2_food_cost = 17				# Same as @shield_m_t4_cost
-@genetic_component_2_food_upkeep = 0.034		# Sane as @shield_m_t4_upkeep_alloys
+@genetic_component_2_food_cost = 30				# Same as @shield_m_t4_cost
+@genetic_component_2_food_upkeep = 0.068		# Sane as @shield_m_t4_upkeep_alloys
 @genetic_component_2_rare_cost = 0.50			# Same as @m_t4_rare
 
-@genetic_component_3_food_cost = 22				# Same as @shield_m_t5_cost
-@genetic_component_3_food_upkeep = 0.044		# Sane as @shield_m_t5_upkeep_alloys
+@genetic_component_3_food_cost = 45				# Same as @shield_m_t5_cost
+@genetic_component_3_food_upkeep = 0.102		# Sane as @shield_m_t5_upkeep_alloys
 @genetic_component_3_rare_cost = 0.65			# Same as @m_t5_rare
 
 #####################

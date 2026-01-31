@@ -2057,6 +2057,14 @@ roboticist = {
 			}
 			alloys = 0.5
 		}
+		upkeep = {
+			trigger = {
+				owner = {
+					has_active_tradition = tr_cybernetics_metabolic_reprocessing
+				}	
+			}
+			alloys = 0.35
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -2134,6 +2142,15 @@ roboticist = {
 		}
 		planet_amenities_add = 200
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				has_active_tradition = tr_cybernetics_metabolic_reprocessing
+			}
+		}
+		bonus_pop_growth_mult = 0.05
 	}
 
 	triggered_planet_modifier = {
@@ -2234,7 +2251,7 @@ healthcare = {
 					healthcare_is_genomic_researcher_trigger = yes
 				}
 			}
-			society_research = 3
+			society_research = 1.75
 		}
 		produces = {
 			trigger = {
@@ -2247,7 +2264,7 @@ healthcare = {
 					has_completed_genetic_situation = yes
 				}
 			}
-			society_research = 1.5
+			society_research = 1.75
 		}
 		upkeep = {
 			trigger = {
@@ -2620,6 +2637,19 @@ necro_apprentice = {
 			}
 			minerals = @living_standard_food_normal
 		}
+	}
+
+	triggered_planet_pop_group_modifier_for_species = {
+		potential = {
+			NOT = {
+				has_trait = trait_necrophage
+			}
+		}
+		bonus_pop_growth = 0.5
+	}
+
+	triggered_planet_modifier = {
+		fake_pop_growth_mod = 0.5
 	}
 
 	triggered_planet_modifier = {

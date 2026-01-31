@@ -6,11 +6,11 @@ tech_nm_utilization_1 = {
 	tier = 4
     category = { particles }
     prerequisites = {
-		"tech_zero_point_power"
+		"tech_jump_drive_1"
 	}
 	modifier = {
 		ship_ftl_jumpdrive_range_mult = 0.1
-		ship_jumpdrive_cooldown_mult = 0.1
+		ship_jumpdrive_cooldown_mult = -0.1
 	}
 	weight_modifier = {
 		modifier = {

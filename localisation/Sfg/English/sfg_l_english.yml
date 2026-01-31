@@ -152,8 +152,9 @@ tr_supremacy_master_shipwrights_desc:7 "§BUnlocks Agenda§!: §Y$agenda_militar
 
  AVC_HYPER_DRIVE_4_CIVILIAN:0 "$tech_avc_hyper_drive_4$"
  AVC_HYPER_DRIVE_4_DESC_CIVILIAN:0 "$tech_avc_hyper_drive_4_desc$"
-
-
+ HYPER_DRIVE_4: "Hyper Drive IV"
+ HYPER_DRIVE_4_DESC:1 "$HYPER_DRIVE_1_DESC$"
+ 
  #Crystal Plating
  CRYSTAL_ARMOR_3:0 "$tech_crystal_armor_3$"
  CRYSTAL_ARMOR_3_DESC:0 "$tech_crystal_armor_3_desc$"

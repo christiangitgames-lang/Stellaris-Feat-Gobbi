@@ -87,7 +87,7 @@ corvette = {
 	enable_3dview_in_ship_browser = yes
 
 	role_background = "GFX_role_selection_corvette"
-	ship_roles = { screen gunship artillery brawler }
+	ship_roles = { gunship artillery brawler }
 	triggered_ship_roles = {
 		{
 			name = brawler_stealth

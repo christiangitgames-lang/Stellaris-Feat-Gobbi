@@ -31,7 +31,7 @@ offspring_corvette = {
 	use_shipnames_from = corvette
 
 	default_behavior = swarm
-	ship_roles = { screen gunship artillery brawler }
+	ship_roles = { gunship artillery brawler }
 
 	triggered_ship_roles = {
 		{

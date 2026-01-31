@@ -42,6 +42,9 @@ weapon_component_template = {
 	potential = {
 		ship_uses_mauler_components = no
 	}
+	ship_modifier = {
+		weapon_type_explosive_weapon_damage_mult = 0.025
+	}
 }
 
 ### Missile Launcher
@@ -75,6 +78,9 @@ weapon_component_template = {
 	potential = {
 		ship_uses_mauler_components = no
 	}
+	ship_modifier = {
+		weapon_type_explosive_weapon_damage_mult = 0.045
+	}
 }
 
 ### Strike Missile Launcher
@@ -106,8 +112,8 @@ weapon_component_template = {
 	potential = {
 		ship_uses_mauler_components = no
 	}
-	modifier = {
-		ship_weapon_damage = 0.075
+	ship_modifier = {
+		weapon_type_explosive_weapon_damage_mult = 0.075
 	}
 }
 
@@ -150,8 +156,8 @@ weapon_component_template = {
 			no_resource_for_component = { RESOURCE = volatile_motes }
 		}
 	}
-	modifier = {
-		ship_weapon_damage = 0.1
+	ship_modifier = {
+		weapon_type_explosive_weapon_damage_mult = 0.1
 	}
 }
 
@@ -193,8 +199,9 @@ weapon_component_template = {
 			no_resource_for_component = { RESOURCE = volatile_motes }
 		}
 	}
-	modifier = {
-		ship_weapon_damage = 0.1
+	ship_modifier = {
+		weapon_type_explosive_weapon_damage_mult = 0.1
+		ship_tracking_add = 1
 	}
 }
 
@@ -252,9 +259,6 @@ weapon_component_template = {
 			}
 			food = @m_t3_upkeep_energy
 		}
-	}
-	modifier = {
-		ship_weapon_damage = 0.05
 	}
 }
 
@@ -317,9 +321,6 @@ weapon_component_template = {
 			no_resource_for_component = { RESOURCE = volatile_motes }
 		}
 	}
-	modifier = {
-		ship_weapon_damage = 0.1
-	}
 }
 
 # ####################
@@ -358,7 +359,7 @@ weapon_component_template = {
 			alloys = @m_t3_upkeep_alloys
 		}
 	}
-	modifier = {
+	ship_modifier = {
 		ship_orbital_bombardment_mult = 0.25
 	}
 }
@@ -404,7 +405,7 @@ weapon_component_template = {
 			no_resource_for_component = { RESOURCE = volatile_motes }
 		}
 	}
-	modifier = {
+	ship_modifier = {
 		ship_orbital_bombardment_mult = 0.3
 	}
 }
@@ -449,7 +450,7 @@ weapon_component_template = {
 			no_resource_for_component = { RESOURCE = volatile_motes }
 		}
 	}
-	modifier = {
+	ship_modifier = {
 		ship_orbital_bombardment_mult = 0.33
 	}
 }

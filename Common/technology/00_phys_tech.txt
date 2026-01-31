@@ -688,7 +688,8 @@ tech_self_aware_logic = {
 	weight = @tier2weight2
 
 	modifier = {
-		rare_tech_draw_chance_mult = 0.5
+		rare_tech_draw_chance_mult = 0.1
+		science_ship_survey_speed = 0.1
 	}
 
 	weight_modifier = {

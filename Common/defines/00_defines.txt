@@ -1052,7 +1052,7 @@
 		EMPIRE_SIZE_FLOOR						= 10	# Empire Size is never treated as under this
 		EMPIRE_SIZE_FROM_DISTRICTS				= 0.5	# Per district
 		EMPIRE_SIZE_FROM_SYSTEMS				= 1		# Per system
-		EMPIRE_SIZE_FROM_COLONIES				= 20	# Per planet 
+		EMPIRE_SIZE_FROM_COLONIES				= 25	# Per planet 
 		EMPIRE_SIZE_FROM_BRANCH_OFFICES			= 5		# Per branch office
 		EMPIRE_SIZE_FROM_POPS					= 0.005	# Per pop
 
@@ -1067,8 +1067,8 @@
 		DIPLOMACY_WEIGHT_TECHNOLOGY_FACTOR		= 0.1		# Factors Technology Level before it is added to diplo weight
 		DIPLOMACY_WEIGHT_NO_LEADER_PENALTY		= -0.25		# Penalty to diplomatic weight for not having the relevant council position
 
-		EMPIRE_SIZE_TECH_COST_PENALTY			= 0.0025	# Per empire size above base
-		EMPIRE_SIZE_TRADITION_COST_PENALTY		= 0.0025	# Per empire size above base
+		EMPIRE_SIZE_TECH_COST_PENALTY			= 0.0026	# Per empire size above base
+		EMPIRE_SIZE_TRADITION_COST_PENALTY		= 0.0026	# Per empire size above base
 		EMPIRE_SIZE_COUNCIL_AGENDA_COST_PENALTY = 0.0018 # Per empire size above base
 		
 		EMPIRE_SIZE_ARMIES_PENALTY				= 0.001 # Per empire size above base
@@ -2735,10 +2735,10 @@
 		VOIDWORMS_HOME_SYSTEM_FLAG = "voidworms_system"									# Voidworms home system flag (can be multiple systems)
 		VOIDWORMS_STARBASE = "voidworms_starbase"										# Voidworms starbase flag
 		VOIDWORMS_NEW_FLEET_NAME = "NAME_Voidworms"										# Voidworms fleet new when they split
-		VOIDWORMS_MINIMUM_POPS_TO_TARGET = 10											# Minimum pops on a planet to be targeted for bombardments
+		VOIDWORMS_MINIMUM_POPS_TO_TARGET = 1000											# Minimum pops on a planet to be targeted for bombardments
 		VOIDWORMS_MAXIMUM_POPS_TO_KILL = 300											# Maximum of pops a voidworm fleet may kill in a single attack
 		VOIDWORMS_MAXIMUM_POPS_TO_KILL_CIVILIAN = 100									# Maximum of pops a voidworm fleet may kill in a single attack (Civilian difficulty)
-		VOIDWORMS_NAVAL_CAP_PER_FLEET = { 80 100 }										# Limit of used naval capacity allowed per voidworm fleet
+		VOIDWORMS_NAVAL_CAP_PER_FLEET = { 240 300 }										# Limit of used naval capacity allowed per voidworm fleet
 		VOIDWORM_KILLED_POPULATION_COUNT = "voidworm_killed_population_count"			# Variables holding a voidworm fleet kill count in the current attack
 		VOIDWORM_ATTACK_AGAINST_PLAYER_COOLDOWN_DAYS = 9000								# How long a country cannot be targeted by a voidworm attack after having being targeted
 		VOIDWORM_RECENTLY_TARGETED_FLAG = "was_recently_targeted_by_voidworms"			# Flag used to prevent voidworms attack

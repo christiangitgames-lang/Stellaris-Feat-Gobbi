@@ -1,9 +1,9 @@
 @base_tradition_agenda_cost = 7000
-@basefast_agenda_cost = 7000
-@fast_agenda_cost = 5660 #in mod was 3500
-@very_fast_agenda_cost = 3500 #in mod wsas 700
+@basefast_agenda_cost = 6300
+@fast_agenda_cost = 5000 #in mod was 3500
+@very_fast_agenda_cost = 1800 #in mod wsas 700
 agenda_military_project = {
-	agenda_cost = @base_tradition_agenda_cost
+	agenda_cost = @basefast_agenda_cost
 	allow = {
 		has_tradition = tr_supremacy_master_shipwrights
 	}

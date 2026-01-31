@@ -22,3 +22,18 @@ Fix? Angler rural districts now correctly give +1% growth instead of the incorre
 Early Game phase now lasts a maximum of 30 years, and an additional modifier is added: –33% station hull.
 Best AI
 Fix tooltip disruptor weapon, will fix tooltip in all weapon but for now only this.
+
+[b]minor fix[/b]
+Fix vari 
+Messo nomi parametri corretti
+Rebalance speciment that granted research, x3 vanilla instead x4
+Ribilanciato costo e produzione dei foreign_researcher dopo per allinearla alla produzione e costi della cetus.
+
+[b]Allignament[/b]
+
+[b]1.1.1[/b]
+Allignament last update cetus of 30/01/2026
+Ripristinati come in vanilla i reactor booster e i swarm missiles
+Specimen unity ribilanciati
+Automation migliorata
+Fix bug grafico

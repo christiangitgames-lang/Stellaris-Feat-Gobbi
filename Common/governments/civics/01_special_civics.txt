@@ -297,6 +297,7 @@ civic_ancient_caches_of_technology = {
 	random_weight = { base = @civic_default_random_weight }
 	modifier = {
 		planet_jobs_produces_mult = 0.5
+		bonus_automated_workforce_mult = 5.00
 	}
 }
 

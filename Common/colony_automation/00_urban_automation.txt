@@ -25,7 +25,9 @@ automate_urban_planet = {
 		1 = {
 			building = building_galactic_stock_exchange
 		}
-		
+		2_sfg = {
+			building = building_medical_1
+		}
 		2 = {
 			building = building_commercial_megaplex
 		}

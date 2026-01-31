@@ -115,7 +115,7 @@ spawning_drone = {
 					healthcare_is_genomic_researcher_trigger = yes
 				}
 			}
-			society_research = 3
+			society_research = 1.75
 		}
 		produces = {
 			trigger = {
@@ -128,7 +128,7 @@ spawning_drone = {
 					has_completed_genetic_situation = yes
 				}
 			}
-			society_research = 1.5
+			society_research = 1.75
 		}
 		upkeep = {
 			trigger = {

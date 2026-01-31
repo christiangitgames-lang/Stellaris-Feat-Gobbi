@@ -21,7 +21,7 @@
 @approach_cd_financial = 0.5
 
 # Components
-@inf_regen_perc = 0.01 # concept_inf_lm_armor_desc
+@inf_regen_perc = 0.005 # concept_inf_lm_armor_desc
 @inf_energy_speed = 0.02 # concept_inf_lm_armor_desc
 @inf_lm_AIincome = 50
 @inf_lm_AIstockpile = 200

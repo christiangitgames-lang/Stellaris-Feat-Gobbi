@@ -18,9 +18,9 @@ utility_component_template = {
 	# 	show_only_custom_tooltip = yes
 	# }
 	
-	ship_modifier = {
-		ships_upkeep_mult = -0.03
-	}
+	#ship_modifier = {
+		#ships_upkeep_mult = -0.03
+	#}
 	
 	prerequisites = { "tech_reactor_boosters_1" }
 	component_set = "REACTOR_BOOSTER_1"
@@ -52,9 +52,9 @@ utility_component_template = {
 	# 	show_only_custom_tooltip = yes
 	# }
 	
-	ship_modifier = {
-		ships_upkeep_mult = -0.06
-	}
+	#ship_modifier = {
+		#ships_upkeep_mult = -0.06
+	#}
 	
 	prerequisites = { "tech_reactor_boosters_2" }
 	component_set = "REACTOR_BOOSTER_2"
@@ -86,9 +86,9 @@ utility_component_template = {
 	# 	show_only_custom_tooltip = yes
 	# }
 	
-	ship_modifier = {
-		ships_upkeep_mult = -0.10
-	}
+	#ship_modifier = {
+		#ships_upkeep_mult = -0.10
+	#}
 	
 	prerequisites = { "tech_reactor_boosters_3" }
 	component_set = "REACTOR_BOOSTER_3"

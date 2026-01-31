@@ -1,4 +1,4 @@
-@section_cost = 80
+@section_cost = 240
 
 #BOW
 

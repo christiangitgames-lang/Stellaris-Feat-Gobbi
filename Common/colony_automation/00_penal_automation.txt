@@ -24,7 +24,7 @@ automate_penal_planet = {
 				always = yes
 			}
 		}
-
+		
 		2 = {
 			building = building_production_center
 			available = {
