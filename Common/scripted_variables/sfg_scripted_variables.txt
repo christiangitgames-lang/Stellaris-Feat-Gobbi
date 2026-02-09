@@ -21,3 +21,16 @@
 @ResourceMaxStandard = 1000
 @ResourceMaxHigh = 1500
 @ResourceMaxHuge = 3000
+
+
+#proxy incremente pay influence
+@proxy_influence_100 = 200
+@proxy_influence_120 = 250
+@proxy_influence_150 = 300
+@proxy_influence_200 = 350
+
+@pay_proxy_war_additional_resources_30 = -30
+@pay_proxy_war_additional_resources_50 = -50
+@pay_proxy_war_additional_resources_25 = -25
+@pay_proxy_war_additional_resources_60 = -60
+@pay_proxy_war_additional_resources_40 = -40

@@ -525,6 +525,17 @@ action_start_proxy_war = {
 			fail_text = "PROXY_WAR_ON_COOLDOWN"
 			NOT = { has_country_flag = proxy_war_cooldown }
 		}
+		custom_tooltip = {
+			#fail_text = "phi_requires_neutral_opinion_or_supremacist"
+			OR = {
+				AND = {
+					is_ai = yes
+					NOT = { has_country_flag = was_human }
+				}
+				opinion_level = { who = from level >= neutral }
+				from = { is_fallen_empire = no }
+			}
+		}
 	}
 }
 

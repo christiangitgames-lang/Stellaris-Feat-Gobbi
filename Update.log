@@ -37,3 +37,21 @@ Ripristinati come in vanilla i reactor booster e i swarm missiles
 Specimen unity ribilanciati
 Automation migliorata
 Fix bug grafico
+
+
+[h1][b]1.1.2 Rebalance Proxy War[/b][/h1][/b]
+
+[h3][b]Proxy War:[/h3][/b]
+[list]
+[*]Azione diplomatica tramite Proxy war più costose in generale.
+[*]Puoi fare una proxy war ogni anno invece di ogni mese.
+[*]Puoi fare far il war goal "proxy war" se il bersaglio ha un claim o se il bersaglio è vicino al difensore e ha una cattiva opinione (< neutral)
+[*]Ora la "proxy war" da war goal proxy war ha un costo in trust o intell di 40 invece di 30.
+[*]Il war goal open border non disponibile per una proxy war
+
+[h3][b]Other[/h3][/b]
+Point defence energy hanno accuracy 80-85-90%
+Per fare guerra end threath a un giocatore che è andato in ascension crisi deve avere almeno il livello crisi 3 o essere "neghborgh" o alleato di uno vicino.
+La crisi ascension può andare in guerra con chiunque dal livello 2, sennò solo ai vicini.
+TOlto azzeramento totale del malus per ap shared destiny e civica vassali per i suoi vassali in cambio l'ho potenziato il massimo di vassali senza ricevere svantaggi da 1 a 3.
+Carrier hp 10.000 invece di 12.000

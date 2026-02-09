@@ -61,6 +61,15 @@ large_ship_ed = {
 				sr_zro = @salvagecostlargerare
     		}
 	}
+	ai_ship_data = {
+		fraction = {
+			base = 10
+			modifier = {
+				factor = 2
+				is_preferred_weapons = weapon_type_strike_craft
+			}
+		}
+	}
 }
 
 # Extradimensional Medium Ship
@@ -91,6 +100,16 @@ medium_ship_ed = {
 				energy = @salvagecostmedium
 				sr_zro = @salvagecostmediumrare
     		}
+	}
+
+	ai_ship_data = {
+		fraction = {
+			base = 10
+			modifier = {
+				factor = 2
+				is_preferred_weapons = weapon_type_explosive
+			}
+		}
 	}
 }
 
@@ -123,6 +142,11 @@ small_ship_ed = {
 				sr_zro = @salvagecostsmallrare
     		}
 	}
+	ai_ship_data = {
+		fraction = {
+			base = 15
+		}
+	}
 }
 
 # Dimensional Portal
@@ -136,7 +160,7 @@ dimensional_portal_ed = {
 		ships_upkeep_mult = -0.25
 	}
 	max_hitpoints = @hpship_150000
-	size_multiplier = 16
+	size_multiplier = 80
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0

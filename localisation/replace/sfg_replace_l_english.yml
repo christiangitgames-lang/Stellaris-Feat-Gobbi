@@ -1,3 +1,7 @@
 ﻿l_english:
 #from pop_factions_l_english.yml
 PROGRESSIVE_FREE_MOVEMENT_DESC:1 "Ensuring the free movement of Pops by prohibiting/limited forced Resettlement and disabling Migration Controls will please the [Root.GetName].""
+
+
+#civic
+civic_tooltip_feudal_realm_effects:7 "- §GEnables§! an councilior §Yagenda§! that shifts vassals' ethos towards us.\n- Ignore §YDiplomatic Requirements§! when proposing §YSubjugation§!\n- Your §YSubjects§! cannot have the following Agreement Terms:\n$t$$TRIGGER_FAIL$§Y$subject_cannot_expand$§!\n$t$$TRIGGER_FAIL$§YDo not join subject wars§!\n$t$$TRIGGER_FAIL$§Y$subject_can_not_do_diplomacy$§!"

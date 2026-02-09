@@ -411,7 +411,7 @@ job_weights_manual_corrections = {
 #		}
 #	}
 #	modifier = {
-#		subtract = species.modifier:pop_slave_bonus_workforce_mult
+#		subtract = species.modifier:planet_jobs_slave_produces_mult
 #		NOT = {
 #			is_job_of_pop_category = {
 #				job = $JOB$
@@ -3423,4 +3423,22 @@ mentor_scale_value = {
 	}
 	divide = 100
 	max = 40 # Caps at 4k jobs per category
+}
+
+solarpunk_script_value = {
+	base = 0
+	add = trigger:max_naval_capacity
+	mult = 0.7
+}
+
+capital_tier_minus_1_value = {
+	base = -1
+	add = trigger:capital_tier
+}
+
+imperious_architecture_scaling_value = {
+	base = 2
+	pow = value:capital_tier_minus_1_value
+	mult = 0.5
+	floor = yes
 }

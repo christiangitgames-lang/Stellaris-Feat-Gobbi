@@ -940,7 +940,7 @@
 		FALLEN_EMPIRE_INNER_BOUNDARY		= 0		# Inner boundary of galaxy that fallen empire generation will try to avoid
 
 		COUNCIL_AGENDA_BASE_COUNCILOR_MONTHLY_PROGRESS = 10.0		# Monthly progress gained towards advancing an agenda per councilor
-		COUNCIL_AGENDA_COUNCILOR_PROGRESS_PER_SKILL = 1.0		# Monthly progress gained towards advancing an agenda per councilor skill level
+		COUNCIL_AGENDA_COUNCILOR_PROGRESS_PER_SKILL = 0.5		# Monthly progress gained towards advancing an agenda per councilor skill level
 		COUNCIL_AGENDA_COOLDOWN 				= 10800			# Number of days before you can pick the same agenda after launching it
 		COUNCIL_AGENDA_FINISH_MODIFIER_DURATION = 3600 			# Duration of agenda finish modifier. Should match @agenda_finish_modifier_duration
 		COUNCIL_AGENDA_HIGH_LEGITIMACY_MODIIFER = 0.25 		# Maximum Agenda speed modifier from high legitimacy (i.e. at 100% Legitimacy)
@@ -1360,9 +1360,9 @@
 		SPY_NETWORK_ENCRYPTION_DECRYPTION_LEVELS_MIN = -50		# Lower bounds on the infiltration level modifier value
 		SPY_NETWORK_ENCRYPTION_DECRYPTION_LEVELS_MAX = 50		# Upper bounds on the infiltration level modifier value
 		SPY_NETWORK_MAX_POWER				= 100		# Including all modifiers, how powerful can a Spy Network ever be?
-		SPY_NETWORK_MAX_ENVOYS_COUNT		= 1			# How many envoys can be assigned to build a single spy network?
-		SPY_NETWORK_DAILY_ENVOY_SCORE		= 2.0		# How much progression do you get for each envoy
-		SPY_NETWORK_SPRAWL_SCORE_SCALE		= 200.0		# This many empire sprawl in the opposing empire adds 1 to daily spy network progression.
+		SPY_NETWORK_MAX_ENVOYS_COUNT		= 1		# How many envoys can be assigned to build a single spy network?
+		SPY_NETWORK_DAILY_ENVOY_SCORE		= 1.5		# How much progression do you get for each envoy
+		SPY_NETWORK_SPRAWL_SCORE_SCALE		= 400.0		# This many empire sprawl in the opposing empire adds 1 to daily spy network progression.
 		SPY_NETWORK_BASE_LEVEL_SCORE		= 5.0		# It takes (SPY_NETWORK_BASE_LEVEL_SCORE) + (Current Level * SPY_NETWORK_PER_LEVEL_SCORE) points to increase spy network level
 		SPY_NETWORK_PER_LEVEL_SCORE			= 5.0		# Per level portion of the above formula
 		SPY_NETWORK_MONTHLY_DECAY			= 1.0		# If we don't have an envoy assigned to a spy network or it's above the max value, it decays at this many levels per month
@@ -1719,7 +1719,7 @@
 
 		SHIP_MAX_EVASION					= 0.9		# The maximum evasion value a ship is allowed to have (percent)
 
-		MAX_DAMAGE_SCALING					= 16			# The maximum scaling value a target is allowed to have (ship size)
+		MAX_DAMAGE_SCALING					= 100		# The maximum scaling value a target is allowed to have (ship size)
 
 		ASSIST_CLOAKING_DETECTION_ORBIT_DISTANCE = 10.0	# The orbiting distance of the ship in a process of assisting cloaking detection
 

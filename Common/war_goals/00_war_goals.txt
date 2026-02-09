@@ -119,33 +119,7 @@ wg_end_threat = {
 		}
 	}
 	possible = {
-		OR = {
-			any_system_within_border = {
-				has_hyperlane_to = from
-			}
-			any_country = {
-				any_system_within_border = {
-					has_hyperlane_to = from
-				}
-				OR = {
-					root = { is_overlord_to = prev }
-					is_in_federation_with = root
-				}
-			}
-			any_country = {
-				any_system_within_border = {
-					has_hyperlane_to = from
-				}
-				is_at_war_with = from
-				OR = {
-					has_defensive_pact = root
-					root = { is_guaranteeing = prev }
-				}
-				any_system_within_border = {
-					has_hyperlane_to = root
-				}
-			}
-		}
+		have_one_system_nearly = yes
 	}
 
 	ai_weight = {
@@ -200,33 +174,7 @@ wg_end_threat_swarm = {
 		}
 	}
 	possible = {
-		OR = {
-			any_system_within_border = {
-				has_hyperlane_to = from
-			}
-			any_country = {
-				any_system_within_border = {
-					has_hyperlane_to = from
-				}
-				OR = {
-					root = { is_overlord_to = prev }
-					is_in_federation_with = root
-				}
-			}
-			any_country = {
-				any_system_within_border = {
-					has_hyperlane_to = from
-				}
-				is_at_war_with = from
-				OR = {
-					has_defensive_pact = root
-					root = { is_guaranteeing = prev }
-				}
-				any_system_within_border = {
-					has_hyperlane_to = root
-				}
-			}
-		}
+		have_one_system_nearly = yes
 	}
 
 	ai_weight = {
@@ -255,33 +203,7 @@ wg_end_threat_psionics = {
 		}
 	}
 	possible = {
-		OR = {
-			any_system_within_border = {
-				has_hyperlane_to = from
-			}
-			any_country = {
-				any_system_within_border = {
-					has_hyperlane_to = from
-				}
-				OR = {
-					root = { is_overlord_to = prev }
-					is_in_federation_with = root
-				}
-			}
-			any_country = {
-				any_system_within_border = {
-					has_hyperlane_to = from
-				}
-				is_at_war_with = from
-				OR = {
-					has_defensive_pact = root
-					root = { is_guaranteeing = prev }
-				}
-				any_system_within_border = {
-					has_hyperlane_to = root
-				}
-			}
-		}
+		have_one_system_nearly = yes
 	}
 
 	ai_weight = {
@@ -306,33 +228,7 @@ wg_end_threat_assimilators = {
 		from = { has_valid_civic = civic_machine_assimilator }
 	}
 	possible = {
-		OR = {
-			any_system_within_border = {
-				has_hyperlane_to = from
-			}
-			any_country = {
-				any_system_within_border = {
-					has_hyperlane_to = from
-				}
-				OR = {
-					root = { is_overlord_to = prev }
-					is_in_federation_with = root
-				}
-			}
-			any_country = {
-				any_system_within_border = {
-					has_hyperlane_to = from
-				}
-				is_at_war_with = from
-				OR = {
-					has_defensive_pact = root
-					root = { is_guaranteeing = prev }
-				}
-				any_system_within_border = {
-					has_hyperlane_to = root
-				}
-			}
-		}
+		have_one_system_nearly = yes
 	}
 
 	ai_weight = {

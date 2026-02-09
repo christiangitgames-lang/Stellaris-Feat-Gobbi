@@ -292,10 +292,6 @@ refresh_subject_count_loyalty_penalty = {
 	}
 	if = {
 		limit = {
-			NOR = {
-				has_civic = civic_feudal_realm
-				has_ascension_perk = ap_shared_destiny
-			}
 			subjects > 1
 		}
 		every_subject = {

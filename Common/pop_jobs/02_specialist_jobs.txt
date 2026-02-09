@@ -1056,6 +1056,8 @@ bureaucrat = {
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
+	inline_script = "jobs/ethic_job_modifiers_memorialist"
+
 	##Stability
 	triggered_planet_modifier = {
 		potential = {
@@ -2144,13 +2146,23 @@ roboticist = {
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
-	triggered_planet_modifier = {
+	triggered_planet_pop_group_modifier_for_all = {
 		potential = {
 			owner = {
 				has_active_tradition = tr_cybernetics_metabolic_reprocessing
 			}
 		}
-		bonus_pop_growth_mult = 0.05
+		bonus_pop_growth = 0.5
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_cybernetics_metabolic_reprocessing
+			}
+		}
+		fake_pop_growth_mod = 0.5
 	}
 
 	triggered_planet_modifier = {

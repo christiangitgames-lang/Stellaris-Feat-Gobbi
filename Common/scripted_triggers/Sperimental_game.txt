@@ -1,9 +1,7 @@
 Can_Branch_office_on_gestait = {
 	always = no
 }
-Can_Branch_office_on_megacorp = {
-	always = no
-}
+
 valid_for_Upgrade_system = {
 	has_deposit = no
 	has_anomaly = no
@@ -26,3 +24,8 @@ able_coop_ascension_perk = {
 change_scripted_ideal = {
 	always = no
 }
+
+#4.0 obsolete
+# Can_Branch_office_on_megacorp = {
+# 	always = no
+# }

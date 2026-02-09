@@ -381,7 +381,7 @@ society_scaling_factor = {
 	max = 18
 }
 production_science_years_passed = {
-	base = 7
+	base = 6
 	mult = trigger:years_passed
 	max = 500
 }

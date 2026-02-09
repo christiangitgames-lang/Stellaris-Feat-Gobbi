@@ -1,0 +1,33 @@
+cb_proxy_war = {
+	show_in_diplomacy = no
+	show_notification = no
+	potential = {
+		is_country_type = default
+	}
+	is_valid = {
+		OR = {
+			AND = {
+				opinion_level = {
+					who = from
+					level < neutral
+				}
+				is_neighbor_or_neighbor_ally = yes
+			}
+			has_claim = FROM
+			from = {
+				any_subject = {
+					root = { has_claim = prev }
+				}
+			}
+		}
+	}
+	proxy_war_resources = {
+		category = proxy_war
+		cost = {
+			influence = @proxy_influence_120
+		}
+	}
+	on_proxy_war_start = {
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_40 }
+	}
+}

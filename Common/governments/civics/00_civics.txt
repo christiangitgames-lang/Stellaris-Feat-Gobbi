@@ -543,7 +543,7 @@ civic_feudal_realm = {
 	description = "civic_tooltip_feudal_realm_effects"
 	modifier = {
 		country_naval_capacity_contribution_from_subjects_mult = 0.05
-		divided_patrongage_max_subjects = 1
+		divided_patrongage_max_subjects = 3
 		country_subject_acceptance_add = 25
 		add_attunement_the_eater_of_worlds = @civic_attunement1
 	}

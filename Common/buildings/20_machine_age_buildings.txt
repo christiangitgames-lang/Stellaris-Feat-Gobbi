@@ -2024,7 +2024,7 @@ building_augmentation_center = {
 			owner = {
 				OR = {
 					has_active_tradition = tr_cybernetics_augmentation_centers
-					has_active_tradition = tr_cybernetics_assimilator_augmentation_centers
+					has_valid_civic = civic_machine_assimilator
 				}
 			}
 		}
@@ -2055,6 +2055,16 @@ building_augmentation_center = {
 		potential = {
 			exists = owner
 			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_augmentor_drone_add = 200
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_machine_assimilator }
 		}
 		modifier = {
 			job_augmentor_drone_add = 200

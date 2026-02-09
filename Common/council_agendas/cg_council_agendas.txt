@@ -12,7 +12,10 @@ feudal_shift_pursuit = {
 	}
 	#custom_tooltip = found_relic
 	potential = {
-		has_valid_civic = civic_feudal_realm
+		OR = {
+			has_valid_civic = civic_feudal_realm
+			has_ascension_perk = ap_shared_destiny
+		}
 	}
 	modifier = {
 		

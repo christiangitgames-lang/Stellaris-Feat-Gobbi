@@ -2,7 +2,7 @@
 l_english:
 
 #Ascension perk
-phi_ap_shared_destiny_tooltip: "Your §YSubjects§! do not suffer $r_loyalty$ penalties from you having multiple Subjects." #\nEnables an edict that shifts vassals' ethos towards us.
+sfg_ap_shared_destiny_tooltip: "§GEnables§! an councilior §Yagenda§! that shifts vassals' ethos towards us." #\nEnables an edict that shifts vassals' ethos towards us.
 #observation
 tech_observer_science_1: "Camouflage Observer"
 tech_observer_science_1_desc: "Equipped with advanced camouflage, this device allows observers to blend seamlessly into their surroundings, enabling undetected observation of pre-FTL civilizations."
@@ -169,6 +169,8 @@ tr_supremacy_master_shipwrights_desc:7 "§BUnlocks Agenda§!: §Y$agenda_militar
  mod_planet_jobs_cyborg_worker_society_research_produces_mult:0 "Cyborg Worker Society Research Output"
  mod_planet_jobs_cyborg_worker_engineering_research_produces_mult:0 "Cyborg Worker Engineering Research Output"
 
+#crysis ascension
 
+menp_relentless_aggression_tt:0 "You can declare wars §Y$war_goal_wg_wipe_them_out§! against anyone, they don’t have to be your neighbor."
 
 

@@ -63,3 +63,53 @@ wait_powerfull_unlock_tradition = {
 	}
 	
 }
+#this -> io from -> target diplomatica root -> io
+have_one_system_nearly = {
+	OR = {
+		any_system_within_border = {
+			has_hyperlane_to = from
+		}
+		any_country = {
+			any_system_within_border = {
+				has_hyperlane_to = from
+			}
+			OR = {
+				root = { is_overlord_to = prev }
+				is_in_federation_with = root
+			}
+		}
+		any_country = {
+			any_system_within_border = {
+				has_hyperlane_to = from
+			}
+			is_at_war_with = from
+			OR = {
+				has_defensive_pact = root
+				root = { is_guaranteeing = prev }
+			}
+			any_system_within_border = {
+				has_hyperlane_to = root
+			}
+		}
+	}
+}
+is_neighbor_or_neighbor_ally = {
+	OR ={
+		is_neighbor_of = FROM
+		any_country = {
+			is_neighbor_of = FROM
+			OR = {
+				root = { is_overlord_to = prev }
+				is_in_federation_with = root
+			}
+		}
+		any_country = {
+			is_neighbor_of = FROM
+			is_at_war_with = FROM
+			OR = {
+				has_defensive_pact = root
+				root = { is_guaranteeing = prev }
+			}
+		}
+	}
+}

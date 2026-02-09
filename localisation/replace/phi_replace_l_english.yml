@@ -35,6 +35,4 @@ archaeo_overcharger_desc:0 "Starbase Modifier:\nShield Hit Point: +500, §G+33%�
 leader_trait_repair_crew_effect:0 "$SYSTEM_EFFECTS_TXT$:\n$t$Friendly Ships in System:\n$tt$Monthly Hull Points Repaired: §G+1%§!"
 
 ap_grasp_the_void_tech_effect:0 "§Y$sm_anchorage$§!: §G+1§! §YNaval capacity§! in anchorage\n§YFTL travel technologies§! now appear at §Y1.5§! times the normal rate."
-phi_ap_shared_destiny_tooltip: "Your §YSubjects§! do not suffer $r_loyalty$ penalties from you having multiple Subjects.\nEnables an edict that shifts vassals' ethos towards us.\nAdd §G+4§! envoys."
- civic_feudal_realm_desc:0 "This society is organized in a feudal manner, with a monarch whose rule relies on powerful vassals that govern their territories with considerable autonomy.\nYour §YSubjects§! do not suffer $r_loyalty$ penalties from you having multiple Subjects.\nEnables an councilior agenda that shifts vassals' ethos towards us."#\nAdd §G+4§! envoys.
 

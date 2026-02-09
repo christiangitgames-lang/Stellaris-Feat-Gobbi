@@ -39,11 +39,11 @@ cb_claim = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 120
+			influence = @proxy_influence_120
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -30 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_30 }
 	}
 }
 
@@ -85,11 +85,11 @@ cb_subjugation = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 200
+			influence = @proxy_influence_200
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -50 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_50 }
 	}
 }
 
@@ -159,11 +159,11 @@ cb_humiliation = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 100
+			influence = @proxy_influence_100
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -25 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_25 }
 	}
 }
 
@@ -226,11 +226,11 @@ cb_ideology = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 100
+			influence = @proxy_influence_100
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -25 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_25 }
 	}
 }
 
@@ -251,11 +251,11 @@ cb_sublimation = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 200
+			influence = @proxy_influence_200
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -50 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_50 }
 	}
 }
 
@@ -280,11 +280,11 @@ cb_purification = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 200
+			influence = @proxy_influence_200
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -50 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_50 }
 	}
 }
 
@@ -313,11 +313,11 @@ cb_hunger = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 200
+			influence = @proxy_influence_200
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -50 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_50 }
 	}
 }
 
@@ -339,11 +339,11 @@ cb_despoliation = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 100
+			influence = @proxy_influence_100
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -25 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_25 }
 	}
 }
 
@@ -368,11 +368,11 @@ cb_pirate_raid = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 100
+			influence = @proxy_influence_100
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -25 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_25 }
 	}
 }
 
@@ -400,11 +400,11 @@ cb_colossus = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 150
+			influence = @proxy_influence_150
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -40 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_40 }
 	}
 }
 
@@ -440,11 +440,11 @@ cb_stop_colossus = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 150
+			influence = @proxy_influence_150
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -40 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_40 }
 	}
 }
 
@@ -499,11 +499,11 @@ cb_containment = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 200
+			influence = @proxy_influence_200
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -50 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_50 }
 	}
 }
 
@@ -529,11 +529,11 @@ cb_psionics_containment = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 200
+			influence = @proxy_influence_200
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -50 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_50 }
 	}
 }
 
@@ -550,11 +550,11 @@ cb_subject = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 150
+			influence = @proxy_influence_150
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -40 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_40 }
 	}
 }
 
@@ -590,11 +590,11 @@ cb_counterattack = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 120
+			influence = @proxy_influence_120
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -30 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_30 }
 	}
 }
 
@@ -627,11 +627,11 @@ cb_renegade_containment = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 150
+			influence = @proxy_influence_150
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -40 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_40 }
 	}
 }
 
@@ -665,11 +665,11 @@ cb_end_threat_renegade_containment = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 150
+			influence = @proxy_influence_150
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -40 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_40 }
 	}
 }
 
@@ -694,11 +694,11 @@ cb_revenge_for_eaten_star = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 200
+			influence = @proxy_influence_200
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -50 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_50 }
 	}
 }
 
@@ -725,11 +725,11 @@ cb_allegiance = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 150
+			influence = @proxy_influence_150
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -40 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_40 }
 	}
 }
 
@@ -757,11 +757,11 @@ cb_payback = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 150
+			influence = @proxy_influence_150
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -40 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_40 }
 	}
 }
 
@@ -785,11 +785,11 @@ cb_payback_punishment = {
 	proxy_war_resources = {
 		category = proxy_war
 		cost = {
-			influence = 150
+			influence = @proxy_influence_150
 		}
 	}
 	on_proxy_war_start = {
-		pay_proxy_war_additional_resources = { VALUE = -40 }
+		pay_proxy_war_additional_resources = { VALUE = @pay_proxy_war_additional_resources_40 }
 	}
 }
 

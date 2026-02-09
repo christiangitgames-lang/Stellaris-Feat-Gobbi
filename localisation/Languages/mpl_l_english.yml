@@ -174,7 +174,6 @@ cg_expansionist:0 "Expansionist jobs"
 
 mod_planet_administrators_society_research_produces_mult:0 "Administrators pop jobs £society_research£ produces mult:"
 
-cg_ap_shared_destiny_tooltip: "Your §YSubjects§! do not suffer $r_loyalty$ penalties from you having multiple Subjects. \nEnables an council agenda that shifts vassals' ethos towards us." #TO DO \nEnables an council agenda that shifts vassals' ethos towards us.
 
 sm_mining_bay:0 "Mining bay"
 

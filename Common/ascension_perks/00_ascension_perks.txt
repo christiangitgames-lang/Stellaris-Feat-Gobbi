@@ -1546,13 +1546,14 @@ ap_transcendent_learning = {
 
 ap_shared_destiny = {
 	on_enabled = {
+		custom_tooltip = "sfg_ap_shared_destiny_tooltip"
 		hidden_effect = {
 			country_event = { id = action.446 }
 		}
 	}
-
+	
 	modifier = {
-		divided_patrongage_max_subjects = 1
+		divided_patrongage_max_subjects = 3
 		specialist_subject_conversion_time_mult = -0.2
 		envoys_add = 2
 		add_attunement_the_instrument_of_desire = @ascension_perk_attunement1

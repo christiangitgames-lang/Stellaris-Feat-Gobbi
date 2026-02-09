@@ -2018,7 +2018,11 @@ can_support_branch_offices = {
 	#}
 	custom_tooltip = {
 		fail_text = BRANCH_OFFICE_NOT_REGULAR_EMPIRE
-		is_gestalt = no
+		
+		OR = {
+			is_gestalt = no
+			Can_Branch_office_on_gestait = yes
+		}
 		OR = {
 			is_country_type = default
 			is_country_type = primitive

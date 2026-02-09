@@ -110,6 +110,7 @@
 @battleship_collision_radius = 6
 @battleship_formation_priority = 50
 
+@carrier_hp = 10000
 @battleship_hp = 12000
 @battleship_evasion = 5
 @battleship_build_time = 480
@@ -118,6 +119,7 @@
 @battleship_upkeep_alloys = 4.0 # 0.8
 
 @battleship_logistic_upkeep_trade = 8
+
 
 ##################
 # TITAN
