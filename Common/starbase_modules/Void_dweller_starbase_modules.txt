@@ -90,25 +90,21 @@ starm_science_hub = {
 		}
 		produces = {
 			trigger = { years_passed > 50 }
-			society_research = 1
 			engineering_research = 1
 			physics_research = 1
 		}
 		produces = {
 			trigger = { years_passed > 75 }
-			society_research = 1
 			engineering_research = 1
 			physics_research = 1
 		}
 		produces = {
 			trigger = { years_passed > 100 }
-			society_research = 1
 			engineering_research = 1
 			physics_research = 1
 		}
 		produces = {
 			trigger = { years_passed > 125 }
-			society_research = 1
 			engineering_research = 1
 			physics_research = 1
 		}
@@ -116,8 +112,20 @@ starm_science_hub = {
 			energy = 6
 		}
 		upkeep = {
+			trigger = { years_passed > 50 }
+			energy = 1.5
+		}
+		upkeep = {
 			trigger = { years_passed > 75 }
-			energy = 6
+			energy = 1.5
+		}
+		upkeep = {
+			trigger = { years_passed > 100 }
+			energy = 1.5
+		}
+		upkeep = {
+			trigger = { years_passed > 125 }
+			energy = 1.5
 		}
 	}
 
@@ -192,7 +200,20 @@ starm_culture_hub = {
 			energy = 6
 		}
 		upkeep = {
-			energy = 6
+			trigger = { years_passed > 50 }
+			energy = 3
+		}
+		upkeep = {
+			trigger = { years_passed > 75 }
+			energy = 3
+		}
+		upkeep = {
+			trigger = { years_passed > 100 }
+			energy = 3
+		}
+		upkeep = {
+			trigger = { years_passed > 125 }
+			energy = 3
 		}
 	}
 

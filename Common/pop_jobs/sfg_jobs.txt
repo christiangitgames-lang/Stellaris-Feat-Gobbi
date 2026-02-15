@@ -281,3 +281,111 @@ calculator_foreign_researcher = {
 		}
 	}
 }
+deviant_trader = {
+	category = deviant_drone
+	is_capped_by_modifier = yes
+	can_set_priority = no
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_smuggling_rings
+			icon = deviant_trader
+		}
+		# Subterranean Liaison Officer
+		swap_type = {
+			trigger = {
+				trader_is_subterranean = yes
+			}
+			name = underground_trade_worker
+			desc = underground_trade_worker
+			weight = 5
+		}
+	}
+
+	tags = { trade }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+
+	resources = {
+		category = planet_traders
+		produces = {
+			trade = 8
+		}
+		produces = {
+			trigger = {
+				trader_is_subterranean = yes
+			}
+			trade = 2
+		}
+		upkeep = {
+			energy = 2
+			minerals = 1
+		}
+		upkeep = {
+			trigger = {
+				trader_is_subterranean = yes
+			}
+			energy = 2
+			minerals = 1
+		}
+	}
+
+	# overlord_resources = {
+	# 	category = planet_corporate_franchising_meddling
+	# 	produces = {
+	# 		trigger = {
+	# 			planet = {
+	# 				has_planet_flag = has_franchise_headquarters
+	# 			}
+	# 		}
+	# 		unity = 0.5
+	# 	}
+	# }
+
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		trader_is_subterranean = yes
+	# 	}
+	# 	planet_amenities_add = 300
+	# 	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	# }
+
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = { has_tradition = tr_mercantile_commercial_enterprise }
+	# 	}
+	# 	planet_amenities_add = 200
+	# 	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	# }
+
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = planet
+	# 		planet = {
+	# 			exists = orbital_defence
+	# 			orbital_defence = {
+	# 				exists = starbase
+	# 				starbase = {
+	# 					has_starbase_building = ring_trade_hub
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# 	planet_amenities_add = 100
+	# 	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	# }
+	weight = {
+		weight = @criminal_job_weight
+		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	#inline_script = "jobs/automodding_priority_trade"
+}

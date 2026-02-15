@@ -1020,7 +1020,7 @@ weapon_component_template = {
 
 	icon = "GFX_ship_part_disruptor_1"
 	icon_frame = 1
-	#color = { 1.0 1.0 1.0 1 }
+	#color = { 1.0 1.0 1.0 1 } 
 	potential = {
 		from = {
 			country_uses_bio_ships = no

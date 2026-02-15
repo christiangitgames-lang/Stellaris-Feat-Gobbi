@@ -141,7 +141,6 @@ ship_section_template = {
 			NOT = { is_preferred_weapons = weapon_type_strike_craft }
 		}
 	}
-
 	component_slot = {
 		name = "MEDIUM_GUN_01"
 		template = "medium_turret"
@@ -173,7 +172,7 @@ ship_section_template = {
 			alloys = @section_cost
 		}
 		logistics = {
-			trade = @fighter_logistic_upkeep_trade
+			trade = @Logistic_extra_fighter_logistic_upkeep_trade_1
 		}
 	}
 }
@@ -509,7 +508,7 @@ ship_section_template = {
 			alloys = @section_cost
 		}
 		logistics = {
-			trade = @fighter_logistic_upkeep_trade
+			trade = @Logistic_extra_fighter_logistic_upkeep_trade_1
 		}
 	}
 }
@@ -566,7 +565,7 @@ ship_section_template = {
 			alloys = @section_cost
 		}
 		logistics = {
-			trade = @fighters_logistic_upkeep_trade
+			trade = @Logistic_extra_fighter_logistic_upkeep_trade_2
 		}
 	}
 }

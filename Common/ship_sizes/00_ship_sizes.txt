@@ -159,6 +159,7 @@ corvette = {
 	potential_country = {
 		OR = {
 			is_ai = no
+			years_passed > 30
 			has_valid_civic = civic_hive_devouring_swarm
 			is_at_war = yes
 			any_neighbor_country = {
@@ -1408,6 +1409,8 @@ science = {
 	}
 	ship_modifier = {
 		ship_hyperlane_range_add = 3
+		ship_interstellar_speed_mult = 0.01
+		ship_ftl_jumpdrive_range_mult = 0.25
 	}
 	size_multiplier = 1
 	fleet_slot_size = 1

@@ -70,7 +70,7 @@ alloys_expenditure_civilian_ships = {
 	}
 
 	weight = {
-		weight = 0.6
+		weight = 0.1
 	}
 	desired_min = {
 		base = 100
@@ -97,7 +97,10 @@ alloys_expenditure_ships = {
 
 	weight = {
 		weight = 0.6
-
+		modifier = {
+			factor = 0.25
+			meets_basic_energy_threshold = no #no energy no fleet.
+		}
 		# spend more alloys building ships while at war
 		modifier = {
 			factor = 2

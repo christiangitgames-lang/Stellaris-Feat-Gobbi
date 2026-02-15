@@ -550,7 +550,7 @@ ship_section_template = {
 			alloys = @cruiser_section_cost
 		}
 		logistics = {
-			trade = @fighter_logistic_upkeep_trade
+			trade = @Logistic_extra_fighter_logistic_upkeep_trade_1
 		}
 	}
 }
@@ -861,7 +861,7 @@ ship_section_template = {
 			alloys = @battleship_section_cost
 		}
 		logistics = {
-			trade = @fighter_logistic_upkeep_trade
+			trade = @Logistic_extra_fighter_logistic_upkeep_trade_1
 		}
 	}
 }
@@ -1050,7 +1050,7 @@ ship_section_template = {
 			alloys = @battleship_section_cost
 		}
 		logistics = {
-			trade = @fighter_logistic_upkeep_trade
+			trade = @Logistic_extra_fighter_logistic_upkeep_trade_1
 		}
 	}
 }
@@ -1108,7 +1108,7 @@ ship_section_template = {
 			alloys = @battleship_section_cost
 		}
 		logistics = {
-			trade = @fighters_logistic_upkeep_trade
+			trade = @Logistic_extra_fighter_logistic_upkeep_trade_2
 		}
 	}
 }

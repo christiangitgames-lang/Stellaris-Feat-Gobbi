@@ -23,7 +23,7 @@ scientific_revolution = {
 			multiplier = value:edict_size_effect
 		}
 	}
-
+	
 	modifier = {
 		researcher_jobs_bonus_workforce_mult = 0.10
 		num_tech_alternatives_add = 1

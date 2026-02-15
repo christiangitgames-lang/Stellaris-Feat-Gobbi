@@ -949,7 +949,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_crystal_armor_2" }
 	component_set = "CRYSTAL_ARMOR_2"
-
+	upgrades_to = "SMALL_CRYSTAL_ARMOR_3"
 	modifier = {
 		ship_hull_add = @hull_S4
 	}
@@ -981,7 +981,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_crystal_armor_2" }
 	component_set = "CRYSTAL_ARMOR_2"
-
+	upgrades_to = "MEDIUM_CRYSTAL_ARMOR_3"
 	modifier = {
 		ship_hull_add = @hull_M4
 	}
@@ -1013,7 +1013,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_crystal_armor_2" }
 	component_set = "CRYSTAL_ARMOR_2"
-
+	upgrades_to = "LARGE_CRYSTAL_ARMOR_3"
 	modifier = {
 		ship_hull_add = @hull_L4
 	}
@@ -1160,7 +1160,7 @@ utility_component_template = {
 	}
 
 	component_set = "CRYSTAL_ARMOR_2_BIO"
-
+	upgrades_to = "SMALL_CRYSTAL_ARMOR_3_BIO"
 	modifier = {
 		ship_hull_add = @hull_S4
 	}
@@ -1196,7 +1196,7 @@ utility_component_template = {
 	}
 
 	component_set = "CRYSTAL_ARMOR_2_BIO"
-
+	upgrades_to = "MEDIUM_CRYSTAL_ARMOR_3_BIO"
 	modifier = {
 		ship_hull_add = @hull_M4
 	}

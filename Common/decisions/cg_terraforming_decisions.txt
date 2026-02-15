@@ -1,7 +1,7 @@
 ### STARTING POLLUTION ###
 @enacttime = 900
 @longenacttime = 1800
-decision_phi_pm_atmospheric_pollution = {
+decision__pm_atmospheric_pollution = {
 	owned_planets_only = yes
 	sound = event_laboratory_sound
 	icon = decision_satellite_in_orbit

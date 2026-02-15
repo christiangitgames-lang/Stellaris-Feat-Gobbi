@@ -92,7 +92,9 @@ GT_ship_corvette_alloys_cost_add = {
 	category = { voidcraft }	
 	prerequisites = { "tech_destroyers" }
 	weight = @tier3weight3
-	
+	potential = {
+		is_beastmasters_empire = yes #TO DO fare l'alternativa con bioship
+	}
 	modifier = {
 		ship_corvette_alloys_cost_add = -15
 	}

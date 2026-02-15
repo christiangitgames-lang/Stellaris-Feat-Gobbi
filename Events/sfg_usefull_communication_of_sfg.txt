@@ -47,7 +47,7 @@ country_event = {  #Deamon that fires all usefull communication of sfg feat gobb
 			id = sfg_usefull_communication_of_sfg.2 #can remote outpost
 		}
 		country_event = {
-			id = sfg_usefull_communication_of_sfg.10 #decision_phi_pm_atmospheric_pollution
+			id = sfg_usefull_communication_of_sfg.10 #decision__pm_atmospheric_pollution
 			days = 15
 		}
 		country_event = {
@@ -64,7 +64,7 @@ country_event = {  #Deamon that fires all usefull communication of sfg feat gobb
 		}
 	}
 }
-country_event = { #decision_phi_pm_atmospheric_pollution
+country_event = { #decision__pm_atmospheric_pollution
 	id = sfg_usefull_communication_of_sfg.2
 	is_triggered_only = yes
 	title = "can_have_remote_system.2.name"
@@ -85,7 +85,7 @@ country_event = { #decision_phi_pm_atmospheric_pollution
 		}
 	}
 }
-country_event = { #decision_phi_pm_atmospheric_pollution
+country_event = { #decision__pm_atmospheric_pollution
 	id = sfg_usefull_communication_of_sfg.10
 	hide_window = yes
 	is_triggered_only = yes
@@ -104,7 +104,7 @@ country_event = { #decision_phi_pm_atmospheric_pollution
 	}
 	immediate = {
 		every_owned_planet = { 
-			limit = { #decision_phi_pm_atmospheric_pollution
+			limit = { #decision__pm_atmospheric_pollution
 			has_modifier = phi_pm_atmospheric_pollution
 				NOR = {
 					has_planet_flag = disable_sfg_usefull_communication_of_sfg10
@@ -117,7 +117,7 @@ country_event = { #decision_phi_pm_atmospheric_pollution
 		}
 	}
 }
-planet_event = { #decision_phi_pm_atmospheric_pollution
+planet_event = { #decision__pm_atmospheric_pollution
 	id = sfg_usefull_communication_of_sfg.11
 	is_triggered_only = yes
 	title = "phi_pm_atmospheric_pollutionMessage.1.name"

@@ -5,14 +5,19 @@ namespace = sfg_ai
 # EXPLAINER:
 #	sfg_ai.0 yearly checker auto remove district building and build districts
 # have recycle code of mariominaccia
+#by .10 new code from gobbi
+#sfg_ai.10 add alloys and influence lost for fleet disabled
+#sfg_ai.20-29 start vital building 
 event = { #standard
 	id = sfg_ai.0
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
 		is_ai = yes
-		is_country_type = default
-		NOT = { has_ethic = ethic_gestalt_consciousness }
+		OR = {
+			average_empire = yes #standard empire
+			spiritualistic_empire = yes #spiritualista gestito
+		}
 		has_resource = { type = minerals amount > 500 }
 		OR = {
 			has_resource = { type = energy amount > 1000 }
@@ -77,10 +82,10 @@ planet_event = { #	cg_ai.1	Universally  remove buildings
 			owner = { add_resource = { minerals = @b1_minerals mult = prev.value:planet_building_refund_mult } } #da testare
 		}
 		#military
-		else_if = { limit = { owner = { used_naval_capacity_percent <= 0.5 is_at_war = no } has_building = building_stronghold } remove_building = building_stronghold }
-		else_if = { limit = { owner = { used_naval_capacity_percent <= 0.5 is_at_war = no } has_building = building_fortress } remove_building = building_fortress }
-		else_if = { limit = { owner = { used_naval_capacity_percent <= 0.5 is_at_war = no } has_building = building_dread_encampment } remove_building = building_dread_encampment }
-		else_if = { limit = { owner = { used_naval_capacity_percent <= 0.5 is_at_war = no } has_building = building_planetary_shield_generator } remove_building = building_planetary_shield_generator }
+		else_if = { limit = { owner = { used_naval_capacity_percent <= 0.5 militaristic_empire = no } has_building = building_stronghold } remove_building = building_stronghold }
+		else_if = { limit = { owner = { used_naval_capacity_percent <= 0.5 militaristic_empire = no } has_building = building_fortress } remove_building = building_fortress }
+		else_if = { limit = { owner = { used_naval_capacity_percent <= 0.5 militaristic_empire = no } has_building = building_dread_encampment } remove_building = building_dread_encampment }
+		else_if = { limit = { owner = { used_naval_capacity_percent <= 0.5 militaristic_empire = no } has_building = building_planetary_shield_generator } remove_building = building_planetary_shield_generator }
 		#luxury
 		else_if = { limit = { free_amenities > 3000 has_building = building_luxury_residence } remove_building = building_luxury_residence }
 		else_if = { limit = { free_amenities > 7000 has_building = building_paradise_dome } remove_building = building_paradise_dome owner = { add_resource = { minerals = @b1_2_minerals rare_crystals = @b2_rare_cost mult = prev.value:planet_building_refund_mult } } }
@@ -92,7 +97,7 @@ planet_event = { #	cg_ai.1	Universally  remove buildings
 		else_if = { limit = { has_building = building_factory_1 owner = { has_monthly_income = { resource = consumer_goods value > 25 } } } remove_building = building_factory_1 }
 		else_if = { limit = { has_building = building_factory_2 owner = { has_monthly_income = { resource = consumer_goods value > 100 } } } remove_building = building_factory_2 owner = { add_resource = { minerals = @b1_2_minerals rare_crystals = @b2_rare_cost mult = prev.value:planet_building_refund_mult } } }
 		else_if = { limit = { has_building = building_factory_3 owner = { has_monthly_income = { resource = consumer_goods value > 150 } } } remove_building = building_factory_3 owner = { add_resource = { minerals = @b1_3_minerals rare_crystals = @b2_rare_cost mult = prev.value:planet_building_refund_mult } } }
-		else_if = { limit = { owner = { is_at_war = no } has_building = building_foundry_1 owner = { has_monthly_income = { resource = alloys value > 100 } } } remove_building = building_foundry_1 }
+		else_if = { limit = { owner = { militaristic_empire = no } has_building = building_foundry_1 owner = { has_monthly_income = { resource = alloys value > 100 } } } remove_building = building_foundry_1 }
 		#rare resource
 		else_if = { limit = { has_building = building_crystal_plant owner = { has_monthly_income = { resource = rare_crystals value > 3 } } } remove_building = building_crystal_plant }
 		else_if = { limit = { has_building = building_chemical_plant owner = { has_monthly_income = { resource = volatile_motes value > 3 } } } remove_building = building_chemical_plant }
@@ -106,6 +111,7 @@ planet_event = { #	cg_ai.1	Universally  remove buildings
 		#else_if = { limit = { has_building = building_research_lab_2 } remove_building = building_research_lab_2 owner = { add_resource = { minerals = @b1_2_minerals exotic_gases = @b2_rare_cost mult = prev.value:planet_building_refund_mult } } }
 		
 		owner = { add_resource = { minerals = @b1_minerals mult = prev.value:planet_building_refund_mult } } #da testare
+		#TO DO rimuovere administration building e temple SE ha 3 ascension perk o perde energia/cg e ha meno di 100 energia/cg.
 		#if = { limit = { free_building_slots > 0 }
 			#owner = { add_resource = { minerals = @b1_minerals mult = prev.value:planet_building_refund_mult } } #da testare
 			#inline_script = "building_add/universalwr"
@@ -118,6 +124,7 @@ planet_event = { #	cg_ai.2	Universally  remove Districts
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		is_regular_planet_type = yes #non gestito pianeti speciali... troppo difficile
 		owner = {
 			is_ai = yes
 			is_country_type = default
@@ -127,8 +134,13 @@ planet_event = { #	cg_ai.2	Universally  remove Districts
 	
 	immediate = {
 			random_list = {
+				
 				100 = {
 					remove_district = district_mining
+					set_variable = {
+ 						which = from_d
+                    	value = 0
+					}
 					inline_script = "district_add/universalwr" #universal add district 
 					add_modifier = { modifier = sfg_ai_2 days = 180 }
 					modifier = {
@@ -144,33 +156,48 @@ planet_event = { #	cg_ai.2	Universally  remove Districts
 						OR = {
 							NOT = { has_district = district_mining }
 							owner = { has_monthly_income = { resource = minerals value < 100 } }
+							AND = {
+								food_planet = yes
+								num_districts = { type = district_farming value = 1 }
+							}
 						}
 					}
 				
 				}
 				100 = {
 					remove_district = district_generator
+					set_variable = {
+ 						which = from_d
+                    	value = 1
+					}
 					inline_script = "district_add/universalwr" #universal add district 
 					add_modifier = { modifier = sfg_ai_2 days = 180 }
 					modifier = {
-						factor = 3
-						has_building = building_energy_grid
-					}
-					modifier = {
-						factor = 5
-						has_building = building_energy_nexus
+						factor = 0
+						OR = {
+							has_building = building_energy_grid
+							has_building = building_energy_nexus
+						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							NOT = { has_district = district_generator }
 							owner = { has_monthly_income = { resource = energy value < 75 }  }
+							AND = {
+								energy_planet = yes
+								num_districts = { type = district_generator value = 1 }
+							}
 						}
 					}
 					
 				}
 				100 = {
 					remove_district = district_farming
+					set_variable = {
+ 						which = from_d
+                    	value = 2
+					}
 					inline_script = "district_add/universalwr" #universal add district 
 					add_modifier = { modifier = sfg_ai_2 days = 180 }
 					modifier = {
@@ -186,6 +213,10 @@ planet_event = { #	cg_ai.2	Universally  remove Districts
 						OR = {
 							NOT = { has_district = district_farming }
 							owner = { has_monthly_income = { resource = food value < 50 }  }
+							AND = {
+								mineral_planet = yes
+								num_districts = { type = district_mining value = 1 }
+							}
 						}
 					}
 					
@@ -199,5 +230,132 @@ planet_event = { #	cg_ai.2	Universally  remove Districts
 			# else_if = { limit = { has_district = district_farming owner = { has_monthly_income = { resource = food value > 50 } } } remove_district = district_farming }
 			#else_if = { limit = { has_district = district_industrial owner = { has_monthly_income = { resource = consumer_goods value > 25 } } } remove_district = district_industrial }
 			
+	}
+}
+country_event = { #add alloys and influence lost for fleet disabled
+	id = sfg_ai.10
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		owner = {
+			is_ai = yes
+			is_country_type = default
+		}
+	}
+	immediate = {
+		country_event = { #	cg_ai.42	Universally  remove buildings
+			id = sfg_ai.11
+			days = 30 #Alleggerisce il carico nelle multiplayer
+		}
+	}
+}
+country_event = { #add alloys and influence lost for fleet disabled
+	id = sfg_ai.11
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		owner = {
+			is_ai = yes
+			is_country_type = default
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = AI_easy
+			}
+			add_resource = {
+				alloys = 200
+			}
+		}
+		else_if = {
+			limit = {
+				has_global_flag = AI_medium
+			}
+			add_resource = {
+				alloys = 200
+				influence = 100
+			}
+		}
+		else_if = {
+			limit = {
+				has_global_flag = AI_hard
+			}
+			add_resource = {
+				minerals = 800
+				influence = 200
+			}
+		}
+		
+	}
+}
+country_event = { #gestione unity
+	id = sfg_ai.20
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = yes
+		OR = {
+			average_empire = yes
+			spiritualistic_empire = yes #spiritualista gestito
+		}
+	}
+	immediate = {
+		random_owned_planet = {
+			limit = { is_capital = yes }
+			planet_event = { 
+				id = sfg_ai.21
+				days = 360
+			}
+			planet_event = {
+				id = sfg_ai.21
+				days = 720
+			}
+		}
+	}
+}
+planet_event = { #sfg_ai.21 gestione unity iniziale
+	id = sfg_ai.21
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		owner = {
+			is_ai = yes
+			is_country_type = default
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					owner = {
+						has_resource = { type = minerals amount >= 400 }
+						has_monthly_income = { type = minerals amount >= 1 }
+						has_monthly_income = { type = energy amount >= 4 }
+						has_monthly_income = { type = consumer_goods amount >= 4 }
+					}
+				}
+			}
+			planet_event = {
+				id = sfg_ai.21
+				days = 720
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					owner = { spiritualistic_empire = yes }
+				}
+				add_building = building_temple
+				add_modifier = { modifier = sfg_ai_unity_21 years = 1 }
+				
+			}
+			else = {
+				add_building = building_bureaucratic_1
+				add_modifier = { modifier = sfg_ai_unity_21 years = 1 }
+			}
+			owner = { add_resource = { minerals = @b1_minerals mult = -1 } }
+		}
+		
 	}
 }

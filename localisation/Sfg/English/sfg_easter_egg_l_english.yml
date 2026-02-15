@@ -1,0 +1,31 @@
+﻿# Show Building Slot Capacity 
+l_english:
+
+sfg_arcsite.2500.name:0 "The Cabin"
+
+sfg_arcsite.2500.desc:0 "In una zona di §Y[From.Planet.System.GetName]§! è stata trovata una statua di quella che pare essere una creatura fungoide a quattro zampe molto bruttina. La statua porta sulla testa una coroncina. Ma è probabile che il piedistallo su cui poggia sia in realtà un accesso per delle catacombe, richiederà tempo per capire quale è il meccanismo di apertura"
+sfg_arcsite.2505.name:0 "A Long Sojourn"
+
+sfg_arcsite.2505.desc:0 "la porta si è aperta con un suono simile ad una scorreggia, il fetore è nauseabondamente puzzolente, abbiamo informato i nostri ricercatori di indossare delle maschere antigass per addentrarci.  Oltre alle esalazioni tossiche abbiamo trovato una lunga scalinata circolare che pare scendere verso le viscere della terra."
+sfg_arcsite.2505.A:0 "Surely they found something in all those years!"
+
+sfg_arcsite.2515.name:0 "Richiesta di altre mollete"
+sfg_arcsite.2515.desc:0 "Con grande sforzo, mollette sul naso e svariate dozzine di ricercatori svenuti malgrado le protezioni, siamo riusciti a raggiungere la fine delle scale. Ma è completamente buio. Con i nostri scanner abbiamo rilevato la presenza intatta di un sistema di alimentazione, dobbiamo solo trovarlo e attivarlo, sperando ci siano anche dei condotti di ventilazione che portino via questo tanfo osceno."
+
+sfg_arcsite.2516.name:0 "Labirinto"
+sfg_arcsite.2516.desc:0 "Abbiamo attivato il generatore, a quanto pare l'interno è un districato labirinto pieno di statue di queste strane creature che i nostri ricercatori hanno denominato "Sire della pestilenza". Il sistema di alimentazione è in funzione, luci illuminano l'interno della struttura.... Ma a quale costo. Le stuatue hanno cominciato a compiere assordanti suoni simili a quelli della porta del piedistallo. La quantità di statue e di scorregge da esse emesse hanno fatto già sanguinare le orecchie di svariati  scienziati. Ci chiediamo a cosa valga la pena tutta questa sofferenza schifosa."
+
+sfg_arcsite.2517.name:0 "Richiesta di smartworking"
+sfg_arcsite.2517.desc:0 "Abbiamo dovuto cambiare i team di ricerca così tante volte da creare una vera e propria turnazione. E' impossibile sostenere la presenza di un individuo all'interno di questo labirinto per più di venti minuti.  Fatto ciò l'esplorazione del labirinto è riuscita a procedere e abbiamo trovato un enorme... sfintere di pietra. Non ci sono altre parole per definirlo, ma è l'unica irregolarità oltre alle statue, ci prepariamo a trivellarlo. I nostri medici però riportano strane anomalie nei parametri celebrali dei nostri ricercatori. Come se fossero allucinazioni. Forse è la stanchezza."
+
+sfg_arcsite.2518.name:0 "Sfintere igienizzato"
+sfg_arcsite.2518.desc:0 "Abbiamo aperto lo sfintere! Dall'altra parte ci siamo trovati in un abitat sotterraneo pieno di piante che rilasciano spore maleodoranti, una capanna in legno, una strana persona con il cappello a virgola che ci dice di entrare, sette gnomi da giardino e un testicolo parlante che ci vuole portare verso l'oracolo. E' così bello, è così tutto bello! Lo seguiamo, dobbiamo seguirlo!"
+
+sfg_arcsite.2520.name:0 "Giara del testicolo"
+sfg_arcsite.2520.desc:0 "Il testicolo saltellante ha guidato [Root.Owner.GetResearchers] su dei bastoncini zuccherati mobili che cantavano delle bellissime canzoni sull'olio e su quanto è bello essere degli sgorbi. Alcuni di noi hanno cominciato a cantare in sintonia con loro e che dire! Buon per loro! Ora sono così belli! Così sgorbi! Oh! Ma non è finita! No no no!  C'è qualcosa di prezioso tra le nuvole piene di camomilla! Una giara! Abbiamo trovato una bellissima giara con all'interno la creatura più BELLA che questo universo abbia mai visto."
+sfg_arcsite.2520.A:0 "Dobbiamo farla vedere A TUTTI"
+
+r_sgorbio_sottolio:0 "Sgorbio Sottolio" 
+r_sgorbio_sottolio_desc:0 "Unoscura e bellissima reliquia conservata in un denso olio aromatico. Si narra che anche un singolo frammento, se utilizzato, possa travolgere la mente con un desiderio insaziabile di piaceri sempre più intensi, spingendo  verso un’ossessione che consuma ogni altro pensiero."
+r_sgorbio_sottolio_regular_effect:0 "One of our leader may gain the §Y$leader_trait_excessive$§! trait."
+site_sgorbio: "Sito statua fungo"

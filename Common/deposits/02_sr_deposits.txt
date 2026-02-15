@@ -117,7 +117,11 @@ d_exotic_gases_5 = {
 	}
 
 	drop_weight = {
-		weight = 0
+		weight = 0.05
+		modifier = {
+			factor = 1.5
+			is_inside_nebula = yes
+		}
 	}
 }
 
@@ -219,7 +223,11 @@ d_rare_crystals_5 = {
 	is_for_colonizable = no
 
 	drop_weight = {
-		weight = 0
+		weight = 0.05
+		modifier = {
+			factor = 1.5
+			is_inside_nebula = yes
+		}
 	}
 }
 
@@ -326,7 +334,11 @@ d_volatile_motes_5 = {
 	}
 
 	drop_weight = {
-		weight = 0
+		weight = 0.05
+		modifier = {
+			factor = 1.5
+			is_inside_nebula = yes
+		}
 	}
 }
 

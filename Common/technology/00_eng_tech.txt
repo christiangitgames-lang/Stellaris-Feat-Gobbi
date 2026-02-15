@@ -485,7 +485,7 @@ tech_corvette_hull_1 = {
 		}
 
 		modifier = {
-			small_space_fauna_ship_hull_mult = 0.1
+			small_space_fauna_ship_hull_mult = 0.33
 		}
 	}
 }
@@ -539,7 +539,7 @@ tech_corvette_hull_2 = {
 		}
 
 		modifier = {
-			small_space_fauna_ship_hull_mult = 0.1
+			small_space_fauna_ship_hull_mult = 0.33
 		}
 	}
 }
@@ -628,7 +628,7 @@ tech_destroyer_hull_1 = {
 		}
 
 		modifier = {
-			medium_space_fauna_ship_hull_mult = 0.1
+			medium_space_fauna_ship_hull_mult = 0.33
 		}
 	}
 }
@@ -685,7 +685,7 @@ tech_destroyer_hull_2 = {
 		}
 
 		modifier = {
-			medium_space_fauna_ship_hull_mult = 0.1
+			medium_space_fauna_ship_hull_mult = 0.33
 		}
 	}
 
@@ -775,7 +775,7 @@ tech_cruiser_hull_1 = {
 		}
 
 		modifier = {
-			large_space_fauna_ship_hull_mult = 0.1
+			large_space_fauna_ship_hull_mult = 0.33
 		}
 	}
 }
@@ -832,7 +832,7 @@ tech_cruiser_hull_2 = {
 		}
 
 		modifier = {
-			large_space_fauna_ship_hull_mult = 0.1
+			large_space_fauna_ship_hull_mult = 0.33
 		}
 	}
 }
@@ -921,7 +921,7 @@ tech_battleship_hull_1 = {
 		}
 
 		modifier = {
-			extra_large_space_fauna_ship_hull_mult = 0.1
+			extra_large_space_fauna_ship_hull_mult = 0.33
 		}
 	}
 }
@@ -978,7 +978,7 @@ tech_battleship_hull_2 = {
 		}
 
 		modifier = {
-			extra_large_space_fauna_ship_hull_mult = 0.1
+			extra_large_space_fauna_ship_hull_mult = 0.33
 		}
 	}
 }
@@ -1034,7 +1034,7 @@ tech_titan_hull_1 = {
 		}
 
 		modifier = {
-			titanic_space_fauna_ship_hull_mult = 0.1
+			titanic_space_fauna_ship_hull_mult = 0.33
 		}
 	}
 }
@@ -1086,7 +1086,7 @@ tech_titan_hull_2 = {
 		}
 
 		modifier = {
-			titanic_space_fauna_ship_hull_mult = 0.1
+			titanic_space_fauna_ship_hull_mult = 0.33
 		}
 	}
 }

@@ -86,6 +86,11 @@ job_foreign_researcher: "Foreign researcher"
 job_calculator_foreign_researcher: "Calculator $job_foreign_researcher$"
 job_foreign_researcher_desc: "Steal tech from neighorg country if have sufficient intel level"
 job_calculator_foreign_researcher_desc: "Steal tech from neighorg country if have sufficient intel level"
+
+job_deviant_trader: "Deviant Trader"
+job_deviant_trader_plural: "Deviant Traders"
+job_deviant_trader_desc: "Deviant Traders are specialized drones who have been intentionally severed from the strict behavioral matrices of the gestalt."
+mod_job_deviant_trader_add: "$job_deviant_trader$"
 # (eff: [Owner.value:mult_research_foreign] X)
 mod_job_foreign_researcher_add: "$job_foreign_researcher$" 
 mod_job_calculator_foreign_researcher_add: "$job_calculator_foreign_researcher$ "
@@ -172,5 +177,11 @@ tr_supremacy_master_shipwrights_desc:7 "§BUnlocks Agenda§!: §Y$agenda_militar
 #crysis ascension
 
 menp_relentless_aggression_tt:0 "You can declare wars §Y$war_goal_wg_wipe_them_out§! against anyone, they don’t have to be your neighbor."
+
+
+sfg_utility.3.name:0 "Passati 10 anni"
+sfg_utility.3.desc: "Sono passati 10 anni"
+
+
 
 

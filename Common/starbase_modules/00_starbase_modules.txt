@@ -770,7 +770,6 @@ hatchery = {
 			}
 		}
 	}
-
 	possible = {
 		solar_system = {
 			count_starbase_modules = {
@@ -803,7 +802,10 @@ hatchery = {
 			energy = 1
 		}
 	}
-
+	orbit_modifier = {
+		ship_hull_regen_add_perc = 0.25
+		ship_armor_regen_add_perc = 0.25
+	}
 	station_modifier = {
 		custom_tooltip = sm_hatchery_capacity_add_tt
 		show_only_custom_tooltip = yes
@@ -812,6 +814,7 @@ hatchery = {
 
 	country_modifier = {
 		country_vivarium_max_capacity_add = 25
+		country_naval_cap_add = 2
 	}
 
 	on_finished = {
@@ -898,7 +901,10 @@ beastport = {
 			energy = 1
 		}
 	}
-
+	orbit_modifier = {
+		ship_hull_regen_add_perc = 0.25
+		ship_armor_regen_add_perc = 0.25
+	}
 	station_modifier = {
 		custom_tooltip = sm_beastport_capacity_add_tt
 		show_only_custom_tooltip = yes
@@ -907,6 +913,7 @@ beastport = {
 
 	country_modifier = {
 		country_vivarium_max_capacity_add = 25
+		country_naval_cap_add = 2
 	}
 
 	on_finished = {

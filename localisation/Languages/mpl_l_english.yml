@@ -111,10 +111,12 @@ agenda_feudal_shift_finish_desc: "\nShift all subjects that not have same ethos 
 
 cg_ai_deficit_work_out_1: "Balance build deficit work out"
 sfg_ai_1: "Balance ai remove districts"
-sfg_ai_2: "Balance ai remove districts"
+
+sfg_ai_2: "Balance ai remove districts "#from [prev.from_district] to [prev.to_district] debug: This: \\[This.GetName]- Root: \\[Root.GetName] - Prev: \\[Prev.GetName]
 Client_released: "Client Release"
 decision_cg_release_client_state: "Release Client State"
 decision_cg_release_client_state_desc: "This planet shall be granted Home Rule."
+sfg_ai_unity_21: "Start unity building add sfg_ai_21"
 
 energy_for_40_food_market: "Trade food in simulation market"
 energy_for_12_consumer_goods_market: "Trade consumer goods in simulation market"

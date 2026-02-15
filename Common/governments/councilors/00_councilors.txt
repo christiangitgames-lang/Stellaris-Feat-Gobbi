@@ -54,7 +54,7 @@ councilor_ruler_hive_mind = {
 	leader_class = { official commander scientist }
 	possible = { always = no }
 	modifier = {
-		country_unity_produces_mult = 0.03
+		country_unity_produces_mult = 0.02
 		country_edict_fund_add = 5
 	}
 	icon = "GFX_icon_councilor_ruler"
@@ -194,7 +194,7 @@ councilor_ruler_imperial_synth = {
 	possible = { always = no }
 	icon = "GFX_icon_councilor_ruler"
 	modifier = {
-		country_unity_produces_mult = 0.03
+		country_unity_produces_mult = 0.02
 		country_edict_fund_add = 5
 	}
 	ai_hiring_weight = {
@@ -278,7 +278,7 @@ councilor_ascensionists = {
 	}
 	civic = civic_ascensionists
 	modifier = {
-		country_unity_produces_mult = 0.03
+		country_unity_produces_mult = 0.02
 	}
 	ai_hiring_weight = {
 		inline_script = councilor_leader_weights
@@ -645,7 +645,7 @@ councilor_memorialist = {
 	}
 	civic = civic_memorialist
 	modifier = {
-		country_unity_produces_mult = 0.03
+		country_unity_produces_mult = 0.02
 	}
 	ai_hiring_weight = {
 		inline_script = councilor_leader_weights
@@ -781,7 +781,8 @@ councilor_police_state = {
 	}
 	civic = civic_police_state
 	modifier = {
-		pop_government_ethic_attraction = 0.05
+		pop_government_ethic_attraction = 0.02
+		enforcer_jobs_bonus_workforce_mult = 0.01
 	}
 	ai_hiring_weight = {
 		inline_script = councilor_leader_weights
@@ -1162,7 +1163,7 @@ councilor_corporate_ascensionists = {
 	}
 	civic = civic_corporate_ascensionists
 	modifier = {
-		country_unity_produces_mult = 0.03
+		country_unity_produces_mult = 0.02
 	}
 	ai_hiring_weight = {
 		inline_script = councilor_leader_weights

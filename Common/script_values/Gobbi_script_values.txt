@@ -1284,3 +1284,46 @@ mult_research_foreign = {
 	}
 	
 }
+Percent_gestalt = {
+	base = 0
+	complex_trigger_modifier = { # 2
+		trigger = count_country 
+	
+		parameters = {
+			limit = { is_gestalt = yes is_homicidal = no is_fallen_empire = no }
+		}
+		mode = add
+	}
+	complex_trigger_modifier = { #10
+		trigger = count_country 
+	
+		parameters = {
+			limit = { is_regular_empire = yes }
+		}
+		mode = divide
+	}
+	mult = 100
+	#2/10 = 0.20 *100 = 25%
+}
+count_gestalt = {
+	base = 0
+	complex_trigger_modifier = { # 2
+		trigger = count_country 
+	
+		parameters = {
+			limit = { is_gestalt = yes is_homicidal = no is_fallen_empire = no }
+		}
+		mode = add
+	}
+}
+count_no_gestalt = {
+	base = 0
+	complex_trigger_modifier = { #10
+		trigger = count_country 
+	
+		parameters = {
+			limit = { is_regular_empire = yes }
+		}
+		mode = add
+	}
+}

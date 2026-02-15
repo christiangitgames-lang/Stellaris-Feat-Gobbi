@@ -1,5 +1,5 @@
 ﻿l_english:
-version: "v1.1.2"
+version: "v1.1.3 Sgorbio patch"
 Compatible: "4.3.0"
 cg_game_start.1.name: "Stellaris feat Gobbi START MENU"
 cg_game_start.1.desc: "You are playing at Beta §H"Stellaris feat Gobbi $version$.\n"
@@ -10,3 +10,27 @@ cg_game_start.1.AI_normal: "Ai is §YNORMAL§!"
 cg_game_start.1.AI_normal_tt: "AI play how an average player human, probably you if are an good player can't have problem with 1v5\nIf you are a §Ggood§! player, I recommend this one to start with."
 cg_game_start.1.AI_easy: "Ai is §YEasy§!"
 cg_game_start.1.AI_easy_tt: "AI play little best of vanilla, probably you if are an good player can be 1 vs 16\nIf you are a §Gnew§! or §RLow skill§! player, I recommend this."
+
+
+cg_game_start.1.AI_easy: "Ai is §YEasy§!"
+cg_game_start.1.AI_easy_tt: "AI play little best of vanilla, probably you if are an good player can be 1 vs 16\nIf you are a §Gnew§! or §RLow skill§! player, I recommend this."
+
+
+#--------
+phi_realistic_upkeep_researcher.1.abilitato: "Upkeep research realistic is §GAble§!"
+phi_realistic_upkeep_researcher.1.abilitato_tt: "I ricercatori in base a cosa ricercano utilizzano anche minerali (phyisic) e alloy (engineering) e energia diminuendo il consumo di consumer goods, disabilitandolo il meta commercio e i gestalt sono più forti!"
+phi_realistic_upkeep_researcher.1.disabilitato: "Upkeep research realistic is §RDisable§!"
+phi_realistic_upkeep_researcher.1.disabilitato_tt: "Funziona come in vanilla quindi meta commercio e gestalt più forti tendenzialmente"
+
+Not_Spread_aura_endlessly_in_fallen_empire.1.abilitato: "Not spread aura endlessly in Fallen territory §GAble§!"
+Not_Spread_aura_endlessly_in_fallen_empire.1.abilitato_tt: "Non fare diffondere l'aura endlessly nei fallen empire (se sono dormienti)"
+Not_Spread_aura_in_fallen_empire.1.abilitato: "Not spread §Yall§! aura in Fallen territory §YAble§!"
+Not_Spread_aura_in_fallen_empire.1.abilitato_tt: "Non fare diffondere nessuna aura nei fallen empire (se sono dormienti)"
+Not_Spread_aura_in_fallen_empire.1.disabilitato: "Spread §Yall§! aura in Fallen territory §RAble§!"
+Not_Spread_aura_in_fallen_empire.1.disabilitato_tt: "Aura spread come in vanilla"
+
+
+Can_Branch_office_on_gestait.1.abilitato: "Can Branch office on gestait is §GAble§! Gestalt are [this.Percent_gestalt_text] % [this.gestalt_count_text]g [this.no_gestalt_count_text]"
+Can_Branch_office_on_gestait.1.abilitato_tt: "Puoi fare branc office nei pianeti gestait se non sono genocidi"
+Can_Branch_office_on_gestait.1.disabilitato: "Can Branch office on gestait §RDisable§! Gestalt are [this.Percent_gestalt_text]§! %"
+Can_Branch_office_on_gestait.1.disabilitato_tt: "Funziona come in vanilla quindi branch office non puoi farli sui gestait"

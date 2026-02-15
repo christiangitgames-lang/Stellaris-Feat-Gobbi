@@ -9,7 +9,26 @@ Starbase_automation = {
 		policy_flags = { Automation_Nothing }
 		modifier = {
 		}
-		
+		on_enabled = {
+			country_event = { 
+				id = phigo_automation.0
+			} 
+			hidden_effect = {
+				set_policy = {
+					policy = Starbase_automation
+					option = Nothing
+					cooldown = no
+				}
+			}
+		}
+		#on_activate = {
+			#set_policy_cooldown
+			# set_policy = {
+			# 	policy = Starbase_automation
+			# 	option = Nothing
+			# 	cooldown = no
+			# }
+		#}
 		AI_weight = {
 			weight = 1000
 		}
@@ -31,8 +50,21 @@ Starbase_automation = {
 			country_event = { 
 				id = phigo_automation.0
 			} 
+			hidden_effect = {
+				set_policy = {
+					policy = Starbase_automation
+					option = Hidroponic
+					cooldown = no
+				}
+			}
 		}
-
+		# on_activate = {
+		# 	set_policy = {
+		# 		policy = Starbase_automation
+		# 		option = Hidroponic
+		# 		cooldown = no
+		# 	}
+		# }
 		AI_weight = {
 			weight = 0
 		}

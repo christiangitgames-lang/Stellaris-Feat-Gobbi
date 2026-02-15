@@ -1798,6 +1798,8 @@
 		# 0.0 means that the ship will not back off and orbit with whatever radius it already has
 		# 1.0 means that the ship will prioritize orbit velocity the same as "back-off"-velocity. i.e a 45 degree angle
 		COMBAT_BACK_OFF_RATE					= 0.50
+		COMBAT_DESIRED_RANGE_MULT				= 0.90	# Desired combat ranges should be slightly less than the actual range of a weapon.
+		COMBAT_CHARGE_DISTANCE_COEFFICIENT		= 200.0	# If a target is hitting us with impunity, we will multiply our desired range by this to see if we think we should charge them
 
 		SHIP_SMOOTH_ROTATION_THRESHOLD			= 3.141 # Used to smooth rotation rate of ships. equation is "y = x * ( min ( 1.0 x / SHIP_SMOOTH_ROTATION_THRESHOLD ) )" where x is the wanted delta rotation this tick and y the resulting delta rotation
 

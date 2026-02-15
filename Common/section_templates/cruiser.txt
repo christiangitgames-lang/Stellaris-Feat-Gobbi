@@ -153,7 +153,7 @@ ship_section_template = {
 			alloys = @section_cost
 		}
 		logistics = {
-			trade = @fighter_logistic_upkeep_trade
+			trade = @Logistic_extra_fighter_logistic_upkeep_trade_2
 		}
 	}
 }

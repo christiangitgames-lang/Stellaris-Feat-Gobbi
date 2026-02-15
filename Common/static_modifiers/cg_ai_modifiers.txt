@@ -53,3 +53,6 @@ sfg_ai_2= {
 cg_ai102 = {
 	planet_building_build_speed_mult = -0.49
 }
+sfg_ai_unity_21 = {
+	planet_building_build_speed_mult = -0.99 #dura un anno
+}

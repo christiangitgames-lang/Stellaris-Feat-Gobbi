@@ -108,7 +108,7 @@ phi_pm_magnetic_clouds_1: "Controlled magnetic streams"
 phi_pm_magnetic_clouds_1_desc: "Magnetic streams of wind are usefull for our colonists."
 
 phi_pm_atmospheric_pollution: "Atmospheric pollution"
-phi_pm_atmospheric_pollution_desc: "Years of industrialization efforts left a mark on the planet's atmosphere.\nFor remove: need research §B$tech_terrestrial_sculpting$§! and use decision §Y$decision_phi_pm_atmospheric_pollution$§!"
+phi_pm_atmospheric_pollution_desc: "Years of industrialization efforts left a mark on the planet's atmosphere.\nFor remove: need research §B$tech_terrestrial_sculpting$§! and use decision §Y$decision__pm_atmospheric_pollution$§!"
 
 
 
@@ -228,5 +228,5 @@ decision_phi_magnetic_clouds_3_2_desc: "We can limit the impact of the stormy ma
 decision_phi_magnetic_clouds_2_1: "Magnetic fans"
 decision_phi_magnetic_clouds_2_1_desc: "We can install magnetic generators in order to gain control of the magnetized atmosphere."
 
-decision_phi_pm_atmospheric_pollution: "Remove the atmospheric pollution"
-decision_phi_pm_atmospheric_pollution_desc: "We finally have the expertise and the resources to clean up the mess..."
+decision__pm_atmospheric_pollution: "Remove the atmospheric pollution"
+decision__pm_atmospheric_pollution_desc: "We finally have the expertise and the resources to clean up the mess..."

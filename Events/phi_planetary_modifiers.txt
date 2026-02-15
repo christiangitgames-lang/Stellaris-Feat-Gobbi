@@ -161,29 +161,48 @@ event = {
 				}
 			}
 		}	
+		
 	}
 }
 
-# event = {
-# 	id = phi_planetary_modifiers.1
-# 	hide_window = yes
+event = {
+	id = phi_planetary_modifiers.1
+	hide_window = yes
 
-# 	is_triggered_only = yes
+	is_triggered_only = yes
 	
-# 	immediate = {
-# 		every_country = {
-# 			every_owned_planet = {
-# 				limit = { is_capital = yes }
-# 				switch = {
-# 					trigger = has_modifier
-# 					phi_pm_mantle_frozen_gas_pockets_3 =  { add_deposit = d_phi_exotic_gas_1 }
-# 					phi_pm_tectonic_fractures_3 = { add_deposit = d_phi_rare_crystals_1 }
-# 					phi_pm_dust_storms_3 = { add_deposit = d_phi_volatile_motes_1 }
-# 				}
-# 			}
-# 		}
-# 	}
-# }
+	immediate = {
+		random_system = {
+			limit = {
+				any_system_planet = {
+					is_planet_class = pc_frozen
+					has_anomaly = no
+					OR = {
+						is_colony = no
+						sapient_pop_amount < 1000
+					}
+					NOT = {
+						exists = archaeological_site
+					}
+				}
+			}
+			random_system_planet = {
+				limit = {
+					is_planet_class = pc_frozen
+					has_anomaly = no
+					NOR = {
+						exists = archaeological_site
+					}
+				}
+				#planet = {
+					create_archaeological_site = site_sgorbio
+				#}
+				#set_name = "Debug_sgorbio"
+			}
+			#set_name = "Deb_sgorbio"
+		}
+	}
+}
 
 planet_event = {
 	id = phi_planetary_modifiers.2

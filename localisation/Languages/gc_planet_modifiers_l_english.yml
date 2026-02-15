@@ -14,4 +14,5 @@ cg_planetary_modifiers.5.desc: "Meteor storms §Gnot§! have be damage to our pr
 
 
 gpm_mineral_metors:0 "Land meteors"
-sm_mario_fleet_academy:0 "Fleet Mario Academy"
+sm_mario_fleet_academy:0 "Fleet Mario Min. Academy"
+sm_mario_fleet_academy_desc:1 "In memoria della mod Phi creata da Mario Minaccia."

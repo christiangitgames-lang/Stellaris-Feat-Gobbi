@@ -1,0 +1,399 @@
+##########################
+#
+# ARCHAEOLOGY SITE EVENTS
+#
+##########################
+
+namespace = sfg_arcsite
+fleet_event = { #1st step
+	id = sfg_arcsite.2500
+	title = sfg_arcsite.2500.name
+	desc = sfg_arcsite.2500.desc
+	picture = GFX_evt_hand_shake
+	location = from
+	show_sound = event_default
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	option = {
+		name = INTERESTING
+		small_artifact_reward = yes
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+}
+
+fleet_event = { #2nd step
+	id = sfg_arcsite.2505
+	title = sfg_arcsite.2505.name
+	desc = sfg_arcsite.2505.desc
+	picture = GFX_evt_hidden_door
+	location = from
+	show_sound = event_administrative_work
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	option = {
+		name = sfg_arcsite.2505.A
+		small_artifact_reward = yes
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+}
+
+fleet_event = { #3rd step
+	id = sfg_arcsite.2515
+	title = sfg_arcsite.2515.name
+	desc = sfg_arcsite.2515.desc
+	picture = GFX_evt_astral_rift_tomb
+	location = from
+	show_sound = event_worrying_signal
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		from = { set_site_progress_locked = yes }
+		leader = {
+			save_event_target_as = event_leader
+		}
+	}
+
+	option = {
+		name = DISTURBING
+		if = {
+			limit = {
+				owner = { is_gestalt = no }
+			}
+			event_target:event_leader = {
+				locked_random_list = {
+					3 = {}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_paranoid }
+						}
+						add_trait = {
+							trait = leader_trait_paranoid
+						}
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_excessive }
+						}
+						add_trait = {
+							trait = leader_trait_excessive
+						}
+					}
+				}
+			}
+		}
+		else = {
+			event_target:event_leader = {
+				locked_random_list = {
+					3 = {}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_paranoid }
+						}
+						add_trait = {
+							trait = leader_trait_paranoid
+						}
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_lavish_lifestyle }
+						}
+						add_trait = {
+							trait = leader_trait_lavish_lifestyle
+						}
+					}
+				}
+			}
+		}
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+}
+fleet_event = { #4rd step
+	id = sfg_arcsite.2516
+	title = sfg_arcsite.2516.name
+	desc = sfg_arcsite.2516.desc
+	picture = GFX_evt_georadiation_bell_broken
+	location = from
+	show_sound = event_worrying_signal
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		from = { set_site_progress_locked = yes }
+		leader = {
+			save_event_target_as = event_leader
+		}
+	}
+
+	option = {
+		name = DISTURBING
+		if = {
+			limit = {
+				owner = { is_gestalt = no }
+			}
+			event_target:event_leader = {
+				locked_random_list = {
+					3 = {}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_paranoid }
+						}
+						add_trait = {
+							trait = leader_trait_paranoid
+						}
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_excessive }
+						}
+						add_trait = {
+							trait = leader_trait_excessive
+						}
+					}
+				}
+			}
+		}
+		else = {
+			event_target:event_leader = {
+				locked_random_list = {
+					3 = {}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_paranoid }
+						}
+						add_trait = {
+							trait = leader_trait_paranoid
+						}
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_lavish_lifestyle }
+						}
+						add_trait = {
+							trait = leader_trait_lavish_lifestyle
+						}
+					}
+				}
+			}
+		}
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+}
+fleet_event = { #5rd step
+	id = sfg_arcsite.2517
+	title = sfg_arcsite.2517.name
+	desc = sfg_arcsite.2517.desc
+	picture = GFX_evt_astral_rift_tropical_habitat_2
+	location = from
+	show_sound = event_worrying_signal
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		from = { set_site_progress_locked = yes }
+		leader = {
+			save_event_target_as = event_leader
+		}
+	}
+
+	option = {
+		name = DISTURBING
+		if = {
+			limit = {
+				owner = { is_gestalt = no }
+			}
+			event_target:event_leader = {
+				locked_random_list = {
+					3 = {}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_paranoid }
+						}
+						add_trait = {
+							trait = leader_trait_paranoid
+						}
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_excessive }
+						}
+						add_trait = {
+							trait = leader_trait_excessive
+						}
+					}
+				}
+			}
+		}
+		else = {
+			event_target:event_leader = {
+				locked_random_list = {
+					3 = {}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_paranoid }
+						}
+						add_trait = {
+							trait = leader_trait_paranoid
+						}
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_lavish_lifestyle }
+						}
+						add_trait = {
+							trait = leader_trait_lavish_lifestyle
+						}
+					}
+				}
+			}
+		}
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+}
+fleet_event = { #6rd step
+	id = sfg_arcsite.2518
+	title = sfg_arcsite.2518.name
+	desc = sfg_arcsite.2518.desc
+	picture = GFX_evt_alien_nature
+	location = from
+	show_sound = event_worrying_signal
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		from = { set_site_progress_locked = yes }
+		leader = {
+			save_event_target_as = event_leader
+		}
+	}
+
+	option = {
+		name = DISTURBING
+		if = {
+			limit = {
+				owner = { is_gestalt = no }
+			}
+			event_target:event_leader = {
+				locked_random_list = {
+					1 = {}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_paranoid }
+						}
+						add_trait = {
+							trait = leader_trait_paranoid
+						}
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_excessive }
+						}
+						add_trait = {
+							trait = leader_trait_excessive
+						}
+					}
+				}
+			}
+		}
+		else = {
+			event_target:event_leader = {
+				locked_random_list = {
+					3 = {}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_paranoid }
+						}
+						add_trait = {
+							trait = leader_trait_paranoid
+						}
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							has_trait_tier1or2 = { TRAIT = leader_trait_lavish_lifestyle }
+						}
+						add_trait = {
+							trait = leader_trait_lavish_lifestyle
+						}
+					}
+				}
+			}
+		}
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+}
+fleet_event = { #Outcome
+	id = sfg_arcsite.2520
+	title = sfg_arcsite.2520.name
+	desc = sfg_arcsite.2520.desc
+	picture = GFX_evt_individualistic_machines_1
+	location = from
+	show_sound = event_mystic_reveal
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	option = { #Study
+		name = sfg_arcsite.2520.A
+		owner = {
+			add_relic = r_sgorbio_sottolio
+		}
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+}

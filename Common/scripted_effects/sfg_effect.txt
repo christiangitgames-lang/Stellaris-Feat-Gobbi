@@ -73,3 +73,59 @@ give_next_regular_ship_tech_effect = {
 		}
 	}
 }
+sfg_gestalt_count_noomicidal = {
+	#count_country
+	clear_variable = sfg_gestalt_count_noomicidal_count
+	clear_variable = sfg_nogestalt_count_noomicidal_count
+	every_country={
+		limit = { 
+			is_gestalt = yes
+			is_regular_empire = yes
+			is_homicidal = no
+		}
+		# set_star_flag = sba_quantum_catapult_search_flag
+		save_event_target_as = sfg_gestalt_count_noomicidal_$Count|0$
+		change_variable = { which = sfg_gestalt_count_noomicidal_count value = 1 }
+	}
+	every_country={
+		limit = { 
+			is_gestalt = no
+			is_regular_empire = yes
+		}
+		# set_star_flag = sba_quantum_catapult_search_flag
+		save_event_target_as = sfg_nogestalt_count_noomicidal$Count|0$
+		change_variable = { which = sfg_nogestalt_count_noomicidal_count value = 1 }
+	}
+}
+# create_sgorbio_archaeologica_site = {
+# 	random_system = {
+# 		limit = {
+# 			any_system_planet = {
+# 				is_planet_class = pc_frozen
+# 				has_anomaly = no
+# 				OR = {
+# 					is_colony = no
+# 					sapient_pop_amount < 1000
+# 				}
+# 				NOT = {
+# 					exists = archaeological_site
+# 				}
+# 			}
+# 		}
+# 		random_system_planet = {
+# 			limit = {
+# 				is_planet_class = pc_frozen
+# 				has_anomaly = no
+# 				OR = {
+# 					is_colony = no
+# 					sapient_pop_amount < 1000
+# 				}
+# 				NOR = {
+# 					exists = archaeological_site
+# 				}
+# 			}
+# 			create_archaeological_site = site_sgorbio
+# 			set_name = "Debug_sgorbio"
+# 		}
+# 	}
+# }

@@ -660,6 +660,7 @@ ap_archaeoengineers = {
 
 ap_lord_of_war = {
 	potential = {
+		enclave_enable = yes
 		host_has_dlc = "Overlord"
 		NOR = {
 			has_ascension_perk = ap_lord_of_war

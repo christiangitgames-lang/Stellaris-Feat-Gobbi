@@ -1,10 +1,10 @@
 ai_early_game_modifier = {
 	starbase_shipyard_build_speed_mult = 0.5
 	all_technology_research_speed = 0.1
-	country_unity_produces_mult = 0.1
 	empire_size_colonies_mult = -0.10
 	num_tech_alternatives_add = 1
 	ship_fire_rate_mult = 0.10
+	bioship_growth_progress_mult = 0.20
 	icon = "gfx/interface/icons/sm/early.dds"
 }
 ai_mid_game_modifier = {
@@ -14,10 +14,10 @@ ai_mid_game_modifier = {
 	planet_engineers_engineering_research_produces_add = 1
 	planet_bureaucrats_unity_produces_add = 1
 	all_technology_research_speed = 0.1
-	country_unity_produces_mult = 0.05
 	planet_building_build_speed_mult = 1
 	planet_building_refund_mult = 0.25
 	ship_fire_rate_mult = 0.20
+	bioship_growth_progress_mult = 0.25
 	icon = "gfx/interface/icons/sm/mid.dds"
 }
 ai_late_game_modifier = {
@@ -27,12 +27,12 @@ ai_late_game_modifier = {
 	planet_bureaucrats_unity_produces_add = 1
 	pop_resettlement_cost_mult = -0.5
 	all_technology_research_speed = 0.1
-	country_unity_produces_mult = 0.05
 	planet_army_build_speed_mult = 0.25
 	megastructure_build_speed_mult = 1
 	planet_jobs_productive_produces_mult = 0.1
 	planet_building_build_speed_mult = 2
 	planet_building_refund_mult = 0.5
 	ship_fire_rate_mult = 0.40
+	bioship_growth_progress_mult = 0.33
 	icon = "gfx/interface/icons/sm/late.dds"
 }

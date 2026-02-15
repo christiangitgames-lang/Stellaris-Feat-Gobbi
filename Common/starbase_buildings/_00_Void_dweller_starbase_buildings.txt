@@ -1,0 +1,503 @@
+
+nebula_alloy_refinery = {
+	icon = "GFX_spaceport_nebula_alloy_refinery"
+	construction_days = 360
+
+	potential = {
+		exists = owner
+		owner = { 
+            has_technology = tech_space_mining_1 
+			is_void_born = yes
+        }
+	}
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+			influence = 25
+		}
+
+		produces = {
+			alloys = 2
+		}
+		produces = {
+			trigger = {
+				star = { is_inside_nebula = yes }
+			}
+			alloys = 1
+		}
+		upkeep = {
+			trigger = {
+			  star = { is_inside_nebula = yes }
+			}
+			minerals = 2
+			energy = 4
+		}
+		upkeep = {
+			trigger = {
+			  star = { is_inside_nebula = no }
+			}
+			minerals = 8
+            energy = 4
+		}
+	}
+	triggered_system_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_void_born = yes
+				is_gestalt = no
+			}
+		}
+		job_foundry_add = 100
+	}
+	triggered_system_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_void_born = yes
+				is_hive_empire = yes
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = @b1_jobs
+		}
+	}
+
+	triggered_system_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_void_born = yes
+				is_machine_empire = yes
+			}
+		}
+		modifier = {
+			job_fabricator_add = @b1_jobs
+		}
+	}
+
+	ai_weight = {
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+	}
+}
+starm_culture_booster = {
+	icon = "GFX_starm_sm_culture_booster"
+	construction_days = 360
+
+	#show_in_tech = tech_hypercomms_forum
+	
+	potential = {
+		exists = owner
+		owner = {
+			is_void_born = yes
+			is_gestalt = no
+			#has_technology = tech_hypercomms_forum
+		}
+	}
+	
+	possible = {
+		has_starbase_module = starm_culture_hub
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+			influence = 50
+		}
+
+		upkeep = {
+			energy = 3
+		}
+	}
+	triggered_system_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_void_born = yes
+				is_gestalt = no
+			}
+		}
+		job_culture_worker_per_pop = 0.04
+	}
+	custom_tooltip = sm_starm_culture_booster_effect
+
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 0
+			count_starbase_modules = {
+				type = starm_culture_hub
+				count < 2
+			}
+		}
+	}
+}
+# engineering_researcher
+# physics_researcher
+starm_science_booster = {
+	icon = "GFX_starm_sm_science_booster"
+	construction_days = 360
+
+	#show_in_tech = tech_space_science_2
+
+	potential = {
+		exists = owner
+		owner = {
+			is_void_born = yes
+			#has_technology = tech_space_science_2
+		}
+	}
+	
+	possible = {
+		has_starbase_module = starm_science_hub
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+			influence = 100
+		}
+
+		upkeep = {
+			energy = 3
+		}
+	}
+
+	custom_tooltip = sm_starm_science_booster_effect
+
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 0
+			count_starbase_modules = {
+				type = starm_science_hub
+				count < 2
+			}
+		}
+	}
+}
+Governmental_Orbital_Exchange_Market = {
+	icon = "GFX_starbase_Governmental_Orbital_Exchange_Market"
+	construction_days = 360
+
+	potential = {
+		exists = owner
+		owner = { 
+            is_void_born = yes
+			is_gestalt = no
+        }
+	}
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+			influence = 50
+		}
+
+		upkeep = {
+			energy = 2
+			mult = value:Count_planet_system
+		}
+	}
+	triggered_system_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_void_born = yes
+				is_gestalt = no
+			}
+		}
+		job_clerk_per_pop = 0.02
+	}
+	country_modifier = {
+		country_trade_fee = -0.01
+	}
+	ai_weight = {
+		weight = 0 #use same weight here - ai weighting is done in starbase_types.txt
+	}
+}
+Governmental_diplomatic_asset = {
+	icon = "GFX_orbitalring_embassy_complex"
+	construction_days = 360
+
+	potential = {
+		exists = owner
+		owner = { 
+            is_void_born = yes
+        }
+	}
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+			influence = 25
+		}
+
+		upkeep = {
+			energy = 5
+		}
+	}
+	triggered_system_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_void_born = yes
+				is_gestalt = no
+				owner = { is_megacorp = no }
+			}
+		}
+		job_bureaucrat_add = 100
+	}
+	triggered_system_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_void_born = yes
+				is_megacorp = yes
+				is_gestalt = no
+			}
+		}
+		modifier = {
+			job_manager_add = 100
+		}
+	}
+	triggered_system_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_void_born = yes
+				is_machine_empire = yes
+			}
+		}
+		job_maintenance_drone_add = 100
+	}
+	triggered_system_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_void_born = yes
+				is_hive_empire = yes
+			}
+		}
+		job_synapse_drone_add = 100
+		job_synapse_drone_per_pop = 0.02
+	}
+	
+	country_modifier = {
+		diplo_weight_delegate_mult = 0.025
+	}
+	ai_weight = {
+		weight = 0 #use same weight here - ai weighting is done in starbase_types.txt
+	}
+}
+Governmental_manager_asset = {
+	icon = "GFX_starbase_curator_think_tank"
+	construction_days = 360
+
+	potential = {
+		exists = owner
+		owner = { 
+            is_void_born = yes
+			is_gestalt = no
+        }
+	}
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 200
+			influence = 50
+		}
+
+		upkeep = {
+			energy = 5
+			mult = value:Count_planet_system
+		}
+	}
+	triggered_system_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_void_born = yes
+				is_gestalt = no
+			}
+		}
+		job_manager_add = 100
+	}
+	
+	triggered_system_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_megacorp = no 
+				is_void_born = yes
+				is_gestalt = no
+			}
+		}
+		modifier = {
+			job_bureaucrat_per_pop = 0.013
+		}
+	}
+	triggered_system_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_void_born = yes
+				owner = { is_megacorp = yes }
+			}
+		}
+		modifier = {
+			job_manager_per_pop = 0.013
+		}
+	}
+	country_modifier = {
+		planet_managers_produces_mult = 0.10
+		planet_jobs_ruler_produces_mult = 0.10
+	}
+	ai_weight = {
+		weight = 0 #use same weight here - ai weighting is done in starbase_types.txt
+	}
+}
+# civilian_shipyard = {
+# 	icon = "GFX_civilian_starbase_shipyard"
+# 	#section = "ASSEMBLYYARD_STARBASE_SECTION"
+# 	construction_days = 360
+# 	initial = no
+
+# 	potential = {
+# 		exists = owner
+# 		owner = { 
+# 			is_gestalt = no
+# 		}
+# 	}
+# 	possible = {
+# 		exists = owner
+# 		owner = {
+# 			has_policy_flag = Automation_Nothing 
+# 		}
+# 		owner = { 
+# 			OR = {
+# 				AND ={
+# 					is_void_dweller_empire = yes
+# 					count_starbase_buildings = { type = civilian_shipyard include_being_constructed = yes count < 5 }
+# 				}
+# 				NOT = {
+# 					any_owned_starbase = {
+# 						NOT = { is_same_value = root }
+# 						OR = {
+# 							has_starbase_building = civilian_shipyard
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	abort_construction_trigger = {
+# 		owner = {
+# 			OR = {
+# 				count_starbase_buildings = {
+# 					type = civilian_shipyard
+# 					count > 5
+# 					include_being_constructed = yes
+# 				}
+# 				AND = {
+# 					is_void_dweller_empire = no
+# 					count_starbase_buildings = {
+# 						type = civilian_shipyard
+# 						count > 1
+# 						include_being_constructed = yes
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	resources = {
+# 		category = starbase_modules
+# 		cost = {
+# 			alloys = 100
+# 			influence = 100
+# 		}
+# 		produces = {
+# 		 	energy = 0.5
+# 			trigger = { exists = owner owner = { is_ai = yes } }
+# 		 	mult = value:Count_pop_Shypiard_modifier
+# 		}
+# 		produces = {
+# 			energy = 0.25
+# 			trigger = { exists = owner owner = { is_ai = yes } }
+# 		 	mult = value:Count_pop_Shypiard_universal_modifier
+# 		}
+# 		upkeep = {
+# 			alloys = 1
+# 			energy = 2
+# 		}
+# 	}
+# 	orbit_modifier = {
+# 		ship_hull_regen_add_perc = 0.1
+# 		ship_armor_regen_add_perc = 0.1
+# 	}
+# 	# country_modifier = {
+		
+# 	# }
+# 	station_modifier = {
+# 		starbase_shipyard_build_speed_mult = 0.1
+# 	}
+# 	country_modifier = {
+# 		country_naval_cap_add = 4
+# 		job_clerk_spaceship_per_pop = 0.02
+# 		empire_size_add = 1
+# 		piracy_growth_mult = 1
+# 	}
+
+# 	ai_weight = {
+# 		weight = 50 #use same weight here - ai weighting is done in starbase_types.txt
+# 		modifier = {
+# 			factor = 0.5
+# 			owner = {
+# 				OR = {
+# 					count_owned_starbase = {
+# 						count = 0
+# 						limit = { has_starbase_building = civilian_shipyard }
+# 					}
+# 					AND = {
+# 						controlled_systems > 30
+# 						count_owned_starbase = {
+# 							count < 2
+# 							limit = { has_starbase_building = civilian_shipyard }
+# 						}
+# 					}
+# 					AND = {
+# 						controlled_systems > 60
+# 						count_owned_starbase = {
+# 							count < 3
+# 							limit = { has_starbase_building = civilian_shipyard }
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 		modifier = {
+# 			factor = 0.5
+# 			exists = owner 
+# 			owner = { 
+# 				count_owned_pop = { count < 50 }
+# 			}
+# 		}
+# 		modifier = {
+# 			factor = 2
+# 			exists = owner 
+# 			owner = { 
+# 				any_owned_planet = {
+# 					num_unemployed >= 3
+# 				}
+# 			}
+# 		}
+# 	}
+# }
+

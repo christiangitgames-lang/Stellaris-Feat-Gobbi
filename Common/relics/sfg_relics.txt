@@ -1,0 +1,81 @@
+########################
+# Relics - Sfg mod File
+########################
+
+
+r_sgorbio_sottolio = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_r_sgorbio_sottolio"
+	sound = "relic_activation_intact_zro_soulstone"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			unity = @activation_cost
+		}
+	}
+
+	ai_weight = {
+		weight = 50
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_pops_consumer_goods_upkeep_mult = -0.15
+		#country_rare_crystals_produces_mult = 0.15
+	}
+
+	score = 3000
+
+	active_effect = {
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = @triumph_duration
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = energy
+			value = 30
+		}
+		if = {
+			limit = { is_gestalt = no }
+			custom_tooltip = r_sgorbio_sottolio_regular_effect
+			hidden_effect = {
+				random_owned_leader = {
+					limit = {
+						NOR = {
+							has_trait = leader_trait_excessive
+						}
+					}
+					if = {
+						limit = {
+							has_trait = leader_trait_excessive
+						}
+						add_trait = {
+							trait = leader_trait_excessive_2
+						}
+					}
+					else = {
+						add_trait = {
+							trait = leader_trait_excessive
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = relic_triumph_cooldown
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_sgorbio_sottolio
+		}
+	}
+}
+

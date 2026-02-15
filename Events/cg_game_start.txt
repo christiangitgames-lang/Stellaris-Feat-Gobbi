@@ -64,10 +64,9 @@ event = { #standard
 		}
 		set_global_flag = phi_initialisation_menu
 		set_global_flag = phi_border_gore_disallowed
-		set_global_flag = phi_sublimation_allowed
-		set_global_flag = phi_emperor_win_allowed
 		set_global_flag = phi_realistic_upkeep_researcher
 		set_global_flag = AI_hard
+		set_global_flag = Can_Branch_office_on_gestait # can branch office in gestait
 		# set_global_flag = planets_with_modifiers #mette modifictori su pianeti
 		
 		every_country = {
@@ -97,7 +96,7 @@ country_event = {
 			name = OK
 			hidden_effect = {
 				
-				set_country_flag = phi_changelog_1_5c # TODO?
+				set_country_flag = player_host
 				every_country = {
 					limit = { is_country_type = default } #primitive and special country not have modifiers
 					every_owned_planet = {
@@ -159,5 +158,91 @@ country_event = {
 			}
 		}
 		# ------------------
+		#phi_realistic_upkeep_researcher sempre attivo
+		# option = {
+		# 	trigger = {
+		# 		has_global_flag = phi_realistic_upkeep_researcher
+		# 	}
+		# 	name = phi_realistic_upkeep_researcher.1.abilitato
+		# 	custom_tooltip = phi_realistic_upkeep_researcher.1.abilitato_tt
+		# 	remove_global_flag = phi_realistic_upkeep_researcher
+		# 	hidden_effect = {
+		# 		country_event = { id = cg_game_start.1}
+		# 	}
+		# }
+		# option = {
+		# 	trigger = {
+		# 		NOt = { has_global_flag = phi_realistic_upkeep_researcher }
+		# 	}
+		# 	name = phi_realistic_upkeep_researcher.1.disabilitato
+		# 	custom_tooltip = phi_realistic_upkeep_researcher.1.disabilitato_tt
+		# 	set_global_flag = phi_realistic_upkeep_researcher
+		# 	hidden_effect = {
+		# 		country_event = { id = cg_game_start.1}
+		# 	}
+		# }
+		#Aura phi_realistic_upkeep_researcher sempre attivo
+		option = {
+			trigger = {
+				has_global_flag = Not_Spread_aura_endlessly_in_fallen_empire
+			}
+			name = Not_Spread_aura_endlessly_in_fallen_empire.1.abilitato
+			custom_tooltip = Not_Spread_aura_endlessly_in_fallen_empire.1.abilitato_tt
+			set_global_flag = Not_Spread_aura_in_fallen_empire
+			remove_global_flag = Not_Spread_aura_endlessly_in_fallen_empire
+			hidden_effect = {
+				country_event = { id = cg_game_start.1}
+			}
+		}
+		option = {
+			trigger = {
+				has_global_flag = Not_Spread_aura_in_fallen_empire
+			}
+			name = Not_Spread_aura_in_fallen_empire.1.abilitato
+			custom_tooltip = Not_Spread_aura_in_fallen_empire.1.abilitato_tt
+			remove_global_flag = Not_Spread_aura_endlessly_in_fallen_empire
+			remove_global_flag = Not_Spread_aura_in_fallen_empire
+			hidden_effect = {
+				country_event = { id = cg_game_start.1}
+			}
+		}
+		option = {
+			trigger = {
+				NOR = { 
+					has_global_flag = Not_Spread_aura_in_fallen_empire 
+					has_global_flag = Not_Spread_aura_endlessly_in_fallen_empire
+				}
+			}
+			name = Not_Spread_aura_in_fallen_empire.1.disabilitato
+			custom_tooltip = Not_Spread_aura_in_fallen_empire.1.disabilitato_tt
+			set_global_flag = Not_Spread_aura_endlessly_in_fallen_empire
+			hidden_effect = {
+				country_event = { id = cg_game_start.1}
+			}
+		}
+
+		#Can_Branch_office_on_gestait sempre attivo
+		option = {
+			trigger = {
+				has_global_flag = Can_Branch_office_on_gestait
+			}
+			name = Can_Branch_office_on_gestait.1.abilitato
+			custom_tooltip = Can_Branch_office_on_gestait.1.abilitato_tt
+			remove_global_flag = phi_realistic_upkeep_researcher
+			hidden_effect = {
+				country_event = { id = cg_game_start.1}
+			}
+		}
+		option = {
+			trigger = {
+				NOt = { has_global_flag = Can_Branch_office_on_gestait }
+			}
+			name = Can_Branch_office_on_gestait.1.disabilitato
+			custom_tooltip = Can_Branch_office_on_gestait.1.disabilitato_tt
+			set_global_flag = Can_Branch_office_on_gestait
+			hidden_effect = {
+				country_event = { id = cg_game_start.1}
+			}
+		}
 		
 }

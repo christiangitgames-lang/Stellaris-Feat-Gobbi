@@ -1,7 +1,9 @@
 on_game_start = {
 	events = {
 		phi_planetary_modifiers.0 #reroll guarantee planets
+		phi_planetary_modifiers.1
 		cg_planetary_modifiers.0 # set modifiers and blockers for new deposit
+		
 	}
 }
 on_game_start_country = {
@@ -13,6 +15,8 @@ on_game_start_country = {
 
 		gobbi_ai.100 #select best option for AI
 		sfg_usefull_communication_of_sfg.2 #message if can expand without limit connecting
+		sfg_ai.10 # refund alloys resource for ai
+		sfg_ai.20 #unity focus at start game (average empire)
 	}
 }
 
@@ -71,7 +75,11 @@ on_five_year_pulse_country = {
 	}
 }
 
-
+on_decade_pulse_country = {
+	events = {
+		sfg_utility.2
+	}
+}
 # A fleet has entered a system
 # Scope = Fleet
 # From = System

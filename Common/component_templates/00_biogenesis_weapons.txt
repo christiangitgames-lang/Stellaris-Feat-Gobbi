@@ -3128,10 +3128,10 @@ weapon_component_template = {
 			food = @s_t3_upkeep_energy
 		}
 	}
-	ship_modifier = {
-		ship_armor_regen_add_static = @regen_S1 #Regeneration per day
-		ship_orbital_bombardment_mult = 0.1
-	}
+	# ship_modifier = {
+	# 	ship_hull_regen_add_static = @regen_S1 #Regeneration per day
+	# 	ship_orbital_bombardment_mult = 0.1
+	# }
 }
 
 weapon_component_template = {
@@ -3168,10 +3168,10 @@ weapon_component_template = {
 			food = @m_t3_upkeep_energy
 		}
 	}
-	ship_modifier = {
-		ship_armor_regen_add_static = @regen_S2 #Regeneration per day
-		ship_orbital_bombardment_mult = 0.1
-	}
+	# ship_modifier = { #TO DO buggata non va provare a usare modificatore diverso
+	# 	ship_hull_regen_add_static = @regen_S2 #Regeneration per day
+	# 	ship_orbital_bombardment_mult = 0.1
+	# }
 }
 
 # ## Disruptor 2
@@ -3218,10 +3218,10 @@ weapon_component_template = {
 			no_resource_for_component = { RESOURCE = rare_crystals }
 		}
 	}
-	ship_modifier = {
-		ship_armor_regen_add_static = @regen_S2 #Regeneration per day
-		ship_orbital_bombardment_mult = 0.2
-	}
+	# ship_modifier = {
+	# 	ship_hull_regen_add_static = @regen_S2 #Regeneration per day
+	# 	ship_orbital_bombardment_mult = 0.2
+	# }
 }
 
 weapon_component_template = {
@@ -3259,10 +3259,10 @@ weapon_component_template = {
 			food = @m_t4_upkeep_energy
 		}
 	}
-	ship_modifier = {
-		ship_armor_regen_add_static = @regen_S3 #Regeneration per day
-		ship_orbital_bombardment_mult = 0.2
-	}
+	# ship_modifier = {
+	# 	ship_hull_regen_add_static = @regen_S3 #Regeneration per day
+	# 	ship_orbital_bombardment_mult = 0.2
+	# }
 	ai_weight = {
 		weight = 1
 		modifier = {
@@ -3307,10 +3307,10 @@ weapon_component_template = {
 			food = @s_t5_upkeep_energy
 		}
 	}
-	ship_modifier = {
-		ship_armor_regen_add_static = @regen_S3 #Regeneration per day
-		ship_orbital_bombardment_mult = 0.25
-	}
+	# ship_modifier = {
+	# 	ship_hull_regen_add_static = @regen_S3 #Regeneration per day
+	# 	ship_orbital_bombardment_mult = 0.25
+	# }
 	ai_weight = {
 		weight = 1
 		modifier = {
@@ -3354,10 +3354,10 @@ weapon_component_template = {
 			food = @m_t5_upkeep_energy
 		}
 	}
-	ship_modifier = {
-		ship_armor_regen_add_static = @regen_M1 #Regeneration per day
-		ship_orbital_bombardment_mult = 0.25
-	}
+	# ship_modifier = {
+	# 	ship_hull_regen_add_static = @regen_M1 #Regeneration per day
+	# 	ship_orbital_bombardment_mult = 0.25
+	# }
 	ai_weight = {
 		weight = 1
 		modifier = {

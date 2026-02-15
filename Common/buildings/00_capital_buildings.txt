@@ -528,6 +528,7 @@ building_machine_capital = {
 		job_patrol_drone_add = 100
 		job_logistics_drone_add = 300
 		planet_defense_armies_add = @tier_2_capital_defense_armies
+		planet_max_branch_office_buildings_add = 1 #sfg mode
 	}
 
 	inline_script = {
@@ -629,6 +630,7 @@ building_machine_major_capital = {
 		job_patrol_drone_add = 200
 		job_logistics_drone_add = 400
 		planet_defense_armies_add = @tier_3_capital_defense_armies
+		planet_max_branch_office_buildings_add = 2 #sfg mode
 	}
 
 	inline_script = {
@@ -731,6 +733,7 @@ building_machine_system_capital = {
 		job_patrol_drone_add = 300
 		job_logistics_drone_add = 500
 		planet_defense_armies_add = @tier_4_capital_defense_armies
+		planet_max_branch_office_buildings_add = 4 #sfg mode
 	}
 
 	inline_script = {
@@ -864,6 +867,7 @@ building_hive_capital = {
 		job_coordinator_add = 200
 		job_patrol_drone_add = 100
 		planet_defense_armies_add = @tier_2_capital_defense_armies
+		planet_max_branch_office_buildings_add = 1 #sfg mode
 	}
 
 	inline_script = {
@@ -943,6 +947,7 @@ building_hive_major_capital = {
 		job_logistics_drone_add = 500
 		job_patrol_drone_add = 200
 		planet_defense_armies_add = @tier_3_capital_defense_armies
+		planet_max_branch_office_buildings_add = 2
 	}
 
 	inline_script = {

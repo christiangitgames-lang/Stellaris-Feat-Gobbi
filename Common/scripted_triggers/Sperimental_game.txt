@@ -1,6 +1,6 @@
-Can_Branch_office_on_gestait = {
-	always = no
-}
+#Can_Branch_office_on_gestait = {
+#	always = no
+#} spostato in global flag.
 
 valid_for_Upgrade_system = {
 	has_deposit = no
@@ -24,7 +24,12 @@ able_coop_ascension_perk = {
 change_scripted_ideal = {
 	always = no
 }
-
+enclave_enable = { #cetus non va
+	always = no
+}
+is_debug = {
+	always = no
+}
 #4.0 obsolete
 # Can_Branch_office_on_megacorp = {
 # 	always = no

@@ -37,7 +37,7 @@ ship_section_template = {
 			alloys = @section_cost
 		}
 		logistics = {
-			trade = @fighters_logistic_upkeep_trade
+			trade = @Logistic_extra_fighter_logistic_upkeep_trade_2
 		}
 	}
 }
@@ -97,7 +97,7 @@ ship_section_template = {
 			alloys = @section_cost
 		}
 		logistics = {
-			trade = @fighters_logistic_upkeep_trade
+			trade = @Logistic_extra_fighter_logistic_upkeep_trade_2
 		}
 	}
 }
@@ -133,7 +133,7 @@ ship_section_template = {
 			alloys = @section_cost
 		}
 		logistics = {
-			trade = @fighters_logistic_upkeep_trade
+			trade = @Logistic_extra_fighter_logistic_upkeep_trade_2
 		}
 	}
 }
@@ -173,7 +173,7 @@ ship_section_template = {
 			alloys = @section_cost
 		}
 		logistics = {
-			trade = @fighters_logistic_upkeep_trade
+			trade = @Logistic_extra_fighter_logistic_upkeep_trade_2
 		}
 	}
 }
@@ -233,7 +233,7 @@ ship_section_template = {
 			alloys = @section_cost
 		}
 		logistics = {
-			trade = @fighters_logistic_upkeep_trade
+			trade = @Logistic_extra_fighter_logistic_upkeep_trade_2
 		}
 	}
 }
@@ -269,7 +269,7 @@ ship_section_template = {
 			alloys = @section_cost
 		}
 		logistics = {
-			trade = @fighters_logistic_upkeep_trade
+			trade = @Logistic_extra_fighter_logistic_upkeep_trade_2
 		}
 	}
 }

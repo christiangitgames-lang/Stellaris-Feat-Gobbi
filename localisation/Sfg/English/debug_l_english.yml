@@ -8,3 +8,4 @@
 # sfgdebugtext2: "§Y[this.sfgdebugtest2]§!"
 sfgdebugtext: "[this.sfgdebugtest] , [this.sfgdebugtest2]"
 sfgdebugtext2: "min : [root.sfgdebugvalue] dam: [root.sfgdebugvalue2]"
+undefinied: "Not defined (error)"

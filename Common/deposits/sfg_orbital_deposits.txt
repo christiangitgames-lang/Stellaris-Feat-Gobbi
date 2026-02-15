@@ -195,7 +195,7 @@ d_nanites_deposit_2 = {
 	}
 
 	drop_weight = {
-		weight = 1 #test 
+		weight = 0.5
 		modifier = {
 			factor = 0.5
 			OR = {
@@ -233,7 +233,7 @@ d_nanites_deposit_3 = {
 	}
 
 	drop_weight = {
-		weight = 0.5
+		weight = 0.25
 		modifier = {
 			factor = 0.5
 			OR = {

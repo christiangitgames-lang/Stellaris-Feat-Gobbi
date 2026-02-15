@@ -569,6 +569,7 @@ civic_police_state = {
 	modifier = {
 		planet_stability_add = 3
 		planet_enforcers_unity_produces_add = 1
+		enforcer_jobs_bonus_workforce_mult = 0.10
 		add_attunement_the_instrument_of_desire = @civic_attunement1
 	}
 	random_weight = { base = @civic_default_random_weight }
@@ -754,11 +755,15 @@ civic_slaver_guilds = {
 			OR = {
 				has_ai_personality = erudite_explorers
 				has_ai_personality = democratic_crusaders
+				has_ai_personality = harmonious_hierarchy
 			}
 		}
 	}
 	modifier = {
 		pop_slave_bonus_workforce_mult = 0.15
+		pop_cat_worker_bonus_workforce_mult = 0.10
+		planet_building_build_speed_mult = 0.1
+		pop_cat_worker_happiness = -0.10
 		refugee_attraction = -0.25
 		add_attunement_the_instrument_of_desire = @civic_attunement1
 	}
@@ -929,6 +934,7 @@ civic_warrior_culture = {
 	swap_type = {
 		description = "civic_tooltip_warrior_culture_effects"
 		trigger = {
+			enclave_enable = yes
 			host_has_dlc = "Overlord"
 		}
 		modifier = {
@@ -1598,9 +1604,10 @@ civic_aristocratic_elite = {
 	}
 
 	modifier = {
+		pop_cat_ruler_bonus_workforce_mult = 0.1
+		leaders_upkeep_mult = 0.1
 		add_attunement_the_instrument_of_desire = @civic_attunement1
 	}
-	hide_modifiers = yes
 }
 
 civic_shared_burden = {
@@ -1818,6 +1825,7 @@ civic_barbaric_despoilers = {
 	swap_type = {
 		description = "civic_tooltip_barbaric_despoilers_effects"
 		trigger = {
+			enclave_enable = yes
 			host_has_dlc = "Overlord"
 		}
 		modifier = {

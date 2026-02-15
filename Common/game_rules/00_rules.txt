@@ -2021,7 +2021,10 @@ can_support_branch_offices = {
 		
 		OR = {
 			is_gestalt = no
-			Can_Branch_office_on_gestait = yes
+			AND = {
+				has_global_flag = Can_Branch_office_on_gestait
+				is_homicidal = no
+			}
 		}
 		OR = {
 			is_country_type = default

@@ -17,3 +17,49 @@ country_event = {
 			set_country_flag = was_human
 		}
 }
+country_event = {
+	#	cg_ai.1	yearly checked - if multiplayer game see message every 10 anni
+	
+	id = sfg_utility.2
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = player_host
+	}
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					is_debug = yes
+					any_country = {
+						NOT = { has_country_flag = player_host }
+						is_ai = no
+					}
+				}
+			}
+			random_country = {
+				limit = { has_country_flag = player_host }
+				country_event = { id = sfg_utility.3 }
+			}
+		}
+	}
+}
+country_event = {
+	#	cg_ai.1	yearly checked - if multiplayer game see message every 10 anni
+	
+		id = sfg_utility.3
+		hide_window = no
+		title = sfg_utility.3.name
+		picture = GFX_evt_gamestart
+		desc = sfg_utility.3.desc
+		is_triggered_only = yes
+		trigger = {
+			is_ai = no
+		}
+		option = {
+			name = OK
+		}
+}
+

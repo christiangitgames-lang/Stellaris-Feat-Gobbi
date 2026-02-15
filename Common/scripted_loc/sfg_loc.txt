@@ -1,0 +1,33 @@
+defined_text = { 
+	name = Percent_gestalt_text
+	value = value:Percent_gestalt
+}
+defined_text = { 
+	name = gestalt_count_text
+	value = value:count_gestalt
+}
+defined_text = { 
+	name = no_gestalt_count_text
+	value = value:count_no_gestalt
+}
+defined_text = { 
+	name = from_district
+	text = {
+		trigger = {
+			is_variable_set = from_d
+		}
+		localization_key = from_d
+	}
+	default = undefinied
+}
+defined_text = { 
+	name = to_district
+	text = {
+		trigger = {
+			is_variable_set = to_d
+		}
+		localization_key = to_d
+	}
+	default = undefinied
+}
+

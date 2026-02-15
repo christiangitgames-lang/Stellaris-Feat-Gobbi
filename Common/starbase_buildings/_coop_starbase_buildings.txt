@@ -1,0 +1,75 @@
+mario_fleet_academy = { #dedicato a mario minaccia, l'uomo più forte dell'universo
+	icon = "GFX_spaceport_module_fleet_mario_academy"
+	construction_days = 360
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_interstellar_fleet_traditions }
+
+		#is_orbital_ring = no
+	}
+
+	possible = {
+		
+		#owner = {
+#			has_policy_flag = Automation_Nothing
+#		}
+		OR = {
+			has_starbase_module = shipyard
+			starbase_buildable_is_in_queue_before = {
+				first = shipyard
+				second = mario_fleet_academy
+			}
+		}
+	}
+
+	ship_modifier = {
+		ship_starting_experience_add = 500
+	}
+	station_modifier = {
+		starbase_shipyard_build_speed_mult = -0.10
+	}
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 500
+			influence = 50
+		}
+
+		upkeep = {
+			energy = 5
+		}
+	}
+
+	show_in_tech = "tech_interstellar_fleet_traditions"
+
+	ai_weight = {
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		modifier = {
+			factor = 0
+			count_starbase_modules = {
+				type = shipyard
+				count < 2
+			}
+		}
+		modifier = {
+			factor = 10
+			owner = { has_resource = { type = alloys amount > 5000 } }
+		}
+		modifier = {
+			factor = 10
+			owner = { has_resource = { type = alloys amount > 10000 } }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { used_naval_capacity_percent > 0.5 }
+		}
+		modifier = { #ci doveva pensare prima
+			factor = 0.25
+			AND = {
+				owner = { is_at_war = yes }
+				owner = { used_naval_capacity_percent > 0.5 }
+			}
+		}
+	}
+}

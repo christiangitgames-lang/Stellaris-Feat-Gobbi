@@ -55,3 +55,51 @@ Per fare guerra end threath a un giocatore che è andato in ascension crisi deve
 La crisi ascension può andare in guerra con chiunque dal livello 2, sennò solo ai vicini.
 TOlto azzeramento totale del malus per ap shared destiny e civica vassali per i suoi vassali in cambio l'ho potenziato il massimo di vassali senza ricevere svantaggi da 1 a 3.
 Carrier hp 10.000 invece di 12.000
+
+
+[h1][b]1.1.3 REbalance[/b][/h1]
+
+Ripristinato sezione nave corvetta con punto di difesa 
+civic_slaver_guilds migliorato, ora da bonus anche a lavoratori ma hanno un malus di happiness e inoltre le costruzioni sono più veloci.
+
+experiment_engineer producono 50% in più di scienza
+Le aure si diffondono il 50% più "lentamente" nello spazio fallen empire
+
+Ora dal menu setup puoi modificare alcune regole del gioco.
+Aggiunta regola del gioco per definire se le aure possono espandersi in fallen empire addormentati.
+Nave scientica ora ha vari bonus per ftl (più veloce e jump drive più lontani).
+Biocrystall armore aggiunto il 3 e 4.
+
+fix bug trade_policy_trade_league per i megacorp che non riuscivano con l'agenda open market
+Meno depositi naniti (comujnque più della vanilla) e possibilità bassisima di trovare un deposito con enormi quantità di exo,vol o crystal
+
+[h2]Bio empire:[/h2]
+Bilanciate le armi bioweapon:
+[List]
+[*]Bio Point defence allineato con il buff delle altre point defence
+[*]Bio distruptor potenziati visto che "ship_modifier" non è supportato
+[/List]
+Le tech per aumentare hull bio ship aumentate dal +10% al +33%
+bioship_growth_progress_mult aumentato in mid game (+20%) e in late game (+33%)
+
+trade_policy_trade_league non devi avere la federazione commerciale se hai agenda  open markets se has_federation = yes o num_commercial_pacts > 0 o sei is_criminal_syndicate
+Per bilanciare ciò ora la federazione trade ha il perk trade più forte: diminuisce il trade fee. (EVVIVA)
+
+Bilanciamenti:
+Malus empire size da colonie cambiato per corporativi da +50% a +40%
+Bonus empire size da colonie cambiato auth_synth_oligarchic_virtual da -50% a -40%
+Bilanciato specialist_scholarium_neighbor ora è valido solo al livello 2 dello scholarium per evitare wombo combo con 20 vassali.
+Computation_core_allocation aumenta di 0.005 upkeep energy dei civili (attualmente ottenevi bonus gratuiti, facilmente scalabili in un ecumonopoli) roba che avevo +1000% bonus sui lavori...
+Ai: 
+Migliorata leggermente ai ora dovrebbe fare unity all'inizio per arrivare prima alle 3 ascensioni (da testare).
+
+[h1][b]Piccoli miglioramenti, fix bug e allineamento[/b][/h1]
+Fix bug per l'ai che prediligeva district farming.
+Fix problema slot Bombardieri che si buggava il mantenimento in movimento.
+Fix bug allineamento 
+Allineamento a nuova versione cetus.
+Bilanciato angler ora è 75 agricoltori e 25 
+
+Migliorato ai.
+Messo codice per debuggare meglio l'ai in futuro e renderla ancora migliore.
+AGgiunto easter egg reliqua "sgorbio"

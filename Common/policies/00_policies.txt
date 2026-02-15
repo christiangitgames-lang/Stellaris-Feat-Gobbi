@@ -3188,13 +3188,19 @@ trade_policy = {
 		potential = {
 		}
 		valid = {
-			has_federation = yes
+			
 			OR = {
-				federation = { has_federation_perk = trade_federation_passive }
 				AND = {
-					has_modifier = agenda_open_markets_finish
-					hidden_trigger = { has_modifier = agenda_open_markets_criminal_heritage_finish }
+					has_federation = yes
+					federation = { has_federation_perk = trade_federation_passive }
+				}
+				AND = {
+					OR = {
+						has_modifier = agenda_open_markets_finish
+						has_modifier = agenda_open_markets_criminal_heritage_finish
+					}
 					OR = { 
+						has_federation = yes
 						num_commercial_pacts > 0
 						is_criminal_syndicate = yes
 					}

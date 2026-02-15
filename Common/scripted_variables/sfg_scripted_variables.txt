@@ -34,3 +34,7 @@
 @pay_proxy_war_additional_resources_25 = -25
 @pay_proxy_war_additional_resources_60 = -60
 @pay_proxy_war_additional_resources_40 = -40
+
+
+#civics problematic
+@ai_civic_problematic_base_weight = 1

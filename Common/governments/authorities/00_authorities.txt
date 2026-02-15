@@ -435,7 +435,7 @@ auth_oligarchic = {
 			edicts_upkeep_mult = -0.2
 			edicts_cost_mult = -0.75
 			empire_size_districts_mult = -0.10
-			empire_size_colonies_mult = -0.50
+			empire_size_colonies_mult = -0.40
 			show_only_custom_tooltip = no
 		}
 	}
@@ -1672,7 +1672,7 @@ auth_corporate = {
 
 	country_modifier = {
 		planet_jobs_trade_produces_mult = 0.10
-		empire_size_colonies_mult = 0.50
+		empire_size_colonies_mult = 0.40
 		envoys_add = 1
 	}
 
@@ -1837,7 +1837,7 @@ auth_corporate = {
 		}
 		modifier = {
 			planet_jobs_trade_produces_mult = 0.10
-			empire_size_colonies_mult = 0.50
+			empire_size_colonies_mult = 0.40
 			custom_tooltip = auth_bio_corporate_evopred_tt
 			show_only_custom_tooltip = no
 		}

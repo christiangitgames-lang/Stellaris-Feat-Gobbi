@@ -106,3 +106,6 @@
 
 @fighter_logistic_upkeep_trade = 0.05
 @fighters_logistic_upkeep_trade = 0.1
+@Logistic_extra_fighter_logistic_upkeep_trade_1 = 0.075
+@Logistic_extra_fighter_logistic_upkeep_trade_2 = 0.10
+@Logistic_extra_fighter_logistic_upkeep_trade_3 = 0.15

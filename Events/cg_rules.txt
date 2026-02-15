@@ -11,6 +11,7 @@ country_event = { #set bonus malus early game
 			years_passed < 30
 			mid_game_years_passed <= 0
 		}
+		NOT = { is_country_type = fallen_empire }
 		NOT = { has_modifier = early_game_modifier }
 	}
 	immediate = { 
@@ -62,6 +63,7 @@ country_event = { #set bonus malus early game ai
 		is_ai = yes
 		was_human = no
 		NOT = { is_country_type = fallen_empire }
+		NOT = { is_country_type = awakened_fallen_empire }
 		NOT = { has_modifier = ai_early_game_modifier }
 	}
 	immediate = { 
@@ -85,6 +87,7 @@ country_event = { #set bonus malus early game ai
 		}
 		end_game_years_passed <= 0
 		NOT = { is_country_type = fallen_empire }
+		NOT = { is_country_type = awakened_fallen_empire }
 		NOT = { has_modifier = ai_mid_game_modifier }
 	}
 	immediate = { 
@@ -92,6 +95,7 @@ country_event = { #set bonus malus early game ai
 			modifier = ai_mid_game_modifier
 		}
 		remove_modifier = ai_early_game_modifier
+		
 	}
 }
 country_event = { #set bonus malus late game ai
@@ -105,6 +109,7 @@ country_event = { #set bonus malus late game ai
 		was_human = no
 		end_game_years_passed >= 0
 		NOT = { is_country_type = fallen_empire }
+		NOT = { is_country_type = awakened_fallen_empire }
 		NOT = { has_modifier = ai_late_game_modifier }
 	}
 	immediate = { 

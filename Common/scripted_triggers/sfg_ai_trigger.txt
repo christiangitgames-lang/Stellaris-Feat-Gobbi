@@ -1,0 +1,51 @@
+average_empire = {
+    should_ai_focus_on_trade = no #e' un ai che fa trade focusare il trade
+    is_void_dweller_empire = no
+    is_spiritualist = no
+    is_gestalt = no
+	country_uses_bio_ships = no #le nazioni bio non sono tra gli imperi medi
+    is_country_type = default
+}
+militaristic_empire = {
+	OR = {
+		is_at_war = yes
+		is_militarist = yes
+	}
+}
+spiritualistic_empire = {
+	OR = {
+		is_spiritualist = yes
+			has_make_spiritualist_perk = yes
+	}
+}
+mineral_planet = {
+	num_zones = {
+				type = zone_minerals
+				value > 0
+	}
+}
+energy_planet = {
+	num_zones = {
+				type = zone_energy
+				value > 0
+	}
+}
+food_planet = {
+	num_zones = {
+				type = zone_food
+				value > 0
+	}
+}
+is_regular_planet_type = { # is_starting_planet_type - volcanic
+	OR = {
+		is_planet_class = pc_desert
+		is_planet_class = pc_tropical
+		is_planet_class = pc_arid
+		is_planet_class = pc_continental
+		is_planet_class = pc_ocean
+		is_planet_class = pc_tundra
+		is_planet_class = pc_arctic
+		is_planet_class = pc_alpine
+		is_planet_class = pc_savannah
+	}
+}

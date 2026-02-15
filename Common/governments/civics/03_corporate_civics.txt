@@ -214,6 +214,7 @@ civic_naval_contractors = {
 	}
 	swap_type = {
 		trigger = {
+			enclave_enable = yes
 			host_has_dlc = "Overlord"
 		}
 
@@ -549,6 +550,7 @@ civic_private_military_companies = {
 	}
 	swap_type = {
 		trigger = {
+			enclave_enable = yes
 			host_has_dlc = "Overlord"
 		}
 
@@ -1529,6 +1531,7 @@ civic_crusader_spirit_corporate = {
 	}
 	swap_type = {
 		trigger = {
+			enclave_enable = yes
 			host_has_dlc = "Overlord"
 		}
 		description = "civic_tooltip_crusader_spirit_corporate_effects"

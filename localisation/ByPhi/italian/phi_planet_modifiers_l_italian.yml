@@ -223,5 +223,5 @@ decision_phi_magnetic_clouds_3_2_desc: "Possiamo limitare l'impatto delle tempes
 decision_phi_magnetic_clouds_2_1: "Generatori magnetici"
 decision_phi_magnetic_clouds_2_1_desc: "Possiamo installare enormi generatori magnetici per controllare la magnetosfera planetaria."
 
-decision_phi_pm_atmospheric_pollution: "Rimuovere l'inquinamento atmosferico"
-decision_phi_pm_atmospheric_pollution_desc: "Finalmente abbiamo la competenza e le risorse per ripulire il disastro..."
+decision__pm_atmospheric_pollution: "Rimuovere l'inquinamento atmosferico"
+decision__pm_atmospheric_pollution_desc: "Finalmente abbiamo la competenza e le risorse per ripulire il disastro..."

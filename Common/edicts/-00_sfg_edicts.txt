@@ -83,3 +83,52 @@ nanites_subsidies = {
 		}
 	}
 }
+Settings_mod = {
+	length = 1
+	icon = "GFX_edict_type_policy"
+	resources = {
+		category = edicts
+		cost = {}
+	}
+	potential = {
+		always = yes
+		# OR = {
+		# 	has_technology = "tech_orbital_arc_furnace"
+		# 	has_technology = "tech_dyson_swarm"
+		# 	has_technology = "tech_habitat_1"
+		# 	has_technology = "tech_quantum_catapult"
+		# 	has_technology = "tech_hyper_relays" # For enabling notifications
+		# 	has_tradition = tr_nanotech_adopt # Nanite Harvesters
+		# 	has_ascension_perk = ap_hydrocentric # Ice Mining
+		# }
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "is_debug_no"
+			success_text = is_debug_si
+			is_debug = yes
+		}
+		has_global_flag = phi_initialisation_menu
+		has_global_flag = phi_border_gore_disallowed
+		has_global_flag = phi_realistic_upkeep_researcher
+		has_global_flag = AI_hard
+		has_global_flag = AI_medium
+		has_global_flag = AI_easy
+		has_global_flag = Can_Branch_office_on_gestait
+		has_global_flag = Not_Spread_aura_in_fallen_empire 
+		has_global_flag = Not_Spread_aura_endlessly_in_fallen_empire
+		has_country_flag = player_host
+		custom_tooltip = {
+			fail_text = "average_empire_no"
+			success_text = average_empire_si
+		    average_empire = yes
+		}
+		
+	}
+	effect = {
+	}
+
+	on_disabled = {
+	}
+}

@@ -6,6 +6,7 @@ Artifact action, now can sell 100 minor artifacts instead 50
 Ascension perk shared destiny remove penalty loyalty
 ap_archaeoengineers more best for archaeo buildings example more shild from archaeo overcharger
 Transcendent learning give actionn additional trait will be added to the new leader
+Psion Aura Spread 50% in fallen empire that "sleep"
 
 [h2]Building / districts[/h2]
 Building slave processing give +20% to slave production instead 10%
@@ -16,6 +17,15 @@ New building "foreign research lab" this building give job of "spies research" t
 
 [h2]Casus bellis[/h2]
 Can't humiliation if your or target is homicidal country
+can't war crisis ascension if not is near to you or is level 3 (danger), he can't war if not is near to you o is level 2
+
+[h2]Proxy War:[/h2]
+[list]
+[*]Diplomatic action through generally more expensive proxy wars.
+[*]You can conduct a proxy war every year instead of every month.
+[*]You can set the war goal to "proxy war" if the target has a claim or if the target is near the defender and has a bad opinion (< neutral).
+[*]Now the "proxy war" war goal costs 40 trust or intelligence instead of 30.
+[*]The open border war goal is not available for a proxy war.
 
 [h2]Components[/h2]
 Crisys hive is little more strong
@@ -143,12 +153,18 @@ Planet occupied have devastation and grant more exhaustion war
 All territory need linked to an your planet or ally if not is will destroy in 1 years until not have jump drive ( is It's to prevent players from setting up systems on choke points at the start of the game. )
 
 
-[h2]Civics[/h2]
+[h2]Civics/government[/h2]
+Empire Size malus from colonies for Corporate empires changed from +50% to +40%.
+Empire Size bonus from colonies for auth_synth_oligarchic_virtual changed from –50% to –40%.
+
 Machine terminator have upkee ship -1%
 Machine spybot and criminal_heritage +100% observation station 
 Feudal realm upgrade: Your Subjects do not suffer loyalty penalties from you having multiple Subjects and Enables an councilior agenda that shifts vassals' ethos towards us.
 Technocracy , add unity 1 at Researcher
 Best plunders, now give tech (if have inferior tech) and unity
+Slaver guilds now give bonus worker but malus happiness
+Balanced specialist_scholarium_neighbor: it is now valid only at Scholarium level 2 to prevent wombo combos with 20 vassals.
+Computation core allocation now increases civilian Energy upkeep by 0.005 (previously you were getting free, easily scalable bonuses—on an ecumenopolis I had something like +1000% job bonuses…).
 
 [h2]Councilors[/h2]
 All councilior that give unity mult now give unity +3% instead +2%
@@ -187,6 +203,8 @@ entertainer now produces of base double, with double upkeep.
 Resolve probably bug balance of paradox: Reduced the production of rare resources by metallurgists and artisans; consequently, also reduced upkeep.
 Change upkeep phys and engineering researcher phys in realistic mode
 Balance society upkeep res of machine now 4 energy instead 3
+Experiment engineer is best now (50% more prod)
+
 
 [h2]Section Template[/h2]
 Battleship hangar have only 2 Large utility slots in Bow
@@ -197,6 +215,7 @@ Starbase have hangar instead of medium turret
 
 [h2]Ships[/h2]
 New ship "carrier" is strong ship the can carry much hangar
+Science ship have bonus in ftl and bonus range jump drive.
 
 [h2]Starbase buildings[/h2]
 Now the building of orbital cost influence
@@ -221,6 +240,7 @@ Change dotrine navy
 2 new tech for building planet in parallel
 tech_self_aware_logic now give rare tech draw chance +50%
 10+ new techs
+Technologies that increase bioship hull have been raised from +10% to +33%.
 
 [h2]Tradition[/h2]
 Discovery now have same tradition but tree is different (221) so now now faith in science is last and need unlock all before
@@ -318,3 +338,4 @@ Utility:
 Send an message when can be decision arcology project
 Send an message when can be terraforming with hive or pc planet
 Integrate edict for found nice location furnace, dyson sphere, Nanite Harvester, ice mining and Quantum Catapult get code for search by sba.
+Can set if aura spread in fallen empire that "sleep"

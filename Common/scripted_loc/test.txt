@@ -26,3 +26,4 @@ defined_text = { # Country/leader/pop/species scope
 # 					which = sfgdebugvalue2
 # 					value = -1
 # 				}
+

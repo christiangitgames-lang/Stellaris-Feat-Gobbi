@@ -54,7 +54,7 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_mid"
 	ai_tags = { gunship artillery brawler brawler_stealth }
 	ai_weight = {
-		factor = 1000
+		factor = 100
 	}
 	
 	component_slot = {
@@ -135,8 +135,9 @@ ship_section_template = {
 	small_utility_slots = 3
 	aux_utility_slots = 1
 	modifier = {
-		ship_shield_mult = 0.33
+		ship_shield_mult = 0.20
 		ship_hull_mult = -0.10
+		ship_shield_hardening_add = 0.15
 	}
 	ai_weight = {
 		modifier = {
@@ -163,53 +164,57 @@ ship_section_template = {
 	}
 }
 
-# ship_section_template = {
-	# key = "CORVETTE_MID_S2PD1"
-	# ship_size = corvette
-	# fits_on_slot = mid
-	# should_draw_components = yes
-	# entity = "corvette_S3_entity"
-	# icon = "GFX_ship_part_core_mid"
+ship_section_template = {
+	key = "CORVETTE_MID_S2PD1"
+	ship_size = corvette
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "corvette_S3_entity"
+	icon = "GFX_ship_part_core_mid"
 
-	# ai_weight = {
-		# modifier = {
-			# factor = 10.0
-			# is_preferred_weapons = weapon_type_energy
-		# }
-		# modifier = {
-			# factor = 0.1
-			# NOT = { is_preferred_weapons = weapon_type_energy }
-		# }
-	# }
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			is_preferred_weapons = weapon_type_energy
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_energy }
+		}
+		modifier = {
+			factor = 10
+			NOT = { has_technology = tech_destroyers }
+		}
+	}
 
-	# component_slot = {
-		# name = "SMALL_GUN_01"
-		# template = "point_defence_turret"
-		# locatorname = "small_gun_01"
-	# }
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "point_defence_turret"
+		locatorname = "small_gun_01"
+	}
 
-	# component_slot = {
-		# name = "SMALL_GUN_02"
-		# template = "small_turret"
-		# locatorname = "small_gun_02"
-	# }
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "small_gun_02"
+	}
 
-	# component_slot = {
-		# name = "SMALL_GUN_03"
-		# template = "small_turret"
-		# locatorname = "small_gun_03"
-	# }
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "small_gun_03"
+	}
 
-	# small_utility_slots = 3
-	# aux_utility_slots = 1
+	small_utility_slots = 3
+	aux_utility_slots = 1
 
-	# resources = {
-		# category = ship_sections
-		# cost = {
-			# alloys = @section_cost
-		# }
-	# }
-# }
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = @section_cost
+		}
+	}
+}
 
 #ship_section_template = {
 #	key = "CORVETTE_MID_S1"
