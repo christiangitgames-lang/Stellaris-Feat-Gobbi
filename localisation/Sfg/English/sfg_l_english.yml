@@ -107,7 +107,7 @@ mod_planet_physicists_unity_produces_add:0 "£unity£ $unity$ from £job_physici
 mod_planet_biologists_unity_produces_add:0 "£unity£ $unity$ from £job_biologist£ $job_biologist$"
 mod_planet_engineers_unity_produces_add:0 "£unity£ $unity$ from £job_engineer£ $job_engineer$"
 mod_planet_jobs_worker_energy_produces_add:0 "£energy£ $energy$ from £worker£ $worker$"
-mod_planet_miners_sr_living_metal_produces_add: "£sr_living£ $sr_living$ from £job_miner£ [GetMinerPlural]"
+mod_planet_miners_sr_living_metal_produces_add: "£sr_living_metal£ $sr_living_metal$ from £job_miner£ [GetMinerPlural]"
 
 #ship size
 carrier_name: "Carrier"

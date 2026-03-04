@@ -43,9 +43,9 @@ country_event = {  #Deamon that fires all usefull communication of sfg feat gobb
 		
 	}
 	immediate = {
-		country_event = {
-			id = sfg_usefull_communication_of_sfg.2 #can remote outpost
-		}
+		# country_event = {
+		# 	id = sfg_usefull_communication_of_sfg.2 #can remote outpost
+		# }
 		country_event = {
 			id = sfg_usefull_communication_of_sfg.10 #decision__pm_atmospheric_pollution
 			days = 15
@@ -152,6 +152,7 @@ country_event = { #Decision tech_terrestrial_sculpting
 		has_resource = { type = energy amount >= 2000 } 
 		
 		any_owned_planet = {
+			valid_planet_for_notification = yes
 			OR = {
 				AND = {
 					OR = {
@@ -199,6 +200,7 @@ country_event = { #Decision tech_terrestrial_sculpting
 	immediate = {
 		random_owned_planet = { 
 			limit = { #decision_phi_pm_*
+				valid_planet_for_notification = yes
 				OR = {
 					AND = {
 						OR = {
@@ -387,6 +389,7 @@ country_event = { #Decision pm techer
 			# has_technology = tech_physics_3
 		}
 		any_owned_planet = {
+			valid_planet_for_notification = yes
 			AND = {
 				OR = {
 					has_modifier = phi_pm_planet_teleporters_3
@@ -414,6 +417,7 @@ country_event = { #Decision pm techer
 	immediate = {
 		random_owned_planet = { 
 			limit = { #decision_phi_pm_*
+				valid_planet_for_notification = yes
 				AND = {
 					OR = {
 							has_modifier = phi_pm_planet_teleporters_3

@@ -46,10 +46,11 @@ psionic_avatar = {
 	}
 	max_hitpoints = @battleship_hp
 	size_multiplier = 80
+	map_counter_icon = ship_counter_64
+	icon = ship_size_space_monster
 	fleet_slot_size = 16
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
-	icon = ship_size_space_monster
 	class = shipclass_military
 	is_designable = no
 }
@@ -68,10 +69,11 @@ corrupted_avatar = {
 	}
 	max_hitpoints = @titan_hp
 	size_multiplier = 80
+	map_counter_icon = ship_counter_64
+	icon = ship_size_space_monster
 	fleet_slot_size = 16
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
-	icon = ship_size_space_monster
 	class = shipclass_military
 	is_designable = no
 
@@ -98,10 +100,11 @@ shroud_manifestation = {
 	}
 	max_hitpoints = @titan_hp
 	size_multiplier = 80
+	map_counter_icon = ship_counter_64
+	icon = ship_size_space_monster
 	fleet_slot_size = 16
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
-	icon = ship_size_space_monster
 	class = shipclass_military
 	is_designable = no
 
@@ -132,10 +135,11 @@ warped_consciousness = {
 	}
 	max_hitpoints = @titan_hp
 	size_multiplier = 160
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 32
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
-	icon = ship_size_space_monster
 	class = shipclass_military
 	is_designable = no
 

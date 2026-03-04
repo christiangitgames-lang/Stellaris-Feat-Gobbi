@@ -3307,7 +3307,7 @@ council_agenda_early_activation_cost = {
 # and the number of civilians is less than building_automation_civilians_threshold.
 # this = planet scope
 building_automation_unemployment_threshold = {
-	base = 0
+	base = 50
 }
 
 # The planet automation doesn't attempt to build new buildings while the number of unemployed pops (excluding civilians)
@@ -3315,7 +3315,7 @@ building_automation_unemployment_threshold = {
 # is less than this threshold.
 # this = planet scope
 building_automation_civilians_threshold = {
-	base = 0
+	base = 100
 }
 
 shroud_delve_cooldown_days = {

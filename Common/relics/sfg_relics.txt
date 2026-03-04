@@ -42,13 +42,13 @@ r_sgorbio_sottolio = {
 			value = 30
 		}
 		if = {
-			limit = { is_gestalt = no }
+			limit = { country_uses_consumer_goods = yes}
 			custom_tooltip = r_sgorbio_sottolio_regular_effect
 			hidden_effect = {
 				random_owned_leader = {
 					limit = {
 						NOR = {
-							has_trait = leader_trait_excessive
+							has_trait = leader_trait_excessive_2
 						}
 					}
 					if = {
@@ -63,6 +63,29 @@ r_sgorbio_sottolio = {
 						add_trait = {
 							trait = leader_trait_excessive
 						}
+					}
+				}
+			}
+		}
+		else = {
+			custom_tooltip = r_sgorbio_sottolio_no_regular_effect
+			random_owned_leader = {
+				limit = {
+					NOR = {
+						has_trait = leader_trait_lavish_lifestyle
+					}
+				}
+				if = {
+					limit = {
+						has_trait = leader_trait_lavish_lifestyle
+					}
+					add_trait = {
+						trait = leader_trait_lavish_lifestyle_2
+					}
+				}
+				else = {
+					add_trait = {
+						trait = leader_trait_lavish_lifestyle
 					}
 				}
 			}

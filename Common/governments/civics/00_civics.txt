@@ -990,7 +990,7 @@ civic_distinguished_admiralty = {
 	modifier = {
 		ship_fire_rate_mult = 0.10
 		leader_commanders_upkeep_mult = -0.25
-		command_limit_add = 30
+		command_limit_mult = 0.20
 		commander_initial_skill = 2
 		add_attunement_the_eater_of_worlds = @civic_attunement1
 	}
@@ -3872,6 +3872,7 @@ civic_entropy_drinkers = {
 	modification = {
 		moddable_conditions_custom_tooltip = CIVIC_NOT_MODDABLE_ONLY_REMOVE
 		add = {
+			OR = {
 			has_technology = tech_psionic_theory
 			custom_tooltip = {
 				success_text = has_not_begun_non_psionic_ascension_success
@@ -3884,6 +3885,8 @@ civic_entropy_drinkers = {
 					has_ascension_perk = ap_synthetic_evolution
 					has_ascension_perk = ap_synthetic_age
 				}
+				}
+				has_civic = civic_entropy_drinkers_corporate
 			}
 		}
 		remove = {

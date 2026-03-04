@@ -2360,6 +2360,7 @@ civic_entropy_drinkers_corporate = {
 	modification = {
 		moddable_conditions_custom_tooltip = CIVIC_NOT_MODDABLE_ONLY_REMOVE
 		add = {
+			OR = {
 			has_technology = tech_psionic_theory
 			custom_tooltip = {
 				success_text = has_not_begun_non_psionic_ascension_success
@@ -2372,6 +2373,8 @@ civic_entropy_drinkers_corporate = {
 					has_ascension_perk = ap_synthetic_evolution
 					has_ascension_perk = ap_synthetic_age
 				}
+				}
+				has_civic = civic_entropy_drinkers
 			}
 		}
 		remove = {

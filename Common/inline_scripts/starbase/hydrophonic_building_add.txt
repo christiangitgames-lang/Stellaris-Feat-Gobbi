@@ -1,0 +1,54 @@
+#hydrophonic_building_add
+if = {
+    limit = { 
+        owner = { 
+            has_resource = { type = alloys amount >= 50 } 
+        } 
+        NOT = { has_starbase_building = hydroponics_bay }
+    }
+    if = {
+        limit = {
+            check_variable_arithmetic = { which = value:max_starbase_buildings value = 1 }
+            #count_starbase_buildings = { include_being_constructed = yes count < 1 }
+        }
+        set_starbase_building = {
+            slot = 1
+            building = hydroponics_bay
+        }
+    }
+    else_if = {
+        limit = {
+            check_variable_arithmetic = { which = value:max_starbase_buildings value = 2 }
+        }
+        set_starbase_building = {
+            slot = 2
+            building = hydroponics_bay
+        }
+    }
+    else_if = {
+        limit = {
+            check_variable_arithmetic = { which = value:max_starbase_buildings value = 3 }
+        }
+        set_starbase_building = {
+            slot = 3
+            building = hydroponics_bay
+        }
+    }
+    else_if = {
+        limit = {
+            check_variable_arithmetic = { which = value:max_starbase_buildings value = 4 }
+        }
+        set_starbase_building = {
+            slot = 4
+            building = hydroponics_bay
+        }
+    }
+    if = { 
+        limit = { has_starbase_building = hydroponics_bay }
+        owner = { add_resource = { alloys = -50 mult = value:buildings_build_cost_mult } }
+        set_timed_starbase_flag = {
+            flag = auto_building_starbase_buildings
+            days = 360
+        }
+    }
+}

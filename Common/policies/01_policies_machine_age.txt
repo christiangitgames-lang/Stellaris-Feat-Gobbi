@@ -88,9 +88,6 @@ computation_core_allocation = {
 		policy_flags = {
 			computation_core_production
 		}
-		modifier = {
-			planet_civilians_energy_upkeep_add = 0.005
-		}
 		AI_weight = {
 			weight = 1
 		}
@@ -101,9 +98,6 @@ computation_core_allocation = {
 		policy_flags = {
 			computation_core_stability
 		}
-		modifier = {
-			planet_civilians_energy_upkeep_add = 0.005
-		}
 		AI_weight = {
 			weight = 1
 		}
@@ -113,9 +107,6 @@ computation_core_allocation = {
 
 		policy_flags = {
 			computation_core_research
-		}
-		modifier = {
-			planet_civilians_energy_upkeep_add = 0.005
 		}
 		AI_weight = {
 			weight = 1

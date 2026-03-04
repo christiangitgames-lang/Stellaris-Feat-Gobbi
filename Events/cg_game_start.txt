@@ -228,7 +228,7 @@ country_event = {
 			}
 			name = Can_Branch_office_on_gestait.1.abilitato
 			custom_tooltip = Can_Branch_office_on_gestait.1.abilitato_tt
-			remove_global_flag = phi_realistic_upkeep_researcher
+			remove_global_flag = Can_Branch_office_on_gestait
 			hidden_effect = {
 				country_event = { id = cg_game_start.1}
 			}

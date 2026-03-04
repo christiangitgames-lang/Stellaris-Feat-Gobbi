@@ -1515,168 +1515,6 @@ zro_crystal_leaders = {
 	add = trigger:num_owned_leaders
 }
 
-toxic_attendant_growth = {
-	base = 1
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_city
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_crashed_slaver_ship
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_resort
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_prison
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_slave
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_hab_housing
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_hive
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_hive_1
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_hive_2
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_hive_3
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_nexus
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_nexus_1
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_nexus_2
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_nexus_3
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_arcology_housing
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_arcology_urban_1
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_arcology_urban_2
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_arcology_urban_3
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_rw_city
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_rw_urban_1
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_rw_urban_2
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = district_rw_urban_3
-		}
-		mode = add
-	}
-	modifier = {
-		has_any_industry_zone = yes
-		mult = 2
-	}
-}
-
 incubator_growth = {
 	base = 3700
 	subtract = trigger:pop_amount
@@ -3441,4 +3279,13 @@ imperious_architecture_scaling_value = {
 	pow = value:capital_tier_minus_1_value
 	mult = 0.5
 	floor = yes
+}
+
+bath_attendant_skill = {
+	base = 0
+	add = value:councilor_level|TYPE|councilor_toxic_baths|
+	add = value:councilor_level|TYPE|councilor_toxic_baths_individual_machine|
+	add = value:councilor_level|TYPE|councilor_corporate_toxic_baths|
+	add = value:councilor_level|TYPE|councilor_corporate_toxic_baths_individual_machine|
+	mult = $MULT$
 }

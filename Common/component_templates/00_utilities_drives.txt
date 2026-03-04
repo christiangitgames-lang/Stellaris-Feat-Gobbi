@@ -34,7 +34,15 @@ utility_component_template = {
 		ship_windup_mult = -0.5
 		ship_interstellar_speed_mult = @ship_interstellar_speed_4
 	}
+	potential = {
+		from = {
+			country_uses_bio_ships = no
+		}
+	}
 	
+	show_tech_unlock_if = {
+		country_uses_bio_ships = no
+	}
 	resources = {
 		category = ship_components
 		cost = {
@@ -49,7 +57,6 @@ utility_component_template = {
 		}
 	}
 	
-	class_restriction = { shipclass_military shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport shipclass_military_special shipclass_starbase }
 	prerequisites = { "tech_avc_hyper_drive_4" }
 	component_set = "ftl_components"
 	upgrades_to = "JUMP_DRIVE_1"
@@ -457,7 +464,7 @@ utility_component_template = {
 	ship_modifier = {
 		ship_disengage_opportunities_add = 1
 		ship_windup_mult = -0.6
-		ship_interstellar_speed_mult = @ship_interstellar_speed_4
+		ship_interstellar_speed_mult = @ship_interstellar_speed_5
 	}
 
 	prerequisites = { "tech_jump_drive_1" "tech_hyper_drive_bio_integration" }
@@ -484,7 +491,7 @@ utility_component_template = {
 	ship_modifier = {
 		ship_disengage_opportunities_add = 2
 		ship_windup_mult = -0.7
-		ship_interstellar_speed_mult = @ship_interstellar_speed_5
+		ship_interstellar_speed_mult = @ship_interstellar_speed_6
 	}
 
 	ai_weight = {

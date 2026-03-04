@@ -564,9 +564,9 @@ experiment_engineer = {
 			trigger = {
 				exists = planet
 			}
-			physics_research = 0.75
-			engineering_research = 0.75
-			society_research = 0.75
+			physics_research = @experiment_engineer_crime_research_output
+			engineering_research = @experiment_engineer_crime_research_output
+			society_research = @experiment_engineer_crime_research_output
 			multiplier = planet.value:experiment_engineer_crime_research_output
 		}
 		produces = {
@@ -576,6 +576,10 @@ experiment_engineer = {
 		}
 		upkeep = {
 			consumer_goods = 2
+		}
+		upkeep = {
+			consumer_goods = @experiment_engineer_crime_research_output
+			multiplier = planet.value:experiment_engineer_crime_research_output
 		}
 		upkeep = {
 			trigger = {
@@ -757,17 +761,13 @@ slave_orderly = {
 	resources = {}
 
 	planet_modifier = {
-		planet_experiment_engineer_produces_mult = 0.025
-		planet_test_subjects_produces_mult = 0.025
+		pop_experiment_engineer_bonus_workforce_mult = 0.025
+		pop_test_subject_bonus_workforce_mult = 0.025
 	}
 
 	triggered_planet_modifier = {
 		planet_amenities_add = 500
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
-	}
-
-	triggered_planet_pop_group_modifier_for_all = {
-		pop_housing_usage_base = -0.5
 	}
 
 	weight = {

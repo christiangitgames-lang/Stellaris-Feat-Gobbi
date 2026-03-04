@@ -4376,11 +4376,7 @@ building_fe_clinic_1 = {
 		potential = {
 			exists = owner
 			owner = {
-				OR = {
 					has_purity_heightened_attributes_tradition = yes
-					has_cloning_artificial_population_tradition = yes
-					has_mutation_somatic_subversiveness_tradition = yes
-				}
 			}
 		}
 		organic_pop_bonus_workforce_mult = @medical_workforce_mult
@@ -4595,11 +4591,7 @@ building_fe_clinic_2 = {
 		potential = {
 			exists = owner
 			owner = {
-				OR = {
 					has_purity_heightened_attributes_tradition = yes
-					has_cloning_artificial_population_tradition = yes
-					has_mutation_somatic_subversiveness_tradition = yes
-				}
 			}
 		}
 		organic_pop_bonus_workforce_mult = @medical_workforce_mult

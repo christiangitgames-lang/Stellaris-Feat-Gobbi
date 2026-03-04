@@ -743,15 +743,15 @@ Nothing: "Disable"
 Nothing_desc: "Be nothing."
 
 Hidroponic: "$sm_hydroponics_bay$"
-
-Hidroponic_desc: "Build $sm_hydroponics_bay$ where exist §Yfree slot star base building§!\n$warning_automation$"
+Hidro_audo_desc: "Build $sm_hydroponics_bay$ where exist §Yfree slot star base building§! and if need income £food£ < 10 or have £alloys£ > 1250"
+Hidroponic_desc: "$Hidro_audo_desc$\n$warning_automation$"
 
 
 Trade_Hidroponic: "$sm_hydroponics_bay$ & Trade"
-Trade_Hidroponic_desc: "Build $sm_hydroponics_bay$ where exist §Yfree slot star base building§! and $sm_offworld_trading_company$ where exist §Yfree slot star base building§!\nBuild $trading_hub$\n$warning_automation$"
+Trade_Hidroponic_desc: "$Hidro_audo_desc$ and $sm_offworld_trading_company$ where exist §Yfree slot star base building§!\nBuild $trading_hub$\n$warning_automation$"
 Solar_Hidroponic: "$Automation_solar_hidrophic_name$"
-Automation_solar_hidrophic_name: "$sm_hydroponics_bay$ & solar panel"
-Solar_Hidroponic_desc: "Build $sm_hydroponics_bay$ where exist §Yfree slot star base building§!\nBuild $sm_solar_panel_network$\n$warning_automation$"
+Automation_solar_hidrophic_name: "$sm_hydroponics_bay$ & energy"
+Solar_Hidroponic_desc: "$Hidro_audo_desc$\nBuild $sm_solar_panel_network$ or astromining\n$warning_automation$"
 Automation_trade_hidrophic_name: "$sm_hydroponics_bay$ & Trade"
 
 Automation_full_automate_sm_buildings_name: "Automation starbase building "

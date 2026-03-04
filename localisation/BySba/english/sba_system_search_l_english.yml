@@ -80,6 +80,7 @@
  sba_system_search.31.energy2: "[event_target:sba_dyson_swarm_energy_star_2.GetName] ([event_target:sba_dyson_swarm_energy_star_2.SBAGetBaseResourceString])"
 
  sba_system_search.31.minerals: "[event_target:sba_dyson_swarm_minerals_star_0.GetName] ([event_target:sba_dyson_swarm_minerals_star_0.SBAGetBaseResourceString])"
+ sba_system_search.31.foods: "[event_target:sba_dyson_swarm_food_star_0.GetName] ([event_target:sba_dyson_swarm_food_star_0.SBAGetBaseResourceString])"
  sba_system_search.31.alloys: "[event_target:sba_dyson_swarm_alloys_star_0.GetName] ([event_target:sba_dyson_swarm_alloys_star_0.SBAGetBaseResourceString])"
 
  sba_system_search.31.volatile_motes: "[event_target:sba_dyson_swarm_volatile_motes_star_0.GetName] ([event_target:sba_dyson_swarm_volatile_motes_star_0.SBAGetBaseResourceString])"

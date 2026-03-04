@@ -103,3 +103,43 @@ Bilanciato angler ora è 75 agricoltori e 25
 Migliorato ai.
 Messo codice per debuggare meglio l'ai in futuro e renderla ancora migliore.
 AGgiunto easter egg reliqua "sgorbio"
+
+
+Fix:
+Fatto in maniera tale che le decision che miglorano il pianeta siano tra le prime.
+Fix icona living_metal
+Fix special planetary feature
+Fix grafici
+Fix editto di produzione.
+
+fix2
+Fix stability for ameninties for gestalt.
+Fix menu start for option branch office for gestalt can't disable.
+
+fix3
+Fix trigger che era per l'ai ma si vedeva anche per i giocatori
+Ora la ricerca di dyson swarm trova anche stelle con cibo 
+Se selezioni l'ascension bio puoi fare i medical center anche se sei oppressive authocracy.
+
+fix4
+Allineament b126 patch of paradox 19-02-2026
+
+[h1]Fix5 for superluminar![/h1]
+[list]
+[*]Fix hyperdrive IV class_restriction and only for no see for bio ship
+[*]Create bio ship hyperdrive IV
+[*]Fix stats ftl speed for bio ship hyperdrive.
+[*]Fix dystopian civic
+[/list]
+
+fix6
+Fix sgorbio relic trait that give wrong trait for no consumer goods country
+
+Fix 7 Allineament 360b versione
+esperiment enginner return to vanilla
+Bonus prod from proessing food return to vanilla (before was 0.25 , mod 0.33 now 0.5)
+
+[h1]Hotfix 8[/h1]
+Auto resettle migliorato
+Auto modules integrato astromining.
+Automazione dell'hydrophonic ora è più intelligente, la fa solo se hai meno di 10 cibo al mese o se hai più di 1250 alloys.

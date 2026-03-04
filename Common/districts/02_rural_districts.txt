@@ -248,18 +248,12 @@ district_mining = {
 				has_valid_civic = civic_agrarian_idyll
 			}
 		}
-		modifier = {
-			planet_housing_add = 300
-		}
+		planet_housing_add = 300
 	}
 
 	triggered_planet_modifier = {
-		potential = {
-			has_modifier = metal_planet
-		}
-		modifier = {
-			planet_housing_add = 500
-		}
+		planet_housing_add = 1
+		mult = modifier:mining_district_housing_add
 	}
 
 	triggered_planet_modifier = {
@@ -267,9 +261,7 @@ district_mining = {
 			exists = owner
 			owner = { is_gestalt = yes }
 		}
-		modifier = {
-			planet_housing_add = 100
-		}
+		planet_housing_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -277,9 +269,7 @@ district_mining = {
 			exists = owner
 			owner = { is_tankbound_empire = yes }
 		}
-		modifier = {
-			job_miner_automated_workforce_mult = 1.0
-		}
+		job_miner_automated_workforce_mult = 1.0
 	}
 
 	inline_script = {
@@ -607,7 +597,6 @@ district_geothermal = {
 		}
 		modifier = {
 			job_technician_automated_workforce_mult = 1.0
-			job_production_overseer_add = 100
 		}
 	}
 
@@ -719,7 +708,6 @@ district_melting = {
 		}
 		modifier = {
 			job_miner_automated_workforce_mult = 1.0
-			job_production_overseer_add = 100
 		}
 	}
 

@@ -381,7 +381,7 @@ agenda_leadership_conditioning = {
 		has_paragon_dlc = yes
 	}
 	modifier = {
-		species_leader_exp_gain = 0.1
+		species_leader_exp_gain = 0.05
 	}
 	finish_modifier = agenda_leadership_conditioning_finish
 	effect = {

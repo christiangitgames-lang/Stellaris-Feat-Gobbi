@@ -12,6 +12,8 @@ crisis_corvette = {
 	}
 	max_hitpoints = @corvette_hp
 	size_multiplier = 4
+	map_counter_icon = ship_counter_4
+	icon = ship_size_military_1
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
@@ -69,11 +71,12 @@ crisis_destroyer = {
 	}
 	max_hitpoints = @destroyer_hp
 	size_multiplier = 8
+	map_counter_icon = ship_counter_8
+	icon = ship_size_military_2
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	icon_frame = 3
-	icon = ship_size_military_2
 	base_buildtime = 60
 	is_space_station = no
 	can_have_federation_design = no
@@ -126,11 +129,12 @@ crisis_cruiser = {
 	}
 	max_hitpoints = @cruiser_hp
 	size_multiplier = 16
+	map_counter_icon = ship_counter_16
+	icon = ship_size_military_4
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	icon_frame = 4
-	icon = ship_size_military_4
 	base_buildtime = 120
 	is_space_station = no
 	can_have_federation_design = no
@@ -185,12 +189,13 @@ star_eater = {
 	}
 	max_hitpoints = @hpship_150000
 	size_multiplier = 40
+	map_counter_icon = ship_counter_128
+	icon = ship_size_military_32
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "main_body" } }
 	num_target_locators = 0
 	is_space_station = no
 	icon_frame = 7
-	icon = ship_size_military_32
 	construction_type = starbase_shipyard
 	base_buildtime = 6000
 	can_have_federation_design = no

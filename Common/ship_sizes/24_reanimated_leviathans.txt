@@ -40,11 +40,12 @@ reanimated_space_dragon_red = {
 	max_hitpoints = @hpship_150000
 	combat_size_multiplier = 250
 	size_multiplier = 250
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_space_monster
 
 	class = shipclass_military
 	is_designable = no
@@ -81,11 +82,12 @@ reanimated_space_dragon_blue = {
 	max_hitpoints = @hpship_150000
 	combat_size_multiplier = 250
 	size_multiplier = 250
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_space_monster
 
 	class = shipclass_military
 	is_designable = no
@@ -122,11 +124,12 @@ reanimated_space_dragon_origin = {
 	max_hitpoints = @hpship_150000
 	combat_size_multiplier = 250
 	size_multiplier = 250
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_space_monster
 
 	class = shipclass_military
 	is_designable = no
@@ -160,9 +163,10 @@ reanimated_leviathan_01_elder_tiyanki = {
 	max_hitpoints = @ship_10 
 	fleet_slot_size = 32
 	size_multiplier = 30
+	map_counter_icon = ship_counter_32
+	icon = ship_size_space_monster
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
-	icon = ship_size_space_monster
 	class = shipclass_military
 	is_designable = no
 	is_reanimated = yes
@@ -198,11 +202,12 @@ reanimated_leviathan_01_voidspawn = {
 	max_hitpoints = @hpship_100000
 	combat_size_multiplier = 250
 	size_multiplier = 250
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "spine" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_space_monster
 
 	class = shipclass_military
 	is_designable = no
@@ -238,10 +243,11 @@ reanimated_space_amoeba = {
 	}
 	max_hitpoints = @hpship_300
 	size_multiplier = 5
+	map_counter_icon = ship_counter_4
+	icon = ship_size_space_monster
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "gun_01" } }
 	num_target_locators = 0
-	icon = ship_size_space_monster
 	class = shipclass_military
 	is_designable = no
 	is_space_fauna_ship = yes
@@ -277,10 +283,11 @@ reanimated_space_amoeba_centenarian = {
 	}
 	max_hitpoints = @hpship_2000
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_space_monster
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
-	icon = ship_size_space_monster
 	class = shipclass_military
 	is_designable = no
 	is_space_fauna_ship = yes
@@ -305,10 +312,11 @@ reanimated_space_amoeba_mother = {
 	}
 	max_hitpoints = @hpship_2000
 	size_multiplier = 10
+	map_counter_icon = ship_counter_8
+	icon = ship_size_space_monster
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
-	icon = ship_size_space_monster
 	class = shipclass_military
 	is_designable = no
 	is_space_fauna_ship = yes
@@ -343,10 +351,11 @@ reanimated_space_whale_1 = {
 	}
 	max_hitpoints = @hpship_2500
 	size_multiplier = 10
+	map_counter_icon = ship_counter_8
+	icon = ship_size_space_monster
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
-	icon = ship_size_space_monster
 	class = shipclass_military
 	is_designable = no
 	is_space_fauna_ship = yes
@@ -379,11 +388,12 @@ reanimated_space_whale_2 = {
 		ship_armor_add = 500
 	}
 	max_hitpoints = @hpship_2500
-	size_multiplier = 2
+	size_multiplier = 10
+	map_counter_icon = ship_counter_8
+	icon = ship_size_space_monster
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
-	icon = ship_size_space_monster
 	class = shipclass_military
 	is_designable = no
 	is_space_fauna_ship = yes
@@ -418,10 +428,11 @@ reanimated_space_whale_3 = {
 	max_hitpoints = @hpship_500
 	fleet_slot_size = 1
 	size_multiplier = 5
+	map_counter_icon = ship_counter_4
+	icon = ship_size_space_monster
 	hull_scale = 0.2
 	section_slots = { "mid" = { locator = "root" } }
 	num_target_locators = 0
-	icon = ship_size_space_monster
 	class = shipclass_military
 	is_designable = no
 	is_space_fauna_ship = yes
@@ -456,10 +467,11 @@ reanimated_space_whale_4 = {
 	max_hitpoints = @hpship_1100
 	fleet_slot_size = 1
 	size_multiplier = 5
+	map_counter_icon = ship_counter_4
+	icon = ship_size_space_monster
 	hull_scale = 0.2
 	section_slots = { "mid" = { locator = "root" } }
 	num_target_locators = 0
-	icon = ship_size_space_monster
 	class = shipclass_military
 	is_designable = no
 	is_space_fauna_ship = yes

@@ -424,7 +424,9 @@ building_deployment_post = {
 		job_patrol_drone_add = 100
 		job_logistics_drone_add = 200
 	}
-
+	# inline_script = {
+	# 	script = buildings/on_all_gestalt_capital_buildings
+	# }
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}
@@ -530,7 +532,9 @@ building_machine_capital = {
 		planet_defense_armies_add = @tier_2_capital_defense_armies
 		planet_max_branch_office_buildings_add = 1 #sfg mode
 	}
-
+	# inline_script = {
+	# 	script = buildings/on_all_gestalt_capital_buildings
+	# }
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}
@@ -632,7 +636,9 @@ building_machine_major_capital = {
 		planet_defense_armies_add = @tier_3_capital_defense_armies
 		planet_max_branch_office_buildings_add = 2 #sfg mode
 	}
-
+	# inline_script = {
+	# 	script = buildings/on_all_gestalt_capital_buildings
+	# }
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}
@@ -735,7 +741,9 @@ building_machine_system_capital = {
 		planet_defense_armies_add = @tier_4_capital_defense_armies
 		planet_max_branch_office_buildings_add = 4 #sfg mode
 	}
-
+	# inline_script = {
+	# 	script = buildings/on_all_gestalt_capital_buildings
+	# }
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}
@@ -869,7 +877,9 @@ building_hive_capital = {
 		planet_defense_armies_add = @tier_2_capital_defense_armies
 		planet_max_branch_office_buildings_add = 1 #sfg mode
 	}
-
+	# inline_script = {
+	# 	script = buildings/on_all_gestalt_capital_buildings
+	# }
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}
@@ -949,7 +959,9 @@ building_hive_major_capital = {
 		planet_defense_armies_add = @tier_3_capital_defense_armies
 		planet_max_branch_office_buildings_add = 2
 	}
-
+	# inline_script = {
+	# 	script = buildings/on_all_gestalt_capital_buildings
+	# }
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}
@@ -1041,7 +1053,9 @@ building_hab_capital = {
 		modifier = { planet_stability_add = 1 }
 		mult = modifier:habitat_stability_add
 	}
-
+	# inline_script = {
+	# 	script = buildings/on_all_gestalt_capital_buildings
+	# }
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -1170,7 +1184,9 @@ building_hab_major_capital = {
 		planet_defense_armies_add = @tier_3_capital_defense_armies
 		pop_environment_tolerance = 0.10
 	}
-
+	# inline_script = {
+	# 	script = buildings/on_all_gestalt_capital_buildings
+	# }
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}
@@ -1330,7 +1346,9 @@ building_hab_system_capital = {
 		planet_defense_armies_add = @tier_4_capital_defense_armies
 		pop_environment_tolerance = 0.20
 	}
-
+	# inline_script = {
+	# 	script = buildings/on_all_gestalt_capital_buildings
+	# }
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}
@@ -1854,7 +1872,9 @@ building_imperial_machine_capital = {
 		planet_max_branch_office_buildings_add = 3
 		planet_defense_armies_add = @tier_4_capital_defense_armies
 	}
-
+	# inline_script = {
+	# 	script = buildings/on_all_gestalt_capital_buildings
+	# }
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}
@@ -1965,7 +1985,9 @@ building_imperial_hive_capital = {
 		planet_max_branch_office_buildings_add = 3
 		planet_defense_armies_add = @tier_4_capital_defense_armies
 	}
-
+	# inline_script = {
+	# 	script = buildings/on_all_gestalt_capital_buildings
+	# }
 	inline_script = {
 		script = buildings/on_all_capital_buildings
 	}

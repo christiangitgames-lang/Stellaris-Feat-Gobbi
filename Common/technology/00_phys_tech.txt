@@ -1746,7 +1746,7 @@ tech_shields_1 = {
 	technology_swap = {
 		name = tech_bio_shields_1
 		inherit_icon = no
-		inherit_effects = no
+		inherit_effects = yes
 		trigger = {
 			country_uses_bio_ships = yes
 		}
@@ -1780,7 +1780,7 @@ tech_shields_2 = {
 	technology_swap = {
 		name = tech_bio_shields_2
 		inherit_icon = no
-		inherit_effects = no
+		inherit_effects = yes
 		trigger = {
 			country_uses_bio_ships = yes
 		}
@@ -1821,7 +1821,7 @@ tech_shields_3 = {
 	technology_swap = {
 		name = tech_bio_shields_3
 		inherit_icon = no
-		inherit_effects = no
+		inherit_effects = yes
 		trigger = {
 			country_uses_bio_ships = yes
 		}
@@ -1859,7 +1859,7 @@ tech_shields_4 = {
 	technology_swap = {
 		name = tech_bio_shields_4
 		inherit_icon = no
-		inherit_effects = no
+		inherit_effects = yes
 		trigger = {
 			country_uses_bio_ships = yes
 		}
@@ -1897,7 +1897,7 @@ tech_shields_5 = {
 	technology_swap = {
 		name = tech_bio_shields_5
 		inherit_icon = no
-		inherit_effects = no
+		inherit_effects = yes
 		trigger = {
 			country_uses_bio_ships = yes
 		}

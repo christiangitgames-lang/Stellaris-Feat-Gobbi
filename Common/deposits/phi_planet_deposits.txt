@@ -169,19 +169,8 @@ d_phi_archaeology_site = {
 	
 	potential = { always = no }
 	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		job_archaeoengineers_add = 100
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		job_archaeo_unit_add = 100
+	inline_script = {
+		script = jobs/biologists_add
+		AMOUNT = 100
 	}
 }

@@ -391,7 +391,7 @@ trading_hub = {
 			alloys = 50
 		}
 		upkeep = {
-			energy = 1
+			energy = 2
 		}
 		produces = {
 			trigger = {
@@ -406,7 +406,20 @@ trading_hub = {
 		produces = {
 			trade = 8
 		}
-
+		produces = {
+			trigger = {
+				exists = this
+				has_starbase_building = offworld_trading_company
+			}
+			trade = 4
+		}
+		produces = {
+			trigger = {
+				exists = this
+				has_starbase_building = warp_fluctuator
+			}
+			trade = 2
+		}
 	}
 
 	station_modifier = {

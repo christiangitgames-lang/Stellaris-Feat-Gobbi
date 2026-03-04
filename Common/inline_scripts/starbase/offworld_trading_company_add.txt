@@ -1,0 +1,58 @@
+if = { #offworld_trading_company_add
+	limit = { 
+		owner = { 
+			has_resource = { type = alloys amount >= 100 } 
+			has_technology = tech_space_trading
+		} 
+		count_starbase_modules = {
+			type = trading_hub
+			count > 1
+		}
+		NOT = { has_starbase_flag = auto_building_starbase_buildings }
+	}
+	if = {
+		limit = {
+			check_variable_arithmetic = { which = value:max_starbase_buildings value = 1 }
+			#count_starbase_buildings = { include_being_constructed = yes count < 1 }
+		}
+		set_starbase_building = {
+			slot = 1
+			building = offworld_trading_company
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable_arithmetic = { which = value:max_starbase_buildings value = 2 }
+		}
+		set_starbase_building = {
+			slot = 2
+			building = offworld_trading_company
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable_arithmetic = { which = value:max_starbase_buildings value = 3 }
+		}
+		set_starbase_building = {
+			slot = 3
+			building = offworld_trading_company
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable_arithmetic = { which = value:max_starbase_buildings value = 4 }
+		}
+		set_starbase_building = {
+			slot = 4
+			building = offworld_trading_company
+		}
+	}
+	if = { 
+		limit = { has_starbase_building = offworld_trading_company }
+		owner = { add_resource = { alloys = -100 mult = value:buildings_build_cost_mult } }
+		set_timed_starbase_flag = {
+			flag = auto_building_starbase_buildings
+			days = 360
+		}
+	}
+}

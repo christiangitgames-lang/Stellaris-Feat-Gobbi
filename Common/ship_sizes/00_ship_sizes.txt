@@ -76,11 +76,12 @@ corvette = {
 		#ship_piracy_suppression_add = 10
 	}
 	size_multiplier = 5
+	map_counter_icon = ship_counter_4
+	icon = ship_size_military_1
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 2
 	is_space_station = no
-	icon = ship_size_military_1
 	base_buildtime = @corvette_build_time
 	can_have_federation_design = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
@@ -186,12 +187,13 @@ frigate = {
 		#ship_piracy_suppression_add = 10
 	}
 	size_multiplier = 8
+	map_counter_icon = ship_counter_8
+	icon = ship_size_military_1_torpedo
 	fleet_slot_size = 1
 	hull_scale = 1.35
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 2
 	is_space_station = no
-	icon = ship_size_military_1_torpedo
 	base_buildtime = @frigate_build_time
 	can_have_federation_design = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
@@ -271,6 +273,7 @@ destroyer = {
 		#ship_piracy_suppression_add = 8
 	}
 	size_multiplier = 10
+	map_counter_icon = ship_counter_8
 	fleet_slot_size = 2
 	section_slots = { "bow" = { locator = "part1" } "stern" = { locator = "part2" } }
 	num_target_locators = 4
@@ -358,11 +361,12 @@ cruiser = {
 		#ship_piracy_suppression_add = 6
 	}
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_military_4
 	fleet_slot_size = 3
 	section_slots = { "bow" = { locator = "part1" } "mid" = { locator = "part2" } "stern" = { locator = "part3" } }
 	num_target_locators = 4
 	is_space_station = no
-	icon = ship_size_military_4
 	base_buildtime = @cruiser_build_time
 	can_have_federation_design = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
@@ -454,11 +458,12 @@ battleship = {
 		#ship_piracy_suppression_add = 4
 	}
 	size_multiplier = 40
+	map_counter_icon = ship_counter_32
+	icon = ship_size_military_8
 	fleet_slot_size = 4
 	section_slots = { "bow" = { locator = "part1" } "mid" = { locator = "part2" } "stern" = { locator = "part3" } }
 	num_target_locators = 4
 	is_space_station = no
-	icon = ship_size_military_8
 	base_buildtime = @battleship_build_time
 	can_have_federation_design = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
@@ -550,11 +555,12 @@ titan = {
 		ship_evasion_add = @titan_evasion
 	}
 	size_multiplier = 80
+	map_counter_icon = ship_counter_64
+	icon = ship_size_military_16
 	fleet_slot_size = 8
 	section_slots = { "bow" = { locator = "part1" } "mid" = { locator = "part2" } "stern" = { locator = "part3" } }
 	num_target_locators = 4
 	is_space_station = no
-	icon = ship_size_military_16
 	base_buildtime = @titan_build_time
 	can_have_federation_design = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
@@ -658,11 +664,12 @@ constructor = {
 		ship_evasion_add = @construction_evasion
 	}
 	size_multiplier = 1
+	map_counter_icon = ship_counter_4
+	icon = ship_size_constructor
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_constructor
 	base_buildtime = @construction_build_time
 
 	combat_disengage_chance = 1.0
@@ -745,11 +752,12 @@ colonizer = {
 		ship_evasion_add = @colony_evasion
 	}
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_colonizer
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_colonizer
 	base_buildtime = @colony_build_time
 
 	combat_disengage_chance = 0.5
@@ -1023,11 +1031,12 @@ sponsored_colonizer = {
 		ship_evasion_add = @colony_evasion
 	}
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_colonizer
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_colonizer
 	base_buildtime = @colony_build_time
 
 	combat_disengage_chance = 0.5
@@ -1093,11 +1102,12 @@ lithoid_colonizer = {
 		ship_evasion_add = @colony_evasion
 	}
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_colonizer
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_colonizer
 	base_buildtime = 150
 
 	combat_disengage_chance = 0.2
@@ -1153,11 +1163,12 @@ guided_sapience_colonizer = {
 		ship_evasion_add = @colony_evasion
 	}
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_colonizer
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_colonizer
 	base_buildtime = @colony_build_time
 
 	combat_disengage_chance = 0.5
@@ -1413,11 +1424,12 @@ science = {
 		ship_ftl_jumpdrive_range_mult = 0.25
 	}
 	size_multiplier = 1
+	map_counter_icon = ship_counter_4
+	icon = ship_size_science
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_science
 	base_buildtime = @science_build_time
 
 	combat_disengage_chance = 2.0
@@ -1503,11 +1515,12 @@ transport = {
 		ship_evasion_add = @transport_evasion
 	}
 	size_multiplier = 1
+	map_counter_icon = ship_counter_4
+	icon = ship_size_transport
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_transport
 
 	available_to_everyone = yes
 
@@ -1544,6 +1557,7 @@ military_station_small = {
 	}
 	combat_size_multiplier = 20
 	size_multiplier = 1
+	map_counter_icon = ship_counter_4
 	fleet_slot_size = 2
 	section_slots = {
 		"west" = { locator = "part1" }
@@ -1602,6 +1616,7 @@ military_station_medium = {
 	max_hitpoints = @station_medium_hp
 	combat_size_multiplier = 40
 	size_multiplier = 2
+	map_counter_icon = ship_counter_4
 	fleet_slot_size = 4
 	section_slots = {
 		"north" = { locator = "part1" }
@@ -1648,6 +1663,7 @@ military_station_large = {
 	max_hitpoints = @station_large_hp
 	combat_size_multiplier = 80
 	size_multiplier = 4
+	map_counter_icon = ship_counter_4
 	fleet_slot_size = 8
 	section_slots = {
 		"north" = { locator = "part1" locator = "part2" }
@@ -1691,6 +1707,7 @@ mining_station = {
 		ship_evasion_mult = -1
 	}
 	size_multiplier = 1
+	map_counter_icon = ship_counter_4
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
@@ -1751,6 +1768,7 @@ research_station = {
 		ship_evasion_mult = -1
 	}
 	size_multiplier = 1
+	map_counter_icon = ship_counter_4
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 1
@@ -1812,6 +1830,7 @@ observation_station = {
 		ship_evasion_mult = -1
 	}
 	size_multiplier = 1
+	map_counter_icon = ship_counter_4
 	fleet_slot_size = 1
 	num_target_locators = 0
 	is_space_station = yes

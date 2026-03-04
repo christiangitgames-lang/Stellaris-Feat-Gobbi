@@ -930,10 +930,7 @@ councilor_toxic_baths = {
 		}
 	}
 	civic = civic_toxic_baths
-
-	modifier = {
-		# TODO AUG-57336
-	}
+	custom_tooltip = councilor_toxic_baths_tt
 	ai_hiring_weight = {
 		inline_script = councilor_leader_weights
 	}
@@ -948,8 +945,9 @@ councilor_toxic_baths_individual_machine = {
 		}
 	}
 	civic = civic_toxic_baths_individual_machine
-	modifier = {
-		# TODO AUG-57336
+	custom_tooltip = councilor_toxic_baths_individualist_machine_tt
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
 	}
 }
 
@@ -962,8 +960,9 @@ councilor_corporate_toxic_baths_individual_machine = {
 		}
 	}
 	civic = civic_corporate_toxic_baths_individual_machine
-	modifier = {
-		# TODO AUG-57336
+	custom_tooltip = councilor_toxic_baths_individualist_machine_tt
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
 	}
 }
 
@@ -1259,9 +1258,7 @@ councilor_corporate_toxic_baths = {
 		}
 	}
 	civic = civic_corporate_toxic_baths
-	modifier = {
-		# TODO AUG-57336
-	}
+	custom_tooltip = councilor_toxic_baths_tt
 	ai_hiring_weight = {
 		inline_script = councilor_leader_weights
 	}

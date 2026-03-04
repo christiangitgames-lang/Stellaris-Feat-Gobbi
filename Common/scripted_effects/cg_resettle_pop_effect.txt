@@ -104,19 +104,23 @@ cg_resettle_pop = {
         cg_try_move_pop_planet_preferred_hab_40 = yes
     }
 }
+#this pop
+#prev planet
 cg_try_move_pop_planet_preferred_hab_80 = {
     owner = { #coutry
         
         random_owned_planet = {
             limit = {
-                NOT = { is_same_value = PREVPREVPREV }# PREVPREVPREV planet?
-                habitability = { who = PREVPREV value >= 0.8 }
-                OR = {
-                    num_unemployed = 0
-                    has_avaible_job_specialist = yes
-                    has_avaible_job_worker = yes
-			    }
+                valid_planet_resettle_pop = { minimum_hab = 0.8 } 
+                # NOT = { is_same_value = PREVPREVPREV }# PREVPREVPREV planet?
+                # habitability = { who = PREVPREV value >= 0.8 }
+                # OR = {
+                #     num_unemployed = 0
+                #     has_avaible_job_specialist = yes
+                #     has_avaible_job_worker = yes
+			    # }
                 is_occupied_flag = no
+                is_under_colonization = no
             }
             
            
@@ -134,14 +138,9 @@ cg_try_move_pop_planet_preferred_hab_60 = {
         
         random_owned_planet = {
             limit = {
-                NOT = { is_same_value = PREVPREVPREV }# PREVPREVPREV planet?
-                habitability = { who = PREVPREV value >= 0.6 }
-                OR = {
-                    num_unemployed = 0
-                    has_avaible_job_specialist = yes
-                    has_avaible_job_worker = yes
-			    }
+                valid_planet_resettle_pop = { minimum_hab = 0.6 } 
                 is_occupied_flag = no
+                is_under_colonization = no
             }
             
             inline_script = "resettle_pop/resettle_weights"
@@ -158,14 +157,9 @@ cg_try_move_pop_planet_preferred_hab_40 = {
     #prev pop
         random_owned_planet = {#this planet # prev country? # prevprev pop # prevprev planet start
             limit = {
-                NOT = { is_same_value = PREVPREVPREV }# PREVPREV planet
-                habitability = { who = PREVPREV value >= 0.4 }
-                OR = {
-                    num_unemployed = 0
-                    has_avaible_job_specialist = yes
-                    has_avaible_job_worker = yes
-			    }
+                valid_planet_resettle_pop = { minimum_hab = 0.4 } 
                 is_occupied_flag = no
+                is_under_colonization = no
             }
             inline_script = "resettle_pop/resettle_weights"
             resettle_pop_group = {POP_GROUP = PREVPREV PLANET = this AMOUNT = 100 }
@@ -183,6 +177,7 @@ cg_try_move_pop_planet = { #is for decision resettle 10
                 NOT = { is_same_value = PREVPREVPREV }# PREVPREV planet
                 habitability = { who = PREVPREV value >= 0.1 }
                 is_occupied_flag = no
+                is_under_colonization = no
             }
             inline_script = "resettle_pop/resettle_weights_with_hab" #weight with hab
             resettle_pop_group = {POP_GROUP = PREVPREV PLANET = this AMOUNT = 100 }

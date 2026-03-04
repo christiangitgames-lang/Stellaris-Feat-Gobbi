@@ -14,10 +14,13 @@ building_hydroponics_farm = {
 	}
 	allow = {
 		exists = owner
-		owner = {
-			OR = {
-				country_uses_bio_ships = yes
-				has_monthly_income = { resource = food value < 40 }
+		hidden_trigger = {
+			owner = {
+				OR = {
+					is_ai = no
+					country_uses_bio_ships = yes
+					has_monthly_income = { resource = food value < 40 }
+				}
 			}
 		}
 	}
@@ -136,7 +139,7 @@ building_food_processing_facility = {
 	}
 
 	planet_modifier = {
-		planet_farmers_food_produces_add = 0.25
+		planet_farmers_food_produces_add = 0.5
 	}
 
 	upgrades = {
@@ -234,7 +237,7 @@ building_food_processing_center = {
 	}
 
 	planet_modifier = {
-		planet_farmers_food_produces_add = 0.5
+		planet_farmers_food_produces_add = 1.0
 	}
 
 	triggered_planet_modifier = {
@@ -242,7 +245,7 @@ building_food_processing_center = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_farmers_food_produces_add = 0.25
+			planet_farmers_food_produces_add = 0.5
 		}
 	}
 
@@ -289,10 +292,13 @@ building_farming_districts_1 = {
 	}
 	allow = {
 		exists = owner
-		owner = {
-			OR = {
-				country_uses_bio_ships = yes
-				has_monthly_income = { resource = food value < 40 }
+		hidden_trigger = {
+			owner = {
+				OR = {
+					is_ai = no
+					country_uses_bio_ships = yes
+					has_monthly_income = { resource = food value < 40 }
+				}
 			}
 		}
 	}
@@ -716,7 +722,7 @@ building_mineral_purification_plant = {
 	}
 
 	planet_modifier = {
-		planet_miners_minerals_produces_add = 0.25
+		planet_miners_minerals_produces_add = 0.5
 	}
 
 	upgrades = {
@@ -835,7 +841,7 @@ building_mineral_purification_hub = {
 			NOT = { is_planet_class = pc_shattered_ring_habitable }
 		}
 		modifier = {
-			planet_miners_minerals_produces_add = 0.5
+			planet_miners_minerals_produces_add = 1.0
 		}
 	}
 
@@ -844,8 +850,8 @@ building_mineral_purification_hub = {
 			is_planet_class = pc_shattered_ring_habitable
 		}
 		modifier = {
-			planet_miners_minerals_produces_add = 0.25
-			planet_miners_alloys_produces_add = 0.1
+			planet_miners_minerals_produces_add = 0.5
+			planet_miners_alloys_produces_add = 0.2
 		}
 	}
 
@@ -854,7 +860,7 @@ building_mineral_purification_hub = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_miners_minerals_produces_add = 0.25
+			planet_miners_minerals_produces_add = 0.5
 		}
 	}
 	prerequisites = {
@@ -1199,7 +1205,7 @@ building_energy_grid = {
 	}
 
 	planet_modifier = {
-		planet_technician_energy_produces_add = 0.25
+		planet_technician_energy_produces_add = 0.5
 	}
 
 	prerequisites = {
@@ -1296,7 +1302,7 @@ building_energy_nexus = {
 	}
 
 	planet_modifier = {
-		planet_technician_energy_produces_add = 0.5
+		planet_technician_energy_produces_add = 1.0
 	}
 
 	triggered_planet_modifier = {
@@ -1304,7 +1310,7 @@ building_energy_nexus = {
 			has_ringworld_output_boost = yes
 		}
 		modifier = {
-			planet_technician_energy_produces_add = 0.25
+			planet_technician_energy_produces_add = 0.5
 		}
 	}
 

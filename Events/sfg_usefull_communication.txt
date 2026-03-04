@@ -69,6 +69,7 @@ country_event = { #arcology message
 		
 		any_owned_planet = {
 			is_artificial = no
+			valid_planet_for_notification = yes
 			NOR = {
 				has_planet_flag = disable_sfg_usefull_communication10
 
@@ -90,6 +91,7 @@ country_event = { #arcology message
 	immediate = {
 		every_owned_planet = { 
 			limit = { #candidate for acology project
+				valid_planet_for_notification = yes
 				is_artificial = no
 				NOR = {
 					has_planet_flag = disable_sfg_usefull_communication10
@@ -151,6 +153,7 @@ country_event = { #hive/machine message
 		}
 		has_resource = { type = energy amount >= 10000 } 
 		any_owned_planet = {
+			valid_planet_for_notification = yes
 			is_artificial = no
 			NOR = {
 				is_planet_class = pc_city
@@ -170,6 +173,7 @@ country_event = { #hive/machine message
 	immediate = {
 		every_owned_planet = { 
 			limit = { #candidate for hive world project
+				valid_planet_for_notification = yes
 				is_artificial = no
 				NOR = {
 					is_planet_class = pc_city
@@ -243,6 +247,7 @@ country_event = { #orbital ring
 		has_resource = { type = influence amount >= 50 } 
 		any_owned_planet = {
 			AND = {
+				valid_planet_for_notification = yes
 				NOT = { has_planet_flag = disable_sfg_usefull_communication30 }
 				NAND = {
 					exists = starbase

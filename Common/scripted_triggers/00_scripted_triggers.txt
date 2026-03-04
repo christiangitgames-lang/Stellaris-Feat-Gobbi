@@ -4407,6 +4407,17 @@ has_councilor = {
 	}
 }
 
+has_councilor_with_trait_tier1or2 = {
+	exists = owner
+	owner = {
+		any_owned_leader = {
+			is_councilor = yes
+			is_councilor_type = $COUNCILOR$
+			has_trait_tier1or2 = { TRAIT = $TRAIT$ }
+		}
+	}
+}
+
 has_enclave_councilor = {
 	OR = {
 		has_councilor = { COUNCILOR = councilor_shroudwalker_teacher }
@@ -4431,6 +4442,13 @@ is_gestalt_node = {
 		is_councilor_type = councilor_gestalt_cognitive
 		is_councilor_type = councilor_gestalt_legion
 		is_councilor_type = councilor_gestalt_regulatory
+	}
+}
+
+is_gestalt_ruler = {
+	OR = {
+		is_councilor_type = councilor_ruler_hive_mind
+		is_councilor_type = councilor_ruler_machine_intelligence
 	}
 }
 
@@ -4554,7 +4572,7 @@ has_specialist_subject_leader_trait = {
 	}
 }
 
-has_toxic_baths = {
+is_toxic_baths_empire = {
 		OR = {
 			has_valid_civic = civic_toxic_baths
 			has_valid_civic = civic_corporate_toxic_baths
@@ -4563,6 +4581,14 @@ has_toxic_baths = {
 			has_valid_civic = civic_toxic_baths_individual_machine
 			has_valid_civic = civic_corporate_toxic_baths_individual_machine
 		}
+}
+
+has_toxic_baths_building = {
+	OR = {
+		has_active_building = building_toxic_bath
+		has_active_building = building_toxic_bath_hive
+		has_active_building = building_toxic_bath_machine
+	}
 }
 
 is_human_species = {
@@ -5408,4 +5434,19 @@ is_specialist_category = {
 		is_pop_category = specialist
 		is_pop_category = dystopian_specialist
 	}
+}
+valid_for_resettle_out = {
+	has_orbital_bombardment = no
+	is_under_colonization = no
+	is_occupied_flag = no
+	check_variable = {
+		which = recently_resettle_in # if recently resettle by automation will no send resettle for months.
+		value = 0
+	}
+	NOT = { has_planet_flag = new_colony } # not new colony
+}
+valid_for_resettle_in = {
+	is_under_colonization = no
+	free_housing > 100
+	free_jobs > 100
 }

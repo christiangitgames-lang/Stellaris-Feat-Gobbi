@@ -44,12 +44,13 @@ marauder_corvette = {
 	}
 	max_hitpoints = @hpship_300
 	size_multiplier = 5
+	map_counter_icon = ship_counter_4
+	icon = ship_size_military_1
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
 	is_civilian = no
-	icon = ship_size_military_1
 
 	class = shipclass_military
 	is_designable = no
@@ -76,10 +77,11 @@ marauder_destroyer = {
 	}
 	max_hitpoints = @hpship_700
 	size_multiplier = 10
+	map_counter_icon = ship_counter_8
+	icon = ship_size_military_2
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
-	icon = ship_size_military_2
 	is_space_station = no
 	is_civilian = no
 
@@ -108,10 +110,11 @@ marauder_cruiser = {
 	}
 	max_hitpoints = @hpship_2000
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_military_4
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
-	icon = ship_size_military_4
 	is_space_station = no
 	is_civilian = no
 
@@ -141,11 +144,12 @@ marauder_galleon = {
 	}
 	max_hitpoints = @hpship_30000 #weaker per essere abbattibile
 	size_multiplier = 40
+	map_counter_icon = ship_counter_32
+	icon = ship_size_military_8
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_military_8
 	is_civilian = no
 
 	use_shipnames_from = battleship
@@ -172,6 +176,8 @@ marauder_station = {
 	}
 	max_hitpoints = @hpship_2000
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_military_station
 	fleet_slot_size = 4
 	section_slots = {
 		"west" = { locator = "part1" }
@@ -184,7 +190,6 @@ marauder_station = {
 
 	class = shipclass_military_station
 	is_designable = no
-	icon = ship_size_military_station
 }
 
 # Marauder Void Dwelling
@@ -201,6 +206,8 @@ marauder_void_dwelling = {
 	}
 	max_hitpoints = @hpship_8000
 	size_multiplier = 40
+	map_counter_icon = ship_counter_32
+	icon = ship_size_military_station
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
@@ -211,5 +218,4 @@ marauder_void_dwelling = {
 
 	class = shipclass_military_station
 	is_designable = no
-	icon = ship_size_military_station
 }

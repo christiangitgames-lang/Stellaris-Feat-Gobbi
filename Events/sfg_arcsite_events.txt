@@ -3,7 +3,7 @@
 # ARCHAEOLOGY SITE EVENTS
 #
 ##########################
-
+#sgorbio event
 namespace = sfg_arcsite
 fleet_event = { #1st step
 	id = sfg_arcsite.2500
@@ -77,7 +77,7 @@ fleet_event = { #3rd step
 		name = DISTURBING
 		if = {
 			limit = {
-				owner = { is_gestalt = no }
+				owner = { country_uses_consumer_goods = yes }
 			}
 			event_target:event_leader = {
 				locked_random_list = {
@@ -156,7 +156,7 @@ fleet_event = { #4rd step
 		name = DISTURBING
 		if = {
 			limit = {
-				owner = { is_gestalt = no }
+				owner = { country_uses_consumer_goods = yes }
 			}
 			event_target:event_leader = {
 				locked_random_list = {
@@ -235,7 +235,7 @@ fleet_event = { #5rd step
 		name = DISTURBING
 		if = {
 			limit = {
-				owner = { is_gestalt = no }
+				owner = { country_uses_consumer_goods = yes }
 			}
 			event_target:event_leader = {
 				locked_random_list = {

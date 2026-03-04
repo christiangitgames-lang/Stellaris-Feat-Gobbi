@@ -3,42 +3,20 @@ country_event = {
     id = cg_automation.1
     hide_window = yes
     is_triggered_only = yes
+	pre_triggers = {
+		is_ai = no
+	}
 	trigger = {
 		NOT = { has_policy_flag =  resettlement_not_allowed }
-		OR = {
 			NOT = { has_policy_flag = eac_apm_no }
-		}
 		any_owned_planet = {
-			is_occupied_flag = no
-			any_owned_pop_group = { is_unemployed = yes }
-		}
-		any_owned_planet = {
-			free_housing > 100
-			
-			OR = {
-				num_unemployed = 0
-				has_avaible_job_specialist = yes
-				has_avaible_job_worker = yes
-			}
-		}
-		OR = {
-			# AND = {
-			# 	has_policy_flag =  resettlement_limited 
-			# 	has_country_resource = { type = energy amount > 1500}
-			# }
-			AND = {
-				OR = {
-					has_policy_flag =  resettlement_allowed 
-					has_ethic = "ethic_gestalt_consciousness"
+			valid_for_resettle_in = yes
 				}
 				has_country_resource = { type = energy amount > 500}
-			}
-		}
 		resource_income_compare = {
 			resource = energy
 			value > 1
 		}
-		has_country_resource = { type = unity amount > 100 }
 	}
     immediate = {
 		every_owned_planet = { # search planet for reduce variable recently_resettle_in
@@ -51,39 +29,76 @@ country_event = {
 			}
 			change_variable = { which = recently_resettle_in value = -1 }
 		}
+		country_event = { id = cg_automation.11 }
+	}
+}
+country_event = {
+    id = cg_automation.11
+    hide_window = yes
+    is_triggered_only = yes
+	trigger = {
+		any_owned_planet = {
+			valid_for_resettle_out = yes
+		}
+	}
+	immediate = {
+		country_event = { id = cg_automation.12 }
+	}
+}
+country_event = {#resettle confirmed
+    id = cg_automation.12
+    hide_window = yes
+    is_triggered_only = yes
+	trigger = {
+		any_owned_planet = {
+			valid_for_resettle_out = yes
+			any_owned_pop_group = { 
+				OR = {
+					is_pop_category = civilian
+					is_pop_category = maintenance_drone
+					is_unemployed = yes 
+				}
+			}
+		}
+		
+		has_country_resource = { type = unity amount > 100 }
+	}
+    immediate = {
+		
         every_owned_planet = { # search planet by start resettle
             limit = {
-                any_owned_pop_group = { is_unemployed = yes }
-                has_orbital_bombardment = no
-				is_occupied_flag = no
+				valid_for_resettle_out = yes
+                any_owned_pop_group = { 
+					OR = {
+						is_pop_category = civilian
+						is_pop_category = maintenance_drone
+						is_unemployed = yes 
+					}
+				}
+            }
+            #log = "-- Planet: [This.GetName]"
+			if = {
+				limit = { 
+					valid_for_resettle_out = yes
 				owner = { 
 					OR = {
-						# AND = {
-						# 	has_policy_flag =  resettlement_limited 
-						# 	has_country_resource = { type = energy amount > 1500}
-						# }
-						AND = {
-							OR = {
-								has_policy_flag =  resettlement_allowed 
-								has_ethic = "ethic_gestalt_consciousness"
+							is_gestalt = no
+							prev = { free_amenities > 1000 } #maint drone be amenities
 							}
+						OR = {
+							AND = {
 							has_country_resource = { type = energy amount > 500}
 						}
 					}
 					has_country_resource = { type = unity amount > 100 }
 				}
-				check_variable = {
-					which = recently_resettle_in # if recently resettle by automation will no send resettle for months.
-					value = 0
-				}
-				NOT = { has_planet_flag = new_colony } # not new colony
-            }
-            #log = "-- Planet: [This.GetName]"
+			}
             random_owned_pop_group = {
 				limit = {
 					NOT = { is_pop_category = ruler } # ruler never move.
 					Or = {
 						is_pop_category = civilian
+							is_pop_category = maintenance_drone
 						is_unemployed = yes #4.0 is_unemlployed can't resettle
 					}
 					NOT = { has_citizenship_type = { type = citizenship_assimilation } } # Ignore assimilating pops
@@ -110,6 +125,8 @@ country_event = {
 				cg_resettle_pop = yes # resettle pop in other planet
 				
 			}
+		}
+            
 		}
     } 
 }
@@ -161,6 +178,13 @@ planet_event = {
 						modifier = {
 							factor = 100
 							is_unemployed = yes
+						}
+						modifier = {
+							factor = 50
+							OR = {
+								is_pop_category = civilian
+								is_pop_category = maintenance_drone
+							}
 						}
 						modifier = {
 							factor = 2
@@ -220,6 +244,13 @@ planet_event = {
 						modifier = {
 							factor = 100
 							is_unemployed = yes
+						}
+						modifier = {
+							factor = 50
+							OR = {
+								is_pop_category = civilian
+								is_pop_category = maintenance_drone
+							}
 						}
 						modifier = {
 							factor = 3

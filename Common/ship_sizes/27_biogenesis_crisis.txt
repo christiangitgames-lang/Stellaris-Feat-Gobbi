@@ -21,13 +21,14 @@ behemoth_01 = {
 	max_hitpoints = @hpship_175000
 	combat_size_multiplier = 250
 	size_multiplier = 80
+	map_counter_icon = ship_counter_64
+	icon = ship_size_behemoth
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "root" } }
 	num_target_locators = 0
 	never_lost = yes
 	is_space_station = no
 
-	icon = ship_size_behemoth
 	on_click_sound = "ui_kaiju_select_fleet"
 	ship_class_icon_frame = 57
 	map_icon_override = {
@@ -85,13 +86,14 @@ behemoth_02 = {
 	max_hitpoints = @hpship_437500
 	combat_size_multiplier = 175
 	size_multiplier = 120
+	map_counter_icon = ship_counter_128
+	icon = ship_size_behemoth
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "root" } }
 	num_target_locators = 0
 	never_lost = yes
 	is_space_station = no
 
-	icon = ship_size_behemoth
 	on_click_sound = "ui_kaiju_select_fleet"
 	ship_class_icon_frame = 57
 	map_icon_override = {
@@ -150,13 +152,14 @@ behemoth_03 = {
 	max_hitpoints = @hpship_1000000
 	combat_size_multiplier = 250
 	size_multiplier = 160
+	map_counter_icon = ship_counter_128
+	icon = ship_size_behemoth
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "root" } }
 	num_target_locators = 0
 	never_lost = yes
 	is_space_station = no
 
-	icon = ship_size_behemoth
 	on_click_sound = "ui_kaiju_select_fleet"
 	ship_class_icon_frame = 57
 	map_icon_override = {
@@ -213,6 +216,8 @@ behemoth_04 = {
 	max_hitpoints = @hpship_1000000
 	combat_size_multiplier = 250
 	size_multiplier = 320
+	map_counter_icon = ship_counter_128
+	icon = ship_size_behemoth
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "root" } }
 	num_target_locators = 0
@@ -220,7 +225,6 @@ behemoth_04 = {
 	never_mia = yes
 	is_space_station = no
 
-	icon = ship_size_behemoth
 	on_click_sound = "ui_kaiju_select_fleet"
 	ship_class_icon_frame = 58
 	map_icon_override = {
@@ -296,13 +300,14 @@ voidspawn_boss = {
 	max_hitpoints = @hpship_1500000
 	combat_size_multiplier = 500
 	size_multiplier = 500
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 100
 	section_slots = { "mid" = { locator = "spine" } }
 	num_target_locators = 0
 	never_lost = yes
 	never_mia = yes
 	is_space_station = no
-	icon = ship_size_space_monster
 	map_icon_override = {
 		normal = GFX_fleet_presence_kaiju_icons
 		mixed = GFX_fleet_presence_kaiju_icons_mixed

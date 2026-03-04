@@ -2018,7 +2018,7 @@
 		TRADE_DELIVERY_PERCENTAGE_HIGH		= 80	# >= 80% of trade value reaches destination
 		TRADE_DELIVERY_PERCENTAGE_LOW		= 50	# <= 50 of trade value reaches destination
 
-		SLAVE_MARKET_SLAVE_BASE_COST_RESOURCES	= { "energy" }
+		SLAVE_MARKET_SLAVE_BASE_COST_RESOURCES	= { "trade" }
 		SLAVE_MARKET_SLAVE_BASE_COST_AMOUNT		= { 1000 }
 		SLAVE_MARKET_SIZE_CAP					= 100 #Max amount of slaves allowed on the market
 

@@ -44,11 +44,12 @@ space_dragon_red = {
 	max_hitpoints = @ship_10
 	combat_size_multiplier = 200
 	size_multiplier = 200
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_space_monster
 
 	class = shipclass_military
 	is_designable = no
@@ -82,13 +83,13 @@ enclave_station = {
 	max_hitpoints = @ship_6
 	combat_size_multiplier = 100
 	size_multiplier = 100
+	map_counter_icon = ship_counter_128
+	icon = ship_size_military_station
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "station" } }
 	num_target_locators = 0
 	is_space_station = yes
 	build_block_radius = @build_block_radius_civilian
-	icon = ship_size_military_station
-
 	use_shipnames_from = military_station_small
 
 	class = shipclass_military_station
@@ -111,11 +112,12 @@ stellarite = {
 	max_hitpoints = @ship_10
 	combat_size_multiplier = 200
 	size_multiplier = 200
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_space_monster
 
 	class = shipclass_military
 	is_designable = no
@@ -144,11 +146,12 @@ sphere = {
 	max_hitpoints = @ship_7
 	combat_size_multiplier = 200
 	size_multiplier = 200
+	map_counter_icon = ship_counter_128
+	icon = ship_size_military_32
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_military_32
 
 	class = shipclass_military
 	is_designable = no
@@ -177,11 +180,12 @@ galleon = {
 	max_hitpoints = @ship_7
 	combat_size_multiplier = 100
 	size_multiplier = 100
+	map_counter_icon = ship_counter_32
+	icon = ship_size_military_8
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_military_8
 
 	class = shipclass_military
 	is_designable = no
@@ -207,12 +211,13 @@ station_xl = {
 	max_hitpoints = @ship_7
 	combat_size_multiplier = 100
 	size_multiplier = 100
+	map_counter_icon = ship_counter_128
+	icon = ship_size_military_station
 	fleet_slot_size = 16
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 5
 	is_space_station = yes
 	build_block_radius = @build_block_radius_civilian
-	icon = ship_size_military_station
 
 	class = shipclass_military_station
 	is_designable = no
@@ -238,12 +243,13 @@ station_l = {
 	}
 	max_hitpoints = @ship_6
 	size_multiplier = 40
+	map_counter_icon = ship_counter_32
+	icon = ship_size_military_station
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "station" } }
 	num_target_locators = 2
 	is_space_station = yes
 	build_block_radius = @build_block_radius_civilian
-	icon = ship_size_military_station
 
 	class = shipclass_military_station
 	is_designable = no
@@ -268,12 +274,13 @@ station_m = {
 	}
 	max_hitpoints = @ship_5
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_military_station
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "station" } }
 	num_target_locators = 2
 	is_space_station = yes
 	build_block_radius = @build_block_radius_civilian
-	icon = ship_size_military_station
 
 	class = shipclass_military_station
 	is_designable = no
@@ -298,12 +305,13 @@ station_s = {
 	}
 	max_hitpoints = @ship_4
 	size_multiplier = 10
+	map_counter_icon = ship_counter_8
+	icon = ship_size_military_station
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "station" } }
 	num_target_locators = 1
 	is_space_station = yes
 	build_block_radius = @build_block_radius_civilian
-	icon = ship_size_military_station
 
 	class = shipclass_military_station
 	is_designable = no
@@ -328,12 +336,13 @@ station_xs = {
 	}
 	max_hitpoints = @ship_3
 	size_multiplier = 5
+	map_counter_icon = ship_counter_4
+	icon = ship_size_military_station
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "station" } }
 	num_target_locators = 1
 	is_space_station = yes
 	build_block_radius = @build_block_radius_civilian
-	icon = ship_size_military_station
 
 	class = shipclass_military_station
 	is_designable = no
@@ -368,6 +377,8 @@ dimensional_horror = {
 	max_hitpoints = @ship_9
 	combat_size_multiplier = 250
 	size_multiplier = 250
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 8
 	section_slots = {
 		"mid" = { locator = "part1" }
@@ -375,7 +386,6 @@ dimensional_horror = {
 	num_target_locators = 4
 	is_space_station = no
 	build_block_radius = @build_block_radius_military
-	icon = ship_size_space_monster
 
 	class = shipclass_military
 	is_designable = no
@@ -409,6 +419,8 @@ toxic_god = {
 	max_hitpoints = @ship_10
 	combat_size_multiplier = 250
 	size_multiplier = 250
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 8
 	section_slots = {
 		"mid" = { locator = "part1" }
@@ -416,7 +428,6 @@ toxic_god = {
 	num_target_locators = 4
 	is_space_station = no
 	build_block_radius = @build_block_radius_military
-	icon = ship_size_space_monster
 
 	class = shipclass_military_special
 	is_designable = no
@@ -443,6 +454,8 @@ toxic_demigod = {
 	max_hitpoints = @hpship_150000
 	combat_size_multiplier = 250
 	size_multiplier = 250
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 8
 	section_slots = {
 		"mid" = { locator = "part1" }
@@ -450,7 +463,6 @@ toxic_demigod = {
 	num_target_locators = 4
 	is_space_station = no
 	build_block_radius = @build_block_radius_military
-	icon = ship_size_space_monster
 
 	hull_scale = 0.75
 
@@ -477,11 +489,12 @@ npc_warship_01 = {
 	max_hitpoints = @ship_5
 	combat_size_multiplier = 250
 	size_multiplier = 250
+	map_counter_icon = ship_counter_64
+	icon = ship_size_military_16
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_military_16
 
 	class = shipclass_military
 	is_designable = no
@@ -508,6 +521,8 @@ homebase = {
 	max_hitpoints = @ship_7
 	combat_size_multiplier = 100
 	size_multiplier = 100
+	map_counter_icon = ship_counter_128
+	icon = ship_size_military_station
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 5
@@ -516,7 +531,6 @@ homebase = {
 
 	class = shipclass_military_station
 	is_designable = no
-	icon = ship_size_military_station
 }
 
 hive_asteroid = {
@@ -531,12 +545,13 @@ hive_asteroid = {
 	}
 	max_hitpoints = @ship_6
 	size_multiplier = 40
+	map_counter_icon = ship_counter_32
+	icon = ship_size_space_monster
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 1
 	is_space_station = yes
 	build_block_radius = @build_block_radius_civilian
-	icon = ship_size_space_monster
 
 	class = shipclass_military_station
 	is_designable = no
@@ -560,11 +575,12 @@ wraith_01_blue = {
 	max_hitpoints = @ship_6
 	combat_size_multiplier = 250
 	size_multiplier = 250
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_space_monster
 
 	class = shipclass_military
 	is_designable = no
@@ -595,11 +611,12 @@ wraith_01_red = {
 	max_hitpoints = @ship_6
 	combat_size_multiplier = 250
 	size_multiplier = 250
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_space_monster
 
 	class = shipclass_military
 	is_designable = no
@@ -630,11 +647,12 @@ wraith_01_yellow = {
 	max_hitpoints = @ship_6
 	combat_size_multiplier = 250
 	size_multiplier = 250
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_space_monster
 
 	class = shipclass_military
 	is_designable = no
@@ -664,11 +682,12 @@ space_dragon_baby = {
 	}
 	max_hitpoints = @ship_5
 	size_multiplier = 80
+	map_counter_icon = ship_counter_64
+	icon = ship_size_space_monster
 	fleet_slot_size = 16
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_space_monster
 
 	class = shipclass_military
 	is_designable = no
@@ -695,11 +714,12 @@ space_dragon_blue = {
 	max_hitpoints = @ship_10
 	combat_size_multiplier = 250
 	size_multiplier = 250
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_space_monster
 
 	class = shipclass_military
 	is_designable = no
@@ -737,11 +757,12 @@ space_dragon_origin = {
 	max_hitpoints = @ship_10
 	combat_size_multiplier = 250
 	size_multiplier = 250
+	map_counter_icon = ship_counter_128
+	icon = ship_size_space_monster
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_space_monster
 
 	class = shipclass_military
 	is_designable = no
@@ -781,11 +802,12 @@ space_dragon_origin_baby = {
 	}
 	max_hitpoints = @ship_5
 	size_multiplier = 40
+	map_counter_icon = ship_counter_32
+	icon = ship_size_space_monster
 	fleet_slot_size = 8
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon = ship_size_space_monster
 
 	class = shipclass_military
 	is_designable = no

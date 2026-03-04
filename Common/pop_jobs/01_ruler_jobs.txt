@@ -362,7 +362,45 @@ politician = {
 		}
 		planet_stability_add = @inf_dancer_stability
 	}
-	inline_script = "output/politician_output_modifier"
+
+	## Noble
+	triggered_planet_modifier = {
+		potential = {
+			politician_is_noble = yes
+		}
+		planet_stability_add = 0.5
+	}
+
+	## Superstitious Beliefs
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				politician_is_superstitious_beliefs_high_priest = yes
+				politician_is_superstitious_beliefs_high_priest_corporate = yes
+			}
+		}
+		planet_stability_add = 0.5
+	}
+
+	## Technophant
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = origin_cybernetic_creed
+			}
+		}
+		planet_amenities_add = 200
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	## Planetary Warden
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_penal
+		}
+		planet_stability_add = 1
+	}
 
 	weight = {
 		weight = @ruler_job_weight

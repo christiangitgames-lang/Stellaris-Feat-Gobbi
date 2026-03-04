@@ -1981,7 +1981,17 @@ astral_rift_event = {
 				if = {
 					limit = {
 						owner = {
-							has_tradition = tr_aptitude_champions_of_the_empire
+							has_tradition = tr_aptitude_finish
+						}
+					}
+					add_trait = {
+						trait = random_common
+					}
+				}
+				if = {
+					limit = {
+						owner = {
+							has_optimized_neurology_tradition = yes
 						}
 					}
 					add_trait = {
@@ -2004,17 +2014,7 @@ astral_rift_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						owner = {
-							has_country_flag = genetic_ascension_stage_1_purity
-							has_genetic_stage_1_tradition = yes
-						}
-					}
-					add_trait = {
-						trait = random_common
-					}
-				}
+				
 			}
 		}
 		explorer = {

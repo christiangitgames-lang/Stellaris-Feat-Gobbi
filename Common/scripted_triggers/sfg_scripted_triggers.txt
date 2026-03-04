@@ -8,7 +8,16 @@ can_have_unity_deposits = {
 		is_planet_class = pc_nuked
 	}
 }
-
+can_have_consumer_goods_deposits = {
+    OR = {
+        is_planet_class = pc_asteroid
+        is_planet_class = pc_ice_asteroid
+        is_planet_class = pc_crystal_asteroid
+        is_planet_class = pc_molten
+        is_planet_class = pc_junk
+        is_planet_class = pc_relic  # Per il riciclo di materiali antichia
+    }
+}
 is_valid_nebula_refinery = {
 	# (system)
 	starbase = { 
@@ -118,4 +127,37 @@ is_neighbor_or_neighbor_ally = {
 			}
 		}
 	}
+}
+is_orbital_station_owner_catalytic = {
+	planet = {
+		orbital_station = {
+			exists = owner
+			owner = { is_catalytic_empire = yes }
+		}
+	}
+}
+can_have_food_deposits = {
+	NOR = { 
+		is_planet_class = pc_toxic 
+		is_planet_class = pc_black_hole
+		is_planet_class = pc_barren_cold
+		is_planet_class = pc_astral_scar
+		is_planet_class = pc_rift_star
+	} 
+}
+valid_planet_for_notification = {
+	 is_under_colonization = no
+	 is_occupied_flag = no
+}
+
+valid_planet_resettle_pop = {
+	NOT = { is_same_value = PREVPREVPREV }# PREVPREVPREV planet?
+	habitability = { who = PREVPREV value >= $minimum_hab$ }
+	OR = {
+		num_unemployed = 0
+		has_avaible_job_specialist = yes
+		has_avaible_job_worker = yes
+	}
+	is_occupied_flag = no
+	is_under_colonization = no
 }

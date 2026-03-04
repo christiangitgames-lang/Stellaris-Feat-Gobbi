@@ -807,6 +807,8 @@ capacity_subsidies = {
 	modifier = {
 		technician_jobs_bonus_workforce_mult = 0.20
 		planet_technician_trade_upkeep_add = 0.50
+		station_gatherers_energy_produces_mult = 0.1
+		
 	}
 
 	potential = {
@@ -848,6 +850,7 @@ capacity_subsidies_wilderness = {
 	modifier = {
 		planet_technician_produces_mult = 0.20
 		planet_technician_trade_upkeep_add = 0.50
+		station_gatherers_energy_produces_mult = 0.1
 	}
 
 	potential = {
@@ -889,9 +892,9 @@ mining_subsidies = {
 	modifier = {
 		miner_jobs_bonus_workforce_mult = 0.20
 		planet_miners_trade_upkeep_add = 0.50
-		planet_miners_energy_upkeep_add = 0.5 #Note: _add modifiers don't apply to children, but _mult ones do, so this is necessary here
-		station_gatherers_minerals_produces_mult = 0.5
-		station_gatherers_minerals_upkeep_mult = 0.75
+		#planet_miners_energy_upkeep_add = 0.5 #Note: _add modifiers don't apply to children, but _mult ones do, so this is necessary here
+		station_gatherers_minerals_produces_mult = 0.25
+		station_gatherers_minerals_upkeep_mult = 0.5
 	}
 
 	potential = {
@@ -975,6 +978,8 @@ farming_subsidies = {
 	modifier = {
 		farmer_jobs_bonus_workforce_mult = 0.20
 		planet_farmers_trade_upkeep_add = 0.50
+		station_gatherers_food_produces_mult = 0.5
+		station_gatherers_food_upkeep_mult = 0.5
 	}
 
 	potential = {
@@ -1017,6 +1022,8 @@ farming_subsidies_wilderness = {
 	modifier = {
 		planet_farmers_produces_mult = 0.20
 		planet_farmers_trade_upkeep_add = 0.50
+		station_gatherers_food_produces_mult = 0.5
+		station_gatherers_food_upkeep_mult = 0.75
 	}
 
 	potential = {

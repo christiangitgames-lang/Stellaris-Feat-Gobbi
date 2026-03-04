@@ -1,0 +1,99 @@
+#universal_module_add
+if = {
+	limit = { 
+		owner = { 
+			
+			has_resource = { type = alloys amount >= $COST$ } 
+		} 
+		#NOT = { has_starbase_building = hydroponics_bay }
+	}
+	if = {
+		limit = {
+			check_variable_arithmetic = { which = value:index_slot_free_modules value = 1 }
+			#count_starbase_buildings = { include_being_constructed = yes count < 1 }
+		}
+		set_starbase_module = {
+			slot = 1
+			module = $MODULE$
+		}
+		owner = { add_resource = { alloys = $COST$ mult = value:neg_modules_build_cost_mult } }
+		set_timed_starbase_flag = {
+			flag = auto_building_starbase_buildings
+			days = 180
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable_arithmetic = { which = value:index_slot_free_modules value = 2 }
+		}
+		set_starbase_module = {
+			slot = 2
+			module = $MODULE$
+		}
+		owner = { add_resource = { alloys = $COST$ mult = value:neg_modules_build_cost_mult  } }
+		set_timed_starbase_flag = {
+			flag = auto_building_starbase_buildings
+			days = 180
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable_arithmetic = { which = value:index_slot_free_modules value = 3 }
+			check_variable_arithmetic = { which = value:max_starbase_modules value >= 3 }
+		}
+		set_starbase_module = {
+			slot = 3
+			module = $MODULE$
+		}
+		owner = { add_resource = { alloys = $COST$ mult = value:neg_modules_build_cost_mult  } }
+		set_timed_starbase_flag = {
+			flag = auto_building_starbase_buildings
+			days = 180
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable_arithmetic = { which = value:index_slot_free_modules value = 4 }
+			check_variable_arithmetic = { which = value:max_starbase_modules value >= 4 }
+		}
+		set_starbase_module = {
+			slot = 4
+			module = $MODULE$
+		}
+		owner = { add_resource = { alloys = $COST$ mult = value:neg_modules_build_cost_mult  } }
+		set_timed_starbase_flag = {
+			flag = auto_building_starbase_buildings
+			days = 180
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable_arithmetic = { which = value:index_slot_free_modules value = 5 }
+			check_variable_arithmetic = { which = value:max_starbase_modules value >= 5 }
+		}
+		set_starbase_module = {
+			slot = 5
+			module = $MODULE$
+		}
+		owner = { add_resource = { alloys = $COST$ mult = value:neg_modules_build_cost_mult  } }
+		set_timed_starbase_flag = {
+			flag = auto_building_starbase_buildings
+			days = 180
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable_arithmetic = { which = value:index_slot_free_modules value = 6 }
+			check_variable_arithmetic = { which = value:max_starbase_modules value >= 6 }
+		}
+		set_starbase_module = {
+			slot = 6
+			module = $MODULE$
+		}
+		owner = { add_resource = { alloys = $COST$ mult = value:neg_modules_build_cost_mult  } }
+		set_timed_starbase_flag = {
+			flag = auto_building_starbase_buildings
+			days = 180
+		}
+	}
+}

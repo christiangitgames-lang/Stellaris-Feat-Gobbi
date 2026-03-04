@@ -445,7 +445,7 @@ country_event = { # Dyson Swarm system selector dialogue
 		sba_dyson_swarm_site_ordered_effect = { POSITION = 2 RESOURCE = energy }
 		# Other mining
 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = minerals }
-		# sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = food }
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = food }
 		# sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = consumer_goods }
 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = alloys }
 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = volatile_motes }
@@ -538,6 +538,22 @@ country_event = { # Dyson Swarm system selector dialogue
 			}
 		}
 	}
+	option = {
+		name = sba_system_search.31.foods
+		trigger = {
+			exists = event_target:sba_dyson_swarm_food_star_0
+			# event_target:sba_dyson_swarm_minerals_star_0 = {
+			# 	has_resource = { type = minerals amount > 0 }
+			# }
+		}
+		hidden_effect = {
+			country_event = {
+				id = sba_system_search.31
+				scopes = { from = event_target:sba_dyson_swarm_food_star_0 }
+			}
+		}
+	}
+	
 	option = {
 		name = sba_system_search.31.alloys
 		trigger = {

@@ -266,7 +266,7 @@ tech_titans = {
 	ai_update_type = military
 
 	modifier = {
-		command_limit_add = 100
+		command_limit_add = 80
 	}
 
 	potential = {
@@ -3622,8 +3622,7 @@ tech_assembly_pattern = {
 		}
 		modifier = {
 			planet_building_build_speed_mult = 0.25
-			show_only_custom_tooltip = no
-			custom_tooltip = tech_assembly_pattern_tankbound_effect
+			bonus_automated_workforce_mult = 0.10
 		}
 	}
 
@@ -3664,8 +3663,7 @@ tech_construction_templates = {
 		}
 		modifier = {
 			planet_building_build_speed_mult = 0.50
-			show_only_custom_tooltip = no
-			custom_tooltip = tech_construction_templates_tankbound_effect
+			bonus_automated_workforce_mult = 0.10
 		}
 	}
 
@@ -3740,7 +3738,7 @@ tech_housing_2 = {
 	}
 
 	modifier = {
-		description = district_housing_tech_effect
+		description = district_housing_2_tech_effect
 	}
 
 	weight_modifier = {

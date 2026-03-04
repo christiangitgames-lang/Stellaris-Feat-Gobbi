@@ -1068,6 +1068,11 @@ modules_build_cost_mult = {
 	base = 1
 	add = modifier:starbase_modules_cost_mult
 }
+neg_modules_build_cost_mult = {
+	base = 1
+	add = modifier:starbase_modules_cost_mult
+	mult = -1
+}
 rivalsNum_emnity = {
 	base = 0
 	complex_trigger_modifier = {

@@ -22,6 +22,8 @@ starbase_caravaneer = {
 	base_buildtime = 720
 	combat_size_multiplier = 250
 	size_multiplier = 250
+	map_counter_icon = ship_counter_128
+	icon = ship_size_military_station
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "part1" } }
 	is_designable = no
@@ -43,7 +45,6 @@ starbase_caravaneer = {
 	build_block_radius = @build_block_radius_starbase
 	formation_priority = @starbase_formation_priority
 	icon_frame = -1
-	icon = ship_size_military_station
 }
 
 caravaneer_station_01 = {
@@ -58,6 +59,8 @@ caravaneer_station_01 = {
 	max_hitpoints = @station_enclave_hp
 	combat_size_multiplier = 100
 	size_multiplier = 100
+	map_counter_icon = ship_counter_128
+	icon = ship_size_military_station
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "station" } }
 	num_target_locators = 0
@@ -66,5 +69,4 @@ caravaneer_station_01 = {
 
 	class = shipclass_military_station
 	is_designable = no
-	icon = ship_size_military_station
 }

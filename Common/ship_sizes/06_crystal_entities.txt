@@ -2,13 +2,13 @@
 # This file is where you start when you want to configure something new, then go to sections
 
 @corvette_evasion = 60
-@corvette_hp = 1500
+@corvette_hp = 750
 
 @destroyer_evasion = 35
-@destroyer_hp = 3250
+@destroyer_hp = 1625
 
 @cruiser_evasion = 15
-@cruiser_hp = 7000
+@cruiser_hp = 3500
 
 @speed_very_slow = 80
 @speed_slow = 100
@@ -45,10 +45,11 @@ crystal_ship_small_blue = {
 	}
 	max_hitpoints = @corvette_hp
 	size_multiplier = 5
+	map_counter_icon = ship_counter_4
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "light_pos" } "mutations" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_1
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -113,10 +114,11 @@ crystal_ship_medium_blue = {
 	}
 	max_hitpoints = @destroyer_hp
 	size_multiplier = 10
+	map_counter_icon = ship_counter_8
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "light_pos" } "mutations" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_2
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -182,10 +184,11 @@ crystal_ship_large_blue = {
 	}
 	max_hitpoints = @cruiser_hp
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "light_pos" } "mutations" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_4
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -253,10 +256,11 @@ crystal_ship_small_green = {
 	}
 	max_hitpoints = @corvette_hp
 	size_multiplier = 5
+	map_counter_icon = ship_counter_4
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_1
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -309,10 +313,11 @@ crystal_ship_medium_green = {
 	}
 	max_hitpoints = @destroyer_hp
 	size_multiplier = 10
+	map_counter_icon = ship_counter_8
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_2
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -366,10 +371,11 @@ crystal_ship_large_green = {
 	}
 	max_hitpoints = @cruiser_hp
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_4
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -427,10 +433,11 @@ crystal_ship_small_yellow = {
 	}
 	max_hitpoints = @corvette_hp
 	size_multiplier = 5
+	map_counter_icon = ship_counter_4
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_1
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -483,10 +490,11 @@ crystal_ship_medium_yellow = {
 	}
 	max_hitpoints = @destroyer_hp
 	size_multiplier = 10
+	map_counter_icon = ship_counter_8
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_2
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -540,10 +548,11 @@ crystal_ship_large_yellow = {
 	}
 	max_hitpoints = @cruiser_hp
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_4
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -601,10 +610,11 @@ crystal_ship_small_red = {
 	}
 	max_hitpoints = @corvette_hp
 	size_multiplier = 5
+	map_counter_icon = ship_counter_4
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_1
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -657,10 +667,11 @@ crystal_ship_medium_red = {
 	}
 	max_hitpoints = @destroyer_hp
 	size_multiplier = 10
+	map_counter_icon = ship_counter_8
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_2
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -714,10 +725,11 @@ crystal_ship_large_red = {
 	}
 	max_hitpoints = @cruiser_hp
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_4
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -774,10 +786,11 @@ crystal_ship_small_blue_elite = {
 	}
 	max_hitpoints = @corvette_hp
 	size_multiplier = 5
+	map_counter_icon = ship_counter_4
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_1
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -830,10 +843,11 @@ crystal_ship_medium_blue_elite = {
 	}
 	max_hitpoints = @destroyer_hp
 	size_multiplier = 10
+	map_counter_icon = ship_counter_8
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_2
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -887,10 +901,11 @@ crystal_ship_large_blue_elite = {
 	}
 	max_hitpoints = @cruiser_hp
 	size_multiplier = 20
+	map_counter_icon = ship_counter_8
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_4
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -947,10 +962,11 @@ crystal_ship_small_green_elite = {
 	}
 	max_hitpoints = @corvette_hp
 	size_multiplier = 5
+	map_counter_icon = ship_counter_4
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_1
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -1003,6 +1019,8 @@ crystal_ship_medium_green_elite = {
 	}
 	max_hitpoints = @destroyer_hp
 	size_multiplier = 10
+	map_counter_icon = ship_counter_8
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
@@ -1060,10 +1078,11 @@ crystal_ship_large_green_elite = {
 	}
 	max_hitpoints = @cruiser_hp
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_4
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -1121,10 +1140,11 @@ crystal_ship_small_yellow_elite = {
 	}
 	max_hitpoints = @corvette_hp
 	size_multiplier = 5
+	map_counter_icon = ship_counter_4
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_1
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -1177,10 +1197,11 @@ crystal_ship_medium_yellow_elite = {
 	}
 	max_hitpoints = @destroyer_hp
 	size_multiplier = 10
+	map_counter_icon = ship_counter_8
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_2
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -1234,10 +1255,11 @@ crystal_ship_large_yellow_elite = {
 	}
 	max_hitpoints = @cruiser_hp
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_4
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -1295,10 +1317,11 @@ crystal_ship_small_red_elite = {
 	}
 	max_hitpoints = @corvette_hp
 	size_multiplier = 5
+	map_counter_icon = ship_counter_4
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 1
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_1
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -1351,10 +1374,11 @@ crystal_ship_medium_red_elite = {
 	}
 	max_hitpoints = @destroyer_hp
 	size_multiplier = 10
+	map_counter_icon = ship_counter_8
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_2
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -1408,10 +1432,11 @@ crystal_ship_large_red_elite = {
 	}
 	max_hitpoints = @cruiser_hp
 	size_multiplier = 20
+	map_counter_icon = ship_counter_16
+	icon = ship_size_crystalline_entity
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "light_pos" } }
 	num_target_locators = 0
-	icon = ship_size_crystalline_entity
 	icon_cloned = ship_size_military_4
 	class = shipclass_military
 	construction_type = { starbase_hatchery starbase_beastport }
@@ -1469,6 +1494,7 @@ crystal_station_large = {
 	max_hitpoints = @hpship_40000
 	combat_size_multiplier = 100
 	size_multiplier = 100
+	map_counter_icon = ship_counter_128
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0

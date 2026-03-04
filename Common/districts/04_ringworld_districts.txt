@@ -184,6 +184,10 @@ district_rw_city = {
 		}
 		text = arcane_generator_upkeep_desc
 	}
+
+	inline_script = {
+		script = districts/district_triggered_name_urban
+	}
 }
 
 district_rw_hive = {
@@ -295,6 +299,10 @@ district_rw_hive = {
 		}
 		text = arcane_generator_upkeep_desc
 	}
+
+	inline_script = {
+		script = districts/district_triggered_name_hive
+	}
 }
 
 district_rw_nexus = {
@@ -397,6 +405,10 @@ district_rw_nexus = {
 			}
 		}
 		text = arcane_generator_upkeep_desc
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_machine
 	}
 }
 

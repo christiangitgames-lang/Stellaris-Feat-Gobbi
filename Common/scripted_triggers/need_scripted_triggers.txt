@@ -12,12 +12,14 @@ need_minerals = {
 	}
 }
 need_foods = {
+	#country_uses_food = yes
 	has_monthly_income = {
 		resource = food
 		value < 10
 	}
 }
 need_cg = {
+	#country_uses_consumer_goods = yes
 	has_monthly_income = {
 		resource = consumer_goods
 		value < 10
