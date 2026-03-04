@@ -63,7 +63,7 @@ on_yearly_pulse_country = {
 		cg_rules.3 #bonus late game recursive
 		
 		sfg_usefull_communication.1#Deamon that fires all usefull communication
-		
+		sfg_usefull_communication.50#resource warning
 	}
 }
 on_bi_yearly_pulse_country = {

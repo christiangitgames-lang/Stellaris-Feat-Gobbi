@@ -720,7 +720,7 @@ sn_solar_food_network_desc: "Thank you at solar and protective glass can produce
 # sm_nebula_refinery_gestalt_desc: "$sm_nebula_refinery_desc$"
 tech_archaeo_dimensional_space: "Dimensional space in real space ($sfgm$)"
 tech_archaeo_dimensional_space_desc: "Can add volume to our dimension use quantum dimension and get volume by this."
-tech_archaeo_dimensional_space_effect:0 "Trading hub §G+1§! trade value\nSolar panel network §G+3§! energy\nHousing §G+10%§!"
+tech_archaeo_dimensional_space_effect:0 "Trading hub §G+50%§! trade value\n§Y$solar_panel_network$§!/§Y$astromining_bay$§! §G+50%§! energy\nHousing §G+10%§!"
 tech_ship_build_minor_artifacts: "Minor Artifact expert ($sfgm$)"
 tech_ship_build_minor_artifacts_desc: "Can replace with high tech technology without use minor artifact"
 tech_repeatable_weapon_archaeotech_weapon_fire_rate: "Archeo weapon upgrade ($sfgm$)"
@@ -733,38 +733,7 @@ mod_country_resource_max_food_add: "Food £food£ Storage Capacity: "
 mod_country_resource_max_consumer_goods_add: "$Consumer goods$ £consumer_goods£ Storage Capacity: "
 mod_country_resource_max_alloys_add: "Alloys £alloys£ Storage Capacity: "
 
-warning_automation: "§RWarning§! Buildings: \nIs ever last buildings use, so if you use will remove."
-Automation_Nothing_name: "Disable"
-Automation_hidrophic_name: "Automation $sm_hydroponics_bay$"
-policy_Starbase_automation: "StarBase Automation"
-policy_Starbase_automation_desc: "Automation starbase, this lock building manually, however remember build only in row."
-Nothing: "Disable"
-Nothing_desc: "Be nothing."
 
-Hidroponic: "$sm_hydroponics_bay$"
-Hidro_audo_desc: "Build $sm_hydroponics_bay$ where exist §Yfree slot star base building§! and if need income £food£ < 10 or have £alloys£ > 1250"
-Hidroponic_desc: "$Hidro_audo_desc$\n$warning_automation$"
-
-
-Trade_Hidroponic: "$sm_hydroponics_bay$ & Trade"
-Trade_Hidroponic_desc: "$Hidro_audo_desc$ and $sm_offworld_trading_company$ where exist §Yfree slot star base building§!\nBuild $trading_hub$\n$warning_automation$"
-Solar_Hidroponic: "$Automation_solar_hidrophic_name$"
-Automation_solar_hidrophic_name: "$sm_hydroponics_bay$ & energy"
-Solar_Hidroponic_desc: "$Hidro_audo_desc$\nBuild $sm_solar_panel_network$ or astromining\n$warning_automation$"
-Automation_trade_hidrophic_name: "$sm_hydroponics_bay$ & Trade"
-
-Automation_full_automate_sm_buildings_name: "Automation starbase building "
-Automation_full_automate_sm_name: "Full automation starbase"
-full_automate_sm_name: "Automation starbase building "
-full_automate_sm_buildings_name: "Full automation starbase"
-full_automate_sm_buildings: "Automation starbase building "
-full_automate_sm_buildings_desc: "Completely Automation starbase building\n$warning_automation$"
-full_automate_sm: "Automation starbase "
-full_automate_sm_desc: "Completely Automation starbase\n$warning_automation$"
-
-
-auto_planet_luxuries_boost: "Automate planet luxuries boost"
-auto_planet_luxuries_boost_dec: "When hate micromanagement"
 
 civic_hive_ascetic_2: "Unitary opposition"
 civic_hive_ascetic_2_desc: "Unitary opposition"

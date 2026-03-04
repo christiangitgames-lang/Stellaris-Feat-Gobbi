@@ -43,3 +43,10 @@
 @starbase_starport_alloys = 500
 @starbase_starhold_alloys = 1250
 @starbase_starfortress_alloys = 3500
+
+
+#leader bonus planet
+@planet_planet_decision_enact_speed_mult = 0.025
+@planet_planet_building_build_speed_mult = 0.025
+@sector_planet_decision_enact_speed_mult = 0.01
+@sector_planet_building_build_speed_mult = 0.01

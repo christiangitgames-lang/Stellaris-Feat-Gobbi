@@ -1162,7 +1162,7 @@
 		COMMAND_LIMIT_MAX										= 1000	# Max value of Command Limit
 		COMMAND_LIMIT_BASE										= 50	# Base value of Command Limit
 
-		NAVAL_CAPACITY_MAX										= 9999	# Max value of Naval Capacity
+		NAVAL_CAPACITY_MAX										= 19999	# Max value of Naval Capacity
 		NAVAL_CAPACITY_BASE										= 250	# Base value of Naval Capacity
 		NAVAL_CAPACITY_POP_MULT									= 0		# Mult value of Naval Capacity for each Pop
 		NAVAL_CAPACITY_NO_LEADER_PENALTY						= -0.25

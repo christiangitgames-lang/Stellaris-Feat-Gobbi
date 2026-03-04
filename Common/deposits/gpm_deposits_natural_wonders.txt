@@ -142,7 +142,7 @@ gpm_d_amoeba_sea = {
 	inline_script = {
 		script = jobs/biologists_add
 		AMOUNT = 300
-		}
+	}
 	drop_weight = {
  		weight = @mid_rare
  	}
@@ -259,7 +259,7 @@ gpm_d_abandoned_stargate = {
 	inline_script = {
 		script = jobs/physicists_add
 		AMOUNT = 200		# 200 jobs
-		}
+	}
 	inline_script = {
 		script = jobs/engineers_add
 		AMOUNT = 200		# 200 jobs

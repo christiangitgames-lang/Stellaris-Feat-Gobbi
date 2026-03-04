@@ -2,8 +2,8 @@ councilor_ruler_democratic = {
 	leader_class = { official commander scientist }
 	possible = { always = no }
 	modifier = {
-		pop_factions_produces_mult = 0.02
-		country_edict_fund_add = 5
+		pop_factions_produces_mult = 0.03
+		country_edict_fund_add = 7.5
 	}
 	icon = "GFX_icon_councilor_ruler"
 	ai_hiring_weight = {
@@ -16,7 +16,7 @@ councilor_ruler_oligarchic = {
 	possible = { always = no }
 	modifier = {
 		councilor_exp_gain = 0.05
-		country_edict_fund_add = 5
+		country_edict_fund_add = 7.5
 	}
 	icon = "GFX_icon_councilor_ruler"
 	ai_hiring_weight = {
@@ -29,7 +29,7 @@ councilor_ruler_dictatorial = {
 	possible = { always = no }
 	modifier = {
 		pop_amenities_usage_mult = -0.02
-		country_edict_fund_add = 10
+		country_edict_fund_add = 15
 	}
 	icon = "GFX_icon_councilor_ruler"
 	ai_hiring_weight = {
@@ -42,7 +42,7 @@ councilor_ruler_imperial = {
 	possible = { always = no }
 	modifier = {
 		country_power_projection_influence_produces_add = 0.25
-		country_edict_fund_add = 5
+		country_edict_fund_add = 7.5
 	}
 	icon = "GFX_icon_councilor_ruler"
 	ai_hiring_weight = {
@@ -54,8 +54,8 @@ councilor_ruler_hive_mind = {
 	leader_class = { official commander scientist }
 	possible = { always = no }
 	modifier = {
-		country_unity_produces_mult = 0.02
-		country_edict_fund_add = 5
+		country_unity_produces_mult = 0.03
+		country_edict_fund_add = 7.5
 	}
 	icon = "GFX_icon_councilor_ruler"
 	ai_hiring_weight = {
@@ -69,7 +69,7 @@ councilor_ruler_machine_intelligence = {
 	modifier = {
 		empire_size_pops_mult = -0.01
 		planet_amenities_no_happiness_add = 500
-		country_edict_fund_add = 5
+		country_edict_fund_add = 7.5
 	}
 	icon = "GFX_icon_councilor_ruler"
 	ai_hiring_weight = {
@@ -94,7 +94,7 @@ councilor_ruler_corporate = {
 	possible = { always = no }
 	modifier = {
 		branch_office_value_mult = 0.02
-		country_edict_fund_add = 5
+		country_edict_fund_add = 7.5
 	}
 	icon = "GFX_icon_councilor_ruler"
 	ai_hiring_weight = {
@@ -182,7 +182,7 @@ councilor_ruler_imperial_cyber = {
 	icon = "GFX_icon_councilor_ruler"
 	modifier = {
 		planet_jobs_ruler_produces_mult = 0.10
-		country_edict_fund_add = 5
+		country_edict_fund_add = 7.5
 	}
 	ai_hiring_weight = {
 		inline_script = councilor_leader_weights
@@ -194,8 +194,8 @@ councilor_ruler_imperial_synth = {
 	possible = { always = no }
 	icon = "GFX_icon_councilor_ruler"
 	modifier = {
-		country_unity_produces_mult = 0.02
-		country_edict_fund_add = 5
+		country_unity_produces_mult = 0.03
+		country_edict_fund_add = 7.5
 	}
 	ai_hiring_weight = {
 		inline_script = councilor_leader_weights
@@ -278,7 +278,7 @@ councilor_ascensionists = {
 	}
 	civic = civic_ascensionists
 	modifier = {
-		country_unity_produces_mult = 0.02
+		country_unity_produces_mult = 0.03
 	}
 	ai_hiring_weight = {
 		inline_script = councilor_leader_weights
@@ -547,7 +547,7 @@ councilor_feudal_realm = {
 	}
 	civic = civic_feudal_realm
 	modifier = {
-		subjects_unity_produces_add = 10
+		subjects_unity_produces_add = 30
 	}
 	ai_hiring_weight = {
 		inline_script = councilor_leader_weights
@@ -576,7 +576,7 @@ councilor_functional_architecture = {
 	}
 	civic = civic_functional_architecture
 	modifier = {
-		planet_building_build_speed_mult = 0.02
+		planet_building_build_speed_mult = 0.03
 	}
 	ai_hiring_weight = {
 		inline_script = councilor_leader_weights
@@ -645,7 +645,7 @@ councilor_memorialist = {
 	}
 	civic = civic_memorialist
 	modifier = {
-		country_unity_produces_mult = 0.02
+		country_unity_produces_mult = 0.03
 	}
 	ai_hiring_weight = {
 		inline_script = councilor_leader_weights
@@ -1162,7 +1162,7 @@ councilor_corporate_ascensionists = {
 	}
 	civic = civic_corporate_ascensionists
 	modifier = {
-		country_unity_produces_mult = 0.02
+		country_unity_produces_mult = 0.03
 	}
 	ai_hiring_weight = {
 		inline_script = councilor_leader_weights

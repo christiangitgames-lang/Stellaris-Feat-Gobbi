@@ -1,0 +1,4 @@
+﻿l_english:
+#non traddure
+Client_released_Master: "Have release an colony"
+Client_released_Master_desc: "Have release an colony how an $decision_cg_release_client_state$"

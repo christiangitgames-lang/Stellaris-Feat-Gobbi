@@ -129,6 +129,19 @@ Starbase_automation = {
 		}
 	}
 	option = {
+		name = "full_automate_module_buildings"
+		potential = {
+			always = yes
+		}
+		policy_flags = { full_automate_module_buildings }
+		modifier = {
+		}
+
+		AI_weight = {
+			weight = 0
+		}
+	}
+	option = {
 		name = "full_automate_sm_buildings"
 		potential = {
 			always = no

@@ -2,6 +2,7 @@
  bonuswsfgm: "(bonus $wsfgm$)"
  bonusbsfgm: "(bonus $bsfgm$)"
  csfgm: "(changed $sfgm$)"
+ bsfgm_tt: "$bsfgm$\n"
  #littlesfgm: "(Read Desc §rWarning§! $sfgm$)"
  tech_destroyers:0 "Destroyers $bonuswsfgm$"
  tech_cruisers:0 "Cruisers $bonuswsfgm$"
@@ -26,4 +27,18 @@
  tradition_nanotech: "Nanotech \n($bsfgm$)"
  tradition_synthetics:0 "Synthetics \n(little $bsfgm$)"
 
+ #ascension perk
+ ap_archaeoengineers:0 "Archaeo-Engineers ($bsfgm$)"
+
  council_agenda_agenda_nanotech_unstoppable_swarm_name: "Unstoppable Swarm ($bsfgm$)"
+
+
+ sfgmod_skill_official_planet_governor_tt: "$sfgm$:\n-$mod_planet_decision_enact_speed_mult$: §G@planet_planet_decision_enact_speed_mult§!\n-planet_building_build_speed_mult = @planet_planet_building_build_speed_mult"
+ sfgmod_skill_official_sector_governor_tt: "$sfgm$:\n-$mod_planet_decision_enact_speed_mult$: §G@sector_planet_decision_enact_speed_mult§!\n-planet_building_build_speed_mult = @sector_planet_building_build_speed_mult"
+
+# planet_decision_enact_speed_mult = @planet_planet_decision_enact_speed_mult
+# 	planet_building_build_speed_mult = @planet_planet_building_build_speed_mult
+
+#
+ councilor_feudal_realm_desc:0 "The $TITLE$ oversees the distribution of power and titles among subjects. ($bsfgm$: £unity£ from §Ysubject§! is 40 instead 10)"
+

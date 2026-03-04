@@ -34,12 +34,79 @@ country_event = { #fire events for automations
 					}
 					country_event = { id = phigo_automation.20 days = @daysStarbasebuild } #anchorage & naval
 				}
+				1 = { # anchorage
+					modifier = {
+						factor = 1000
+						has_policy_flag = full_automate_module_buildings
+					}
+					country_event = { id = phigo_automation.30 days = @daysStarbasebuild } #anchorage & naval
+				}
 			
 			
 		} 
 	}
 }
+country_event = {#automate buildings hydro
+	id = phigo_automation.30
+	hide_window = yes
 
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_policy_flag = Automation_Nothing }
+		has_resource = { type = alloys amount >= 50 }
+	}
+	immediate = { 
+		#hidro
+		every_owned_starbase = {
+			limit = {
+				NOT = { has_starbase_flag = auto_building_starbase_buildings }
+				is_normal_starbase = yes 
+				is_space_citadel = no
+			}
+			if = {
+				limit = { owner = { need_foods = yes } }
+				inline_script = {
+					script = starbase/hydrophonic_building_add
+				}
+			}
+			else_if = {
+				limit = { 
+					OR = {
+						owner = { need_energy = yes } 
+						has_starbase_module = astromining_bay
+					}
+				}
+				if = { 
+					limit = {
+						owner = {
+							has_civic = civic_machine_astromining_drones
+						}
+					}
+					inline_script = {
+						script = starbase/universal_module_add
+						COST = 25
+						MODULE = astromining_bay
+					}
+				}
+				else = {
+					inline_script = {
+						script = starbase/universal_module_add
+						COST = 50
+						MODULE = solar_panel_network
+					}
+				}
+			}
+			else = {
+				limit = { has_starbase_module = trading_hub } 
+				inline_script = {
+					script = starbase/offworld_trading_company_add
+				}
+			}
+		}
+		
+	}
+}
 country_event = {#automate buildings hydro
 	id = phigo_automation.1
 	hide_window = yes
@@ -49,33 +116,34 @@ country_event = {#automate buildings hydro
 	trigger = {
 		NOT = { has_policy_flag = Automation_Nothing }
 		has_resource = { type = alloys amount >= 50 }
-		OR = {
-			need_foods = yes
-			has_resource = { type = alloys amount >= 1250 }
-		}
 	}
 	immediate = { 
 		if = {
-			limit = { has_technology = "tech_hydroponics" }
+			limit = { 
+				has_technology = "tech_hydroponics" 
+				#country_uses_food = yes
+			}
 			every_owned_starbase = { #hydro
 				limit = { 
 					is_normal_starbase = yes 
 					is_space_citadel = no
 					check_variable_arithmetic = { which = value:Free_starbase_buildings value > 0 }
-						NOT = { has_starbase_flag = auto_building_starbase_buildings }
-					}
-					inline_script = {
-						script = starbase/hydrophonic_building_add
-					}
-					if = { 
+					NOT = { has_starbase_flag = auto_building_starbase_buildings }
+				}
+				inline_script = {
+					script = starbase/hydrophonic_building_add
+				}
+				if = {
 					limit = { owner = { has_policy_flag = Automation_trade_hidrophic } }
 					inline_script = {
 						script = starbase/offworld_trading_company_add
 					}
 				}
+				
 			}
 			if = {
 				limit = { 
+					NOT = { has_policy_flag = full_automate_module_buildings }
 					has_technology = "tech_solar_panel_network" 
 					has_policy_flag = Automation_solar_hidrophic 
 				} 
@@ -83,6 +151,7 @@ country_event = {#automate buildings hydro
 			}
 			if = {
 				limit = { 
+					NOT = { has_policy_flag = full_automate_module_buildings }
 					has_technology = "tech_solar_panel_network" 
 					has_policy_flag = Automation_trade_hidrophic 
 				} 
@@ -109,9 +178,9 @@ country_event = {#automate modules solar
 				check_variable_arithmetic = { which = value:Free_starbase_modules value > 0 }
 				NOT = { has_starbase_flag = auto_building_starbase_buildings }
 			}
-			if = {
-				limit = { 
-					owner = { 
+			if = { 
+				limit = {
+					owner = {
 						has_civic = civic_machine_astromining_drones
 					}
 				}
@@ -128,7 +197,7 @@ country_event = {#automate modules solar
 					MODULE = solar_panel_network
 				}
 			}
-						
+			
 		}
 		if = {
 			limit = { 

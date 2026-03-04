@@ -65,6 +65,7 @@ GT_planet_researchers_society_research_produces_hive_mult = {
 	weight = @tier2weight2
 	potential = {
 		is_hive_empire = yes
+		always = no #not workit in 3.4
 	}
 	modifier = {
 		planet_jobs_simple_drone_society_research_produces_mult = 0.25
@@ -90,6 +91,7 @@ GT_planet_researchers_society_research_produces_machine_mult = {
 	weight = @tier2weight2
 	potential = {
 		is_machine_empire = yes
+		always = no #not workit in 3.4
 	}
 	modifier = {
 		planet_jobs_simple_drone_society_research_produces_mult = 0.3
@@ -115,6 +117,7 @@ GT_planet_researchers_society_research_produces_mult = {
 	weight = @tier2weight2
 	potential = {
 		is_gestalt = no
+		always = no #not workit in 3.4
 	}
 	modifier = {
 		planet_jobs_ruler_society_research_produces_mult = 0.15

@@ -1,0 +1,33 @@
+
+#example
+# inline_script = {
+# 	script = usefull_communication/message_planet
+# 	MESSAGE_TYPE = MESSAGE_RANDOM_POP_SETTLED
+# 	LOCALIZATION = Auto_Resettle
+# 	DAYS = 360
+# 	PLANET = prev
+# 	POP = this
+#	PLANET_ORIGIN = prevprev
+# }
+
+create_message = { #AUTO_STARBASE_MESSAGE_TYPE
+	type = $MESSAGE_TYPE$
+	localization = $LOCALIZATION$
+	days = $DAYS$
+	target = $PLANET$
+	variable = {
+		type = name
+		localization = PLANET
+		scope = $PLANET$
+	}
+	variable = {
+		type = name
+		localization = POP
+		scope = $POP$
+	}
+	variable = {
+		type = name
+		localization = PLANET_ORIGIN
+		scope = $PLANET_ORIGIN$
+	}
+}

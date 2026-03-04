@@ -367,6 +367,7 @@ solar_panel_network = {
 				}
 			}
 			energy = 3
+			mult = value:bonus_starbase_age
 		}
 	}
 
@@ -425,6 +426,16 @@ trading_hub = {
 			mult = value:bonus_starbase_age
 
 		}
+		produces = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_technology = tech_archaeo_dimensional_space
+			}
+		}
+			trade = 1
+			mult = value:bonus_starbase_age
+		}
 	}
 
 	station_modifier = {
@@ -436,6 +447,8 @@ trading_hub = {
 		}
 		planet_jobs_trade_produces_mult = 0.01
 	}
+	
+	
 	# triggered_station_modifier = {
 	# 	potential = {
 	# 		exists = owner
@@ -610,6 +623,16 @@ astromining_bay = {
 				}
 			}
 			energy = 6
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_technology = tech_archaeo_dimensional_space
+				}
+			}
+			energy = 2.5
+			mult = value:bonus_starbase_age
 		}
 	}
 

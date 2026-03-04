@@ -1,6 +1,5 @@
-﻿# Show Building Slot Capacity 
-l_english:
-
+﻿l_english:
+# Show Building Slot Capacity 
 #Communication
 
 TY:0 "Thank you"
@@ -42,7 +41,11 @@ phi_pm_Accelerator_Message.1.name: "Avaible decision for $decision_phi_build_pla
 phi_pm_Accelerator_Message.1.desc: "Your planet §Y[root.GetName]§! can be decision for §Gupgrade§! planet with §Y$decision_phi_build_planet_accelerators$§!"
 
 can_have_system_disconected.name: "Ability to Have Disconnected Systems"
-can_have_system_disconected.desc: "You §Gcan§! now build in remote systems not connected to your §Yempire§! and §YCLAIM§! §Geverywhere§!: Your technological capabilities to support distant systems without hyperlanes allow your empire to no longer be forced to keep everything connected. From now on, you can have disconnected systems "
+can_have_system_disconected.desc: "You §Gcan§! now build in remote systems not connected to your §Yempire§! and §YCLAIM§! §Geverywhere§!: Your technological capabilities to support distant systems without hyperlanes allow your empire to no longer be forced to keep everything connected. From now on, you can have disconnected systems"
 
 lost_system.name: "Outpost is remote"
-lost_system.desc: "This outpost is remote and not connected to your empire; within 2 years it will be §Rdestroyed§!. To prevent this, research §YJump Drive§! technologies or go to §Ywar§!"
+lost_system.desc: "This outpost is remote and not connected to your empire; $sfgm$ within 2 years it will be §Rdestroyed§!. To prevent this, research §YJump Drive§! technologies or go to §Ywar§!"
+
+warning_resource: "§SWarning§! Resource"
+warning_resource.desc: "Your empire will finish resource §Y[this.res_type]§! in our reserve"
+warning_resource_max.desc: "Your empire risk of waste resource §Y[this.res_type]§!"

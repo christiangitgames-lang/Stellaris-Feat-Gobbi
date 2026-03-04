@@ -1,0 +1,19 @@
+#sfg_usefull_communication_52
+# export_resource_stockpile_to_variable = {
+# 	resource = $RES$
+# 	variable = resource_stockpile_var
+# }
+export_resource_maximum_to_variable = {
+	resource = $RES$
+	variable = resource_maximum_var
+}
+if = {
+	limit = { maximum_stockpile_resource = { RESOURCE = $RES$ } }
+	set_variable = { which = resource_Type value = $IDRES$ }
+	country_event = {
+		id = sfg_usefull_communication.52
+	}
+	#clear_variable = resource_stockpile_var
+	clear_variable = resource_maximum_var
+	break = yes
+}

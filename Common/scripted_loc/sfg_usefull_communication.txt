@@ -1,0 +1,66 @@
+defined_text = { 
+	name = res_type
+	text = {
+		localization_key = energy
+		trigger = {
+			check_variable = { which = resource_Type value = 0 }
+		}
+	}
+
+	text = {
+		localization_key = minerals
+		trigger = {
+			check_variable = { which = resource_Type value = 1 }
+		}
+	}
+
+	text = {
+		localization_key = food
+		trigger = {
+			check_variable = { which = resource_Type value = 2 }
+		}
+	}
+
+	text = {
+		localization_key = alloys
+		trigger = {
+			check_variable = { which = resource_Type value = 3 }
+		}
+	}
+	text = {
+		localization_key = consumer_goods
+		trigger = {
+			check_variable = { which = resource_Type value = 4 }
+		}
+	}
+	text = {
+		localization_key = rare_crystals
+		trigger = {
+			check_variable = { which = resource_Type value = 5 }
+		}
+	}
+
+	text = {
+		localization_key = exotic_gases
+		trigger = {
+			check_variable = { which = resource_Type value = 6 }
+		}
+	}
+
+	text = {
+		localization_key = volatile_motes
+		trigger = {
+			check_variable = { which = resource_Type value = 7 }
+		}
+	}
+	text = {
+		localization_key = trade
+		trigger = {
+			check_variable = { which = resource_Type value = 8 }
+		}
+	}
+
+	
+
+	default = undefinied
+}

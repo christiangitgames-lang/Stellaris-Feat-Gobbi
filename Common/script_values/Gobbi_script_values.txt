@@ -771,6 +771,7 @@ Free_starbase_modules = {
 	# 	}
 	# 	mode = subtract
 	# }
+	
 	complex_trigger_modifier = {
 		trigger = count_starbase_modules
 		parameters = {

@@ -12,3 +12,36 @@ add_modifier = { modifier = start_game_modifier }
         add_modifier = { modifier = mid_game_modifier }
         add_modifier = { modifier = late_game_modifier }
 }
+inline_script = {
+		script = jobs/biologists_add
+		AMOUNT = 300
+	}
+inline_script = {
+		script = jobs/physicists_add
+		AMOUNT = 200		# 200 jobs
+	}
+	inline_script = {
+		script = jobs/engineers_add
+		AMOUNT = 200		# 200 jobs
+	}
+
+export_resource_stockpile_to_variable - Exports the value of the current country's stockpile of the specified resource to a variable.
+export_resource_stockpile_to_variable = { resource = energy variable = <string> }
+Supported Scopes: country
+
+export_resource_income_to_variable - Exports the value of the current country's monthly income of the specified resource to a variable.
+export_resource_income_to_variable = { resource = energy variable = <string> }
+Supported Scopes: country
+
+export_resource_maximum_to_variable - Exports the value of the current country's maximum of the specified resource to a variable.
+export_resource_maximum_to_variable = { resource = energy variable = <string> }
+Supported Scopes: country
+
+export_resource_maximum_to_variable = {
+                resource = energy
+                variable = energy_max_value
+        }
+        add_resource = {
+                energy = @max_credit_mult
+                mult = energy_max_value
+        }

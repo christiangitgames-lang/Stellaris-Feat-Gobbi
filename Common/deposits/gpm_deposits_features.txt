@@ -114,7 +114,7 @@ gpm_d_android_pleasure_palace = {
 			exists = owner
 			owner = { is_gestalt = yes }
 		}
-		modifier = {	
+		modifier = {
 			planet_pop_assembly_mult = 0.05
 		}
 	}
@@ -220,12 +220,12 @@ gpm_d_temple_of_the_ancient_one = {
 	}
 	planet_modifier = {
 		planet_biologists_minor_artifacts_produces_add = 0.01
-	
-				}
+		
+	}
 	inline_script = {
 		script = jobs/biologists_add
 		AMOUNT = @building_static_jobs		# 200 jobs
-			}
+	}
 	drop_weight = {
  		weight = @high_rare
  	}

@@ -181,11 +181,21 @@ resource_silo = {
 			exists = owner
 			owner = {
 				has_technology = tech_construction_templates
+				NOT = { has_technology = tech_construction_templates_2 }
 			}
 		}
 		country_resource_max_add = 10000
 	}
-
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_construction_templates_2
+			}
+		}
+		country_resource_max_add = 20000
+	}
+	
 	ai_weight = {
 		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}

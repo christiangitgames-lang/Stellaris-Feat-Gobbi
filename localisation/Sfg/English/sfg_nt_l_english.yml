@@ -1,8 +1,7 @@
 ﻿l_english:
 
-#non traddure
- d_arc_furnace_1_food: "$orbital_arc_furnace_1$"
- d_arc_furnace_1_food_desc: "$orbital_arc_furnace_1_DESC$"
+d_arc_furnace_1_food: "$orbital_arc_furnace_1$"
+d_arc_furnace_1_food_desc: "$orbital_arc_furnace_1_DESC$"
  d_arc_furnace_2_food: "$orbital_arc_furnace_2$"
  d_arc_furnace_2_food_desc: "$orbital_arc_furnace_2_DESC$"
  d_arc_furnace_3_food: "$orbital_arc_furnace_3$"

@@ -54,6 +54,10 @@ country_event = {  #Deamon that fires all usefull communication
 			id = sfg_usefull_communication.40 #modules or buildings free in orbital rings
 			days = 15
 		}
+		# country_event = {
+		# 	id = sfg_usefull_communication.50 #Resource
+		# 	days = 150
+		# }
 	}
 }
 
@@ -415,6 +419,150 @@ starbase_event = { #send hive message
 				remove_starbase_flag = disable_sfg_usefull_communication40 #remove temporary flag
 				set_starbase_flag = disable_sfg_usefull_communication40 
 			}
+		}
+	}
+}
+
+country_event = { #resource warning
+	id = sfg_usefull_communication.50
+	hide_window = yes
+	is_triggered_only = yes
+	pre_triggers = {
+		is_ai = no
+	}
+	trigger = {
+		AND = {
+			NOT = { has_country_flag = sfg_usefull_communication51 }
+			OR = {
+				has_monthly_income = { resource = energy value < 0 }
+				has_monthly_income = { resource = trade value < 0 }
+				has_monthly_income = { resource = minerals value < 0 }
+				has_monthly_income = { resource = food value < 0 }
+				has_monthly_income = { resource = alloys value < 0 }
+				has_monthly_income = { resource = consumer_goods value < 0 }
+				has_monthly_income = { resource = rare_crystals value < 0 }
+				has_monthly_income = { resource = exotic_gases value < 0 }
+				has_monthly_income = { resource = volatile_motes value < 0 }
+			}
+		}
+		AND = {
+			NOT = { has_country_flag = sfg_usefull_communication52 }
+			OR = {
+				have_maximum_stockpile_resource_default = { RESOURCE = energy MAX = 25000 }
+				have_maximum_stockpile_resource_default = { RESOURCE = trade MAX = 50000 }
+				have_maximum_stockpile_resource_default = { RESOURCE = minerals MAX = 15000 }
+				have_maximum_stockpile_resource_default = { RESOURCE = food MAX = 15000 }
+				have_maximum_stockpile_resource_default = { RESOURCE = alloys MAX = 15000 }
+				have_maximum_stockpile_resource_default = { RESOURCE = consumer_goods MAX = 15000 }
+				have_maximum_stockpile_resource_default = { RESOURCE = rare_crystals MAX = 5000 }
+				have_maximum_stockpile_resource_default = { RESOURCE = exotic_gases MAX = 5000 }
+				have_maximum_stockpile_resource_default = { RESOURCE = volatile_motes MAX = 5000 }
+			}
+		}
+		
+	}
+	# inline_script = {
+	# 	script = events/settable_event
+	# 	TITLE = warning_resource
+	# 	DESC = "warning_resource.desc"
+	# 	PICTURE = GFX_evt_deficit
+	# 	LOCATION = ROOT
+	# }
+	immediate = {
+		if = { limit = { NOT = { has_country_flag = sfg_usefull_communication51 } }
+			#hanno un break dentro
+			inline_script = { script = usefull_communication/sfg_usefull_communication_51 RES = energy IDRES = 0 } #lancia sfg_usefull_communication.51
+			
+			inline_script = { script = usefull_communication/sfg_usefull_communication_51 RES = minerals IDRES = 1 } #lancia sfg_usefull_communication.51
+			inline_script = { script = usefull_communication/sfg_usefull_communication_51 RES = food IDRES = 2 } #lancia sfg_usefull_communication.51
+			inline_script = { script = usefull_communication/sfg_usefull_communication_51 RES = alloys IDRES = 3 } #lancia sfg_usefull_communication.51
+			inline_script = { script = usefull_communication/sfg_usefull_communication_51 RES = consumer_goods IDRES = 4 } #lancia sfg_usefull_communication.51
+			inline_script = { script = usefull_communication/sfg_usefull_communication_51 RES = rare_crystals IDRES = 5 } #lancia sfg_usefull_communication.51
+			inline_script = { script = usefull_communication/sfg_usefull_communication_51 RES = exotic_gases IDRES = 6 } #lancia sfg_usefull_communication.51
+			inline_script = { script = usefull_communication/sfg_usefull_communication_51 RES = volatile_motes  IDRES = 7 } #lancia sfg_usefull_communication.51
+			inline_script = { script = usefull_communication/sfg_usefull_communication_51 RES = trade IDRES = 8 } #lancia sfg_usefull_communication.51
+			clear_variable = income_var # non mi serve più
+		}
+		if = { limit = { NOT = { has_country_flag = sfg_usefull_communication52 } }
+			#hanno un break dentro
+			inline_script = { script = usefull_communication/sfg_usefull_communication_52 RES = energy IDRES = 0 } #lancia sfg_usefull_communication.52
+			inline_script = { script = usefull_communication/sfg_usefull_communication_52 RES = minerals IDRES = 1 } #lancia sfg_usefull_communication.52
+			inline_script = { script = usefull_communication/sfg_usefull_communication_52 RES = food IDRES = 2 } #lancia sfg_usefull_communication.52
+			inline_script = { script = usefull_communication/sfg_usefull_communication_52 RES = alloys IDRES = 3 } #lancia sfg_usefull_communication.52
+			inline_script = { script = usefull_communication/sfg_usefull_communication_52 RES = consumer_goods IDRES = 4 } #lancia sfg_usefull_communication.52
+			inline_script = { script = usefull_communication/sfg_usefull_communication_52 RES = rare_crystals IDRES = 5 } #lancia sfg_usefull_communication.52
+			inline_script = { script = usefull_communication/sfg_usefull_communication_52 RES = exotic_gases IDRES = 6 } #lancia sfg_usefull_communication.52
+			inline_script = { script = usefull_communication/sfg_usefull_communication_52 RES = volatile_motes IDRES = 7 } #lancia sfg_usefull_communication.52
+			inline_script = { script = usefull_communication/sfg_usefull_communication_52 RES = trade IDRES = 8 } #lancia sfg_usefull_communication.52
+			clear_variable = resource_maximum_var # non mi serve più
+		}
+		clear_variable = resource_Type
+	}
+	
+}
+country_event = { #poor resource
+	id = sfg_usefull_communication.51
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+	inline_script = {
+		script = events/settable_event
+		TITLE = warning_resource
+		DESC = "warning_resource.desc"
+		PICTURE = GFX_evt_deficit
+		LOCATION = ROOT
+	}
+	option = {
+		name = TY
+		hidden_effect = {
+			set_timed_country_flag = {
+				flag = sfg_usefull_communication51
+				years = 5
+			}
+		}
+	}
+	option = {
+		name = StopCommunicateForThis
+		
+		hidden_effect = {
+			set_country_flag = sfg_usefull_communication51 
+		}
+	}
+}
+country_event = { #resource warning
+	id = sfg_usefull_communication.52
+	is_triggered_only = yes
+	pre_triggers = {
+		is_ai = no
+	}
+	trigger = {
+		maximum_stockpile_resource = { RESOURCE = energy }
+	}
+	immediate = {
+		
+	}
+	inline_script = {
+		script = events/settable_event
+		TITLE = warning_resource
+		DESC = "warning_resource_max.desc"
+		PICTURE = GFX_evt_deficit
+		LOCATION = ROOT
+	}
+	option = {
+		name = TY
+		hidden_effect = {
+			set_timed_country_flag = {
+				flag = sfg_usefull_communication52
+				years = 5
+			}
+		}
+	}
+	option = {
+		name = StopCommunicateForThis
+		
+		hidden_effect = {
+			set_country_flag = sfg_usefull_communication52
 		}
 	}
 }

@@ -1956,22 +1956,33 @@ d_food_3 = {
 
 	resources = {
 		category = orbital_mining_deposits
+		# produces = {
+		# 	# trigger = {
+        #     #     OR = {
+		# 	# 		NOT = { exists = space_owner }
+        #     #     	space_owner = { country_uses_food = yes }
+		# 	# 	}
+        #     # }
+		# 	food = 3
+		# 	energy = 3
+		# }
 		produces = {
-			# trigger = {
-            #     OR = {
-			# 		NOT = { exists = space_owner }
-            #     	space_owner = { country_uses_food = yes }
-			# 	}
-            # }
+			
 			food = 3
 		}
 		# produces = {
 		# 	trigger = {
-        #          exists = space_owner
-        #          space_owner = { country_uses_food = no }
-        #     }
-		# 	energy = 2
+        #         space_owner = { country_uses_food = yes }
+        #      }
+		# 	food = 3
 		# }
+		produces = {
+			trigger = {
+                 space_owner = { country_uses_food = no }
+            }
+			food = -3
+			energy = 2
+		}
 		# produces = {
 		# 	trigger = {
         #         FROM = {
@@ -2011,6 +2022,13 @@ d_food_4 = {
             # }
 			food = 4
 		}
+		produces = {
+			trigger = {
+                 space_owner = { country_uses_food = no }
+            }
+			food = -4
+			energy = 3
+		}
 		# produces = {
         #     trigger = {
         #          exists = space_owner
@@ -2040,6 +2058,13 @@ d_food_5 = {
 			# 	}
             # }
 			food = 5
+		}
+		produces = {
+			trigger = {
+                 space_owner = { country_uses_food = no }
+            }
+			food = -5
+			energy = 4
 		}
 		# produces = {
         #     trigger = {
@@ -2076,6 +2101,13 @@ d_food_6 = {
 			# 	}
             # }
 			food = 6
+		}
+		produces = {
+			trigger = {
+                 space_owner = { country_uses_food = no }
+            }
+			food = -6
+			energy = 5
 		}
 		# produces = {
         #     trigger = {

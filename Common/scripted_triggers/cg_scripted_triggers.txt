@@ -234,6 +234,45 @@ planet_bonus_physics = {
 		has_modifier = gpm_odd_cloud_shapes
 	}
 }
+#fd = from decision
+planet_modifier_removable_fd_3 = {
+	OR = {
+		has_modifier = phi_pm_mantle_frozen_gas_pockets_3
+		has_modifier = phi_pm_polar_supercells_3
+		has_modifier = phi_pm_perennial_fog_3
+		has_modifier = phi_pm_tectonic_fractures_3
+		has_modifier = phi_pm_ocean_vortexes_3
+		has_modifier = phi_pm_bacterial_pathogen_3
+		has_modifier = phi_pm_sudden_rainfalls_3
+		has_modifier = phi_pm_dust_storms_3
+		has_modifier = phi_pm_tesla_biome_3
+		has_modifier = phi_pm_electric_ice_shelf_3
+		has_modifier = phi_pm_magnetic_clouds_3
+		has_modifier = phi_pm_vulcanic_clouds_3
+	}
+}
+planet_modifier_removable_fd_2 = {
+	OR = {
+		has_modifier = phi_pm_mantle_frozen_gas_pockets_2
+		has_modifier = phi_pm_polar_supercells_2
+		has_modifier = phi_pm_perennial_fog_2
+		has_modifier = phi_pm_tectonic_fractures_2
+		has_modifier = phi_pm_ocean_vortexes_2
+		has_modifier = phi_pm_bacterial_pathogen_2
+		has_modifier = phi_pm_sudden_rainfalls_2
+		has_modifier = phi_pm_dust_storms_2
+		has_modifier = phi_pm_tesla_biome_2
+		has_modifier = phi_pm_electric_ice_shelf_2
+		has_modifier = phi_pm_magnetic_clouds_2
+		has_modifier = phi_pm_vulcanic_clouds_2
+	}
+}
+planet_modifier_removable_fd_2_or_3 = {
+	OR = {
+		planet_modifier_removable_fd_3 = yes
+		planet_modifier_removable_fd_2 = yes
+	}
+}
 planet_bonus_engineering = {
 	OR = {
 		has_modifier = unstable_tectonics
@@ -241,7 +280,9 @@ planet_bonus_engineering = {
 		has_modifier = phi_pm_sudden_rainfalls_3
 		has_modifier = phi_pm_sudden_rainfalls_2
 		has_modifier = phi_pm_magnetic_clouds_3
+		has_modifier = phi_pm_vulcanic_clouds_3
 		has_modifier = phi_pm_magnetic_clouds_2
+		has_modifier = phi_pm_vulcanic_clouds_2
 		has_modifier = phi_pm_sudden_rainfalls_1
 		has_modifier = phi_pm_magnetic_clouds_1
 		has_modifier = phi_pm_planet_accelerators_3

@@ -192,3 +192,37 @@ Ora l'agenda build swarmer diminuisce costo anche degli interdictor
 Potenziato interdictor si cura più in fretta da 15 a 30.
 Navi nanite costano -33%
 Fixato modificatori produzione naniti, ora tutto l'impero ha il bonus produzione unity da mid game a late game
+
+[h1]1.1.5 Viva i naniti e i leader![/h1]
+
+[h2]Leaders:[/h2]
+I leader sui pianeti(e settori ovviamente) hanno bonus per building speed e desion speed in base al proprio livello
+Councilor_genetic_identification bonus da 2,5% a 4%
+Councilior infernare researc bonus by skill increment 50% (2%->3%) for allineament with other bonus research counciliors
+bonus from councilior to unity increment 50% (2%->3%)
+Councilor_feudal_realm unity from subject increment from 10 to 30 (is for balance average bonus of sfg)
+Councilor country_edict_fund_add aumentato del 50% (5->7.5)
+
+[h2]Miglioramenti gameplay late game[/h2]
+NAVAL_CAPACITY_MAX is 19999 instead 9999
+Aggiunta una tech che permette di aumenta ulteriormente l'immagazzinamento dai silo
+Aggiunta una ripetibile che aumenta il massimo di magazzino.
+
+[h2]Fix:[/h2]
+Ora i depositi di cibo e di consumer goods se non li usi vengono convertiti in automatico in energia o minerali (non è visibile ma lo fa)
+La tecnologia dimensional space ora funziona sui trading hub e sui astromining, inoltre il bonus è un +50% della produzione flat(esempio solar panel fa 4 di base quindi da 2)
+Fix avviso decisione quando c'è la nuova pm vulcanica.
+
+[h2]Bilanciamento:[/h2]
+
+
+[h2]Miglioramenti mod codice:[/h2]
+Ottimizzato codice.
+Resettle code ti manda un messaggio.
+
+
+Fix totale problema lavori da feature che non erano più nello standard stellaris 4.0.
+
+Fix lavori in deposit feature.
+Messo trigger per sapere se ci sono modificatori phi
+BOnus scalabili da tech archaeo dimensional

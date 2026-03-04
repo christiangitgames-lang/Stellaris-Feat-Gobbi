@@ -129,6 +129,15 @@ cg_try_move_pop_planet_preferred_hab_80 = {
             #log = "---- New Planet Preferred: [This.GetName]"
             PREVPREV = { cg_resettlement_cost_by_gobbi = yes }
             set_variable = { which = recently_resettle_in value = @demotionTime } #12 months for chance pop find new work
+            inline_script = {
+                script = usefull_communication/message_planet
+                MESSAGE_TYPE = MESSAGE_RANDOM_POP_SETTLED
+                LOCALIZATION = Auto_Resettle
+                DAYS = 15
+                PLANET = this
+                POP = PREVPREV
+                PLANET_ORIGIN = PrevPrevPrev
+            }
         }
     }
 }
@@ -148,6 +157,15 @@ cg_try_move_pop_planet_preferred_hab_60 = {
             #log = "---- New Planet Preferred: [This.GetName]"
             PREVPREV = { cg_resettlement_cost_by_gobbi = yes }
             set_variable = { which = recently_resettle_in value = @demotionTime } #12 months for chance pop find new work
+            inline_script = {
+                script = usefull_communication/message_planet
+                MESSAGE_TYPE = MESSAGE_RANDOM_POP_SETTLED
+                LOCALIZATION = Auto_Resettle
+                DAYS = 3
+                PLANET = this
+                POP = PREVPREV
+                PLANET_ORIGIN = PrevPrevPrev
+            }
         }
     }
 }
@@ -164,8 +182,18 @@ cg_try_move_pop_planet_preferred_hab_40 = {
             inline_script = "resettle_pop/resettle_weights"
             resettle_pop_group = {POP_GROUP = PREVPREV PLANET = this AMOUNT = 100 }
             #log = "---- New Planet Preferred: [This.GetName]"
+            
             PREVPREV = { cg_resettlement_cost_by_gobbi = yes }
             set_variable = { which = recently_resettle_in value = @demotionTime } #30 months for chance pop find new work
+            inline_script = {
+                script = usefull_communication/message_planet
+                MESSAGE_TYPE = MESSAGE_RANDOM_POP_SETTLED
+                LOCALIZATION = Auto_Resettle
+                DAYS = 3
+                PLANET = this
+                POP = PREVPREV
+                PLANET_ORIGIN = PrevPrevPrev
+            }
         }
     }
 }
@@ -185,6 +213,15 @@ cg_try_move_pop_planet = { #is for decision resettle 10
             #log = "---- New Planet Preferred: [This.GetName]"
             PREVPREV = { cg_resettlement_cost_by_gobbi = yes }
             set_variable = { which = recently_resettle_in value = @demotionTime } #30 months for chance pop find new work
+            inline_script = {
+                script = usefull_communication/message_planet
+                MESSAGE_TYPE = MESSAGE_RANDOM_POP_SETTLED
+                LOCALIZATION = Auto_Resettle
+                DAYS = 3
+                PLANET = this
+                POP = PREVPREV
+                PLANET_ORIGIN = prevprevprev
+            }
         }
     }
 }

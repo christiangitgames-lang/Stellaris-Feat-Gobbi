@@ -268,6 +268,13 @@ d_consumer_goods_1 = {
             # }
 			consumer_goods = 1
 		}
+		produces = {
+			trigger = {
+                 space_owner = { country_uses_consumer_goods = no }
+            }
+			consumer_goods = -1
+			minerals = 2
+		}
 		# produces = {
 		# 	trigger = {
 		# 		exists = space_owner
@@ -306,6 +313,13 @@ d_consumer_goods_2 = {
             # }
 			consumer_goods = 2
 		}
+		produces = {
+			trigger = {
+                 space_owner = { country_uses_consumer_goods = no }
+            }
+			consumer_goods = -2
+			minerals = 24
+		}
 		# produces = {
 		# 	trigger = {
 		# 		exists = space_owner
@@ -343,6 +357,13 @@ d_consumer_goods_3 = {
 			# 	}
             # }
 			consumer_goods = 3
+		}
+		produces = {
+			trigger = {
+                 space_owner = { country_uses_consumer_goods = no }
+            }
+			consumer_goods = -3
+			minerals = 6
 		}
 		# produces = {
 		# 	trigger = {

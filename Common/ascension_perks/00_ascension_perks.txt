@@ -1534,7 +1534,7 @@ ap_transcendent_learning = {
 		leaders_upkeep_mult = -0.15
 	}
 	on_enabled = {
-		custom_tooltip =  tr_aptitude_adopt_desc #start trait +1
+		custom_tooltip =  ap_transcendent_learning_tt #start trait +1
 	}
 	potential = {
 		NOT = {

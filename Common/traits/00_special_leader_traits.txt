@@ -315,7 +315,6 @@ leader_trait_synthetic = {
 			is_ruler = no
 		}
 		robotic_pop_bonus_workforce_mult = 0.05
-		planet_decision_enact_speed_mult = 0.05
 	}
 	# Any Class - Sector Modifier
 	triggered_sector_modifier = {
@@ -323,7 +322,6 @@ leader_trait_synthetic = {
 			is_ruler = no
 		}
 		robotic_pop_bonus_workforce_mult = 0.025
-		planet_decision_enact_speed_mult = 0.025
 	}
 	# Subsidized Identity Backups
 	triggered_self_modifier = {
@@ -473,7 +471,6 @@ leader_trait_psionic = {
 			is_ruler = no
 		}
 		planet_jobs_unity_produces_mult = 0.10
-		planet_decision_enact_speed_mult = 0.05
 		mult = value:transcended_psionic_multiplier
 	}
 	# Any Class - Sector Modifier
@@ -482,7 +479,6 @@ leader_trait_psionic = {
 			is_ruler = no
 		}
 		planet_jobs_unity_produces_mult = 0.05
-		planet_decision_enact_speed_mult = 0.025
 		mult = value:transcended_psionic_multiplier
 	}
 
@@ -640,7 +636,6 @@ leader_trait_chosen = {
 			is_ruler = no
 		}
 		planet_jobs_unity_produces_mult = 0.20
-		planet_decision_enact_speed_mult = 0.05
 		mult = value:transcended_psionic_multiplier
 	}
 	# Any Class - Sector Modifier
@@ -649,7 +644,6 @@ leader_trait_chosen = {
 			is_ruler = no
 		}
 		planet_jobs_unity_produces_mult = 0.10
-		planet_decision_enact_speed_mult = 0.025
 		mult = value:transcended_psionic_multiplier
 	}
 	leader_class = { commander scientist official }

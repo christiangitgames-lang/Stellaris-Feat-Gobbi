@@ -1588,6 +1588,7 @@ building_resource_silo = {
 			exists = owner
 			owner = {
 				has_technology = tech_construction_templates
+				NOT = { has_technology = tech_construction_templates_2 }
 			}
 		}
 		country_resource_max_add = 5000
@@ -1602,7 +1603,15 @@ building_resource_silo = {
 		}
 		country_resource_max_consumer_goods_add = 5000
 	}
-
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_construction_templates_2
+			}
+		}
+		country_resource_max_add = 20000
+	}
 	prerequisites = {
 		"tech_basic_industry"
 	}

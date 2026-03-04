@@ -126,10 +126,7 @@ energy_for_all_market: "Trade all in simulation market"
 
 gears_of_war: "Gears of war"
 tech_planetary_unification_effect:2 "Grants use edict $gears_of_war$ that reduce $mod_pop_resettlement_cost_mult$ of 75%"
-decision_resettle_mass_population_10: "Resettle 10 pop group to other Planets"
-decision_resettle_mass_population_10_desc: "Resettle pop until 10 if you can pay cost of resettle"
-decision_resettle_mass_population_20: "Resettle 20 pop group to other Planets"
-decision_resettle_mass_population_20_desc: "Resettle pop until 20 if you can pay cost of resettle"
+
 
 the_last_resistance_finish: "Create the last resistance fleet"
 the_last_resistance_finish_desc: "Create fleet by civilian ship convert military fleet 50% naval capacity in 1 random owned planet"

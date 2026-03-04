@@ -1,0 +1,28 @@
+modifier = {
+		factor = 2
+		free_housing > 100
+	}
+	modifier = {
+		factor = 10
+		planet_stability > 60
+	}
+	# modifier = {
+	# 	factor = 10
+	# 	free_amenities > 1000
+	# }
+	modifier = {
+		factor = 0.1
+		free_jobs < 100
+	}
+	modifier = {
+		factor = 2
+		free_jobs > 500
+	}
+	modifier = {
+		factor = 5
+		free_jobs > 1000 
+	}
+	modifier = {
+		factor = 3
+		free_housing > 300
+	}

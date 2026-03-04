@@ -1,0 +1,21 @@
+#insufficient_income_resource = { RESOURCE = energy }
+#yes insufficiete risource 6 months
+insufficient_income_resource = {
+	resource_stockpile_compare = { resource = $RESOURCE$ value < income_var mult = -6 }#10 30 < -30 0 < 0 ?
+}
+maximum_stockpile_resource = {
+	
+	resource_income_compare = {
+		resource = $RESOURCE$
+		value > 10
+	}
+	resource_stockpile_compare = { resource = $RESOURCE$ value >= resource_maximum_var mult = 0.9 }#max 1000 900 <= 900
+}
+have_maximum_stockpile_resource_default = {
+	
+	resource_income_compare = {
+		resource = $RESOURCE$
+		value > 10
+	}
+	resource_stockpile_compare = { resource = $RESOURCE$ value > $MAX$ }#max 1000 900 <= 900
+}

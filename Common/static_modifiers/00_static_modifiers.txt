@@ -1315,6 +1315,8 @@ skill_official_planet_governor = {
 	planet_jobs_rare_crystals_produces_mult = @planet_job_mult
 	planet_jobs_volatile_motes_produces_mult = @planet_job_mult
 	species_empire_size_mult = @planet_empire_size
+	planet_decision_enact_speed_mult = @planet_planet_decision_enact_speed_mult
+	planet_building_build_speed_mult = @planet_planet_building_build_speed_mult
 }
 
 skill_official_sector_governor = {
@@ -1328,6 +1330,8 @@ skill_official_sector_governor = {
 	planet_jobs_rare_crystals_produces_mult = @sector_job_mult
 	planet_jobs_volatile_motes_produces_mult = @sector_job_mult
 	species_empire_size_mult = @sector_empire_size
+	planet_decision_enact_speed_mult = @sector_planet_decision_enact_speed_mult
+	planet_building_build_speed_mult = @sector_planet_building_build_speed_mult
 }
 
 skill_official_background_planet_governor = {
@@ -1344,6 +1348,10 @@ skill_commander_planet_governor = {
 	soldier_jobs_bonus_workforce_mult = @planet_job_mult_high
 	enforcer_jobs_bonus_workforce_mult = @planet_job_mult_high
 	species_empire_size_mult = @planet_empire_size
+	custom_tooltip = bsfgm_tt
+	show_only_custom_tooltip = no
+	planet_decision_enact_speed_mult = @planet_planet_decision_enact_speed_mult
+	planet_building_build_speed_mult = @planet_planet_building_build_speed_mult
 }
 
 skill_commander_sector_governor = {
@@ -1356,6 +1364,10 @@ skill_commander_sector_governor = {
 	soldier_jobs_bonus_workforce_mult = @sector_job_mult_high
 	enforcer_jobs_bonus_workforce_mult = @sector_job_mult_high
 	species_empire_size_mult = @sector_empire_size
+	custom_tooltip = bsfgm_tt
+	show_only_custom_tooltip = no
+	planet_decision_enact_speed_mult = @sector_planet_decision_enact_speed_mult
+	planet_building_build_speed_mult = @sector_planet_building_build_speed_mult
 }
 
 skill_commander_background_planet_governor = {
@@ -1366,12 +1378,20 @@ skill_scientist_planet_governor = {
 	researcher_jobs_bonus_workforce_mult = @planet_job_mult
 	species_empire_size_mult = @planet_empire_size
 	planet_storm_devastation_mult = -0.02
+	custom_tooltip = bsfgm_tt
+	show_only_custom_tooltip = no
+	planet_decision_enact_speed_mult = @planet_planet_decision_enact_speed_mult
+	planet_building_build_speed_mult = @planet_planet_building_build_speed_mult
 }
 
 skill_scientist_sector_governor = {
 	researcher_jobs_bonus_workforce_mult = @sector_job_mult
 	species_empire_size_mult = @sector_empire_size
 	planet_storm_devastation_mult = -0.01
+	custom_tooltip = bsfgm_tt
+	show_only_custom_tooltip = no
+	planet_decision_enact_speed_mult = @sector_planet_decision_enact_speed_mult
+	planet_building_build_speed_mult = @sector_planet_building_build_speed_mult
 }
 
 skill_scientist_background_planet_governor = {

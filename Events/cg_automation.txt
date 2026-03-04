@@ -8,17 +8,17 @@ country_event = {
 	}
 	trigger = {
 		NOT = { has_policy_flag =  resettlement_not_allowed }
-			NOT = { has_policy_flag = eac_apm_no }
+		NOT = { has_policy_flag = eac_apm_no }
 		any_owned_planet = {
 			valid_for_resettle_in = yes
-				}
-				has_country_resource = { type = energy amount > 500}
+		}
+		has_country_resource = { type = energy amount > 500}
 		resource_income_compare = {
 			resource = energy
 			value > 1
 		}
 	}
-    immediate = {
+	immediate = {
 		every_owned_planet = { # search planet for reduce variable recently_resettle_in
 			limit = {
 				check_variable = {
@@ -80,52 +80,52 @@ country_event = {#resettle confirmed
 			if = {
 				limit = { 
 					valid_for_resettle_out = yes
-				owner = { 
-					OR = {
+					owner = { 
+						OR = {
 							is_gestalt = no
 							prev = { free_amenities > 1000 } #maint drone be amenities
-							}
+						}
 						OR = {
 							AND = {
-							has_country_resource = { type = energy amount > 500}
+								has_country_resource = { type = energy amount > 500}
+							}
+						}
+						has_country_resource = { type = unity amount > 100 }
+					}
+				}
+				random_owned_pop_group = {
+					limit = {
+						NOT = { is_pop_category = ruler } # ruler never move.
+						Or = {
+							is_pop_category = civilian
+							is_pop_category = maintenance_drone
+							is_unemployed = yes #4.0 is_unemlployed can't resettle
+						}
+						NOT = { has_citizenship_type = { type = citizenship_assimilation } } # Ignore assimilating pops
+						# owner = { 
+						# 	has_country_resource = { type = energy amount > 500 mult = value:pop_resettlement_cost } 
+						# }
+						# minimum of 1K energy to move pops
+						OR = {
+							has_migration_control = {
+								type = no
+							}
+							pop_group_has_trait = trait_machine_unit 
+							pop_group_has_trait = trait_mechanical 
+							# species = { has_trait = trait_machine_unit }
+							# species = { has_trait = trait_mechanical }
 						}
 					}
-					has_country_resource = { type = unity amount > 100 }
-				}
-			}
-            random_owned_pop_group = {
-				limit = {
-					NOT = { is_pop_category = ruler } # ruler never move.
-					Or = {
-						is_pop_category = civilian
-							is_pop_category = maintenance_drone
-						is_unemployed = yes #4.0 is_unemlployed can't resettle
-					}
-					NOT = { has_citizenship_type = { type = citizenship_assimilation } } # Ignore assimilating pops
-					# owner = { 
-					# 	has_country_resource = { type = energy amount > 500 mult = value:pop_resettlement_cost } 
+					# weights = {
+					# 	modifier = {
+					# 		factor = 2
+					# 		is_pop_category = civilian
+					# 	}
 					# }
-                     # minimum of 1K energy to move pops
-                    OR = {
-                        has_migration_control = {
-                            type = no
-                        }
-                        pop_group_has_trait = trait_machine_unit 
-                        pop_group_has_trait = trait_mechanical 
-                        # species = { has_trait = trait_machine_unit }
-                        # species = { has_trait = trait_mechanical }
-                    }
+					cg_resettle_pop = yes # resettle pop in other planet
+					
 				}
-				# weights = {
-				# 	modifier = {
-				# 		factor = 2
-				# 		is_pop_category = civilian
-				# 	}
-				# }
-				cg_resettle_pop = yes # resettle pop in other planet
-				
 			}
-		}
             
 		}
     } 

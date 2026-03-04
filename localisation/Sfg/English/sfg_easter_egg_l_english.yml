@@ -1,6 +1,5 @@
-﻿# Show Building Slot Capacity 
-l_english:
-
+﻿l_english:
+# Show Building Slot Capacity 
 sfg_arcsite.2500.name:0 "The Cabin"
 
 sfg_arcsite.2500.desc:0 "In una zona di §Y[From.Planet.System.GetName]§! è stata trovata una statua di quella che pare essere una creatura fungoide a quattro zampe molto bruttina. La statua porta sulla testa una coroncina. Ma è probabile che il piedistallo su cui poggia sia in realtà un accesso per delle catacombe, richiederà tempo per capire quale è il meccanismo di apertura"

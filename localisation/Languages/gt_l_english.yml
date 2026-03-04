@@ -1,4 +1,4 @@
-﻿l_english:
+﻿ l_english:
  GT_ship_emergency_ftl_min_days_add:0 "Evasion Drives ($sfgm$)"
  GT_ship_emergency_ftl_min_days_add_desc:0 "Special hyper-warp drives designed to activate according to programmed scenarios. When a situation becomes untenable, these drives begin automatic calculations of available hyperlanes, then engage immediately, improving chances for successful escape."
 
@@ -120,7 +120,7 @@ GT_pc_desert_habitability:0 "Personal Thermoregulation Units ($sfgm$)"
  GT_pop_environment_tolerance_desc:0 "Designing shelters and outposts that are capable of functioning on a variety of worlds assists greatly when dealing with the inhospitable."
 
 
- mod_weapon_role_point_defense_weapon_fire_rate_mult:0 "Point Defense Weapons Fire Rate ($sfgm$)"
+ mod_weapon_role_point_defense_weapon_fire_rate_mult:0 "Point Defense Weapons Fire Rate"
  mod_country_base_society_research_produces_add:0 "Monthly £society_research£ Society Research"
  mod_armies_energy_upkeep_mult:0 "Army £energy£ Energy Credits Upkeep"
 

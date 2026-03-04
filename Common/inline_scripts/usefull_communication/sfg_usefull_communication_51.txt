@@ -1,0 +1,16 @@
+#sfg_usefull_communication_51
+export_resource_income_to_variable = {
+	resource = $RES$
+	variable = income_var
+}
+if = {
+	limit = { insufficient_income_resource = { RESOURCE = $RES$ } }
+	
+	set_variable = { which = resource_Type value = $IDRES$ }
+	country_event = {
+		id = sfg_usefull_communication.51 
+	}
+	
+	clear_variable = income_var
+	break = yes
+}

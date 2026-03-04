@@ -150,6 +150,10 @@ Counterspionage_1 = {
 			energy = 1
 			multiplier = value:edict_size_effect
 		}
+		upkeep = {
+			unity = 1
+			multiplier = value:edict_size_effect
+		}
 	}
 	potential = {
 		always = yes
@@ -207,6 +211,10 @@ Counterspionage_2 = {
 			energy = 2
 			multiplier = value:edict_size_effect
 		}
+		upkeep = {
+			unity = 2
+			multiplier = value:edict_size_effect
+		}
 	}
 	potential = {
 		has_edict = Counterspionage_1
@@ -252,6 +260,10 @@ Counterspionage_3 = {
 		}
 		upkeep = {
 			energy = 4
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = 2
 			multiplier = value:edict_size_effect
 		}
 	}
