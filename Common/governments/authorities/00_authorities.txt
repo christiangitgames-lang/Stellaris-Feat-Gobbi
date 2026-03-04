@@ -1373,7 +1373,7 @@ auth_hive_mind = {
 		modifier = {
 			empire_size_penalty_mult = -0.25
 			empire_size_districts_mult = 2
-			empire_size_colonies_mult = 2
+			empire_size_colonies_mult = 1.8 #sfg go to 25
 			diplo_weight_economy_mult = 1
 		}
 	}
@@ -1672,7 +1672,7 @@ auth_corporate = {
 
 	country_modifier = {
 		planet_jobs_trade_produces_mult = 0.10
-		empire_size_colonies_mult = 0.40
+		empire_size_colonies_mult = 0.40 #sfg go to 25 
 		envoys_add = 1
 	}
 
@@ -1837,7 +1837,7 @@ auth_corporate = {
 		}
 		modifier = {
 			planet_jobs_trade_produces_mult = 0.10
-			empire_size_colonies_mult = 0.40
+			empire_size_colonies_mult = 0.40 #sfg go to 25
 			custom_tooltip = auth_bio_corporate_evopred_tt
 			show_only_custom_tooltip = no
 		}

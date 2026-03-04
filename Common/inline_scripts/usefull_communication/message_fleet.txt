@@ -1,0 +1,26 @@
+
+#example
+# inline_script = {
+# 	script = usefull_communication/message_fleet
+# 	MESSAGE_TYPE = AUTO_STARBASE_MESSAGE_TYPE
+# 	LOCALIZATION = AUTO_STARBASE_REFUND_MESSAGE_TYPE_DESC
+# 	DAYS = 360
+# 	TARGET = prev.solar_system
+# 	FLEET_SCOPE = prev
+# }
+create_message = { #AUTO_STARBASE_MESSAGE_TYPE
+	type = $MESSAGE_TYPE$
+	localization = $LOCALIZATION$
+	days = $DAYSD$
+	target = $TARGET$
+	variable = {
+		type = name
+		localization = FLEET
+		scope = $FLEET_SCOPE$
+	}
+	variable = {
+		type = name
+		localization = SYSTEM
+		scope = $TARGET$
+	}
+}

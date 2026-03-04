@@ -22,6 +22,7 @@ starm_science_hub_nv = {
 		produces = {
 			physics_research = 4
 			engineering_research = 4
+			mult = value:bonus_starbase_age
 		}
 
 		produces = {
@@ -36,36 +37,9 @@ starm_science_hub_nv = {
 			engineering_research = 2
 			physics_research = 2
 		}
-		produces = {
-			trigger = { years_passed > 60 }
-			society_research = 1
-			engineering_research = 1
-			physics_research = 1
-		}
-		produces = {
-			trigger = { years_passed > 85 }
-			society_research = 1
-			engineering_research = 1
-			physics_research = 1
-		}
-		produces = {
-			trigger = { years_passed > 110 }
-			society_research = 1
-			engineering_research = 1
-			physics_research = 1
-		}
-		produces = {
-			trigger = { years_passed > 135 }
-			society_research = 1
-			engineering_research = 1
-			physics_research = 1
-		}
 		upkeep = {
 			energy = 6
-		}
-		upkeep = {
-			trigger = { years_passed > 85 }
-			energy = 6
+			mult = value:bonus_starbase_age
 		}
 	}
 

@@ -506,7 +506,12 @@ tech_gateway_activation = {
 			factor = 1.25
 			has_tradition = tr_discovery_adopt
 		}
-
+		modifier = {
+			factor = 1.1
+			any_neighbor_country = {
+				has_technology = tech_gateway_activation
+			}
+		}
 		modifier = {
 			factor = @ap_grasp_the_void_travel_tech
 			has_ascension_perk = ap_grasp_the_void
@@ -588,6 +593,12 @@ tech_gateway_construction = {
 		modifier = {
 			factor = @ap_grasp_the_void_travel_tech
 			has_ascension_perk = ap_grasp_the_void
+		}
+		modifier = {
+			factor = 1.1
+			any_neighbor_country = {
+				has_technology = tech_gateway_construction
+			}
 		}
 		modifier = {
 			factor = @eager_explorer_effect

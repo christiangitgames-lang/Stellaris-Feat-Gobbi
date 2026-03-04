@@ -6,12 +6,17 @@ can_have_remote_system = {
 		is_at_war = no
 		crisis_run_optimized = no
 		#is_wilderness_empire = no
-		NOR = { 
-			has_technology = tech_subspace_drive
-			has_technology = tech_jump_drive_1
-			has_technology = tech_psi_jump_drive_1
-			is_eager_explorer_empire = yes
+		NOT = { 
+			can_ever_remote_system = yes
 		}
+	}
+}
+can_ever_remote_system = {
+	OR = {
+		has_technology = tech_subspace_drive
+		has_technology = tech_jump_drive_1
+		has_technology = tech_psi_jump_drive_1
+		is_eager_explorer_empire = yes
 	}
 }
 

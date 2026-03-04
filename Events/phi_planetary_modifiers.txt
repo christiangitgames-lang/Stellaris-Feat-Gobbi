@@ -2,9 +2,10 @@ namespace = phi_planetary_modifiers
 
 # EXPLAINER:
 #	phi_planetary_modifiers.0	called at game start - makes sure that the guaranteed planets are just adequate, one for each other climate-compatible class.
-#	phi_planetary_modifiers.1	after game start, it checks if any capital planet has rolled the "resources" modifiers, and then add the relative special blocker
-#	phi_planetary_modifiers.2	invoked by phi_planetary_modifiers.1 - calls the scripted effect "generate_phi_planet_modifiers_3".
-#	phi_planetary_modifiers.3	invoked by phi_planetary_modifiers.1 - calls the scripted effect "generate_phi_planet_relic_modifiers_3".
+#	phi_planetary_modifiers.1	free   # after game start, it checks if any capital planet has rolled the "resources" modifiers, and then add the relative special blocker
+#	phi_planetary_modifiers.2	call on surveyed
+#	phi_planetary_modifiers.3	call on surveyed
+#	phi_planetary_modifiers.4	call on surveyed
 #	phi_planetary_modifiers.10	invoked by phi_planetary_modifiers_on_actions - removes and improves basic planet modifiers when terraforming is complete.
 
 event = {
@@ -165,44 +166,7 @@ event = {
 	}
 }
 
-event = {
-	id = phi_planetary_modifiers.1
-	hide_window = yes
 
-	is_triggered_only = yes
-	
-	immediate = {
-		random_system = {
-			limit = {
-				any_system_planet = {
-					is_planet_class = pc_frozen
-					has_anomaly = no
-					OR = {
-						is_colony = no
-						sapient_pop_amount < 1000
-					}
-					NOT = {
-						exists = archaeological_site
-					}
-				}
-			}
-			random_system_planet = {
-				limit = {
-					is_planet_class = pc_frozen
-					has_anomaly = no
-					NOR = {
-						exists = archaeological_site
-					}
-				}
-				#planet = {
-					create_archaeological_site = site_sgorbio
-				#}
-				#set_name = "Debug_sgorbio"
-			}
-			#set_name = "Deb_sgorbio"
-		}
-	}
-}
 
 planet_event = {
 	id = phi_planetary_modifiers.2
@@ -225,6 +189,7 @@ planet_event = {
 			is_planet_class = pc_arid
 			is_planet_class = pc_desert
 			is_planet_class = pc_savannah
+			is_planet_class = pc_volcanic
 		}
 	}
 	# 		is_cold = yes  #freddo
@@ -233,7 +198,7 @@ planet_event = {
 	immediate = {
 		set_planet_flag = phi_surveyed
 		random_list = { #suvvia mario era noioso sempre la certezza di qualche modificatore più o meno uguale...
-			10 = {
+			5 = {
 				random_list = {
 					1 = {
 						add_blocker = {
@@ -244,6 +209,10 @@ planet_event = {
 							factor = 10
 							is_cold = yes
 						}
+						modifier = {
+							factor = 0
+							is_planet_class = pc_volcanic
+						}
 					}
 					1 = {
 						add_blocker = {
@@ -252,7 +221,11 @@ planet_event = {
 						}
 						modifier = {
 							factor = 10
-							is_cold = yes
+							is_dry = yes
+						}
+						modifier = {
+							factor = 10
+							is_planet_class = pc_volcanic
 						}
 					}
 					1 = {
@@ -267,9 +240,9 @@ planet_event = {
 					}
 				}
 			}
-			3 = { generate_phi_planet_modifiers_1 = yes }
-			7 = { generate_phi_planet_modifiers_2 = yes }
-			80 = { generate_phi_planet_modifiers_3 = yes }
+			1 = { generate_phi_planet_modifiers_1 = yes }
+			10 = { generate_phi_planet_modifiers_2 = yes }
+			85 = { generate_phi_planet_modifiers_3 = yes }
 		}
 	}
 }
@@ -307,9 +280,10 @@ planet_event = {
 	}
 	immediate = {
 		set_planet_flag = phi_surveyed
-		random_list = { #suvvia mario era noioso sempre la certezza di qualche modificatore più o meno uguale...
-			50 = { }
-			50 = { generate_phi_planet_modifiers_1 = yes }
+		random_list = { 
+			40 = { }
+			50 = { generate_phi_planet_modifiers_3 = yes }
+			10 = { generate_phi_planet_modifiers_2 = yes }
 		}
 	}
 }

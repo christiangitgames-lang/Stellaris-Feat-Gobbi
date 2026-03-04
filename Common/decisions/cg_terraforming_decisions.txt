@@ -1519,3 +1519,80 @@ decision_phi_magnetic_clouds_2_1 = {
 		weight = 1000
 	}
 }
+
+# vulcanic
+
+decision_phi_vulcanic_clouds_3_2 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_vulcanic_clouds_3
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_terrestrial_sculpting
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_vulcanic_clouds_3
+		add_modifier = {
+			modifier = phi_pm_vulcanic_clouds_2
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_phi_vulcanic_clouds_2_1 = {
+	owned_planets_only = yes
+	sound = event_laboratory_sound
+	icon = decision_satellite_in_orbit
+
+	enactment_time = @enacttime
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 4000
+		}
+	}
+
+	potential = {
+		has_modifier = phi_pm_vulcanic_clouds_2
+	}
+
+	allow = {
+		exists = owner
+		owner = {
+			has_technology = tech_ecological_adaptation
+		}
+	}
+
+	effect = {
+		remove_modifier = phi_pm_vulcanic_clouds_2
+		add_modifier = {
+			modifier = phi_pm_vulcanic_clouds_1
+		}
+		add_deposit = d_phi_rare_crystals_5
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}

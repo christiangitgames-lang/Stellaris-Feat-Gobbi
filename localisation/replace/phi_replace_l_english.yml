@@ -30,7 +30,7 @@
 ap_archaeoengineers_tooltip:0 "Unlocks additional effects for §YAncient§! ship components and buildings.\ndouble chance for tech archeoengineers."
 eager_explorers_base_effect:1 "§RStart at a technological and infrastructural disadvantage, and with 8 fewer £pops£ Pops than normal!§!\nStart with 2 §H$explorer_vessel_plural$§! and an §H$engineer_vessel$§! equipped with §HSubspace Drives§!, making them incapable of Hyperlane travel but granting limited Jump Drive abilities."
 archaeo_overcharger_desc:0 "Starbase Modifier:\nShield Hit Point: +500, §G+33%§!\nShield Hardening: §G+33%§!\nDefense Platform Modifier:\nShield Hit Points: §G+25%§!\nShield Hardening: §G+25%§!"
- improved_archaeo_overcharger_desc:0 "Starbase Modifier:\nShield Hit Point: +830, §G+66%§!\nShield Hardening: §G+66%§!\nDefense Platform Modifier:\nShield Hit Points: §G+25%§!\nShield Hardening: §G+25%§!"
+ improved_archaeo_overcharger_desc:0 "Starbase Modifier:\nShield Hit Point: +830, §G+66%§!\nShield Hardening: §G+66%§!\nDefense Platform Modifier:\nShield Hit Points: §G+25%§!\nShield Hardening: §G+25%§! (§GImproved§! by $sfgm$)"
 
 leader_trait_repair_crew_effect:0 "$SYSTEM_EFFECTS_TXT$:\n$t$Friendly Ships in System:\n$tt$Monthly Hull Points Repaired: §G+1%§!"
 

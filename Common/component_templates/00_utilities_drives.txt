@@ -39,7 +39,7 @@ utility_component_template = {
 			country_uses_bio_ships = no
 		}
 	}
-	
+
 	show_tech_unlock_if = {
 		country_uses_bio_ships = no
 	}
@@ -61,6 +61,7 @@ utility_component_template = {
 	component_set = "ftl_components"
 	upgrades_to = "JUMP_DRIVE_1"
 }
+
 #############
 # UTILITIES #
 #############

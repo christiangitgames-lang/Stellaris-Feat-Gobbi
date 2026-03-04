@@ -156,7 +156,137 @@ Starbase_automation = {
 	}
 }
 
+Upgrade_Starbase_automation = {
+	potential = {
+	}
+	
+	option = {
+		name = "Nothing"
 
+		policy_flags = { Upgrade_Automation_Nothing }
+		modifier = {
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_policy = {
+					policy = Upgrade_Starbase_automation
+					option = Nothing
+					cooldown = no
+				}
+			}
+		}
+		#on_activate = {
+			#set_policy_cooldown
+			# set_policy = {
+			# 	policy = Starbase_automation
+			# 	option = Nothing
+			# 	cooldown = no
+			# }
+		#}
+		AI_weight = {
+			weight = 1000
+		}
+	}
+			
+	# option = {
+	# 	name = "auto_upgrading_starbase_outpost_flag"
+	# 	valid = {
+	# 		always = yes
+	# 	}
+		
+	# 	policy_flags = { auto_upgrading_starbase_outpost_flag }
+	# 	modifier = {
+	# 	}
+	# 	on_enabled = {
+	# 		country_event = { 
+	# 			id = lazy_upg_sta_events.1
+	# 		} 
+	# 	}
+	# }
+	option = {
+		name = "auto_upgrading_starbase_starport_flag"
+		valid = {
+			country_uses_bio_ships = no
+		}
+		policy_flags = { auto_upgrading_starbase_starport_flag }
+		modifier = {
+		}
+		on_enabled = {
+			hidden_effect = {
+				country_event = { 
+					id = lazy_upg_sta_events.1
+				} 
+			}
+		}
+	}
+							
+	option = {
+		name = "auto_upgrading_starbase_starhold_flag"
+		valid = {
+			country_uses_bio_ships = no
+		}
+		
+		policy_flags = { auto_upgrading_starbase_starhold_flag }
+		modifier = {
+		}
+		on_enabled = {
+			hidden_effect = {
+				country_event = { 
+					id = lazy_upg_sta_events.1
+				} 
+			}
+		}
+	}
+	option = {
+		name = "auto_upgrading_starbase_starfortress_flag"
+		valid = {
+			country_uses_bio_ships = no
+		}
+		policy_flags = { auto_upgrading_starbase_starfortress_flag }
+		modifier = {
+		}
+		on_enabled = {
+			hidden_effect = {
+				country_event = { 
+					id = lazy_upg_sta_events.1
+				} 
+			}
+		}
+	}
+	option = {
+		name = "auto_upgrading_starbase_citadel_flag"
+		valid = {
+			country_uses_bio_ships = no
+		}
+		policy_flags = { auto_upgrading_starbase_citadel_flag }
+		modifier = {
+		}
+		on_enabled = {
+			hidden_effect = {
+				country_event = { 
+					id = lazy_upg_sta_events.1
+				} 
+			}
+		}
+	}
+	option = {
+		name = "auto_upgrading_starbase_stronghold_flag"
+		valid = {
+			country_uses_bio_ships = no
+		}
+		potential = { always = no }
+		policy_flags = { auto_upgrading_starbase_stronghold_flag }
+		modifier = {
+		}
+		on_enabled = {
+			hidden_effect = {
+				country_event = { 
+					id = lazy_upg_sta_events.1
+				} 
+			}
+		}
+	}
+}
 
 research_priority_policy = {
 	potential = {

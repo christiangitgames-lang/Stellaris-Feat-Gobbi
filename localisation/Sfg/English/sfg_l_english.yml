@@ -4,11 +4,11 @@ l_english:
 #Ascension perk
 sfg_ap_shared_destiny_tooltip: "§GEnables§! an councilior §Yagenda§! that shifts vassals' ethos towards us." #\nEnables an edict that shifts vassals' ethos towards us.
 #observation
-tech_observer_science_1: "Camouflage Observer"
+tech_observer_science_1: "Camouflage Observer ($sfgm$)"
 tech_observer_science_1_desc: "Equipped with advanced camouflage, this device allows observers to blend seamlessly into their surroundings, enabling undetected observation of pre-FTL civilizations."
-tech_observer_science_2: "Orbital Recon Array"
+tech_observer_science_2: "Orbital Recon Array ($sfgm$)"
 tech_observer_science_2_desc: "A network of orbital satellites equipped with powerful sensors for high-resolution planetary observation. This array provides a complete, long-range surveillance system, ensuring continuous monitoring of surface activity without the risk of detection."
-tech_observer_science_3: "Quantum Cloak Field"
+tech_observer_science_3: "Quantum Cloak Field ($sfgm$)"
 tech_observer_science_3_desc: "This advanced cloaking field bends light and other electromagnetic signals around the observer, rendering them invisible to both visual and technological detection. Ideal for close-proximity observation of settlements or significant sites."
 
 
@@ -28,10 +28,10 @@ Client_released_Master_desc: "Have release an colony how an $decision_cg_release
 
 #buildings / storage
 
- mod_country_resource_max_trade_add:0 "Trade Storage Capacity"
- mod_country_resource_max_volatile_motes_add:0 "Volatile Motes Storage Capacity"
- mod_country_resource_max_exotic_gases_add:0 "Exotic Gases Storage Capacity"
- mod_country_resource_max_rare_crystals_add:0 "Rare Crystals Storage Capacity"
+mod_country_resource_max_trade_add:0 "Trade Storage Capacity"
+mod_country_resource_max_volatile_motes_add:0 "Volatile Motes Storage Capacity"
+mod_country_resource_max_exotic_gases_add:0 "Exotic Gases Storage Capacity"
+mod_country_resource_max_rare_crystals_add:0 "Rare Crystals Storage Capacity"
 mod_country_resource_max_influence_add: "influence £influence£ Storage Capacity: "
 
  foreign_building_research_lab_1:0 "Foreign Espionage Research Labs"
@@ -51,9 +51,7 @@ decision_phi_build_planet_accelerators_3_desc: "$decision_phi_build_planet_accel
 d_l_physics_research: "large research"
 d_l_society_research: "large research"
 d_l_engineering_research: "large research"
-d_unity_value_1: "unity"
-d_unity_value_2: "unity II"
-d_unity_value_3: "unity III"
+
 
 d_nanites_deposit_2: "$d_nanites_deposit$"
 d_nanites_deposit_3: "$d_nanites_deposit$"
@@ -61,7 +59,27 @@ d_nanites_deposit_3: "$d_nanites_deposit$"
 
 policy_research_focus:0 "Empire focus research"
 policy_research_focus_desc:1 "Decide a specific area of interest that guides a researcher's work"
+policy_Upgrade_Starbase_automation: "UPGRADE StarBase Automation"
 
+policy_Upgrade_Starbase_automation_desc: "It automatically upgrades stations, prioritizing the §YCapital System§! and those near it and system with colony. \n-It avoids building stations close to another empire\n-Need 1250 £alloys£ alloys and £energy£ energy in surplus\n-it ALWAYS LEAVES you 1 §Ystations§! below the cap to manage §OMANUALLY§!.\n-For not consume alloys in war not upgrade when in §Rwar§!"
+auto_upgrading_starbase_starport_flag: "Upgrade until to starport"
+auto_upgrading_starbase_starport_flag_desc: "$auto_upgrading_starbase_starport_flag$"
+auto_upgrading_starbase_starhold_flag: "Upgrade until to starhold"
+auto_upgrading_starbase_starhold_flag_desc: "$auto_upgrading_starbase_starhold_flag$"
+auto_upgrading_starbase_starfortress_flag: "Upgrade until to starfortress"
+auto_upgrading_starbase_starfortress_flag_desc: "$auto_upgrading_starbase_starfortress_flag$"
+auto_upgrading_starbase_citadel_flag: "Upgrade until to citadel"
+auto_upgrading_starbase_citadel_flag_desc: "$auto_upgrading_starbase_citadel_flag$"
+auto_upgrading_starbase_starhold_flag: "Upgrade until to starhold"
+auto_upgrading_starbase_starhold_flag_desc: "$auto_upgrading_starbase_starhold_flag$"
+auto_upgrading_starbase_stronghold_flag: ""
+auto_upgrading_starbase_stronghold_flag_desc: "$auto_upgrading_starbase_stronghold_flag$"
+Upgrade_Automation_Nothing_name: "$policy_Upgrade_Starbase_automation$ §OSFG§!"
+auto_upgrading_starbase_starport_flag_name: "$auto_upgrading_starbase_starport_flag$"
+auto_upgrading_starbase_starhold_flag_name: "$auto_upgrading_starbase_starhold_flag$"
+auto_upgrading_starbase_starfortress_flag_name: "$auto_upgrading_starbase_starfortress_flag$"
+auto_upgrading_starbase_citadel_flag_name: "$auto_upgrading_starbase_citadel_flag$"
+auto_upgrading_starbase_stronghold_flag_name: "$auto_upgrading_starbase_starhold_flag$"
 #council
 
 council_agenda_open_markets_effect:0 "Can use the Trade Policie: §GTrade League§!"
@@ -69,6 +87,14 @@ agenda_military_project:0 "Military Prototype Acceleration"
 #council_agenda_agenda_military_project:0 "Military Prototype Acceleration"
 council_agenda_agenda_military_project_name:0 "$agenda_military_project$"
 council_agenda_agenda_military_project_desc:0 "Unlock ship size superior"
+
+#edict
+edict_Counterspionage_1: "counter-espionage"
+edict_Counterspionage_1_desc: "Use an envoy for be counter-espionage"
+edict_Counterspionage_2: "$edict_Counterspionage_1$"
+edict_Counterspionage_2_desc: "$edict_Counterspionage_1_desc$"
+edict_Counterspionage_3: "$edict_Counterspionage_1$"
+edict_Counterspionage_3_desc: "$edict_Counterspionage_1_desc$"
 
 #jobs
 
@@ -81,6 +107,11 @@ mod_station_researchers_nanites_produces_mult: "Nanites £nanites£ Station Outp
 mod_planet_jobs_energy_upkeep_add: "$energy_with_icon$ Upkeep per 100 £job£ Jobs"
 mod_planet_jobs_nanites_produces_mult:0 "£nanites£ $nanites$ from £job£ Jobs"
 mod_planet_jobs_productive_energy_upkeep_add: "£energy£ $energy$ $mod_planet_jobs_productive_upkeep_mult$"
+mod_planet_jobs_productive_food_upkeep_mult:0 "Upkeep £food£ $food$ from Resource-Producing £job£ Jobs"
+mod_planet_jobs_productive_physics_research_produces_mult:0 "£physics_research£ $physics_research$ from £job£ Jobs"
+mod_planet_jobs_productive_society_research_produces_mult:0 "£society_research£ $society_research$ from £job£ Jobs"
+mod_planet_jobs_productive_engineering_research_produces_mult:0 "£engineering_research£ $engineering_research$ from £job£ Jobs"
+mod_planet_jobs_ruler_unity_produces_mult:0 "£unity£ $unity$ from £ruler£ $RULER$ Jobs"
 
 job_foreign_researcher: "Foreign researcher"
 job_calculator_foreign_researcher: "Calculator $job_foreign_researcher$"
@@ -139,49 +170,66 @@ tr_supremacy_master_shipwrights_desc:7 "§BUnlocks Agenda§!: §Y$agenda_militar
 
 #Technology
 
- tech_avc_hyper_drive_4:0 "Hyperspace Currents"
- tech_avc_hyper_drive_4_desc:0 "Innovations in hyper-field theory gives us the understanding of deep currents within subspace slipstreams. Advanced computational technologies can predict the flow of subspace currents around celestial bodies, allowing our ships to plot a vector through hyperspace with the least hyperdimensional flux, granting our hyperdrives more efficiency and velocity as they expend less energy compensating."
- tech_avc_hyper_drive_5:0 "Hyperspace tunneling"
- TECH_UNLOCK_AVC_HYPERDRIVE_4_TITLE:0 "§HUnlocks Component:§! $AVC_HYPER_DRIVE_4$"
- TECH_UNLOCK_AVC_HYPERDRIVE_4_DESC:0 "§H$AVC_HYPER_DRIVE_4$§!\n$tech_avc_hyper_drive_4_desc$"
- AVC_HYPER_DRIVE_4:0 "$tech_avc_hyper_drive_4$"
- AVC_HYPER_DRIVE_4_DESC:0 "$tech_avc_hyper_drive_4_desc$"
- tech_crystal_armor_3:0 "Crystal-Bonded Plating"
- tech_crystal_armor_3_desc:0 "By using more advanced material synthesis techniques we are able to bond crystalline structures directly to the molecular structure of our ships' hulls and bulkheads, granting each material used within the hull the same durable properties that pure crystalline structures provided without flaw."
- tech_crystal_armor_4:0 "Crystal-Polymer Plating"
- tech_crystal_armor_4_desc:0 "Increasing the complexity of the crystalline material used in the synthesis process allows engineers to program specific attributes and properties into long chains of crystalline polymers, with chain lengths approaching that of DNA. Bonded with each material composing the hull the durability, flexibility and versatility of ship hulls is now unmatched."
- tech_construction_templates_2:0 "$tech_construction_templates$"
- tech_construction_templates_2_desc:1 "Revolutionary parallel $tech_construction_templates_desc$"
+tech_avc_hyper_drive_4:0 "Hyperspace Currents ($sfgm$)"
+tech_avc_hyper_drive_4_desc:0 "Innovations in hyper-field theory gives us the understanding of deep currents within subspace slipstreams. Advanced computational technologies can predict the flow of subspace currents around celestial bodies, allowing our ships to plot a vector through hyperspace with the least hyperdimensional flux, granting our hyperdrives more efficiency and velocity as they expend less energy compensating."
+tech_avc_hyper_drive_5:0 "Hyperspace tunneling ($sfgm$)"
+TECH_UNLOCK_AVC_HYPERDRIVE_4_TITLE:0 "§HUnlocks Component:§! $AVC_HYPER_DRIVE_4$"
+TECH_UNLOCK_AVC_HYPERDRIVE_4_DESC:0 "§H$AVC_HYPER_DRIVE_4$§!\n$tech_avc_hyper_drive_4_desc$"
+AVC_HYPER_DRIVE_4:0 "$tech_avc_hyper_drive_4$"
+AVC_HYPER_DRIVE_4_DESC:0 "$tech_avc_hyper_drive_4_desc$"
+tech_crystal_armor_3:0 "Crystal-Bonded Plating ($sfgm$)"
+tech_crystal_armor_3_desc:0 "By using more advanced material synthesis techniques we are able to bond crystalline structures directly to the molecular structure of our ships' hulls and bulkheads, granting each material used within the hull the same durable properties that pure crystalline structures provided without flaw."
+tech_crystal_armor_4:0 "Crystal-Polymer Plating ($sfgm$)"
+tech_crystal_armor_4_desc:0 "Increasing the complexity of the crystalline material used in the synthesis process allows engineers to program specific attributes and properties into long chains of crystalline polymers, with chain lengths approaching that of DNA. Bonded with each material composing the hull the durability, flexibility and versatility of ship hulls is now unmatched."
+tech_construction_templates_2:0 "$tech_construction_templates$ ($sfgm$)"
+tech_construction_templates_2_desc:1 "Revolutionary parallel $tech_construction_templates_desc$"
+
+tech_food_processing_3:0 "Next‑Generation Nutrient Engineering ($sfgm$)"
+tech_food_processing_3_desc:1 "Adaptive enzymatic sculpting and micro‑matrix restructuring allow food to be tailored for maximum nutritional yield with minimal resource input."
+tech_wilderness_food_processing_3:0 "$tech_food_processing_3$ ($sfgm$)"
+tech_wilderness_food_processing_3_desc:0 "$tech_food_processing_3_desc$"
 
 #FTL drives
 
- AVC_HYPER_DRIVE_4_CIVILIAN:0 "$tech_avc_hyper_drive_4$"
- AVC_HYPER_DRIVE_4_DESC_CIVILIAN:0 "$tech_avc_hyper_drive_4_desc$"
- HYPER_DRIVE_4: "Hyper Drive IV"
- HYPER_DRIVE_4_DESC:1 "$HYPER_DRIVE_1_DESC$"
- 
- #Crystal Plating
- CRYSTAL_ARMOR_3:0 "$tech_crystal_armor_3$"
- CRYSTAL_ARMOR_3_DESC:0 "$tech_crystal_armor_3_desc$"
- CRYSTAL_ARMOR_4:0 "$tech_crystal_armor_4$"
- CRYSTAL_ARMOR_4_DESC:0 "$tech_crystal_armor_4_desc$"
+AVC_HYPER_DRIVE_4_CIVILIAN:0 "$tech_avc_hyper_drive_4$ ($sfgm$)"
+AVC_HYPER_DRIVE_4_DESC_CIVILIAN:0 "$tech_avc_hyper_drive_4_desc$"
+HYPER_DRIVE_4: "Hyper Drive IV ($sfgm$)"
+HYPER_DRIVE_4_DESC:1 "$HYPER_DRIVE_1_DESC$"
+
+#Crystal Plating
+CRYSTAL_ARMOR_3:0 "$tech_crystal_armor_3$ ($sfgm$)"
+CRYSTAL_ARMOR_3_DESC:0 "$tech_crystal_armor_3_desc$"
+CRYSTAL_ARMOR_4:0 "$tech_crystal_armor_4$ ($sfgm$)"
+CRYSTAL_ARMOR_4_DESC:0 "$tech_crystal_armor_4_desc$"
 
 #-------------------
- #Rule of game
- mod_shipclass_military_build_cost_mult:0 "Military Ship Build Cost"
+#Rule of game
+mod_shipclass_military_build_cost_mult:0 "Military Ship Build Cost"
 
- mod_planet_jobs_cyborg_worker_physics_research_produces_mult:0 "Cyborg Worker Physics Research Output"
- mod_planet_jobs_cyborg_worker_society_research_produces_mult:0 "Cyborg Worker Society Research Output"
- mod_planet_jobs_cyborg_worker_engineering_research_produces_mult:0 "Cyborg Worker Engineering Research Output"
+mod_planet_jobs_cyborg_worker_physics_research_produces_mult:0 "Cyborg Worker Physics Research Output"
+mod_planet_jobs_cyborg_worker_society_research_produces_mult:0 "Cyborg Worker Society Research Output"
+mod_planet_jobs_cyborg_worker_engineering_research_produces_mult:0 "Cyborg Worker Engineering Research Output"
 
 #crysis ascension
 
 menp_relentless_aggression_tt:0 "You can declare wars §Y$war_goal_wg_wipe_them_out§! against anyone, they don’t have to be your neighbor."
 
 
-sfg_utility.3.name:0 "Passati 10 anni"
+sfg_utility.3.name:0 "Passati 10 anni ($sfgm$)"
 sfg_utility.3.desc: "Sono passati 10 anni"
 
 
 
+#deposits
 
+d_sfg_miners_site:0 "Terraformazione mineraria"
+d_sfg_miners_foundry_site:0 "Terraformazione forgia"
+d_sfg_farmer_site:0 "Terraformazione agricola"
+d_sfg_technician_site:0 "Terraformazione energietica"
+
+MESSAGE_STARBASE_UPGRADING_TITLE:0 "Auto Upgrading Starbase"
+AUTO_STARBASE_MESSAGE_TYPE_DESC:0 "Automatically upgrading the $FLEET|H$ in the $SYSTEM|H$ system."
+AUTO_STARBASE_REFUND_MESSAGE_TYPE_DESC:0 "Automatically refund for not upgrading the $FLEET|H$ in the $SYSTEM|H$ system."
+
+mod_country_nanites_produces_mult:0 "Monthly £nanites£"
+mod_ship_nanite_interdictor_cost_mult: "$nanite_interdictor$ Build Cost"

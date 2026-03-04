@@ -162,6 +162,7 @@ gpm_extensive_cavern_system = {
 gpm_titanic_predators = {
 	logistic_growth_mult = -0.10
 	planet_pops_organics_food_upkeep_mult = 0.20
+	planet_farmers_food_produces_add = 1
 	icon = "gfx/interface/icons/planet_modifiers/gpm_titanic_predators.dds"
 	icon_frame = 3
 }

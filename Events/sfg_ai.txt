@@ -8,7 +8,7 @@ namespace = sfg_ai
 #by .10 new code from gobbi
 #sfg_ai.10 add alloys and influence lost for fleet disabled
 #sfg_ai.20-29 start vital building 
-event = { #standard
+country_event = { #standard
 	id = sfg_ai.0
 	hide_window = yes
 	is_triggered_only = yes

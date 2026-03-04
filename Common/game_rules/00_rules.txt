@@ -142,12 +142,7 @@ can_add_claim = {
 		fail_text = CANNOT_ADD_CLAIM_NOT_IN_LINE
 		OR = {#automate
 				root = {
-					OR = {
-						has_technology = tech_subspace_drive
-						has_technology = tech_jump_drive_1
-						has_technology = tech_psi_jump_drive_1
-						is_eager_explorer_empire = yes
-					}
+						can_ever_remote_system = yes
 				}
 				closest_system = {
 				limit = {

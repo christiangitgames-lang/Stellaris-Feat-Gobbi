@@ -1,7 +1,7 @@
 on_game_start = {
 	events = {
 		phi_planetary_modifiers.0 #reroll guarantee planets
-		phi_planetary_modifiers.1
+		sfg_planetary_modifiers.1 # set special bonus or sgorbio site
 		cg_planetary_modifiers.0 # set modifiers and blockers for new deposit
 		
 	}
@@ -9,14 +9,15 @@ on_game_start = {
 on_game_start_country = {
 	events = {
 		cg_game_start.0 #start menu launcher and set options
-		cg_rules.1
+		cg_rules.10
 		cg_rules.33
 		cg_rules.31 #set bonus malus galaxy size
 
 		gobbi_ai.100 #select best option for AI
-		sfg_usefull_communication_of_sfg.2 #message if can expand without limit connecting
+		#sfg_usefull_communication_of_sfg.2 #message if can expand without limit connecting
 		sfg_ai.10 # refund alloys resource for ai
 		sfg_ai.20 #unity focus at start game (average empire)
+		sfg_usefull_communication_of_sfg.3 #can build disconnected
 	}
 }
 
@@ -26,11 +27,14 @@ on_monthly_pulse_country = {
 		cg_ai_deficit_work_out.0 #monthly search work out by deficit
 		naval_attrition.9 #attrition planet
 		cg_automation.1 #resettle
+		#fix_event.1 #fix stability gestalt
+		lazy_upg_sta_events.0 #upgradestation
 	}
 }
 on_monthly_pulse = {
 	events = {
 		cg_planetary_modifiers.1 #meteor storm??!
+		
 	}
 }
 on_yearly_pulse_country = {
@@ -48,10 +52,12 @@ on_yearly_pulse_country = {
 		phigo_automation.101 # automation artifact decision
 		
 		#last
-		ConnectSystem.1 # .2
+		
 		cg_rules.30 #set bonus malus galaxy size #recursive
 		cg_rules.32
-		cg_rules.1
+		cg_rules.10 #startgame
+		cg_rules.1 # early game
+		
 		cg_rules.33
 		cg_rules.2 #bonus mid game recursive
 		cg_rules.3 #bonus late game recursive
@@ -66,6 +72,7 @@ on_bi_yearly_pulse_country = {
 		gobbi_ai.10 #	fires events better choice
 		gobbi_ai.20 # fires Mid game building district
 		sfg_usefull_communication_of_sfg.1#Deamon that fires all usefull communication of sfg feat gobbi
+		ConnectSystem.1 # .2
 	}
 }
 on_five_year_pulse_country = {
@@ -86,6 +93,13 @@ on_decade_pulse_country = {
 on_entering_system_fleet = {
 	events = {
 		naval_attrition.1
+	}
+}
+#This = ship (starbase)
+#From = system
+on_building_starbase_outpost = {
+	events = {
+		sfg_usefull_communication_of_sfg.50 #warning for disconected system
 	}
 }
 on_planet_surveyed = {
@@ -118,9 +132,17 @@ on_late_game_pulse_country = {
 		cg_rules.3
 	}
 }
+on_post_government_changed = {
+	events = {
+		sfg_utility.4
+	}
+}
 
-
-
+on_tech_increased = {
+	events = {
+		sfg_usefull_communication_of_sfg.2
+	}
+}
 
 # Fired whenever a new owner is set for a planet, and the planet was aggressively conquered
 # NOTE: fired in ADDITION to on_planet_transfer

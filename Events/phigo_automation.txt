@@ -39,6 +39,7 @@ country_event = { #fire events for automations
 		} 
 	}
 }
+
 country_event = {#automate buildings hydro
 	id = phigo_automation.1
 	hide_window = yes

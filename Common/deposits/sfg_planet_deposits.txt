@@ -1,0 +1,53 @@
+
+d_sfg_miners_site = {
+	is_for_colonizable = yes
+	icon = "d_metal_boneyard"
+	category = deposit_cat_rare
+	
+	potential = { always = no }
+	
+	inline_script = {
+		script = jobs/miners_add
+		AMOUNT = 100
+	}
+}
+d_sfg_miners_foundry_site = {
+	is_for_colonizable = yes
+	icon = "d_metal_boneyard"
+	category = deposit_cat_rare
+	
+	potential = { always = no }
+	
+	inline_script = {
+		script = jobs/miners_add
+		AMOUNT = 100
+	}
+	inline_script = {
+		script = jobs/foundry_add
+		AMOUNT = 100
+	}
+}
+d_sfg_farmer_site = {
+	is_for_colonizable = yes
+	icon = "d_metal_boneyard"
+	category = deposit_cat_rare
+	
+	potential = { always = no }
+	
+	inline_script = {
+		script = jobs/farmers_add
+		AMOUNT = 100
+	}
+}
+d_sfg_technician_site = {
+	is_for_colonizable = yes
+	icon = "d_metal_boneyard"
+	category = deposit_cat_rare
+	
+	potential = { always = no }
+	
+	inline_script = {
+		script = jobs/technicians_add
+		AMOUNT = 100
+	}
+}

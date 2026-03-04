@@ -4,3 +4,11 @@ Ascension perk commercial:
 Altro:
 Vedi quanti building ti rimangono
 Events/Colony_pop.txt con nuova versione vedere cosa fare
+
+
+effect = {
+add_modifier = { modifier = start_game_modifier }
+        add_modifier = { modifier = early_game_modifier }
+        add_modifier = { modifier = mid_game_modifier }
+        add_modifier = { modifier = late_game_modifier }
+}

@@ -56,6 +56,8 @@ country_event = {  #Deamon that fires all usefull communication
 		}
 	}
 }
+
+
 country_event = { #arcology message
 	id = sfg_usefull_communication.10
 	hide_window = yes
@@ -158,14 +160,8 @@ country_event = { #hive/machine message
 			NOR = {
 				is_planet_class = pc_city
 				is_planet_class = pc_relic
-				AND = { 
-					is_planet_class = pc_hive
-					owner = { has_ascension_perk = ap_hive_worlds }
-				}
-				AND = { 
-					is_planet_class = pc_machine
-					owner = { has_ascension_perk = ap_machine_worlds}
-				}
+				is_planet_class = pc_hive
+				is_planet_class = pc_machine
 				has_planet_flag = disable_sfg_usefull_communication20
 			}
 		}
@@ -176,25 +172,14 @@ country_event = { #hive/machine message
 				valid_planet_for_notification = yes
 				is_artificial = no
 				NOR = {
-					is_planet_class = pc_city
-					is_planet_class = pc_relic
-					NOR = {
-						AND = { 
-							is_planet_class = pc_hive
-							owner = { has_ascension_perk = ap_hive_worlds }
-						}
-						AND = { 
-							is_planet_class = pc_machine
-							owner = { has_ascension_perk = ap_machine_worlds}
-						}
+						is_planet_class = pc_city
+						is_planet_class = pc_relic
+						is_planet_class = pc_hive
+						is_planet_class = pc_machine
 					}
 					has_planet_flag = disable_sfg_usefull_communication20
-					AND = {
-						is_planet_class = pc_nanotech
-						owner = { has_tradition = tr_nanotech_adopt }
-					}
+					is_planet_class = pc_nanotech
 				}
-			}
 			planet_event = {
 				id = sfg_usefull_communication.21#Message
 			}

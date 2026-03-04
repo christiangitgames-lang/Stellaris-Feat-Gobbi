@@ -630,7 +630,7 @@ nanite_swarmer = {
 		ship_armor_add = @armor_S1
 		ship_armor_regen_add_static = @regen_armor_lv3
 	}
-	max_hitpoints = 250
+	max_hitpoints = @hpship_200
 	size_multiplier = 1
 	map_counter_icon = ship_counter_4
 	icon = ship_size_military_1
@@ -682,14 +682,14 @@ nanite_interdictor = {
 	acceleration = 0.25
 	rotation_speed = 0.175
 	collision_radius = @battleship_collision_radius
-	max_hitpoints = 2000
+	max_hitpoints = @hpship_2000
 	modifier = {
 		ship_evasion_add = 20
-		ship_hull_regen_add_static = 15
+		ship_hull_regen_add_static = 30
 		ship_armor_add = 1500
-		ship_armor_regen_add_static = 15
+		ship_armor_regen_add_static = 30
 	}
-	size_multiplier = 15
+	size_multiplier = 14
 	map_counter_icon = ship_counter_16
 	icon = ship_size_military_4
 	fleet_slot_size = 6

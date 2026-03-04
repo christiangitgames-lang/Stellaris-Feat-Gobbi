@@ -928,6 +928,16 @@ country_event = { # Locate top dyson
 				}
 			}
 		}
+		# Other mining
+		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = unity }
+		event_target:sba_dyson_swarm_unity_star_0 = {
+			from = {
+				if = { 
+					limit = { NOT = { solar_system = { has_star_flag = "canditate_dyson_star_0" } } }
+					solar_system = { set_star_flag = "canditate_dyson_star_0" }
+				}
+			}
+		}
 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = food }
 		event_target:sba_dyson_swarm_food_star_0 = {
 			from = {

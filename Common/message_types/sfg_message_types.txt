@@ -1,0 +1,23 @@
+#from lazy
+message_type = {
+	key = "AUTO_STARBASE_MESSAGE_TYPE"
+	icon = "GFX_message_upgrading_spaceport"
+	icon_frame = 1
+
+	name = "MESSAGE_STARBASE_UPGRADING_TITLE"
+	sound = "notification"
+
+	#auto_opens = others
+	ping = "ping_notification_green"
+}
+message_type = {
+	key = "AUTO_STARBASE_REFUND_MESSAGE_TYPE"
+	icon = "GFX_message_refund_spaceport"
+	icon_frame = 1
+
+	name = "MESSAGE_STARBASE_UPGRADING_TITLE"
+	sound = "notification"
+
+	#auto_opens = others
+	ping = "ping_notification_green"
+}

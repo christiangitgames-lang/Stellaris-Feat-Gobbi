@@ -1,0 +1,322 @@
+namespace = lazy_upg_sta_events
+country_event = { #fire events for automations
+	id = lazy_upg_sta_events.0
+	hide_window = yes
+
+	is_triggered_only = yes
+	pre_triggers = {
+		is_ai = no
+	}
+	trigger = {
+		
+		NOT = { has_policy_flag = Upgrade_Automation_Nothing }
+	}
+	immediate = { 
+		country_event = { id = lazy_upg_sta_events.1 days = 1 }
+	}
+}
+country_event = {
+	id = lazy_upg_sta_events.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOt = { has_policy_flag = Upgrade_Automation_Nothing }
+		# used_starbase_capacity_percent < 1
+		has_resource = {
+			type = alloys
+			amount > 1250
+ 		}
+		is_at_war = no
+		has_monthly_income = { resource = energy value > 1 }
+	}
+
+	immediate = {
+		while = {
+			count = 1
+
+			set_variable = {
+				which = auto_upg_sta_cap
+				value = trigger:max_starbase_capacity
+			}
+			set_variable = {
+				which = auto_upg_sta_count
+				value = value:starbases_upgrading_cap_trigger
+			}
+
+			if = { 
+				limit = {
+					has_resource = {
+						type = alloys
+						amount > 1250
+ 					}	
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = auto_upg_sta_cap
+							value > auto_upg_sta_count
+						}
+						OR = {
+							has_policy_flag = auto_upgrading_starbase_starport_flag
+							has_policy_flag = auto_upgrading_starbase_starhold_flag
+							has_policy_flag = auto_upgrading_starbase_starfortress_flag
+							has_policy_flag = auto_upgrading_starbase_citadel_flag
+							has_policy_flag = auto_upgrading_starbase_stronghold_flag
+						}
+						any_owned_starbase = {
+							has_starbase_size = starbase_outpost
+						}
+						
+					}
+					random_owned_starbase = {
+						limit = {
+							has_starbase_size = starbase_outpost
+							NOT = { has_starbase_flag = auto_upgrading_starbase_flag }
+						}
+						weights = {
+							base = 1
+							inline_script = {
+								script = Automation/starbase_upgrade_weights
+							}
+						}
+						auto_upgrade_starbases_check = yes
+					}
+				}
+				else = {
+					random_owned_starbase = {
+						limit = {
+							NOT = { has_starbase_flag = auto_upgrading_starbase_flag }
+							has_starbase_size > starbase_outpost
+							# if = {
+							# 	limit = {
+							# 		prev = {
+							# 			has_policy_flag = auto_upgrading_starbase_outpost_flag
+							# 		}
+							# 	}
+							# 	has_starbase_size > starbase_outpost
+							# }
+							# else_
+							if = {
+								limit = {
+									prev = {
+										has_policy_flag = auto_upgrading_starbase_starport_flag
+									}
+								}
+								has_starbase_size < starbase_starport
+							}
+							else_if = {
+								limit = {
+									prev = {
+										has_policy_flag = auto_upgrading_starbase_starhold_flag
+									}
+								}
+								has_starbase_size < starbase_starhold
+							}
+							else_if = {
+								limit = {
+									prev = {
+										has_policy_flag = auto_upgrading_starbase_starfortress_flag
+									}
+								}
+								has_starbase_size < starbase_starfortress
+							}
+							else_if = {
+								limit = {
+									prev = {
+										has_policy_flag = auto_upgrading_starbase_citadel_flag
+									}
+								}
+								has_starbase_size < starbase_citadel
+							}
+							# else_if = {
+							# 	limit = {
+							# 		prev = {
+							# 			has_policy_flag = auto_upgrading_starbase_stronghold_flag
+							# 		}
+							# 	}
+							# 	has_starbase_size > starbase_stronghold
+							# }
+						}
+						auto_upgrade_starbases_check = yes
+						weights = {
+							base = 1
+							inline_script = {
+								script = Automation/starbase_upgrade_weights
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@starbase_outpost_alloys = 200
+@starbase_starport_alloys = 500
+@starbase_starhold_alloys = 1250
+@starbase_starfortress_alloys = 3500
+starbase_event = {
+	id = lazy_upg_sta_events.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		#has_starbase_size = starbase_outpost
+		has_starbase_flag = auto_upgrading_starbase_flag
+		#has_policy_flag = auto_upgrading_starbase__flag
+	}
+	
+	immediate = {
+		owner = {
+			set_variable = {
+			which = auto_upg_sta_cap
+				value = trigger:max_starbase_capacity
+				}
+			set_variable = {
+				which = auto_upg_sta_count
+				value = value:starbases_upgrading_cap_trigger
+			}
+		}
+		if = {
+			limit = {
+				has_starbase_size = starbase_outpost
+				owner = {
+					check_variable = {
+						which = auto_upg_sta_cap #9
+						value >= auto_upg_sta_count #8= is for se stessa
+					}
+				}
+			}
+			set_starbase_size = starbase_starport
+			
+		}
+		else = {
+			owner = {
+				add_resource = {
+					alloys = @starbase_outpost_alloys
+					mult = value:positive_modifier_mult|MODIFIER|starbase_upgrade_cost_mult|
+				}
+				inline_script = {
+					script = usefull_communication/message_fleet
+					MESSAGE_TYPE = AUTO_STARBASE_REFUND_MESSAGE_TYPE
+					LOCALIZATION = AUTO_STARBASE_REFUND_MESSAGE_TYPE_DESC
+					DAYSD = 30
+					TARGET = prev.solar_system
+					FLEET_SCOPE = prev
+				}
+			}
+		}
+		remove_starbase_flag = auto_upgrading_starbase_flag
+	}
+}
+
+starbase_event = {
+	id = lazy_upg_sta_events.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_starbase_flag = auto_upgrading_starbase_flag
+		#has_policy_flag = auto_upgrading_starbase__flag
+	}
+	immediate = {
+		if = {
+			limit = {
+				has_starbase_size = starbase_starport
+			}
+			set_starbase_size = starbase_starhold
+			
+		}
+		else = {
+			owner = {
+				add_resource = {
+					alloys = @starbase_starport_alloys
+					mult = value:positive_modifier_mult|MODIFIER|starbase_upgrade_cost_mult|
+				}
+				inline_script = {
+					script = usefull_communication/message_fleet
+					MESSAGE_TYPE = AUTO_STARBASE_REFUND_MESSAGE_TYPE
+					LOCALIZATION = AUTO_STARBASE_REFUND_MESSAGE_TYPE_DESC
+					DAYSD = 30
+					TARGET = prev.solar_system
+					FLEET_SCOPE = prev
+				}
+			}
+		}
+		remove_starbase_flag = auto_upgrading_starbase_flag
+	}
+}
+
+starbase_event = {
+	id = lazy_upg_sta_events.4
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_starbase_flag = auto_upgrading_starbase_flag
+		#has_policy_flag = auto_upgrading_starbase__flag
+	}
+	immediate = {
+		if = {
+			limit = {
+				has_starbase_size = starbase_starhold
+			}
+			set_starbase_size = starbase_starfortress
+			
+		}
+		else = {
+			owner = {
+				add_resource = {
+					alloys = @starbase_starhold_alloys
+					mult = value:positive_modifier_mult|MODIFIER|starbase_upgrade_cost_mult|
+				}
+				inline_script = {
+					script = usefull_communication/message_fleet
+					MESSAGE_TYPE = AUTO_STARBASE_REFUND_MESSAGE_TYPE
+					LOCALIZATION = AUTO_STARBASE_REFUND_MESSAGE_TYPE_DESC
+					DAYSD = 30
+					TARGET = prev.solar_system
+					FLEET_SCOPE = prev
+				}
+			}
+		}
+		remove_starbase_flag = auto_upgrading_starbase_flag
+	}
+}
+
+starbase_event = {
+	id = lazy_upg_sta_events.5
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_starbase_flag = auto_upgrading_starbase_flag
+		#has_policy_flag = auto_upgrading_starbase__flag
+	}
+	immediate = {
+		if = {
+			limit = {
+				has_starbase_size = starbase_starfortress
+			}
+			set_starbase_size = starbase_citadel
+			
+		}
+		else = {
+			owner = {
+				add_resource = {
+					alloys = @starbase_starhold_alloys
+					mult = value:positive_modifier_mult|MODIFIER|starbase_upgrade_cost_mult|
+				}
+				inline_script = {
+					script = usefull_communication/message_fleet
+					MESSAGE_TYPE = AUTO_STARBASE_REFUND_MESSAGE_TYPE
+					LOCALIZATION = AUTO_STARBASE_REFUND_MESSAGE_TYPE_DESC
+					DAYSD = 30
+					TARGET = prev.solar_system
+					FLEET_SCOPE = prev
+				}
+			}
+		}
+		remove_starbase_flag = auto_upgrading_starbase_flag
+	}
+}

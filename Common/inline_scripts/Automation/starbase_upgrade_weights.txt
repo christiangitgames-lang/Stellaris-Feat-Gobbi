@@ -1,0 +1,61 @@
+#Automation/starbase_upgrade_weights
+modifier = {
+    add = 10
+    has_starbase_size = starbase_outpost
+}
+modifier ={
+    add = 10
+    solar_system = { 
+        any_neighbor_system = {
+            exists = starbase
+            starbase = { has_starbase_size > starbase_outpost }
+        }
+    }
+}
+modifier = {
+    mult = 0.1
+    has_starbase_size > starbase_outpost
+    OR = {
+        check_variable_arithmetic = { which = value:Free_starbase_modules value <= 0 }
+        check_variable_arithmetic = { which = value:Free_starbase_buildings value <= 0 }
+    }
+}
+modifier = {
+    add = 100
+    solar_system = {
+        is_capital_system = yes
+    }
+}
+modifier ={
+    add = 100
+    solar_system = { 
+        any_system_planet = {
+            is_colony = yes
+        }
+    }
+}
+modifier = {
+    mult = 2
+    solar_system = { 
+        any_neighbor_system = {
+            is_capital_system = yes
+        }
+    }
+}
+modifier = {
+    mult = 4
+    solar_system = { #test
+        is_bottleneck_system = yes
+    }
+}
+modifier = {
+    mult = 0.1
+    solar_system = { 
+        any_neighbor_system = {
+            exists = owner
+            owner = {
+                NOT = { is_same_value = root }
+            }
+        }
+    }
+}

@@ -134,6 +134,10 @@ generate_phi_planet_modifiers_3 = {
 				factor = 3
 				is_planet_class = pc_tundra
 			}
+			modifier = {
+				factor = 0.5
+				is_planet_class = pc_volcanic
+			}
 		}
 		10 = {
 			add_modifier = { modifier = phi_pm_polar_supercells_3 }
@@ -148,6 +152,10 @@ generate_phi_planet_modifiers_3 = {
 			modifier = {
 				factor = 2
 				is_planet_class = pc_tundra
+			}
+			modifier = {
+				factor = 3
+				is_planet_class = pc_volcanic
 			}
 		}
 		10 = {
@@ -175,10 +183,14 @@ generate_phi_planet_modifiers_3 = {
 			modifier = {
 				factor = 3
 				is_planet_class = pc_ocean
-		}
+			}
 			modifier = {
 				factor = 3
 				is_planet_class = pc_tropical
+			}
+			modifier = {
+				factor = 3
+				is_planet_class = pc_volcanic
 			}
 		}
 		10 = {
@@ -195,6 +207,10 @@ generate_phi_planet_modifiers_3 = {
 				factor = 2
 				is_planet_class = pc_tropical
 			}
+			modifier = {
+				factor = 1
+				is_planet_class = pc_volcanic
+			}
 		}
 		10 = {
 			add_modifier = { modifier = phi_pm_bacterial_pathogen_3 }
@@ -210,6 +226,10 @@ generate_phi_planet_modifiers_3 = {
 				factor = 4
 				is_planet_class = pc_tropical
 			}
+			modifier = {
+				factor = 2
+				is_planet_class = pc_volcanic
+			}
 		}
 		10 = {
 			add_modifier = { modifier = phi_pm_sudden_rainfalls_3 }
@@ -224,6 +244,10 @@ generate_phi_planet_modifiers_3 = {
 			modifier = {
 				factor = 2
 				is_planet_class = pc_savannah
+			}
+			modifier = {
+				factor = 2
+				is_planet_class = pc_volcanic
 			}
 		}
 		10 = {
@@ -271,6 +295,10 @@ generate_phi_planet_modifiers_3 = {
 				factor = 2
 				is_planet_class = pc_tropical
 			}
+			modifier = {
+				factor = 2
+				is_planet_class = pc_volcanic
+			}
 		}
 		10 = {
 			add_modifier = { modifier = phi_pm_electric_ice_shelf_3 }
@@ -286,6 +314,10 @@ generate_phi_planet_modifiers_3 = {
 				factor = 2
 				is_planet_class = pc_tundra
 			}
+			modifier = {
+				factor = 0
+				is_planet_class = pc_volcanic
+			}
 		}
 		10 = {
 			add_modifier = { modifier = phi_pm_magnetic_clouds_3 }
@@ -300,6 +332,17 @@ generate_phi_planet_modifiers_3 = {
 			modifier = {
 				factor = 2
 				is_planet_class = pc_savannah
+			}
+			modifier = {
+				factor = 2
+				is_planet_class = pc_volcanic
+			}
+		}
+		10 = {
+			add_modifier = { modifier = phi_pm_vulcanic_clouds_3 }
+			modifier = {
+				factor = 4
+				is_planet_class = pc_volcanic
 			}
 		}
 	}
@@ -325,6 +368,10 @@ generate_phi_planet_modifiers_2 = {
 				factor = 3
 				is_planet_class = pc_tundra
 			}
+			modifier = {
+				factor = 0.5
+				is_planet_class = pc_volcanic
+			}
 		}
 		10 = {
 			add_modifier = { modifier = phi_pm_polar_supercells_2 }
@@ -339,6 +386,10 @@ generate_phi_planet_modifiers_2 = {
 			modifier = {
 				factor = 2
 				is_planet_class = pc_tundra
+			}
+			modifier = {
+				factor = 3
+				is_planet_class = pc_volcanic
 			}
 		}
 		10 = {
@@ -371,6 +422,10 @@ generate_phi_planet_modifiers_2 = {
 				factor = 3
 				is_planet_class = pc_tropical
 			}
+			modifier = {
+				factor = 4
+				is_planet_class = pc_volcanic
+			}
 		}
 		10 = {
 			add_modifier = { modifier = phi_pm_ocean_vortexes_2 }
@@ -401,6 +456,10 @@ generate_phi_planet_modifiers_2 = {
 				factor = 4
 				is_planet_class = pc_tropical
 			}
+			modifier = {
+				factor = 2
+				is_planet_class = pc_volcanic
+			}
 		}
 		10 = {
 			add_modifier = { modifier = phi_pm_sudden_rainfalls_2 }
@@ -415,6 +474,10 @@ generate_phi_planet_modifiers_2 = {
 			modifier = {
 				factor = 2
 				is_planet_class = pc_savannah
+			}
+			modifier = {
+				factor = 3
+				is_planet_class = pc_volcanic
 			}
 		}
 		10 = {
@@ -462,6 +525,10 @@ generate_phi_planet_modifiers_2 = {
 				factor = 2
 				is_planet_class = pc_tropical
 			}
+			modifier = {
+				factor = 2
+				is_planet_class = pc_volcanic
+			}
 		}
 		10 = {
 			add_modifier = { modifier = phi_pm_electric_ice_shelf_2 }
@@ -477,6 +544,10 @@ generate_phi_planet_modifiers_2 = {
 				factor = 2
 				is_planet_class = pc_tundra
 			}
+			modifier = {
+				factor = 0
+				is_planet_class = pc_volcanic
+			}
 		}
 		10 = {
 			add_modifier = { modifier = phi_pm_magnetic_clouds_2 }
@@ -491,6 +562,17 @@ generate_phi_planet_modifiers_2 = {
 			modifier = {
 				factor = 2
 				is_planet_class = pc_savannah
+			}
+			modifier = {
+				factor = 3
+				is_planet_class = pc_volcanic
+			}
+		}
+		10 = {
+			add_modifier = { modifier = phi_pm_vulcanic_clouds_2 }
+			modifier = {
+				factor = 4
+				is_planet_class = pc_volcanic
 			}
 		}
 	}
@@ -516,6 +598,10 @@ generate_phi_planet_modifiers_1 = {
 				factor = 3
 				is_planet_class = pc_tundra
 			}
+			modifier = {
+				factor = 0.5
+				is_planet_class = pc_volcanic
+			}
 		}
 		10 = {
 			add_modifier = { modifier = phi_pm_polar_supercells_1 }
@@ -531,6 +617,10 @@ generate_phi_planet_modifiers_1 = {
 				factor = 2
 				is_planet_class = pc_tundra
 			}
+			modifier = {
+				factor = 3
+				is_planet_class = pc_volcanic
+			}
 		}
 		10 = {
 			add_modifier = { modifier = phi_pm_perennial_fog_1 }
@@ -545,6 +635,10 @@ generate_phi_planet_modifiers_1 = {
 			modifier = {
 				factor = 4
 				is_planet_class = pc_tundra
+			}
+			modifier = {
+				factor = 4
+				is_planet_class = pc_volcanic
 			}
 		}
 		10 = {
@@ -592,6 +686,10 @@ generate_phi_planet_modifiers_1 = {
 				factor = 4
 				is_planet_class = pc_tropical
 			}
+			modifier = {
+				factor = 2
+				is_planet_class = pc_volcanic
+			}
 		}
 		10 = {
 			add_modifier = { modifier = phi_pm_sudden_rainfalls_1 }
@@ -606,6 +704,10 @@ generate_phi_planet_modifiers_1 = {
 			modifier = {
 				factor = 2
 				is_planet_class = pc_savannah
+			}
+			modifier = {
+				factor = 3
+				is_planet_class = pc_volcanic
 			}
 		}
 		10 = {
@@ -653,6 +755,10 @@ generate_phi_planet_modifiers_1 = {
 				factor = 2
 				is_planet_class = pc_tropical
 			}
+			modifier = {
+				factor = 3
+				is_planet_class = pc_volcanic
+			}
 		}
 		10 = {
 			add_modifier = { modifier = phi_pm_electric_ice_shelf_1 }
@@ -668,6 +774,10 @@ generate_phi_planet_modifiers_1 = {
 				factor = 2
 				is_planet_class = pc_tundra
 			}
+			modifier = {
+				factor = 0
+				is_planet_class = pc_volcanic
+			}
 		}
 		10 = {
 			add_modifier = { modifier = phi_pm_magnetic_clouds_1 }
@@ -682,6 +792,18 @@ generate_phi_planet_modifiers_1 = {
 			modifier = {
 				factor = 2
 				is_planet_class = pc_savannah
+			}
+			modifier = {
+				factor = 3
+				is_planet_class = pc_volcanic
+			}
+		}
+		10 = {
+			add_modifier = { modifier = phi_pm_vulcanic_clouds_1 }
+			add_deposit = d_phi_rare_crystals_5
+			modifier = {
+				factor = 4
+				is_planet_class = pc_volcanic
 			}
 		}
 	}
@@ -736,6 +858,11 @@ remove_phi_planet_modifiers_3 = {
 		limit = { has_modifier = phi_pm_magnetic_clouds_3 }
 		remove_modifier = phi_pm_magnetic_clouds_3
 	}
+	if = {
+		limit = { has_modifier = phi_pm_vulcanic_clouds_3 }
+		remove_modifier = phi_pm_vulcanic_clouds_3
+	}
+	
 }
 
 remove_phi_planet_modifiers_2 = {
@@ -787,6 +914,10 @@ remove_phi_planet_modifiers_2 = {
 		limit = { has_modifier = phi_pm_magnetic_clouds_2 }
 		remove_modifier = phi_pm_magnetic_clouds_2
 	}
+	if = {
+		limit = { has_modifier = phi_pm_vulcanic_clouds_2 }
+		remove_modifier = phi_pm_vulcanic_clouds_2
+	}
 }
 
 remove_phi_planet_modifiers_1 = {
@@ -837,6 +968,10 @@ remove_phi_planet_modifiers_1 = {
 	if = {
 		limit = { has_modifier = phi_pm_magnetic_clouds_1 }
 		remove_modifier = phi_pm_magnetic_clouds_1
+	}
+	if = {
+		limit = { has_modifier = phi_pm_vulcanic_clouds_1 }
+		remove_modifier = phi_pm_vulcanic_clouds_1
 	}
 }
 
@@ -914,6 +1049,11 @@ upgrade_phi_planet_modifiers = {
 		remove_modifier = phi_pm_magnetic_clouds_3
 		add_modifier = { modifier = phi_pm_magnetic_clouds_2 }
 	}
+	if = {
+		limit = { has_modifier = phi_pm_vulcanic_clouds_3 }
+		remove_modifier = phi_pm_vulcanic_clouds_3
+		add_modifier = { modifier = phi_pm_vulcanic_clouds_2 }
+	}
 }
 upgrade_phi_planet_modifiers_ecological_adaptation = {
 	if = {
@@ -977,6 +1117,12 @@ upgrade_phi_planet_modifiers_ecological_adaptation = {
 		add_modifier = { modifier = phi_pm_magnetic_clouds_1 }
 	}
 	if = {
+		limit = { has_modifier = phi_pm_vulcanic_clouds_3 }
+		remove_modifier = phi_pm_vulcanic_clouds_3
+		add_modifier = { modifier = phi_pm_vulcanic_clouds_1 }
+	}
+	
+	if = {
 		limit = { has_modifier = phi_pm_mantle_frozen_gas_pockets_2 }
 		remove_modifier = phi_pm_mantle_frozen_gas_pockets_2
 		add_modifier = { modifier = phi_pm_mantle_frozen_gas_pockets_1 }
@@ -1035,5 +1181,10 @@ upgrade_phi_planet_modifiers_ecological_adaptation = {
 		limit = { has_modifier = phi_pm_magnetic_clouds_2 }
 		remove_modifier = phi_pm_magnetic_clouds_2
 		add_modifier = { modifier = phi_pm_magnetic_clouds_1 }
+	}
+	if = {
+		limit = { has_modifier = phi_pm_vulcanic_clouds_2 }
+		remove_modifier = phi_pm_vulcanic_clouds_2
+		add_modifier = { modifier = phi_pm_vulcanic_clouds_1 }
 	}
 }

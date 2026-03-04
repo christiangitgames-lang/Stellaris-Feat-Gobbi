@@ -3,4 +3,5 @@ spriteTypes = {
 		name = "GFX_arcology"
 		textureFile = "gfx/event_pictures/rift_sphere.dds"
 	}
+	
 }

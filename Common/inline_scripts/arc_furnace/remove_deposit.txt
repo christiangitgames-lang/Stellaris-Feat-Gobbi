@@ -1,0 +1,9 @@
+#arc_furnace/remove_deposit
+remove_deposit = d_arc_furnace_1
+remove_deposit = d_arc_furnace_2
+remove_deposit = d_arc_furnace_3
+remove_deposit = d_arc_furnace_4
+remove_deposit = d_arc_furnace_1_food
+remove_deposit = d_arc_furnace_2_food
+remove_deposit = d_arc_furnace_3_food
+remove_deposit = d_arc_furnace_4_food

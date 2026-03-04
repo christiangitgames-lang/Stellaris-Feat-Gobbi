@@ -893,8 +893,8 @@ mining_subsidies = {
 		miner_jobs_bonus_workforce_mult = 0.20
 		planet_miners_trade_upkeep_add = 0.50
 		#planet_miners_energy_upkeep_add = 0.5 #Note: _add modifiers don't apply to children, but _mult ones do, so this is necessary here
-		station_gatherers_minerals_produces_mult = 0.25
-		station_gatherers_minerals_upkeep_mult = 0.5
+		station_gatherers_minerals_produces_mult = 0.5
+		station_gatherers_minerals_upkeep_mult = 0.75
 	}
 
 	potential = {
@@ -979,7 +979,7 @@ farming_subsidies = {
 		farmer_jobs_bonus_workforce_mult = 0.20
 		planet_farmers_trade_upkeep_add = 0.50
 		station_gatherers_food_produces_mult = 0.5
-		station_gatherers_food_upkeep_mult = 0.5
+		station_gatherers_food_upkeep_mult = 0.75
 	}
 
 	potential = {

@@ -14,6 +14,7 @@ subplan = {
 	scaling = yes
 	set_name = "Base Food Scaling"
 	potential = {
+		has_global_flag = AI_easy # food is useless
 		country_uses_bio_ships = no
 		country_uses_food = yes
 		OR = {

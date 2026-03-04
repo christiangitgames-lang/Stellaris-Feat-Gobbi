@@ -107,6 +107,13 @@ phi_pm_magnetic_clouds_2_desc: "Le nubi di questo pianeta rimangono magneticamen
 phi_pm_magnetic_clouds_1: "Flussi Magnetici Controllati"
 phi_pm_magnetic_clouds_1_desc: "Flussi di vento magnetizzato sono incanalati e sfruttati dai nostri coloni."
 
+phi_pm_vulcanic_clouds_3: "Tempeste Magmatiche"
+phi_pm_vulcanic_clouds_3_desc: "Enormi tempeste magmatiche si abbattono sulla superficie planetaria."
+phi_pm_vulcanic_clouds_2: "Flussi Magmatici"
+phi_pm_vulcanic_clouds_2_desc: "I flussi questo pianeta rimangono attivi."
+phi_pm_vulcanic_clouds_1: "Flussi Magmatici Controllati"
+phi_pm_vulcanic_clouds_1_desc: "Flussi magmatici sono incanalati e sfruttati dai nostri coloni."
+
 ### DEPOSITS ###
 
 d_generalized_malfunction: "Generalized malfunction"
@@ -222,6 +229,11 @@ decision_phi_magnetic_clouds_3_2: "Gabbie di Faraday"
 decision_phi_magnetic_clouds_3_2_desc: "Possiamo limitare l'impatto delle tempeste magnetiche costruendo una vasta rete di gabbie di Faraday."
 decision_phi_magnetic_clouds_2_1: "Generatori magnetici"
 decision_phi_magnetic_clouds_2_1_desc: "Possiamo installare enormi generatori magnetici per controllare la magnetosfera planetaria."
+
+decision_phi_vulcanic_clouds_3_2: "§GUpgrade§! Rete di Stabilizzazione Tettonica Orbitale"
+decision_phi_vulcanic_clouds_3_2_desc: "Possiamo limitare l'impatto delle tempeste  magmatiche costruendo una costellazione di satelliti geogravitazionali applica micro-sollecitazioni controllate alla crosta planetaria, dissipando le pressioni interne prima che possano innescare tempeste magmatiche su vasta scala."
+decision_phi_vulcanic_clouds_2_1: "§GUpgrade§! Sonde di Depressurizzazione del Mantello"
+decision_phi_vulcanic_clouds_2_1_desc: "Possiamo installare enormi perforatori automatizzati penetrano in profondità nella crosta e rilasciano camere di espansione termica, riducendo le sacche di pressione responsabili delle eruzioni esplosive globali."
 
 decision__pm_atmospheric_pollution: "Rimuovere l'inquinamento atmosferico"
 decision__pm_atmospheric_pollution_desc: "Finalmente abbiamo la competenza e le risorse per ripulire il disastro..."

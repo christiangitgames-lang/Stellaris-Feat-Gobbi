@@ -1,0 +1,38 @@
+#arc_furnace/add_deposit
+#this system
+
+switch = {
+	trigger = has_modifier
+	orbital_arc_furnace_1_mod = {
+		if = { limit = { from = { owner = { is_catalytic_empire = yes }  }}
+			add_deposit = d_arc_furnace_1_food
+		}
+		else = { 
+			add_deposit = d_arc_furnace_1 
+		}
+	}
+	orbital_arc_furnace_2_mod = {
+		if = { limit = {  from = { owner = { is_catalytic_empire = yes }  } }
+			add_deposit = d_arc_furnace_2_food
+		}
+		else = { 
+			add_deposit = d_arc_furnace_2 
+		}
+	}
+	orbital_arc_furnace_3_mod = {
+		if = { limit = { from = {  owner = { is_catalytic_empire = yes } } }
+			add_deposit = d_arc_furnace_3_food
+		}
+		else = { 
+			add_deposit = d_arc_furnace_3 
+		}
+	}
+	orbital_arc_furnace_4_mod = {
+		if = { limit = { from = { owner = { is_catalytic_empire = yes } } }
+			add_deposit = d_arc_furnace_4_food
+		}
+		else = { 
+			add_deposit = d_arc_furnace_4 
+		}
+	}
+}

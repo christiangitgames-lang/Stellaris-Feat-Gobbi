@@ -102,6 +102,7 @@ is_normal_habitable_planet = {
 		is_planet_class = "pc_arctic"
 		is_planet_class = "pc_alpine"
 		is_planet_class = "pc_savannah"
+		is_planet_class = pc_volcanic
 	}
 }
 Have_free_jobs = {
@@ -257,6 +258,10 @@ planet_bonus_engineering = {
 		has_modifier = gpm_old_world
 		has_modifier = gpm_artificial_core
 		has_modifier = gpm_fractal_formations
+		#sfg
+		has_modifier = phi_pm_vulcanic_clouds_3
+		has_modifier = phi_pm_vulcanic_clouds_2
+		has_modifier = phi_pm_vulcanic_clouds_1
 	}
 }
 planet_bonus_society = {
@@ -265,10 +270,7 @@ planet_bonus_society = {
 		has_modifier = tamed_nanite_swarm_modifier
 		has_modifier = phi_pm_sudden_rainfalls_3
 		has_modifier = phi_pm_sudden_rainfalls_2
-		has_modifier = phi_pm_magnetic_clouds_3
-		has_modifier = phi_pm_magnetic_clouds_2
 		has_modifier = phi_pm_sudden_rainfalls_1
-		has_modifier = phi_pm_magnetic_clouds_1
 		has_modifier = phi_pm_planet_accelerators_3
 		has_modifier = phi_pm_planet_accelerators_2
 		has_modifier = phi_pm_planet_accelerators_1

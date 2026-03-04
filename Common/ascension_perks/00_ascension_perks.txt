@@ -1103,6 +1103,7 @@ ap_interstellar_dominion = {
 		country_starbase_influence_cost_mult = -0.20
 		country_claim_influence_cost_mult = -0.20
 		empire_size_systems_mult = -0.25
+		station_gatherers_produces_mult = 0.05
 		add_attunement_the_eater_of_worlds = @ascension_perk_attunement1
 	}
 
@@ -1153,6 +1154,7 @@ ap_grasp_the_void = {
 
 	modifier = {
 		country_starbase_capacity_add = 5
+		starbase_constructions_produces_mult = 0.20
 		add_attunement_the_composer_of_strands = @ascension_perk_attunement1
 	}
 

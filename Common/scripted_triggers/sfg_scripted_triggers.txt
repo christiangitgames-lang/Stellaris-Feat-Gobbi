@@ -23,7 +23,7 @@ is_valid_nebula_refinery = {
 	starbase = { 
 		NOR ={
 			has_starbase_building = nebula_refinery
-			has_starbase_building = nebula_refinery_gestalt
+			#has_starbase_building = nebula_refinery_gestalt
 		}
 	}
 	is_inside_nebula = yes

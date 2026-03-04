@@ -1,0 +1,64 @@
+namespace = sfg_planetary_modifiers
+
+event = {
+	id = sfg_planetary_modifiers.1
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		random_system = {
+			limit = {
+				any_system_planet = {
+					is_planet_class = pc_frozen
+					has_anomaly = no
+					OR = {
+						is_colony = no
+						sapient_pop_amount < 1000
+					}
+					NOT = {
+						exists = archaeological_site
+					}
+				}
+			}
+			random_system_planet = {
+				limit = {
+					is_planet_class = pc_frozen
+					has_anomaly = no
+					NOR = {
+						exists = archaeological_site
+					}
+				}
+				#planet = {
+					create_archaeological_site = site_sgorbio
+					set_planet_flag = site_sgorbio
+				#}
+				#set_name = "Debug_sgorbio"
+			}
+			#set_name = "Deb_sgorbio"
+		}
+		#bonus deposit neighborgh marauder
+		if = { limit = { num_marauder_empires_to_spawn > 0 }
+			while = {
+				count = 3
+				#aggiungo depositi speciali
+				add_special_deposit_maurader_neighbor = yes
+			}
+		}
+		if = { limit = { num_marauder_empires_to_spawn > 1 }
+			while = {
+				count = 3
+				#aggiungo depositi speciali
+				add_special_deposit_maurader_neighbor = yes
+			}
+		}
+		if = { limit = { num_marauder_empires_to_spawn > 2 }
+			while = {
+				count = 3
+				#aggiungo depositi speciali
+				add_special_deposit_maurader_neighbor = yes
+			}
+		}
+		clean_flag_deposit_marauder = yes
+	}
+}

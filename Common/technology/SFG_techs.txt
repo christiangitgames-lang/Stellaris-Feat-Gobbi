@@ -107,3 +107,87 @@ tech_crystal_armor_4 = {
 
 	}
 }
+
+tech_food_processing_3 = {
+	cost = @tier5cost1
+	area = society
+	tier = 5
+	category = { biology }
+	prerequisites = { "tech_food_processing_2" }
+	weight = @tier3weight1
+
+	technology_swap = { # Wilderness icon swap
+		name = tech_wilderness_food_processing_3
+		inherit_icon = no
+		inherit_effects = yes
+		trigger = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.01
+			OR = {
+				is_machine_empire = yes
+				is_lithoid_empire = yes
+				is_individual_machine = yes
+				is_infernal_empire = yes
+				has_origin = origin_synthetic_fertility
+			}
+			NOR = {
+				has_country_flag = non_lithoid_subspecies
+				has_valid_civic = civic_machine_servitor
+				has_valid_civic = civic_machine_assimilator
+				any_owned_planet = {
+					OR = {
+						has_any_capped_planet_farming_district = yes
+						has_any_agriculture_zone = yes
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				is_machine_empire = yes
+				is_lithoid_empire = yes
+				is_infernal_empire = yes
+				AND = {
+					is_individual_machine = yes
+					NOT = { has_country_flag = non_lithoid_subspecies }
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_mine_volatile_motes
+				has_technology = tech_volatile_motes
+				has_country_flag = has_market_access
+			}
+		}
+		modifier = {
+			factor = 2
+			has_relic = r_pox_sample
+		}
+		modifier = {
+			factor = 2
+			country_uses_bio_ships = yes
+		}
+	}
+
+	ai_weight = {
+		factor = 1 # food processing
+
+		modifier = {
+			factor = 0
+			country_uses_food = no
+		}
+		modifier = {
+			factor = 2
+			need_foods = yes
+		}
+	}
+}

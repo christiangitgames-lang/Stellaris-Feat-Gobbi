@@ -165,12 +165,12 @@ default = {
 		category = country_base
 		produces = {
 			energy = 20
-			minerals = 20
+			minerals = 15
 			physics_research = 40
 			society_research = 40
 			engineering_research = 40
 			influence = 3
-			unity = 20
+			unity = 30
 			alloys = 5
 		}
 		produces = {

@@ -30,4 +30,66 @@ defined_text = {
 	}
 	default = undefinied
 }
+defined_text = { 
+	name = gestalt_ameninties_usage
+	value = value:pop_amenities_no_happiness_usage
+}
+defined_text = { 
+	name = get_galaxy_setup_value_num_marauder_empires
+	text = {
+		trigger = {
+			num_marauder_empires_to_spawn = 0
+		}
+		localization_key = 0
+	}
+	text = {
+		trigger = {
+			num_marauder_empires_to_spawn = 1
+		}
+		localization_key = 1
+	}
+	text = {
+		trigger = {
+			num_marauder_empires_to_spawn = 2
+		}
+		localization_key = 2
+	}
+	text = {
+		trigger = {
+			num_marauder_empires_to_spawn > 2
+		}
+		localization_key = 3
+	}
+	default = 0
+}
+#num_marauder_empires_to_spawn
+defined_text = { 
+	name = planet_amenities_no_happiness_add_text
+	value =  modifier:planet_amenities_no_happiness_add
+}
+defined_text = { 
+	name = sfg_planet_amenities_mult_text
+	value =  value:sfg_planet_amenities_mult
+}
 
+defined_text = { 
+	name = planet_amenities_add_text
+	value =  modifier:planet_amenities_add
+}
+defined_text = { 
+	name = free_amenities_text
+	value = trigger:free_amenities
+}
+defined_text = { 
+	name = planet_amenities_no_happiness_mult_text
+	value = value:sfg_planet_amenities_mult
+	#pop_amenities_usage_mult
+}
+defined_text = { 
+	name = pop_amount_text
+	value = trigger:pop_amount
+}
+defined_text = { 
+	name = debug_text
+	value = value:CalcDAMAGAATTRITION|MAXDAMAGAATTRITION|10|MULTATT|1|
+}

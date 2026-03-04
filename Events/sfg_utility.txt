@@ -62,4 +62,55 @@ country_event = {
 			name = OK
 		}
 }
+country_event = {#call  bychange civic update arc furnace produciton.
+	id = sfg_utility.4
+	hide_window = yes
 
+	is_triggered_only = yes
+	trigger = {
+		check_variable = {
+			which = arc_furnace_counter
+			value >= 1
+		}
+	}
+	immediate = {
+		every_system_within_border = {
+			limit = {
+				system_has_arc_furnace = yes
+			}
+			system_event = { id = sfg_utility.41 }
+		}
+		
+	}
+}
+#set and remove new
+system_event = {#aggiorno depositi
+	id = sfg_utility.41
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		system_has_arc_furnace = yes
+	}
+
+	after = {
+		every_system_planet = {
+			limit = {
+				OR = {
+					has_modifier = orbital_arc_furnace_1_mod
+					has_modifier = orbital_arc_furnace_2_mod
+					has_modifier = orbital_arc_furnace_3_mod
+					has_modifier = orbital_arc_furnace_4_mod
+				}
+			}
+			inline_script = {
+				script = arc_furnace/remove_deposit
+			}
+			inline_script = {
+				script = arc_furnace/add_deposit
+			}
+			
+		}
+	}
+}

@@ -1,4 +1,4 @@
-
+@med_trade_from_jobs = 0.10 # get from branch_office_buildings
 nebula_alloy_refinery = {
 	icon = "GFX_spaceport_nebula_alloy_refinery"
 	construction_days = 360
@@ -19,12 +19,14 @@ nebula_alloy_refinery = {
 
 		produces = {
 			alloys = 2
+			mult = value:bonus_starbase_age
 		}
 		produces = {
 			trigger = {
 				star = { is_inside_nebula = yes }
 			}
 			alloys = 1
+			mult = value:bonus_starbase_age
 		}
 		upkeep = {
 			trigger = {
@@ -32,6 +34,7 @@ nebula_alloy_refinery = {
 			}
 			minerals = 2
 			energy = 4
+			mult = value:bonus_starbase_age
 		}
 		upkeep = {
 			trigger = {
@@ -39,6 +42,7 @@ nebula_alloy_refinery = {
 			}
 			minerals = 8
             energy = 4
+			mult = value:bonus_starbase_age
 		}
 	}
 	triggered_system_modifier = {
@@ -119,7 +123,9 @@ starm_culture_booster = {
 				is_gestalt = no
 			}
 		}
-		job_culture_worker_per_pop = 0.04
+		job_entertainer_add = 100
+		job_culture_worker_add = 100
+		#job_culture_worker_per_pop = 0.04
 	}
 	custom_tooltip = sm_starm_culture_booster_effect
 
@@ -202,7 +208,7 @@ Governmental_Orbital_Exchange_Market = {
 		}
 
 		upkeep = {
-			energy = 2
+			energy = 3
 			mult = value:Count_planet_system
 		}
 	}
@@ -214,7 +220,8 @@ Governmental_Orbital_Exchange_Market = {
 				is_gestalt = no
 			}
 		}
-		job_clerk_per_pop = 0.02
+		planet_civilians_trade_produces_add = @med_trade_from_jobs
+		job_trader_add = 100
 	}
 	country_modifier = {
 		country_trade_fee = -0.01
@@ -286,8 +293,8 @@ Governmental_diplomatic_asset = {
 				is_hive_empire = yes
 			}
 		}
-		job_synapse_drone_add = 100
-		job_synapse_drone_per_pop = 0.02
+		job_synapse_drone_add = 200
+		#job_synapse_drone_per_pop = 0.02
 	}
 	
 	country_modifier = {
@@ -328,7 +335,7 @@ Governmental_manager_asset = {
 				is_gestalt = no
 			}
 		}
-		job_manager_add = 100
+		job_politician_add = 100
 	}
 	
 	triggered_system_modifier = {
@@ -341,7 +348,8 @@ Governmental_manager_asset = {
 			}
 		}
 		modifier = {
-			job_bureaucrat_per_pop = 0.013
+			job_bureaucrat_add = 200
+			#job_bureaucrat_per_pop = 0.013
 		}
 	}
 	triggered_system_modifier = {
@@ -353,12 +361,14 @@ Governmental_manager_asset = {
 			}
 		}
 		modifier = {
-			job_manager_per_pop = 0.013
+			
+			job_bureaucrat_add = 100
+			#job_manager_per_pop = 0.013
 		}
 	}
 	country_modifier = {
-		planet_managers_produces_mult = 0.10
-		planet_jobs_ruler_produces_mult = 0.10
+		#planet_politicians_produces_mult = 0.10
+		planet_bureaucrats_produces_mult = 0.10
 	}
 	ai_weight = {
 		weight = 0 #use same weight here - ai weighting is done in starbase_types.txt

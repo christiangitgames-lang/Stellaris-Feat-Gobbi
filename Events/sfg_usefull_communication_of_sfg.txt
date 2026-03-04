@@ -1,7 +1,8 @@
 namespace = sfg_usefull_communication_of_sfg
-planet_event = { #test
+fleet_event = { #test
 	id = sfg_usefull_communication_of_sfg.0
 	is_triggered_only = yes
+	
 	#trackable = yes
 	# immediate = {
 	# 	hidden_effect = {
@@ -14,11 +15,51 @@ planet_event = { #test
 		owner = {
 			is_ai = no
 		}
+		closest_system = {
+			limit = { 
+				AND = {
+					owner = { #
+						OR = {
+							is_same_value = root.owner
+							AND = {
+								is_subject = yes
+								has_overlord = root.owner
+							}
+							is_in_federation_with = root.owner
+							root.owner = {
+								is_subject = yes
+								has_overlord = prev
+							}
+						}
+					}
+				}
+			}
+			exists = owner #owner 1 - 0
+			AND = {
+				owner = { #
+					OR = {
+						is_same_value = root.owner
+						AND = {
+							is_subject = yes
+							has_overlord = root.owner
+						}
+						is_in_federation_with = root.owner
+						root.owner = {
+							is_subject = yes
+							has_overlord = prev
+						}
+					}
+				}
+			}
+			min_steps = 1
+			max_steps = 1
+			use_bypasses = yes
+		}
 	}
 	inline_script = {
 		script = events/settable_event
 		TITLE = anomaly.5000.name
-		DESC = "anomaly.5000.desc"
+		DESC = "debug_long"
 		PICTURE = GFX_evt_star_chart
 		LOCATION = ROOT
 	}
@@ -64,24 +105,65 @@ country_event = {  #Deamon that fires all usefull communication of sfg feat gobb
 		}
 	}
 }
-country_event = { #decision__pm_atmospheric_pollution
+# country_event = { #decision__pm_atmospheric_pollution
+# 	id = sfg_usefull_communication_of_sfg.2
+# 	is_triggered_only = yes
+# 	title = "can_have_remote_system.2.name"
+# 	desc = "can_have_remote_system.2.desc"
+# 	picture = GFX_arcology
+# 	show_sound = event_alien_signal #random
+# 	location = root
+# 	trigger = {
+# 		is_at_war = no
+# 		crisis_run_optimized = no
+# 		can_have_remote_system = yes
+# 		NOT = { has_country_flag = can_have_remote_system }
+# 	}
+# 	option = {
+# 		name = TY
+# 		hidden_effect = {
+# 			set_country_flag = can_have_remote_system
+# 		}
+# 	}
+# }
+country_event = {
 	id = sfg_usefull_communication_of_sfg.2
+	hide_window = yes
+
 	is_triggered_only = yes
-	title = "can_have_remote_system.2.name"
-	desc = "can_have_remote_system.2.desc"
-	picture = GFX_arcology
-	show_sound = event_alien_signal #random
-	location = root
+
 	trigger = {
-		is_at_war = no
-		crisis_run_optimized = no
-		can_have_remote_system = yes
-		NOT = { has_country_flag = can_have_remote_system }
+		OR = {
+			last_increased_tech = tech_subspace_drive
+			last_increased_tech = tech_jump_drive_1
+			last_increased_tech = tech_psi_jump_drive_1
+		}
+	}
+
+	immediate = {
+		country_event = { id = sfg_usefull_communication_of_sfg.3 }
+	}
+}
+country_event = {  #Can build disconected
+	id = sfg_usefull_communication_of_sfg.3
+	hide_window = no
+	is_triggered_only = yes
+	title = "can_have_system_disconected.name"
+	desc = "can_have_system_disconected.desc"
+	picture = GFX_evt_ship_travel
+	show_sound = event_alien_signal #random
+	#location = root
+	pre_triggers = {
+	 	is_ai = no
+	}
+	trigger = {
+		can_ever_remote_system = yes
+		NOT = { has_country_flag = usefull_communication_3 }
 	}
 	option = {
 		name = TY
 		hidden_effect = {
-			set_country_flag = can_have_remote_system
+			set_country_flag = usefull_communication_3
 		}
 	}
 }
@@ -194,7 +276,6 @@ country_event = { #Decision tech_terrestrial_sculpting
 			NOR = {
 				has_planet_flag = disable_sfg_usefull_communication_of_sfg20
 			}
-			
 		}
 	}
 	immediate = {
@@ -605,5 +686,87 @@ planet_event = { #message techer Accelerator
 			
 			ROOT = { set_planet_flag = disable_sfg_usefull_communication_of_sfg43 }
 		}
+	}
+}
+#from system gal obj
+ship_event = {
+	id = sfg_usefull_communication_of_sfg.50
+	hide_window = yes #debug
+	#--debug
+	 #title = "lost_system.name"
+	 #desc = "lost_system.desc"
+	#-------
+	is_triggered_only = yes
+	trigger = {
+		owner = {
+			is_ai = no
+			can_have_remote_system = no
+		}
+		
+	}
+	immediate = {
+		owner = {
+			country_event = {
+				id = sfg_usefull_communication_of_sfg.51
+			}
+		}
+		
+	}
+}
+country_event = {  #Lose station in 1 years
+	id = sfg_usefull_communication_of_sfg.51
+	hide_window = no
+	is_triggered_only = yes
+	title = "lost_system.name"
+	desc = "lost_system.desc"
+	
+	picture = GFX_evt_satellite_in_orbit
+	show_sound = event_alien_signal #random
+	location = FROMFROM
+	trigger = {
+		is_ai = no
+		#---------
+		FROMFROM = { 
+			NOT = {
+				closest_system = {
+					limit = { 
+						AND = {
+							exists = owner #owner 1 - 0
+							owner = { #
+								OR = {
+									is_same_value = root
+									AND = {
+										is_subject = yes
+										has_overlord = root
+									}
+									is_in_federation_with = root
+									root = {
+										is_subject = yes
+										has_overlord = prev
+									}
+								}
+							}
+						}
+					}
+					
+					min_steps = 1
+					max_steps = 1
+					use_bypasses = yes
+				}
+			}
+		}
+	}
+	immediate = {
+		FROMFROM = { 
+			solar_system = {
+				 set_timed_star_flag = {
+					flag = new_starbase
+					days = 600
+				}
+			}
+		}
+	}
+	option = {
+		name = TY
 	}
 }

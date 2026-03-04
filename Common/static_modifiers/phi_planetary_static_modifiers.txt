@@ -356,6 +356,34 @@ phi_pm_magnetic_clouds_1 = {
 	planet_jobs_engineering_research_produces_mult = 0.15
 }
 
+### VULCANIC ###
+
+phi_pm_vulcanic_clouds_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/gpm_lava_geysers.dds"
+	icon_frame = 3
+	planet_jobs_minerals_produces_mult = 0.1
+	planet_jobs_engineering_research_produces_mult = 0.05
+	planet_pop_assembly_reduction = 0.05
+	pop_environment_tolerance = -0.05
+	planet_structures_upkeep_mult = 0.5
+}
+
+phi_pm_vulcanic_clouds_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/gpm_lava_geysers.dds"
+	icon_frame = 2
+	planet_jobs_minerals_produces_mult = 0.15
+	planet_jobs_engineering_research_produces_mult = 0.1
+	planet_pop_assembly_reduction = 0.05
+	pop_environment_tolerance = -0.05
+	planet_structures_upkeep_mult = 0.1
+}
+
+phi_pm_vulcanic_clouds_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/gpm_lava_geysers.dds"
+	icon_frame = 1
+	planet_jobs_minerals_produces_mult = 0.25
+	planet_jobs_engineering_research_produces_mult = 0.15
+}
 ### POLLUTION ###
 
 phi_pm_atmospheric_pollution = {

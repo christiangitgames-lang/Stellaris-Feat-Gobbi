@@ -1,6 +1,13 @@
-﻿ l_english:
+﻿l_english:
  #Non traddure
-EMPIRE_SIZE_TOTAL_2:0 "$VALUE|0Y$"
- ADMIN_CAP_TOTAL_2:0 "$VALUE|Y$"
- ADMIN_CAP_VALUE_2:0 "$VALUE|Y$"
-BuildingS_total:0 "$MOD_PLANET_MAX_BUILDINGS_ADD$: $VALUE|Y$"
+EMPIRE_SIZE_TOTAL_2: "$VALUE|0Y$"
+ADMIN_CAP_TOTAL_2: "$VALUE|Y$"
+ADMIN_CAP_VALUE_2: "$VALUE|Y$"
+BuildingS_total: "$MOD_PLANET_MAX_BUILDINGS_ADD$: $VALUE|Y$"
+# PLANET_AMENITIES_POPS_USAGE:0 "Pop Amenities Usage (£pop£ $NUM_POPS|Y$): $VALUE|R0$ debug uam [this.gestalt_ameninties_usage] $usagepop$"
+
+#building_machine_capital_desc:0 "DEBUG $debug_s2$"
+#building_hive_capital_desc:0 "DEBUG $debug_s2$"
+#building_hab_capital_desc:0 "DEBUG $debug_s2$"
+
+city_industrial_1_desc: "This city balances the needs of war and peace. $debug_s3$"

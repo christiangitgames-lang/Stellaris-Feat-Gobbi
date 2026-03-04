@@ -129,3 +129,68 @@ sfg_gestalt_count_noomicidal = {
 # 		}
 # 	}
 # }
+add_special_deposit_maurader_neighbor = {
+	random_system = {
+		limit = {
+			NOR = {
+				has_star_flag = deposit_mar_added
+				any_neighbor_system = { has_star_flag = deposit_mar_added }
+			}
+			NOT = { has_star_flag = rauder_sistem }
+			has_star_flag = marauder_cluster
+			any_system_planet = {
+				has_deposit = no
+			}
+		}
+		random_system_planet = {
+			limit = {
+				has_deposit = no
+				is_star = no
+			}
+			random_list = {
+				50 = { add_deposit = d_alloys_3 }
+				25 = { add_deposit = d_alloys_4 }
+				25 = { add_deposit = d_alloys_5 }
+			}
+		}
+		set_star_flag = deposit_mar_added
+		#set_name = "Debug_system"
+		every_neighbor_system = { set_star_flag = deposit_mar_added }
+		#
+	}
+	random_system = {
+		limit = {
+			NOR = {
+				has_star_flag = deposit_mar_added
+				any_neighbor_system = { has_star_flag = deposit_mar_added }
+			}
+			NOT = { has_star_flag = rauder_sistem }
+			has_star_flag = marauder_cluster
+			any_system_planet = {
+				has_deposit = no
+			}
+		}
+		random_system_planet = {
+			limit = {
+				has_deposit = no
+			}
+			random_list = {
+				50 = { add_deposit = d_unity_value_1 }
+				25 = { add_deposit = d_unity_value_2 }
+				25 = { }
+			}
+		}
+		set_star_flag = deposit_mar_added
+		#set_name = "Debug_system"
+		every_neighbor_system = { set_star_flag = deposit_mar_added }
+		#
+	}
+}
+clean_flag_deposit_marauder = {
+	every_system = {
+		limit = {
+				has_star_flag = deposit_mar_added
+		}
+		remove_star_flag = deposit_mar_added
+	}
+}

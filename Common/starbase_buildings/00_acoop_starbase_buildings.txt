@@ -73,3 +73,75 @@ mario_fleet_academy = { #dedicato a mario minaccia, l'uomo più forte dell'unive
 		}
 	}
 }
+mining_bay = {
+	icon = "GFX_spaceport_mining_bay"
+	construction_days = 180
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_space_mining_1 }
+
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport_or_ring"
+			OR = {
+				has_starbase_size >= starbase_starport
+				is_orbital_ring = yes
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_shattered_world"
+			solar_system = {
+				any_system_planet = {
+					OR = {
+						is_planet_class = pc_shattered
+						is_planet_class = pc_shattered_2
+					}
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 50
+		}
+
+		produces = {
+			minerals = 5
+			mult = value:bonus_starbase_age
+		}
+
+		upkeep = {
+			energy = 1
+			mult = value:bonus_starbase_age
+		}
+	}
+	triggered_system_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_void_born = no
+			}
+		}
+		job_miner_add = 100
+	}
+	triggered_system_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_void_born = yes
+			}
+		}
+		job_miner_add = 200
+	}
+
+	show_in_tech = "tech_space_mining_1"
+
+	ai_weight = {
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+	}
+}

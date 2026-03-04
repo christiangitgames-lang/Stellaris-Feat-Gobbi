@@ -442,7 +442,7 @@ country_event = { # Dyson Swarm system selector dialogue
 		# Energy
 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = energy }
 		sba_dyson_swarm_site_ordered_effect = { POSITION = 1 RESOURCE = energy }
-		sba_dyson_swarm_site_ordered_effect = { POSITION = 2 RESOURCE = energy }
+		#sba_dyson_swarm_site_ordered_effect = { POSITION = 2 RESOURCE = energy }
 		# Other mining
 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = minerals }
 		sba_dyson_swarm_site_ordered_effect = { POSITION = 0 RESOURCE = food }
@@ -508,20 +508,20 @@ country_event = { # Dyson Swarm system selector dialogue
 			}
 		}
 	}
-	option = {
-		name = sba_system_search.31.energy2
-		trigger = {
-			exists = event_target:sba_dyson_swarm_energy_star_2
-		}
-		# is_dialog_only = yes
-		# event_target:sba_dyson_swarm_energy_star_2 = { save_event_target_as = sba_goto_location }
-		hidden_effect = {
-			country_event = {
-				id = sba_system_search.31
-				scopes = { from = event_target:sba_dyson_swarm_energy_star_2 }
-			}
-		}
-	}
+	# option = {
+	# 	name = sba_system_search.31.energy2
+	# 	trigger = {
+	# 		exists = event_target:sba_dyson_swarm_energy_star_2
+	# 	}
+	# 	# is_dialog_only = yes
+	# 	# event_target:sba_dyson_swarm_energy_star_2 = { save_event_target_as = sba_goto_location }
+	# 	hidden_effect = {
+	# 		country_event = {
+	# 			id = sba_system_search.31
+	# 			scopes = { from = event_target:sba_dyson_swarm_energy_star_2 }
+	# 		}
+	# 	}
+	# }
 	# Other mining
 	option = {
 		name = sba_system_search.31.minerals

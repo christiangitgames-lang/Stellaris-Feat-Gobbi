@@ -527,10 +527,10 @@ Free_starbase_buildings = {
 		subtract = 1
 		has_starbase_building = nebula_refinery
 	}
-	modifier = {
-		subtract = 1
-		has_starbase_building = nebula_refinery_gestalt
-	}
+	# modifier = {
+	# 	subtract = 1
+	# 	has_starbase_building = nebula_refinery_gestalt
+	# }
 	modifier = {
 		subtract = 1
 		has_starbase_building = listening_post
@@ -1180,6 +1180,112 @@ used_naval_capacity_percent_div2 = {
 	add = owner.trigger:used_naval_capacity_percent #0.25 
 	mult = 0.5 # 0.125
 }
+mult_research_foreign_weight = {
+	base = 0.1
+	#print_scope_trigger = yes
+	#has_intel_report
+	modifier = {
+		add = 0.5
+		any_neighbor_country = {
+			prev = {
+				has_intel_level = {
+						who = prev
+						category = technology
+						level >= 3
+				}
+				
+			}
+			relative_power = {
+				who = PREV
+				category = technology
+				#value <= equivalent
+				value >= equivalent #inferior
+			}
+		}
+	}
+	modifier = {
+		add = 0.5
+		any_neighbor_country = {
+
+			prev = {
+
+				has_intel_level = {
+						who = prev
+						category = technology
+						level >= 2
+				}
+			}
+			relative_power = {
+				who = prev
+				category = technology
+				#value <= equivalent
+				value >= equivalent #inferior
+			}
+			
+		}
+	}
+	modifier = {
+		add = 1
+		any_neighbor_country = {
+			is_country_type = default
+			prev = {
+
+				has_intel_level = {
+						who = prev
+						category = technology
+						level >= 1
+				}
+			}
+			relative_power = {
+				who = prev
+				category = technology
+				#value <= equivalent
+				value >= equivalent #inferior
+			}
+			
+		}
+	}
+	modifier = {
+		add = 1
+		any_neighbor_country = {
+			is_country_type = default
+			prev = {
+
+				has_intel_level = {
+						who = prev
+						category = technology
+						level >= 1
+				}
+			}
+			relative_power = {
+				who = prev
+				category = technology
+				#value <= inferior #inferior
+				value >= superior #inferior
+			}
+		}
+	}
+	modifier = {
+		add = 1
+		any_neighbor_country = {
+			is_country_type = default
+			prev = {
+
+				has_intel_level = {
+						who = prev
+						category = technology
+						level >= 1
+				}
+			}
+			relative_power = {
+				who = prev
+				category = technology
+				#value = pathetic #pathetic
+				value = overwhelming #pathetic
+			}
+		}
+	}
+}
 mult_research_foreign = {
 	base = 0.1
 	#print_scope_trigger = yes
@@ -1330,5 +1436,33 @@ count_no_gestalt = {
 			limit = { is_regular_empire = yes }
 		}
 		mode = add
+	}
+}
+bonus_starbase_age = {
+	#every 30-30 and 20-20-20 upgrade 20%
+	base = 1
+	modifier = {
+		add = 0.2
+		years_passed > 30
+	}
+	modifier = {
+		add = 0.2
+		years_passed > 60
+	}
+	modifier = {
+		add = 0.2
+		years_passed > 90
+	}
+	modifier = {
+		add = 0.2
+		years_passed > 120
+	}
+	modifier = {
+		add = 0.2
+		years_passed > 150
+	}
+	modifier = {
+		add = 0.2
+		years_passed > 200
 	}
 }

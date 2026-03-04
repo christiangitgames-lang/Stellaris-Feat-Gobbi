@@ -23,6 +23,13 @@ automate_fortress_planet = {
 			building = building_dread_encampment
 			available = { owner = { has_valid_civic = civic_reanimated_armies } }
 		}
+		1_amenities = {
+			building = building_luxury_residence
+			planet_limit = 1
+			available = {
+				free_amenities < 1000
+			}
+		}
 		2_sfg = {
 			building = building_medical_1
 		}

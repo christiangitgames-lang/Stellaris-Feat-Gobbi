@@ -25,6 +25,13 @@ automate_generator_planet = {
 		1 = {
 			building = building_energy_grid
 		}
+		1_amenities = {
+			building = building_luxury_residence
+			planet_limit = 1
+			available = {
+				free_amenities < 1000
+			}
+		}
 		2_sfg = {
 			building = building_medical_1
 		}

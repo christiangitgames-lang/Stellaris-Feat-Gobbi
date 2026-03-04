@@ -341,6 +341,7 @@ solar_panel_network = {
 
 		produces = {
 			energy = 6
+			mult = value:bonus_starbase_age
 		}
 
 		produces = {
@@ -392,6 +393,7 @@ trading_hub = {
 		}
 		upkeep = {
 			energy = 2
+			mult = value:bonus_starbase_age
 		}
 		produces = {
 			trigger = {
@@ -405,6 +407,7 @@ trading_hub = {
 		}
 		produces = {
 			trade = 8
+			mult = value:bonus_starbase_age
 		}
 		produces = {
 			trigger = {
@@ -412,13 +415,15 @@ trading_hub = {
 				has_starbase_building = offworld_trading_company
 			}
 			trade = 4
+			mult = value:bonus_starbase_age
 		}
 		produces = {
 			trigger = {
 				exists = this
 				has_starbase_building = warp_fluctuator
 			}
-			trade = 2
+			mult = value:bonus_starbase_age
+
 		}
 	}
 
@@ -588,6 +593,7 @@ astromining_bay = {
 
 		produces = { #From the Solar panels
 			energy = 5
+			mult = value:bonus_starbase_age
 		}
 
 		produces = {

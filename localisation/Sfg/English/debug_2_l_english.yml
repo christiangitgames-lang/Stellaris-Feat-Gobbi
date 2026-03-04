@@ -1,0 +1,25 @@
+﻿
+l_english:
+  #non traddure
+ #debug
+sfgdebugtextv: "[root.sfgdebugvalue]"
+sfgdebugtextv2: "[root.sfgdebugvalue2]"
+
+# sfgdebugtext: "§Y[this.sfgdebugtest]§!"
+# sfgdebugtext2: "§Y[this.sfgdebugtest2]§!"
+sfgdebugtext: "[this.sfgdebugtest] , [this.sfgdebugtest2]"
+sfgdebugtext2: "min : [root.sfgdebugvalue] dam: [root.sfgdebugvalue2]"
+undefinied: "Not defined (error)"
+d_consumer_goods_1: "cg1"
+d_consumer_goods_2: "cg2"
+d_consumer_goods_3: "cg3"
+debug_long: "debug [this.debug_text] \n debug: This: \\[This.GetName]- Root: \\[Root.GetName] - Prev: \\[Prev.GetName] - PrevPrev \\[PrevPrev.GetName] - FROM: \\[FROM.GetName] - FROMFROM: \\[FROMFROM.GetName]"
+debug_s3: "DEBUG :  \n [this.debug_text] \n This: \\[This.GetName] \n-------------------" #\n marauders empire [this.get_galaxy_setup_value_num_marauder_empires]
+debug_r: "DEBUG : \n marauders empire [root.get_galaxy_setup_value_num_marauder_empires] \n [root.debug_text] \n root: \\[root.GetName] \n-------------------"
+usagepop: "debug uam [this.gestalt_ameninties_usage] \n debug: This: \\[This.GetName]- Root: \\[Root.GetName] - Prev: \\[Prev.GetName]"
+debug_s2: "Debug esteso Root: \\[Root.GetName] This: \\[This.GetName] \n \n usage [this.gestalt_ameninties_usage] planet_amenities_no_happiness_add [this.planet_amenities_no_happiness_add_text] \n planet_amenities_add_text [this.planet_amenities_add_text] \n free_amenities_text [this.free_amenities_text] \n pop_amount [this.pop_amount_text] \n sfg_planet_amenities_mult [this.sfg_planet_amenities_mult_text]" 
+edict_Settings_mod: "Settaggi mod"
+edict_Settings_mod_desc: ""
+trovato: "Trovato"
+can_have_remote_system_fail_text: "§RCan't§! have Remote System"
+can_have_remote_system_sucess_text: "§GCan§! have Remote System"

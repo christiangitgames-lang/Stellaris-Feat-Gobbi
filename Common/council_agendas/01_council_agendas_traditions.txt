@@ -160,7 +160,21 @@ agenda_open_markets = {
 	finish_modifier = agenda_open_markets_finish
 	effect = {
 		custom_tooltip = council_agenda_open_markets_effect
+		set_policy = {
+			policy = trade_policy
+			option = trade_policy_trade_league
+			cooldown = no
+		}
+		
 	}
+	# hidden_effect = {
+	# 	set_policy = {
+	# 		policy = Starbase_automation
+	# 		option = Hidroponic
+	# 		cooldown = no
+	# 	}
+	# }
+	
 }
 
 agenda_open_markets_criminal_heritage = {
@@ -180,6 +194,11 @@ agenda_open_markets_criminal_heritage = {
 	finish_modifier = agenda_open_markets_criminal_heritage_finish
 	effect = {
 		custom_tooltip = council_agenda_open_markets_effect
+		set_policy = {
+			policy = trade_policy
+			option = trade_policy_trade_league
+			cooldown = no
+		}
 	}
 }
 

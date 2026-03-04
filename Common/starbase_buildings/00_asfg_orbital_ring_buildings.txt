@@ -1,0 +1,35 @@
+ring_food_hub_mk2 = {
+	icon = "GFX_orbitalring_food_hub"
+	construction_days = 360
+	starbase_type = orbital_ring
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_food_processing_3 }
+		is_orbital_ring = yes
+	}
+	# possible = {
+		
+	# }
+	planet_modifier = {
+		district_farming_max_mult = 0.5
+	}
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 200
+			volatile_motes = 200
+			influence = 25
+		}
+
+		upkeep = {
+			energy = 2
+			volatile_motes = 1
+		}
+	}
+
+	show_in_tech = "tech_food_processing_3"
+	ai_weight = {
+		weight = 100
+	}
+}

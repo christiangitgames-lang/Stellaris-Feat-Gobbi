@@ -28,7 +28,13 @@ automate_unity_planet = {
 		1 = {
 			building = building_autochthon_monument
 		}
-		
+		1_amenities = {
+			building = building_luxury_residence
+			planet_limit = 1
+			available = {
+				free_amenities < 1000
+			}
+		}
 		1_corp = {
 			building = building_corporate_monument
 		}

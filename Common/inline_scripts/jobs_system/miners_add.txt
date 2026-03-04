@@ -1,0 +1,33 @@
+### Regular Empires
+#jobs_system/miner_add
+triggered_system_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_fallen_empire_spiritualist = no
+		}
+	}
+	job_miner_add = $AMOUNT$
+}
+
+# Spiritualist FE
+triggered_system_modifier = {
+	potential = {
+		#NOT = { is_planet_class = pc_shattered_ring_habitable }
+		exists = owner
+		owner = { is_fallen_empire_spiritualist = yes }
+	}
+	job_fe_acolyte_mine_add = $AMOUNT$
+}
+
+# Gestalt Empires
+triggered_system_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = yes
+		}
+	}
+	job_mining_drone_add = $AMOUNT$
+}

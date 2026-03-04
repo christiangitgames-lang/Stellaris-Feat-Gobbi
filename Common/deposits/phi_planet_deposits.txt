@@ -67,7 +67,7 @@ d_phi_exotic_gas_10 = {
 	resources = {
 		category = planet_deposits
 		produces = {
-			exotic_gases = 5
+			exotic_gases = 6
 		}
 	}
 }

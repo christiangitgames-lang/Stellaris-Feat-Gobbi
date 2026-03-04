@@ -26,6 +26,13 @@ automate_generator_betharian_planet = {
 		1 = {
 			building = building_betharian_power_plant
 		}
+		1_amenities = {
+			building = building_luxury_residence
+			planet_limit = 1
+			available = {
+				free_amenities < 1000
+			}
+		}
 		2_sfg = {
 			building = building_medical_1
 		}

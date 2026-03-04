@@ -18,7 +18,7 @@ d_null_deposit = {
 	}
 
 	drop_weight = {
-		weight = 73.5
+		weight = 72.98
 	}
 }
 

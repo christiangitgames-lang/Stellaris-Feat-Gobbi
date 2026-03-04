@@ -696,7 +696,7 @@ civic_hive_sovereign_guardianship = {
 	modification = no
 
 	modifier = {
-		empire_size_colonies_mult = 1
+		empire_size_colonies_mult = 0.8 #sfg go to 25
 		empire_size_systems_mult = 1.50
 		empire_size_pops_mult = -0.25
 		empire_size_districts_mult = -0.50
@@ -2117,7 +2117,7 @@ civic_machine_sovereign_guardianship = {
 	modification = no
 
 	modifier = {
-		empire_size_colonies_mult = 1
+		empire_size_colonies_mult = 0.8 #sfg go to 25
 		empire_size_systems_mult = 1.50
 		empire_size_pops_mult = -0.25
 		empire_size_districts_mult = -0.50

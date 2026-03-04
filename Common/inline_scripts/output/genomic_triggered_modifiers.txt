@@ -1,0 +1,34 @@
+triggered_country_modifier = {
+	potential = {
+		healthcare_is_genomic_researcher_trigger = yes
+		exists = owner
+		owner = {
+			has_completed_genetic_situation = no
+		}
+	}
+	biomorphosis_progress_mult = 0.03
+}
+
+triggered_planet_modifier = {
+	potential = {
+		healthcare_is_genomic_researcher_trigger = yes
+		exists = owner
+		owner = {
+			has_cloning_artificial_population_tradition = yes
+			is_gestalt = no
+		}
+	}
+	planet_crime_add = @genomic_cloning_crime
+}
+
+triggered_planet_modifier = {
+	potential = {
+		healthcare_is_genomic_researcher_trigger = yes
+		exists = owner
+		owner = {
+			has_cloning_artificial_population_tradition = yes
+			is_gestalt = yes
+		}
+	}
+	planet_crime_no_happiness_add = @genomic_cloning_crime
+}

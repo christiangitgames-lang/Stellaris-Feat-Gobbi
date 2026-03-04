@@ -1092,12 +1092,12 @@ zone_anglers = {
 
 	inline_script = {
 		script = jobs/zone_farmers_add
-		AMOUNT = 75 #sfg richiesta da primate van cetus era 50/50
+		AMOUNT = 50
 	}
 
 	inline_script = {
 		script = jobs/zone_factory_add
-		AMOUNT = 25
+		AMOUNT = 50
 	}
 
 	zone_sets = {

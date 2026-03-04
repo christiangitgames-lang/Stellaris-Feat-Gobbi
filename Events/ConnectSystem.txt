@@ -207,7 +207,10 @@ country_event = {
 			limit = {
 				is_ship_class = shipclass_starbase
 				solar_system = {
-					NOT = { has_star_flag = connected }
+					NOR = { 
+						has_star_flag = connected #0
+						has_star_flag = new_starbase #0
+					}
 				}
 			}
 			destroy_fleet = this

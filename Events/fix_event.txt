@@ -1,0 +1,52 @@
+namespace = fix_event
+
+# country_event = { #setto bonus malus stability per gestalt
+# 	id = fix_event.1
+
+# 	hide_window = yes
+
+# 	is_triggered_only = yes
+# 	trigger = {
+# 		is_gestalt = yes
+# 	}
+# 	immediate = {
+# 		every_owned_planet = {
+# 			limit = {
+# 				is_colony = yes
+# 			}
+			
+# 			if = {
+# 				limit = { free_amenities >= 0 }
+# 				modifier = {
+# 					gestalt_stability_add = 10 #value:stability_bonus_gestalt
+# 				}
+# 			}
+# 			else_if = {
+# 				limit = { free_amenities < 0 }
+# 				modifier = {
+# 					gestalt_stability_add = -20 #value:stability_malus_gestalt
+# 				}
+# 			}
+# 		}
+# 	}
+# }
+# country_event = { #pulisco malus
+# 	id = fix_event.2
+
+# 	hide_window = yes
+
+# 	is_triggered_only = yes
+# 	trigger = {
+# 		is_gestalt = no
+# 	}
+# 	immediate = {
+# 		every_owned_planet = {
+# 			limit = {
+# 				is_colony = yes
+# 			}
+# 			modifier = {
+# 				gestalt_stability_add = 0
+# 			}
+# 		}
+# 	}
+# }

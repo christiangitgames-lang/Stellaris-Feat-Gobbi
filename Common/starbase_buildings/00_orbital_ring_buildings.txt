@@ -124,6 +124,7 @@ ring_food_hub = {
 	}
 }
 
+
 ring_trade_hub = {
 	icon = "GFX_orbitalring_trade_hub"
 	construction_days = 360

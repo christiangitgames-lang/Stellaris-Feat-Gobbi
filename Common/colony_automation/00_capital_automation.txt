@@ -7,6 +7,7 @@ automate_capital_planet = {
 			has_designation = col_capital_hive
 			has_designation = col_capital_machine
 		}
+		owner = { num_tradition_categories < 4 }
 	}
 
 	prio_districts = {
@@ -19,8 +20,8 @@ automate_capital_planet = {
 	}
 	
 	prio_zones = {
-		zone_industrial
 		zone_research_unity
+		zone_industrial
 		zone_foundry
 		zone_energy
 		zone_food
@@ -32,21 +33,21 @@ automate_capital_planet = {
 			building = building_embassy
 		}
 		
-		2 = {
-			building = building_autochthon_monument
-		}
+		# 2 = {
+		# 	building = building_autochthon_monument
+		# }
 		
-		2_corp = {
-			building = building_corporate_monument
-		}
+		# 2_corp = {
+		# 	building = building_corporate_monument
+		# }
 		
-		2_mach = {
-			building = building_simulation_1
-		}
+		# 2_mach = {
+		# 	building = building_simulation_1
+		# }
 
-		2_hive = {
-			building = building_sensorium_1
-		}
+		# 2_hive = {
+		# 	building = building_sensorium_1
+		# }
 		
 		2_memo = {
 			building = building_galactic_memorial_1
@@ -56,13 +57,13 @@ automate_capital_planet = {
 			building = building_vultaum_reality_computer
 		}
 		
-		4 = {
-			building = building_institute
-		}
+		# 4 = {
+		# 	building = building_institute
+		# }
 
-		4_mach = {
-			building = building_supercomputer
-		}
+		# 4_mach = {
+		# 	building = building_supercomputer
+		# }
 		
 		5 = {
 			building = building_archaeostudies_faculty

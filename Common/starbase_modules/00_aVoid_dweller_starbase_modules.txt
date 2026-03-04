@@ -20,10 +20,15 @@ civilian_anchorage = {
 		}
 		produces = {
 			trade = 8
+			mult = value:bonus_starbase_age
 		}
 		upkeep = {
 			alloys = 1
 			mult = value:Count_planet_system
+		}
+		upkeep = {
+			energy = 1
+			mult = value:bonus_starbase_age
 		}
 	}
 	system_modifier = {
@@ -74,12 +79,14 @@ starm_science_hub = {
 		produces = {
 			physics_research = 4
 			engineering_research = 4
+			mult = value:bonus_starbase_age
 		}
 
 		produces = {
 			trigger = { has_starbase_building = starm_science_booster }
 			physics_research = 2
 			engineering_research = 2
+			mult = value:bonus_starbase_age
 		}
 
 		produces = {
@@ -87,45 +94,11 @@ starm_science_hub = {
 			society_research = 2
 			engineering_research = 2
 			physics_research = 2
-		}
-		produces = {
-			trigger = { years_passed > 50 }
-			engineering_research = 1
-			physics_research = 1
-		}
-		produces = {
-			trigger = { years_passed > 75 }
-			engineering_research = 1
-			physics_research = 1
-		}
-		produces = {
-			trigger = { years_passed > 100 }
-			engineering_research = 1
-			physics_research = 1
-		}
-		produces = {
-			trigger = { years_passed > 125 }
-			engineering_research = 1
-			physics_research = 1
+			mult = value:bonus_starbase_age
 		}
 		upkeep = {
 			energy = 6
-		}
-		upkeep = {
-			trigger = { years_passed > 50 }
-			energy = 1.5
-		}
-		upkeep = {
-			trigger = { years_passed > 75 }
-			energy = 1.5
-		}
-		upkeep = {
-			trigger = { years_passed > 100 }
-			energy = 1.5
-		}
-		upkeep = {
-			trigger = { years_passed > 125 }
-			energy = 1.5
+			mult = value:bonus_starbase_age
 		}
 	}
 
@@ -161,59 +134,26 @@ starm_culture_hub = {
 		produces = {
 			unity = 4
 			society_research = 4
+			mult = value:bonus_starbase_age
 		}
 
 		produces = {
 			trigger = { has_starbase_building = starm_culture_booster }
 			unity = 2
 			society_research = 2
+			mult = value:bonus_starbase_age
 		}
 
 		produces = {
 			trigger = { has_starbase_building = art_college }
 			unity = 2
 			society_research = 2
-		}
-		produces = {
-			trigger = { years_passed > 50 }
-			unity = 2
-			society_research = 2
-		}
-		produces = {
-			trigger = { years_passed > 75 }
-			unity = 2
-			society_research = 2
-		}
-		produces = {
-			trigger = { years_passed > 100 }
-			unity = 2
-			society_research = 2
-		}
-		produces = {
-			trigger = { years_passed > 125 }
-			unity = 2
-			society_research = 2
+			mult = value:bonus_starbase_age
 		}
 
 		upkeep = {
-			trigger = { years_passed > 75 }
 			energy = 6
-		}
-		upkeep = {
-			trigger = { years_passed > 50 }
-			energy = 3
-		}
-		upkeep = {
-			trigger = { years_passed > 75 }
-			energy = 3
-		}
-		upkeep = {
-			trigger = { years_passed > 100 }
-			energy = 3
-		}
-		upkeep = {
-			trigger = { years_passed > 125 }
-			energy = 3
+			mult = value:bonus_starbase_age
 		}
 	}
 
@@ -260,11 +200,16 @@ administrative_hub = {
 
 		produces = {
 			unity = 2
+			mult = value:bonus_starbase_age
 		}
 
 		upkeep = {
-			energy = 4
+			energy = 3
 			mult = value:Count_planet_system
+		}
+		upkeep = {
+			energy = 1
+			mult = value:bonus_starbase_age
 		}
 	}
 
@@ -314,11 +259,16 @@ administrative_swarm_hub = {
 
 		produces = {
 			unity = 2
+			mult = value:bonus_starbase_age
 		}
 
 		upkeep = {
-			energy = 4
+			energy = 3
 			mult = value:Count_planet_system
+		}
+		upkeep = {
+			energy = 1
+			mult = value:bonus_starbase_age
 		}
 	}
 	triggered_system_modifier = {

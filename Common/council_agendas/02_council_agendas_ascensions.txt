@@ -833,6 +833,7 @@ agenda_nanotech_unstoppable_swarm = {
 	modifier = {
 		shipsize_nanite_swarmer_build_speed_mult = 0.20
 		ship_nanite_swarmer_cost_mult = -0.15
+		ship_nanite_interdictor_cost_mult = -0.15
 	}
 	finish_modifier = agenda_nanotech_unstoppable_swarm_finish
 	ai_weight = {

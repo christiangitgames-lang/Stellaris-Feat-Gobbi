@@ -1,0 +1,40 @@
+namespace = debug
+country_event = { #found planet
+	id = debug.10
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		random_system = {
+			limit = {
+				any_system_planet = {
+					#site_sgorbio
+					exists = archaeological_site
+					#archaeological_site = site_sgorbio
+				}
+			}
+			save_event_target_as = founded_system
+			#set_name = founded_site_sgorbio
+		}
+		country_event = {
+			id = debug.11
+			scopes = { from = event_target:founded_system }#testare se può usare event fuori?
+		}
+    }
+}
+
+country_event = { # found
+	id = debug.11
+	
+	trigger = {
+		always = yes
+	}
+	is_triggered_only = yes
+	inline_script = {
+		script = events/settable_event
+		TITLE = sfgdebugtext
+		DESC = "trovato" 
+		PICTURE = GFX_evt_star_chart
+		LOCATION = FROM
+	}
+}

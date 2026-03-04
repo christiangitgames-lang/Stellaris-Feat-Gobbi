@@ -1848,7 +1848,7 @@ civic_corporate_sovereign_guardianship = {
 	}
 
 	modifier = {
-		empire_size_colonies_mult = 1
+		empire_size_colonies_mult = 0.8 #sfg go to 25
 		empire_size_branch_office_mult = 1
 		empire_size_systems_mult = 1.50
 		empire_size_pops_mult = -0.25

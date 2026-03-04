@@ -24,7 +24,13 @@ automate_penal_planet = {
 				always = yes
 			}
 		}
-		
+		1_amenities = {
+			building = building_luxury_residence
+			planet_limit = 1
+			available = {
+				free_amenities < 1000
+			}
+		}
 		2 = {
 			building = building_production_center
 			available = {

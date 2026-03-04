@@ -23,7 +23,7 @@ genetic_ascension_situation = {
 		stage_1 = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_blue
-			end = 600
+			end = 500
 			on_first_enter = {
 				situation_event = { id = bio.5 days = 1 }
 			}
@@ -32,7 +32,7 @@ genetic_ascension_situation = {
 		stage_2 = {
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_blue
-			end = 1200
+			end = 1000
 			on_first_enter = {
 				situation_event = { id = bio.10 }
 			}
@@ -41,7 +41,7 @@ genetic_ascension_situation = {
 		stage_3 = {
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_blue
-			end = 1800
+			end = 1500
 			on_first_enter = {
 				situation_event = { id = bio.15 }
 			}

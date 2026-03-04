@@ -1,0 +1,7 @@
+﻿l_english:
+Guide_connect_system:0 "you §Rcan't§! have systems not connected to one of your planets or to allies, except when you are:\n- §YWAR§!\n- §YCrisis running§!\n- Or if you have the technologies $tech_subspace_drive$ $tech_jump_drive_1$ $tech_psi_jump_drive_1$\n- Or a civic such as $civic_eager_explorers$, $civic_privatized_exploration$, $civic_hive_stargazers$, $civic_machine_exploration_protocol$"
+
+Guide_deposit_systems:0 "Orbital deposits now provide many more resources, especially research, and as the game progresses the research gained from orbitals increases dramatically."
+
+Guida_modifier:0 "If you open your empire screen you will see various modifiers; 'start game' changes into 'early game', 'mid game', and 'late game' as the campaign progresses. Check them and read them!"
+

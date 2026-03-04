@@ -1811,6 +1811,10 @@ d_alloys_1 = {
 			factor = 1.5
 			is_inside_nebula = yes
 		}
+		modifier = {
+			factor = 1.5
+			is_marauder_cluster = yes
+		}
 	}
 }
 
@@ -1839,6 +1843,10 @@ d_alloys_2 = {
 			factor = 1.5
 			is_inside_nebula = yes
 		}
+		modifier = {
+			factor = 1.5
+			is_marauder_cluster = yes
+		}
 	}
 }
 
@@ -1855,9 +1863,15 @@ d_alloys_3 = {
 	}
 
 	potential = {
-		is_planet_class = pc_junk
+		is_star = no
 	}
-	drop_weight = { weight = 0 }
+	drop_weight = { 
+		weight = 0 
+		modifier = {
+			set = 1
+			is_marauder_cluster = yes
+		}
+	}
 }
 
 d_alloys_4 = {
@@ -1943,12 +1957,43 @@ d_food_3 = {
 	resources = {
 		category = orbital_mining_deposits
 		produces = {
+			# trigger = {
+            #     OR = {
+			# 		NOT = { exists = space_owner }
+            #     	space_owner = { country_uses_food = yes }
+			# 	}
+            # }
 			food = 3
 		}
+		# produces = {
+		# 	trigger = {
+        #          exists = space_owner
+        #          space_owner = { country_uses_food = no }
+        #     }
+		# 	energy = 2
+		# }
+		# produces = {
+		# 	trigger = {
+        #         FROM = {
+		# 			exists = space_owner
+        #         	space_owner = { country_uses_food = yes }
+		# 		}
+        #     }
+		# 	food = 30
+		# }
+		# produces = {
+        #     trigger = {
+        #         exists = space_owner
+        #         space_owner = { country_uses_food = no }
+        #     }
+        #     energy = 3
+        # }
 	}
-
-	potential = { NOT = { is_planet_class = pc_toxic } }
-	drop_weight = { weight = 1 }
+ 
+	potential = { 
+		can_have_food_deposits = yes
+	}
+	drop_weight = { weight = 0.85 }
 }
 
 d_food_4 = {
@@ -1958,12 +2003,27 @@ d_food_4 = {
 	resources = {
 		category = orbital_mining_deposits
 		produces = {
+			# trigger = {
+            #     OR = {
+			# 		NOT = { exists = space_owner }
+            #     	space_owner = { country_uses_food = yes }
+			# 	}
+            # }
 			food = 4
 		}
+		# produces = {
+        #     trigger = {
+        #          exists = space_owner
+        #          space_owner = { country_uses_food = no }
+        #     }
+        #     energy = 3
+        # }
 	}
 
-	potential = { always = no }
-	drop_weight = { weight = 0 }
+	potential = { 
+		can_have_food_deposits = yes
+	}
+	drop_weight = { weight = 0.1 }
 }
 
 d_food_5 = {
@@ -1973,12 +2033,33 @@ d_food_5 = {
 	resources = {
 		category = orbital_mining_deposits
 		produces = {
+			# trigger = {
+            #     OR = {
+			# 		NOT = { exists = space_owner }
+            #     	space_owner = { country_uses_food = yes }
+			# 	}
+            # }
 			food = 5
 		}
+		# produces = {
+        #     trigger = {
+        #         exists = space_owner
+        #         space_owner = { country_uses_food = no }
+        #     }
+        #     energy = 4
+        # }
 	}
 
-	potential = { always = no }
-	drop_weight = { weight = 0 }
+	potential = { 
+		can_have_food_deposits = yes
+	}
+	drop_weight = { 
+		weight = 0.05 
+		modifier = {
+			factor = 0.5
+			is_star = yes
+		}
+	}
 }
 
 d_food_6 = {
@@ -1988,12 +2069,34 @@ d_food_6 = {
 	resources = {
 		category = orbital_mining_deposits
 		produces = {
+			# trigger = {
+            #     OR = {
+			# 		NOT = { exists = space_owner }
+            #     	space_owner = { country_uses_food = yes }
+			# 	}
+            # }
 			food = 6
 		}
+		# produces = {
+        #     trigger = {
+				
+        #         exists = space_owner
+        #         space_owner = { country_uses_food = no }
+        #     }
+        #     energy = 5
+        # }
 	}
 
-	potential = { always = no }
-	drop_weight = { weight = 0 }
+	potential = { 
+		can_have_food_deposits = yes
+	}
+	drop_weight = { 
+		weight = 0.02 
+		modifier = {
+			factor = 0.5
+			is_star = yes
+		}
+	}
 }
 
 d_food_10 = {

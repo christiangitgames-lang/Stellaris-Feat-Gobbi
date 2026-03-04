@@ -91,7 +91,7 @@ Settings_mod = {
 		cost = {}
 	}
 	potential = {
-		always = yes
+		is_ai = no
 		# OR = {
 		# 	has_technology = "tech_orbital_arc_furnace"
 		# 	has_technology = "tech_dyson_swarm"
@@ -104,6 +104,11 @@ Settings_mod = {
 	}
 
 	allow = {
+		custom_tooltip = {
+			fail_text = "can_have_remote_system_fail_text"
+			success_text = "can_have_remote_system_sucess_text"
+			can_have_remote_system = yes
+		}
 		custom_tooltip = {
 			fail_text = "is_debug_no"
 			success_text = is_debug_si
@@ -129,6 +134,152 @@ Settings_mod = {
 	effect = {
 	}
 
+	on_disabled = {
+	}
+}
+Counterspionage_1 = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+	resources = {
+		category = edicts
+		cost = {
+			energy = 1
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = 1
+			multiplier = value:edict_size_effect
+		}
+	}
+	potential = {
+		always = yes
+		# OR = {
+		# 	has_technology = "tech_orbital_arc_furnace"
+		# 	has_technology = "tech_dyson_swarm"
+		# 	has_technology = "tech_habitat_1"
+		# 	has_technology = "tech_quantum_catapult"
+		# 	has_technology = "tech_hyper_relays" # For enabling notifications
+		# 	has_tradition = tr_nanotech_adopt # Nanite Harvesters
+		# 	has_ascension_perk = ap_hydrocentric # Ice Mining
+		# }
+	}
+
+	allow = {
+		OR = {
+			count_envoy = {
+				count >= 1
+			}
+			has_edict = Counterspionage_2
+		}
+	}
+	modifier = {
+		envoys_add = -1
+		intel_encryption_add = 1
+	}
+
+	on_disabled = {
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			set = @EdictMedPrio
+			any_country = {
+				root = {
+					relative_encryption_decryption = {
+						target = prev
+						value < 1.0 #At < root's encryption is inferior to prev's decryption
+					}
+				}
+			}
+		}
+	}
+}
+Counterspionage_2 = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+	resources = {
+		category = edicts
+		cost = {
+			energy = 2
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = 2
+			multiplier = value:edict_size_effect
+		}
+	}
+	potential = {
+		has_edict = Counterspionage_1
+		# OR = {
+		# 	has_technology = "tech_orbital_arc_furnace"
+		# 	has_technology = "tech_dyson_swarm"
+		# 	has_technology = "tech_habitat_1"
+		# 	has_technology = "tech_quantum_catapult"
+		# 	has_technology = "tech_hyper_relays" # For enabling notifications
+		# 	has_tradition = tr_nanotech_adopt # Nanite Harvesters
+		# 	has_ascension_perk = ap_hydrocentric # Ice Mining
+		# }
+	}
+
+	allow = {
+		OR = {
+			count_envoy = {
+				count >= 0
+			}
+			has_edict = Counterspionage_3
+		}
+	}
+	modifier = {
+		envoys_add = -1
+		intel_encryption_add = 1
+		intel_decryption_add = -1
+	}
+	effect = {
+		
+	}
+
+	on_disabled = {
+	}
+}
+Counterspionage_3 = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+	resources = {
+		category = edicts
+		cost = {
+			energy = 4
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = 4
+			multiplier = value:edict_size_effect
+		}
+	}
+	potential = {
+		has_edict = Counterspionage_2
+		
+		# OR = {
+		# 	has_technology = "tech_orbital_arc_furnace"
+		# 	has_technology = "tech_dyson_swarm"
+		# 	has_technology = "tech_habitat_1"
+		# 	has_technology = "tech_quantum_catapult"
+		# 	has_technology = "tech_hyper_relays" # For enabling notifications
+		# 	has_tradition = tr_nanotech_adopt # Nanite Harvesters
+		# 	has_ascension_perk = ap_hydrocentric # Ice Mining
+		# }
+	}
+
+	allow = {
+		count_envoy = {
+			count >= 0
+		}
+		has_tradition = tr_subterfuge_finish
+	}
+	modifier = {
+		envoys_add = -1
+		intel_encryption_add = 1
+		intel_decryption_add = -1
+	}
 	on_disabled = {
 	}
 }
