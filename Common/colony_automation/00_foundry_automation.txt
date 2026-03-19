@@ -16,6 +16,10 @@ automate_foundry_planet = {
 	
 	prio_zones = {
 		zone_foundry
+		zone_foundry_arcology
+		zone_foundry_ring_world
+		zone_foundry_nexus
+		zone_foundry_hive
 	}
 
 	buildings = {
@@ -39,8 +43,18 @@ automate_foundry_planet = {
 		
 		5 = {
 			building = building_foundry_1
+			available = {
+				has_any_foundry_zone = yes
+			}
 		}
 		6 = {
+			building = building_foundry_upkeep_1
+		}
+		
+		7 = {
+			building = building_foundry_efficiency_1
+		}
+		6_lux = {
 			building = building_luxury_residence
 			planet_limit = 1
 		}

@@ -13,7 +13,7 @@ country_event = {
 		owner = { 
 			country_event = { 
 				id = ConnectSystem.2 
-				days = 7 #fix anex vassal
+				days = 10 #fix anex vassal
 			} 
 		} 
 	}

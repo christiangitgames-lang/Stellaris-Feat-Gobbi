@@ -84,6 +84,9 @@ civilian = {
 			exists = owner
 			owner = {
 				is_pleasure_seeker_empire = no
+				NOT = {
+					has_valid_civic = civic_dystopian_society
+				}
 			}
 		}
 		planet_amenities_add = 50
@@ -280,7 +283,12 @@ servant = {
 
 	triggered_planet_modifier = {
 		potential = {
-			always = yes
+			exists = owner
+			owner = {
+				NOT = {
+					has_valid_civic = civic_dystopian_society
+				}
+			}
 		}
 		planet_amenities_add = 400
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
@@ -356,7 +364,12 @@ slave_toiler = {
 
 	triggered_planet_modifier = {
 		potential = {
-			always = yes
+			exists = owner
+			owner = {
+				NOT = {
+					has_valid_civic = civic_dystopian_society
+				}
+			}
 		}
 		planet_amenities_add = 200
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
@@ -552,6 +565,14 @@ livestock_zoo_animal = {
 	}
 
 	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = {
+					has_valid_civic = civic_dystopian_society
+				}
+			}
+		}
 		planet_amenities_add = 100
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
@@ -620,6 +641,14 @@ livestock_zoo_beast = {
 	}
 
 	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = {
+					has_valid_civic = civic_dystopian_society
+				}
+			}
+		}
 		planet_amenities_add = 100
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
@@ -1322,6 +1351,14 @@ livestock_zoo_animal_lithoid = {
 	}
 
 	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = {
+					has_valid_civic = civic_dystopian_society
+				}
+			}
+		}
 		planet_amenities_add = 100
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
@@ -1384,6 +1421,14 @@ livestock_zoo_beast_lithoid = {
 	}
 
 	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = {
+					has_valid_civic = civic_dystopian_society
+				}
+			}
+		}
 		planet_amenities_add = 100
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
@@ -2095,7 +2140,7 @@ purge_labor_camps = {
 		produces = {
 			trigger = {
 				exists = owner
-				owner = { has_valid_civic = civic_fanatic_purifiers }
+				owner = { Prod_unity_purge = yes }
 			}
 			unity = 1
 		}
@@ -2219,7 +2264,7 @@ purge_matrix = {
 		produces = {
 			trigger = {
 				exists = owner
-				owner = { has_valid_civic = civic_fanatic_purifiers }
+				owner = { Prod_unity_purge = yes }
 			}
 			unity = 1
 		}

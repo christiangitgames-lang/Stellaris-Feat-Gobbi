@@ -12,8 +12,12 @@ event = { #standard
 	id = sfg_ai.0
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = {
+	pre_triggers = {
 		is_ai = yes
+			
+	}
+	trigger = {
+		is_at_war = no
 		OR = {
 			average_empire = yes #standard empire
 			spiritualistic_empire = yes #spiritualista gestito

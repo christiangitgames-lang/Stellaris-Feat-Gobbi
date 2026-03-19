@@ -29,14 +29,6 @@ fallen_empire_1 = {
 				}
 			}
 		}
-		if = {
-			limit = {
-				has_machine_age_dlc = yes
-			}
-			last_created_species = {
-				set_random_cybernetic_portrait_effect = yes
-			}
-		}
 		create_country = {
 			name = random
 			type = fallen_empire

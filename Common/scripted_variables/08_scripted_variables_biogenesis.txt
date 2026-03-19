@@ -45,6 +45,7 @@
 @auto_penalty =				-0.20
 @auto_base_bonus_sum =		 0.80		# Used for custom tooltips
 @auto_base_penalty_sum =	 0.30		# Used for custom tooltips
+@cyborg_hab_preference =	 0.70
 # These modifiers are used for tooltips are are based off of the values in pop_high_habitability
 @auto_adapted_production =	 0.025
 @auto_adapted_housing =		-0.025

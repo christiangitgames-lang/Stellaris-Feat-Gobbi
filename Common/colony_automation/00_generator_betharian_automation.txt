@@ -18,8 +18,12 @@ automate_generator_betharian_planet = {
 
 	prio_zones = {
 		zone_betharian
+		zone_betharian_nexus
+		zone_betharian_hive
 		zone_energy
 		zone_energy_ring_world
+		zone_energy_nexus
+		zone_energy_hive
 	}
 
 	buildings = {

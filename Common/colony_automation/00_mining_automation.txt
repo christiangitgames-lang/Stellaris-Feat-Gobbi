@@ -11,7 +11,11 @@ automate_mining_planet = {
 	}
 	
 	prio_zones = {
+		zone_subterranean_urban
+		zone_minerals_physics
 		zone_minerals
+		zone_minerals_nexus
+		zone_minerals_hive
 	}
 
 	buildings = {

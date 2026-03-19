@@ -143,3 +143,6 @@ Bonus prod from proessing food return to vanilla (before was 0.25 , mod 0.33 now
 Auto resettle migliorato
 Auto modules integrato astromining.
 Automazione dell'hydrophonic ora è più intelligente, la fa solo se hai meno di 10 cibo al mese o se hai più di 1250 alloys.
+
+[h1]1.0.4[/h1]
+Fix performance.

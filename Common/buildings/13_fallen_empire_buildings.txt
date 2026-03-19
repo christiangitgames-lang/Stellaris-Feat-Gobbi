@@ -434,31 +434,9 @@ building_empyrean_shrine = {
 		job_fe_augur_automated_workforce_mult = @fe_automation_specialist_2
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				OR = {
-					has_tradition = tr_psionics_psi_corps
-					has_tradition = tr_psionics_shroud_psi_corps
-				}
-				is_gestalt = no
-			}
-		}
-		job_telepath_add = @fe_jobs
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				OR = {
-					has_tradition = tr_psionics_psi_corps
-					has_tradition = tr_psionics_shroud_psi_corps
-				}
-				is_gestalt = yes
-			}
-		}
-		job_telepath_drone_add = @fe_jobs
+	inline_script = {
+		script = jobs/telepaths_add
+		AMOUNT = @fe_jobs
 	}
 
 	triggered_country_modifier = {
@@ -486,10 +464,7 @@ building_empyrean_shrine = {
 		potential = {
 			exists = owner
 			owner = {
-				NOR = {
-					has_tradition = tr_psionics_psi_corps
-					has_tradition = tr_psionics_shroud_psi_corps
-		}
+				has_psi_corps_tradition = no
 			}
 		}
 		planet_bureaucrats_produces_mult = 0.1
@@ -4728,16 +4703,9 @@ building_fe_security_1 = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-			}
-		}
-		modifier = {
-			job_enforcer_add = @fe_jobs
-		}
+	inline_script = {
+		script = jobs/enforcers_add
+		AMOUNT = @fe_jobs
 	}
 
 	triggered_desc = {
@@ -4924,16 +4892,9 @@ building_fe_security_2 = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-			}
-		}
-		modifier = {
-			job_enforcer_add = @fe_jobs
-		}
+	inline_script = {
+		script = jobs/enforcers_add
+		AMOUNT = @fe_jobs
 	}
 
 	triggered_desc = {

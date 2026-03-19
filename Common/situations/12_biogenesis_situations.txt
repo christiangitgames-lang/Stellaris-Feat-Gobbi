@@ -473,6 +473,9 @@ genetic_ascension_situation_hive = {
 					}
 				}
 			}
+			else = {
+				custom_tooltip = POP_FACTION_NO_EFFECTS
+			}
 		}
 		allow = {
 			custom_tooltip = {
@@ -491,6 +494,11 @@ genetic_ascension_situation_hive = {
 		name = genetic_ascension_approach_cloning
 		icon = GFX_situation_icon_cloning
 		icon_background = GFX_situation_approach_bg_green
+		potential = {
+			owner = {
+				is_wilderness_empire = no
+			}
+		}
 		on_select = {
 			set_situation_flag = cloning_approach_selected
 			# We do this here, so it shows in the Approach selection tooltip in the Sitation UI
@@ -560,6 +568,11 @@ genetic_ascension_situation_hive = {
 		name = genetic_ascension_approach_mutation
 		icon = GFX_situation_icon_mutation
 		icon_background = GFX_situation_approach_bg_green
+		potential = {
+			owner = {
+				is_wilderness_empire = no
+			}
+		}
 		on_select = {
 			set_situation_flag = mutation_approach_selected
 			# We do this here, so it shows in the Approach selection tooltip in the Sitation UI

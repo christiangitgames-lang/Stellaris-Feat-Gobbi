@@ -54,13 +54,16 @@ country_event = { #set bonus malus early game ai
 	hide_window = yes
 
 	is_triggered_only = yes
+	pre_triggers = {
+		is_ai = yes
+	}
 	trigger = {
 		has_global_flag = AI_hard
 		AND = {
 			years_passed <= 30
 			mid_game_years_passed <= 0
 		}
-		is_ai = yes
+		
 		was_human = no
 		NOT = { is_country_type = fallen_empire }
 		NOT = { is_country_type = awakened_fallen_empire }
@@ -77,6 +80,9 @@ country_event = { #set bonus malus early game ai
 	hide_window = yes
 
 	is_triggered_only = yes
+	pre_triggers = {
+		is_ai = yes
+	}
 	trigger = {
 		has_global_flag = AI_hard
 		is_ai = yes
@@ -103,9 +109,11 @@ country_event = { #set bonus malus late game ai
 	hide_window = yes
 
 	is_triggered_only = yes
+	pre_triggers = {
+		is_ai = yes
+	}
 	trigger = {
 		has_global_flag = AI_hard
-		is_ai = yes
 		was_human = no
 		end_game_years_passed >= 0
 		NOT = { is_country_type = fallen_empire }
@@ -158,16 +166,16 @@ country_event = { #set bonus malus galaxy size
 	hide_window = yes
 
 	is_triggered_only = yes
-
+	
 	trigger = {
 		NOR = {
+			has_modifier = large_galaxy_modifier
+			has_modifier = medium_galaxy_modifier
+			has_modifier = very_large_galaxy_modifier
+			has_modifier = huge_galaxy_modifier
 			has_modifier = tyni_galaxy_modifier
 			has_modifier = small_galaxy_modifier
 			has_modifier = big_small_galaxy_modifier
-			has_modifier = medium_galaxy_modifier
-			has_modifier = large_galaxy_modifier
-			has_modifier = very_large_galaxy_modifier
-			has_modifier = huge_galaxy_modifier
 		}
 	}
 	immediate = { 
@@ -200,38 +208,6 @@ country_event = { #set bonus malus galaxy size
 	immediate = {
 		if = {
 			limit = {
-				galaxy_size = tiny
-			}
-			add_modifier = {
-				modifier = tyni_galaxy_modifier
-			}
-		}
-		if = {
-			limit = {
-				galaxy_size = small
-			}
-			add_modifier = {
-				modifier = small_galaxy_modifier
-			}
-		}
-		if = {
-			limit = {
-				galaxy_size = small10players
-			}
-			add_modifier = {
-				modifier = big_small_galaxy_modifier
-			}
-		}
-		else_if = {
-			limit = {
-					galaxy_size = medium
-			}
-			add_modifier = {
-				modifier = medium_galaxy_modifier
-			}
-		}
-		else_if = {
-			limit = {
 				galaxy_size = mediumover16
 			}
 			add_modifier = {
@@ -254,12 +230,44 @@ country_event = { #set bonus malus galaxy size
 				modifier = huge_galaxy_modifier
 			}
 		}
+		else_if = {
+			limit = {
+				galaxy_size = tiny
+			}
+			add_modifier = {
+				modifier = tyni_galaxy_modifier
+			}
+		}
+		else_if = {
+			limit = {
+				galaxy_size = small
+			}
+			add_modifier = {
+				modifier = small_galaxy_modifier
+			}
+		}
+		else_if = {
+			limit = {
+				galaxy_size = small10players
+			}
+			add_modifier = {
+				modifier = big_small_galaxy_modifier
+			}
+		}
+		else_if = {
+			limit = {
+					galaxy_size = medium
+			}
+			add_modifier = {
+				modifier = medium_galaxy_modifier
+			}
+		}
 	}
 }
 country_event = { #set bonus envoys for the totals countryes.
 	id = cg_rules.32
 	hide_window = yes
-
+	#poco ottimizzare chiamata evento normale, poi every country glielometti
 	is_triggered_only = yes
 
 	trigger = {
@@ -273,85 +281,104 @@ country_event = { #set bonus envoys for the totals countryes.
 		}
 	}
 	immediate = {
-		if = { limit = {
-				count_country = {
-				count >= 32
-					limit = {
-						is_country_type = default
-						is_subject = no
+		random_list = {
+			50 = {
+				
+				modifier = {
+					modifier = {
+						factor = 2
+						years_passed < 100
 					}
 				}
-			}
-			add_modifier = {
-				modifier = thirtitwo_country
-			}
-			set_global_flag = Country32
-		}else_if = { limit = {
-				count_country = {
-				count >= 28
-					limit = {
-						is_country_type = default
-						is_subject = no
+
+				remove_modifier = temp_env_country
+				if = { limit = {
+					count_country = {
+					count >= 32
+						limit = {
+							is_country_type = default
+							is_subject = no
+						}
 					}
 				}
-			}
-			add_modifier = {
-				modifier = twentyseven_country
-			}
-			set_global_flag = Country27
-		}else_if = { limit = {
-				count_country = {
-				count >= 22
-					limit = {
-						is_country_type = default
-						is_subject = no
+					add_modifier = {
+						modifier = thirtitwo_country
 					}
+					set_global_flag = Country32
+				}else_if = { limit = {
+						count_country = {
+						count >= 28
+							limit = {
+								is_country_type = default
+								is_subject = no
+							}
+						}
+					}
+					add_modifier = {
+						modifier = twentyseven_country
+					}
+					set_global_flag = Country27
+				}else_if = { limit = {
+						count_country = {
+						count >= 22
+							limit = {
+								is_country_type = default
+								is_subject = no
+							}
+						}
+					}
+					add_modifier = {
+						modifier = twenty_country
+					}
+					set_global_flag = Country20
+				}else_if = { limit = {
+						count_country = {
+						count >= 16
+							limit = {
+								is_country_type = default
+								is_subject = no
+							}
+						}
+					}
+					add_modifier = {
+						modifier = fourthen_country
+					}
+					set_global_flag = Country14
+				}else_if = { limit = {
+						count_country = {
+						count >= 14
+							limit = {
+								is_country_type = default
+								is_subject = no
+							}
+						}
+					}
+					add_modifier = {
+						modifier = eleven_country
+					}
+					set_global_flag = Country12
+				}else_if = { limit = {
+						count_country = {
+						count >= 10
+							limit = {
+								is_country_type = default
+								is_subject = no
+							}
+						}
+					}
+					add_modifier = {
+						modifier = eight_country
+					}
+					set_global_flag = Country8
 				}
 			}
-			add_modifier = {
-				modifier = twenty_country
-			}
-			set_global_flag = Country20
-		}else_if = { limit = {
-				count_country = {
-				count >= 16
-					limit = {
-						is_country_type = default
-						is_subject = no
-					}
+			1 = {
+				add_modifier = {
+					modifier = temp_env_country
 				}
 			}
-			add_modifier = {
-				modifier = fourthen_country
-			}
-			set_global_flag = Country14
-		}else_if = { limit = {
-				count_country = {
-				count >= 14
-					limit = {
-						is_country_type = default
-						is_subject = no
-					}
-				}
-			}
-			add_modifier = {
-				modifier = eleven_country
-			}
-			set_global_flag = Country12
-		}else_if = { limit = {
-				count_country = {
-				count >= 10
-					limit = {
-						is_country_type = default
-						is_subject = no
-					}
-				}
-			}
-			add_modifier = {
-				modifier = eight_country
-			}
-			set_global_flag = Country8
 		}
+		
 		
 	}
 }

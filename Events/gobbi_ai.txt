@@ -44,28 +44,29 @@ country_event = {#	gobbi_ai.10	fires events better choice
 		trigger = {
 			is_ai = yes
 			is_country_type = default
+			
 		}
 		
 		immediate = {
 			country_event = {
 				id = gobbi_ai.11
-				days = 2
+				days = 3
 			}
 			country_event = {
 				id = gobbi_ai.12
-				days = 4
-			}
-			country_event = {
-				id = gobbi_ai.13
 				days = 6
 			}
 			country_event = {
+				id = gobbi_ai.13
+				days = 9
+			}
+			country_event = {
 				id = gobbi_ai.14
-				days = 8
+				days = 12
 			}
 			country_event = {
 				id = gobbi_ai.15
-				days = 10
+				days = 180
 			}
 		}
 }
@@ -79,6 +80,7 @@ country_event = {#	gobbi_ai.10	fires events better choice
 		is_triggered_only = yes
 		
 		trigger = {
+			years_passed < 100
 			is_country_type = default
 			years_passed > 25
 			fleet_power > 5000
@@ -126,6 +128,7 @@ country_event = {#	gobbi_ai.10	fires events better choice
 		
 		trigger = {
 			is_at_war = yes
+			years_passed < 100
 		}
 		immediate = {
 			random_list = {
@@ -271,7 +274,10 @@ country_event = {#	gobbi_ai.10	fires events better choice
 		
 			is_triggered_only = yes
 			
-			
+			trigger = {
+				is_at_war = no
+				years_passed < 100
+			}
 			immediate = {
 				if = {
 					limit = { has_technology = "tech_hydroponics" }
@@ -310,12 +316,14 @@ country_event = {#	gobbi_ai.10	fires events better choice
 		hide_window = yes
 
 		is_triggered_only = yes
-		
 		trigger = {
-			is_country_type = default
-			is_homicidal = no
+			is_at_war = no
 			is_subject = no
 			has_federation = yes
+			is_country_type = default
+			is_homicidal = no
+			
+			
 			is_federation_leader = no
 			has_resource = { type = alloys amount > 500 }
 			has_monthly_income = { resource = alloys value > 10 }
@@ -369,7 +377,7 @@ country_event = {#	gobbi_ai.10	fires events better choice
 			}
 		}
 	}
-	country_event = {#	gobbi_ai.15	monthly checked - scorched earth tactics
+	country_event = {#	gobbi_ai.15	byyear checked - scorched earth tactics
 		
 		
 			id = gobbi_ai.15
@@ -380,34 +388,25 @@ country_event = {#	gobbi_ai.10	fires events better choice
 			trigger = {
 				is_country_type = default
 				is_at_war = yes
-				NOT = { has_global_flag = AI_easy }
+				has_global_flag = AI_hard
 			}
 			
 			immediate = {
-				random_list = {
-					10 = {
-						modifier = {
-							factor = 9
-							has_global_flag = AI_hard
+					
+				every_owned_fleet = {
+					limit = {
+						OR = {
+							is_ship_size = mining_station
+							is_ship_size = research_station
+							is_ship_size = observation_station
 						}
-						every_owned_fleet = {
-							limit = {
-								OR = {
-									is_ship_size = mining_station
-									is_ship_size = research_station
-									is_ship_size = observation_station
-								}
-								solar_system = {
-									NOT = { owner = { is_same_value = root } }
-									ROOT = { NOT = { has_claim = PREV } } #not destroy solar system with claim
-								}
-							}
-							destroy_fleet = this
+						solar_system = {
+							NOT = { owner = { is_same_value = root } }
+							ROOT = { NOT = { has_claim = PREV } } #not destroy solar system with claim
 						}
 					}
-					90 = {}
+					destroy_fleet = this
 				}
-				
 			}
 	}
 ##################
@@ -454,6 +453,7 @@ country_event = {#	gobbi_ai.30 fires Emergency measure
 		is_ai = yes
 		is_country_type = default
 		NOT = { has_global_flag = AI_easy }
+		years_passed < 100
 	}
 	immediate = {
 		#TODO

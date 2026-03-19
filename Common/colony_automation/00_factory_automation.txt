@@ -16,6 +16,10 @@ automate_factory_planet = {
 	
 	prio_zones = {
 		zone_factory
+		zone_factory_arcology
+		zone_factory_ring_world
+		zone_factory_nexus
+		zone_factory_hive
 	}
 
 	buildings = {
@@ -40,9 +44,16 @@ automate_factory_planet = {
 		5 = {
 			building = building_factory_1 
 		}
-		6 = {
+		6_lux = {
 			building = building_luxury_residence
 			planet_limit = 1
+		}
+		6 = {
+			building = building_factory_upkeep_1
+		}
+		
+		7 = {
+			building = building_factory_efficiency_1
 		}
 	}
 }

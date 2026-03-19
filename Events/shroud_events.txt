@@ -18707,3 +18707,28 @@ country_event = {
 		name = shroud.12160.a
 	}
 }
+
+# Shroud Incursion
+country_event = {
+	id = shroud.13000
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_deficit = sr_zro
+		NOT = {
+			has_country_flag = shroud_incursion
+		}
+	}
+
+	immediate = {
+		random = {
+			chance = 2
+			set_timed_country_flag = {
+				flag = shroud_incursion
+				days = 720 # 2 years
+			}
+			country_event = { id = utopia.3024 }
+		}
+	}
+}

@@ -541,9 +541,6 @@ planet_jobs_slave = {
 
 planet_worker_ownership_jobs = {
 	parent = planet_jobs
-	generate_mult_modifiers = {
-		produces
-	}
 	modifier_category = pop_job
 }
 

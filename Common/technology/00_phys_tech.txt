@@ -603,6 +603,21 @@ tech_administrative_ai = {
 		planet_researchers_upkeep_mult = 0.05
 	}
 
+	technology_swap = {
+		name = tech_administrative_ai_synth_fert
+		inherit_icon = yes
+		inherit_effects = no
+		trigger = {
+			has_origin = origin_synthetic_fertility
+		}
+		modifier = {
+			custom_tooltip = tech_administrative_ai_synth_fert_tt
+			show_only_custom_tooltip = no
+			all_technology_research_speed = 0.05
+			planet_researchers_upkeep_mult = 0.05
+		}
+	}
+
 	weight_modifier = {
 
 		modifier = {
@@ -692,8 +707,25 @@ tech_self_aware_logic = {
 		science_ship_survey_speed = 0.1
 	}
 
+	technology_swap = {
+		name = tech_self_aware_logic_synth_fert
+		inherit_icon = yes
+		inherit_effects = no
+		trigger = {
+			has_origin = origin_synthetic_fertility
+		}
+		modifier = {
+			custom_tooltip = tech_self_aware_logic_synth_fert_tt
+			show_only_custom_tooltip = no
+			rare_tech_draw_chance_mult = 0.1
+			science_ship_survey_speed = 0.1
+		}
+	}
 	weight_modifier = {
-
+		modifier = {
+			factor = 2
+			has_origin = origin_synthetic_fertility
+		}
 	}
 
 	ai_weight = {
@@ -782,6 +814,21 @@ tech_sapient_ai = {
 		planet_researchers_upkeep_mult = 0.05
 	}
 
+	technology_swap = {
+		name = tech_sapient_ai_synth_fert
+		inherit_icon = yes
+		inherit_effects = no
+		trigger = {
+			has_origin = origin_synthetic_fertility
+		}
+		modifier = {
+			custom_tooltip = tech_sapient_ai_synth_fert_tt
+			show_only_custom_tooltip = no
+			all_technology_research_speed = 0.05
+			planet_researchers_upkeep_mult = 0.05
+		}
+	}
+
 	potential = {
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 	}
@@ -791,6 +838,10 @@ tech_sapient_ai = {
 		modifier = {
 			factor = 1.5
 			is_specialist_subject_type = { TYPE = scholarium }
+		}
+		modifier = {
+			factor = 2
+			has_origin = origin_synthetic_fertility
 		}
 	}
 

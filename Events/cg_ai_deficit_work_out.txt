@@ -13,9 +13,10 @@ country_event = { #can fire monthly
 	hide_window = yes
 
 	is_triggered_only = yes
-	
-	trigger = {
+	pre_triggers = {
 		is_ai = yes
+	}
+	trigger = {
 		OR ={
 			AND = { has_deficit = minerals has_monthly_income = { resource = minerals value < 0 } }
 			AND = { has_deficit = energy has_monthly_income = { resource = energy value < 0 } }
@@ -58,16 +59,17 @@ country_event = { # replace district - remove buildings
 	}
 	
 	immediate = {
-		every_owned_planet = {
-			planet_event = { 
-				id = cg_ai_deficit_work_out.2 
-			}
+		random_owned_planet = {
 			limit = {
 				is_colony = yes
 				has_orbital_bombardment = no
 				NOT = { has_modifier = cg_ai_deficit_work_out_1 }
 				is_occupied_flag = no
 			}
+			planet_event = { 
+				id = cg_ai_deficit_work_out.2 
+			}
+			
 			# weights = {
 			# 	base = 1
 			# 	modifier = {
@@ -159,21 +161,14 @@ planet_event = {
 					which = value:num_pops_in_strata|STRATA|civilian| 
 					value >= 100
 				}
-				num_unemployed >= 100 #FALLI LAVORARE
-				OR = {
-					free_building_slots > 0
-					free_district_slots > 0
-				}
+				free_jobs < 100 #FALLI LAVORARE
+				free_district_slots > 0
 			}
 			if = {
 				limit = { free_district_slots > 0 }
 				inline_script = "district_add/universalwr" #universal add district 
 				add_modifier = { modifier = cg_ai_deficit_work_out_1 years = 1 }
 			}
-			# else = { #TODO4
-			# 	inline_script = "building_add/universalwr"
-			# 	add_modifier = { modifier = cg_ai_deficit_work_out_1 years = 1 }
-			# }
 		}
 		else = {
 			#stare attento fare replace.
@@ -282,8 +277,11 @@ country_event = { #delete asset for exit to debt.
 	id = cg_ai_deficit_work_out.3 
 	hide_window = yes
 	is_triggered_only = yes
+	
 	trigger = {
-		has_monthly_income = { resource = energy value < 1 }
+		is_at_war = no
+		has_deficit = energy 
+		has_monthly_income = { resource = energy value < 0 }
 	}
 	immediate = {
 		while = {

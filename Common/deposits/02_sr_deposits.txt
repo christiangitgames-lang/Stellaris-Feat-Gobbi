@@ -26,6 +26,10 @@ d_exotic_gases_1 = {
 		}
 	}
 
+	habitat_modifier = {
+		district_hab_energy_max_add = 1
+	}
+
 	potential = {
 		OR = {
 			is_planet_class = pc_gas_giant
@@ -52,6 +56,10 @@ d_exotic_gases_2 = {
 		produces = {
 			exotic_gases = 2
 		}
+	}
+
+	habitat_modifier = {
+		district_hab_energy_max_add = 1
 	}
 
 	potential = {
@@ -82,6 +90,10 @@ d_exotic_gases_3 = {
 		}
 	}
 
+	habitat_modifier = {
+		district_hab_energy_max_add = 1
+	}
+
 	drop_weight = {
 		weight = 0
 	}
@@ -99,6 +111,10 @@ d_exotic_gases_4 = {
 		}
 	}
 
+	habitat_modifier = {
+		district_hab_energy_max_add = 1
+	}
+
 	drop_weight = {
 		weight = 0
 	}
@@ -114,6 +130,10 @@ d_exotic_gases_5 = {
 		produces = {
 			exotic_gases = 5
 		}
+	}
+
+	habitat_modifier = {
+		district_hab_energy_max_add = 1
 	}
 
 	drop_weight = {
@@ -135,6 +155,10 @@ d_rare_crystals_1 = {
 	}
 	station = shipclass_mining_station
 	is_for_colonizable = no
+
+	habitat_modifier = {
+		district_hab_mining_max_add = 1
+	}
 
 	drop_weight = {
 		weight = 0
@@ -163,6 +187,10 @@ d_rare_crystals_2 = {
 	station = shipclass_mining_station
 	is_for_colonizable = no
 
+	habitat_modifier = {
+		district_hab_mining_max_add = 2
+	}
+
 	drop_weight = {
 		weight = 0
 		modifier = {
@@ -190,6 +218,10 @@ d_rare_crystals_3 = {
 	station = shipclass_mining_station
 	is_for_colonizable = no
 
+	habitat_modifier = {
+		district_hab_mining_max_add = 2
+	}
+
 	drop_weight = {
 		weight = 0
 	}
@@ -206,6 +238,10 @@ d_rare_crystals_4 = {
 	station = shipclass_mining_station
 	is_for_colonizable = no
 
+	habitat_modifier = {
+		district_hab_mining_max_add = 3
+	}
+
 	drop_weight = {
 		weight = 0
 	}
@@ -221,6 +257,10 @@ d_rare_crystals_5 = {
 	}
 	station = shipclass_mining_station
 	is_for_colonizable = no
+
+	habitat_modifier = {
+		district_hab_mining_max_add = 3
+	}
 
 	drop_weight = {
 		weight = 0.05
@@ -241,6 +281,10 @@ d_volatile_motes_1 = {
 		produces = {
 			volatile_motes = 1
 		}
+	}
+
+	habitat_modifier = {
+		district_hab_energy_max_add = 1
 	}
 
 	potential = {
@@ -271,6 +315,10 @@ d_volatile_motes_2 = {
 		}
 	}
 
+	habitat_modifier = {
+		district_hab_energy_max_add = 1
+	}
+
 	potential = {
 		OR = {
 			is_planet_class = pc_molten
@@ -299,6 +347,10 @@ d_volatile_motes_3 = {
 		}
 	}
 
+	habitat_modifier = {
+		district_hab_energy_max_add = 1
+	}
+
 	drop_weight = {
 		weight = 0
 	}
@@ -316,6 +368,10 @@ d_volatile_motes_4 = {
 		}
 	}
 
+	habitat_modifier = {
+		district_hab_energy_max_add = 1
+	}
+
 	drop_weight = {
 		weight = 0
 	}
@@ -331,6 +387,10 @@ d_volatile_motes_5 = {
 		produces = {
 			volatile_motes = 5
 		}
+	}
+
+	habitat_modifier = {
+		district_hab_energy_max_add = 1
 	}
 
 	drop_weight = {

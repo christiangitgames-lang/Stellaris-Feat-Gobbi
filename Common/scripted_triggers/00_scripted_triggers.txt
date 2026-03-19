@@ -5430,23 +5430,5 @@ has_good_relationships = {
 }
 
 is_specialist_category = {
-	OR = {
-		is_pop_category = specialist
-		is_pop_category = dystopian_specialist
-	}
-}
-valid_for_resettle_out = {
-	has_orbital_bombardment = no
-	is_under_colonization = no
-	is_occupied_flag = no
-	check_variable = {
-		which = recently_resettle_in # if recently resettle by automation will no send resettle for months.
-		value = 0
-	}
-	NOT = { has_planet_flag = new_colony } # not new colony
-}
-valid_for_resettle_in = {
-	is_under_colonization = no
-	free_housing > 100
-	free_jobs > 100
+	is_pop_category = specialist
 }

@@ -2671,9 +2671,8 @@ civic_tankbound_corporate = {
 	}
 
 	modifier = {
-		planet_jobs_upkeep_mult = @civic_tankbound_job_upkeep
+		planet_automated_jobs_upkeep_mult = @civic_tankbound_job_upkeep
 	}
-	hide_modifiers = yes
 
 	random_weight = { base = @civic_default_random_weight }
 }

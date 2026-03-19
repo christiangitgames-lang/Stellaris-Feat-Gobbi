@@ -1994,12 +1994,13 @@ planetary_workshift_deployed = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
 	icon_frame = 1
 	pop_happiness = -0.05
-	planet_jobs_produces_mult = +0.1
+	planet_jobs_produces_mult = 0.1
 }
 
 living_metal_distribution_effect = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_distribute_living_metal.dds"
 	icon_frame = 1
 	planet_building_build_speed_mult = 0.1
-	planet_jobs_upkeep_mult = -0.2
+	planet_structures_cost_mult = -0.1
+	planet_structures_upkeep_mult = -0.1
 }

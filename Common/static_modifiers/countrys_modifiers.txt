@@ -2,6 +2,9 @@
 eight_country = { #8
 	envoys_add = 0.5
 }
+temp_env_country = { #8
+	envoys_add = 1
+}
 eleven_country = { #12
 	envoys_add = 1.5
 }

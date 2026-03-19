@@ -357,6 +357,18 @@ species_has_uncapped_habitability_on_planet = {
 			has_mutation_environmental_integration_tradition = yes
 		}
 	}
+		AND = {
+			root = { is_wet = yes }
+			has_trait = trait_cyborg_climate_adjustment_wet
+		}
+		AND = {
+			root = { is_dry = yes }
+			has_trait = trait_cyborg_climate_adjustment_dry
+		}
+		AND = {
+			root = { is_cold = yes }
+			has_trait = trait_cyborg_climate_adjustment_cold
+		}
 }
 }
 
@@ -479,21 +491,12 @@ root = {
 					NOT = { has_trait = trait_hive_mind }
 					prev.this = { is_hive_empire = yes }
 				}
-				#prev.this = { is_individual_machine = no }
 			}
+			has_trait = trait_mechanical
+			can_think = no
+			has_trait = trait_clone_soldier_infertile
+			has_trait = trait_clone_soldier_infertile_full_potential
 		}
-		# AND = {
-		# 	has_trait = trait_hive_mind
-		# 	NOT = { prev.this = { has_origin = origin_progenitor_hive } }
-		# }
-		# AND = {
-		# 	NOT = { has_trait = trait_hive_mind }
-		# 	prev.this = { is_hive_empire = yes }
-		# }
-		has_trait = trait_mechanical
-		can_think = no
-		has_trait = trait_clone_soldier_infertile
-		has_trait = trait_clone_soldier_infertile_full_potential
 	}
 }
 

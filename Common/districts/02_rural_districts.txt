@@ -684,12 +684,8 @@ district_melting = {
 		}
 	}
 	triggered_planet_modifier = {
-		potential = {
-			has_modifier = metal_planet
-		}
-		modifier = {
-			planet_housing_add = 500
-		}
+		planet_housing_add = 1
+		mult = modifier:mining_district_housing_add
 	}
 	triggered_planet_modifier = {
 		potential = {

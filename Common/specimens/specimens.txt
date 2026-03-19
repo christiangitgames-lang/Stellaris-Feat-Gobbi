@@ -616,7 +616,7 @@ claw_of_the_trickster = {
 
 	triggered_country_modifier = {
 		mult = value:aesthetic_wonder_specimens_modifiers_mult
-		planet_stability_add = 2
+		planet_stability_add = 4
 	}
 }
 
@@ -1949,7 +1949,7 @@ irassian_digital_atlas = {
 
 	triggered_country_modifier = {
 		mult = value:aesthetic_wonder_specimens_modifiers_mult
-		planet_stability_add = 1
+		planet_stability_add = 2
 	}
 }
 
@@ -2009,7 +2009,7 @@ khamdai_magil_sha = {
 
 	triggered_country_modifier = {
 		mult = value:aesthetic_wonder_specimens_modifiers_mult
-		planet_stability_add = 1
+		planet_stability_add = 2
 	}
 }
 
@@ -2210,12 +2210,15 @@ manifesti_piece = {
 		RARITY = rare
 	}
 
-	resources = {
-		category = specimens
-		produces = {
-			society_research = 30 #SFG1.1 #SFG
-			multiplier = value:historical_item_specimens_modifiers_mult
+	triggered_country_modifier = {
+		potential = { is_gestalt = no }
+		mult = value:historical_item_specimens_modifiers_mult
+		pop_factions_produces_mult = 0.05
 		}
+	triggered_country_modifier = {
+		potential = { is_gestalt = yes }
+		mult = value:historical_item_specimens_modifiers_mult
+		planet_crime_no_happiness_add = -3
 	}
 }
 
@@ -2584,7 +2587,7 @@ namarian_colonist_standard = {
 
 	triggered_country_modifier = {
 		mult = value:aesthetic_wonder_specimens_modifiers_mult
-		planet_stability_add = 1.5
+		planet_stability_add = 3
 	}
 }
 
@@ -2620,7 +2623,7 @@ namarian_vessel_heraldry = {
 
 	triggered_country_modifier = {
 		mult = value:aesthetic_wonder_specimens_modifiers_mult
-		planet_stability_add = 1
+		planet_stability_add = 2
 	}
 }
 
@@ -2665,7 +2668,7 @@ oiled_fabric = {
 
 	triggered_country_modifier = {
 		mult = value:aesthetic_wonder_specimens_modifiers_mult
-		planet_stability_add = 0.5
+		planet_stability_add = 1
 	}
 }
 
@@ -2680,7 +2683,7 @@ organic_computer = {
 
 	triggered_country_modifier = {
 		mult = value:aesthetic_wonder_specimens_modifiers_mult
-		planet_stability_add = 1
+		planet_stability_add = 2
 	}
 }
 
@@ -2695,7 +2698,7 @@ organic_machine_interface_sculpture = {
 
 	triggered_country_modifier = {
 		mult = value:aesthetic_wonder_specimens_modifiers_mult
-		planet_stability_add = 1
+		planet_stability_add = 2
 	}
 }
 
@@ -3320,7 +3323,7 @@ smeegibb_statue = {
 
 	triggered_country_modifier = {
 		mult = value:aesthetic_wonder_specimens_modifiers_mult
-		planet_stability_add = 1.5
+		planet_stability_add = 3
 	}
 }
 
@@ -3408,12 +3411,12 @@ spirit_of_the_unshackled = {
 
 	inline_script = {
 		script = "grand_archive/set_specimen_rarity"
-		RARITY = rare
+		RARITY = exceptional
 	}
 
 	triggered_country_modifier = {
 		mult = value:aesthetic_wonder_specimens_modifiers_mult
-		planet_stability_add = 1
+		planet_stability_add = 4
 	}
 }
 

@@ -1675,7 +1675,7 @@
 		HOMEWORLD_HABITABILITY				= 0.3		# Habitability on homeworld is increased by this value
 		HABITABILITY_FLOOR					= 0.0		# Default lowest possible habitability for a species
 		HABITABILITY_CEIL					= 1.0		# Default highest possible habitability for a species
-		HABITABILITY_CEIL_UNCAPPED			= 1.75		# Base cap of habitability for a species if species_has_uncapped_habitability_on_planet game rule is true
+		HABITABILITY_CEIL_UNCAPPED			= 1.25		# Base cap of habitability for a species if species_has_uncapped_habitability_on_planet game rule is true
 														# Can be increased by habitability_ceil_uncapped_add
 
 		MUTATION_REMOVE_CHANCE				= 50

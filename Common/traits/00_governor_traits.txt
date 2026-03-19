@@ -71,18 +71,12 @@ leader_trait_bureaucrat = { # Unifier
 		trait_is_crisis_faction_check = no
 	}
 	planet_modifier = {
-		planet_jobs_unity_produces_mult = 0.25
-		}
+		planet_jobs_unity_produces_mult = 0.15
+	}
 	sector_modifier = {
-		planet_jobs_unity_produces_mult = 0.125
+		planet_jobs_unity_produces_mult = 0.075
 	}
 	leader_class = { official commander scientist }
-	triggered_desc = {
-		exclusive_trigger = {
-			always = yes
-		}
-		text = leader_trait_bureaucrat_2_tt
-	}
 	selectable_weight = {
 		weight = @shared_trait_weight
 		inline_script = paragon/governor_weight_mult

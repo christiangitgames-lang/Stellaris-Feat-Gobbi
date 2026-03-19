@@ -886,6 +886,9 @@ planet_districts_rw_farming = {
 
 planet_automated_jobs = {
 	modifier_category = planet
+	generate_mult_modifiers = {
+		upkeep
+	}
 }
 
 planet_zones = {

@@ -470,6 +470,16 @@ ship_uses_torpedo_role = {
 		# Nanotech Ships
 		is_ship_size = nanite_swarmer
 		is_ship_size = nanite_interdictor
+		# Biological Ships
+		is_ship_size = mauler_stage_1
+		is_ship_size = mauler_stage_2
+		is_ship_size = mauler_stage_3
+		is_ship_size = large_fallen_mauler
+		is_ship_size = cosmo_crisis_mauler
+		# Biological Offspring Ships
+		is_ship_size = offspring_mauler_stage_1
+		is_ship_size = offspring_mauler_stage_2
+		is_ship_size = offspring_mauler_stage_3
 	}
 }
 
@@ -481,16 +491,16 @@ ship_uses_swarm_role = {
 		is_ship_size = offspring_corvette
 		# Galactic Nemesis Ships
 		is_ship_size = crisis_corvette
-		# Biological Ships
-		is_ship_size = mauler_stage_1
-		is_ship_size = mauler_stage_2
-		is_ship_size = mauler_stage_3
-		is_ship_size = large_fallen_mauler
-		is_ship_size = cosmo_crisis_mauler
-		# Biological Offspring Ships
-		is_ship_size = offspring_mauler_stage_1
-		is_ship_size = offspring_mauler_stage_2
-		is_ship_size = offspring_mauler_stage_3
+		# # Biological Ships
+		# is_ship_size = mauler_stage_1
+		# is_ship_size = mauler_stage_2
+		# is_ship_size = mauler_stage_3
+		# is_ship_size = large_fallen_mauler
+		# is_ship_size = cosmo_crisis_mauler
+		# # Biological Offspring Ships
+		# is_ship_size = offspring_mauler_stage_1
+		# is_ship_size = offspring_mauler_stage_2
+		# is_ship_size = offspring_mauler_stage_3
 	}
 }
 
